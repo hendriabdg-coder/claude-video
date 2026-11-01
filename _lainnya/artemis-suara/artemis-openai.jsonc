@@ -1,0 +1,42 @@
+{
+  // Override ARTEMIS supaya otak utamanya memakai OpenAI (bukan Gemini).
+  // Dipasang oleh pasang_config_openai.py ke <folder-artemis>/config/artemis.jsonc (file lama di-backup).
+  // Ganti nama model di sini kalau mau model OpenAI lain yang mendukung gambar (vision).
+  "default": {
+    "provider": "openai",
+    "model": "gpt-4o",
+    "fallback": { "provider": "openai", "model": "gpt-4o-mini" }
+  },
+  "nodes": {
+    "planner":  { "provider": "openai", "model": "gpt-4o", "fallback": { "provider": "openai", "model": "gpt-4o-mini" } },
+    "operator": { "provider": "openai", "model": "gpt-4o", "fallback": { "provider": "openai", "model": "gpt-4o-mini" } },
+    "explorer": { "provider": "openai", "model": "gpt-4o", "fallback": { "provider": "openai", "model": "gpt-4o-mini" } },
+    "checker":  { "provider": "openai", "model": "gpt-4o", "fallback": { "provider": "openai", "model": "gpt-4o-mini" } },
+    "summarizer":     { "provider": "openai", "model": "gpt-4o-mini", "fallback": { "provider": "openai", "model": "gpt-4o-mini" } },
+    "outputter":      { "provider": "openai", "model": "gpt-4o-mini", "fallback": { "provider": "openai", "model": "gpt-4o-mini" } },
+    "video_analyzer": { "provider": "openai", "model": "gpt-4o", "fallback": { "provider": "openai", "model": "gpt-4o-mini" } },
+    "hopper":         { "provider": "openai", "model": "gpt-4o-mini", "fallback": { "provider": "openai", "model": "gpt-4o-mini" } },
+    "log_analyzer":     { "provider": "openai", "model": "gpt-4o-mini", "enable_grounding": false, "fallback": { "provider": "openai", "model": "gpt-4o-mini" } },
+    "diagnoser_expert": { "provider": "openai", "model": "gpt-4o-mini", "enable_grounding": false, "fallback": { "provider": "openai", "model": "gpt-4o-mini" } },
+    "planner_avatar":          { "provider": "openai", "model": "gpt-4o-mini", "fallback": { "provider": "openai", "model": "gpt-4o-mini" } },
+    "history_analyzer_expert": { "provider": "openai", "model": "gpt-4o-mini", "fallback": { "provider": "openai", "model": "gpt-4o-mini" } },
+    "validator_pixel_safety_net": { "provider": "openai", "model": "gpt-4o-mini", "temperature": 0, "fallback": { "provider": "openai", "model": "gpt-4o-mini" } },
+    "planner_validation":         { "provider": "openai", "model": "gpt-4o-mini", "temperature": 0, "fallback": { "provider": "openai", "model": "gpt-4o-mini" } },
+    // Object detector bawaan wajib Gemini Robotics-ER (model lain tidak akurat soal koordinat).
+    // Karena tidak dipakai di mode explorer "pro", diarahkan ke OpenAI saja supaya validasi kredensial lolos.
+    "object_detector": { "provider": "openai", "model": "gpt-4o", "fallback": { "provider": "openai", "model": "gpt-4o-mini" } }
+  },
+  "agent": {
+    "flash": {
+      // Explorer "flash" = Gemini Robotics-ER saja. "pro" = loop multi-langkah yang mendukung OpenAI.
+      "explorer_mode": "pro",
+      // Ringkasan langkah di latar belakang di-hardcode ke Gemini di kode ARTEMIS -> dimatikan.
+      "step_summarizer": { "enabled": false }
+    },
+    "pro": {
+      "explorer": { "mode": "pro" },
+      // Bug ARTEMIS: node "planner_validation" tidak membaca blok "nodes" dan selalu memakai Gemini -> dimatikan.
+      "planner_validation": { "enabled": false }
+    }
+  }
+}

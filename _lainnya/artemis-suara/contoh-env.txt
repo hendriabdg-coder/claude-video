@@ -1,0 +1,19 @@
+# Salin file ini menjadi ".env" (di folder artemis-suara) lalu isi.
+# File .env tidak ikut masuk git (sudah di .gitignore).
+
+# Kunci API dari akun OpenAI kamu (https://platform.openai.com/api-keys)
+OPENAI_API_KEY=
+
+# Model suara real-time dan suaranya
+REALTIME_MODEL=gpt-realtime
+REALTIME_VOICE=marin
+TRANSCRIBE_MODEL=gpt-4o-mini-transcribe
+
+# Alamat daemon ARTEMIS (default sudah benar kalau ARTEMIS jalan di PC yang sama)
+ARTEMIS_URL=http://127.0.0.1:8000
+# flash = cepat (default) | pro = rencana + verifikasi (lebih lambat, lebih mahal)
+ARTEMIS_PROFILE=flash
+# Isi kalau ada lebih dari satu HP/emulator (lihat: adb devices)
+DEVICE_SERIAL=
+
+PORT=8765

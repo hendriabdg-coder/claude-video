@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ARTEMIS Suara</title>
+<style>
+  :root { --bg:#0e1116; --panel:#171b22; --line:#262c36; --text:#e8ebf0; --muted:#8b94a3; --accent:#4f8cff; --ok:#2fbf71; --bad:#ef5350; }
+  * { box-sizing:border-box; }
+  body { margin:0; height:100dvh; display:flex; flex-direction:column; background:var(--bg); color:var(--text);
+         font:15px/1.45 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  header { display:flex; align-items:center; gap:10px; padding:12px 14px; border-bottom:1px solid var(--line); }
+  header h1 { font-size:16px; margin:0; flex:1; }
+  #status { font-size:12px; color:var(--muted); }
+  #task { display:none; margin:8px 14px 0; padding:8px 10px; border:1px solid var(--line); border-radius:10px;
+          background:var(--panel); font-size:13px; }
+  #log { flex:1; overflow-y:auto; padding:12px 14px; display:flex; flex-direction:column; gap:8px; }
+  .msg { max-width:85%; padding:8px 11px; border-radius:12px; white-space:pre-wrap; word-wrap:break-word; }
+  .user { align-self:flex-end; background:var(--accent); color:#fff; }
+  .ai { align-self:flex-start; background:var(--panel); border:1px solid var(--line); }
+  .sys { align-self:center; font-size:12px; color:var(--muted); text-align:center; }
+  .err { color:var(--bad); }
+  footer { display:flex; gap:8px; padding:10px 12px calc(10px + env(safe-area-inset-bottom)); border-top:1px solid var(--line); }
+  #text { flex:1; padding:10px 12px; border-radius:22px; border:1px solid var(--line); background:var(--panel);
+          color:var(--text); font-size:15px; }
+  button { border:0; border-radius:22px; padding:0 14px; height:42px; font-size:14px; font-weight:600; cursor:pointer;
+           background:var(--panel); color:var(--text); border:1px solid var(--line); }
+  button.primary { background:var(--accent); color:#fff; border-color:var(--accent); }
+  button.live { background:var(--ok); border-color:var(--ok); color:#fff; }
+  button.off { background:var(--bad); border-color:var(--bad); color:#fff; }
+  button:disabled { opacity:.45; }
+</style>
+</head>
+<body>
+<header>
+  <h1>ARTEMIS Suara</h1>
+  <span id="status">belum terhubung</span>
+  <button id="connect" class="primary">Mulai</button>
+</header>
+<div id="task"></div>
+<div id="log"></div>
+<footer>
+  <button id="mic" disabled title="Nyalakan/matikan mikrofon">🎤</button>
+  <input id="text" placeholder="Ketik perintah atau pertanyaan…" autocomplete="off" disabled>
+  <button id="send" disabled>Kirim</button>
+  <button id="stop" disabled title="Hentikan tugas di HP">■</button>
+</footer>
+<audio id="speaker" autoplay></audio>
+
+<script>
+const $ = (id) => document.getElementById(id);
+const log = $("log");
+let pc = null, dc = null, micTrack = null;
+let responseActive = false;  // model sedang menghasilkan jawaban
+let toolsRunning = false;    // sedang menunggu hasil tool dari ARTEMIS
+let wantResponse = false;    // ada input yang menunggu dijawab
+const pendingNotices = [];   // notifikasi tugas yang menunggu giliran
+const handledCalls = new Set();
+let aiBubble = null;         // bubble jawaban AI yang sedang di-stream
+
+function add(cls, text) {
+  const el = document.createElement("div");
+  el.className = "msg " + cls;
+  el.textContent = text;
+  log.appendChild(el);
+  log.scrollTop = log.scrollHeight;
+  return el;
+}
+const setStatus = (t) => $("status").textContent = t;
+function showTask(text) {
+  const box = $("task");
+  box.style.display = text ? "block" : "none";
+  box.textContent = text || "";
+}
+
+function send(event) {
+  if (dc && dc.readyState === "open") dc.send(JSON.stringify(event));
+}
+
+// Hanya boleh ada satu response aktif; kalau sibuk, tunda sampai response.done.
+function requestResponse() {
+  if (responseActive || toolsRunning) { wantResponse = true; return; }
+  wantResponse = false;
+  responseActive = true;
+  send({ type: "response.create" });
+}
+function afterIdle() {
+  if (responseActive || toolsRunning) return;
+  flushNotices();
+  if (wantResponse) requestResponse();
+}
+
+// ------------------------------------------------------------ koneksi
+async function connect() {
+  $("connect").disabled = true;
+  setStatus("menghubungkan…");
+  try {
+    const sess = await fetch("/session", { method: "POST" });
+    if (!sess.ok) throw new Error((await sess.json()).detail || sess.statusText);
+    const { client_secret } = await sess.json();
+
+    pc = new RTCPeerConnection();
+    pc.ontrack = (e) => { $("speaker").srcObject = e.streams[0]; };
+    pc.onconnectionstatechange = () => {
+      if (["failed", "disconnected", "closed"].includes(pc.connectionState)) disconnect("koneksi terputus");
+    };
+
+    const mic = await navigator.mediaDevices.getUserMedia({
+      audio: { echoCancellation: true, noiseSuppression: true, autoGainControl: true },
+    });
+    micTrack = mic.getAudioTracks()[0];
+    pc.addTrack(micTrack, mic);
+
+    dc = pc.createDataChannel("oai-events");
+    dc.onmessage = (e) => onEvent(JSON.parse(e.data));
+    dc.onopen = () => {
+      setStatus("terhubung — silakan bicara atau ketik");
+      ["mic", "text", "send", "stop"].forEach((id) => $(id).disabled = false);
+      $("mic").className = "live";
+      $("connect").textContent = "Putus";
+      $("connect").className = "";
+      $("connect").disabled = false;
+      add("sys", "Tersambung. Bicara langsung (boleh memotong AI kapan saja) atau ketik di bawah.");
+    };
+
+    const offer = await pc.createOffer();
+    await pc.setLocalDescription(offer);
+    const sdp = await fetch("https://api.openai.com/v1/realtime/calls", {
+      method: "POST",
+      body: offer.sdp,
+      headers: { Authorization: `Bearer ${client_secret}`, "Content-Type": "application/sdp" },
+    });
+    if (!sdp.ok) throw new Error("WebRTC ditolak: " + (await sdp.text()).slice(0, 300));
+    await pc.setRemoteDescription({ type: "answer", sdp: await sdp.text() });
+  } catch (err) {
+    add("sys err", "Gagal tersambung: " + err.message);
+    disconnect("belum terhubung");
+  }
+}
+
+function disconnect(reason) {
+  try { dc && dc.close(); } catch {}
+  try { pc && pc.getSenders().forEach((s) => s.track && s.track.stop()); pc && pc.close(); } catch {}
+  pc = dc = micTrack = null;
+  responseActive = toolsRunning = wantResponse = false;
+  ["mic", "text", "send", "stop"].forEach((id) => $(id).disabled = true);
+  $("mic").className = "";
+  $("connect").textContent = "Mulai";
+  $("connect").className = "primary";
+  $("connect").disabled = false;
+  setStatus(reason || "terputus");
+}
+
+// ------------------------------------------------------------ event dari OpenAI Realtime
+function onEvent(ev) {
+  switch (ev.type) {
+    case "input_audio_buffer.speech_started":
+      setStatus("mendengarkan…");
+      break;
+    case "conversation.item.input_audio_transcription.completed":
+      if (ev.transcript && ev.transcript.trim()) add("user", "🎤 " + ev.transcript.trim());
+      break;
+    case "response.created":
+      responseActive = true;
+      aiBubble = null;
+      setStatus("AI menjawab…");
+      break;
+    case "response.output_audio_transcript.delta":
+    case "response.audio_transcript.delta":
+    case "response.output_text.delta":
+    case "response.text.delta":
+      if (!aiBubble) aiBubble = add("ai", "");
+      aiBubble.textContent += ev.delta || "";
+      log.scrollTop = log.scrollHeight;
+      break;
+    case "response.done":
+      responseActive = false;
+      aiBubble = null;
+      setStatus("terhubung");
+      handleFunctionCalls(ev.response).finally(afterIdle);
+      break;
+    case "error":
+      add("sys err", "Error: " + (ev.error?.message || JSON.stringify(ev.error)));
+      // Kalau error-nya bukan "masih ada response aktif", jangan biarkan antrean terkunci.
+      if (ev.error?.code !== "conversation_already_has_active_response") { responseActive = false; afterIdle(); }
+      break;
+  }
+}
+
+async function handleFunctionCalls(response) {
+  const calls = (response?.output || []).filter((o) => o.type === "function_call" && !handledCalls.has(o.call_id));
+  if (!calls.length) return;
+  toolsRunning = true;
+  for (const call of calls) {
+    handledCalls.add(call.call_id);
+    let args = {};
+    try { args = JSON.parse(call.arguments || "{}"); } catch {}
+    add("sys", `⚙️ ${call.name}${args.tugas ? ": " + args.tugas : ""}`);
+    let result;
+    try {
+      const r = await fetch("/tool/" + call.name, {
+        method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(args),
+      });
+      result = await r.json();
+    } catch (err) {
+      result = { ok: false, pesan: "Server jembatan tidak bisa dihubungi: " + err.message };
+    }
+    if (call.name === "jalankan_tugas" && result.ok) showTask("⏳ Sedang dikerjakan: " + args.tugas);
+    send({ type: "conversation.item.create",
+           item: { type: "function_call_output", call_id: call.call_id, output: JSON.stringify(result) } });
+  }
+  toolsRunning = false;
+  requestResponse();
+}
+
+// ------------------------------------------------------------ kabar tugas dari ARTEMIS (SSE)
+function flushNotices() {
+  if (responseActive || toolsRunning || !pendingNotices.length || !dc || dc.readyState !== "open") return;
+  const text = pendingNotices.splice(0).join("\n\n");
+  send({ type: "conversation.item.create",
+         item: { type: "message", role: "user", content: [{ type: "input_text", text }] } });
+  requestResponse();
+}
+
+const events = new EventSource("/events");
+events.onmessage = (e) => {
+  const ev = JSON.parse(e.data);
+  if (ev.type === "task_status") {
+    showTask(`⏳ Status tugas: ${ev.status}`);
+  } else if (ev.type === "task_done") {
+    showTask("");
+    add("sys", `${ev.succeeded ? "✅" : "⚠️"} Tugas ${ev.status}: ${ev.goal}`);
+    pendingNotices.push(
+      `[NOTIFIKASI SISTEM] Tugas di HP selesai.\nTugas: ${ev.goal}\nStatus: ${ev.status}` +
+      (ev.output ? `\nHasil: ${ev.output}` : "") + (ev.error ? `\nError: ${ev.error}` : "") +
+      "\nSampaikan hasilnya ke pengguna secara singkat."
+    );
+    flushNotices();
+  } else if (ev.type === "task_error") {
+    add("sys err", ev.error);
+  }
+};
+
+// ------------------------------------------------------------ tombol
+$("connect").onclick = () => (pc ? disconnect("terputus") : connect());
+
+$("mic").onclick = () => {
+  if (!micTrack) return;
+  micTrack.enabled = !micTrack.enabled;
+  $("mic").className = micTrack.enabled ? "live" : "off";
+  setStatus(micTrack.enabled ? "mic nyala" : "mic mati — mode ketik");
+};
+
+function sendText() {
+  const text = $("text").value.trim();
+  if (!text) return;
+  $("text").value = "";
+  add("user", text);
+  if (responseActive) send({ type: "response.cancel" });   // ketikan baru memotong jawaban AI
+  send({ type: "conversation.item.create",
+         item: { type: "message", role: "user", content: [{ type: "input_text", text }] } });
+  requestResponse();   // langsung jalan kalau AI diam; kalau tidak, setelah response.done
+}
+$("send").onclick = sendText;
+$("text").addEventListener("keydown", (e) => { if (e.key === "Enter") sendText(); });
+
+$("stop").onclick = async () => {
+  const r = await fetch("/tool/hentikan_tugas", { method: "POST", headers: { "Content-Type": "application/json" }, body: "{}" });
+  add("sys", "■ " + (await r.json()).pesan);
+};
+</script>
+</body>
+</html>
