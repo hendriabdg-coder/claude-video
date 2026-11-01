@@ -14,6 +14,9 @@ jobs:
     defaults:
       run:
         working-directory: _lainnya/asisten-hp
+    env:
+      # AGP mengambil debug.keystore dari folder ini.
+      ANDROID_USER_HOME: /home/runner/.android-user
     steps:
       - uses: actions/checkout@v4
 
@@ -28,11 +31,20 @@ jobs:
 
       # Kunci tanda tangan debug yang sama dipakai ulang, supaya APK baru bisa
       # dipasang menimpa versi lama tanpa uninstall (pengaturan & API key tetap).
-      - name: Simpan kunci debug antar-build
+      - name: Ambil kunci debug dari cache
         uses: actions/cache@v4
         with:
-          path: ~/.android/debug.keystore
-          key: asisten-hp-debug-keystore-v1
+          path: /home/runner/.android-user/debug.keystore
+          key: asisten-hp-debug-keystore-v2
+
+      - name: Buat kunci debug (kalau belum ada)
+        run: |
+          mkdir -p "$ANDROID_USER_HOME"
+          if [ ! -f "$ANDROID_USER_HOME/debug.keystore" ]; then
+            keytool -genkeypair -keystore "$ANDROID_USER_HOME/debug.keystore" -storepass android \
+              -alias androiddebugkey -keypass android -keyalg RSA -keysize 2048 -validity 10000 \
+              -dname "CN=Android Debug,O=Android,C=US"
+          fi
 
       - uses: gradle/actions/setup-gradle@v4
         with:

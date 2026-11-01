@@ -120,7 +120,7 @@ class PhoneAgent(
 
     private fun describeArgs(args: JSONObject): String =
         args.keys().asSequence().filter { it != "alasan" }.joinToString(", ") { k ->
-            val v = args.opt(k).toString()
+            val v: String = args.opt(k)?.toString() ?: ""
             "$k=${if (v.length > 40) v.take(40) + "…" else v}"
         }
 
