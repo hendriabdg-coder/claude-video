@@ -23,5 +23,130 @@
   34.47
  ],
  "jumlah_shot": 18,
- "rata_panjang_shot_dtk": 2.55
+ "rata_panjang_shot_dtk": 2.55,
+ "transkrip": {
+  "bahasa": "id",
+  "segmen": [
+   {
+    "mulai": 0.0,
+    "selesai": 1.28,
+    "teks": "Tau gak diritanya Samsung itu apa?"
+   },
+   {
+    "mulai": 1.46,
+    "selesai": 3.88,
+    "teks": "Susah banget bikin orang pindah dari iOS ke Android"
+   },
+   {
+    "mulai": 3.88,
+    "selesai": 7.22,
+    "teks": "Karena untuk bikin customer pindah dari brand A ke brand B"
+   },
+   {
+    "mulai": 7.22,
+    "selesai": 11.34,
+    "teks": "Itu bisa 5-20 kali lipat lebih mahal daripada ngeritain customer lama"
+   },
+   {
+    "mulai": 11.34,
+    "selesai": 12.66,
+    "teks": "Dan gue baru tau tahun ini"
+   },
+   {
+    "mulai": 12.66,
+    "selesai": 14.42,
+    "teks": "Pas mereka launching Z Fold 8 Series"
+   },
+   {
+    "mulai": 14.42,
+    "selesai": 16.04,
+    "teks": "Itu tuh jadi gampang banget"
+   },
+   {
+    "mulai": 16.04,
+    "selesai": 17.7,
+    "teks": "Pinter sih, jadi mereka ada smart switch"
+   },
+   {
+    "mulai": 17.7,
+    "selesai": 19.96,
+    "teks": "Kalau lo mau pindahin semua data lo dari iOS"
+   },
+   {
+    "mulai": 19.96,
+    "selesai": 21.48,
+    "teks": "Literally tinggal scan QR"
+   },
+   {
+    "mulai": 21.48,
+    "selesai": 23.08,
+    "teks": "Dari foto, kontak, wifi"
+   },
+   {
+    "mulai": 23.08,
+    "selesai": 24.94,
+    "teks": "Semuanya tuh langsung pindah gitu aja"
+   },
+   {
+    "mulai": 24.94,
+    "selesai": 26.02,
+    "teks": "Terus nanti ada yang komplain"
+   },
+   {
+    "mulai": 26.02,
+    "selesai": 27.44,
+    "teks": "Di iOS gue bisa airdrop"
+   },
+   {
+    "mulai": 27.44,
+    "selesai": 29.2,
+    "teks": "Lo tau gak? Samsung ternyata udah bisa"
+   },
+   {
+    "mulai": 29.2,
+    "selesai": 31.84,
+    "teks": "Quick share mereka udah bisa ngirim sama terima file dari airdrop"
+   },
+   {
+    "mulai": 31.84,
+    "selesai": 34.42,
+    "teks": "Kalian tau kan berapa banyak orang switch dari iOS ke Z Fold 8"
+   },
+   {
+    "mulai": 34.42,
+    "selesai": 38.08,
+    "teks": "Gara-gara itu, gue sekarang pake 2 Fold anjir"
+   },
+   {
+    "mulai": 38.08,
+    "selesai": 40.3,
+    "teks": "Dan udah gak rasa painful lagi pindah-pindah"
+   },
+   {
+    "mulai": 40.3,
+    "selesai": 41.26,
+    "teks": "Kalau kalian sendiri gimana?"
+   },
+   {
+    "mulai": 41.34,
+    "selesai": 42.78,
+    "teks": "Kalian masih setia sama HP lama?"
+   },
+   {
+    "mulai": 43.0,
+    "selesai": 44.3,
+    "teks": "Atau karena gampang pindah?"
+   },
+   {
+    "mulai": 44.4,
+    "selesai": 45.7,
+    "teks": "Jadi ya makin gak setia"
+   }
+  ],
+  "jumlah_kata": 163,
+  "kata_per_dtk_bicara": 3.67,
+  "kata_per_dtk_total": 3.55,
+  "kata_pertama_dtk": 0.0,
+  "ucapan_3dtk_awal": "Tau gak diritanya Samsung itu apa? Susah banget bikin orang pindah dari iOS ke Android"
+ }
 }

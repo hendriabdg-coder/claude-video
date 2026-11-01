@@ -23,5 +23,140 @@
   52.53
  ],
  "jumlah_shot": 18,
- "rata_panjang_shot_dtk": 3.18
+ "rata_panjang_shot_dtk": 3.18,
+ "transkrip": {
+  "bahasa": "id",
+  "segmen": [
+   {
+    "mulai": 0.0,
+    "selesai": 3.1,
+    "teks": "Kalau kalian ngerasa multitasking di hape itu bulls**t, kalian belum kenal 2 hape ini."
+   },
+   {
+    "mulai": 3.22,
+    "selesai": 5.8,
+    "teks": "Jadi gue sebagai creator itu harus pantau minimal 3 sosnya."
+   },
+   {
+    "mulai": 5.9,
+    "selesai": 8.34,
+    "teks": "Sering buat liat analytics, tapi harus ngelakuin kompetitor research juga."
+   },
+   {
+    "mulai": 8.52,
+    "selesai": 10.12,
+    "teks": "Contohnya gini nih, gue lagi research di Gemini."
+   },
+   {
+    "mulai": 10.32,
+    "selesai": 12.74,
+    "teks": "Sambil gue bisa pantau YouTube studio sama Instagram gue."
+   },
+   {
+    "mulai": 12.86,
+    "selesai": 14.1,
+    "teks": "Terus tiba-tiba Fereng ngirim video."
+   },
+   {
+    "mulai": 14.26,
+    "selesai": 16.56,
+    "teks": "Terus gue bisa juga buka TikToknya langsung di floating window."
+   },
+   {
+    "mulai": 16.7,
+    "selesai": 20.32,
+    "teks": "Biasanya gue harus ganteng-ganti aplikasi, tapi ini bahkan multi-windownya bisa gue save."
+   },
+   {
+    "mulai": 20.46,
+    "selesai": 22.28,
+    "teks": "Jadi sekali buka langsung 4 aplikasi itu."
+   },
+   {
+    "mulai": 22.42,
+    "selesai": 24.68,
+    "teks": "Buat yang nggak tau, ini Galaxy Z Fold 8 Ultra."
+   },
+   {
+    "mulai": 25.08,
+    "selesai": 26.5,
+    "teks": "Dan yang ini Z Fold 8."
+   },
+   {
+    "mulai": 26.7,
+    "selesai": 27.62,
+    "teks": "Dan ini Watch Ultra."
+   },
+   {
+    "mulai": 27.78,
+    "selesai": 28.4,
+    "teks": "Samsung Ambassador."
+   },
+   {
+    "mulai": 28.4,
+    "selesai": 31.32,
+    "teks": "Buat yang nggak ngerti, tahun ini yang kerasa banget tuh baterainya."
+   },
+   {
+    "mulai": 31.38,
+    "selesai": 35.14,
+    "teks": "Gue pake seharian dari pagi yang Ultra, 5000 mAh, nggak mungkin abis menurut gue."
+   },
+   {
+    "mulai": 35.22,
+    "selesai": 36.66,
+    "teks": "Dan kerasa banget inner screen-nya."
+   },
+   {
+    "mulai": 36.86,
+    "selesai": 39.02,
+    "teks": "Kalau yang ngurus bisnis sehari-hari buka dokumen, enak banget."
+   },
+   {
+    "mulai": 39.22,
+    "selesai": 40.94,
+    "teks": "Dan super-super tipis."
+   },
+   {
+    "mulai": 41.18,
+    "selesai": 43.32,
+    "teks": "Kalau kalian tarik, kalian bisa ke samsung.com.id."
+   },
+   {
+    "mulai": 43.56,
+    "selesai": 44.8,
+    "teks": "Masih banyak promo yang menarik."
+   },
+   {
+    "mulai": 44.92,
+    "selesai": 48.2,
+    "teks": "Atau kalian bisa ke Samsung Store terdekat buruan karena promonya itu terbatas."
+   },
+   {
+    "mulai": 48.36,
+    "selesai": 49.98,
+    "teks": "Gimana menurut kalian? Multitasking di hape."
+   },
+   {
+    "mulai": 50.12,
+    "selesai": 51.84,
+    "teks": "Anyway, ada yang ngerasain struggle kayak,"
+   },
+   {
+    "mulai": 52.02,
+    "selesai": 54.84,
+    "teks": "gue nggak gonta-ganti apps sampai akhirnya lupa tadi mau buka apa."
+   },
+   {
+    "mulai": 54.98,
+    "selesai": 56.64,
+    "teks": "Kalau gue sih udah kebantu sama hape ini."
+   }
+  ],
+  "jumlah_kata": 213,
+  "kata_per_dtk_bicara": 4.13,
+  "kata_per_dtk_total": 3.72,
+  "kata_pertama_dtk": 0.0,
+  "ucapan_3dtk_awal": "Kalau kalian ngerasa multitasking di hape itu bulls**t, kalian belum kenal 2 hape ini."
+ }
 }
