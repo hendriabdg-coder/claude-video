@@ -27,6 +27,11 @@ android {
     kotlinOptions {
         jvmTarget = "17"
     }
+    lint {
+        // Tangkap pemakaian API yang lebih baru dari minSdk (crash di HP Android lama).
+        checkOnly += setOf("NewApi", "InlinedApi")
+        abortOnError = true
+    }
 }
 
 dependencies {

@@ -39,7 +39,7 @@ jobs:
           gradle-version: "8.14.3"
 
       - name: Build APK
-        run: gradle assembleDebug --no-daemon --stacktrace
+        run: gradle assembleDebug lintDebug --no-daemon --stacktrace
 
       - uses: actions/upload-artifact@v4
         with:

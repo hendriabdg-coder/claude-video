@@ -259,7 +259,12 @@ class AgentAccessibilityService : AccessibilityService() {
         if (q.isEmpty()) return null
         val pm = packageManager
         val launcher = Intent(Intent.ACTION_MAIN).addCategory(Intent.CATEGORY_LAUNCHER)
-        val apps = pm.queryIntentActivities(launcher, PackageManager.ResolveInfoFlags.of(0L))
+        val apps = if (android.os.Build.VERSION.SDK_INT >= 33) {
+            pm.queryIntentActivities(launcher, PackageManager.ResolveInfoFlags.of(0L))
+        } else {
+            @Suppress("DEPRECATION")
+            pm.queryIntentActivities(launcher, 0) // Android 11-12: ResolveInfoFlags belum ada
+        }
         val best = apps.mapNotNull { ri ->
             val label = ri.loadLabel(pm).toString()
             val l = label.lowercase()
