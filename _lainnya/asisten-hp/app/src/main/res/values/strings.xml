@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Asisten HP</string>
+    <string name="a11y_desc">Mengizinkan Asisten HP membaca layar, mengambil screenshot, dan mengetuk/menggeser/mengetik atas perintahmu. Tidak ada data yang dikirim selain ke OpenAI saat tugas berjalan.</string>
+</resources>
