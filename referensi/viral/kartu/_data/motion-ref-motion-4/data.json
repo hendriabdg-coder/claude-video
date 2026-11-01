@@ -1,0 +1,191 @@
+{
+ "file": "motion\\ref-motion-4.mp4",
+ "jenis": "motion",
+ "durasi": 74.18,
+ "langkah_sheet_dtk": 1.24,
+ "potongan": [
+  12.63,
+  13.1,
+  20.67,
+  21.13,
+  38.47,
+  38.93,
+  48.47,
+  48.93,
+  60.17,
+  60.83,
+  63.67
+ ],
+ "jumlah_shot": 12,
+ "rata_panjang_shot_dtk": 6.18,
+ "transkrip": {
+  "bahasa": "id",
+  "segmen": [
+   {
+    "mulai": 0.0,
+    "selesai": 3.04,
+    "teks": "Gue bikin video ini semuanya cuma pake cloud."
+   },
+   {
+    "mulai": 3.36,
+    "selesai": 5.48,
+    "teks": "Pertama, kasih cloud ide video lo."
+   },
+   {
+    "mulai": 5.72,
+    "selesai": 9.16,
+    "teks": "Contoh, buatin naskah 30 detik tentang produk kopi lokal."
+   },
+   {
+    "mulai": 9.44,
+    "selesai": 12.22,
+    "teks": "Hasilnya langsung jadi narasi plus pembagian adegan."
+   },
+   {
+    "mulai": 12.66,
+    "selesai": 14.58,
+    "teks": "Kedua, minta cloud bikin visual."
+   },
+   {
+    "mulai": 14.78,
+    "selesai": 17.9,
+    "teks": "Buat motion graphic, diagram, atau animasi interaktif."
+   },
+   {
+    "mulai": 18.22,
+    "selesai": 20.36,
+    "teks": "Cloud bisa bikin visualnya langsung di chat."
+   },
+   {
+    "mulai": 20.78,
+    "selesai": 23.2,
+    "teks": "Ketiga, rekam layar hasil visualnya,"
+   },
+   {
+    "mulai": 23.38,
+    "selesai": 26.9,
+    "teks": "lalu gabungkan dengan voiceover dan musik di editor video favorit lo."
+   },
+   {
+    "mulai": 27.42,
+    "selesai": 28.42,
+    "teks": "Ini motion graphic."
+   },
+   {
+    "mulai": 28.42,
+    "selesai": 31.72,
+    "teks": "Gue minta cloud bikin animasi logo yang muncul dengan efek pop,"
+   },
+   {
+    "mulai": 32.02,
+    "selesai": 33.16,
+    "teks": "lalu partikel berjatuh."
+   },
+   {
+    "mulai": 33.48,
+    "selesai": 34.74,
+    "teks": "Gaya visualnya campuran,"
+   },
+   {
+    "mulai": 34.96,
+    "selesai": 37.86,
+    "teks": "flat design dengan sedikit gradasi dan efek glow."
+   },
+   {
+    "mulai": 38.52,
+    "selesai": 39.76,
+    "teks": "Lalu ini diagram alur."
+   },
+   {
+    "mulai": 40.04,
+    "selesai": 43.34,
+    "teks": "Cloud bisa bikin visual seperti ini kalau lo butuh jelasin proses."
+   },
+   {
+    "mulai": 43.68,
+    "selesai": 45.84,
+    "teks": "Kotaknya animasi masuk satu-satu,"
+   },
+   {
+    "mulai": 46.1,
+    "selesai": 47.92,
+    "teks": "pake warna netral dan font bersih."
+   },
+   {
+    "mulai": 48.52,
+    "selesai": 49.46,
+    "teks": "Ini grafik data."
+   },
+   {
+    "mulai": 49.74,
+    "selesai": 50.8,
+    "teks": "Lo tinggal kasih angkanya,"
+   },
+   {
+    "mulai": 51.04,
+    "selesai": 54.48,
+    "teks": "cloud bikin chart yang animasinya halus dan warnanya sesuai brand lo."
+   },
+   {
+    "mulai": 54.96,
+    "selesai": 56.42,
+    "teks": "Dan ini text kinetic."
+   },
+   {
+    "mulai": 56.42,
+    "selesai": 58.7,
+    "teks": "Kata-katanya bergerak mengikuti ritme musik."
+   },
+   {
+    "mulai": 58.88,
+    "selesai": 59.72,
+    "teks": "Gaya campuran."
+   },
+   {
+    "mulai": 59.94,
+    "selesai": 61.54,
+    "teks": "Minimalis, tipografi tebal,"
+   },
+   {
+    "mulai": 61.72,
+    "selesai": 62.74,
+    "teks": "dengan transisi cepat."
+   },
+   {
+    "mulai": 63.26,
+    "selesai": 66.82,
+    "teks": "Jadi, lo cuma butuh cloud untuk naskah, visual, dan animasi."
+   },
+   {
+    "mulai": 67.02,
+    "selesai": 67.72,
+    "teks": "Tinggal rakit."
+   },
+   {
+    "mulai": 68.12,
+    "selesai": 68.96,
+    "teks": "Gimana menurut lo?"
+   },
+   {
+    "mulai": 69.16,
+    "selesai": 70.62,
+    "teks": "Perlu gue buatin tutorialnya kah?"
+   },
+   {
+    "mulai": 70.9,
+    "selesai": 71.88,
+    "teks": "Kalau mau tutorialnya,"
+   },
+   {
+    "mulai": 72.0,
+    "selesai": 73.14,
+    "teks": "follow ya biar gak ketinggalan."
+   }
+  ],
+  "jumlah_kata": 183,
+  "kata_per_dtk_bicara": 2.95,
+  "kata_per_dtk_total": 2.47,
+  "kata_pertama_dtk": 0.0,
+  "ucapan_3dtk_awal": "Gue bikin video ini semuanya cuma pake cloud."
+ }
+}

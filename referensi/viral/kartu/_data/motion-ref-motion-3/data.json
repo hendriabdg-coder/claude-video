@@ -1,0 +1,84 @@
+{
+ "file": "motion\\ref-motion-3.mp4",
+ "jenis": "motion",
+ "durasi": 59.63,
+ "langkah_sheet_dtk": 1.0,
+ "potongan": [],
+ "jumlah_shot": 1,
+ "rata_panjang_shot_dtk": 59.63,
+ "transkrip": {
+  "bahasa": "id",
+  "segmen": [
+   {
+    "mulai": 0.0,
+    "selesai": 4.9,
+    "teks": "Lo tau gak berapa duit yang bisa lo punya kalau berhenti ngopi selama 5 tahun?"
+   },
+   {
+    "mulai": 5.64,
+    "selesai": 8.18,
+    "teks": "Angkap aja kopi favorit lo harganya 35 ribu sehari."
+   },
+   {
+    "mulai": 8.52,
+    "selesai": 12.18,
+    "teks": "Kalau dikali 30 hari, itu sekitar 1 juta 50 ribu sebulan."
+   },
+   {
+    "mulai": 12.74,
+    "selesai": 18.74,
+    "teks": "Nah, daripada buat ngopi, uang itu lo investasikan setiap bulan dengan asumsi return 2% per bulan."
+   },
+   {
+    "mulai": 19.26,
+    "selesai": 22.56,
+    "teks": "Dalam 5 tahun, total uang yang lo setor cuma 63 juta."
+   },
+   {
+    "mulai": 22.74,
+    "selesai": 28.4,
+    "teks": "Tapi karena efek compounding, nilainya bisa jadi sekitar 148 juta rupiah."
+   },
+   {
+    "mulai": 28.4,
+    "selesai": 34.14,
+    "teks": "Kalau lo konsisten selama 10 tahun, nilainya bisa mencapai sekitar 1,02 miliar."
+   },
+   {
+    "mulai": 34.46,
+    "selesai": 37.12,
+    "teks": "Dalam 15 tahun, sekitar 7,4 miliar."
+   },
+   {
+    "mulai": 37.36,
+    "selesai": 41.06,
+    "teks": "Dan kalau 20 tahun, bisa tembus sekitar 54 miliar rupiah."
+   },
+   {
+    "mulai": 41.88,
+    "selesai": 48.0,
+    "teks": "Tapi ingat, ini simulasi dengan asumsi return 2% per bulan secara konsisten, bukan keuntungan yang dijamin."
+   },
+   {
+    "mulai": 48.34,
+    "selesai": 49.92,
+    "teks": "Hasil nyata bisa jauh berbeda."
+   },
+   {
+    "mulai": 50.5,
+    "selesai": 55.32,
+    "teks": "Coba tulis di komentar, kalau lo punya uang sebanyak itu, hal pertama yang bakal lo lakuin apa?"
+   },
+   {
+    "mulai": 55.8,
+    "selesai": 56.5,
+    "teks": "Gue penasaran."
+   }
+  ],
+  "jumlah_kata": 145,
+  "kata_per_dtk_bicara": 3.0,
+  "kata_per_dtk_total": 2.43,
+  "kata_pertama_dtk": 0.0,
+  "ucapan_3dtk_awal": "Lo tau gak berapa duit yang bisa lo punya kalau berhenti ngopi selama 5 tahun?"
+ }
+}

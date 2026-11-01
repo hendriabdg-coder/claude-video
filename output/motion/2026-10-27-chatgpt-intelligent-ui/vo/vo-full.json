@@ -1,0 +1,544 @@
+{
+ "duration": 33.216,
+ "words": [
+  {
+   "word": "ChatGPT",
+   "spoken": "ChatGPT",
+   "start": 0.06,
+   "end": 0.7,
+   "scene": 1
+  },
+  {
+   "word": "sekarang",
+   "spoken": "sekarang",
+   "start": 0.78,
+   "end": 1.1,
+   "scene": 1
+  },
+  {
+   "word": "nggak",
+   "spoken": "nggak",
+   "start": 1.14,
+   "end": 1.26,
+   "scene": 1
+  },
+  {
+   "word": "cuma",
+   "spoken": "cuma",
+   "start": 1.34,
+   "end": 1.5,
+   "scene": 1
+  },
+  {
+   "word": "jawab",
+   "spoken": "jawab",
+   "start": 1.58,
+   "end": 1.74,
+   "scene": 1
+  },
+  {
+   "word": "pakai",
+   "spoken": "pakai",
+   "start": 1.82,
+   "end": 1.98,
+   "scene": 1
+  },
+  {
+   "word": "teks.",
+   "spoken": "teks.",
+   "start": 2.14,
+   "end": 2.7,
+   "scene": 1
+  },
+  {
+   "word": "Namanya",
+   "spoken": "Namanya",
+   "start": 2.95,
+   "end": 3.43,
+   "scene": 2
+  },
+  {
+   "word": "Intelligent",
+   "spoken": "Intelligent",
+   "start": 3.55,
+   "end": 3.99,
+   "scene": 2
+  },
+  {
+   "word": "UI,",
+   "spoken": "UI,",
+   "start": 4.07,
+   "end": 4.79,
+   "scene": 2
+  },
+  {
+   "word": "rilis",
+   "spoken": "rilis",
+   "start": 4.87,
+   "end": 5.11,
+   "scene": 2
+  },
+  {
+   "word": "bareng",
+   "spoken": "bareng",
+   "start": 5.19,
+   "end": 5.39,
+   "scene": 2
+  },
+  {
+   "word": "ji-pi-ti",
+   "spoken": "ji-pi-ti",
+   "start": 5.43,
+   "end": 5.83,
+   "scene": 2
+  },
+  {
+   "word": "enam",
+   "spoken": "enam",
+   "start": 5.91,
+   "end": 6.07,
+   "scene": 2
+  },
+  {
+   "word": "tanggal",
+   "spoken": "tanggal",
+   "start": 6.23,
+   "end": 6.55,
+   "scene": 2
+  },
+  {
+   "word": "tujuh",
+   "spoken": "tujuh",
+   "start": 6.63,
+   "end": 6.83,
+   "scene": 2
+  },
+  {
+   "word": "Oktober.",
+   "spoken": "Oktober.",
+   "start": 6.87,
+   "end": 7.59,
+   "scene": 2
+  },
+  {
+   "word": "Jawabannya",
+   "spoken": "Jawabannya",
+   "start": 7.63,
+   "end": 8.15,
+   "scene": 2
+  },
+  {
+   "word": "bisa",
+   "spoken": "bisa",
+   "start": 8.23,
+   "end": 8.39,
+   "scene": 2
+  },
+  {
+   "word": "jadi",
+   "spoken": "jadi",
+   "start": 8.47,
+   "end": 8.55,
+   "scene": 2
+  },
+  {
+   "word": "grafik,",
+   "spoken": "grafik,",
+   "start": 8.63,
+   "end": 9.35,
+   "scene": 2
+  },
+  {
+   "word": "tombol,",
+   "spoken": "tombol,",
+   "start": 9.457,
+   "end": 9.99,
+   "scene": 2
+  },
+  {
+   "word": "atau",
+   "spoken": "atau",
+   "start": 10.11,
+   "end": 10.27,
+   "scene": 2
+  },
+  {
+   "word": "kalkulator.",
+   "spoken": "kalkulator.",
+   "start": 10.31,
+   "end": 11.19,
+   "scene": 2
+  },
+  {
+   "word": "ChatGPT",
+   "spoken": "ChatGPT",
+   "start": 11.27,
+   "end": 11.67,
+   "scene": 2
+  },
+  {
+   "word": "sendiri",
+   "spoken": "sendiri",
+   "start": 11.79,
+   "end": 11.99,
+   "scene": 2
+  },
+  {
+   "word": "yang",
+   "spoken": "yang",
+   "start": 12.07,
+   "end": 12.15,
+   "scene": 2
+  },
+  {
+   "word": "milih",
+   "spoken": "milih",
+   "start": 12.19,
+   "end": 12.39,
+   "scene": 2
+  },
+  {
+   "word": "formatnya.",
+   "spoken": "formatnya.",
+   "start": 12.59,
+   "end": 13.19,
+   "scene": 2
+  },
+  {
+   "word": "Pengguna",
+   "spoken": "Pengguna",
+   "start": 13.44,
+   "end": 13.76,
+   "scene": 3
+  },
+  {
+   "word": "gratis",
+   "spoken": "gratis",
+   "start": 13.84,
+   "end": 14.24,
+   "scene": 3
+  },
+  {
+   "word": "juga",
+   "spoken": "juga",
+   "start": 14.28,
+   "end": 14.48,
+   "scene": 3
+  },
+  {
+   "word": "mulai",
+   "spoken": "mulai",
+   "start": 14.56,
+   "end": 14.72,
+   "scene": 3
+  },
+  {
+   "word": "kebagian",
+   "spoken": "kebagian",
+   "start": 14.8,
+   "end": 15.28,
+   "scene": 3
+  },
+  {
+   "word": "sejak",
+   "spoken": "sejak",
+   "start": 15.36,
+   "end": 15.6,
+   "scene": 3
+  },
+  {
+   "word": "delapan",
+   "spoken": "delapan",
+   "start": 15.64,
+   "end": 15.84,
+   "scene": 3
+  },
+  {
+   "word": "Oktober,",
+   "spoken": "Oktober,",
+   "start": 15.92,
+   "end": 16.64,
+   "scene": 3
+  },
+  {
+   "word": "versi",
+   "spoken": "versi",
+   "start": 16.76,
+   "end": 16.92,
+   "scene": 3
+  },
+  {
+   "word": "dasarnya,",
+   "spoken": "dasarnya,",
+   "start": 16.96,
+   "end": 17.64,
+   "scene": 3
+  },
+  {
+   "word": "bertahap.",
+   "spoken": "bertahap.",
+   "start": 17.76,
+   "end": 18.48,
+   "scene": 3
+  },
+  {
+   "word": "Satu",
+   "spoken": "Satu",
+   "start": 18.73,
+   "end": 18.93,
+   "scene": 4
+  },
+  {
+   "word": "catatan",
+   "spoken": "catatan",
+   "start": 18.97,
+   "end": 19.37,
+   "scene": 4
+  },
+  {
+   "word": "dari",
+   "spoken": "dari",
+   "start": 19.423,
+   "end": 19.53,
+   "scene": 4
+  },
+  {
+   "word": "aku:",
+   "spoken": "aku:",
+   "start": 19.61,
+   "end": 20.17,
+   "scene": 4
+  },
+  {
+   "word": "tampilannya",
+   "spoken": "tampilannya",
+   "start": 20.277,
+   "end": 20.73,
+   "scene": 4
+  },
+  {
+   "word": "rapi,",
+   "spoken": "rapi,",
+   "start": 20.77,
+   "end": 21.45,
+   "scene": 4
+  },
+  {
+   "word": "tapi",
+   "spoken": "tapi",
+   "start": 21.53,
+   "end": 21.69,
+   "scene": 4
+  },
+  {
+   "word": "angkanya",
+   "spoken": "angkanya",
+   "start": 21.81,
+   "end": 22.33,
+   "scene": 4
+  },
+  {
+   "word": "tetap",
+   "spoken": "tetap",
+   "start": 22.41,
+   "end": 22.57,
+   "scene": 4
+  },
+  {
+   "word": "kamu",
+   "spoken": "kamu",
+   "start": 22.65,
+   "end": 22.81,
+   "scene": 4
+  },
+  {
+   "word": "cek,",
+   "spoken": "cek,",
+   "start": 22.89,
+   "end": 23.13,
+   "scene": 4
+  },
+  {
+   "word": "ya.",
+   "spoken": "ya.",
+   "start": 23.21,
+   "end": 23.53,
+   "scene": 4
+  },
+  {
+   "word": "Tiap",
+   "spoken": "Tiap",
+   "start": 23.84,
+   "end": 23.936,
+   "scene": 5
+  },
+  {
+   "word": "minggu",
+   "spoken": "minggu",
+   "start": 24.016,
+   "end": 24.416,
+   "scene": 5
+  },
+  {
+   "word": "aku",
+   "spoken": "aku",
+   "start": 24.496,
+   "end": 24.656,
+   "scene": 5
+  },
+  {
+   "word": "rangkum",
+   "spoken": "rangkum",
+   "start": 24.776,
+   "end": 25.056,
+   "scene": 5
+  },
+  {
+   "word": "update",
+   "spoken": "update",
+   "start": 25.136,
+   "end": 25.376,
+   "scene": 5
+  },
+  {
+   "word": "AI",
+   "spoken": "Ei-ai",
+   "start": 25.456,
+   "end": 25.696,
+   "scene": 5
+  },
+  {
+   "word": "yang",
+   "spoken": "yang",
+   "start": 25.776,
+   "end": 25.936,
+   "scene": 5
+  },
+  {
+   "word": "beneran",
+   "spoken": "beneran",
+   "start": 26.043,
+   "end": 26.416,
+   "scene": 5
+  },
+  {
+   "word": "kepake.",
+   "spoken": "kepake.",
+   "start": 26.496,
+   "end": 27.376,
+   "scene": 5
+  },
+  {
+   "word": "Follow",
+   "spoken": "Follow",
+   "start": 27.456,
+   "end": 27.536,
+   "scene": 5
+  },
+  {
+   "word": "dulu,",
+   "spoken": "dulu,",
+   "start": 27.576,
+   "end": 28.056,
+   "scene": 5
+  },
+  {
+   "word": "karena",
+   "spoken": "karena",
+   "start": 28.096,
+   "end": 28.336,
+   "scene": 5
+  },
+  {
+   "word": "Selasa",
+   "spoken": "Selasa",
+   "start": 28.376,
+   "end": 28.576,
+   "scene": 5
+  },
+  {
+   "word": "depannya",
+   "spoken": "depannya",
+   "start": 28.656,
+   "end": 29.136,
+   "scene": 5
+  },
+  {
+   "word": "kita",
+   "spoken": "kita",
+   "start": 29.216,
+   "end": 29.456,
+   "scene": 5
+  },
+  {
+   "word": "bahas",
+   "spoken": "bahas",
+   "start": 29.536,
+   "end": 29.776,
+   "scene": 5
+  },
+  {
+   "word": "edisi",
+   "spoken": "edisi",
+   "start": 29.816,
+   "end": 30.016,
+   "scene": 5
+  },
+  {
+   "word": "kedua.",
+   "spoken": "kedua.",
+   "start": 30.136,
+   "end": 30.856,
+   "scene": 5
+  },
+  {
+   "word": "Baidewai,",
+   "spoken": "Baidewai,",
+   "start": 30.896,
+   "end": 31.656,
+   "scene": 5
+  },
+  {
+   "word": "kamu",
+   "spoken": "kamu",
+   "start": 31.696,
+   "end": 31.776,
+   "scene": 5
+  },
+  {
+   "word": "udah",
+   "spoken": "udah",
+   "start": 31.856,
+   "end": 31.976,
+   "scene": 5
+  },
+  {
+   "word": "dapet",
+   "spoken": "dapet",
+   "start": 32.016,
+   "end": 32.176,
+   "scene": 5
+  },
+  {
+   "word": "fitur",
+   "spoken": "fitur",
+   "start": 32.256,
+   "end": 32.416,
+   "scene": 5
+  },
+  {
+   "word": "ini",
+   "spoken": "ini",
+   "start": 32.496,
+   "end": 32.656,
+   "scene": 5
+  },
+  {
+   "word": "belum?",
+   "spoken": "belum?",
+   "start": 32.776,
+   "end": 33.296,
+   "scene": 5
+  }
+ ]
+}

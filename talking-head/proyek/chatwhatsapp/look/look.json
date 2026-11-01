@@ -1,0 +1,39 @@
+{
+ "width": 1440,
+ "height": 2560,
+ "fps": 30.0,
+ "duration": 57.376009,
+ "cuts": [
+  540,
+  780,
+  1002,
+  1242
+ ],
+ "shots": [
+  {
+   "start_s": 0.0,
+   "end_s": 18.0,
+   "grid": "videos/chatwhatsapp/look\\grid_shot0.jpg"
+  },
+  {
+   "start_s": 18.0,
+   "end_s": 26.0,
+   "grid": "videos/chatwhatsapp/look\\grid_shot1.jpg"
+  },
+  {
+   "start_s": 26.0,
+   "end_s": 33.4,
+   "grid": "videos/chatwhatsapp/look\\grid_shot2.jpg"
+  },
+  {
+   "start_s": 33.4,
+   "end_s": 41.4,
+   "grid": "videos/chatwhatsapp/look\\grid_shot3.jpg"
+  },
+  {
+   "start_s": 41.4,
+   "end_s": 57.367,
+   "grid": "videos/chatwhatsapp/look\\grid_shot4.jpg"
+  }
+ ]
+}

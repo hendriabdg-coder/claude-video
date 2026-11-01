@@ -1,0 +1,139 @@
+{
+  "text": "[serious] Tapi... di tes Google sendiri, kemampuan nyerangnya ikut naik. Dan di uji Anthropic, satu model AI terbuka juga berhasil bikin alat pembobol.",
+  "spoken": "[serious] Tapi... di tes Google sendiri, kemampuan nyerangnya ikut naik. Dan di uji Anthropic, satu model Ei-ai terbuka juga berhasil bikin alat pembobol.",
+  "duration": 9.12,
+  "words": [
+    {
+      "word": "Tapi...",
+      "spoken": "Tapi...",
+      "start": 0.08,
+      "end": 1.04
+    },
+    {
+      "word": "di",
+      "spoken": "di",
+      "start": 1.12,
+      "end": 1.2
+    },
+    {
+      "word": "tes",
+      "spoken": "tes",
+      "start": 1.28,
+      "end": 1.36
+    },
+    {
+      "word": "Google",
+      "spoken": "Google",
+      "start": 1.44,
+      "end": 1.68
+    },
+    {
+      "word": "sendiri,",
+      "spoken": "sendiri,",
+      "start": 1.8,
+      "end": 2.4
+    },
+    {
+      "word": "kemampuan",
+      "spoken": "kemampuan",
+      "start": 2.453,
+      "end": 2.8
+    },
+    {
+      "word": "nyerangnya",
+      "spoken": "nyerangnya",
+      "start": 2.84,
+      "end": 3.2
+    },
+    {
+      "word": "ikut",
+      "spoken": "ikut",
+      "start": 3.32,
+      "end": 3.44
+    },
+    {
+      "word": "naik.",
+      "spoken": "naik.",
+      "start": 3.52,
+      "end": 4.24
+    },
+    {
+      "word": "Dan",
+      "spoken": "Dan",
+      "start": 4.32,
+      "end": 4.4
+    },
+    {
+      "word": "di",
+      "spoken": "di",
+      "start": 4.44,
+      "end": 4.48
+    },
+    {
+      "word": "uji",
+      "spoken": "uji",
+      "start": 4.52,
+      "end": 4.72
+    },
+    {
+      "word": "Anthropic,",
+      "spoken": "Anthropic,",
+      "start": 4.8,
+      "end": 5.52
+    },
+    {
+      "word": "satu",
+      "spoken": "satu",
+      "start": 5.6,
+      "end": 5.76
+    },
+    {
+      "word": "model",
+      "spoken": "model",
+      "start": 5.84,
+      "end": 6.08
+    },
+    {
+      "word": "AI",
+      "spoken": "Ei-ai",
+      "start": 6.16,
+      "end": 6.48
+    },
+    {
+      "word": "terbuka",
+      "spoken": "terbuka",
+      "start": 6.56,
+      "end": 6.96
+    },
+    {
+      "word": "juga",
+      "spoken": "juga",
+      "start": 7.12,
+      "end": 7.28
+    },
+    {
+      "word": "berhasil",
+      "spoken": "berhasil",
+      "start": 7.4,
+      "end": 7.84
+    },
+    {
+      "word": "bikin",
+      "spoken": "bikin",
+      "start": 7.88,
+      "end": 8.08
+    },
+    {
+      "word": "alat",
+      "spoken": "alat",
+      "start": 8.12,
+      "end": 8.24
+    },
+    {
+      "word": "pembobol.",
+      "spoken": "pembobol.",
+      "start": 8.32,
+      "end": 9.12
+    }
+  ]
+}

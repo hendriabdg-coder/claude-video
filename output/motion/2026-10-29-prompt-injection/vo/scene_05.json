@@ -1,0 +1,121 @@
+{
+  "text": "[warm] Ingat, boleh dibaca bukan berarti boleh dituruti. Pertanyaannya, kamu sekarang pakai AI buat ngobrol doang, atau udah buat kerja?",
+  "spoken": "[warm] Ingat, boleh dibaca bukan berarti boleh dituruti. Pertanyaannya, kamu sekarang pakai Ei-ai buat ngobrol doang, atau udah buat kerja?",
+  "duration": 8.96,
+  "words": [
+    {
+      "word": "Ingat,",
+      "spoken": "Ingat,",
+      "start": 0.128,
+      "end": 0.64
+    },
+    {
+      "word": "boleh",
+      "spoken": "boleh",
+      "start": 0.72,
+      "end": 0.92
+    },
+    {
+      "word": "dibaca",
+      "spoken": "dibaca",
+      "start": 0.96,
+      "end": 1.52
+    },
+    {
+      "word": "bukan",
+      "spoken": "bukan",
+      "start": 1.6,
+      "end": 1.84
+    },
+    {
+      "word": "berarti",
+      "spoken": "berarti",
+      "start": 1.92,
+      "end": 2.24
+    },
+    {
+      "word": "boleh",
+      "spoken": "boleh",
+      "start": 2.4,
+      "end": 2.68
+    },
+    {
+      "word": "dituruti.",
+      "spoken": "dituruti.",
+      "start": 2.72,
+      "end": 3.56
+    },
+    {
+      "word": "Pertanyaannya,",
+      "spoken": "Pertanyaannya,",
+      "start": 3.76,
+      "end": 4.8
+    },
+    {
+      "word": "kamu",
+      "spoken": "kamu",
+      "start": 4.84,
+      "end": 5.04
+    },
+    {
+      "word": "sekarang",
+      "spoken": "sekarang",
+      "start": 5.08,
+      "end": 5.36
+    },
+    {
+      "word": "pakai",
+      "spoken": "pakai",
+      "start": 5.44,
+      "end": 5.68
+    },
+    {
+      "word": "AI",
+      "spoken": "Ei-ai",
+      "start": 5.76,
+      "end": 6.08
+    },
+    {
+      "word": "buat",
+      "spoken": "buat",
+      "start": 6.16,
+      "end": 6.32
+    },
+    {
+      "word": "ngobrol",
+      "spoken": "ngobrol",
+      "start": 6.36,
+      "end": 6.64
+    },
+    {
+      "word": "doang,",
+      "spoken": "doang,",
+      "start": 6.72,
+      "end": 7.36
+    },
+    {
+      "word": "atau",
+      "spoken": "atau",
+      "start": 7.52,
+      "end": 7.84
+    },
+    {
+      "word": "udah",
+      "spoken": "udah",
+      "start": 7.92,
+      "end": 8.08
+    },
+    {
+      "word": "buat",
+      "spoken": "buat",
+      "start": 8.16,
+      "end": 8.24
+    },
+    {
+      "word": "kerja?",
+      "spoken": "kerja?",
+      "start": 8.32,
+      "end": 8.96
+    }
+  ]
+}

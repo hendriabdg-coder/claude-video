@@ -1,0 +1,163 @@
+{
+  "text": "[curious] Satu perintah buat ngecek server kamu aman atau nggak. Ketik: php, spasi, minus v. Kalau versinya udah nggak didukung lagi... ya, itu tandanya kamu harus update.",
+  "spoken": "[curious] Satu perintah buat ngecek server kamu aman atau nggak. Ketik: php, spasi, minus v. Kalau versinya udah nggak didukung lagi... ya, itu tandanya kamu harus update.",
+  "duration": 10.88,
+  "words": [
+    {
+      "word": "Satu",
+      "spoken": "Satu",
+      "start": 0.08,
+      "end": 0.24
+    },
+    {
+      "word": "perintah",
+      "spoken": "perintah",
+      "start": 0.32,
+      "end": 0.72
+    },
+    {
+      "word": "buat",
+      "spoken": "buat",
+      "start": 0.8,
+      "end": 0.96
+    },
+    {
+      "word": "ngecek",
+      "spoken": "ngecek",
+      "start": 1.04,
+      "end": 1.2
+    },
+    {
+      "word": "server",
+      "spoken": "server",
+      "start": 1.28,
+      "end": 1.52
+    },
+    {
+      "word": "kamu",
+      "spoken": "kamu",
+      "start": 1.6,
+      "end": 1.84
+    },
+    {
+      "word": "aman",
+      "spoken": "aman",
+      "start": 1.92,
+      "end": 2.24
+    },
+    {
+      "word": "atau",
+      "spoken": "atau",
+      "start": 2.32,
+      "end": 2.44
+    },
+    {
+      "word": "nggak.",
+      "spoken": "nggak.",
+      "start": 2.48,
+      "end": 3.04
+    },
+    {
+      "word": "Ketik:",
+      "spoken": "Ketik:",
+      "start": 3.093,
+      "end": 3.6
+    },
+    {
+      "word": "php,",
+      "spoken": "php,",
+      "start": 3.68,
+      "end": 4.32
+    },
+    {
+      "word": "spasi,",
+      "spoken": "spasi,",
+      "start": 4.56,
+      "end": 5.28
+    },
+    {
+      "word": "minus",
+      "spoken": "minus",
+      "start": 5.4,
+      "end": 5.52
+    },
+    {
+      "word": "v.",
+      "spoken": "v.",
+      "start": 5.6,
+      "end": 6.0
+    },
+    {
+      "word": "Kalau",
+      "spoken": "Kalau",
+      "start": 6.16,
+      "end": 6.32
+    },
+    {
+      "word": "versinya",
+      "spoken": "versinya",
+      "start": 6.44,
+      "end": 6.72
+    },
+    {
+      "word": "udah",
+      "spoken": "udah",
+      "start": 6.8,
+      "end": 6.907
+    },
+    {
+      "word": "nggak",
+      "spoken": "nggak",
+      "start": 6.933,
+      "end": 7.04
+    },
+    {
+      "word": "didukung",
+      "spoken": "didukung",
+      "start": 7.12,
+      "end": 7.36
+    },
+    {
+      "word": "lagi...",
+      "spoken": "lagi...",
+      "start": 7.44,
+      "end": 8.4
+    },
+    {
+      "word": "ya,",
+      "spoken": "ya,",
+      "start": 8.56,
+      "end": 8.96
+    },
+    {
+      "word": "itu",
+      "spoken": "itu",
+      "start": 9.08,
+      "end": 9.2
+    },
+    {
+      "word": "tandanya",
+      "spoken": "tandanya",
+      "start": 9.253,
+      "end": 9.6
+    },
+    {
+      "word": "kamu",
+      "spoken": "kamu",
+      "start": 9.64,
+      "end": 9.84
+    },
+    {
+      "word": "harus",
+      "spoken": "harus",
+      "start": 9.88,
+      "end": 10.08
+    },
+    {
+      "word": "update.",
+      "spoken": "update.",
+      "start": 10.16,
+      "end": 10.88
+    }
+  ]
+}

@@ -1,0 +1,275 @@
+{
+ "file": "hybrid\\Pack_Ahmad_video_watermark.mp4",
+ "jenis": "hybrid",
+ "durasi": 108.48,
+ "langkah_sheet_dtk": 1.81,
+ "potongan": [
+  1.2,
+  2.4,
+  4.32,
+  5.52,
+  6.88,
+  10.44,
+  13.76,
+  16.04,
+  18.04,
+  20.08,
+  21.32,
+  25.6,
+  27.44,
+  29.6,
+  34.48,
+  36.6,
+  38.28,
+  41.96,
+  45.28,
+  46.24,
+  47.2,
+  50.72,
+  52.72,
+  55.64,
+  57.56,
+  58.48,
+  59.24,
+  61.44,
+  61.84,
+  62.2,
+  62.76,
+  67.0,
+  70.16,
+  73.08,
+  74.72,
+  76.88,
+  83.44,
+  85.08,
+  86.4,
+  87.72,
+  90.88,
+  95.8,
+  96.52,
+  97.72,
+  104.08
+ ],
+ "jumlah_shot": 46,
+ "rata_panjang_shot_dtk": 2.36,
+ "transkrip": {
+  "bahasa": "id",
+  "segmen": [
+   {
+    "mulai": 0.0,
+    "selesai": 2.32,
+    "teks": "Sebenernya kasian banget pak editor yang kerja sendirian"
+   },
+   {
+    "mulai": 2.32,
+    "selesai": 4.0,
+    "teks": "Harusnya fokus sama creative direction"
+   },
+   {
+    "mulai": 4.0,
+    "selesai": 6.86,
+    "teks": "Malah capek sama pekerjaan-pekerjaan yang repetitif"
+   },
+   {
+    "mulai": 6.86,
+    "selesai": 10.34,
+    "teks": "Foldering, software aset, bikin proksi, transkrip, sampe ngurusin invoice"
+   },
+   {
+    "mulai": 10.34,
+    "selesai": 13.14,
+    "teks": "Kalo misalkan udah kayak gitu, gimana mau naikin redcard?"
+   },
+   {
+    "mulai": 13.24,
+    "selesai": 16.36,
+    "teks": "Jadi aku pake Hermes Agent, model AI yang berjalan lokal di laptop"
+   },
+   {
+    "mulai": 16.36,
+    "selesai": 17.9,
+    "teks": "Dan terhubung ke telegram"
+   },
+   {
+    "mulai": 17.9,
+    "selesai": 20.74,
+    "teks": "Tinggal kirim intruksi lewat telegram dimanapun dan kapanpun"
+   },
+   {
+    "mulai": 20.74,
+    "selesai": 23.9,
+    "teks": "Terus dia bakal ngerjain semuanya langsung sendirian secara lokal"
+   },
+   {
+    "mulai": 23.9,
+    "selesai": 26.02,
+    "teks": "Mulai dari software aset, folder ring, kasih brief"
+   },
+   {
+    "mulai": 26.02,
+    "selesai": 28.02,
+    "teks": "Kadang juga aku minta dia reminder, jadwal meeting"
+   },
+   {
+    "mulai": 28.02,
+    "selesai": 30.58,
+    "teks": "Sampai cari ide konten dan berita terkini setiap hari"
+   },
+   {
+    "mulai": 30.58,
+    "selesai": 32.08,
+    "teks": "Tanpa harus disuruh lagi"
+   },
+   {
+    "mulai": 32.08,
+    "selesai": 33.28,
+    "teks": "Gini rahasianya pak"
+   },
+   {
+    "mulai": 33.28,
+    "selesai": 35.28,
+    "teks": "Model AI dan tools pengolah filenya itu"
+   },
+   {
+    "mulai": 35.28,
+    "selesai": 37.98,
+    "teks": "Jalan lokal di laptop Asus Pro Art Go Pro Edition"
+   },
+   {
+    "mulai": 37.98,
+    "selesai": 41.82,
+    "teks": "Yang ditenagai prosesor AMD Ryzen AI Max Plus 395"
+   },
+   {
+    "mulai": 41.82,
+    "selesai": 44.24,
+    "teks": "Model dan tools lokalnya ini gratis"
+   },
+   {
+    "mulai": 44.24,
+    "selesai": 46.34,
+    "teks": "Jadi kita punya asisten pribadi yang pintar"
+   },
+   {
+    "mulai": 46.34,
+    "selesai": 47.74,
+    "teks": "Tanpa harus ngeluarin budget tambahan"
+   },
+   {
+    "mulai": 47.74,
+    "selesai": 49.26,
+    "teks": "Buat langganan AI Cloud"
+   },
+   {
+    "mulai": 49.26,
+    "selesai": 50.6,
+    "teks": "Produktif dan murah banget"
+   },
+   {
+    "mulai": 50.6,
+    "selesai": 53.08,
+    "teks": "Prosesornya ini, dia kan kenceng banget ya pak ya"
+   },
+   {
+    "mulai": 53.08,
+    "selesai": 55.38,
+    "teks": "Dia punya 16 core dan 32 thread"
+   },
+   {
+    "mulai": 55.38,
+    "selesai": 57.98,
+    "teks": "Jadi ngedukung banget buat multitasking edit video berat"
+   },
+   {
+    "mulai": 57.98,
+    "selesai": 60.38,
+    "teks": "Sekaligus running lokal AI secara bersamaan"
+   },
+   {
+    "mulai": 60.38,
+    "selesai": 63.72,
+    "teks": "Prosesor AMD Ryzen AI Max Series juga didukung unified memory"
+   },
+   {
+    "mulai": 63.72,
+    "selesai": 65.54,
+    "teks": "Sampai 128 GB"
+   },
+   {
+    "mulai": 65.54,
+    "selesai": 70.0,
+    "teks": "Yang dapat digunakan secara bersamaan oleh CPU, GPU, dan juga MPU"
+   },
+   {
+    "mulai": 70.0,
+    "selesai": 72.2,
+    "teks": "128 GB pak"
+   },
+   {
+    "mulai": 72.2,
+    "selesai": 74.78,
+    "teks": "Astaga, aplikasi dan model AI kompleks"
+   },
+   {
+    "mulai": 74.78,
+    "selesai": 76.06,
+    "teks": "Apa yang gak bisa dilibas?"
+   },
+   {
+    "mulai": 76.18,
+    "selesai": 78.98,
+    "teks": "Kalau urusan visual, dia dibantu grafis terintegrasi"
+   },
+   {
+    "mulai": 78.98,
+    "selesai": 82.5,
+    "teks": "AMD Radeon 8060s dengan 40 Compute Unit"
+   },
+   {
+    "mulai": 82.5,
+    "selesai": 85.3,
+    "teks": "Kartu grafis di AMD Ryzen AI Max Plus Series ini"
+   },
+   {
+    "mulai": 85.3,
+    "selesai": 87.5,
+    "teks": "Setara dengan kartu grafis diskret modern"
+   },
+   {
+    "mulai": 87.5,
+    "selesai": 92.0,
+    "teks": "Jadi cocok banget buat para editor, animator, ilustrator, dan pekerja kreatif lainnya"
+   },
+   {
+    "mulai": 92.0,
+    "selesai": 96.04,
+    "teks": "Intinya pak, prosesor AMD Ryzen AI Max Plus 395 ini bisa jadi pendukung"
+   },
+   {
+    "mulai": 96.04,
+    "selesai": 98.74,
+    "teks": "Supaya pekerjaan repetitif bisa dibantu sama agent"
+   },
+   {
+    "mulai": 98.74,
+    "selesai": 102.06,
+    "teks": "Dan kita fokus ke visi utama dari kreatif itu sendiri"
+   },
+   {
+    "mulai": 102.06,
+    "selesai": 106.08,
+    "teks": "Kalau ada AMD Ryzen AI Max Series di laptopmu sih harusnya aman ya pak ya"
+   },
+   {
+    "mulai": 106.08,
+    "selesai": 107.5,
+    "teks": "Sekian dari ku, teman kontenmu"
+   }
+  ],
+  "jumlah_kata": 315,
+  "kata_per_dtk_bicara": 3.01,
+  "kata_per_dtk_total": 2.9,
+  "kata_pertama_dtk": 0.0,
+  "ucapan_3dtk_awal": "Sebenernya kasian banget pak editor yang kerja sendirian Harusnya fokus sama creative direction"
+ }
+}

@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8" />
+<style>
+@font-face { font-family: "IDBlack"; src: url("fonts/InterDisplay-Black.ttf") format("truetype"); font-display: block; }
+@font-face { font-family: "IDBold"; src: url("fonts/InterDisplay-Bold.ttf") format("truetype"); font-display: block; }
+@font-face { font-family: "IDSemi"; src: url("fonts/InterDisplay-SemiBold.ttf") format("truetype"); font-display: block; }
+@font-face { font-family: "IDItal"; src: url("fonts/InterDisplay-SemiBoldItalic.ttf") format("truetype"); font-display: block; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 100%; height: 100%; overflow: hidden; }
+#root { position: relative; width: 1080px; height: 1920px; overflow: hidden; }
+.ico { width: 100%; height: 100%; display: block; }
+
+html, body, #root { background: #0E0E0E; font-family: "IDBlack", sans-serif; }
+#cam { position: absolute; inset: 0; }
+.card { position: absolute; inset: 0; opacity: 0; overflow: hidden; }
+.card .stack { position: absolute; left: 60px; top: 50%; transform: translateY(-50%); width: 960px; }
+.card .ln { display: block; line-height: .9; letter-spacing: -.03em; text-transform: uppercase; white-space: nowrap; }
+.card .ln span { display: inline-block; }
+.card .num { position: absolute; right: 40px; top: 260px; font-size: 420px; line-height: 1; color: transparent; -webkit-text-stroke: 6px currentColor; opacity: .35; }
+.card .rib { position: absolute; left: -200px; width: 1600px; font-size: 64px; letter-spacing: .1em; opacity: .14; white-space: nowrap; }
+#prompt { position: absolute; left: 90px; top: 1260px; width: 900px; padding: 26px; border-radius: 18px; border: 3px solid rgba(244,241,234,.35); opacity: 0; }
+#prompt i { display: block; height: 14px; border-radius: 7px; background: rgba(244,241,234,.45); margin: 10px 0; }
+#prompt .x { position: absolute; left: -20px; right: -20px; top: 50%; height: 14px; background: #FF4F3A; transform: scaleX(0); transform-origin: left; }
+#end { position: absolute; inset: 0; background: #0E0E0E; opacity: 0; }
+#end .n { position: absolute; left: 0; width: 1080px; top: 740px; text-align: center; font-size: 46px; letter-spacing: .3em; color: rgba(244,241,234,.5); }
+#end .t { position: absolute; left: 0; width: 1080px; top: 810px; text-align: center; font-size: 230px; letter-spacing: -.03em; color: #F4F1EA; }
+#end .t span { color: #3A5BFF; }
+#end .d { position: absolute; left: 0; width: 1080px; top: 1080px; text-align: center; font-family: "IDBold"; font-size: 40px; color: rgba(244,241,234,.55); }
+#brand { position: absolute; left: 0; top: 1640px; width: 1080px; text-align: center; font-size: 36px; color: #F4F1EA; text-shadow: 0 2px 12px rgba(0,0,0,.6); }
+#brand b { font-weight: normal; }
+
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="gaya-pulse" data-start="0" data-duration="15.0" data-fps="30" data-width="1080" data-height="1920">
+  <audio id="vo" src="vo.mp3" data-start="0" data-duration="15.0" data-track-index="0"></audio>
+
+  <div id="cam"><div class="card" id="k0" style="background:#0E0E0E;color:#F4F1EA"><div class="stack"><span class="ln" style="font-size:260px"><span>S</span><span>I</span><span>A</span><span>P</span><span>?</span></span></div></div><div class="card" id="k1" style="background:#3A5BFF;color:#F4F1EA"><div class="rib" style="top:120px">PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT </div><div class="rib" style="top:380px">PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT </div><div class="rib" style="top:640px">PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT </div><div class="rib" style="top:900px">PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT </div><div class="rib" style="top:1160px">PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT </div><div class="rib" style="top:1420px">PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT </div><div class="rib" style="top:1680px">PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT </div><div class="stack"><span class="ln" style="font-size:174px"><span>P</span><span>R</span><span>O</span><span>M</span><span>P</span><span>T</span></span><span class="ln" style="font-size:174px"><span>P</span><span>A</span><span>N</span><span>J</span><span>A</span><span>N</span><span>G</span></span></div></div><div class="card" id="k2" style="background:#0E0E0E;color:#F4F1EA"><div class="stack"><span class="ln" style="font-size:180px"><span>B</span><span>U</span><span>K</span><span>A</span><span>N</span></span><span class="ln" style="font-size:180px"><span>J</span><span>A</span><span>M</span><span>I</span><span>N</span><span>A</span><span>N</span></span></div><div id="prompt"><i style="width:96%"></i><i style="width:96%"></i><i style="width:96%"></i><i style="width:70%"></i><b class="x"></b></div></div><div class="card" id="k3" style="background:#FF4F3A;color:#0E0E0E"><div class="stack"><span class="ln" style="font-size:148px"><span>Y</span><span>A</span><span>N</span><span>G</span><span> </span><span>B</span><span>I</span><span>K</span><span>I</span><span>N</span></span><span class="ln" style="font-size:148px"><span>A</span><span>I</span><span> </span><span>P</span><span>I</span><span>N</span><span>T</span><span>A</span><span>R</span></span></div></div><div class="card" id="k4" style="background:#F4F1EA;color:#0E0E0E"><div class="stack"><span class="ln" style="font-size:166px"><span>K</span><span>O</span><span>N</span><span>T</span><span>E</span><span>K</span><span>S</span><span>.</span></span></div></div><div class="card" id="k5" style="background:#3A5BFF;color:#F4F1EA"><div class="num">1</div><div class="stack"><span class="ln" style="font-size:248px"><span>J</span><span>E</span><span>L</span><span>A</span><span>S</span><span>.</span></span></div></div><div class="card" id="k6" style="background:#FF4F3A;color:#0E0E0E"><div class="num">2</div><div class="stack"><span class="ln" style="font-size:180px"><span>S</span><span>P</span><span>E</span><span>S</span><span>I</span><span>F</span><span>I</span><span>K</span><span>.</span></span></div></div><div class="card" id="k7" style="background:#0E0E0E;color:#F4F1EA"><div class="num">3</div><div class="stack"><span class="ln" style="font-size:186px"><span>K</span><span>A</span><span>S</span><span>I</span><span>H</span></span><span class="ln" style="font-size:186px"><span>C</span><span>O</span><span>N</span><span>T</span><span>O</span><span>H</span><span>.</span></span></div></div><div class="card" id="k8" style="background:#F4F1EA;color:#0E0E0E"><div class="stack"><span class="ln" style="font-size:222px"><span>3</span><span> </span><span>H</span><span>A</span><span>L</span></span><span class="ln" style="font-size:222px"><span>I</span><span>T</span><span>U</span><span> </span><span>A</span><span>J</span><span>A</span></span></div></div><div class="card" id="k9" style="background:#3A5BFF;color:#F4F1EA"><div class="stack"><span class="ln" style="font-size:150px"><span>H</span><span>A</span><span>S</span><span>I</span><span>L</span><span>N</span><span>Y</span><span>A</span></span><span class="ln" style="font-size:150px"><span>L</span><span>A</span><span>N</span><span>G</span><span>S</span><span>U</span><span>N</span><span>G</span></span><span class="ln" style="font-size:150px"><span>B</span><span>E</span><span>D</span><span>A</span><span>!</span></span></div></div></div>
+  <div id="end"><div class="n">GAYA 03</div><div class="t">PUL<span>SE</span></div><div class="d">tipografi kinetik &middot; opini, tips, hot take</div></div>
+  <div id="brand">Endrich<b>Tech</b></div>
+
+  <script src="vendor/gsap.min.js"></script>
+  <script>
+  (function () {
+
+    var FPS = 30;
+    function q(t) { return Math.round(t * FPS) / FPS; }
+    var tl = gsap.timeline({ paused: true });
+    var NI = { immediateRender: false };
+    function cut(sel, t, v) { tl.set(sel, { opacity: v }, q(t)); }
+    function rise(sel, t, d, from) { tl.fromTo(sel, Object.assign({ opacity: 0, y: 40 }, from || {}), { opacity: 1, y: 0, x: 0, scale: 1, rotation: 0, duration: d || 0.4, ease: "power3.out" }, q(t)); }
+    function pop(sel, t, d) { tl.fromTo(sel, { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1, duration: d || 0.32, ease: "back.out(2.2)" }, q(t)); }
+    function hide(sel, t, d) { tl.to(sel, { opacity: 0, duration: d || 0.15, ease: "power2.in" }, q(t)); }
+    function count(sel, t, d, a, b, fmt) { var o = { v: a }, el = document.querySelector(sel); tl.to(o, { v: b, duration: d, ease: "power2.out", onUpdate: function () { el.textContent = fmt(o.v); } }, q(t)); }
+    function type(sel, t, d, msg) { var o = { n: 0 }, el = document.querySelector(sel); tl.to(o, { n: msg.length, duration: d, ease: "none", onUpdate: function () { el.textContent = msg.slice(0, Math.round(o.n)); } }, q(t)); }
+
+
+    var T = {0: 1.206, 1: 1.32, 2: 1.72, 3: 2.08, 4: 2.36, 5: 2.8, 6: 3.0, 7: 3.96, 8: 4.093, 9: 4.32, 10: 4.64, 11: 5.0, 12: 5.4, 13: 6.32, 14: 7.08, 15: 7.92, 16: 8.36, 17: 8.867, 18: 9.08, 19: 9.32, 20: 9.64, 21: 10.2, 22: 10.44, 23: 10.92};
+    var W = [['k0', 0.0, 1.166, '#F4F1EA'], ['k1', 1.166, 2.04, '#F4F1EA'], ['k2', 2.04, 3.92, '#F4F1EA'], ['k3', 3.92, 5.36, '#0E0E0E'], ['k4', 5.36, 6.28, '#0E0E0E'], ['k5', 6.28, 7.04, '#F4F1EA'], ['k6', 7.04, 7.88, '#0E0E0E'], ['k7', 7.88, 8.827, '#F4F1EA'], ['k8', 8.827, 10.16, '#0E0E0E'], ['k9', 10.16, 12.3, '#F4F1EA']];
+    W.forEach(function (w) {
+      cut("#" + w[0], w[1], 1); cut("#" + w[0], w[2], 0);
+      tl.set("#brand", { color: w[3] }, q(w[1]));  // wordmark follows each card's ink colour
+      var ch = document.querySelectorAll("#" + w[0] + " .ln > span");
+      // letters slam in from oversized, staggered, then the whole stack keeps drifting
+      tl.fromTo(ch, { opacity: 0, scale: 1.8, y: -30 }, { opacity: 1, scale: 1, y: 0, duration: 0.18, ease: "power4.out", stagger: Math.min(0.025, 0.22 / ch.length) }, q(w[1]));
+      tl.fromTo("#" + w[0] + " .stack", { scale: 1.0 }, { scale: 1.06, duration: Math.max(w[2] - w[1], 0.2), ease: "none" }, q(w[1]));
+      tl.fromTo("#cam", { x: 14, y: -10 }, Object.assign({ x: 0, y: 0, duration: 0.22, ease: "elastic.out(1, .3)" }, NI), q(w[1]));
+    });
+    tl.fromTo(".rib", { x: 0 }, { x: -300, duration: 3, ease: "none" }, 0);
+    tl.fromTo(".num", { x: 80 }, { x: 0, duration: 0.4, ease: "power3.out", immediateRender: false }, q(T[13]));
+    rise("#prompt", T[3] + 0.1, 0.25, { y: 30 });
+    tl.to("#prompt .x", { scaleX: 1, duration: 0.25, ease: "power2.out" }, q(T[5]));
+    tl.to("#k9 .stack", { rotation: -3, duration: 0.08, yoyo: true, repeat: 5 }, q(T[23]));
+    tl.set("#brand", { color: "#F4F1EA" }, q(12.3));
+    tl.fromTo("#end", { opacity: 0 }, { opacity: 1, duration: 0.1 }, q(12.3));
+    tl.fromTo("#end .t", { scale: 1.6, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.3, ease: "power4.out" }, q(12.35));
+
+    window.__timelines = window.__timelines || {};
+    window.__timelines["gaya-pulse"] = tl;
+  })();
+  </script>
+</div>
+</body>
+</html>

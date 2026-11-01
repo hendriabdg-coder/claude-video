@@ -1,0 +1,49 @@
+{
+  "text": "[curious] ChatGPT sekarang nggak cuma jawab pakai teks.",
+  "spoken": "[curious] ChatGPT sekarang nggak cuma jawab pakai teks.",
+  "duration": 2.72,
+  "words": [
+    {
+      "word": "ChatGPT",
+      "spoken": "ChatGPT",
+      "start": 0.08,
+      "end": 0.72
+    },
+    {
+      "word": "sekarang",
+      "spoken": "sekarang",
+      "start": 0.8,
+      "end": 1.12
+    },
+    {
+      "word": "nggak",
+      "spoken": "nggak",
+      "start": 1.16,
+      "end": 1.28
+    },
+    {
+      "word": "cuma",
+      "spoken": "cuma",
+      "start": 1.36,
+      "end": 1.52
+    },
+    {
+      "word": "jawab",
+      "spoken": "jawab",
+      "start": 1.6,
+      "end": 1.76
+    },
+    {
+      "word": "pakai",
+      "spoken": "pakai",
+      "start": 1.84,
+      "end": 2.0
+    },
+    {
+      "word": "teks.",
+      "spoken": "teks.",
+      "start": 2.16,
+      "end": 2.72
+    }
+  ]
+}

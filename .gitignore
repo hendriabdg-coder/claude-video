@@ -1,0 +1,50 @@
+# Rahasia — JANGAN PERNAH masuk repo
+.env
+*.env
+**/.env*
+
+# Media besar (tetap di laptop / cloud storage)
+*.mp4
+*.mov
+*.webm
+*.mkv
+*.avi
+*.m4v
+*.mp3
+*.wav
+*.m4a
+*.aac
+*.flac
+*.ogg
+*.psd
+*.zip
+
+# Hasil render & sementara
+**/renders/
+**/frames/
+**/_frames/
+**/snapshots/
+**/tmp/
+**/__pycache__/
+**/node_modules/
+**/.venv/
+*.pyc
+
+# Library berlisensi / di luar konten reel
+new sfx/
+**/Viral Songs/
+_lainnya/
+
+# Frame QA / snapshot / uji (bisa dibuat ulang)
+**/qa/
+**/qa_*/
+**/snaps/
+**/matte/
+**/uji-gaya/
+motion/arsip/
+
+# Karakter: cukup pose_fix (yang disetujui); sisanya sumber/turunan besar
+karakter/anim_alpha/
+karakter/pose/
+karakter/pose_png/
+karakter/_thumb_pose/

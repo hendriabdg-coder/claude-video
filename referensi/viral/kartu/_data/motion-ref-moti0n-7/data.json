@@ -1,0 +1,72 @@
+{
+ "file": "motion\\ref-moti0n-7.mp4",
+ "jenis": "motion",
+ "durasi": 30.09,
+ "langkah_sheet_dtk": 1.0,
+ "potongan": [
+  20.0,
+  28.97
+ ],
+ "jumlah_shot": 3,
+ "rata_panjang_shot_dtk": 10.03,
+ "transkrip": {
+  "bahasa": "en",
+  "segmen": [
+   {
+    "mulai": 0.0,
+    "selesai": 4.84,
+    "teks": "There are thousands of plot skills out there, but you only need one to make a masterpiece."
+   },
+   {
+    "mulai": 5.12,
+    "selesai": 6.32,
+    "teks": "And it's totally free!"
+   },
+   {
+    "mulai": 6.62,
+    "selesai": 11.76,
+    "teks": "Here's the thing, every field, design, video, code, marketing, needs its own skill."
+   },
+   {
+    "mulai": 11.92,
+    "selesai": 14.28,
+    "teks": "You waste hours searching for the right one."
+   },
+   {
+    "mulai": 14.38,
+    "selesai": 16.14,
+    "teks": "This skill does the searching for you."
+   },
+   {
+    "mulai": 16.28,
+    "selesai": 19.32,
+    "teks": "It scans the internet and finds exactly the skills you need."
+   },
+   {
+    "mulai": 19.44,
+    "selesai": 20.78,
+    "teks": "It's called FindSkill."
+   },
+   {
+    "mulai": 20.96,
+    "selesai": 23.78,
+    "teks": "You can grab it online, but I've already prepared a ready file."
+   },
+   {
+    "mulai": 23.94,
+    "selesai": 26.3,
+    "teks": "Just download it, upload it to your skills, and you're done."
+   },
+   {
+    "mulai": 26.54,
+    "selesai": 28.48,
+    "teks": "Comment, find, and I'll send it to you."
+   }
+  ],
+  "jumlah_kata": 94,
+  "kata_per_dtk_bicara": 3.78,
+  "kata_per_dtk_total": 3.12,
+  "kata_pertama_dtk": 0.0,
+  "ucapan_3dtk_awal": "There are thousands of plot skills out there, but you only need one to make a masterpiece."
+ }
+}

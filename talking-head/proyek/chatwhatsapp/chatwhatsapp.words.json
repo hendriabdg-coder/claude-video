@@ -1,0 +1,907 @@
+{
+ "language": "id",
+ "duration": 57.376,
+ "model": "large-v3-turbo (faster-whisper)",
+ "segments": [
+  {
+   "start": 0.0,
+   "end": 9.44,
+   "text": "Coba bayangin ya, kamu punya usaha. Jam 9 malam, badan udah capek, tapi pas buka WhatsApp masih ada belasan chat yang belum kebales."
+  },
+  {
+   "start": 9.66,
+   "end": 17.38,
+   "text": "Ada yang nanya harga, stok, sampai besok buka jam berapa. Terus kamu mikir, ah besok pagi aja deh balesnya."
+  },
+  {
+   "start": 18.04,
+   "end": 25.42,
+   "text": "Masalahnya, pelanggan belum tentu mau nunggu. Kalau dia butuh sekarang, dia tinggal chat toko lain, dibales lebih cepet, yaudah pindah."
+  },
+  {
+   "start": 25.42,
+   "end": 33.02,
+   "text": "Dan ini bukan karena kamu nggak niat ngurus pelanggan. Kamu juga manusia, nggak mungkin pegang HP 24 jam."
+  },
+  {
+   "start": 33.28,
+   "end": 41.12,
+   "text": "Cuma mungkin sistem bisnismu yang belum bantu. Karena pertanyaan soal harga, jam buka, lokasi, atau cara booking sebenarnya bisa dijawab otomatis."
+  },
+  {
+   "start": 41.34,
+   "end": 49.06,
+   "text": "Tapi bukan berarti semua chat dikasih ke AI. Kalau sudah komplain, negosiasi, refund, atau kasus yang aneh, tetap manusia yang pegang."
+  },
+  {
+   "start": 49.26,
+   "end": 55.24,
+   "text": "Jadi tujuannya bukan mengganti admin. Kalau usaha kamu ngalamin hal yang sama, mungkin yang perlu dibenerin"
+  },
+  {
+   "start": 55.24,
+   "end": 57.08,
+   "text": "Dan bukan orangnya, tapi sistemnya."
+  }
+ ],
+ "words": [
+  {
+   "word": "Coba",
+   "start": 0.0,
+   "end": 0.52,
+   "probability": 0.986
+  },
+  {
+   "word": "bayangin",
+   "start": 0.52,
+   "end": 0.96,
+   "probability": 0.999
+  },
+  {
+   "word": "ya,",
+   "start": 0.96,
+   "end": 1.12,
+   "probability": 0.999
+  },
+  {
+   "word": "kamu",
+   "start": 1.42,
+   "end": 1.58,
+   "probability": 0.998
+  },
+  {
+   "word": "punya",
+   "start": 1.58,
+   "end": 1.84,
+   "probability": 1.0
+  },
+  {
+   "word": "usaha.",
+   "start": 1.84,
+   "end": 2.28,
+   "probability": 1.0
+  },
+  {
+   "word": "Jam",
+   "start": 2.72,
+   "end": 3.16,
+   "probability": 0.996
+  },
+  {
+   "word": "9",
+   "start": 3.16,
+   "end": 3.48,
+   "probability": 0.814
+  },
+  {
+   "word": "malam,",
+   "start": 3.48,
+   "end": 3.94,
+   "probability": 0.839
+  },
+  {
+   "word": "badan",
+   "start": 4.22,
+   "end": 4.64,
+   "probability": 1.0
+  },
+  {
+   "word": "udah",
+   "start": 4.64,
+   "end": 4.8,
+   "probability": 0.995
+  },
+  {
+   "word": "capek,",
+   "start": 4.8,
+   "end": 5.42,
+   "probability": 0.999
+  },
+  {
+   "word": "tapi",
+   "start": 5.7,
+   "end": 6.1,
+   "probability": 0.999
+  },
+  {
+   "word": "pas",
+   "start": 6.1,
+   "end": 6.34,
+   "probability": 1.0
+  },
+  {
+   "word": "buka",
+   "start": 6.34,
+   "end": 6.6,
+   "probability": 1.0
+  },
+  {
+   "word": "WhatsApp",
+   "start": 6.6,
+   "end": 6.98,
+   "probability": 0.878
+  },
+  {
+   "word": "masih",
+   "start": 6.98,
+   "end": 7.48,
+   "probability": 0.301
+  },
+  {
+   "word": "ada",
+   "start": 7.48,
+   "end": 7.74,
+   "probability": 1.0
+  },
+  {
+   "word": "belasan",
+   "start": 7.74,
+   "end": 8.18,
+   "probability": 0.999
+  },
+  {
+   "word": "chat",
+   "start": 8.18,
+   "end": 8.46,
+   "probability": 0.944
+  },
+  {
+   "word": "yang",
+   "start": 8.46,
+   "end": 8.7,
+   "probability": 1.0
+  },
+  {
+   "word": "belum",
+   "start": 8.7,
+   "end": 8.92,
+   "probability": 1.0
+  },
+  {
+   "word": "kebales.",
+   "start": 8.92,
+   "end": 9.44,
+   "probability": 0.991
+  },
+  {
+   "word": "Ada",
+   "start": 9.66,
+   "end": 10.24,
+   "probability": 1.0
+  },
+  {
+   "word": "yang",
+   "start": 10.24,
+   "end": 10.4,
+   "probability": 1.0
+  },
+  {
+   "word": "nanya",
+   "start": 10.4,
+   "end": 10.68,
+   "probability": 0.999
+  },
+  {
+   "word": "harga,",
+   "start": 10.68,
+   "end": 11.18,
+   "probability": 0.999
+  },
+  {
+   "word": "stok,",
+   "start": 11.5,
+   "end": 11.88,
+   "probability": 0.961
+  },
+  {
+   "word": "sampai",
+   "start": 12.08,
+   "end": 12.38,
+   "probability": 0.641
+  },
+  {
+   "word": "besok",
+   "start": 12.38,
+   "end": 13.0,
+   "probability": 0.994
+  },
+  {
+   "word": "buka",
+   "start": 13.0,
+   "end": 13.22,
+   "probability": 1.0
+  },
+  {
+   "word": "jam",
+   "start": 13.22,
+   "end": 13.4,
+   "probability": 1.0
+  },
+  {
+   "word": "berapa.",
+   "start": 13.4,
+   "end": 13.78,
+   "probability": 1.0
+  },
+  {
+   "word": "Terus",
+   "start": 14.12,
+   "end": 14.54,
+   "probability": 0.998
+  },
+  {
+   "word": "kamu",
+   "start": 14.54,
+   "end": 14.74,
+   "probability": 1.0
+  },
+  {
+   "word": "mikir,",
+   "start": 14.74,
+   "end": 15.16,
+   "probability": 0.999
+  },
+  {
+   "word": "ah",
+   "start": 15.5,
+   "end": 15.76,
+   "probability": 0.995
+  },
+  {
+   "word": "besok",
+   "start": 15.76,
+   "end": 16.3,
+   "probability": 0.945
+  },
+  {
+   "word": "pagi",
+   "start": 16.3,
+   "end": 16.58,
+   "probability": 1.0
+  },
+  {
+   "word": "aja",
+   "start": 16.58,
+   "end": 16.72,
+   "probability": 1.0
+  },
+  {
+   "word": "deh",
+   "start": 16.72,
+   "end": 16.9,
+   "probability": 1.0
+  },
+  {
+   "word": "balesnya.",
+   "start": 16.9,
+   "end": 17.38,
+   "probability": 0.998
+  },
+  {
+   "word": "Masalahnya,",
+   "start": 18.04,
+   "end": 18.64,
+   "probability": 1.0
+  },
+  {
+   "word": "pelanggan",
+   "start": 18.94,
+   "end": 19.26,
+   "probability": 1.0
+  },
+  {
+   "word": "belum",
+   "start": 19.26,
+   "end": 19.46,
+   "probability": 1.0
+  },
+  {
+   "word": "tentu",
+   "start": 19.46,
+   "end": 19.74,
+   "probability": 1.0
+  },
+  {
+   "word": "mau",
+   "start": 19.74,
+   "end": 19.92,
+   "probability": 1.0
+  },
+  {
+   "word": "nunggu.",
+   "start": 19.92,
+   "end": 20.28,
+   "probability": 1.0
+  },
+  {
+   "word": "Kalau",
+   "start": 20.54,
+   "end": 20.74,
+   "probability": 0.972
+  },
+  {
+   "word": "dia",
+   "start": 20.74,
+   "end": 20.94,
+   "probability": 1.0
+  },
+  {
+   "word": "butuh",
+   "start": 20.94,
+   "end": 21.24,
+   "probability": 1.0
+  },
+  {
+   "word": "sekarang,",
+   "start": 21.24,
+   "end": 21.66,
+   "probability": 1.0
+  },
+  {
+   "word": "dia",
+   "start": 21.92,
+   "end": 22.08,
+   "probability": 1.0
+  },
+  {
+   "word": "tinggal",
+   "start": 22.08,
+   "end": 22.4,
+   "probability": 1.0
+  },
+  {
+   "word": "chat",
+   "start": 22.4,
+   "end": 22.62,
+   "probability": 0.997
+  },
+  {
+   "word": "toko",
+   "start": 22.62,
+   "end": 22.84,
+   "probability": 0.996
+  },
+  {
+   "word": "lain,",
+   "start": 22.84,
+   "end": 23.18,
+   "probability": 1.0
+  },
+  {
+   "word": "dibales",
+   "start": 23.42,
+   "end": 23.74,
+   "probability": 0.827
+  },
+  {
+   "word": "lebih",
+   "start": 23.74,
+   "end": 23.98,
+   "probability": 1.0
+  },
+  {
+   "word": "cepet,",
+   "start": 23.98,
+   "end": 24.34,
+   "probability": 0.81
+  },
+  {
+   "word": "yaudah",
+   "start": 24.48,
+   "end": 24.88,
+   "probability": 0.994
+  },
+  {
+   "word": "pindah.",
+   "start": 24.88,
+   "end": 25.42,
+   "probability": 0.872
+  },
+  {
+   "word": "Dan",
+   "start": 25.42,
+   "end": 26.2,
+   "probability": 0.952
+  },
+  {
+   "word": "ini",
+   "start": 26.2,
+   "end": 26.52,
+   "probability": 0.999
+  },
+  {
+   "word": "bukan",
+   "start": 26.52,
+   "end": 26.82,
+   "probability": 1.0
+  },
+  {
+   "word": "karena",
+   "start": 26.82,
+   "end": 27.18,
+   "probability": 1.0
+  },
+  {
+   "word": "kamu",
+   "start": 27.18,
+   "end": 27.46,
+   "probability": 0.999
+  },
+  {
+   "word": "nggak",
+   "start": 27.46,
+   "end": 27.64,
+   "probability": 0.722
+  },
+  {
+   "word": "niat",
+   "start": 27.64,
+   "end": 28.02,
+   "probability": 0.999
+  },
+  {
+   "word": "ngurus",
+   "start": 28.02,
+   "end": 28.34,
+   "probability": 0.997
+  },
+  {
+   "word": "pelanggan.",
+   "start": 28.34,
+   "end": 28.88,
+   "probability": 1.0
+  },
+  {
+   "word": "Kamu",
+   "start": 29.1,
+   "end": 29.7,
+   "probability": 1.0
+  },
+  {
+   "word": "juga",
+   "start": 29.7,
+   "end": 29.92,
+   "probability": 1.0
+  },
+  {
+   "word": "manusia,",
+   "start": 29.92,
+   "end": 30.54,
+   "probability": 1.0
+  },
+  {
+   "word": "nggak",
+   "start": 30.84,
+   "end": 31.12,
+   "probability": 0.998
+  },
+  {
+   "word": "mungkin",
+   "start": 31.12,
+   "end": 31.52,
+   "probability": 1.0
+  },
+  {
+   "word": "pegang",
+   "start": 31.52,
+   "end": 31.86,
+   "probability": 1.0
+  },
+  {
+   "word": "HP",
+   "start": 31.86,
+   "end": 32.12,
+   "probability": 0.961
+  },
+  {
+   "word": "24",
+   "start": 32.12,
+   "end": 32.64,
+   "probability": 0.999
+  },
+  {
+   "word": "jam.",
+   "start": 32.64,
+   "end": 33.02,
+   "probability": 1.0
+  },
+  {
+   "word": "Cuma",
+   "start": 33.28,
+   "end": 33.64,
+   "probability": 0.985
+  },
+  {
+   "word": "mungkin",
+   "start": 33.64,
+   "end": 33.96,
+   "probability": 1.0
+  },
+  {
+   "word": "sistem",
+   "start": 33.96,
+   "end": 34.3,
+   "probability": 1.0
+  },
+  {
+   "word": "bisnismu",
+   "start": 34.3,
+   "end": 34.76,
+   "probability": 1.0
+  },
+  {
+   "word": "yang",
+   "start": 34.76,
+   "end": 34.96,
+   "probability": 1.0
+  },
+  {
+   "word": "belum",
+   "start": 34.96,
+   "end": 35.14,
+   "probability": 1.0
+  },
+  {
+   "word": "bantu.",
+   "start": 35.14,
+   "end": 35.54,
+   "probability": 1.0
+  },
+  {
+   "word": "Karena",
+   "start": 35.74,
+   "end": 36.34,
+   "probability": 1.0
+  },
+  {
+   "word": "pertanyaan",
+   "start": 36.34,
+   "end": 36.84,
+   "probability": 1.0
+  },
+  {
+   "word": "soal",
+   "start": 36.84,
+   "end": 37.08,
+   "probability": 1.0
+  },
+  {
+   "word": "harga,",
+   "start": 37.08,
+   "end": 37.48,
+   "probability": 1.0
+  },
+  {
+   "word": "jam",
+   "start": 37.62,
+   "end": 37.8,
+   "probability": 1.0
+  },
+  {
+   "word": "buka,",
+   "start": 37.8,
+   "end": 38.18,
+   "probability": 1.0
+  },
+  {
+   "word": "lokasi,",
+   "start": 38.28,
+   "end": 38.76,
+   "probability": 1.0
+  },
+  {
+   "word": "atau",
+   "start": 38.78,
+   "end": 39.0,
+   "probability": 1.0
+  },
+  {
+   "word": "cara",
+   "start": 39.0,
+   "end": 39.24,
+   "probability": 1.0
+  },
+  {
+   "word": "booking",
+   "start": 39.24,
+   "end": 39.54,
+   "probability": 0.997
+  },
+  {
+   "word": "sebenarnya",
+   "start": 39.54,
+   "end": 40.02,
+   "probability": 0.98
+  },
+  {
+   "word": "bisa",
+   "start": 40.02,
+   "end": 40.2,
+   "probability": 1.0
+  },
+  {
+   "word": "dijawab",
+   "start": 40.2,
+   "end": 40.52,
+   "probability": 1.0
+  },
+  {
+   "word": "otomatis.",
+   "start": 40.52,
+   "end": 41.12,
+   "probability": 1.0
+  },
+  {
+   "word": "Tapi",
+   "start": 41.34,
+   "end": 41.6,
+   "probability": 1.0
+  },
+  {
+   "word": "bukan",
+   "start": 41.6,
+   "end": 41.9,
+   "probability": 1.0
+  },
+  {
+   "word": "berarti",
+   "start": 41.9,
+   "end": 42.28,
+   "probability": 1.0
+  },
+  {
+   "word": "semua",
+   "start": 42.28,
+   "end": 42.62,
+   "probability": 1.0
+  },
+  {
+   "word": "chat",
+   "start": 42.62,
+   "end": 42.88,
+   "probability": 0.98
+  },
+  {
+   "word": "dikasih",
+   "start": 42.88,
+   "end": 43.24,
+   "probability": 0.998
+  },
+  {
+   "word": "ke",
+   "start": 43.24,
+   "end": 43.38,
+   "probability": 1.0
+  },
+  {
+   "word": "AI.",
+   "start": 43.38,
+   "end": 43.68,
+   "probability": 0.997
+  },
+  {
+   "word": "Kalau",
+   "start": 44.02,
+   "end": 44.2,
+   "probability": 0.995
+  },
+  {
+   "word": "sudah",
+   "start": 44.2,
+   "end": 44.44,
+   "probability": 1.0
+  },
+  {
+   "word": "komplain,",
+   "start": 44.44,
+   "end": 45.0,
+   "probability": 0.996
+  },
+  {
+   "word": "negosiasi,",
+   "start": 45.12,
+   "end": 45.86,
+   "probability": 1.0
+  },
+  {
+   "word": "refund,",
+   "start": 45.98,
+   "end": 46.4,
+   "probability": 0.986
+  },
+  {
+   "word": "atau",
+   "start": 46.56,
+   "end": 46.76,
+   "probability": 1.0
+  },
+  {
+   "word": "kasus",
+   "start": 46.76,
+   "end": 47.12,
+   "probability": 1.0
+  },
+  {
+   "word": "yang",
+   "start": 47.12,
+   "end": 47.28,
+   "probability": 1.0
+  },
+  {
+   "word": "aneh,",
+   "start": 47.28,
+   "end": 47.66,
+   "probability": 1.0
+  },
+  {
+   "word": "tetap",
+   "start": 47.9,
+   "end": 48.1,
+   "probability": 0.996
+  },
+  {
+   "word": "manusia",
+   "start": 48.1,
+   "end": 48.5,
+   "probability": 1.0
+  },
+  {
+   "word": "yang",
+   "start": 48.5,
+   "end": 48.64,
+   "probability": 1.0
+  },
+  {
+   "word": "pegang.",
+   "start": 48.64,
+   "end": 49.06,
+   "probability": 1.0
+  },
+  {
+   "word": "Jadi",
+   "start": 49.26,
+   "end": 49.6,
+   "probability": 1.0
+  },
+  {
+   "word": "tujuannya",
+   "start": 49.6,
+   "end": 50.1,
+   "probability": 0.998
+  },
+  {
+   "word": "bukan",
+   "start": 50.1,
+   "end": 50.44,
+   "probability": 1.0
+  },
+  {
+   "word": "mengganti",
+   "start": 50.44,
+   "end": 50.9,
+   "probability": 1.0
+  },
+  {
+   "word": "admin.",
+   "start": 50.9,
+   "end": 51.28,
+   "probability": 1.0
+  },
+  {
+   "word": "Kalau",
+   "start": 51.74,
+   "end": 52.0,
+   "probability": 0.996
+  },
+  {
+   "word": "usaha",
+   "start": 52.0,
+   "end": 52.34,
+   "probability": 1.0
+  },
+  {
+   "word": "kamu",
+   "start": 52.34,
+   "end": 52.6,
+   "probability": 1.0
+  },
+  {
+   "word": "ngalamin",
+   "start": 52.6,
+   "end": 53.0,
+   "probability": 0.997
+  },
+  {
+   "word": "hal",
+   "start": 53.0,
+   "end": 53.18,
+   "probability": 0.999
+  },
+  {
+   "word": "yang",
+   "start": 53.18,
+   "end": 53.34,
+   "probability": 1.0
+  },
+  {
+   "word": "sama,",
+   "start": 53.34,
+   "end": 53.68,
+   "probability": 1.0
+  },
+  {
+   "word": "mungkin",
+   "start": 53.94,
+   "end": 54.32,
+   "probability": 0.995
+  },
+  {
+   "word": "yang",
+   "start": 54.32,
+   "end": 54.52,
+   "probability": 1.0
+  },
+  {
+   "word": "perlu",
+   "start": 54.52,
+   "end": 54.74,
+   "probability": 1.0
+  },
+  {
+   "word": "dibenerin",
+   "start": 54.74,
+   "end": 55.24,
+   "probability": 0.971
+  },
+  {
+   "word": "Dan",
+   "start": 55.24,
+   "end": 55.24,
+   "probability": 0.001
+  },
+  {
+   "word": "bukan",
+   "start": 55.24,
+   "end": 55.44,
+   "probability": 0.992
+  },
+  {
+   "word": "orangnya,",
+   "start": 55.44,
+   "end": 56.06,
+   "probability": 0.996
+  },
+  {
+   "word": "tapi",
+   "start": 56.3,
+   "end": 56.5,
+   "probability": 0.986
+  },
+  {
+   "word": "sistemnya.",
+   "start": 56.5,
+   "end": 57.08,
+   "probability": 0.996
+  }
+ ]
+}

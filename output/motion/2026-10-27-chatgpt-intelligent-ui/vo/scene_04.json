@@ -1,0 +1,79 @@
+{
+  "text": "Satu catatan dari aku: tampilannya rapi, tapi angkanya tetap kamu cek, ya.",
+  "spoken": "Satu catatan dari aku: tampilannya rapi, tapi angkanya tetap kamu cek, ya.",
+  "duration": 4.8,
+  "words": [
+    {
+      "word": "Satu",
+      "spoken": "Satu",
+      "start": 0.0,
+      "end": 0.2
+    },
+    {
+      "word": "catatan",
+      "spoken": "catatan",
+      "start": 0.24,
+      "end": 0.64
+    },
+    {
+      "word": "dari",
+      "spoken": "dari",
+      "start": 0.693,
+      "end": 0.8
+    },
+    {
+      "word": "aku:",
+      "spoken": "aku:",
+      "start": 0.88,
+      "end": 1.44
+    },
+    {
+      "word": "tampilannya",
+      "spoken": "tampilannya",
+      "start": 1.547,
+      "end": 2.0
+    },
+    {
+      "word": "rapi,",
+      "spoken": "rapi,",
+      "start": 2.04,
+      "end": 2.72
+    },
+    {
+      "word": "tapi",
+      "spoken": "tapi",
+      "start": 2.8,
+      "end": 2.96
+    },
+    {
+      "word": "angkanya",
+      "spoken": "angkanya",
+      "start": 3.08,
+      "end": 3.6
+    },
+    {
+      "word": "tetap",
+      "spoken": "tetap",
+      "start": 3.68,
+      "end": 3.84
+    },
+    {
+      "word": "kamu",
+      "spoken": "kamu",
+      "start": 3.92,
+      "end": 4.08
+    },
+    {
+      "word": "cek,",
+      "spoken": "cek,",
+      "start": 4.16,
+      "end": 4.4
+    },
+    {
+      "word": "ya.",
+      "spoken": "ya.",
+      "start": 4.48,
+      "end": 4.8
+    }
+  ]
+}

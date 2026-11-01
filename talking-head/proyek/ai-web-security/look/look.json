@@ -1,0 +1,81 @@
+{
+ "width": 1080,
+ "height": 1920,
+ "fps": 30.0,
+ "duration": 29.745011,
+ "cuts": [
+  63,
+  128,
+  191,
+  299,
+  371,
+  454,
+  512,
+  598,
+  688,
+  761,
+  821
+ ],
+ "shots": [
+  {
+   "start_s": 0.0,
+   "end_s": 2.1,
+   "grid": "videos/ai-web-security/look\\grid_shot0.jpg"
+  },
+  {
+   "start_s": 2.1,
+   "end_s": 4.267,
+   "grid": "videos/ai-web-security/look\\grid_shot1.jpg"
+  },
+  {
+   "start_s": 4.267,
+   "end_s": 6.367,
+   "grid": "videos/ai-web-security/look\\grid_shot2.jpg"
+  },
+  {
+   "start_s": 6.367,
+   "end_s": 9.967,
+   "grid": "videos/ai-web-security/look\\grid_shot3.jpg"
+  },
+  {
+   "start_s": 9.967,
+   "end_s": 12.367,
+   "grid": "videos/ai-web-security/look\\grid_shot4.jpg"
+  },
+  {
+   "start_s": 12.367,
+   "end_s": 15.133,
+   "grid": "videos/ai-web-security/look\\grid_shot5.jpg"
+  },
+  {
+   "start_s": 15.133,
+   "end_s": 17.067,
+   "grid": "videos/ai-web-security/look\\grid_shot6.jpg"
+  },
+  {
+   "start_s": 17.067,
+   "end_s": 19.933,
+   "grid": "videos/ai-web-security/look\\grid_shot7.jpg"
+  },
+  {
+   "start_s": 19.933,
+   "end_s": 22.933,
+   "grid": "videos/ai-web-security/look\\grid_shot8.jpg"
+  },
+  {
+   "start_s": 22.933,
+   "end_s": 25.367,
+   "grid": "videos/ai-web-security/look\\grid_shot9.jpg"
+  },
+  {
+   "start_s": 25.367,
+   "end_s": 27.367,
+   "grid": "videos/ai-web-security/look\\grid_shot10.jpg"
+  },
+  {
+   "start_s": 27.367,
+   "end_s": 29.733,
+   "grid": "videos/ai-web-security/look\\grid_shot11.jpg"
+  }
+ ]
+}

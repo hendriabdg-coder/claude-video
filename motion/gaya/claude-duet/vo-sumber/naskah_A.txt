@@ -1,0 +1,9 @@
+[curious] Bayangin... kamu bangun tidur, dan asisten kamu udah baca semua email, nyusun jadwal hari ini, bahkan udah nyiapin draft balasan. Itu Claude Duet, agen AI proaktif terbaru dari Anthropic.
+
+Bedanya sama chatbot biasa: Duet nggak nunggu disuruh. Dia jalan di cloud, ngecek Gmail, kalender, Slack, sampai QuickBooks secara berkala... terus ngabarin kalau ada yang penting.
+
+Tapi ada satu aturan yang menarik. Sebelum kirim pesan, bayar, tanda tangan, atau hapus sesuatu, dia wajib minta izin dulu. Dan ada hal yang dia tolak, meskipun kamu izinkan: trading saham dan transfer antar rekening.
+
+[sighs] Sayangnya, sekarang masih research preview. Cuma buat pengguna Pro dan Max di Amerika, lewat waitlist. Dan kerjanya di background tetap ngabisin limit kamu.
+
+Jadi, kalau suatu hari Duet masuk Indonesia... tugas apa yang pertama kali mau kamu serahin ke dia? Tulis di komentar.

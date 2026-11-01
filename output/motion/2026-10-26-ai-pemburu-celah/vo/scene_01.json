@@ -1,0 +1,73 @@
+{
+  "text": "[serious] AI ini dibikin buat jaga internet. Masalahnya... dia juga jago nyerang.",
+  "spoken": "[serious] Ei-ai ini dibikin buat jaga internet. Masalahnya... dia juga jago nyerang.",
+  "duration": 5.2,
+  "words": [
+    {
+      "word": "AI",
+      "spoken": "Ei-ai",
+      "start": 0.067,
+      "end": 0.4
+    },
+    {
+      "word": "ini",
+      "spoken": "ini",
+      "start": 0.52,
+      "end": 0.64
+    },
+    {
+      "word": "dibikin",
+      "spoken": "dibikin",
+      "start": 0.72,
+      "end": 1.12
+    },
+    {
+      "word": "buat",
+      "spoken": "buat",
+      "start": 1.2,
+      "end": 1.36
+    },
+    {
+      "word": "jaga",
+      "spoken": "jaga",
+      "start": 1.4,
+      "end": 1.6
+    },
+    {
+      "word": "internet.",
+      "spoken": "internet.",
+      "start": 1.88,
+      "end": 2.36
+    },
+    {
+      "word": "Masalahnya...",
+      "spoken": "Masalahnya...",
+      "start": 2.56,
+      "end": 3.76
+    },
+    {
+      "word": "dia",
+      "spoken": "dia",
+      "start": 3.84,
+      "end": 3.92
+    },
+    {
+      "word": "juga",
+      "spoken": "juga",
+      "start": 4.0,
+      "end": 4.16
+    },
+    {
+      "word": "jago",
+      "spoken": "jago",
+      "start": 4.24,
+      "end": 4.48
+    },
+    {
+      "word": "nyerang.",
+      "spoken": "nyerang.",
+      "start": 4.52,
+      "end": 5.2
+    }
+  ]
+}

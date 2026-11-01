@@ -1,0 +1,20 @@
+{
+ "540": {
+  "frames": 62,
+  "seconds": 5.93,
+  "fps": 10.5,
+  "iou": 0.6447,
+  "mae": 0.1839,
+  "edge_err": 0.2331,
+  "faces_found": 62
+ },
+ "1080": {
+  "frames": 62,
+  "seconds": 28.01,
+  "fps": 2.2,
+  "iou": 0.6407,
+  "mae": 0.1853,
+  "edge_err": 0.233,
+  "faces_found": 62
+ }
+}

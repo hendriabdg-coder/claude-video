@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8" />
+<!-- EndrichTech v2 — keamanan website buatan AI. Bahasa visual diambil dari cara kerja referensi 1 & 2:
+     serif raksasa yang meluber, kamera virtual (punch-in, rack-focus blur), cutaway 3D dengan depth-of-field,
+     kata dilempar dengan motion blur, garis + diamond keyframe, teks di belakang kepala (matte di-composite setelah render).
+     Timing = words.json. Konsep: ../konsep-v2.md -->
+<style>
+@font-face { font-family: "GeorgiaHL"; src: url("fonts/georgiab.ttf") format("truetype"); font-display: block; }
+@font-face { font-family: "Inter"; src: url("fonts/InterDisplay-Medium.ttf") format("truetype"); font-weight: 500; font-display: block; }
+@font-face { font-family: "Inter"; src: url("fonts/InterDisplay-SemiBold.ttf") format("truetype"); font-weight: 600; font-display: block; }
+@font-face { font-family: "Inter"; src: url("fonts/InterDisplay-Bold.ttf") format("truetype"); font-weight: 700; font-display: block; }
+@font-face { font-family: "Inter"; src: url("fonts/InterDisplay-ExtraBold.ttf") format("truetype"); font-weight: 800; font-display: block; }
+:root { --w:#F5F7FA; --cy:#67E8F9; --blue:#3B82F6; --amb:#FBBF24; --navy:#0B1220; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 100%; height: 100%; overflow: hidden; background: #000; font-family: "Inter", sans-serif; color: var(--w); }
+#root { position: relative; width: 1080px; height: 1920px; overflow: hidden; background: #000; }
+#cam { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; transform-origin: 540px 600px; }
+#cam video { width: 100%; height: 100%; object-fit: cover; }
+.a { position: absolute; opacity: 0; }
+svg { display: block; }
+
+/* serif system */
+.g { position: absolute; left: -400px; width: 1880px; text-align: center; font-family: "GeorgiaHL"; line-height: 1; white-space: nowrap;
+  color: var(--w); text-shadow: 0 0 34px rgba(255,255,255,.32), 0 6px 26px rgba(0,0,0,.5); opacity: 0; }
+.g.cy { color: var(--cy); text-shadow: 0 0 40px rgba(103,232,249,.55), 0 6px 26px rgba(0,0,0,.5); }
+.g.am { color: var(--amb); text-shadow: 0 0 40px rgba(251,191,36,.5), 0 6px 26px rgba(0,0,0,.5); }
+.lab { position: absolute; left: 0; width: 1080px; text-align: center; font-weight: 700; font-size: 40px; letter-spacing: .2em;
+  text-shadow: 0 2px 14px rgba(0,0,0,.7); white-space: nowrap; opacity: 0; }
+.lab.cy { color: var(--cy); }
+.sub { position: absolute; left: 0; width: 1080px; text-align: center; font-weight: 700; font-size: 46px; letter-spacing: .04em;
+  color: var(--amb); text-shadow: 0 2px 14px rgba(0,0,0,.75); white-space: nowrap; opacity: 0; }
+.dia { display: inline-block; width: 26px; height: 26px; transform: rotate(45deg); border: 3px solid var(--cy); margin-right: 18px; vertical-align: 2px; }
+
+/* darkening veil for rack-focus moments */
+#veil { position: absolute; inset: 0; background: radial-gradient(ellipse 80% 60% at 50% 45%, rgba(5,8,14,.35) 0%, rgba(5,8,14,.75) 100%); opacity: 0; }
+/* soft local shade under chest text */
+.shade { position: absolute; left: 0; width: 1080px; height: 640px; opacity: 0;
+  background: radial-gradient(ellipse 70% 50% at 50% 50%, rgba(8,12,20,.5) 0%, rgba(8,12,20,.22) 55%, rgba(8,12,20,0) 100%); }
+
+/* spinning keyframe diamond (ref 1 motif) */
+#hkD { left: 505px; top: 640px; width: 70px; height: 70px; perspective: 400px; }
+.cube { width: 70px; height: 70px; transform-style: preserve-3d; }
+.cube i { position: absolute; inset: 0; transform: rotate(45deg) scale(.72); border: 4px solid #fff; background: linear-gradient(90deg, #fff 50%, rgba(255,255,255,0) 50%);
+  box-shadow: 0 0 22px rgba(255,255,255,.6); }
+
+/* light beam transition */
+#beam { position: absolute; left: 520px; top: -200px; width: 40px; height: 2320px; opacity: 0;
+  background: linear-gradient(90deg, rgba(103,232,249,0), rgba(160,240,255,.95), rgba(103,232,249,0)); filter: blur(6px); }
+
+/* ---- cutaway: code editor in 3D with depth of field ---- */
+#cut { position: absolute; inset: 0; opacity: 0; background: radial-gradient(ellipse 90% 70% at 50% 40%, #13213a 0%, #070b14 70%); overflow: hidden; }
+.bok { position: absolute; border-radius: 50%; background: rgba(160,220,255,.5); filter: blur(10px); }
+#stage { position: absolute; inset: 0; perspective: 1500px; }
+#panel { position: absolute; left: 90px; top: 520px; width: 980px; height: 1000px; border-radius: 28px; background: #0d1526;
+  border: 2px solid rgba(103,232,249,.25); box-shadow: 0 40px 120px rgba(0,0,0,.6);
+  transform: rotateX(30deg) rotateY(-24deg) rotateZ(8deg); transform-origin: 50% 50%; }
+#panel .tb { height: 70px; border-bottom: 2px solid rgba(255,255,255,.08); display: flex; align-items: center; gap: 14px; padding-left: 28px; }
+#panel .tb i { width: 18px; height: 18px; border-radius: 50%; background: rgba(255,255,255,.25); display: block; }
+#panel .tb b { margin-left: 24px; font-weight: 600; font-size: 28px; color: rgba(255,255,255,.55); }
+.cl { position: absolute; left: 40px; font-weight: 600; font-size: 40px; white-space: nowrap; color: rgba(220,230,245,.75); }
+.cl .n { display: inline-block; width: 60px; color: rgba(255,255,255,.25); }
+.cl .k { color: #93C5FD; } .cl .v { color: #FDE68A; } .cl .c { color: rgba(255,255,255,.35); }
+.far { filter: blur(5px); opacity: .55; }
+.far2 { filter: blur(9px); opacity: .35; }
+#hot { position: absolute; left: 24px; top: 488px; width: 930px; height: 74px; border-radius: 12px; background: rgba(251,191,36,.18);
+  border-left: 8px solid var(--amb); box-shadow: 0 0 50px rgba(251,191,36,.35); transform-origin: 0 50%; transform: scaleX(0); }
+#pub { position: absolute; right: 36px; top: 14px; display: flex; align-items: center; gap: 12px; padding: 8px 18px; border-radius: 22px;
+  background: rgba(251,191,36,.95); color: #111827; font-weight: 800; font-size: 28px; letter-spacing: .08em; opacity: 0; }
+#cursor { position: absolute; left: 700px; top: 760px; width: 64px; height: 64px; opacity: 0; filter: drop-shadow(0 6px 10px rgba(0,0,0,.6)); }
+#cutT { position: absolute; left: 0; top: 250px; width: 1080px; text-align: center; perspective: 1200px; opacity: 0; }
+#cutT .in { display: inline-block; transform: rotateX(18deg) rotateY(-16deg) rotateZ(-4deg); }
+#cutT .l1 { font-weight: 700; font-size: 38px; letter-spacing: .22em; color: var(--cy); text-align: left; margin-bottom: 8px; }
+#cutT .l2 { font-family: "GeorgiaHL"; font-size: 150px; line-height: 1; color: #fff; text-shadow: 0 0 40px rgba(255,255,255,.45); }
+#cutT .l3 { font-weight: 700; font-size: 44px; color: var(--amb); text-align: left; margin-top: 14px; opacity: 0; }
+.ilu { position: absolute; font-weight: 600; font-size: 24px; letter-spacing: .16em; color: rgba(245,247,250,.6); }
+
+/* ---- keyframe line that cracks (beat "celah") ---- */
+#kl { left: 0; top: 990px; width: 1080px; height: 200px; }
+.half { position: absolute; top: 0; width: 540px; height: 200px; }
+#klL { left: 0; } #klR { left: 540px; }
+.ln { position: absolute; top: 40px; height: 3px; background: rgba(255,255,255,.85); box-shadow: 0 0 10px rgba(255,255,255,.5); }
+.fill { position: absolute; top: 37px; height: 9px; border-radius: 5px; background: var(--cy); box-shadow: 0 0 18px rgba(103,232,249,.8); transform-origin: 0 50%; transform: scaleX(0); }
+.kd { position: absolute; top: 22px; width: 40px; height: 40px; transform: rotate(45deg); border: 4px solid #fff; background: #0b1220; box-shadow: 0 0 16px rgba(255,255,255,.5); }
+.kt { position: absolute; top: 84px; width: 240px; margin-left: -120px; text-align: center; font-weight: 700; font-size: 26px; letter-spacing: .12em; text-shadow: 0 2px 10px rgba(0,0,0,.8); }
+#gap { position: absolute; left: 470px; top: 0; width: 140px; height: 90px; opacity: 0;
+  background: radial-gradient(ellipse 50% 50% at 50% 45%, rgba(251,191,36,.95) 0%, rgba(251,191,36,.35) 40%, rgba(251,191,36,0) 75%); }
+
+/* ---- bookmark 3D ---- */
+#bm { left: 480px; top: 900px; width: 120px; height: 120px; perspective: 500px; }
+#bm svg { width: 120px; height: 120px; color: var(--cy); filter: drop-shadow(0 0 16px rgba(103,232,249,.7)); }
+#bmFill { opacity: 0; }
+
+/* ---- checklist diamonds ---- */
+#cks { left: 0; top: 1300px; width: 1080px; height: 60px; }
+#cks .ln { left: 390px; width: 300px; top: 28px; }
+#cks .kd { top: 10px; width: 36px; height: 36px; }
+#cks .dot { position: absolute; inset: 6px; background: var(--cy); opacity: 0; }
+
+/* ---- AI bubble ---- */
+#bub { left: 0; width: 1080px; top: 1185px; display: flex; justify-content: center; align-items: center; gap: 18px; }
+#bub .av { width: 74px; height: 74px; border-radius: 50%; border: 3px solid var(--cy); color: var(--cy); font-weight: 800; font-size: 30px;
+  line-height: 68px; text-align: center; background: rgba(11,18,32,.7); }
+#bub .b { position: relative; padding: 18px 34px; border-radius: 30px 30px 30px 8px; background: var(--w); color: #111827; font-family: "GeorgiaHL"; font-size: 64px; line-height: 1; }
+#stamp { position: absolute; right: -40px; top: -46px; width: 84px; height: 84px; border-radius: 50%; background: var(--amb); color: #111827;
+  font-family: "GeorgiaHL"; font-size: 62px; line-height: 84px; text-align: center; opacity: 0; box-shadow: 0 6px 20px rgba(0,0,0,.45); }
+#bub .ilu { position: absolute; left: 0; width: 1080px; text-align: center; top: 122px; }
+
+#brand { left: 0; width: 1080px; top: 1505px; text-align: center; font-weight: 700; font-size: 34px; letter-spacing: .04em; text-shadow: 0 2px 10px rgba(0,0,0,.6); }
+#brand b { color: var(--cy); font-weight: 700; }
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="aiwebsec2" data-start="0" data-duration="29.733" data-fps="30" data-width="1080" data-height="1920">
+  <div id="cam">
+    <video id="plate" src="plate.mp4" playsinline data-has-audio="true" data-start="0" data-duration="29.733" data-track-index="0"></video>
+  </div>
+  <div id="veil"></div>
+  <div class="shade" id="shA" style="top:700px"></div>
+
+  <!-- HOOK -->
+  <div class="lab" id="hkL" style="top:808px">BIKIN</div>
+  <div class="g" id="hkW" style="top:860px; font-size:330px">WEBSITE</div>
+  <div class="a" id="hkD"><div class="cube" id="hkC"><i></i></div></div>
+  <div class="lab cy" id="hkAI" style="top:1090px">PAKAI AI</div>
+  <div class="g cy" id="hkCep" style="top:1080px; font-size:230px">CEPAT.</div>
+
+  <!-- AMAN behind head (matte composited later) + RAPI ≠ AMAN -->
+  <div class="lab" id="amL" style="top:252px">JANGAN LANGSUNG MERASA</div>
+  <div class="g" id="amW" style="top:296px; font-size:300px">AMAN</div>
+  <div class="g" id="raW" style="top:930px; font-size:124px">RAPI <span class="am">&ne;</span> AMAN</div>
+  <div class="lab" id="raL" style="top:870px; font-size:34px">TAMPILAN RAPI</div>
+
+  <!-- CUTAWAY: kunci API -->
+  <div id="cut">
+    <div class="bok" style="left:80px; top:240px; width:90px; height:90px"></div>
+    <div class="bok" style="left:860px; top:420px; width:60px; height:60px; opacity:.6"></div>
+    <div class="bok" style="left:180px; top:1500px; width:120px; height:120px; opacity:.5"></div>
+    <div class="bok" style="left:900px; top:1650px; width:80px; height:80px; opacity:.4"></div>
+    <div id="stage"><div id="panel">
+      <div class="tb"><i></i><i></i><i></i><b>config.js</b>
+        <div id="pub"><svg width="30" height="30" viewBox="0 0 100 100" fill="none" stroke="#111827" stroke-width="9"><circle cx="50" cy="50" r="38"/><path d="M12 50h76M50 12c-14 14-14 62 0 76M50 12c14 14 14 62 0 76"/></svg>REPO PUBLIK</div>
+      </div>
+      <div class="cl far2" style="top:110px"><span class="n">1</span><span class="c">// konfigurasi aplikasi</span></div>
+      <div class="cl far" style="top:190px"><span class="n">2</span><span class="k">import</span> db <span class="k">from</span> <span class="v">"./db"</span>;</div>
+      <div class="cl far" style="top:270px"><span class="n">3</span></div>
+      <div class="cl" style="top:350px; opacity:.8"><span class="n">4</span><span class="k">const</span> APP_NAME = <span class="v">"TokoKu"</span>;</div>
+      <div class="cl" style="top:420px; opacity:.9"><span class="n">5</span><span class="k">const</span> PORT = 3000;</div>
+      <div id="hot"></div>
+      <div class="cl" style="top:500px; color:#fff"><span class="n">6</span><span class="k">const</span> API_KEY = <span class="v">"DEMO_ONLY"</span>;</div>
+      <div class="cl" style="top:580px; opacity:.85"><span class="n">7</span></div>
+      <div class="cl far" style="top:650px"><span class="n">8</span><span class="k">export default</span> {</div>
+      <div class="cl far2" style="top:730px"><span class="n">9</span>&nbsp;&nbsp;APP_NAME, PORT, API_KEY</div>
+      <div class="cl far2" style="top:810px"><span class="n">10</span>};</div>
+    </div></div>
+    <svg id="cursor" viewBox="0 0 100 100"><path d="M18 8 L18 82 L38 64 L52 94 L64 88 L50 58 L78 58 Z" fill="#fff" stroke="#0b1220" stroke-width="5" stroke-linejoin="round"/></svg>
+    <div id="cutT"><div class="in">
+      <div class="l1"><span class="dia"></span>01 · RISIKO</div>
+      <div class="l2">KUNCI API</div>
+      <div class="l3" id="cutSub">bocor di kode publik</div>
+    </div></div>
+    <div class="ilu" style="left:0; width:1080px; text-align:center; top:1520px">ILUSTRASI · BUKAN KUNCI ASLI</div>
+  </div>
+  <div id="beam"></div>
+
+  <!-- risk 02 / 03: label + thrown serif + amber sub -->
+  <div class="lab cy" id="r2L" style="top:845px"><span class="dia"></span>02 · HAK AKSES</div>
+  <div class="g" id="r2W" style="top:900px; font-size:240px">ADMIN</div>
+  <div class="sub" id="r2S" style="top:1150px">nggak dibatasi</div>
+  <div class="lab cy" id="r3L" style="top:845px"><span class="dia"></span>03 · VALIDASI</div>
+  <div class="g" id="r3W" style="top:900px; font-size:240px">INPUT</div>
+  <div class="sub" id="r3S" style="top:1150px">nggak divalidasi</div>
+
+  <!-- keyframe line → crack -->
+  <div class="a" id="kl">
+    <div class="half" id="klL">
+      <div class="ln" style="left:-20px; width:560px"></div>
+      <div class="fill" id="klF1" style="left:180px; width:360px"></div>
+      <div class="kd" style="left:160px"></div><div class="kt" style="left:180px">KUNCI API</div>
+    </div>
+    <div class="half" id="klR">
+      <div class="ln" style="left:0; width:560px"></div>
+      <div class="fill" id="klF2" style="left:0; width:360px"></div>
+      <div class="kd" style="left:340px"></div><div class="kt" style="left:360px">INPUT</div>
+    </div>
+    <div class="kd" id="klMid" style="left:520px"></div><div class="kt" id="klMidT" style="left:540px">HAK AKSES</div>
+    <div id="gap"></div>
+  </div>
+  <div class="g am" id="clW" style="top:1170px; font-size:110px">celah keamanan.</div>
+
+  <!-- save / follow -->
+  <div class="a" id="bm"><svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="7" stroke-linejoin="round">
+    <path id="bmFill" d="M26 10h48v80L50 72 26 90z" fill="currentColor"/><path d="M26 10h48v80L50 72 26 90z"/></svg></div>
+  <div class="g" id="svW" style="top:1050px; font-size:150px">save dulu.</div>
+  <div class="g cy" id="foW" style="top:300px; font-size:260px">FOLLOW</div>
+  <div class="sub" id="foS" style="top:1000px; color:#F5F7FA">buat tips keamanan AI lainnya</div>
+
+  <!-- before release -->
+  <div class="lab cy" id="sbL" style="top:850px"><span class="dia"></span>SEBELUM RILIS</div>
+  <div class="g" id="sbW" style="top:905px; font-size:200px">cek lagi.</div>
+  <div class="a" id="cks">
+    <div class="ln"></div>
+    <div class="kd" style="left:372px"><div class="dot" id="ck1"></div></div>
+    <div class="kd" style="left:522px"><div class="dot" id="ck2"></div></div>
+    <div class="kd" style="left:672px"><div class="dot" id="ck3"></div></div>
+  </div>
+  <div class="g" id="l1" style="top:1385px; font-size:170px">Kunci API</div>
+  <div class="g" id="l2" style="top:1385px; font-size:170px">Hak akses</div>
+  <div class="g" id="l3" style="top:1395px; font-size:130px">Validasi input</div>
+
+  <!-- don't just trust -->
+  <div class="lab" id="jcL" style="top:1100px">JANGAN CUMA PERCAYA</div>
+  <div class="a" id="bub"><div class="av">AI</div><div class="b">Beres!<div id="stamp">?</div></div><div class="ilu">ILUSTRASI</div></div>
+
+  <!-- close -->
+  <div class="lab" id="enL" style="top:860px">HARUS TETAP</div>
+  <div class="g cy" id="enW" style="top:905px; font-size:260px">diuji</div>
+  <div class="g" id="enW2" style="top:1150px; font-size:180px">sendiri.</div>
+  <div class="a" id="brand">Endrich<b>Tech</b></div>
+
+  <script src="vendor/gsap.min.js"></script>
+  <script>
+  (function () {
+    var FPS = 30, END = 29.733;
+    function q(t) { return Math.round(t * FPS) / FPS; }
+    var tl = gsap.timeline({ paused: true });
+    function fade(sel, t, d, v) { tl.to(sel, { opacity: v === undefined ? 1 : v, duration: d || 0.2, ease: "power2.out" }, q(t)); }
+    function up(sel, t, dy) { tl.fromTo(sel, { opacity: 0, y: dy || 24 }, { opacity: 1, y: 0, duration: 0.25, ease: "power3.out" }, q(t)); }
+    // ref-2 style throw: slides in from the side with motion blur + skew
+    function thr(sel, t, dir) {
+      var d = dir || 1;
+      tl.fromTo(sel, { opacity: 0, x: 320 * d, skewX: -14 * d, filter: "blur(18px)" },
+        { opacity: 1, x: 0, skewX: 0, filter: "blur(0px)", duration: 0.3, ease: "power3.out" }, q(t));
+    }
+    function thrOut(sel, t, dir) {
+      var d = dir || 1;
+      tl.to(sel, { opacity: 0, x: -260 * d, skewX: 10 * d, filter: "blur(14px)", duration: 0.2, ease: "power2.in" }, q(t));
+    }
+    function out(sel, t, d) { tl.to(sel, { opacity: 0, duration: d || 0.18, ease: "power2.in" }, q(t)); }
+    // virtual camera
+    function cam(t, vars, d, ease) { tl.to("#cam", Object.assign({ duration: d || 0.001, ease: ease || "power3.out" }, vars), q(t)); }
+    function camSet(t, vars) { tl.set("#cam", vars, q(t)); }
+
+    // ---------- HOOK 0.00–2.10 ----------
+    camSet(0, { scale: 1.1, transformOrigin: "540px 620px", filter: "blur(16px) brightness(0.5)" });
+    tl.set("#hkW", { opacity: 1, scale: 1, y: 0 }, 0);
+    tl.fromTo("#hkW", { x: 140 }, { x: -60, duration: 0.75, ease: "none" }, 0);   // drifting, overflowing the frame
+    tl.set("#hkL", { opacity: 1 }, 0);
+    tl.set("#hkD", { opacity: 1 }, 0);
+    tl.fromTo("#hkC", { rotationY: 0, rotationX: 10 }, { rotationY: 300, rotationX: -10, duration: 0.75, ease: "none" }, 0);
+    // focus pull back to Endrich on "pakai AI"
+    cam(0.70, { scale: 1.0, filter: "blur(0px) brightness(1)" }, 0.45, "power2.inOut");
+    tl.to("#hkW", { scale: 0.42, x: 0, y: 12, duration: 0.45, ease: "power3.inOut" }, q(0.70));
+    tl.to("#hkL", { y: 150, opacity: 0, duration: 0.3 }, q(0.70));
+    tl.to("#hkD", { y: 130, scale: 0.6, opacity: 0, duration: 0.35 }, q(0.70));
+    fade("#shA", 0.70, 0.3);
+    up("#hkAI", 0.98, 18);
+    // "cepat" — hard punch-in + word thrown in
+    out("#hkW", 1.58, 0.1); out("#hkAI", 1.58, 0.1);
+    camSet(1.60, { scale: 1.24, transformOrigin: "560px 560px" });
+    thr("#hkCep", 1.60, 1);
+    out("#hkCep", 2.04, 0.08); out("#shA", 2.04, 0.08);
+    camSet(2.10, { scale: 1.0 });
+
+    // ---------- AMAN behind head 2.80–5.60 (camera must stay at 1.0 for the matte) ----------
+    up("#amL", 2.80, 16);
+    tl.fromTo("#amW", { opacity: 0, scale: 1.25, filter: "blur(20px)" }, { opacity: 1, scale: 1, filter: "blur(0px)", duration: 0.32, ease: "power3.out" }, q(3.74));
+    out("#amL", 4.58);
+    tl.to("#amW", { opacity: 0, filter: "blur(16px)", scale: 0.92, duration: 0.2, ease: "power2.in" }, q(5.50));
+    // RAPI ≠ AMAN at "rapi"
+    fade("#shA", 5.62, 0.2);
+    up("#raL", 4.94, 14);
+    tl.fromTo("#raW", { opacity: 0, scale: 1.15, filter: "blur(14px)" }, { opacity: 1, scale: 1, filter: "blur(0px)", duration: 0.28, ease: "power3.out" }, q(5.70));
+    out("#raW", 6.30); out("#raL", 6.30); out("#shA", 6.30);
+
+    // ---------- "Contohnya" punch-in, then CUTAWAY kunci API 7.20–9.95 ----------
+    camSet(6.60, { scale: 1.18, transformOrigin: "560px 560px" });
+    cam(7.08, { scale: 1.45, filter: "blur(18px) brightness(0.5)" }, 0.22, "power2.in");
+    tl.fromTo("#cut", { opacity: 0, scale: 1.12, filter: "blur(24px)" }, { opacity: 1, scale: 1, filter: "blur(0px)", duration: 0.3, ease: "power3.out" }, q(7.18));
+    tl.fromTo("#panel", { x: 0, y: 40, z: 0 }, { x: -40, y: -40, z: 180, duration: 2.6, ease: "none" }, q(7.18));   // slow camera push into the screen
+    tl.fromTo("#cutT", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.3, ease: "power3.out" }, q(7.82));
+    tl.fromTo("#cursor", { opacity: 0, x: 140, y: 260 }, { opacity: 1, x: 0, y: 0, duration: 0.5, ease: "power2.out" }, q(7.90));
+    tl.to("#cursor", { scale: 0.82, duration: 0.08, yoyo: true, repeat: 1 }, q(8.46));           // click on "bocor"
+    tl.to("#hot", { scaleX: 1, duration: 0.3, ease: "power3.out" }, q(8.46));
+    up("#cutSub", 8.46, 12);
+    tl.fromTo("#pub", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.28, ease: "back.out(2)" }, q(9.22));
+    tl.fromTo("#beam", { opacity: 0, x: -700, scaleX: 1 }, { opacity: 1, x: 700, scaleX: 3, duration: 0.3, ease: "power2.inOut" }, q(9.66));
+    tl.to("#beam", { opacity: 0, duration: 0.1 }, q(9.96));
+    tl.to("#cut", { opacity: 0, filter: "blur(20px)", scale: 1.08, duration: 0.25, ease: "power2.in" }, q(9.72));
+    camSet(9.70, { scale: 1.0, filter: "blur(0px) brightness(1)" });
+
+    // ---------- 02 HAK AKSES 10.60–12.30 (slow push on the glass shot) ----------
+    camSet(9.97, { transformOrigin: "540px 640px", scale: 1.0 });
+    cam(9.97, { scale: 1.08 }, 2.4, "none");
+    fade("#shA", 10.55, 0.2);
+    up("#r2L", 10.60, 16);
+    thr("#r2W", 11.02, 1);
+    up("#r2S", 11.50, 14);
+    thrOut("#r2W", 12.30, 1); out("#r2L", 12.30); out("#r2S", 12.30);
+    camSet(12.37, { scale: 1.0 });
+
+    // ---------- 03 VALIDASI INPUT 12.56–14.04 (pouring: no camera move) ----------
+    up("#r3L", 12.56, 16);
+    thr("#r3W", 12.62, -1);
+    up("#r3S", 13.38, 14);
+    thrOut("#r3W", 14.02, -1); out("#r3L", 14.02); out("#r3S", 14.02); out("#shA", 14.02);
+
+    // ---------- "itu celah keamanan": keyframe line cracks 14.10–15.36 ----------
+    fade("#veil", 14.06, 0.25, 0.85);
+    cam(14.06, { filter: "blur(5px) brightness(0.85)" }, 0.25);
+    fade("#kl", 14.10, 0.2);
+    tl.to("#klF1", { scaleX: 1, duration: 0.2, ease: "none" }, q(14.14));
+    tl.to("#klF2", { scaleX: 1, duration: 0.2, ease: "none" }, q(14.32));
+    // crack on "celah"
+    tl.to("#klL", { x: -70, y: 10, rotation: -5, duration: 0.25, ease: "power3.out" }, q(14.50));
+    tl.to("#klR", { x: 70, y: 10, rotation: 5, duration: 0.25, ease: "power3.out" }, q(14.50));
+    tl.to("#klMid", { y: 80, rotation: 80, opacity: 0, duration: 0.35, ease: "power2.in" }, q(14.50));
+    tl.to("#klMidT", { opacity: 0, duration: 0.15 }, q(14.50));
+    tl.fromTo("#gap", { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1, duration: 0.2 }, q(14.50));
+    tl.fromTo("#clW", { opacity: 0, y: 30, filter: "blur(12px)" }, { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.28, ease: "power3.out" }, q(14.62));
+    out("#kl", 15.30); out("#clW", 15.30); out("#veil", 15.30, 0.2);
+    cam(15.13, { filter: "blur(0px) brightness(1)" }, 0.001);
+
+    // ---------- save dulu 15.80–17.20 ----------
+    camSet(15.13, { transformOrigin: "540px 600px", scale: 1.0 });
+    cam(15.13, { scale: 1.06 }, 1.94, "none");
+    fade("#shA", 15.74, 0.2);
+    tl.fromTo("#bm", { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(2)" }, q(15.80));
+    tl.fromTo("#bm svg", { rotationY: -200 }, { rotationY: 0, duration: 0.6, ease: "power3.out" }, q(15.80));
+    fade("#bmFill", 16.24, 0.15);
+    thr("#svW", 15.98, 1);
+    out("#bm", 17.02); thrOut("#svW", 17.02, 1); out("#shA", 17.02);
+    camSet(17.07, { scale: 1.0 });
+
+    // ---------- FOLLOW behind head 17.40–19.62 ----------
+    tl.fromTo("#foW", { opacity: 0, scale: 1.25, filter: "blur(20px)" }, { opacity: 1, scale: 1, filter: "blur(0px)", duration: 0.32, ease: "power3.out" }, q(17.40));
+    fade("#shA", 17.70, 0.2);
+    up("#foS", 17.78, 16);
+    tl.to("#foW", { opacity: 0, filter: "blur(16px)", duration: 0.2 }, q(19.50));
+    out("#foS", 19.50); out("#shA", 19.50);
+
+    // ---------- SEBELUM RILIS 19.84–25.40 ----------
+    camSet(19.93, { transformOrigin: "540px 560px", scale: 1.0 });
+    cam(19.93, { scale: 1.1 }, 3.0, "none");
+    fade("#shA", 19.84, 0.2);
+    up("#sbL", 19.90, 16);
+    thr("#sbW", 21.34, 1);
+    fade("#cks", 21.84, 0.2);
+    thrOut("#sbW", 22.86, 1); out("#sbL", 22.86); out("#shA", 22.86);
+    camSet(22.93, { scale: 1.0 });
+    tl.set("#cks", { y: -500 }, q(22.93));          // move the diamonds above the counting hands
+    thr("#l1", 22.98, 1); fade("#ck1", 22.98, 0.15);
+    thrOut("#l1", 23.76, 1);
+    thr("#l2", 23.80, 1); fade("#ck2", 23.80, 0.15);
+    thrOut("#l2", 24.54, 1);
+    thr("#l3", 24.58, 1); fade("#ck3", 24.58, 0.15);
+    thrOut("#l3", 25.36, 1); out("#cks", 25.36);
+
+    // ---------- "jangan cuma percaya AI bilang beres" 25.50–27.60: punch-in ----------
+    camSet(25.50, { transformOrigin: "540px 520px", scale: 1.28 });
+    up("#jcL", 25.50, 16);
+    tl.fromTo("#bub", { opacity: 0, y: 30, scale: 0.9 }, { opacity: 1, y: 0, scale: 1, duration: 0.3, ease: "back.out(1.8)" }, q(26.48));
+    tl.fromTo("#stamp", { opacity: 0, scale: 2.2, rotation: -20 }, { opacity: 1, scale: 1, rotation: 8, duration: 0.25, ease: "power4.in" }, q(27.06));
+    tl.to("#bub .b", { x: -10, duration: 0.05, yoyo: true, repeat: 3 }, q(27.31));
+    out("#jcL", 27.34); out("#bub", 27.34);
+    camSet(27.37, { scale: 1.0 });
+
+    // ---------- close 28.00–end ----------
+    camSet(27.37, { transformOrigin: "540px 560px" });
+    cam(27.37, { scale: 1.07 }, 2.36, "none");
+    fade("#shA", 27.95, 0.25);
+    up("#enL", 28.00, 16);
+    tl.fromTo("#enW", { opacity: 0, scale: 1.3, filter: "blur(18px)" }, { opacity: 1, scale: 1, filter: "blur(0px)", duration: 0.3, ease: "power3.out" }, q(28.66));
+    thr("#enW2", 29.06, 1);
+    up("#brand", 28.30, 10);
+    tl.set({}, {}, END);
+
+    window.__timelines = window.__timelines || {};
+    window.__timelines["aiwebsec2"] = tl;
+  })();
+  </script>
+</div>
+</body>
+</html>

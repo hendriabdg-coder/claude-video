@@ -1,0 +1,121 @@
+{
+  "text": "[curious] Pernah batal checkout karena nggak yakin barangnya sama kayak di foto? Kayak pembeli jam di toko online milik Dimas.",
+  "spoken": "[curious] Pernah batal checkout karena nggak yakin barangnya sama kayak di foto? Kayak pembeli jam di toko online milik Dimas.",
+  "duration": 6.24,
+  "words": [
+    {
+      "word": "Pernah",
+      "spoken": "Pernah",
+      "start": 0.067,
+      "end": 0.32
+    },
+    {
+      "word": "batal",
+      "spoken": "batal",
+      "start": 0.36,
+      "end": 0.64
+    },
+    {
+      "word": "checkout",
+      "spoken": "checkout",
+      "start": 0.84,
+      "end": 1.04
+    },
+    {
+      "word": "karena",
+      "spoken": "karena",
+      "start": 1.12,
+      "end": 1.36
+    },
+    {
+      "word": "nggak",
+      "spoken": "nggak",
+      "start": 1.44,
+      "end": 1.6
+    },
+    {
+      "word": "yakin",
+      "spoken": "yakin",
+      "start": 1.68,
+      "end": 2.0
+    },
+    {
+      "word": "barangnya",
+      "spoken": "barangnya",
+      "start": 2.08,
+      "end": 2.4
+    },
+    {
+      "word": "sama",
+      "spoken": "sama",
+      "start": 2.48,
+      "end": 2.72
+    },
+    {
+      "word": "kayak",
+      "spoken": "kayak",
+      "start": 2.8,
+      "end": 2.92
+    },
+    {
+      "word": "di",
+      "spoken": "di",
+      "start": 2.96,
+      "end": 3.04
+    },
+    {
+      "word": "foto?",
+      "spoken": "foto?",
+      "start": 3.2,
+      "end": 3.76
+    },
+    {
+      "word": "Kayak",
+      "spoken": "Kayak",
+      "start": 3.84,
+      "end": 4.0
+    },
+    {
+      "word": "pembeli",
+      "spoken": "pembeli",
+      "start": 4.053,
+      "end": 4.32
+    },
+    {
+      "word": "jam",
+      "spoken": "jam",
+      "start": 4.4,
+      "end": 4.56
+    },
+    {
+      "word": "di",
+      "spoken": "di",
+      "start": 4.6,
+      "end": 4.64
+    },
+    {
+      "word": "toko",
+      "spoken": "toko",
+      "start": 4.72,
+      "end": 4.88
+    },
+    {
+      "word": "online",
+      "spoken": "online",
+      "start": 4.96,
+      "end": 5.2
+    },
+    {
+      "word": "milik",
+      "spoken": "milik",
+      "start": 5.24,
+      "end": 5.44
+    },
+    {
+      "word": "Dimas.",
+      "spoken": "Dimas.",
+      "start": 5.56,
+      "end": 6.24
+    }
+  ]
+}

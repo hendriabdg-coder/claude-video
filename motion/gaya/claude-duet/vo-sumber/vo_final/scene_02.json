@@ -1,0 +1,163 @@
+{
+  "text": "Bedanya sama chatbot biasa: Duet nggak nunggu disuruh. Dia jalan di cloud, ngecek Gmail, kalender, Slack, sampai QuickBooks secara berkala... terus ngabarin kalau ada yang penting.",
+  "spoken": "Bedanya sama chatbot biasa: Duet nggak nunggu disuruh. Dia jalan di cloud, ngecek Gmail, kalender, Slack, sampai QuickBooks secara berkala... terus ngabarin kalau ada yang penting.",
+  "duration": 10.48,
+  "words": [
+    {
+      "word": "Bedanya",
+      "spoken": "Bedanya",
+      "start": 0.0,
+      "end": 0.4
+    },
+    {
+      "word": "sama",
+      "spoken": "sama",
+      "start": 0.44,
+      "end": 0.64
+    },
+    {
+      "word": "chatbot",
+      "spoken": "chatbot",
+      "start": 0.76,
+      "end": 0.96
+    },
+    {
+      "word": "biasa:",
+      "spoken": "biasa:",
+      "start": 1.04,
+      "end": 1.84
+    },
+    {
+      "word": "Duet",
+      "spoken": "Duet",
+      "start": 1.88,
+      "end": 2.16
+    },
+    {
+      "word": "nggak",
+      "spoken": "nggak",
+      "start": 2.2,
+      "end": 2.32
+    },
+    {
+      "word": "nunggu",
+      "spoken": "nunggu",
+      "start": 2.4,
+      "end": 2.56
+    },
+    {
+      "word": "disuruh.",
+      "spoken": "disuruh.",
+      "start": 2.64,
+      "end": 3.36
+    },
+    {
+      "word": "Dia",
+      "spoken": "Dia",
+      "start": 3.44,
+      "end": 3.52
+    },
+    {
+      "word": "jalan",
+      "spoken": "jalan",
+      "start": 3.6,
+      "end": 3.76
+    },
+    {
+      "word": "di",
+      "spoken": "di",
+      "start": 3.84,
+      "end": 3.92
+    },
+    {
+      "word": "cloud,",
+      "spoken": "cloud,",
+      "start": 4.12,
+      "end": 4.48
+    },
+    {
+      "word": "ngecek",
+      "spoken": "ngecek",
+      "start": 4.56,
+      "end": 4.8
+    },
+    {
+      "word": "Gmail,",
+      "spoken": "Gmail,",
+      "start": 4.88,
+      "end": 5.52
+    },
+    {
+      "word": "kalender,",
+      "spoken": "kalender,",
+      "start": 5.6,
+      "end": 6.24
+    },
+    {
+      "word": "Slack,",
+      "spoken": "Slack,",
+      "start": 6.32,
+      "end": 6.8
+    },
+    {
+      "word": "sampai",
+      "spoken": "sampai",
+      "start": 6.92,
+      "end": 7.12
+    },
+    {
+      "word": "QuickBooks",
+      "spoken": "QuickBooks",
+      "start": 7.2,
+      "end": 7.6
+    },
+    {
+      "word": "secara",
+      "spoken": "secara",
+      "start": 7.68,
+      "end": 7.92
+    },
+    {
+      "word": "berkala...",
+      "spoken": "berkala...",
+      "start": 8.0,
+      "end": 8.64
+    },
+    {
+      "word": "terus",
+      "spoken": "terus",
+      "start": 8.72,
+      "end": 8.88
+    },
+    {
+      "word": "ngabarin",
+      "spoken": "ngabarin",
+      "start": 8.92,
+      "end": 9.36
+    },
+    {
+      "word": "kalau",
+      "spoken": "kalau",
+      "start": 9.44,
+      "end": 9.56
+    },
+    {
+      "word": "ada",
+      "spoken": "ada",
+      "start": 9.6,
+      "end": 9.68
+    },
+    {
+      "word": "yang",
+      "spoken": "yang",
+      "start": 9.76,
+      "end": 9.84
+    },
+    {
+      "word": "penting.",
+      "spoken": "penting.",
+      "start": 9.96,
+      "end": 10.48
+    }
+  ]
+}

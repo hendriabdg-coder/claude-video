@@ -1,0 +1,145 @@
+{
+  "text": "[cheerful] Halo, aku Endrich... versi kartun! Mulai sekarang, aku yang nemenin kamu belajar AI. Dari yang tadinya cuma coretan... jadi sesuatu yang beneran keren.",
+  "spoken": "[cheerful] Halo, aku Endrich... versi kartun! Mulai sekarang, aku yang nemenin kamu belajar Ei-ai. Dari yang tadinya cuma coretan... jadi sesuatu yang beneran keren.",
+  "duration": 10.4,
+  "words": [
+    {
+      "word": "Halo,",
+      "spoken": "Halo,",
+      "start": 0.08,
+      "end": 0.72
+    },
+    {
+      "word": "aku",
+      "spoken": "aku",
+      "start": 0.8,
+      "end": 1.04
+    },
+    {
+      "word": "Endrich...",
+      "spoken": "Endrich...",
+      "start": 1.12,
+      "end": 1.84
+    },
+    {
+      "word": "versi",
+      "spoken": "versi",
+      "start": 1.96,
+      "end": 2.16
+    },
+    {
+      "word": "kartun!",
+      "spoken": "kartun!",
+      "start": 2.24,
+      "end": 2.88
+    },
+    {
+      "word": "Mulai",
+      "spoken": "Mulai",
+      "start": 3.2,
+      "end": 3.36
+    },
+    {
+      "word": "sekarang,",
+      "spoken": "sekarang,",
+      "start": 3.44,
+      "end": 4.08
+    },
+    {
+      "word": "aku",
+      "spoken": "aku",
+      "start": 4.24,
+      "end": 4.4
+    },
+    {
+      "word": "yang",
+      "spoken": "yang",
+      "start": 4.48,
+      "end": 4.56
+    },
+    {
+      "word": "nemenin",
+      "spoken": "nemenin",
+      "start": 4.613,
+      "end": 4.88
+    },
+    {
+      "word": "kamu",
+      "spoken": "kamu",
+      "start": 4.92,
+      "end": 5.12
+    },
+    {
+      "word": "belajar",
+      "spoken": "belajar",
+      "start": 5.2,
+      "end": 5.44
+    },
+    {
+      "word": "AI.",
+      "spoken": "Ei-ai.",
+      "start": 5.52,
+      "end": 6.16
+    },
+    {
+      "word": "Dari",
+      "spoken": "Dari",
+      "start": 6.32,
+      "end": 6.48
+    },
+    {
+      "word": "yang",
+      "spoken": "yang",
+      "start": 6.56,
+      "end": 6.64
+    },
+    {
+      "word": "tadinya",
+      "spoken": "tadinya",
+      "start": 6.72,
+      "end": 6.96
+    },
+    {
+      "word": "cuma",
+      "spoken": "cuma",
+      "start": 7.04,
+      "end": 7.2
+    },
+    {
+      "word": "coretan...",
+      "spoken": "coretan...",
+      "start": 7.36,
+      "end": 8.24
+    },
+    {
+      "word": "jadi",
+      "spoken": "jadi",
+      "start": 8.32,
+      "end": 8.4
+    },
+    {
+      "word": "sesuatu",
+      "spoken": "sesuatu",
+      "start": 8.48,
+      "end": 8.96
+    },
+    {
+      "word": "yang",
+      "spoken": "yang",
+      "start": 9.04,
+      "end": 9.2
+    },
+    {
+      "word": "beneran",
+      "spoken": "beneran",
+      "start": 9.28,
+      "end": 9.76
+    },
+    {
+      "word": "keren.",
+      "spoken": "keren.",
+      "start": 9.84,
+      "end": 10.4
+    }
+  ]
+}

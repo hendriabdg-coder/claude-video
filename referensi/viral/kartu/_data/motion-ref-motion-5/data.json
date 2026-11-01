@@ -1,0 +1,277 @@
+{
+ "file": "motion\\ref-motion-5.mp4",
+ "jenis": "motion",
+ "durasi": 130.77,
+ "langkah_sheet_dtk": 2.18,
+ "potongan": [
+  9.57,
+  10.03,
+  17.77,
+  39.43,
+  39.9,
+  67.97,
+  68.43,
+  78.37,
+  78.83,
+  91.37,
+  91.83,
+  97.23,
+  97.7,
+  110.87,
+  111.33,
+  123.73,
+  124.2
+ ],
+ "jumlah_shot": 18,
+ "rata_panjang_shot_dtk": 7.27,
+ "transkrip": {
+  "bahasa": "id",
+  "segmen": [
+   {
+    "mulai": 0.0,
+    "selesai": 4.2,
+    "teks": "Oke, sekarang gue jelasin gimana sebenernya video ini bisa jadi dari Claude."
+   },
+   {
+    "mulai": 4.68,
+    "selesai": 6.2,
+    "teks": "Kuncinya ada di Remotion."
+   },
+   {
+    "mulai": 6.68,
+    "selesai": 9.38,
+    "teks": "Remotion itu library buat bikin video pake kode."
+   },
+   {
+    "mulai": 9.66,
+    "selesai": 14.06,
+    "teks": "Jadi video bukan direkam dari layar, tapi dirender dari komponen bahasa React."
+   },
+   {
+    "mulai": 14.56,
+    "selesai": 17.42,
+    "teks": "Setiap frame itu hasil dari kode yang lo tulis."
+   },
+   {
+    "mulai": 17.84,
+    "selesai": 18.82,
+    "teks": "Konsepnya gampang."
+   },
+   {
+    "mulai": 19.02,
+    "selesai": 21.92,
+    "teks": "Video itu cuma deretan gambar yang ditampilkan berurutan."
+   },
+   {
+    "mulai": 22.56,
+    "selesai": 27.62,
+    "teks": "Di Remotion, lo bikin satu komponen React yang bisa tau frame keberapa yang lagi dirender."
+   },
+   {
+    "mulai": 28.08,
+    "selesai": 29.92,
+    "teks": "Nilai frame itu yang nentuin posisi."
+   },
+   {
+    "mulai": 30.0,
+    "selesai": 33.08,
+    "teks": "Ukuran, warna, atau opacity sebuah elemen."
+   },
+   {
+    "mulai": 33.26,
+    "selesai": 35.7,
+    "teks": "Jadi kalau frame naik, logo membesar."
+   },
+   {
+    "mulai": 35.88,
+    "selesai": 39.04,
+    "teks": "Kalau frame lewat batas tertentu, partikel mulai jatuh."
+   },
+   {
+    "mulai": 39.68,
+    "selesai": 40.92,
+    "teks": "Di sinilah Claude masuk."
+   },
+   {
+    "mulai": 41.4,
+    "selesai": 43.26,
+    "teks": "Lo minta Claude nulis komponen Remotion."
+   },
+   {
+    "mulai": 43.54,
+    "selesai": 45.72,
+    "teks": "Misalnya, buatin komponen Remotion."
+   },
+   {
+    "mulai": 45.96,
+    "selesai": 48.94,
+    "teks": "Logo muncul dengan efek pop di frame 0 sampai 30."
+   },
+   {
+    "mulai": 49.28,
+    "selesai": 52.44,
+    "teks": "Lalu partikel jatuh dari frame 30 sampai 90."
+   },
+   {
+    "mulai": 52.74,
+    "selesai": 55.26,
+    "teks": "Claude bakal ngasih kode TSX lengkap."
+   },
+   {
+    "mulai": 55.78,
+    "selesai": 56.7,
+    "teks": "Alurnya begini."
+   },
+   {
+    "mulai": 57.08,
+    "selesai": 58.8,
+    "teks": "Pertama, naskah dan timing."
+   },
+   {
+    "mulai": 58.8,
+    "selesai": 61.4,
+    "teks": "Lo tentuin durasi tiap adegan dalam detik."
+   },
+   {
+    "mulai": 61.54,
+    "selesai": 63.44,
+    "teks": "Lalu Remotion ngubahnya jadi frame."
+   },
+   {
+    "mulai": 63.7,
+    "selesai": 67.68,
+    "teks": "Misal 30 fps, 5 detik itu 150 frame."
+   },
+   {
+    "mulai": 68.12,
+    "selesai": 70.48,
+    "teks": "Kedua, Claude bikin komponen per adegan."
+   },
+   {
+    "mulai": 70.68,
+    "selesai": 72.46,
+    "teks": "Tiap adegan itu komponen sendiri."
+   },
+   {
+    "mulai": 72.64,
+    "selesai": 74.68,
+    "teks": "Dan Remotion nyusunnya pakai sequence."
+   },
+   {
+    "mulai": 75.2,
+    "selesai": 77.96,
+    "teks": "Jadi tiap komponen mulai di frame yang udah ditentuin."
+   },
+   {
+    "mulai": 77.96,
+    "selesai": 81.76,
+    "teks": "Ketiga, animasi pakai fungsi interpolate atau spring."
+   },
+   {
+    "mulai": 82.14,
+    "selesai": 83.48,
+    "teks": "Ini yang bikin gerakan halus."
+   },
+   {
+    "mulai": 83.88,
+    "selesai": 87.56,
+    "teks": "Interpolate ngubah nilai dari satu angka ke angka lain sesuai rentang frame."
+   },
+   {
+    "mulai": 87.94,
+    "selesai": 89.66,
+    "teks": "Spring bikin gerakan kayak pegas."
+   },
+   {
+    "mulai": 89.9,
+    "selesai": 90.94,
+    "teks": "Cocok buat efek pop."
+   },
+   {
+    "mulai": 91.58,
+    "selesai": 94.02,
+    "teks": "Keempat, lo preview di Remotion Studio."
+   },
+   {
+    "mulai": 94.24,
+    "selesai": 96.94,
+    "teks": "Yaitu browser lokal yang nampilin hasilnya real-time."
+   },
+   {
+    "mulai": 97.28,
+    "selesai": 99.3,
+    "teks": "Kalau ada yang kurang, lo bilang ke Claude."
+   },
+   {
+    "mulai": 99.68,
+    "selesai": 101.2,
+    "teks": "Lalu Claude revisi kodenya."
+   },
+   {
+    "mulai": 101.2,
+    "selesai": 102.74,
+    "teks": "Kelima, render."
+   },
+   {
+    "mulai": 103.04,
+    "selesai": 107.68,
+    "teks": "Perintah NPX Remotion Render mengubah semua frame jadi file MP4."
+   },
+   {
+    "mulai": 108.16,
+    "selesai": 110.38,
+    "teks": "Di sini video jadi file yang bisa lo upload."
+   },
+   {
+    "mulai": 110.88,
+    "selesai": 113.0,
+    "teks": "Jadi intinya, naskah jadi timing."
+   },
+   {
+    "mulai": 113.36,
+    "selesai": 114.36,
+    "teks": "Timing jadi frame."
+   },
+   {
+    "mulai": 114.66,
+    "selesai": 116.18,
+    "teks": "Frame jadi kode animasi."
+   },
+   {
+    "mulai": 116.4,
+    "selesai": 118.34,
+    "teks": "Dan kode itu di render jadi video."
+   },
+   {
+    "mulai": 118.86,
+    "selesai": 121.0,
+    "teks": "Claude ngerjain bagian nulis kode dan timing."
+   },
+   {
+    "mulai": 121.5,
+    "selesai": 123.3,
+    "teks": "Lo ngatur ide dan hasil akhirnya."
+   },
+   {
+    "mulai": 123.76,
+    "selesai": 125.02,
+    "teks": "Kalau mau tahu lebih lanjut,"
+   },
+   {
+    "mulai": 125.22,
+    "selesai": 127.74,
+    "teks": "gue bisa jelasin secara pelan-pelan dari awal banget."
+   },
+   {
+    "mulai": 127.98,
+    "selesai": 129.62,
+    "teks": "Jangan lupa follow ya, biar gak ketinggalan."
+   }
+  ],
+  "jumlah_kata": 318,
+  "kata_per_dtk_bicara": 2.92,
+  "kata_per_dtk_total": 2.43,
+  "kata_pertama_dtk": 0.0,
+  "ucapan_3dtk_awal": "Oke, sekarang gue jelasin gimana sebenernya video ini bisa jadi dari Claude."
+ }
+}

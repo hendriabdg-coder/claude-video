@@ -1,0 +1,870 @@
+{
+ "file": "motion\\Ref-video-motion.mp4",
+ "jenis": "motion",
+ "durasi": 383.99,
+ "langkah_sheet_dtk": 6.4,
+ "potongan": [
+  5.9,
+  33.67,
+  35.67,
+  46.7,
+  48.2,
+  65.23,
+  66.73,
+  92.77,
+  94.37,
+  170.6,
+  172.93,
+  214.27,
+  215.67,
+  224.4,
+  226.13
+ ],
+ "jumlah_shot": 16,
+ "rata_panjang_shot_dtk": 24.0,
+ "transkrip": {
+  "bahasa": "id",
+  "segmen": [
+   {
+    "mulai": 0.02,
+    "selesai": 1.22,
+    "teks": "Kasih gue 3 menit!"
+   },
+   {
+    "mulai": 1.48,
+    "selesai": 4.7,
+    "teks": "Karena video ini bisa jadi ngerubah cara lo bikin konten,"
+   },
+   {
+    "mulai": 4.86,
+    "selesai": 6.64,
+    "teks": "atau bahkan, hidup lo."
+   },
+   {
+    "mulai": 7.48,
+    "selesai": 10.48,
+    "teks": "Beberapa hari lalu, gue upload 3 video edukasi."
+   },
+   {
+    "mulai": 10.68,
+    "selesai": 12.42,
+    "teks": "Dan dalam beberapa hari aja,"
+   },
+   {
+    "mulai": 12.68,
+    "selesai": 14.7,
+    "teks": "totalnya hampir 100 ribu views."
+   },
+   {
+    "mulai": 15.3,
+    "selesai": 17.14,
+    "teks": "Responsnya juga sangat mengesankan."
+   },
+   {
+    "mulai": 17.5,
+    "selesai": 20.0,
+    "teks": "Lebih dari 3 ribu orang nyimpen videonya."
+   },
+   {
+    "mulai": 20.22,
+    "selesai": 22.28,
+    "teks": "Dan hampir seribu orang langsung follow."
+   },
+   {
+    "mulai": 22.92,
+    "selesai": 24.68,
+    "teks": "Tapi yang bikin gue kaget,"
+   },
+   {
+    "mulai": 24.94,
+    "selesai": 26.38,
+    "teks": "justru kolom komentarnya."
+   },
+   {
+    "mulai": 27.8,
+    "selesai": 29.88,
+    "teks": "Ternyata, selain materinya kepake,"
+   },
+   {
+    "mulai": 30.02,
+    "selesai": 31.54,
+    "teks": "banyak banget yang penasaran."
+   },
+   {
+    "mulai": 31.76,
+    "selesai": 33.2,
+    "teks": "Ini dibikinnya gimana sih?"
+   },
+   {
+    "mulai": 33.52,
+    "selesai": 34.64,
+    "teks": "Animasinya pake apa?"
+   },
+   {
+    "mulai": 35.4,
+    "selesai": 36.96,
+    "teks": "Editnya pake aplikasi apa?"
+   },
+   {
+    "mulai": 38.54,
+    "selesai": 41.1,
+    "teks": "Surprisingly, animasinya gak gue bikin di After Effects."
+   },
+   {
+    "mulai": 41.76,
+    "selesai": 42.62,
+    "teks": "No keyframe."
+   },
+   {
+    "mulai": 43.42,
+    "selesai": 46.26,
+    "teks": "Dan di video ini, gue spill gimana caranya."
+   },
+   {
+    "mulai": 46.62,
+    "selesai": 47.14,
+    "teks": "Let's go!"
+   },
+   {
+    "mulai": 49.28,
+    "selesai": 51.24,
+    "teks": "Oke, lo tau PowerPoint kan?"
+   },
+   {
+    "mulai": 51.64,
+    "selesai": 54.48,
+    "teks": "Bayangin PowerPoint, tapi versi yang bisa gerak sendiri."
+   },
+   {
+    "mulai": 55.06,
+    "selesai": 57.66,
+    "teks": "Bedanya, ini gak lo bikin manual pake klak klik."
+   },
+   {
+    "mulai": 58.0,
+    "selesai": 59.72,
+    "teks": "Semuanya ditulis pake kode."
+   },
+   {
+    "mulai": 59.72,
+    "selesai": 62.26,
+    "teks": "Kode yang sama kayak buat bikin sebuah website."
+   },
+   {
+    "mulai": 62.64,
+    "selesai": 64.56,
+    "teks": "Jadi, apa lo butuh skill editing?"
+   },
+   {
+    "mulai": 65.1,
+    "selesai": 65.5,
+    "teks": "Dope!"
+   },
+   {
+    "mulai": 66.4,
+    "selesai": 68.58,
+    "teks": "Yang dibutuhin cuma matematika."
+   },
+   {
+    "mulai": 69.1,
+    "selesai": 72.7,
+    "teks": "Seperti yang kita tahu, video itu sebenernya cuma kumpulan gambar."
+   },
+   {
+    "mulai": 73.08,
+    "selesai": 75.86,
+    "teks": "30 sampai 60 gambar tiap detik."
+   },
+   {
+    "mulai": 76.06,
+    "selesai": 79.46,
+    "teks": "Dan secara matematis, tiap gambar dihitung pake satu rumus."
+   },
+   {
+    "mulai": 80.02,
+    "selesai": 81.88,
+    "teks": "Frame adalah fungsi dari waktu."
+   },
+   {
+    "mulai": 81.88,
+    "selesai": 86.5,
+    "teks": "Di detik kesekian, tulisan atau objek ini mau ada di koordinat mana,"
+   },
+   {
+    "mulai": 86.78,
+    "selesai": 88.74,
+    "teks": "segede apa, muter berapa derajat,"
+   },
+   {
+    "mulai": 89.04,
+    "selesai": 90.06,
+    "teks": "semuanya dihitung."
+   },
+   {
+    "mulai": 90.44,
+    "selesai": 91.78,
+    "teks": "Terus yang ngitung siapa?"
+   },
+   {
+    "mulai": 92.38,
+    "selesai": 93.62,
+    "teks": "Ya jangan kita!"
+   },
+   {
+    "mulai": 94.22,
+    "selesai": 95.5,
+    "teks": "Serahin aja ke ahlinya."
+   },
+   {
+    "mulai": 96.2,
+    "selesai": 96.96,
+    "teks": "AI Tools."
+   },
+   {
+    "mulai": 98.8,
+    "selesai": 101.06,
+    "teks": "Dan lo tau, dari pengalaman gue,"
+   },
+   {
+    "mulai": 101.32,
+    "selesai": 104.52,
+    "teks": "buat hasilin satu video itu cuma butuh 2 sampai 3 jam."
+   },
+   {
+    "mulai": 104.86,
+    "selesai": 107.4,
+    "teks": "Mungkin bakal sedikit lebih lama kalau ada revisi."
+   },
+   {
+    "mulai": 107.4,
+    "selesai": 108.66,
+    "teks": "Tapi nggak sulit."
+   },
+   {
+    "mulai": 108.88,
+    "selesai": 110.82,
+    "teks": "Tinggal bilang, transisinya halusin."
+   },
+   {
+    "mulai": 111.16,
+    "selesai": 112.1,
+    "teks": "Warnanya ganti."
+   },
+   {
+    "mulai": 114.56,
+    "selesai": 116.42,
+    "teks": "Tanpa geser satu keyframe pun."
+   },
+   {
+    "mulai": 117.22,
+    "selesai": 119.38,
+    "teks": "Menariknya, karena AI-nya nulis kode,"
+   },
+   {
+    "mulai": 119.56,
+    "selesai": 121.26,
+    "teks": "bukan ngegambar piksel satu per satu,"
+   },
+   {
+    "mulai": 121.52,
+    "selesai": 122.72,
+    "teks": "hasilnya jadi presisi."
+   },
+   {
+    "mulai": 123.02,
+    "selesai": 125.82,
+    "teks": "Itu yang bikin videonya sama sekali nggak kelihatan AI."
+   },
+   {
+    "mulai": 126.48,
+    "selesai": 128.38,
+    "teks": "Dan lo mau tau bagian paling gilanya?"
+   },
+   {
+    "mulai": 129.72,
+    "selesai": 132.38,
+    "teks": "Editan, tipografi, sound effect, musik,"
+   },
+   {
+    "mulai": 132.58,
+    "selesai": 134.48,
+    "teks": "bahkan suara gue yang lagi lo denger ini,"
+   },
+   {
+    "mulai": 134.98,
+    "selesai": 136.1,
+    "teks": "diklon pake AI."
+   },
+   {
+    "mulai": 136.48,
+    "selesai": 138.44,
+    "teks": "Termasuk file Excel yang ada di video,"
+   },
+   {
+    "mulai": 138.44,
+    "selesai": 140.82,
+    "teks": "dashboard-nya, sampai isi kontennya,"
+   },
+   {
+    "mulai": 141.02,
+    "selesai": 142.4,
+    "teks": "gue bikin juga dibantu AI."
+   },
+   {
+    "mulai": 142.88,
+    "selesai": 144.36,
+    "teks": "Terus bagian gue apa?"
+   },
+   {
+    "mulai": 144.74,
+    "selesai": 147.08,
+    "teks": "Gimana kalau gue bilang cuma di ide,"
+   },
+   {
+    "mulai": 147.62,
+    "selesai": 150.16,
+    "teks": "naskah, aturan main, dan review?"
+   },
+   {
+    "mulai": 150.68,
+    "selesai": 151.84,
+    "teks": "Ngegantiin after effects?"
+   },
+   {
+    "mulai": 152.3,
+    "selesai": 153.02,
+    "teks": "Nggak juga."
+   },
+   {
+    "mulai": 153.36,
+    "selesai": 156.92,
+    "teks": "Cuma, hasil yang berkualitas bisa lo dapet jauh lebih cepet."
+   },
+   {
+    "mulai": 157.14,
+    "selesai": 158.22,
+    "teks": "Dan lebih gampang juga,"
+   },
+   {
+    "mulai": 158.42,
+    "selesai": 160.34,
+    "teks": "tanpa perlu belajar editing sampai advanced."
+   },
+   {
+    "mulai": 161.18,
+    "selesai": 164.7,
+    "teks": "Jadi, buat lo yang punya cita-cita jadi konten kreator,"
+   },
+   {
+    "mulai": 164.7,
+    "selesai": 168.44,
+    "teks": "youtuber, tiktoker, edukator, atau afiliator,"
+   },
+   {
+    "mulai": 168.74,
+    "selesai": 172.16,
+    "teks": "rasa-rasanya ini bisa jadi titik balik buat merubah hidup lo."
+   },
+   {
+    "mulai": 172.58,
+    "selesai": 173.72,
+    "teks": "Karena cara ini,"
+   },
+   {
+    "mulai": 173.86,
+    "selesai": 176.36,
+    "teks": "ngeluarin lo dari titik yang paling sering bikin stuck."
+   },
+   {
+    "mulai": 176.88,
+    "selesai": 179.2,
+    "teks": "Editing video, dan bikin animasi."
+   },
+   {
+    "mulai": 180.26,
+    "selesai": 184.0,
+    "teks": "Emangnya, keuntungan apa sih yang bisa lo dapet dari bikin video di zaman sekarang?"
+   },
+   {
+    "mulai": 185.24,
+    "selesai": 188.32,
+    "teks": "Ini dia, 4 ladam cuan yang udah gue rangkum."
+   },
+   {
+    "mulai": 188.64,
+    "selesai": 190.28,
+    "teks": "Semuanya potensial banget."
+   },
+   {
+    "mulai": 190.56,
+    "selesai": 193.6,
+    "teks": "Dan beberapa di antaranya udah gue rasain sendiri dampaknya."
+   },
+   {
+    "mulai": 194.34,
+    "selesai": 195.96,
+    "teks": "Pertama, content creator."
+   },
+   {
+    "mulai": 196.38,
+    "selesai": 199.22,
+    "teks": "Dalam hal ini, endorsement dengan modal followers."
+   },
+   {
+    "mulai": 199.66,
+    "selesai": 201.8,
+    "teks": "Brand bayar lo buat nge-review produk mereka."
+   },
+   {
+    "mulai": 202.0,
+    "selesai": 204.24,
+    "teks": "Dan tarifnya naik seiring followers lo."
+   },
+   {
+    "mulai": 204.62,
+    "selesai": 207.14,
+    "teks": "Akun kecil, 1000-10.000 followers,"
+   },
+   {
+    "mulai": 207.36,
+    "selesai": 210.12,
+    "teks": "bisa dapet sekitar 1-4 juta per video."
+   },
+   {
+    "mulai": 210.66,
+    "selesai": 211.88,
+    "teks": "Tembus 100.000 followers?"
+   },
+   {
+    "mulai": 211.88,
+    "selesai": 213.6,
+    "teks": "Bisa puluhan juta."
+   },
+   {
+    "mulai": 213.86,
+    "selesai": 214.84,
+    "teks": "Sekali posting."
+   },
+   {
+    "mulai": 215.32,
+    "selesai": 216.7,
+    "teks": "Cara dapetin followersnya?"
+   },
+   {
+    "mulai": 217.08,
+    "selesai": 218.8,
+    "teks": "Ya, bikin konten yang berkualitas."
+   },
+   {
+    "mulai": 218.98,
+    "selesai": 220.8,
+    "teks": "Pakai cara yang lagi gue praktekin ini."
+   },
+   {
+    "mulai": 221.68,
+    "selesai": 223.7,
+    "teks": "Kedua, dan ini yang paling gede."
+   },
+   {
+    "mulai": 224.34,
+    "selesai": 224.98,
+    "teks": "Affiliate."
+   },
+   {
+    "mulai": 225.84,
+    "selesai": 227.3,
+    "teks": "Lo gak perlu punya produk."
+   },
+   {
+    "mulai": 227.62,
+    "selesai": 228.74,
+    "teks": "Lo cukup bikin konten,"
+   },
+   {
+    "mulai": 228.96,
+    "selesai": 230.0,
+    "teks": "pasang keranjang kuning,"
+   },
+   {
+    "mulai": 230.14,
+    "selesai": 232.1,
+    "teks": "dan dapet komisi tiap ada yang check out."
+   },
+   {
+    "mulai": 233.34,
+    "selesai": 234.4,
+    "teks": "Kenapa ini gede?"
+   },
+   {
+    "mulai": 234.68,
+    "selesai": 235.84,
+    "teks": "Karena di TikTok shop,"
+   },
+   {
+    "mulai": 236.1,
+    "selesai": 237.84,
+    "teks": "mesin penjualannya justru kreator."
+   },
+   {
+    "mulai": 238.18,
+    "selesai": 240.52,
+    "teks": "Gue udah analisis lebih dari 600 toko"
+   },
+   {
+    "mulai": 240.52,
+    "selesai": 242.92,
+    "teks": "dengan total omset 1,3 triliun."
+   },
+   {
+    "mulai": 243.28,
+    "selesai": 243.86,
+    "teks": "Hasilnya?"
+   },
+   {
+    "mulai": 244.2,
+    "selesai": 248.0,
+    "teks": "70-75% penjualannya datang dari affiliate,"
+   },
+   {
+    "mulai": 248.3,
+    "selesai": 249.88,
+    "teks": "bukan dari toko resminya sendiri."
+   },
+   {
+    "mulai": 250.5,
+    "selesai": 252.42,
+    "teks": "Bahkan, 4 dari 10 toko"
+   },
+   {
+    "mulai": 252.42,
+    "selesai": 255.36,
+    "teks": "lebih dari 90% omsetnya dari affiliate."
+   },
+   {
+    "mulai": 256.02,
+    "selesai": 257.3,
+    "teks": "Kuenya gede banget."
+   },
+   {
+    "mulai": 257.56,
+    "selesai": 260.14,
+    "teks": "Dan brand rela bayar mahal buat kasih komisinya."
+   },
+   {
+    "mulai": 260.58,
+    "selesai": 262.46,
+    "teks": "Yang bikin video affiliate spesial,"
+   },
+   {
+    "mulai": 262.74,
+    "selesai": 264.3,
+    "teks": "video lo itu bakal tetap kerja"
+   },
+   {
+    "mulai": 264.3,
+    "selesai": 265.62,
+    "teks": "walaupun lo lagi tidur."
+   },
+   {
+    "mulai": 266.0,
+    "selesai": 267.86,
+    "teks": "Sekali video lo disukai algoritma,"
+   },
+   {
+    "mulai": 268.18,
+    "selesai": 269.58,
+    "teks": "dia jadi mesin penghasil uang."
+   },
+   {
+    "mulai": 269.58,
+    "selesai": 272.02,
+    "teks": "Hari ini, besok, bulan depan."
+   },
+   {
+    "mulai": 272.28,
+    "selesai": 274.78,
+    "teks": "Apalagi kalau lo tau cara riset brand mana"
+   },
+   {
+    "mulai": 274.78,
+    "selesai": 276.3,
+    "teks": "yang lagi bakar uang buat iklan,"
+   },
+   {
+    "mulai": 276.42,
+    "selesai": 278.88,
+    "teks": "dan produk mana yang komisinya paling menggiurkan."
+   },
+   {
+    "mulai": 279.52,
+    "selesai": 281.04,
+    "teks": "Dan ini bukan teori."
+   },
+   {
+    "mulai": 281.34,
+    "selesai": 283.34,
+    "teks": "Karena gue sering cek data afiliator,"
+   },
+   {
+    "mulai": 283.64,
+    "selesai": 285.88,
+    "teks": "ada kreator, followersnya cuma belasan ribu."
+   },
+   {
+    "mulai": 286.28,
+    "selesai": 287.24,
+    "teks": "Kontennya standar."
+   },
+   {
+    "mulai": 287.54,
+    "selesai": 288.94,
+    "teks": "Tapi satu videonya aja,"
+   },
+   {
+    "mulai": 289.14,
+    "selesai": 291.54,
+    "teks": "penjualannya hampir 1 miliar dalam sebulan."
+   },
+   {
+    "mulai": 291.96,
+    "selesai": 292.64,
+    "teks": "Komisinya?"
+   },
+   {
+    "mulai": 292.84,
+    "selesai": 295.44,
+    "teks": "Kurang lebih 90-100 juta."
+   },
+   {
+    "mulai": 295.66,
+    "selesai": 296.88,
+    "teks": "Dari satu video."
+   },
+   {
+    "mulai": 296.88,
+    "selesai": 300.06,
+    "teks": "Bahkan brandnya sampai ikut ngiklanin video itu,"
+   },
+   {
+    "mulai": 300.24,
+    "selesai": 302.0,
+    "teks": "karena videonya terbukti jualan."
+   },
+   {
+    "mulai": 302.94,
+    "selesai": 304.38,
+    "teks": "Ketiga, iklan per view."
+   },
+   {
+    "mulai": 304.72,
+    "selesai": 307.54,
+    "teks": "Video yang sama bisa lo upload ulang di platform lain,"
+   },
+   {
+    "mulai": 307.86,
+    "selesai": 310.36,
+    "teks": "dan lo dibayar dari iklan tiap ada yang nonton."
+   },
+   {
+    "mulai": 310.88,
+    "selesai": 314.2,
+    "teks": "Sejuta views bisa jadi tambahan sampai 20-an juta rupiah,"
+   },
+   {
+    "mulai": 314.2,
+    "selesai": 315.72,
+    "teks": "tanpa bikin video baru."
+   },
+   {
+    "mulai": 316.34,
+    "selesai": 317.38,
+    "teks": "Dan keempat,"
+   },
+   {
+    "mulai": 317.68,
+    "selesai": 318.66,
+    "teks": "kalau lo udah jago,"
+   },
+   {
+    "mulai": 318.88,
+    "selesai": 320.04,
+    "teks": "lo bisa ngajarin orang lain."
+   },
+   {
+    "mulai": 320.38,
+    "selesai": 321.64,
+    "teks": "Kelas, mentoring,"
+   },
+   {
+    "mulai": 321.92,
+    "selesai": 322.98,
+    "teks": "atau jasa bikin video."
+   },
+   {
+    "mulai": 323.28,
+    "selesai": 324.3,
+    "teks": "Kayak komentar tadi,"
+   },
+   {
+    "mulai": 324.5,
+    "selesai": 325.34,
+    "teks": "buka kelas kak!"
+   },
+   {
+    "mulai": 325.74,
+    "selesai": 328.2,
+    "teks": "Skill yang sama dibayar berkali-kali."
+   },
+   {
+    "mulai": 329.02,
+    "selesai": 331.5,
+    "teks": "Nah, sekarang lo udah tau teorinya."
+   },
+   {
+    "mulai": 331.78,
+    "selesai": 333.42,
+    "teks": "Lo juga udah tau cuannya di mana."
+   },
+   {
+    "mulai": 334.04,
+    "selesai": 335.3,
+    "teks": "Pertanyaannya tinggal satu."
+   },
+   {
+    "mulai": 335.78,
+    "selesai": 336.92,
+    "teks": "Lo mau mulai sekarang,"
+   },
+   {
+    "mulai": 337.26,
+    "selesai": 339.46,
+    "teks": "atau nonton orang lain mulai duluan?"
+   },
+   {
+    "mulai": 339.46,
+    "selesai": 340.96,
+    "teks": "Karena jujur,"
+   },
+   {
+    "mulai": 341.14,
+    "selesai": 342.02,
+    "teks": "ini skill baru,"
+   },
+   {
+    "mulai": 342.18,
+    "selesai": 343.48,
+    "teks": "dan belum banyak yang bisa."
+   },
+   {
+    "mulai": 343.88,
+    "selesai": 345.74,
+    "teks": "Jangan sampai lo kehilangan momen."
+   },
+   {
+    "mulai": 346.94,
+    "selesai": 349.4,
+    "teks": "So, karena banyak banget yang minta,"
+   },
+   {
+    "mulai": 349.72,
+    "selesai": 351.0,
+    "teks": "gue bakal bantu ajarin."
+   },
+   {
+    "mulai": 351.36,
+    "selesai": 352.74,
+    "teks": "Gue ajarin semuanya,"
+   },
+   {
+    "mulai": 352.94,
+    "selesai": 353.68,
+    "teks": "dari nol."
+   },
+   {
+    "mulai": 354.04,
+    "selesai": 355.26,
+    "teks": "Tuhs apa aja yang gue pakai,"
+   },
+   {
+    "mulai": 355.52,
+    "selesai": 356.38,
+    "teks": "aturan mainnya,"
+   },
+   {
+    "mulai": 356.58,
+    "selesai": 357.78,
+    "teks": "pokoknya dari basic."
+   },
+   {
+    "mulai": 358.22,
+    "selesai": 359.1,
+    "teks": "Sekali mendayung,"
+   },
+   {
+    "mulai": 359.3,
+    "selesai": 360.84,
+    "teks": "dua-tiga pulau terlampaui."
+   },
+   {
+    "mulai": 361.18,
+    "selesai": 363.8,
+    "teks": "Karena lo gak cuma bisa bikin video kayak gini sendiri,"
+   },
+   {
+    "mulai": 364.16,
+    "selesai": 366.22,
+    "teks": "gue juga bakal ajarin skill automasi,"
+   },
+   {
+    "mulai": 366.46,
+    "selesai": 367.44,
+    "teks": "logika dasar coding,"
+   },
+   {
+    "mulai": 367.76,
+    "selesai": 368.58,
+    "teks": "data analisis,"
+   },
+   {
+    "mulai": 368.58,
+    "selesai": 370.08,
+    "teks": "bikin dashboard otomatis,"
+   },
+   {
+    "mulai": 370.18,
+    "selesai": 372.42,
+    "teks": "sampai punya asisten AI di tempat kerja."
+   },
+   {
+    "mulai": 372.62,
+    "selesai": 374.44,
+    "teks": "Dan begitu lo ngerti semua ini,"
+   },
+   {
+    "mulai": 374.8,
+    "selesai": 376.82,
+    "teks": "langkah lo bakal jauh lebih ke depan."
+   },
+   {
+    "mulai": 378.0,
+    "selesai": 378.88,
+    "teks": "Mau ikut?"
+   },
+   {
+    "mulai": 379.1,
+    "selesai": 380.38,
+    "teks": "Komen ikut di bawah,"
+   },
+   {
+    "mulai": 380.5,
+    "selesai": 381.8,
+    "teks": "nanti gue kirimin detailnya."
+   }
+  ],
+  "jumlah_kata": 870,
+  "kata_per_dtk_bicara": 2.89,
+  "kata_per_dtk_total": 2.27,
+  "kata_pertama_dtk": 0.02,
+  "ucapan_3dtk_awal": "Kasih gue 3 menit! Karena video ini bisa jadi ngerubah cara lo bikin konten,"
+ }
+}

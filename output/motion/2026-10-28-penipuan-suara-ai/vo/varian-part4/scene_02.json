@@ -1,0 +1,151 @@
+{
+  "text": "Suara temannya ternyata ditiru AI. OJK nyatat seribu tiga ratusan laporan penipuan terindikasi AI. Riset McAfee bilang, beberapa detik rekaman bisa cukup buat ditiru.",
+  "spoken": "Suara temannya ternyata ditiru Ei-ai. OJK nyatat seribu tiga ratusan laporan penipuan terindikasi Ei-ai. Riset McAfee bilang, beberapa detik rekaman bisa cukup buat ditiru.",
+  "duration": 10.88,
+  "words": [
+    {
+      "word": "Suara",
+      "spoken": "Suara",
+      "start": 0.0,
+      "end": 0.24
+    },
+    {
+      "word": "temannya",
+      "spoken": "temannya",
+      "start": 0.32,
+      "end": 0.8
+    },
+    {
+      "word": "ternyata",
+      "spoken": "ternyata",
+      "start": 0.92,
+      "end": 1.36
+    },
+    {
+      "word": "ditiru",
+      "spoken": "ditiru",
+      "start": 1.48,
+      "end": 1.84
+    },
+    {
+      "word": "AI.",
+      "spoken": "Ei-ai.",
+      "start": 1.92,
+      "end": 2.56
+    },
+    {
+      "word": "OJK",
+      "spoken": "OJK",
+      "start": 2.6,
+      "end": 3.04
+    },
+    {
+      "word": "nyatat",
+      "spoken": "nyatat",
+      "start": 3.08,
+      "end": 3.44
+    },
+    {
+      "word": "seribu",
+      "spoken": "seribu",
+      "start": 3.56,
+      "end": 3.84
+    },
+    {
+      "word": "tiga",
+      "spoken": "tiga",
+      "start": 3.92,
+      "end": 4.08
+    },
+    {
+      "word": "ratusan",
+      "spoken": "ratusan",
+      "start": 4.12,
+      "end": 4.48
+    },
+    {
+      "word": "laporan",
+      "spoken": "laporan",
+      "start": 4.56,
+      "end": 4.88
+    },
+    {
+      "word": "penipuan",
+      "spoken": "penipuan",
+      "start": 4.96,
+      "end": 5.44
+    },
+    {
+      "word": "terindikasi",
+      "spoken": "terindikasi",
+      "start": 5.52,
+      "end": 6.24
+    },
+    {
+      "word": "AI.",
+      "spoken": "Ei-ai.",
+      "start": 6.32,
+      "end": 6.96
+    },
+    {
+      "word": "Riset",
+      "spoken": "Riset",
+      "start": 7.0,
+      "end": 7.28
+    },
+    {
+      "word": "McAfee",
+      "spoken": "McAfee",
+      "start": 7.36,
+      "end": 7.68
+    },
+    {
+      "word": "bilang,",
+      "spoken": "bilang,",
+      "start": 7.8,
+      "end": 8.24
+    },
+    {
+      "word": "beberapa",
+      "spoken": "beberapa",
+      "start": 8.28,
+      "end": 8.64
+    },
+    {
+      "word": "detik",
+      "spoken": "detik",
+      "start": 8.72,
+      "end": 8.88
+    },
+    {
+      "word": "rekaman",
+      "spoken": "rekaman",
+      "start": 8.96,
+      "end": 9.36
+    },
+    {
+      "word": "bisa",
+      "spoken": "bisa",
+      "start": 9.4,
+      "end": 9.6
+    },
+    {
+      "word": "cukup",
+      "spoken": "cukup",
+      "start": 9.68,
+      "end": 10.0
+    },
+    {
+      "word": "buat",
+      "spoken": "buat",
+      "start": 10.08,
+      "end": 10.16
+    },
+    {
+      "word": "ditiru.",
+      "spoken": "ditiru.",
+      "start": 10.28,
+      "end": 10.88
+    }
+  ]
+}

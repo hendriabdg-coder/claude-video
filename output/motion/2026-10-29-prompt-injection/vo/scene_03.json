@@ -1,0 +1,103 @@
+{
+  "text": "Namanya indirect prompt injection. Perintah jahatnya nyamar jadi isi bacaan, bisa di dokumen, email, atau web.",
+  "spoken": "Namanya indirect prompt injection. Perintah jahatnya nyamar jadi isi bacaan, bisa di dokumen, email, atau web.",
+  "duration": 7.36,
+  "words": [
+    {
+      "word": "Namanya",
+      "spoken": "Namanya",
+      "start": 0.0,
+      "end": 0.56
+    },
+    {
+      "word": "indirect",
+      "spoken": "indirect",
+      "start": 0.72,
+      "end": 1.12
+    },
+    {
+      "word": "prompt",
+      "spoken": "prompt",
+      "start": 1.2,
+      "end": 1.44
+    },
+    {
+      "word": "injection.",
+      "spoken": "injection.",
+      "start": 1.52,
+      "end": 2.4
+    },
+    {
+      "word": "Perintah",
+      "spoken": "Perintah",
+      "start": 2.44,
+      "end": 2.72
+    },
+    {
+      "word": "jahatnya",
+      "spoken": "jahatnya",
+      "start": 2.8,
+      "end": 3.2
+    },
+    {
+      "word": "nyamar",
+      "spoken": "nyamar",
+      "start": 3.28,
+      "end": 3.68
+    },
+    {
+      "word": "jadi",
+      "spoken": "jadi",
+      "start": 3.8,
+      "end": 3.92
+    },
+    {
+      "word": "isi",
+      "spoken": "isi",
+      "start": 4.0,
+      "end": 4.08
+    },
+    {
+      "word": "bacaan,",
+      "spoken": "bacaan,",
+      "start": 4.16,
+      "end": 4.88
+    },
+    {
+      "word": "bisa",
+      "spoken": "bisa",
+      "start": 4.933,
+      "end": 5.04
+    },
+    {
+      "word": "di",
+      "spoken": "di",
+      "start": 5.12,
+      "end": 5.2
+    },
+    {
+      "word": "dokumen,",
+      "spoken": "dokumen,",
+      "start": 5.253,
+      "end": 6.0
+    },
+    {
+      "word": "email,",
+      "spoken": "email,",
+      "start": 6.24,
+      "end": 6.56
+    },
+    {
+      "word": "atau",
+      "spoken": "atau",
+      "start": 6.68,
+      "end": 6.84
+    },
+    {
+      "word": "web.",
+      "spoken": "web.",
+      "start": 6.88,
+      "end": 7.36
+    }
+  ]
+}

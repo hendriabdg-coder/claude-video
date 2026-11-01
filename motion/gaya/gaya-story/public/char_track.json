@@ -1,0 +1,89 @@
+{
+ "dur": 31.0,
+ "wm_until": 28.56,
+ "places": [
+  {
+   "t0": 0.1,
+   "t1": 3.407,
+   "scale": 1.0,
+   "cx": 540,
+   "top": 905
+  },
+  {
+   "t0": 3.407,
+   "t1": 19.593,
+   "scale": 0.55,
+   "cx": 880,
+   "top": 1185
+  },
+  {
+   "t0": 19.593,
+   "t1": 31.0,
+   "scale": 0.86,
+   "cx": 540,
+   "top": 1035
+  }
+ ],
+ "segments": [
+  [
+   0.1,
+   3.407,
+   "Menyambut_dengan_Dua_Tangan"
+  ],
+  [
+   3.407,
+   5.32,
+   "menunjuk_ke_kiri"
+  ],
+  [
+   5.32,
+   7.188,
+   "menghela_nafas"
+  ],
+  [
+   7.188,
+   8.92,
+   "Berfikir"
+  ],
+  [
+   8.92,
+   12.24,
+   "menunjuk_keatas"
+  ],
+  [
+   12.24,
+   13.997000000000002,
+   "menepuk_jidat"
+  ],
+  [
+   13.997000000000002,
+   16.973,
+   "jentikan_jari"
+  ],
+  [
+   16.973,
+   19.593,
+   "Memutar_Objek_Virtual_20261026051302"
+  ],
+  [
+   19.593,
+   22.5,
+   "mengajak_mendekat"
+  ],
+  [
+   22.5,
+   24.647,
+   "Mengepalkan_Tangan_Semangat_20261026045740"
+  ],
+  [
+   24.647,
+   28.56,
+   "Presentasi_Kanan_dan_Kiri"
+  ],
+  [
+   28.56,
+   31.0,
+   "Melambaikan_Tangan"
+  ]
+ ]
+}

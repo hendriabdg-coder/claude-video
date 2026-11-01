@@ -1,0 +1,79 @@
+{
+  "text": "Dan menurut kamu sendiri... AI ini lebih condong ke penjagaan, atau pembobolan?",
+  "spoken": "Dan menurut kamu sendiri... Ei-ai ini lebih condong ke penjagaan, atau pembobolan?",
+  "duration": 5.28,
+  "words": [
+    {
+      "word": "Dan",
+      "spoken": "Dan",
+      "start": 0.0,
+      "end": 0.16
+    },
+    {
+      "word": "menurut",
+      "spoken": "menurut",
+      "start": 0.24,
+      "end": 0.48
+    },
+    {
+      "word": "kamu",
+      "spoken": "kamu",
+      "start": 0.56,
+      "end": 0.72
+    },
+    {
+      "word": "sendiri...",
+      "spoken": "sendiri...",
+      "start": 0.84,
+      "end": 1.76
+    },
+    {
+      "word": "AI",
+      "spoken": "Ei-ai",
+      "start": 1.8,
+      "end": 2.08
+    },
+    {
+      "word": "ini",
+      "spoken": "ini",
+      "start": 2.2,
+      "end": 2.32
+    },
+    {
+      "word": "lebih",
+      "spoken": "lebih",
+      "start": 2.36,
+      "end": 2.56
+    },
+    {
+      "word": "condong",
+      "spoken": "condong",
+      "start": 2.68,
+      "end": 2.88
+    },
+    {
+      "word": "ke",
+      "spoken": "ke",
+      "start": 2.92,
+      "end": 2.96
+    },
+    {
+      "word": "penjagaan,",
+      "spoken": "penjagaan,",
+      "start": 3.04,
+      "end": 4.0
+    },
+    {
+      "word": "atau",
+      "spoken": "atau",
+      "start": 4.12,
+      "end": 4.28
+    },
+    {
+      "word": "pembobolan?",
+      "spoken": "pembobolan?",
+      "start": 4.32,
+      "end": 5.28
+    }
+  ]
+}

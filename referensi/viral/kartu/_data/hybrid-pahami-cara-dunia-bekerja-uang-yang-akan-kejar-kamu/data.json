@@ -1,0 +1,69 @@
+{
+ "file": "hybrid\\Pahami cara dunia bekerja, uang yang akan kejar kamu..mp4",
+ "jenis": "hybrid",
+ "durasi": 29.35,
+ "langkah_sheet_dtk": 1.0,
+ "potongan": [],
+ "jumlah_shot": 1,
+ "rata_panjang_shot_dtk": 29.35,
+ "transkrip": {
+  "bahasa": "id",
+  "segmen": [
+   {
+    "mulai": 0.0,
+    "selesai": 2.68,
+    "teks": "Orang miskin itu mendapatkan uang dengan menukarkan tenaganya."
+   },
+   {
+    "mulai": 2.82,
+    "selesai": 5.66,
+    "teks": "Orang menengah mendapatkan uang dengan menukarkan kepintarannya."
+   },
+   {
+    "mulai": 5.8,
+    "selesai": 10.3,
+    "teks": "Sedangkan orang kaya mendapatkan uang dengan aset, koneksi, dan sistem yang mereka punya."
+   },
+   {
+    "mulai": 10.44,
+    "selesai": 13.08,
+    "teks": "Ketika kamu ngomong sama bosmu, ngomong tentang pekerjaan."
+   },
+   {
+    "mulai": 13.18,
+    "selesai": 16.34,
+    "teks": "Ketika kamu ngomong dengan bawahanmu, ngomong tentang masa depan."
+   },
+   {
+    "mulai": 16.44,
+    "selesai": 19.58,
+    "teks": "Ketika kamu ngomong ke yang miskin, ngomongin tentang benefitnya."
+   },
+   {
+    "mulai": 19.68,
+    "selesai": 22.2,
+    "teks": "Dan ketika kamu ngomong ke orang kaya, ngomong tentang value."
+   },
+   {
+    "mulai": 22.4,
+    "selesai": 24.34,
+    "teks": "Begitu kamu paham tentang cara dunia bekerja,"
+   },
+   {
+    "mulai": 24.42,
+    "selesai": 26.78,
+    "teks": "kamu nggak lagi ngejar uang, tapi uang yang akan ngejar kamu."
+   },
+   {
+    "mulai": 26.9,
+    "selesai": 29.2,
+    "teks": "Follow aku ini biar kamu cepat dapatkan 1 miliar pertamamu."
+   }
+  ],
+  "jumlah_kata": 92,
+  "kata_per_dtk_bicara": 3.4,
+  "kata_per_dtk_total": 3.13,
+  "kata_pertama_dtk": 0.0,
+  "ucapan_3dtk_awal": "Orang miskin itu mendapatkan uang dengan menukarkan tenaganya. Orang menengah mendapatkan uang dengan menukarkan kepintarannya."
+ }
+}

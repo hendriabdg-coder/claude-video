@@ -1,0 +1,67 @@
+{
+  "text": "[curious] Dan... produk kamu lebih butuh foto yang bagus, atau 3D?",
+  "spoken": "[curious] Dan... produk kamu lebih butuh foto yang bagus, atau tridi?",
+  "duration": 4.24,
+  "words": [
+    {
+      "word": "Dan...",
+      "spoken": "Dan...",
+      "start": 0.08,
+      "end": 0.8
+    },
+    {
+      "word": "produk",
+      "spoken": "produk",
+      "start": 0.96,
+      "end": 1.12
+    },
+    {
+      "word": "kamu",
+      "spoken": "kamu",
+      "start": 1.2,
+      "end": 1.36
+    },
+    {
+      "word": "lebih",
+      "spoken": "lebih",
+      "start": 1.4,
+      "end": 1.6
+    },
+    {
+      "word": "butuh",
+      "spoken": "butuh",
+      "start": 1.68,
+      "end": 1.84
+    },
+    {
+      "word": "foto",
+      "spoken": "foto",
+      "start": 1.92,
+      "end": 2.08
+    },
+    {
+      "word": "yang",
+      "spoken": "yang",
+      "start": 2.16,
+      "end": 2.32
+    },
+    {
+      "word": "bagus,",
+      "spoken": "bagus,",
+      "start": 2.48,
+      "end": 3.12
+    },
+    {
+      "word": "atau",
+      "spoken": "atau",
+      "start": 3.24,
+      "end": 3.44
+    },
+    {
+      "word": "3D?",
+      "spoken": "tridi?",
+      "start": 3.6,
+      "end": 4.24
+    }
+  ]
+}

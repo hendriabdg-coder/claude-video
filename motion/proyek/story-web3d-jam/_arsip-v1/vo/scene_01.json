@@ -1,0 +1,115 @@
+{
+  "text": "[curious] Pernah batal checkout karena nggak yakin barangnya sama kayak di foto? Itu yang dialami pembeli jam titanium Dimas.",
+  "spoken": "[curious] Pernah batal checkout karena nggak yakin barangnya sama kayak di foto? Itu yang dialami pembeli jam titanium Dimas.",
+  "duration": 6.16,
+  "words": [
+    {
+      "word": "Pernah",
+      "spoken": "Pernah",
+      "start": 0.067,
+      "end": 0.32
+    },
+    {
+      "word": "batal",
+      "spoken": "batal",
+      "start": 0.36,
+      "end": 0.64
+    },
+    {
+      "word": "checkout",
+      "spoken": "checkout",
+      "start": 0.84,
+      "end": 1.04
+    },
+    {
+      "word": "karena",
+      "spoken": "karena",
+      "start": 1.08,
+      "end": 1.28
+    },
+    {
+      "word": "nggak",
+      "spoken": "nggak",
+      "start": 1.32,
+      "end": 1.52
+    },
+    {
+      "word": "yakin",
+      "spoken": "yakin",
+      "start": 1.56,
+      "end": 1.92
+    },
+    {
+      "word": "barangnya",
+      "spoken": "barangnya",
+      "start": 2.04,
+      "end": 2.32
+    },
+    {
+      "word": "sama",
+      "spoken": "sama",
+      "start": 2.4,
+      "end": 2.56
+    },
+    {
+      "word": "kayak",
+      "spoken": "kayak",
+      "start": 2.64,
+      "end": 2.8
+    },
+    {
+      "word": "di",
+      "spoken": "di",
+      "start": 2.84,
+      "end": 2.88
+    },
+    {
+      "word": "foto?",
+      "spoken": "foto?",
+      "start": 3.08,
+      "end": 3.68
+    },
+    {
+      "word": "Itu",
+      "spoken": "Itu",
+      "start": 3.8,
+      "end": 4.0
+    },
+    {
+      "word": "yang",
+      "spoken": "yang",
+      "start": 4.08,
+      "end": 4.16
+    },
+    {
+      "word": "dialami",
+      "spoken": "dialami",
+      "start": 4.24,
+      "end": 4.56
+    },
+    {
+      "word": "pembeli",
+      "spoken": "pembeli",
+      "start": 4.6,
+      "end": 4.88
+    },
+    {
+      "word": "jam",
+      "spoken": "jam",
+      "start": 4.96,
+      "end": 5.12
+    },
+    {
+      "word": "titanium",
+      "spoken": "titanium",
+      "start": 5.2,
+      "end": 5.52
+    },
+    {
+      "word": "Dimas.",
+      "spoken": "Dimas.",
+      "start": 5.64,
+      "end": 6.16
+    }
+  ]
+}

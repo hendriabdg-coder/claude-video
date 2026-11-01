@@ -1,0 +1,157 @@
+{
+  "text": "[curious] Kamu langganan tiga tools AI, masing-masing dua puluh dolar sebulan? Kedengarannya kecil. Tapi setahun, totalnya tujuh ratus dua puluh dolar... hampir dua belas juta rupiah.",
+  "spoken": "[curious] Kamu langganan tiga tools Ei-ai, masing-masing dua puluh dolar sebulan? Kedengarannya kecil. Tapi setahun, totalnya tujuh ratus dua puluh dolar... hampir dua belas juta rupiah.",
+  "duration": 10.88,
+  "words": [
+    {
+      "word": "Kamu",
+      "spoken": "Kamu",
+      "start": 0.067,
+      "end": 0.24
+    },
+    {
+      "word": "langganan",
+      "spoken": "langganan",
+      "start": 0.32,
+      "end": 0.64
+    },
+    {
+      "word": "tiga",
+      "spoken": "tiga",
+      "start": 0.72,
+      "end": 0.88
+    },
+    {
+      "word": "tools",
+      "spoken": "tools",
+      "start": 0.96,
+      "end": 1.2
+    },
+    {
+      "word": "AI,",
+      "spoken": "Ei-ai,",
+      "start": 1.28,
+      "end": 1.92
+    },
+    {
+      "word": "masing-masing",
+      "spoken": "masing-masing",
+      "start": 2.0,
+      "end": 2.48
+    },
+    {
+      "word": "dua",
+      "spoken": "dua",
+      "start": 2.56,
+      "end": 2.64
+    },
+    {
+      "word": "puluh",
+      "spoken": "puluh",
+      "start": 2.72,
+      "end": 2.84
+    },
+    {
+      "word": "dolar",
+      "spoken": "dolar",
+      "start": 2.88,
+      "end": 3.12
+    },
+    {
+      "word": "sebulan?",
+      "spoken": "sebulan?",
+      "start": 3.2,
+      "end": 3.68
+    },
+    {
+      "word": "Kedengarannya",
+      "spoken": "Kedengarannya",
+      "start": 4.0,
+      "end": 4.48
+    },
+    {
+      "word": "kecil.",
+      "spoken": "kecil.",
+      "start": 4.6,
+      "end": 5.24
+    },
+    {
+      "word": "Tapi",
+      "spoken": "Tapi",
+      "start": 5.44,
+      "end": 5.68
+    },
+    {
+      "word": "setahun,",
+      "spoken": "setahun,",
+      "start": 5.8,
+      "end": 6.56
+    },
+    {
+      "word": "totalnya",
+      "spoken": "totalnya",
+      "start": 6.72,
+      "end": 7.04
+    },
+    {
+      "word": "tujuh",
+      "spoken": "tujuh",
+      "start": 7.12,
+      "end": 7.253
+    },
+    {
+      "word": "ratus",
+      "spoken": "ratus",
+      "start": 7.28,
+      "end": 7.52
+    },
+    {
+      "word": "dua",
+      "spoken": "dua",
+      "start": 7.6,
+      "end": 7.72
+    },
+    {
+      "word": "puluh",
+      "spoken": "puluh",
+      "start": 7.76,
+      "end": 7.92
+    },
+    {
+      "word": "dolar...",
+      "spoken": "dolar...",
+      "start": 8.08,
+      "end": 8.96
+    },
+    {
+      "word": "hampir",
+      "spoken": "hampir",
+      "start": 9.0,
+      "end": 9.36
+    },
+    {
+      "word": "dua",
+      "spoken": "dua",
+      "start": 9.44,
+      "end": 9.56
+    },
+    {
+      "word": "belas",
+      "spoken": "belas",
+      "start": 9.6,
+      "end": 9.76
+    },
+    {
+      "word": "juta",
+      "spoken": "juta",
+      "start": 9.84,
+      "end": 10.0
+    },
+    {
+      "word": "rupiah.",
+      "spoken": "rupiah.",
+      "start": 10.16,
+      "end": 10.88
+    }
+  ]
+}

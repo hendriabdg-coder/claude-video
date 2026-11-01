@@ -1,0 +1,11 @@
+[lowers voice] Empat hari... sebelum patch-nya keluar, server PHP udah diincar duluan. [curious] Makanya Oktober ini dijuluki "Black October". Tapi, beneran internet lagi jebol massal? Aku cek satu-satu.
+
+Pertama, PHP2Shell. Dua celah di inti PHP, bisa ngambil alih server... tanpa login. Percobaan serangannya udah kelihatan dari tanggal tujuh belas, padahal patch-nya baru keluar tanggal dua puluh satu.
+
+Kedua, Plex. Ini udah bukan teori lagi. Server yang belum update dipakai buat nambang kripto. [sighs] Padahal patch-nya udah ada dari Agustus.
+
+Ketiga, GitLab. Skornya sepuluh, paling tinggi. Tapi... sampai hari ini belum ada bukti celah ini dipakai nyerang.
+
+Keempat, sertifikat eMudhra. Kunci rahasianya cuma bisa ditebak dalam dua ratus lima puluh enam kali coba. [chuckles] Browser udah langsung blokir, dan belum ada bukti disalahgunakan.
+
+Jadi, ancamannya nyata... tapi "internet jebol massal"? Itu berlebihan. Yang penting: cek teknologi yang beneran kamu pakai, terus update.

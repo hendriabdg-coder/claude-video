@@ -1,0 +1,177 @@
+{
+ "width": 1080,
+ "height": 1920,
+ "fps": 30.0,
+ "duration": 59.140998,
+ "cuts": [
+  42,
+  178,
+  220,
+  267,
+  354,
+  392,
+  478,
+  529,
+  568,
+  610,
+  698,
+  756,
+  828,
+  875,
+  931,
+  956,
+  1013,
+  1024,
+  1081,
+  1190,
+  1248,
+  1268,
+  1311,
+  1413,
+  1541,
+  1616,
+  1655
+ ],
+ "shots": [
+  {
+   "start_s": 0.0,
+   "end_s": 1.4,
+   "grid": "look\\grid_shot0.jpg"
+  },
+  {
+   "start_s": 1.4,
+   "end_s": 5.933,
+   "grid": "look\\grid_shot1.jpg"
+  },
+  {
+   "start_s": 5.933,
+   "end_s": 7.333,
+   "grid": "look\\grid_shot2.jpg"
+  },
+  {
+   "start_s": 7.333,
+   "end_s": 8.9,
+   "grid": "look\\grid_shot3.jpg"
+  },
+  {
+   "start_s": 8.9,
+   "end_s": 11.8,
+   "grid": "look\\grid_shot4.jpg"
+  },
+  {
+   "start_s": 11.8,
+   "end_s": 13.067,
+   "grid": "look\\grid_shot5.jpg"
+  },
+  {
+   "start_s": 13.067,
+   "end_s": 15.933,
+   "grid": "look\\grid_shot6.jpg"
+  },
+  {
+   "start_s": 15.933,
+   "end_s": 17.633,
+   "grid": "look\\grid_shot7.jpg"
+  },
+  {
+   "start_s": 17.633,
+   "end_s": 18.933,
+   "grid": "look\\grid_shot8.jpg"
+  },
+  {
+   "start_s": 18.933,
+   "end_s": 20.333,
+   "grid": "look\\grid_shot9.jpg"
+  },
+  {
+   "start_s": 20.333,
+   "end_s": 23.267,
+   "grid": "look\\grid_shot10.jpg"
+  },
+  {
+   "start_s": 23.267,
+   "end_s": 25.2,
+   "grid": "look\\grid_shot11.jpg"
+  },
+  {
+   "start_s": 25.2,
+   "end_s": 27.6,
+   "grid": "look\\grid_shot12.jpg"
+  },
+  {
+   "start_s": 27.6,
+   "end_s": 29.167,
+   "grid": "look\\grid_shot13.jpg"
+  },
+  {
+   "start_s": 29.167,
+   "end_s": 31.033,
+   "grid": "look\\grid_shot14.jpg"
+  },
+  {
+   "start_s": 31.033,
+   "end_s": 31.867,
+   "grid": "look\\grid_shot15.jpg"
+  },
+  {
+   "start_s": 31.867,
+   "end_s": 33.767,
+   "grid": "look\\grid_shot16.jpg"
+  },
+  {
+   "start_s": 33.767,
+   "end_s": 34.133,
+   "grid": "look\\grid_shot17.jpg"
+  },
+  {
+   "start_s": 34.133,
+   "end_s": 36.033,
+   "grid": "look\\grid_shot18.jpg"
+  },
+  {
+   "start_s": 36.033,
+   "end_s": 39.667,
+   "grid": "look\\grid_shot19.jpg"
+  },
+  {
+   "start_s": 39.667,
+   "end_s": 41.6,
+   "grid": "look\\grid_shot20.jpg"
+  },
+  {
+   "start_s": 41.6,
+   "end_s": 42.267,
+   "grid": "look\\grid_shot21.jpg"
+  },
+  {
+   "start_s": 42.267,
+   "end_s": 43.7,
+   "grid": "look\\grid_shot22.jpg"
+  },
+  {
+   "start_s": 43.7,
+   "end_s": 47.1,
+   "grid": "look\\grid_shot23.jpg"
+  },
+  {
+   "start_s": 47.1,
+   "end_s": 51.367,
+   "grid": "look\\grid_shot24.jpg"
+  },
+  {
+   "start_s": 51.367,
+   "end_s": 53.867,
+   "grid": "look\\grid_shot25.jpg"
+  },
+  {
+   "start_s": 53.867,
+   "end_s": 55.167,
+   "grid": "look\\grid_shot26.jpg"
+  },
+  {
+   "start_s": 55.167,
+   "end_s": 59.133,
+   "grid": "look\\grid_shot27.jpg"
+  }
+ ]
+}

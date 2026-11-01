@@ -1,0 +1,99 @@
+{
+ "file": "motion\\ref-moti0n-6.mp4",
+ "jenis": "motion",
+ "durasi": 39.59,
+ "langkah_sheet_dtk": 1.0,
+ "potongan": [],
+ "jumlah_shot": 1,
+ "rata_panjang_shot_dtk": 39.59,
+ "transkrip": {
+  "bahasa": "en",
+  "segmen": [
+   {
+    "mulai": 0.0,
+    "selesai": 3.66,
+    "teks": "This Claude skill makes unlimited reels, in any style,"
+   },
+   {
+    "mulai": 3.88,
+    "selesai": 6.32,
+    "teks": "and it doesn't burn a single video credit."
+   },
+   {
+    "mulai": 6.58,
+    "selesai": 7.78,
+    "teks": "Let me show you how it works."
+   },
+   {
+    "mulai": 8.02,
+    "selesai": 9.86,
+    "teks": "These reels are written as code"
+   },
+   {
+    "mulai": 9.86,
+    "selesai": 11.72,
+    "teks": "and rendered frame by frame,"
+   },
+   {
+    "mulai": 11.98,
+    "selesai": 13.8,
+    "teks": "not guessed by an AI video model."
+   },
+   {
+    "mulai": 14.02,
+    "selesai": 16.32,
+    "teks": "You might be thinking, the reels must suck."
+   },
+   {
+    "mulai": 16.56,
+    "selesai": 17.36,
+    "teks": "Not at all."
+   },
+   {
+    "mulai": 17.52,
+    "selesai": 20.04,
+    "teks": "Look at these, every one was made this way."
+   },
+   {
+    "mulai": 20.36,
+    "selesai": 22.64,
+    "teks": "The next thing on your mind, they won't go viral."
+   },
+   {
+    "mulai": 22.88,
+    "selesai": 27.78,
+    "teks": "This one did 155,000 views, 6,900 comments,"
+   },
+   {
+    "mulai": 27.78,
+    "selesai": 30.02,
+    "teks": "and 1,800 new followers."
+   },
+   {
+    "mulai": 30.28,
+    "selesai": 32.32,
+    "teks": "That gray line is my typical reel,"
+   },
+   {
+    "mulai": 32.5,
+    "selesai": 34.2,
+    "teks": "on a page that's six weeks old."
+   },
+   {
+    "mulai": 34.54,
+    "selesai": 36.3,
+    "teks": "Comment edit and I'll send you the skill."
+   },
+   {
+    "mulai": 36.56,
+    "selesai": 38.18,
+    "teks": "Save this so you can come back to it."
+   }
+  ],
+  "jumlah_kata": 117,
+  "kata_per_dtk_bicara": 3.46,
+  "kata_per_dtk_total": 2.96,
+  "kata_pertama_dtk": 0.0,
+  "ucapan_3dtk_awal": "This Claude skill makes unlimited reels, in any style,"
+ }
+}

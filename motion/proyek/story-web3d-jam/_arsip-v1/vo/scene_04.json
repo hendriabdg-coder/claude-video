@@ -1,0 +1,97 @@
+{
+  "text": "[excited] Jadi Dimas bikin website 3D. Jamnya berputar... dibongkar sampai ke mesinnya, spesifikasinya muncul pas di-scroll.",
+  "spoken": "[excited] Jadi Dimas bikin website tridi. Jamnya berputar... dibongkar sampai ke mesinnya, spesifikasinya muncul pas di-scroll.",
+  "duration": 7.44,
+  "words": [
+    {
+      "word": "Jadi",
+      "spoken": "Jadi",
+      "start": 0.08,
+      "end": 0.32
+    },
+    {
+      "word": "Dimas",
+      "spoken": "Dimas",
+      "start": 0.4,
+      "end": 0.64
+    },
+    {
+      "word": "bikin",
+      "spoken": "bikin",
+      "start": 0.72,
+      "end": 0.88
+    },
+    {
+      "word": "website",
+      "spoken": "website",
+      "start": 1.08,
+      "end": 1.28
+    },
+    {
+      "word": "3D.",
+      "spoken": "tridi.",
+      "start": 1.32,
+      "end": 1.96
+    },
+    {
+      "word": "Jamnya",
+      "spoken": "Jamnya",
+      "start": 2.16,
+      "end": 2.4
+    },
+    {
+      "word": "berputar...",
+      "spoken": "berputar...",
+      "start": 2.48,
+      "end": 3.44
+    },
+    {
+      "word": "dibongkar",
+      "spoken": "dibongkar",
+      "start": 3.52,
+      "end": 4.0
+    },
+    {
+      "word": "sampai",
+      "spoken": "sampai",
+      "start": 4.08,
+      "end": 4.32
+    },
+    {
+      "word": "ke",
+      "spoken": "ke",
+      "start": 4.36,
+      "end": 4.4
+    },
+    {
+      "word": "mesinnya,",
+      "spoken": "mesinnya,",
+      "start": 4.48,
+      "end": 5.12
+    },
+    {
+      "word": "spesifikasinya",
+      "spoken": "spesifikasinya",
+      "start": 5.2,
+      "end": 6.0
+    },
+    {
+      "word": "muncul",
+      "spoken": "muncul",
+      "start": 6.16,
+      "end": 6.56
+    },
+    {
+      "word": "pas",
+      "spoken": "pas",
+      "start": 6.64,
+      "end": 6.72
+    },
+    {
+      "word": "di-scroll.",
+      "spoken": "di-scroll.",
+      "start": 6.8,
+      "end": 7.44
+    }
+  ]
+}

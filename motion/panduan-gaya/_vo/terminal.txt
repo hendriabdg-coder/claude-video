@@ -1,0 +1,1 @@
+[curious] Satu perintah buat ngecek server kamu aman atau nggak. Ketik: php, spasi, minus v. Kalau versinya udah nggak didukung lagi... ya, itu tandanya kamu harus update.

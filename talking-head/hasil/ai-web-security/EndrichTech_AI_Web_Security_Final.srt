@@ -1,0 +1,54 @@
+1
+00:00:00,000 --> 00:00:02,100
+Bikin website pakai AI memang cepat,
+
+2
+00:00:02,220 --> 00:00:06,160
+tapi jangan langsung merasa aman
+cuma karena tampilannya sudah rapi.
+
+3
+00:00:06,600 --> 00:00:09,700
+Contohnya, kunci API
+bisa bocor di kode publik,
+
+4
+00:00:09,780 --> 00:00:12,200
+belum lagi akses admin
+nggak dibatasi,
+
+5
+00:00:12,340 --> 00:00:14,100
+dan input pengguna
+nggak divalidasi,
+
+6
+00:00:14,240 --> 00:00:15,350
+itu celah keamanan.
+
+7
+00:00:15,460 --> 00:00:17,000
+Nah, save dulu biar nggak lupa,
+
+8
+00:00:17,120 --> 00:00:19,700
+dan follow buat tips
+keamanan AI lainnya.
+
+9
+00:00:19,840 --> 00:00:22,600
+Sebelum website dirilis,
+cek lagi tiga hal tadi,
+
+10
+00:00:22,980 --> 00:00:25,350
+kunci API, hak akses,
+dan validasi input.
+
+11
+00:00:25,500 --> 00:00:27,550
+Jangan cuma percaya AI bilang beres,
+
+12
+00:00:28,000 --> 00:00:29,700
+harus tetap diuji sendiri!

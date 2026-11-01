@@ -1,0 +1,917 @@
+{
+ "language": "id",
+ "duration": 59.141,
+ "model": "large-v3-turbo (faster-whisper)",
+ "segments": [
+  {
+   "start": 0.0,
+   "end": 11.68,
+   "text": "Pakai AI untuk mengawasi AI lain? Kedengarannya aneh kan? Soalnya dalam pengujian internal OpenAI, beberapa AI agent mereka pernah berhasil keluar dari sandbox, lingkungan terisolasi yang seharusnya membatasi akses mereka."
+  },
+  {
+   "start": 11.84,
+   "end": 17.52,
+   "text": "Setelah kejadian itu, OpenAI memperluas sistem pengawasan supaya tindakan di luar izin bisa terdeteksi lebih cepat."
+  },
+  {
+   "start": 17.68,
+   "end": 23.08,
+   "text": "Nah, yang menarik, pengawasnya nggak cuma satu lapis, ada AI yang memeriksa aktivitas dan penggunaan tools."
+  },
+  {
+   "start": 23.08,
+   "end": 30.9,
+   "text": "Kalau menemukan tanda mencurigakan, AI investigasi akan menelusuri kejadian itu, lalu sistem bisa memberikan peringatan ke tim keamanan."
+  },
+  {
+   "start": 31.02,
+   "end": 33.9,
+   "text": "Tapi, seberapa cepat cara ini bekerja?"
+  },
+  {
+   "start": 34.08,
+   "end": 41.32,
+   "text": "Saat rekaman insiden tadi disimulasikan ulang, peringatannya muncul sekitar 30 menit setelah agent keluar dari sandbox."
+  },
+  {
+   "start": 41.62,
+   "end": 46.84,
+   "text": "Tapi ingat, ini hasil simulasi, bukan berarti insiden aslinya berhasil dihentikan."
+  },
+  {
+   "start": 47.08,
+   "end": 51.24,
+   "text": "Intinya, AI yang semakin mandiri tetap butuh batas dan pengawasan."
+  },
+  {
+   "start": 51.24,
+   "end": 56.76,
+   "text": "Dan besok, kita bahas kasus yang lebih mengejutkan, ketika AI justru melemahkan pengawasnya sendiri."
+  },
+  {
+   "start": 57.04,
+   "end": 58.8,
+   "text": "Save dan follow biar nggak ketinggalan."
+  }
+ ],
+ "words": [
+  {
+   "word": "Pakai",
+   "start": 0.0,
+   "end": 0.3,
+   "probability": 0.631
+  },
+  {
+   "word": "AI",
+   "start": 0.3,
+   "end": 0.54,
+   "probability": 0.992
+  },
+  {
+   "word": "untuk",
+   "start": 0.54,
+   "end": 0.84,
+   "probability": 0.998
+  },
+  {
+   "word": "mengawasi",
+   "start": 0.84,
+   "end": 1.32,
+   "probability": 0.999
+  },
+  {
+   "word": "AI",
+   "start": 1.32,
+   "end": 1.54,
+   "probability": 0.998
+  },
+  {
+   "word": "lain?",
+   "start": 1.54,
+   "end": 1.9,
+   "probability": 0.999
+  },
+  {
+   "word": "Kedengarannya",
+   "start": 2.24,
+   "end": 2.84,
+   "probability": 0.994
+  },
+  {
+   "word": "aneh",
+   "start": 2.84,
+   "end": 3.14,
+   "probability": 0.999
+  },
+  {
+   "word": "kan?",
+   "start": 3.14,
+   "end": 3.3,
+   "probability": 0.798
+  },
+  {
+   "word": "Soalnya",
+   "start": 3.62,
+   "end": 3.9,
+   "probability": 0.999
+  },
+  {
+   "word": "dalam",
+   "start": 3.9,
+   "end": 4.38,
+   "probability": 0.675
+  },
+  {
+   "word": "pengujian",
+   "start": 4.38,
+   "end": 4.86,
+   "probability": 0.999
+  },
+  {
+   "word": "internal",
+   "start": 4.86,
+   "end": 5.24,
+   "probability": 0.999
+  },
+  {
+   "word": "OpenAI,",
+   "start": 5.24,
+   "end": 5.7,
+   "probability": 0.58
+  },
+  {
+   "word": "beberapa",
+   "start": 5.92,
+   "end": 6.38,
+   "probability": 0.999
+  },
+  {
+   "word": "AI",
+   "start": 6.38,
+   "end": 6.62,
+   "probability": 0.998
+  },
+  {
+   "word": "agent",
+   "start": 6.62,
+   "end": 6.92,
+   "probability": 0.888
+  },
+  {
+   "word": "mereka",
+   "start": 6.92,
+   "end": 7.16,
+   "probability": 1.0
+  },
+  {
+   "word": "pernah",
+   "start": 7.16,
+   "end": 7.52,
+   "probability": 1.0
+  },
+  {
+   "word": "berhasil",
+   "start": 7.52,
+   "end": 7.96,
+   "probability": 1.0
+  },
+  {
+   "word": "keluar",
+   "start": 7.96,
+   "end": 8.22,
+   "probability": 1.0
+  },
+  {
+   "word": "dari",
+   "start": 8.22,
+   "end": 8.44,
+   "probability": 1.0
+  },
+  {
+   "word": "sandbox,",
+   "start": 8.44,
+   "end": 8.82,
+   "probability": 0.991
+  },
+  {
+   "word": "lingkungan",
+   "start": 8.96,
+   "end": 9.38,
+   "probability": 1.0
+  },
+  {
+   "word": "terisolasi",
+   "start": 9.38,
+   "end": 10.02,
+   "probability": 0.999
+  },
+  {
+   "word": "yang",
+   "start": 10.02,
+   "end": 10.18,
+   "probability": 1.0
+  },
+  {
+   "word": "seharusnya",
+   "start": 10.18,
+   "end": 10.62,
+   "probability": 1.0
+  },
+  {
+   "word": "membatasi",
+   "start": 10.62,
+   "end": 11.1,
+   "probability": 1.0
+  },
+  {
+   "word": "akses",
+   "start": 11.1,
+   "end": 11.38,
+   "probability": 1.0
+  },
+  {
+   "word": "mereka.",
+   "start": 11.38,
+   "end": 11.68,
+   "probability": 1.0
+  },
+  {
+   "word": "Setelah",
+   "start": 11.84,
+   "end": 12.14,
+   "probability": 1.0
+  },
+  {
+   "word": "kejadian",
+   "start": 12.14,
+   "end": 12.48,
+   "probability": 1.0
+  },
+  {
+   "word": "itu,",
+   "start": 12.48,
+   "end": 12.78,
+   "probability": 1.0
+  },
+  {
+   "word": "OpenAI",
+   "start": 13.14,
+   "end": 13.46,
+   "probability": 0.999
+  },
+  {
+   "word": "memperluas",
+   "start": 13.46,
+   "end": 13.98,
+   "probability": 0.999
+  },
+  {
+   "word": "sistem",
+   "start": 13.98,
+   "end": 14.26,
+   "probability": 0.999
+  },
+  {
+   "word": "pengawasan",
+   "start": 14.26,
+   "end": 14.8,
+   "probability": 1.0
+  },
+  {
+   "word": "supaya",
+   "start": 14.8,
+   "end": 15.14,
+   "probability": 0.997
+  },
+  {
+   "word": "tindakan",
+   "start": 15.14,
+   "end": 15.54,
+   "probability": 1.0
+  },
+  {
+   "word": "di",
+   "start": 15.54,
+   "end": 15.66,
+   "probability": 0.982
+  },
+  {
+   "word": "luar",
+   "start": 15.66,
+   "end": 15.86,
+   "probability": 1.0
+  },
+  {
+   "word": "izin",
+   "start": 15.86,
+   "end": 16.16,
+   "probability": 0.999
+  },
+  {
+   "word": "bisa",
+   "start": 16.16,
+   "end": 16.42,
+   "probability": 1.0
+  },
+  {
+   "word": "terdeteksi",
+   "start": 16.42,
+   "end": 17.0,
+   "probability": 1.0
+  },
+  {
+   "word": "lebih",
+   "start": 17.0,
+   "end": 17.18,
+   "probability": 1.0
+  },
+  {
+   "word": "cepat.",
+   "start": 17.18,
+   "end": 17.52,
+   "probability": 1.0
+  },
+  {
+   "word": "Nah,",
+   "start": 17.68,
+   "end": 17.84,
+   "probability": 0.996
+  },
+  {
+   "word": "yang",
+   "start": 17.98,
+   "end": 18.12,
+   "probability": 1.0
+  },
+  {
+   "word": "menarik,",
+   "start": 18.12,
+   "end": 18.58,
+   "probability": 1.0
+  },
+  {
+   "word": "pengawasnya",
+   "start": 18.68,
+   "end": 19.42,
+   "probability": 0.996
+  },
+  {
+   "word": "nggak",
+   "start": 19.42,
+   "end": 19.54,
+   "probability": 0.679
+  },
+  {
+   "word": "cuma",
+   "start": 19.54,
+   "end": 19.74,
+   "probability": 1.0
+  },
+  {
+   "word": "satu",
+   "start": 19.74,
+   "end": 19.96,
+   "probability": 0.999
+  },
+  {
+   "word": "lapis,",
+   "start": 19.96,
+   "end": 20.36,
+   "probability": 1.0
+  },
+  {
+   "word": "ada",
+   "start": 20.52,
+   "end": 20.72,
+   "probability": 0.999
+  },
+  {
+   "word": "AI",
+   "start": 20.72,
+   "end": 21.06,
+   "probability": 1.0
+  },
+  {
+   "word": "yang",
+   "start": 21.06,
+   "end": 21.22,
+   "probability": 1.0
+  },
+  {
+   "word": "memeriksa",
+   "start": 21.22,
+   "end": 21.64,
+   "probability": 0.999
+  },
+  {
+   "word": "aktivitas",
+   "start": 21.64,
+   "end": 22.18,
+   "probability": 0.996
+  },
+  {
+   "word": "dan",
+   "start": 22.18,
+   "end": 22.36,
+   "probability": 1.0
+  },
+  {
+   "word": "penggunaan",
+   "start": 22.36,
+   "end": 22.84,
+   "probability": 1.0
+  },
+  {
+   "word": "tools.",
+   "start": 22.84,
+   "end": 23.08,
+   "probability": 0.999
+  },
+  {
+   "word": "Kalau",
+   "start": 23.08,
+   "end": 23.44,
+   "probability": 0.976
+  },
+  {
+   "word": "menemukan",
+   "start": 23.44,
+   "end": 23.92,
+   "probability": 1.0
+  },
+  {
+   "word": "tanda",
+   "start": 23.92,
+   "end": 24.22,
+   "probability": 1.0
+  },
+  {
+   "word": "mencurigakan,",
+   "start": 24.22,
+   "end": 24.96,
+   "probability": 1.0
+  },
+  {
+   "word": "AI",
+   "start": 25.32,
+   "end": 25.54,
+   "probability": 0.998
+  },
+  {
+   "word": "investigasi",
+   "start": 25.54,
+   "end": 26.24,
+   "probability": 0.996
+  },
+  {
+   "word": "akan",
+   "start": 26.24,
+   "end": 26.46,
+   "probability": 1.0
+  },
+  {
+   "word": "menelusuri",
+   "start": 26.46,
+   "end": 27.0,
+   "probability": 1.0
+  },
+  {
+   "word": "kejadian",
+   "start": 27.0,
+   "end": 27.4,
+   "probability": 1.0
+  },
+  {
+   "word": "itu,",
+   "start": 27.4,
+   "end": 27.7,
+   "probability": 1.0
+  },
+  {
+   "word": "lalu",
+   "start": 27.9,
+   "end": 28.42,
+   "probability": 1.0
+  },
+  {
+   "word": "sistem",
+   "start": 28.42,
+   "end": 28.72,
+   "probability": 0.999
+  },
+  {
+   "word": "bisa",
+   "start": 28.72,
+   "end": 28.98,
+   "probability": 1.0
+  },
+  {
+   "word": "memberikan",
+   "start": 28.98,
+   "end": 29.44,
+   "probability": 1.0
+  },
+  {
+   "word": "peringatan",
+   "start": 29.44,
+   "end": 29.92,
+   "probability": 1.0
+  },
+  {
+   "word": "ke",
+   "start": 29.92,
+   "end": 30.16,
+   "probability": 1.0
+  },
+  {
+   "word": "tim",
+   "start": 30.16,
+   "end": 30.32,
+   "probability": 0.995
+  },
+  {
+   "word": "keamanan.",
+   "start": 30.32,
+   "end": 30.9,
+   "probability": 1.0
+  },
+  {
+   "word": "Tapi,",
+   "start": 31.02,
+   "end": 31.32,
+   "probability": 1.0
+  },
+  {
+   "word": "seberapa",
+   "start": 31.64,
+   "end": 32.7,
+   "probability": 1.0
+  },
+  {
+   "word": "cepat",
+   "start": 32.7,
+   "end": 33.06,
+   "probability": 1.0
+  },
+  {
+   "word": "cara",
+   "start": 33.06,
+   "end": 33.28,
+   "probability": 0.995
+  },
+  {
+   "word": "ini",
+   "start": 33.28,
+   "end": 33.46,
+   "probability": 1.0
+  },
+  {
+   "word": "bekerja?",
+   "start": 33.46,
+   "end": 33.9,
+   "probability": 1.0
+  },
+  {
+   "word": "Saat",
+   "start": 34.08,
+   "end": 34.44,
+   "probability": 1.0
+  },
+  {
+   "word": "rekaman",
+   "start": 34.44,
+   "end": 34.84,
+   "probability": 1.0
+  },
+  {
+   "word": "insiden",
+   "start": 34.84,
+   "end": 35.24,
+   "probability": 0.999
+  },
+  {
+   "word": "tadi",
+   "start": 35.24,
+   "end": 35.5,
+   "probability": 1.0
+  },
+  {
+   "word": "disimulasikan",
+   "start": 35.5,
+   "end": 36.14,
+   "probability": 0.999
+  },
+  {
+   "word": "ulang,",
+   "start": 36.14,
+   "end": 36.52,
+   "probability": 1.0
+  },
+  {
+   "word": "peringatannya",
+   "start": 37.22,
+   "end": 37.74,
+   "probability": 1.0
+  },
+  {
+   "word": "muncul",
+   "start": 37.74,
+   "end": 38.16,
+   "probability": 1.0
+  },
+  {
+   "word": "sekitar",
+   "start": 38.16,
+   "end": 38.62,
+   "probability": 1.0
+  },
+  {
+   "word": "30",
+   "start": 38.62,
+   "end": 39.14,
+   "probability": 1.0
+  },
+  {
+   "word": "menit",
+   "start": 39.14,
+   "end": 39.56,
+   "probability": 1.0
+  },
+  {
+   "word": "setelah",
+   "start": 39.56,
+   "end": 40.06,
+   "probability": 1.0
+  },
+  {
+   "word": "agent",
+   "start": 40.06,
+   "end": 40.36,
+   "probability": 0.808
+  },
+  {
+   "word": "keluar",
+   "start": 40.36,
+   "end": 40.68,
+   "probability": 1.0
+  },
+  {
+   "word": "dari",
+   "start": 40.68,
+   "end": 40.96,
+   "probability": 1.0
+  },
+  {
+   "word": "sandbox.",
+   "start": 40.96,
+   "end": 41.32,
+   "probability": 0.995
+  },
+  {
+   "word": "Tapi",
+   "start": 41.62,
+   "end": 41.82,
+   "probability": 1.0
+  },
+  {
+   "word": "ingat,",
+   "start": 41.82,
+   "end": 42.18,
+   "probability": 0.999
+  },
+  {
+   "word": "ini",
+   "start": 42.46,
+   "end": 42.72,
+   "probability": 1.0
+  },
+  {
+   "word": "hasil",
+   "start": 42.72,
+   "end": 43.08,
+   "probability": 1.0
+  },
+  {
+   "word": "simulasi,",
+   "start": 43.08,
+   "end": 43.68,
+   "probability": 1.0
+  },
+  {
+   "word": "bukan",
+   "start": 43.84,
+   "end": 44.18,
+   "probability": 1.0
+  },
+  {
+   "word": "berarti",
+   "start": 44.18,
+   "end": 44.7,
+   "probability": 1.0
+  },
+  {
+   "word": "insiden",
+   "start": 44.7,
+   "end": 45.28,
+   "probability": 1.0
+  },
+  {
+   "word": "aslinya",
+   "start": 45.28,
+   "end": 45.78,
+   "probability": 1.0
+  },
+  {
+   "word": "berhasil",
+   "start": 45.78,
+   "end": 46.3,
+   "probability": 1.0
+  },
+  {
+   "word": "dihentikan.",
+   "start": 46.3,
+   "end": 46.84,
+   "probability": 1.0
+  },
+  {
+   "word": "Intinya,",
+   "start": 47.08,
+   "end": 47.56,
+   "probability": 0.998
+  },
+  {
+   "word": "AI",
+   "start": 48.08,
+   "end": 48.28,
+   "probability": 1.0
+  },
+  {
+   "word": "yang",
+   "start": 48.28,
+   "end": 48.52,
+   "probability": 1.0
+  },
+  {
+   "word": "semakin",
+   "start": 48.52,
+   "end": 48.88,
+   "probability": 1.0
+  },
+  {
+   "word": "mandiri",
+   "start": 48.88,
+   "end": 49.3,
+   "probability": 0.999
+  },
+  {
+   "word": "tetap",
+   "start": 49.3,
+   "end": 49.74,
+   "probability": 0.995
+  },
+  {
+   "word": "butuh",
+   "start": 49.74,
+   "end": 50.04,
+   "probability": 1.0
+  },
+  {
+   "word": "batas",
+   "start": 50.04,
+   "end": 50.44,
+   "probability": 1.0
+  },
+  {
+   "word": "dan",
+   "start": 50.44,
+   "end": 50.66,
+   "probability": 1.0
+  },
+  {
+   "word": "pengawasan.",
+   "start": 50.66,
+   "end": 51.24,
+   "probability": 1.0
+  },
+  {
+   "word": "Dan",
+   "start": 51.24,
+   "end": 51.52,
+   "probability": 0.956
+  },
+  {
+   "word": "besok,",
+   "start": 51.52,
+   "end": 51.92,
+   "probability": 1.0
+  },
+  {
+   "word": "kita",
+   "start": 52.04,
+   "end": 52.32,
+   "probability": 1.0
+  },
+  {
+   "word": "bahas",
+   "start": 52.32,
+   "end": 52.64,
+   "probability": 1.0
+  },
+  {
+   "word": "kasus",
+   "start": 52.64,
+   "end": 52.96,
+   "probability": 1.0
+  },
+  {
+   "word": "yang",
+   "start": 52.96,
+   "end": 53.08,
+   "probability": 1.0
+  },
+  {
+   "word": "lebih",
+   "start": 53.08,
+   "end": 53.3,
+   "probability": 1.0
+  },
+  {
+   "word": "mengejutkan,",
+   "start": 53.3,
+   "end": 53.9,
+   "probability": 1.0
+  },
+  {
+   "word": "ketika",
+   "start": 54.06,
+   "end": 54.56,
+   "probability": 0.999
+  },
+  {
+   "word": "AI",
+   "start": 54.56,
+   "end": 54.88,
+   "probability": 0.997
+  },
+  {
+   "word": "justru",
+   "start": 54.88,
+   "end": 55.32,
+   "probability": 1.0
+  },
+  {
+   "word": "melemahkan",
+   "start": 55.32,
+   "end": 55.86,
+   "probability": 1.0
+  },
+  {
+   "word": "pengawasnya",
+   "start": 55.86,
+   "end": 56.4,
+   "probability": 0.999
+  },
+  {
+   "word": "sendiri.",
+   "start": 56.4,
+   "end": 56.76,
+   "probability": 1.0
+  },
+  {
+   "word": "Save",
+   "start": 57.04,
+   "end": 57.3,
+   "probability": 0.855
+  },
+  {
+   "word": "dan",
+   "start": 57.3,
+   "end": 57.48,
+   "probability": 0.993
+  },
+  {
+   "word": "follow",
+   "start": 57.48,
+   "end": 57.8,
+   "probability": 0.998
+  },
+  {
+   "word": "biar",
+   "start": 57.8,
+   "end": 58.1,
+   "probability": 0.994
+  },
+  {
+   "word": "nggak",
+   "start": 58.1,
+   "end": 58.2,
+   "probability": 0.663
+  },
+  {
+   "word": "ketinggalan.",
+   "start": 58.2,
+   "end": 58.8,
+   "probability": 1.0
+  }
+ ]
+}

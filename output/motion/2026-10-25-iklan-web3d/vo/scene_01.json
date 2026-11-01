@@ -1,0 +1,331 @@
+{
+  "text": "[confident] Website kamu cuma jadi brosur online? Pantes pengunjungnya cepat pergi... Lihat ini. Jam tangan yang bisa dibongkar pakai scroll. Company profile yang jalan kayak film. Rumah yang bisa dimasuki calon pembeli... Ini website 3D, dan aku yang bikin. Produk kamu layak dilihat kayak gini. DM aku, ketik 3D. Kita bahas website kamu hari ini.",
+  "spoken": "[confident] Website kamu cuma jadi brosur online? Pantes pengunjungnya cepat pergi... Lihat ini. Jam tangan yang bisa dibongkar pakai scroll. Company profile yang jalan kayak film. Rumah yang bisa dimasuki calon pembeli... Ini website tridi, dan aku yang bikin. Produk kamu layak dilihat kayak gini. di-em aku, ketik tridi. Kita bahas website kamu hari ini.",
+  "duration": 20.64,
+  "words": [
+    {
+      "word": "Website",
+      "spoken": "Website",
+      "start": 0.343,
+      "end": 0.4
+    },
+    {
+      "word": "kamu",
+      "spoken": "kamu",
+      "start": 0.48,
+      "end": 0.64
+    },
+    {
+      "word": "cuma",
+      "spoken": "cuma",
+      "start": 0.68,
+      "end": 0.88
+    },
+    {
+      "word": "jadi",
+      "spoken": "jadi",
+      "start": 0.96,
+      "end": 1.04
+    },
+    {
+      "word": "brosur",
+      "spoken": "brosur",
+      "start": 1.12,
+      "end": 1.44
+    },
+    {
+      "word": "online?",
+      "spoken": "online?",
+      "start": 1.52,
+      "end": 2.16
+    },
+    {
+      "word": "Pantes",
+      "spoken": "Pantes",
+      "start": 2.32,
+      "end": 2.8
+    },
+    {
+      "word": "pengunjungnya",
+      "spoken": "pengunjungnya",
+      "start": 2.88,
+      "end": 3.28
+    },
+    {
+      "word": "cepat",
+      "spoken": "cepat",
+      "start": 3.32,
+      "end": 3.52
+    },
+    {
+      "word": "pergi...",
+      "spoken": "pergi...",
+      "start": 3.6,
+      "end": 4.32
+    },
+    {
+      "word": "Lihat",
+      "spoken": "Lihat",
+      "start": 4.56,
+      "end": 4.72
+    },
+    {
+      "word": "ini.",
+      "spoken": "ini.",
+      "start": 4.8,
+      "end": 5.2
+    },
+    {
+      "word": "Jam",
+      "spoken": "Jam",
+      "start": 5.36,
+      "end": 5.52
+    },
+    {
+      "word": "tangan",
+      "spoken": "tangan",
+      "start": 5.6,
+      "end": 5.84
+    },
+    {
+      "word": "yang",
+      "spoken": "yang",
+      "start": 5.92,
+      "end": 6.0
+    },
+    {
+      "word": "bisa",
+      "spoken": "bisa",
+      "start": 6.053,
+      "end": 6.16
+    },
+    {
+      "word": "dibongkar",
+      "spoken": "dibongkar",
+      "start": 6.24,
+      "end": 6.64
+    },
+    {
+      "word": "pakai",
+      "spoken": "pakai",
+      "start": 6.72,
+      "end": 6.96
+    },
+    {
+      "word": "scroll.",
+      "spoken": "scroll.",
+      "start": 7.2,
+      "end": 7.6
+    },
+    {
+      "word": "Company",
+      "spoken": "Company",
+      "start": 7.76,
+      "end": 8.08
+    },
+    {
+      "word": "profile",
+      "spoken": "profile",
+      "start": 8.32,
+      "end": 8.56
+    },
+    {
+      "word": "yang",
+      "spoken": "yang",
+      "start": 8.68,
+      "end": 8.8
+    },
+    {
+      "word": "jalan",
+      "spoken": "jalan",
+      "start": 8.88,
+      "end": 9.2
+    },
+    {
+      "word": "kayak",
+      "spoken": "kayak",
+      "start": 9.28,
+      "end": 9.44
+    },
+    {
+      "word": "film.",
+      "spoken": "film.",
+      "start": 9.52,
+      "end": 10.08
+    },
+    {
+      "word": "Rumah",
+      "spoken": "Rumah",
+      "start": 10.16,
+      "end": 10.56
+    },
+    {
+      "word": "yang",
+      "spoken": "yang",
+      "start": 10.64,
+      "end": 10.72
+    },
+    {
+      "word": "bisa",
+      "spoken": "bisa",
+      "start": 10.773,
+      "end": 10.88
+    },
+    {
+      "word": "dimasuki",
+      "spoken": "dimasuki",
+      "start": 10.96,
+      "end": 11.36
+    },
+    {
+      "word": "calon",
+      "spoken": "calon",
+      "start": 11.44,
+      "end": 11.6
+    },
+    {
+      "word": "pembeli...",
+      "spoken": "pembeli...",
+      "start": 11.68,
+      "end": 12.56
+    },
+    {
+      "word": "Ini",
+      "spoken": "Ini",
+      "start": 12.64,
+      "end": 12.72
+    },
+    {
+      "word": "website",
+      "spoken": "website",
+      "start": 12.88,
+      "end": 13.04
+    },
+    {
+      "word": "3D,",
+      "spoken": "tridi,",
+      "start": 13.12,
+      "end": 13.68
+    },
+    {
+      "word": "dan",
+      "spoken": "dan",
+      "start": 13.8,
+      "end": 13.92
+    },
+    {
+      "word": "aku",
+      "spoken": "aku",
+      "start": 14.0,
+      "end": 14.16
+    },
+    {
+      "word": "yang",
+      "spoken": "yang",
+      "start": 14.24,
+      "end": 14.32
+    },
+    {
+      "word": "bikin.",
+      "spoken": "bikin.",
+      "start": 14.36,
+      "end": 14.96
+    },
+    {
+      "word": "Produk",
+      "spoken": "Produk",
+      "start": 15.04,
+      "end": 15.2
+    },
+    {
+      "word": "kamu",
+      "spoken": "kamu",
+      "start": 15.28,
+      "end": 15.6
+    },
+    {
+      "word": "layak",
+      "spoken": "layak",
+      "start": 15.68,
+      "end": 16.0
+    },
+    {
+      "word": "dilihat",
+      "spoken": "dilihat",
+      "start": 16.053,
+      "end": 16.32
+    },
+    {
+      "word": "kayak",
+      "spoken": "kayak",
+      "start": 16.36,
+      "end": 16.56
+    },
+    {
+      "word": "gini.",
+      "spoken": "gini.",
+      "start": 16.64,
+      "end": 17.12
+    },
+    {
+      "word": "DM",
+      "spoken": "di-em",
+      "start": 17.16,
+      "end": 17.36
+    },
+    {
+      "word": "aku,",
+      "spoken": "aku,",
+      "start": 17.44,
+      "end": 17.92
+    },
+    {
+      "word": "ketik",
+      "spoken": "ketik",
+      "start": 18.0,
+      "end": 18.16
+    },
+    {
+      "word": "3D.",
+      "spoken": "tridi.",
+      "start": 18.24,
+      "end": 18.8
+    },
+    {
+      "word": "Kita",
+      "spoken": "Kita",
+      "start": 18.88,
+      "end": 19.04
+    },
+    {
+      "word": "bahas",
+      "spoken": "bahas",
+      "start": 19.12,
+      "end": 19.28
+    },
+    {
+      "word": "website",
+      "spoken": "website",
+      "start": 19.36,
+      "end": 19.68
+    },
+    {
+      "word": "kamu",
+      "spoken": "kamu",
+      "start": 19.76,
+      "end": 19.92
+    },
+    {
+      "word": "hari",
+      "spoken": "hari",
+      "start": 20.0,
+      "end": 20.08
+    },
+    {
+      "word": "ini.",
+      "spoken": "ini.",
+      "start": 20.16,
+      "end": 20.64
+    }
+  ]
+}

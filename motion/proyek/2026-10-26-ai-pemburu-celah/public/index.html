@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8" />
+<style>
+@font-face { font-family: "IDBlack"; src: url("fonts/InterDisplay-Black.ttf") format("truetype"); font-display: block; }
+@font-face { font-family: "IDBold"; src: url("fonts/InterDisplay-Bold.ttf") format("truetype"); font-display: block; }
+@font-face { font-family: "IDSemi"; src: url("fonts/InterDisplay-SemiBold.ttf") format("truetype"); font-display: block; }
+@font-face { font-family: "IDItal"; src: url("fonts/InterDisplay-SemiBoldItalic.ttf") format("truetype"); font-display: block; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 100%; height: 100%; overflow: hidden; }
+#root { position: relative; width: 1080px; height: 1920px; overflow: hidden; }
+.ico { width: 100%; height: 100%; display: block; }
+
+#chibi { position: absolute; width: 520px; height: 925px; opacity: 0; transform-origin: 50% 100%; }
+#chibiS { position: absolute; inset: 0; }
+#chibiS img { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; }
+#chibiSh { position: absolute; width: 360px; height: 46px; border-radius: 50%; background: rgba(0,0,0,.45); filter: blur(14px); opacity: 0; }
+
+
+:root { --bg:#0a0907; --gold:#F5C452; --cream:#FFF3D6; --red:#FF4A4A; --green:#59E38C; }
+html, body, #root { background: var(--bg); color: var(--cream); font-family: "IDSemi"; }
+.tint { position: absolute; inset: -200px; opacity: 0; }
+#t-gold { opacity: 1; background: radial-gradient(ellipse 60% 40% at 50% 42%, rgba(245,196,82,.17) 0%, rgba(245,196,82,0) 70%); }
+#t-red { background: radial-gradient(ellipse 60% 40% at 50% 42%, rgba(255,60,60,.2) 0%, rgba(255,60,60,0) 70%); }
+#vig { position: absolute; inset: 0; background: radial-gradient(ellipse 85% 70% at 50% 45%, rgba(0,0,0,0) 55%, rgba(0,0,0,.8) 100%); pointer-events: none; }
+.dust { position: absolute; border-radius: 50%; background: var(--gold); box-shadow: 0 0 12px 3px rgba(245,196,82,.55); }
+#cam { position: absolute; inset: 0; transform-origin: 50% 45%; }
+.heavy { position: absolute; left: 0; width: 1080px; text-align: center; font-family: "IDBlack"; line-height: 1; letter-spacing: .02em; white-space: nowrap; opacity: 0; }
+.heavy .ch { opacity: 0; }
+.c { color: var(--cream); text-shadow: 0 0 14px rgba(245,196,82,.85), 0 0 46px rgba(245,196,82,.45); }
+.g { color: var(--gold); text-shadow: 0 0 16px rgba(245,196,82,.9), 0 0 60px rgba(245,196,82,.5); }
+.r { color: #FFE2E2; text-shadow: 0 0 14px rgba(255,74,74,.95), 0 0 54px rgba(255,74,74,.6); }
+.lead { position: absolute; left: 0; width: 1080px; text-align: center; font-family: "IDItal"; font-size: 50px; color: rgba(255,243,214,.88); opacity: 0; }
+.mono { position: absolute; left: 0; width: 1080px; text-align: center; font-family: Consolas, monospace; font-size: 28px; letter-spacing: .2em; color: rgba(255,243,214,.6); opacity: 0; }
+#hud { position: absolute; left: 72px; top: 262px; display: flex; align-items: center; gap: 18px; opacity: 0; }
+#hud .tag { font-family: Consolas, monospace; font-size: 24px; letter-spacing: .2em; color: var(--gold); padding: 8px 16px; border: 2px solid rgba(245,196,82,.6); border-radius: 8px; }
+#hud .dots { display: flex; gap: 10px; }
+#hud .dots i { width: 34px; height: 6px; border-radius: 3px; background: rgba(255,243,214,.18); }
+#shield { position: absolute; left: 340px; top: 760px; width: 400px; height: 400px; color: var(--gold); filter: drop-shadow(0 0 30px rgba(245,196,82,.8)); opacity: 0; }
+#shield .ico { position: absolute; inset: 0; }
+#shieldR { color: var(--red); filter: drop-shadow(0 0 30px rgba(255,74,74,.9)); opacity: 0; position: absolute; inset: 0; }
+#crack { position: absolute; left: 0; top: 0; width: 400px; height: 400px; opacity: 0; }
+.stamp { position: absolute; left: 50%; display: flex; align-items: center; gap: 18px; padding: 14px 40px 16px 26px; border-radius: 18px; border: 5px solid; font-family: "IDBlack"; font-size: 76px; letter-spacing: .04em; line-height: 1; opacity: 0; white-space: nowrap; }
+.stamp .si { width: 64px; height: 64px; }
+.stamp.gr { color: var(--green); border-color: var(--green); background: rgba(89,227,140,.10); box-shadow: 0 0 40px rgba(89,227,140,.35); }
+.stamp.gd { color: var(--gold); border-color: var(--gold); background: rgba(245,196,82,.08); box-shadow: 0 0 40px rgba(245,196,82,.3); }
+.stamp.rd { color: var(--red); border-color: var(--red); background: rgba(255,74,74,.10); box-shadow: 0 0 44px rgba(255,74,74,.4); }
+.persp { position: absolute; inset: 0; perspective: 1600px; }
+.panel { position: absolute; border-radius: 26px; background: linear-gradient(160deg, #1b1812, #100e0a); border: 2px solid rgba(245,196,82,.3); box-shadow: 0 40px 90px rgba(0,0,0,.6), 0 0 40px rgba(245,196,82,.12); opacity: 0; padding: 38px 44px; }
+.panel.rp { border-color: rgba(255,74,74,.5); box-shadow: 0 40px 90px rgba(0,0,0,.6), 0 0 40px rgba(255,74,74,.2); }
+.panel .k { font-family: Consolas, monospace; font-size: 24px; letter-spacing: .2em; color: rgba(255,243,214,.55); }
+.panel .v { font-family: "IDBlack"; font-size: 64px; margin-top: 14px; }
+.panel .s { font-family: "IDSemi"; font-size: 28px; color: rgba(255,243,214,.6); margin-top: 18px; }
+.big { font-family: "IDBlack"; font-size: 190px; line-height: 1; color: #FFE2E2; text-shadow: 0 0 30px rgba(255,74,74,.8); }
+.big small { font-size: 80px; color: rgba(255,226,226,.6); }
+.sim { position: absolute; font-family: Consolas, monospace; font-size: 22px; letter-spacing: .2em; color: rgba(255,226,226,.7); padding: 6px 12px; border: 2px solid rgba(255,74,74,.5); border-radius: 8px; }
+.flashc { position: absolute; inset: 0; background: #D7263D; opacity: 0; overflow: hidden; }
+.flashc .frs { position: absolute; left: 0; top: 300px; width: 1080px; }
+.flashc .fr { font-family: "IDBlack"; font-size: 150px; line-height: 1.05; text-align: center; color: transparent; -webkit-text-stroke: 3px rgba(10,9,7,.35); white-space: nowrap; }
+.flashc .fr.solid { color: #0a0907; -webkit-text-stroke: 0; }
+#follow { position: absolute; left: 340px; top: 530px; width: 400px; height: 96px; border-radius: 48px; background: var(--gold); color: #0a0907; font-family: "IDBlack"; font-size: 46px; display: flex; align-items: center; justify-content: center; gap: 14px; opacity: 0; box-shadow: 0 0 40px rgba(245,196,82,.6); }
+#tapc { position: absolute; left: 660px; top: 570px; width: 70px; height: 70px; color: var(--cream); opacity: 0; }
+.opt { position: absolute; top: 420px; width: 380px; height: 120px; border-radius: 22px; display: flex; align-items: center; gap: 14px; padding: 0 20px; font-family: "IDBlack"; font-size: 34px; opacity: 0; }
+.opt .oi { width: 64px; height: 64px; flex: none; }
+#optA { left: 110px; color: var(--green); border: 4px solid var(--green); background: rgba(89,227,140,.1); box-shadow: 0 0 34px rgba(89,227,140,.3); }
+#optB { left: 530px; color: var(--red); border: 4px solid var(--red); background: rgba(255,74,74,.1); box-shadow: 0 0 34px rgba(255,74,74,.3); }
+#brand { position: absolute; left: 0; top: 1525px; width: 1080px; text-align: center; font-family: "IDBlack"; font-size: 38px; color: var(--cream); opacity: .9; }
+#brand b { color: var(--gold); font-weight: normal; }
+#flash { position: absolute; inset: 0; background: #FFF3D6; opacity: 0; pointer-events: none; }
+#rflash { position: absolute; inset: 0; background: #FF2A2A; opacity: 0; pointer-events: none; mix-blend-mode: screen; }
+
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="ai-pemburu-celah" data-start="0" data-duration="36.85" data-fps="30" data-width="1080" data-height="1920">
+  <audio id="vo" src="vo.mp3" data-start="0" data-duration="36.85" data-track-index="0"></audio>
+
+  <div class="tint" id="t-gold"></div><div class="tint" id="t-red"></div>
+  <i class="dust" style="left:683px;top:568px;width:8px;height:4px;opacity:.5"></i><i class="dust" style="left:168px;top:1357px;width:4px;height:6px;opacity:.5"></i><i class="dust" style="left:138px;top:1299px;width:5px;height:4px;opacity:.5"></i><i class="dust" style="left:196px;top:1148px;width:8px;height:4px;opacity:.5"></i><i class="dust" style="left:512px;top:445px;width:8px;height:4px;opacity:.5"></i><i class="dust" style="left:273px;top:717px;width:4px;height:8px;opacity:.5"></i><i class="dust" style="left:121px;top:712px;width:4px;height:5px;opacity:.5"></i><i class="dust" style="left:613px;top:1118px;width:5px;height:4px;opacity:.5"></i><i class="dust" style="left:651px;top:1407px;width:5px;height:4px;opacity:.5"></i><i class="dust" style="left:404px;top:1022px;width:4px;height:4px;opacity:.5"></i><i class="dust" style="left:142px;top:1527px;width:5px;height:8px;opacity:.5"></i><i class="dust" style="left:895px;top:903px;width:8px;height:8px;opacity:.5"></i><i class="dust" style="left:760px;top:873px;width:5px;height:5px;opacity:.5"></i><i class="dust" style="left:519px;top:427px;width:6px;height:8px;opacity:.5"></i><i class="dust" style="left:723px;top:1179px;width:6px;height:4px;opacity:.5"></i><i class="dust" style="left:261px;top:1308px;width:8px;height:5px;opacity:.5"></i><i class="dust" style="left:720px;top:571px;width:8px;height:8px;opacity:.5"></i><i class="dust" style="left:100px;top:1628px;width:4px;height:6px;opacity:.5"></i><i class="dust" style="left:716px;top:1683px;width:6px;height:8px;opacity:.5"></i><i class="dust" style="left:954px;top:400px;width:4px;height:6px;opacity:.5"></i><i class="dust" style="left:990px;top:1687px;width:4px;height:4px;opacity:.5"></i><i class="dust" style="left:654px;top:1585px;width:8px;height:6px;opacity:.5"></i><i class="dust" style="left:810px;top:1629px;width:6px;height:4px;opacity:.5"></i><i class="dust" style="left:965px;top:987px;width:5px;height:4px;opacity:.5"></i><i class="dust" style="left:1031px;top:380px;width:5px;height:6px;opacity:.5"></i><i class="dust" style="left:284px;top:767px;width:8px;height:8px;opacity:.5"></i><i class="dust" style="left:1036px;top:425px;width:5px;height:8px;opacity:.5"></i><i class="dust" style="left:842px;top:1385px;width:6px;height:5px;opacity:.5"></i><i class="dust" style="left:901px;top:1386px;width:6px;height:8px;opacity:.5"></i><i class="dust" style="left:754px;top:1658px;width:8px;height:5px;opacity:.5"></i><i class="dust" style="left:329px;top:429px;width:5px;height:5px;opacity:.5"></i><i class="dust" style="left:495px;top:1608px;width:5px;height:4px;opacity:.5"></i><i class="dust" style="left:1013px;top:1466px;width:5px;height:6px;opacity:.5"></i><i class="dust" style="left:597px;top:268px;width:5px;height:8px;opacity:.5"></i><i class="dust" style="left:776px;top:1508px;width:6px;height:5px;opacity:.5"></i><i class="dust" style="left:130px;top:1195px;width:8px;height:8px;opacity:.5"></i><i class="dust" style="left:837px;top:1067px;width:4px;height:8px;opacity:.5"></i><i class="dust" style="left:840px;top:387px;width:5px;height:4px;opacity:.5"></i><i class="dust" style="left:447px;top:1162px;width:5px;height:4px;opacity:.5"></i><i class="dust" style="left:716px;top:1490px;width:4px;height:4px;opacity:.5"></i>
+  <div id="cam">
+    <div id="hud"><div class="tag">INTERNET JEBOL #2</div><div class="dots"><i id="d1"></i><i id="d2"></i><i id="d3"></i><i id="d4"></i></div></div>
+    <!-- hook -->
+    <div class="lead" id="h0" style="top:330px">AI ini dibikin buat</div>
+    <div class="heavy c" id="h1" style="top:400px;font-size:90px"><span class="ch" style="display:inline-block">J</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">G</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">I</span><span class="ch" style="display:inline-block">N</span><span class="ch" style="display:inline-block">T</span><span class="ch" style="display:inline-block">E</span><span class="ch" style="display:inline-block">R</span><span class="ch" style="display:inline-block">N</span><span class="ch" style="display:inline-block">E</span><span class="ch" style="display:inline-block">T</span></div>
+    <div id="shield"><svg class="ico" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"><path d="M50 8l34 12v26c0 22-14 38-34 46C30 84 16 68 16 46V20z"/><path d="M36 50l10 10 20-22"/></svg><div id="shieldR"><svg class="ico" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"><circle cx="32" cy="50" r="16"/><path d="M48 50h40M76 50v14M88 50v10"/></svg></div><svg id="crack" viewBox="0 0 100 100" fill="none" stroke="#FF4A4A" stroke-width="2.6" stroke-linecap="round"><path d="M52 14 L46 34 L56 46 L44 62 L54 76 L48 90"/><path d="M46 34 L32 40 M56 46 L70 50 M44 62 L30 70"/></svg></div>
+    <div class="mono" id="h0b" style="top:545px">GEMINI 4 ARGON &middot; GOOGLE</div>
+    <div class="lead" id="h2" style="top:560px">masalahnya...</div>
+    <div class="heavy r" id="h3" style="top:1230px;font-size:90px"><span class="ch" style="display:inline-block">J</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">G</span><span class="ch" style="display:inline-block">O</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">N</span><span class="ch" style="display:inline-block">Y</span><span class="ch" style="display:inline-block">E</span><span class="ch" style="display:inline-block">R</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">N</span><span class="ch" style="display:inline-block">G</span></div>
+    <!-- Argon -->
+    <div class="lead" id="a0" style="top:340px">namanya</div>
+    <div class="heavy g" id="a1" style="top:410px;font-size:88px"><span class="ch" style="display:inline-block">G</span><span class="ch" style="display:inline-block">E</span><span class="ch" style="display:inline-block">M</span><span class="ch" style="display:inline-block">I</span><span class="ch" style="display:inline-block">N</span><span class="ch" style="display:inline-block">I</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">4</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">R</span><span class="ch" style="display:inline-block">G</span><span class="ch" style="display:inline-block">O</span><span class="ch" style="display:inline-block">N</span></div>
+    <div class="mono" id="a2" style="top:560px">KLAIM GOOGLE &middot; 30 SEP 2026</div>
+    <div class="stamp gd" id="st1" style="top:700px"><span class="si"><svg class="ico" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"><path d="M50 8l34 12v26c0 22-14 38-34 46C30 84 16 68 16 46V20z"/><path d="M36 50l10 10 20-22"/></svg></span>TEMUKAN</div>
+    <div class="stamp gd" id="st2" style="top:860px"><span class="si"><svg class="ico" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"><path d="M24 52l17 17 35-38"/></svg></span>CEK</div>
+    <div class="stamp gr" id="st3" style="top:1020px"><span class="si"><svg class="ico" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"><path d="M24 52l17 17 35-38"/></svg></span>TAMBAL</div>
+    <div class="persp"><div class="panel" id="pro" style="left:110px;top:720px;width:860px">
+      <div class="k">DIBUKA &middot; 13 OKT 2026</div><div class="v">Google AI Pro &amp; Ultra</div>
+      <div class="s">versi tanpa pengaman: hanya tim keamanan terpilih</div></div></div>
+    <!-- twist -->
+    <div class="flashc" id="fl"><div class="frs"><div class="fr">TAPI...</div><div class="fr">TAPI...</div><div class="fr solid">TAPI...</div><div class="fr">TAPI...</div><div class="fr">TAPI...</div><div class="fr">TAPI...</div></div></div>
+    <div class="lead" id="b0" style="top:340px">di tes Google sendiri</div>
+    <div class="heavy r" id="b1" style="top:410px;font-size:72px"><span class="ch" style="display:inline-block">S</span><span class="ch" style="display:inline-block">K</span><span class="ch" style="display:inline-block">O</span><span class="ch" style="display:inline-block">R</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">S</span><span class="ch" style="display:inline-block">E</span><span class="ch" style="display:inline-block">R</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">N</span><span class="ch" style="display:inline-block">G</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">N</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">I</span><span class="ch" style="display:inline-block">K</span></div>
+    <div class="persp"><div class="panel rp" id="sc1" style="left:190px;top:700px;width:700px;text-align:center">
+      <div class="k">SKENARIO SERANGAN BERHASIL</div><div class="big"><span id="sc1n">5</span><small> / 12</small></div></div></div>
+    <div class="sim" id="sim1" style="left:420px;top:1100px">UJI SIMULASI</div>
+    <div class="lead" id="c0" style="top:340px">di uji Anthropic</div>
+    <div class="heavy c" id="c1" style="top:410px;font-size:74px"><span class="ch" style="display:inline-block">M</span><span class="ch" style="display:inline-block">O</span><span class="ch" style="display:inline-block">D</span><span class="ch" style="display:inline-block">E</span><span class="ch" style="display:inline-block">L</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">I</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">T</span><span class="ch" style="display:inline-block">E</span><span class="ch" style="display:inline-block">R</span><span class="ch" style="display:inline-block">B</span><span class="ch" style="display:inline-block">U</span><span class="ch" style="display:inline-block">K</span><span class="ch" style="display:inline-block">A</span></div>
+    <div class="persp"><div class="panel rp" id="sc2" style="left:190px;top:680px;width:700px;text-align:center">
+      <div class="k">EKSPLOIT BERHASIL DIBUAT</div><div class="big"><span id="sc2n">0</span><small> / 410</small></div>
+      <div class="s">percobaan</div></div></div>
+    <div class="sim" id="sim2" style="left:420px;top:1150px">UJI SIMULASI</div>
+    <div class="stamp rd" id="st4" style="top:1250px"><span class="si"><svg class="ico" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"><circle cx="32" cy="50" r="16"/><path d="M48 50h40M76 50v14M88 50v10"/></svg></span>ALAT PEMBOBOL</div>
+    <!-- CTA -->
+    <div class="mono" id="e0" style="top:330px">RABU &middot; INTERNET JEBOL PART 3</div>
+    <div class="heavy g" id="e1" style="top:390px;font-size:72px"><span class="ch" style="display:inline-block">P</span><span class="ch" style="display:inline-block">E</span><span class="ch" style="display:inline-block">N</span><span class="ch" style="display:inline-block">I</span><span class="ch" style="display:inline-block">P</span><span class="ch" style="display:inline-block">U</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">N</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">S</span><span class="ch" style="display:inline-block">U</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">R</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">I</span></div>
+    <div id="follow">+ FOLLOW</div><div id="tapc"><svg class="ico" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><path d="M24 14l52 30-22 6 14 26-10 5-14-26-16 16z"/></svg></div>
+    <div class="lead" id="f0" style="top:340px;font-size:42px">menurut kamu, AI ini lebih condong ke...</div>
+    <div class="opt" id="optA"><span class="oi"><svg class="ico" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"><path d="M50 8l34 12v26c0 22-14 38-34 46C30 84 16 68 16 46V20z"/><path d="M36 50l10 10 20-22"/></svg></span>PENJAGAAN</div>
+    <div class="opt" id="optB"><span class="oi"><svg class="ico" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"><circle cx="32" cy="50" r="16"/><path d="M48 50h40M76 50v14M88 50v10"/></svg></span>PEMBOBOLAN</div>
+    <div class="mono" id="f1" style="top:575px">TULIS DI KOMENTAR</div>
+    <div id="chibiSh" style="left:380px;top:1369px;width:329px"></div><div id="chibi" style="left:305px;top:650px;width:470px;height:836px"><video id="cv0" class="cva" src="anim/menunjuk_keatas.webm" data-start="24.043" data-duration="4.0" data-track-index="1" muted playsinline style="position:absolute;inset:0;width:100%;height:100%;opacity:0"></video><video id="cv1" class="cva" src="anim/Menekan_Tombol_Virtual.webm" data-start="28.043" data-duration="2.61" data-track-index="2" muted playsinline style="position:absolute;inset:0;width:100%;height:100%;opacity:0"></video><video id="cv2" class="cva" src="anim/Berfikir.webm" data-start="30.653" data-duration="3.04" data-track-index="1" muted playsinline style="position:absolute;inset:0;width:100%;height:100%;opacity:0"></video><video id="cv3" class="cva" src="anim/tidak_tahu.webm" data-start="33.693" data-duration="3.157" data-track-index="2" muted playsinline style="position:absolute;inset:0;width:100%;height:100%;opacity:0"></video></div>
+  </div>
+  <div id="flash"></div><div id="rflash"></div>
+  <div id="brand">Endrich<b>Tech</b></div>
+  <div id="vig"></div>
+
+  <script src="vendor/gsap.min.js"></script>
+  <script>
+  (function () {
+
+    var FPS = 30;
+    function q(t) { return Math.round(t * FPS) / FPS; }
+    var tl = gsap.timeline({ paused: true });
+    var NI = { immediateRender: false };
+    function cut(sel, t, v) { tl.set(sel, { opacity: v }, q(t)); }
+    function hide(sel, t, d) { tl.to(sel, { opacity: 0, duration: d || 0.15, ease: "power2.in" }, q(t)); }
+    function fade(sel, t, d, from) { tl.fromTo(sel, Object.assign({ opacity: 0, y: 30 }, from || {}), { opacity: 1, y: 0, x: 0, scale: 1, rotation: 0, duration: d || 0.35, ease: "power3.out" }, q(t)); }
+    function pop(sel, t, d) { tl.fromTo(sel, { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1, duration: d || 0.32, ease: "back.out(2.2)" }, q(t)); }
+    function sweep(sel, t, d) {
+      var chars = document.querySelectorAll(sel + " .ch");
+      tl.set(sel, { opacity: 1 }, q(t));
+      tl.fromTo(chars, { opacity: 0, x: -14 }, { opacity: 1, x: 0, duration: 0.24, ease: "power3.out", stagger: Math.min(0.035, (d || 0.45) / chars.length) }, q(t));
+    }
+    function count(sel, t, d, a, b, fmt) { var o = { v: a }, el = document.querySelector(sel); tl.to(o, { v: b, duration: d, ease: "power2.out", onUpdate: function () { el.textContent = fmt(o.v); } }, q(t)); }
+    function type(sel, t, d, msg) { var o = { n: 0 }, el = document.querySelector(sel); tl.to(o, { n: msg.length, duration: d, ease: "none", onUpdate: function () { el.textContent = msg.slice(0, Math.round(o.n)); } }, q(t)); }
+    function flash(t, sel, a) { tl.fromTo(sel || "#flash", { opacity: a || 0.3 }, Object.assign({ opacity: 0, duration: 0.25, ease: "power2.out" }, NI), q(t)); }
+    function kick(t, x) { tl.fromTo("#cam", { x: x || -10 }, Object.assign({ x: 0, duration: 0.3, ease: "elastic.out(1, .3)" }, NI), q(t)); }
+    function idn(v) { return Math.round(v).toString().replace(/\B(?=(\d{3})+(?!\d))/g, "."); }
+
+
+    var T = {0: 0.26, 1: 0.713, 2: 0.913, 3: 1.393, 4: 1.593, 5: 2.073, 6: 2.753, 7: 4.033, 8: 4.193, 9: 4.433, 10: 4.713, 11: 5.643, 12: 6.283, 13: 6.683, 14: 6.923, 15: 7.723, 16: 7.963, 17: 8.683, 18: 8.816, 19: 8.963, 20: 9.323, 21: 10.003, 22: 10.563, 23: 10.763, 24: 11.123, 25: 11.883, 26: 12.123, 27: 12.803, 28: 12.963, 29: 13.443, 30: 13.603, 31: 13.963, 32: 14.993, 33: 16.033, 34: 16.193, 35: 16.353, 36: 16.713, 37: 17.366, 38: 17.753, 39: 18.233, 40: 18.433, 41: 19.233, 42: 19.353, 43: 19.433, 44: 19.713, 45: 20.513, 46: 20.753, 47: 21.073, 48: 21.473, 49: 22.033, 50: 22.313, 51: 22.793, 52: 23.033, 53: 23.233, 54: 24.343, 55: 24.503, 56: 24.743, 57: 25.303, 58: 25.543, 59: 25.783, 60: 26.023, 61: 26.343, 62: 26.823, 63: 27.143, 64: 27.463, 65: 28.343, 66: 28.783, 67: 28.943, 68: 29.143, 69: 29.623, 70: 29.783, 71: 30.753, 72: 30.993, 73: 31.313, 74: 31.593, 75: 32.553, 76: 32.953, 77: 33.113, 78: 33.433, 79: 33.673, 80: 33.793, 81: 34.873, 82: 35.073}, DUR = 36.85;
+    document.querySelectorAll(".dust").forEach(function (p, k) {
+      tl.fromTo(p, { y: 0 }, { y: -240 - (k % 7) * 40, duration: DUR, ease: "none" }, 0);
+    });
+    tl.set(".stamp", { xPercent: -50 }, 0);
+    tl.fromTo("#cam", { scale: 1.06 }, { scale: 1, duration: 5, ease: "power2.out" }, 0);
+    function tint(name, t) { ["#t-gold", "#t-red"].forEach(function (id) { tl.to(id, { opacity: id === name ? 1 : 0, duration: 0.4 }, q(t)); }); }
+    function hud(k, t, red) { tl.to("#d" + k, { backgroundColor: red ? "#FF4A4A" : "#F5C452", boxShadow: "0 0 10px " + (red ? "#FF4A4A" : "#F5C452"), duration: 0.2 }, q(t)); }
+
+    // HOOK: guardian shield -> cracks -> turns into a key (attacker)
+    fade("#h0", 0.05, 0.3, { y: 16 });
+    sweep("#h1", 0.25, 0.4); fade("#h0b", 0.6, 0.3, { y: 10 }); hide("#h0b", T[6] - 0.1, 0.12);
+    tl.fromTo("#shield", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.5, ease: "back.out(1.8)" }, 0.1);
+    tl.fromTo("#shield", { y: 0 }, Object.assign({ y: -16, duration: 0.8, yoyo: true, repeat: 1, ease: "sine.inOut" }, NI), 0.6);
+    hide("#h0, #h1", T[6] - 0.1, 0.12);
+    fade("#h2", T[6], 0.3, { y: 16 });
+    tl.fromTo("#crack path", { strokeDasharray: 120, strokeDashoffset: 120 }, { strokeDashoffset: 0, duration: 0.5, ease: "power2.in" }, q(T[6] + 0.3));
+    cut("#crack", T[6] + 0.3, 1);
+    tint("#t-red", T[9] - 0.1);
+    tl.to("#shield > .ico", { opacity: 0, scale: 0.7, duration: 0.2 }, q(T[9] - 0.05));
+    cut("#crack", T[9] - 0.05, 0);
+    tl.fromTo("#shieldR", { opacity: 0, rotation: -40, scale: 0.6 }, { opacity: 1, rotation: 0, scale: 1, duration: 0.35, ease: "back.out(2)" }, q(T[9] - 0.05));
+    sweep("#h3", T[9], 0.35); flash(T[9], "#rflash", 0.25); kick(T[9], 14);
+    hide("#h2, #h3, #shield", T[11] - 0.15, 0.15);
+
+    // ARGON
+    fade("#hud", T[11], 0.3, { x: -30, y: 0 }); hud(1, T[11]); tint("#t-gold", T[11] - 0.1);
+    fade("#a0", T[11], 0.3, { y: 14 }); sweep("#a1", T[12] - 0.05, 0.4); fade("#a2", T[15], 0.3, { y: 10 });
+    [["#st1", T[19]], ["#st2", T[21]], ["#st3", T[23]]].forEach(function (s) {
+      tl.fromTo(s[0], { opacity: 0, scale: 1.6 }, { opacity: 1, scale: 1, duration: 0.22, ease: "power4.in" }, q(s[1])); flash(s[1] + 0.22, "#flash", 0.15); kick(s[1] + 0.22, 6);
+    });
+    hide("#st1, #st2, #st3", T[25] - 0.15, 0.15);
+    tl.fromTo("#pro", { opacity: 0, rotationY: -40, rotationX: 14, z: -300, y: 80 }, { opacity: 1, rotationY: -12, rotationX: 6, z: 0, y: 0, duration: 0.6, ease: "power3.out" }, q(T[25]));
+    tl.to("#pro", { rotationY: 8, duration: 2.4, ease: "sine.inOut" }, q(T[25] + 0.6));
+    hide("#a0, #a1, #a2, #pro", T[32] - 0.15, 0.15);
+
+    // TWIST
+    hud(2, T[32], true); tint("#t-red", T[32]);
+    cut("#fl", T[32] - 0.05, 1); cut("#fl", T[33] - 0.05, 0);
+    tl.fromTo("#fl .frs", { y: 80 }, { y: -80, duration: T[33] - T[32], ease: "none" }, q(T[32] - 0.05));
+    fade("#b0", T[33], 0.3, { y: 14 }); sweep("#b1", T[37], 0.4);
+    tl.fromTo("#sc1", { opacity: 0, rotationX: 30, z: -200, y: 60 }, { opacity: 1, rotationX: 6, z: 0, y: 0, duration: 0.5, ease: "power3.out" }, q(T[37]));
+    count("#sc1n", T[39], 0.8, 5, 12, function (v) { return Math.round(v); });
+    flash(T[40] + 0.3, "#rflash", 0.2); kick(T[40] + 0.3, 10);
+    pop("#sim1", T[40], 0.3);
+    hide("#b0, #b1, #sc1, #sim1", T[41] - 0.1, 0.12);
+    hud(3, T[41], true);
+    fade("#c0", T[41], 0.3, { y: 14 }); sweep("#c1", T[45], 0.4);
+    tl.fromTo("#sc2", { opacity: 0, rotationX: 30, z: -200, y: 60 }, { opacity: 1, rotationX: 6, z: 0, y: 0, duration: 0.5, ease: "power3.out" }, q(T[46]));
+    count("#sc2n", T[50] - 0.6, 1.2, 0, 50, function (v) { return Math.round(v); });
+    pop("#sim2", T[50], 0.3);
+    tl.fromTo("#st4", { opacity: 0, scale: 1.7 }, { opacity: 1, scale: 1, duration: 0.22, ease: "power4.in" }, q(T[52]));
+    flash(T[52] + 0.22, "#rflash", 0.25); kick(T[52] + 0.22, 12);
+    hide("#c0, #c1, #sc2, #sim2, #st4", T[54] - 0.15, 0.15);
+
+    // CTA SERI + chibi
+    hud(4, T[54]); tint("#t-gold", T[54]);
+    fade("#e0", T[55], 0.3, { y: 12 }); sweep("#e1", T[61], 0.4);
+    pop("#follow", T[65] - 0.05, 0.35);
+    tl.fromTo("#tapc", { opacity: 0, x: 60, y: 60 }, { opacity: 1, x: 0, y: 0, duration: 0.3, ease: "power2.out" }, q(T[65] + 0.2));
+    tl.to("#follow", { scale: 0.92, duration: 0.08, yoyo: true, repeat: 1 }, q(T[65] + 0.5));
+    tl.to("#follow", { backgroundColor: "#59E38C", duration: 0.1 }, q(T[65] + 0.58));
+    hide("#e0, #e1, #follow, #tapc", T[71] - 0.15, 0.15);
+
+    // CTA KOMENTAR
+    fade("#f0", T[71], 0.3, { y: 14 });
+    tl.fromTo("#optA", { opacity: 0, x: -80 }, { opacity: 1, x: 0, duration: 0.35, ease: "back.out(1.8)" }, q(T[80] - 0.05));
+    tl.fromTo("#optB", { opacity: 0, x: 80 }, { opacity: 1, x: 0, duration: 0.35, ease: "back.out(1.8)" }, q(T[82] - 0.05));
+    fade("#f1", T[82] + 0.5, 0.3, { y: 10 });
+    tl.to("#f1", { opacity: 0.4, duration: 0.4, yoyo: true, repeat: 2, ease: "sine.inOut" }, q(T[82] + 0.9));
+
+    document.querySelectorAll(".cva").forEach(function (v) {
+      var s = parseFloat(v.dataset.start), d = parseFloat(v.dataset.duration);
+      tl.set(v, { opacity: 1 }, q(s)); tl.set(v, { opacity: 0 }, q(s + d));
+    });
+    tl.fromTo("#chibi", { y: 700, opacity: 1 }, { y: 0, opacity: 1, duration: 0.5, ease: "back.out(1.4)" }, q(24.043));
+    tl.fromTo("#chibiSh", { opacity: 0 }, { opacity: 1, duration: 0.4 }, q(24.043 + 0.2));
+
+    window.__timelines = window.__timelines || {};
+    window.__timelines["ai-pemburu-celah"] = tl;
+  })();
+  </script>
+</div>
+</body>
+</html>

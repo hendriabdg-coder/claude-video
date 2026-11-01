@@ -1,0 +1,49 @@
+{
+  "text": "[warm] Mau website kayak gini? Aku bisa bikinin.",
+  "spoken": "[warm] Mau website kayak gini? Aku bisa bikinin.",
+  "duration": 2.64,
+  "words": [
+    {
+      "word": "Mau",
+      "spoken": "Mau",
+      "start": 0.064,
+      "end": 0.16
+    },
+    {
+      "word": "website",
+      "spoken": "website",
+      "start": 0.24,
+      "end": 0.56
+    },
+    {
+      "word": "kayak",
+      "spoken": "kayak",
+      "start": 0.6,
+      "end": 0.8
+    },
+    {
+      "word": "gini?",
+      "spoken": "gini?",
+      "start": 0.88,
+      "end": 1.36
+    },
+    {
+      "word": "Aku",
+      "spoken": "Aku",
+      "start": 1.52,
+      "end": 1.68
+    },
+    {
+      "word": "bisa",
+      "spoken": "bisa",
+      "start": 1.76,
+      "end": 1.92
+    },
+    {
+      "word": "bikinin.",
+      "spoken": "bikinin.",
+      "start": 2.0,
+      "end": 2.64
+    }
+  ]
+}

@@ -1,0 +1,193 @@
+{
+  "text": "Pertama, PHP2Shell. Dua celah di inti PHP, yang bisa ngambil alih server tanpa login. Dan percobaan serangannya udah kelihatan dari tanggal tujuh belas, padahal patch-nya baru keluar tanggal dua puluh satu.",
+  "spoken": "Pertama, pe-ha-pe-tu-syel. Dua celah di inti pe-ha-pe, yang bisa ngambil alih server tanpa login. Dan percobaan serangannya udah kelihatan dari tanggal tujuh belas, padahal patch-nya baru keluar tanggal dua puluh satu.",
+  "duration": 12.72,
+  "words": [
+    {
+      "word": "Pertama,",
+      "spoken": "Pertama,",
+      "start": 0.0,
+      "end": 0.72
+    },
+    {
+      "word": "PHP2Shell.",
+      "spoken": "pe-ha-pe-tu-syel.",
+      "start": 0.8,
+      "end": 2.48
+    },
+    {
+      "word": "Dua",
+      "spoken": "Dua",
+      "start": 2.52,
+      "end": 2.64
+    },
+    {
+      "word": "celah",
+      "spoken": "celah",
+      "start": 2.72,
+      "end": 3.04
+    },
+    {
+      "word": "di",
+      "spoken": "di",
+      "start": 3.12,
+      "end": 3.2
+    },
+    {
+      "word": "inti",
+      "spoken": "inti",
+      "start": 3.28,
+      "end": 3.44
+    },
+    {
+      "word": "PHP,",
+      "spoken": "pe-ha-pe,",
+      "start": 3.52,
+      "end": 4.24
+    },
+    {
+      "word": "yang",
+      "spoken": "yang",
+      "start": 4.32,
+      "end": 4.4
+    },
+    {
+      "word": "bisa",
+      "spoken": "bisa",
+      "start": 4.44,
+      "end": 4.64
+    },
+    {
+      "word": "ngambil",
+      "spoken": "ngambil",
+      "start": 4.68,
+      "end": 4.96
+    },
+    {
+      "word": "alih",
+      "spoken": "alih",
+      "start": 5.0,
+      "end": 5.12
+    },
+    {
+      "word": "server",
+      "spoken": "server",
+      "start": 5.2,
+      "end": 5.52
+    },
+    {
+      "word": "tanpa",
+      "spoken": "tanpa",
+      "start": 5.6,
+      "end": 5.84
+    },
+    {
+      "word": "login.",
+      "spoken": "login.",
+      "start": 5.92,
+      "end": 6.56
+    },
+    {
+      "word": "Dan",
+      "spoken": "Dan",
+      "start": 6.64,
+      "end": 6.72
+    },
+    {
+      "word": "percobaan",
+      "spoken": "percobaan",
+      "start": 6.84,
+      "end": 7.2
+    },
+    {
+      "word": "serangannya",
+      "spoken": "serangannya",
+      "start": 7.28,
+      "end": 7.84
+    },
+    {
+      "word": "udah",
+      "spoken": "udah",
+      "start": 7.92,
+      "end": 8.08
+    },
+    {
+      "word": "kelihatan",
+      "spoken": "kelihatan",
+      "start": 8.16,
+      "end": 8.56
+    },
+    {
+      "word": "dari",
+      "spoken": "dari",
+      "start": 8.6,
+      "end": 8.8
+    },
+    {
+      "word": "tanggal",
+      "spoken": "tanggal",
+      "start": 8.92,
+      "end": 9.04
+    },
+    {
+      "word": "tujuh",
+      "spoken": "tujuh",
+      "start": 9.12,
+      "end": 9.32
+    },
+    {
+      "word": "belas,",
+      "spoken": "belas,",
+      "start": 9.36,
+      "end": 9.92
+    },
+    {
+      "word": "padahal",
+      "spoken": "padahal",
+      "start": 10.0,
+      "end": 10.48
+    },
+    {
+      "word": "patch-nya",
+      "spoken": "patch-nya",
+      "start": 10.56,
+      "end": 10.88
+    },
+    {
+      "word": "baru",
+      "spoken": "baru",
+      "start": 10.96,
+      "end": 11.04
+    },
+    {
+      "word": "keluar",
+      "spoken": "keluar",
+      "start": 11.12,
+      "end": 11.36
+    },
+    {
+      "word": "tanggal",
+      "spoken": "tanggal",
+      "start": 11.44,
+      "end": 11.6
+    },
+    {
+      "word": "dua",
+      "spoken": "dua",
+      "start": 11.68,
+      "end": 11.8
+    },
+    {
+      "word": "puluh",
+      "spoken": "puluh",
+      "start": 11.84,
+      "end": 11.96
+    },
+    {
+      "word": "satu.",
+      "spoken": "satu.",
+      "start": 12.0,
+      "end": 12.72
+    }
+  ]
+}

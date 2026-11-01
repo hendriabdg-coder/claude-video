@@ -1,0 +1,157 @@
+{
+  "text": "[lowers voice] Empat hari... sebelum patch-nya keluar, server PHP udah diincar duluan. [curious] Makanya Oktober ini dijuluki \"Black October\". Tapi, beneran internet lagi jebol massal? Aku cek satu-satu.",
+  "spoken": "[lowers voice] Empat hari... sebelum patch-nya keluar, server pe-ha-pe udah diincar duluan. [curious] Makanya Oktober ini dijuluki \"Black October\". Tapi, beneran internet lagi jebol massal? Aku cek satu-satu.",
+  "duration": 11.36,
+  "words": [
+    {
+      "word": "Empat",
+      "spoken": "Empat",
+      "start": 0.08,
+      "end": 0.32
+    },
+    {
+      "word": "hari...",
+      "spoken": "hari...",
+      "start": 0.4,
+      "end": 1.28
+    },
+    {
+      "word": "sebelum",
+      "spoken": "sebelum",
+      "start": 1.36,
+      "end": 1.6
+    },
+    {
+      "word": "patch-nya",
+      "spoken": "patch-nya",
+      "start": 1.72,
+      "end": 2.0
+    },
+    {
+      "word": "keluar,",
+      "spoken": "keluar,",
+      "start": 2.08,
+      "end": 2.72
+    },
+    {
+      "word": "server",
+      "spoken": "server",
+      "start": 2.8,
+      "end": 3.12
+    },
+    {
+      "word": "PHP",
+      "spoken": "pe-ha-pe",
+      "start": 3.2,
+      "end": 3.52
+    },
+    {
+      "word": "udah",
+      "spoken": "udah",
+      "start": 3.56,
+      "end": 3.68
+    },
+    {
+      "word": "diincar",
+      "spoken": "diincar",
+      "start": 3.72,
+      "end": 4.0
+    },
+    {
+      "word": "duluan.",
+      "spoken": "duluan.",
+      "start": 4.08,
+      "end": 4.56
+    },
+    {
+      "word": "Makanya",
+      "spoken": "Makanya",
+      "start": 4.88,
+      "end": 5.36
+    },
+    {
+      "word": "Oktober",
+      "spoken": "Oktober",
+      "start": 5.44,
+      "end": 5.68
+    },
+    {
+      "word": "ini",
+      "spoken": "ini",
+      "start": 5.76,
+      "end": 5.92
+    },
+    {
+      "word": "dijuluki",
+      "spoken": "dijuluki",
+      "start": 5.973,
+      "end": 6.32
+    },
+    {
+      "word": "\"Black",
+      "spoken": "\"Black",
+      "start": 6.4,
+      "end": 6.64
+    },
+    {
+      "word": "October\".",
+      "spoken": "October\".",
+      "start": 6.72,
+      "end": 7.28
+    },
+    {
+      "word": "Tapi,",
+      "spoken": "Tapi,",
+      "start": 7.68,
+      "end": 8.12
+    },
+    {
+      "word": "beneran",
+      "spoken": "beneran",
+      "start": 8.24,
+      "end": 8.64
+    },
+    {
+      "word": "internet",
+      "spoken": "internet",
+      "start": 8.84,
+      "end": 9.04
+    },
+    {
+      "word": "lagi",
+      "spoken": "lagi",
+      "start": 9.08,
+      "end": 9.2
+    },
+    {
+      "word": "jebol",
+      "spoken": "jebol",
+      "start": 9.24,
+      "end": 9.44
+    },
+    {
+      "word": "massal?",
+      "spoken": "massal?",
+      "start": 9.56,
+      "end": 10.24
+    },
+    {
+      "word": "Aku",
+      "spoken": "Aku",
+      "start": 10.28,
+      "end": 10.4
+    },
+    {
+      "word": "cek",
+      "spoken": "cek",
+      "start": 10.56,
+      "end": 10.64
+    },
+    {
+      "word": "satu-satu.",
+      "spoken": "satu-satu.",
+      "start": 10.72,
+      "end": 11.36
+    }
+  ]
+}

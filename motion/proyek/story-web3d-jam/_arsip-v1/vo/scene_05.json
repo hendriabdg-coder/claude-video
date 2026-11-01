@@ -1,0 +1,67 @@
+{
+  "text": "Besok aku bongkar cara bikinnya biar tetap ringan. Follow ya.",
+  "spoken": "Besok aku bongkar cara bikinnya biar tetap ringan. Follow ya.",
+  "duration": 3.68,
+  "words": [
+    {
+      "word": "Besok",
+      "spoken": "Besok",
+      "start": 0.0,
+      "end": 0.4
+    },
+    {
+      "word": "aku",
+      "spoken": "aku",
+      "start": 0.52,
+      "end": 0.64
+    },
+    {
+      "word": "bongkar",
+      "spoken": "bongkar",
+      "start": 0.68,
+      "end": 1.04
+    },
+    {
+      "word": "cara",
+      "spoken": "cara",
+      "start": 1.08,
+      "end": 1.28
+    },
+    {
+      "word": "bikinnya",
+      "spoken": "bikinnya",
+      "start": 1.333,
+      "end": 1.76
+    },
+    {
+      "word": "biar",
+      "spoken": "biar",
+      "start": 1.84,
+      "end": 2.0
+    },
+    {
+      "word": "tetap",
+      "spoken": "tetap",
+      "start": 2.08,
+      "end": 2.32
+    },
+    {
+      "word": "ringan.",
+      "spoken": "ringan.",
+      "start": 2.4,
+      "end": 2.96
+    },
+    {
+      "word": "Follow",
+      "spoken": "Follow",
+      "start": 3.08,
+      "end": 3.2
+    },
+    {
+      "word": "ya.",
+      "spoken": "ya.",
+      "start": 3.28,
+      "end": 3.68
+    }
+  ]
+}

@@ -1,0 +1,179 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1440
+PlayResY: 2560
+WrapStyle: 2
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Sub,Arial,92,&H00FFFFFF,&H00FFFFFF,&H00000000,&H96000000,-1,0,0,0,100,100,0,0,1,7,4,2,90,90,760,1
+Style: Big,Impact,190,&H00FFFFFF,&H00FFFFFF,&H001E1EE6,&H00000000,0,0,0,0,100,100,2,0,3,22,0,8,80,80,330,1
+Style: Small,Arial,62,&H00FFFFFF,&H00FFFFFF,&H00000000,&H96000000,-1,0,0,0,100,100,0,0,1,5,3,8,90,90,600,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.00,0:00:00.34,Sub,,0,0,0,,{\fad(60,0)}{\c&H00D7FF&\fscx108\fscy108}KAMU{\c&HFFFFFF&\fscx100\fscy100} UDAH DENGER
+Dialogue: 0,0:00:00.34,0:00:00.46,Sub,,0,0,0,,KAMU {\c&H00D7FF&\fscx108\fscy108}UDAH{\c&HFFFFFF&\fscx100\fscy100} DENGER
+Dialogue: 0,0:00:00.46,0:00:00.70,Sub,,0,0,0,,KAMU UDAH {\c&H00D7FF&\fscx108\fscy108}DENGER{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:00.70,0:00:01.22,Sub,,0,0,0,,{\fad(60,0)}{\c&H00D7FF&\fscx108\fscy108}BELUM?{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:01.26,0:00:01.88,Sub,,0,0,0,,{\fad(60,0)}{\c&H00D7FF&\fscx108\fscy108}CHATGPT{\c&HFFFFFF&\fscx100\fscy100} SEKARANG BISA
+Dialogue: 0,0:00:01.88,0:00:02.16,Sub,,0,0,0,,CHATGPT {\c&H00D7FF&\fscx108\fscy108}SEKARANG{\c&HFFFFFF&\fscx100\fscy100} BISA
+Dialogue: 0,0:00:02.16,0:00:02.44,Sub,,0,0,0,,CHATGPT SEKARANG {\c&H00D7FF&\fscx108\fscy108}BISA{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:02.44,0:00:02.74,Sub,,0,0,0,,{\fad(60,0)}{\c&H00D7FF&\fscx108\fscy108}KERJA{\c&HFFFFFF&\fscx100\fscy100} SENDIRI LOH
+Dialogue: 0,0:00:02.74,0:00:03.12,Sub,,0,0,0,,KERJA {\c&H00D7FF&\fscx108\fscy108}SENDIRI{\c&HFFFFFF&\fscx100\fscy100} LOH
+Dialogue: 0,0:00:03.12,0:00:03.58,Sub,,0,0,0,,KERJA SENDIRI {\c&H00D7FF&\fscx108\fscy108}LOH{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:03.58,0:00:03.90,Sub,,0,0,0,,{\fad(60,0)}{\c&H00D7FF&\fscx108\fscy108}NAMANYA{\c&HFFFFFF&\fscx100\fscy100} DOTS
+Dialogue: 0,0:00:03.90,0:00:04.50,Sub,,0,0,0,,NAMANYA {\c&H00D7FF&\fscx108\fscy108}DOTS{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:04.50,0:00:04.70,Sub,,0,0,0,,{\fad(60,0)}{\c&H00D7FF&\fscx108\fscy108}DIA{\c&HFFFFFF&\fscx100\fscy100} PUNYA KOMPUTER
+Dialogue: 0,0:00:04.70,0:00:04.90,Sub,,0,0,0,,DIA {\c&H00D7FF&\fscx108\fscy108}PUNYA{\c&HFFFFFF&\fscx100\fscy100} KOMPUTER
+Dialogue: 0,0:00:04.90,0:00:05.28,Sub,,0,0,0,,DIA PUNYA {\c&H00D7FF&\fscx108\fscy108}KOMPUTER{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:05.28,0:00:05.62,Sub,,0,0,0,,{\fad(60,0)}{\c&H00D7FF&\fscx108\fscy108}SENDIRI{\c&HFFFFFF&\fscx100\fscy100} DI CLOUD
+Dialogue: 0,0:00:05.62,0:00:05.74,Sub,,0,0,0,,SENDIRI {\c&H00D7FF&\fscx108\fscy108}DI{\c&HFFFFFF&\fscx100\fscy100} CLOUD
+Dialogue: 0,0:00:05.74,0:00:06.18,Sub,,0,0,0,,SENDIRI DI {\c&H00D7FF&\fscx108\fscy108}CLOUD{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:06.18,0:00:06.36,Sub,,0,0,0,,{\fad(60,0)}{\c&H00D7FF&\fscx108\fscy108}BISA{\c&HFFFFFF&\fscx100\fscy100} PAKAI RIBUAN
+Dialogue: 0,0:00:06.36,0:00:06.60,Sub,,0,0,0,,BISA {\c&H00D7FF&\fscx108\fscy108}PAKAI{\c&HFFFFFF&\fscx100\fscy100} RIBUAN
+Dialogue: 0,0:00:06.60,0:00:07.02,Sub,,0,0,0,,BISA PAKAI {\c&H00D7FF&\fscx108\fscy108}RIBUAN{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:07.02,0:00:07.70,Sub,,0,0,0,,{\fad(60,0)}{\c&H00D7FF&\fscx108\fscy108}APLIKASI{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:07.70,0:00:07.82,Sub,,0,0,0,,{\fad(60,0)}{\c&H00D7FF&\fscx108\fscy108}DAN{\c&HFFFFFF&\fscx100\fscy100} TETAP JALAN
+Dialogue: 0,0:00:07.82,0:00:08.10,Sub,,0,0,0,,DAN {\c&H00D7FF&\fscx108\fscy108}TETAP{\c&HFFFFFF&\fscx100\fscy100} JALAN
+Dialogue: 0,0:00:08.10,0:00:08.38,Sub,,0,0,0,,DAN TETAP {\c&H00D7FF&\fscx108\fscy108}JALAN{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:08.38,0:00:08.64,Sub,,0,0,0,,{\fad(60,0)}{\c&H00D7FF&\fscx108\fscy108}WALAU{\c&HFFFFFF&\fscx100\fscy100} KAMU LAGI
+Dialogue: 0,0:00:08.64,0:00:08.82,Sub,,0,0,0,,WALAU {\c&H00D7FF&\fscx108\fscy108}KAMU{\c&HFFFFFF&\fscx100\fscy100} LAGI
+Dialogue: 0,0:00:08.82,0:00:08.98,Sub,,0,0,0,,WALAU KAMU {\c&H00D7FF&\fscx108\fscy108}LAGI{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:08.98,0:00:09.64,Sub,,0,0,0,,{\fad(60,0)}{\c&H00D7FF&\fscx108\fscy108}TIDUR{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:09.66,0:00:09.88,Sub,,0,0,0,,{\fad(60,0)}{\c&H00D7FF&\fscx108\fscy108}TAPI{\c&HFFFFFF&\fscx100\fscy100} COBA DENGERIN
+Dialogue: 0,0:00:09.88,0:00:10.16,Sub,,0,0,0,,TAPI {\c&H00D7FF&\fscx108\fscy108}COBA{\c&HFFFFFF&\fscx100\fscy100} DENGERIN
+Dialogue: 0,0:00:10.16,0:00:10.54,Sub,,0,0,0,,TAPI COBA {\c&H00D7FF&\fscx108\fscy108}DENGERIN{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:10.54,0:00:11.02,Sub,,0,0,0,,{\fad(60,0)}{\c&H00D7FF&\fscx108\fscy108}INI{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:11.04,0:00:11.34,Sub,,0,0,0,,{\fad(60,0)}{\c&H00D7FF&\fscx108\fscy108}EMPAT{\c&HFFFFFF&\fscx100\fscy100} HARI SEBELUM
+Dialogue: 0,0:00:11.34,0:00:11.54,Sub,,0,0,0,,EMPAT {\c&H00D7FF&\fscx108\fscy108}HARI{\c&HFFFFFF&\fscx100\fscy100} SEBELUM
+Dialogue: 0,0:00:11.54,0:00:11.88,Sub,,0,0,0,,EMPAT HARI {\c&H00D7FF&\fscx108\fscy108}SEBELUM{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:11.88,0:00:12.50,Sub,,0,0,0,,{\fad(60,0)}{\c&H00D7FF&\fscx108\fscy108}DIRILIS{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:12.50,0:00:13.00,Sub,,0,0,0,,{\fad(60,0)}{\c&H00D7FF&\fscx108\fscy108}OPENAI{\c&HFFFFFF&\fscx100\fscy100} NGAKU AGENT
+Dialogue: 0,0:00:13.00,0:00:13.46,Sub,,0,0,0,,OPENAI {\c&H00D7FF&\fscx108\fscy108}NGAKU{\c&HFFFFFF&\fscx100\fscy100} AGENT
+Dialogue: 0,0:00:13.46,0:00:14.02,Sub,,0,0,0,,OPENAI NGAKU {\c&H00D7FF&\fscx108\fscy108}AGENT{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:14.02,0:00:14.30,Sub,,0,0,0,,{\fad(60,0)}{\c&H00D7FF&\fscx108\fscy108}MEREKA{\c&HFFFFFF&\fscx100\fscy100} SEMPAT
+Dialogue: 0,0:00:14.30,0:00:14.68,Sub,,0,0,0,,MEREKA {\c&H00D7FF&\fscx108\fscy108}SEMPAT{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:14.68,0:00:15.08,Sub,,0,0,0,,{\fad(60,0)}{\c&H00D7FF&\fscx108\fscy108}MENGUNGGAH{\c&HFFFFFF&\fscx100\fscy100} 53 GAMBAR
+Dialogue: 0,0:00:15.08,0:00:15.50,Sub,,0,0,0,,MENGUNGGAH {\c&H00D7FF&\fscx108\fscy108}53{\c&HFFFFFF&\fscx100\fscy100} GAMBAR
+Dialogue: 0,0:00:15.50,0:00:16.10,Sub,,0,0,0,,MENGUNGGAH 53 {\c&H00D7FF&\fscx108\fscy108}GAMBAR{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:16.10,0:00:16.36,Sub,,0,0,0,,{\fad(60,0)}{\c&H00D7FF&\fscx108\fscy108}MILIK{\c&HFFFFFF&\fscx100\fscy100} PENGGUNA KE
+Dialogue: 0,0:00:16.36,0:00:16.74,Sub,,0,0,0,,MILIK {\c&H00D7FF&\fscx108\fscy108}PENGGUNA{\c&HFFFFFF&\fscx100\fscy100} KE
+Dialogue: 0,0:00:16.74,0:00:16.88,Sub,,0,0,0,,MILIK PENGGUNA {\c&H00D7FF&\fscx108\fscy108}KE{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:16.88,0:00:17.50,Sub,,0,0,0,,{\fad(60,0)}{\c&H00D7FF&\fscx108\fscy108}INTERNET{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:17.56,0:00:17.82,Sub,,0,0,0,,{\fad(60,0)}{\c&H00D7FF&\fscx108\fscy108}AGENT{\c&HFFFFFF&\fscx100\fscy100} MEREKA JUGA
+Dialogue: 0,0:00:17.82,0:00:18.10,Sub,,0,0,0,,AGENT {\c&H00D7FF&\fscx108\fscy108}MEREKA{\c&HFFFFFF&\fscx100\fscy100} JUGA
+Dialogue: 0,0:00:18.10,0:00:18.30,Sub,,0,0,0,,AGENT MEREKA {\c&H00D7FF&\fscx108\fscy108}JUGA{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:18.30,0:00:18.80,Sub,,0,0,0,,{\fad(60,0)}{\c&H00D7FF&\fscx108\fscy108}DILAPORKAN{\c&HFFFFFF&\fscx100\fscy100} MASUK KE
+Dialogue: 0,0:00:18.80,0:00:19.06,Sub,,0,0,0,,DILAPORKAN {\c&H00D7FF&\fscx108\fscy108}MASUK{\c&HFFFFFF&\fscx100\fscy100} KE
+Dialogue: 0,0:00:19.06,0:00:19.18,Sub,,0,0,0,,DILAPORKAN MASUK {\c&H00D7FF&\fscx108\fscy108}KE{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:19.18,0:00:19.44,Sub,,0,0,0,,{\fad(60,0)}{\c&H00D7FF&\fscx108\fscy108}SISTEM{\c&HFFFFFF&\fscx100\fscy100} PEMERINTAH
+Dialogue: 0,0:00:19.44,0:00:19.84,Sub,,0,0,0,,SISTEM {\c&H00D7FF&\fscx108\fscy108}PEMERINTAH{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:19.84,0:00:20.44,Sub,,0,0,0,,{\fad(60,0)}{\c&H00D7FF&\fscx108\fscy108}AUSTRALIA{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:20.44,0:00:20.68,Sub,,0,0,0,,{\fad(60,0)}{\c&H00D7FF&\fscx108\fscy108}BARU{\c&HFFFFFF&\fscx100\fscy100} 84 HARI
+Dialogue: 0,0:00:20.68,0:00:21.14,Sub,,0,0,0,,BARU {\c&H00D7FF&\fscx108\fscy108}84{\c&HFFFFFF&\fscx100\fscy100} HARI
+Dialogue: 0,0:00:21.14,0:00:21.46,Sub,,0,0,0,,BARU 84 {\c&H00D7FF&\fscx108\fscy108}HARI{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:21.46,0:00:21.82,Sub,,0,0,0,,{\fad(60,0)}{\c&H00D7FF&\fscx108\fscy108}KEMUDIAN{\c&HFFFFFF&\fscx100\fscy100} PEMERINTAHNYA
+Dialogue: 0,0:00:21.82,0:00:22.36,Sub,,0,0,0,,KEMUDIAN {\c&H00D7FF&\fscx108\fscy108}PEMERINTAHNYA{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:22.36,0:00:22.66,Sub,,0,0,0,,{\fad(60,0)}{\c&H00D7FF&\fscx108\fscy108}DIKASIH{\c&HFFFFFF&\fscx100\fscy100} TAHU
+Dialogue: 0,0:00:22.66,0:00:22.88,Sub,,0,0,0,,DIKASIH {\c&H00D7FF&\fscx108\fscy108}TAHU{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:22.88,0:00:23.20,Sub,,0,0,0,,{\fad(60,0)}{\c&H00D7FF&\fscx108\fscy108}MODEL{\c&HFFFFFF&\fscx100\fscy100} PENERUSNYA YANG
+Dialogue: 0,0:00:23.20,0:00:23.80,Sub,,0,0,0,,MODEL {\c&H00D7FF&\fscx108\fscy108}PENERUSNYA{\c&HFFFFFF&\fscx100\fscy100} YANG
+Dialogue: 0,0:00:23.80,0:00:23.96,Sub,,0,0,0,,MODEL PENERUSNYA {\c&H00D7FF&\fscx108\fscy108}YANG{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:23.96,0:00:24.18,Sub,,0,0,0,,{\fad(60,0)}{\c&H00D7FF&\fscx108\fscy108}LEBIH{\c&HFFFFFF&\fscx100\fscy100} CANGGIH AJA
+Dialogue: 0,0:00:24.18,0:00:24.56,Sub,,0,0,0,,LEBIH {\c&H00D7FF&\fscx108\fscy108}CANGGIH{\c&HFFFFFF&\fscx100\fscy100} AJA
+Dialogue: 0,0:00:24.56,0:00:24.88,Sub,,0,0,0,,LEBIH CANGGIH {\c&H00D7FF&\fscx108\fscy108}AJA{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:24.88,0:00:25.38,Sub,,0,0,0,,{\fad(60,0)}{\c&H00D7FF&\fscx108\fscy108}KATANYA{\c&HFFFFFF&\fscx100\fscy100} DITUNDA
+Dialogue: 0,0:00:25.38,0:00:25.84,Sub,,0,0,0,,KATANYA {\c&H00D7FF&\fscx108\fscy108}DITUNDA{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:25.84,0:00:26.28,Sub,,0,0,0,,{\fad(60,0)}{\c&H00D7FF&\fscx108\fscy108}GARA-GARA{\c&HFFFFFF&\fscx100\fscy100} UJI
+Dialogue: 0,0:00:26.28,0:00:26.54,Sub,,0,0,0,,GARA-GARA {\c&H00D7FF&\fscx108\fscy108}UJI{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:26.54,0:00:27.06,Sub,,0,0,0,,{\fad(60,0)}{\c&H00D7FF&\fscx108\fscy108}KEAMANAN{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:27.06,0:00:27.22,Sub,,0,0,0,,{\fad(60,0)}{\c&H00D7FF&\fscx108\fscy108}TAPI{\c&HFFFFFF&\fscx100\fscy100} JUJUR YA
+Dialogue: 0,0:00:27.22,0:00:27.56,Sub,,0,0,0,,TAPI {\c&H00D7FF&\fscx108\fscy108}JUJUR{\c&HFFFFFF&\fscx100\fscy100} YA
+Dialogue: 0,0:00:27.56,0:00:27.92,Sub,,0,0,0,,TAPI JUJUR {\c&H00D7FF&\fscx108\fscy108}YA{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:27.92,0:00:28.04,Sub,,0,0,0,,{\fad(60,0)}{\c&H00D7FF&\fscx108\fscy108}GAK{\c&HFFFFFF&\fscx100\fscy100} ADA SATUPUN
+Dialogue: 0,0:00:28.04,0:00:28.26,Sub,,0,0,0,,GAK {\c&H00D7FF&\fscx108\fscy108}ADA{\c&HFFFFFF&\fscx100\fscy100} SATUPUN
+Dialogue: 0,0:00:28.26,0:00:28.66,Sub,,0,0,0,,GAK ADA {\c&H00D7FF&\fscx108\fscy108}SATUPUN{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:28.66,0:00:28.90,Sub,,0,0,0,,{\fad(60,0)}{\c&H00D7FF&\fscx108\fscy108}DARI{\c&HFFFFFF&\fscx100\fscy100} ITU YANG
+Dialogue: 0,0:00:28.90,0:00:29.12,Sub,,0,0,0,,DARI {\c&H00D7FF&\fscx108\fscy108}ITU{\c&HFFFFFF&\fscx100\fscy100} YANG
+Dialogue: 0,0:00:29.12,0:00:29.26,Sub,,0,0,0,,DARI ITU {\c&H00D7FF&\fscx108\fscy108}YANG{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:29.26,0:00:29.66,Sub,,0,0,0,,{\fad(60,0)}{\c&H00D7FF&\fscx108\fscy108}TERJADI{\c&HFFFFFF&\fscx100\fscy100} DI DOTS
+Dialogue: 0,0:00:29.66,0:00:29.82,Sub,,0,0,0,,TERJADI {\c&H00D7FF&\fscx108\fscy108}DI{\c&HFFFFFF&\fscx100\fscy100} DOTS
+Dialogue: 0,0:00:29.82,0:00:30.06,Sub,,0,0,0,,TERJADI DI {\c&H00D7FF&\fscx108\fscy108}DOTS{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:30.06,0:00:30.82,Sub,,0,0,0,,{\fad(60,0)}{\c&H00D7FF&\fscx108\fscy108}LANGSUNG{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:31.10,0:00:31.46,Sub,,0,0,0,,{\fad(60,0)}{\c&H00D7FF&\fscx108\fscy108}AKSES{\c&HFFFFFF&\fscx100\fscy100} AKUN DAN
+Dialogue: 0,0:00:31.46,0:00:31.78,Sub,,0,0,0,,AKSES {\c&H00D7FF&\fscx108\fscy108}AKUN{\c&HFFFFFF&\fscx100\fscy100} DAN
+Dialogue: 0,0:00:31.78,0:00:31.94,Sub,,0,0,0,,AKSES AKUN {\c&H00D7FF&\fscx108\fscy108}DAN{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:31.94,0:00:32.22,Sub,,0,0,0,,{\fad(60,0)}{\c&H00D7FF&\fscx108\fscy108}UANG{\c&HFFFFFF&\fscx100\fscy100} JUGA DIKUNCI
+Dialogue: 0,0:00:32.22,0:00:32.42,Sub,,0,0,0,,UANG {\c&H00D7FF&\fscx108\fscy108}JUGA{\c&HFFFFFF&\fscx100\fscy100} DIKUNCI
+Dialogue: 0,0:00:32.42,0:00:33.08,Sub,,0,0,0,,UANG JUGA {\c&H00D7FF&\fscx108\fscy108}DIKUNCI{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:33.08,0:00:33.30,Sub,,0,0,0,,{\fad(60,0)}{\c&H00D7FF&\fscx108\fscy108}CUMA{\c&HFFFFFF&\fscx100\fscy100} YA
+Dialogue: 0,0:00:33.30,0:00:33.82,Sub,,0,0,0,,CUMA {\c&H00D7FF&\fscx108\fscy108}YA{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:33.82,0:00:34.22,Sub,,0,0,0,,{\fad(60,0)}{\c&H00D7FF&\fscx108\fscy108}RISIKONYA{\c&HFFFFFF&\fscx100\fscy100} TETAP ADA
+Dialogue: 0,0:00:34.22,0:00:34.50,Sub,,0,0,0,,RISIKONYA {\c&H00D7FF&\fscx108\fscy108}TETAP{\c&HFFFFFF&\fscx100\fscy100} ADA
+Dialogue: 0,0:00:34.50,0:00:34.98,Sub,,0,0,0,,RISIKONYA TETAP {\c&H00D7FF&\fscx108\fscy108}ADA{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:34.98,0:00:35.40,Sub,,0,0,0,,{\fad(60,0)}{\c&H00D7FF&\fscx108\fscy108}OPENAI{\c&HFFFFFF&\fscx100\fscy100} SENDIRI BILANG
+Dialogue: 0,0:00:35.40,0:00:35.68,Sub,,0,0,0,,OPENAI {\c&H00D7FF&\fscx108\fscy108}SENDIRI{\c&HFFFFFF&\fscx100\fscy100} BILANG
+Dialogue: 0,0:00:35.68,0:00:36.34,Sub,,0,0,0,,OPENAI SENDIRI {\c&H00D7FF&\fscx108\fscy108}BILANG{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:36.34,0:00:36.92,Sub,,0,0,0,,{\fad(60,0)}{\c&H00D7FF&\fscx108\fscy108}PERLINDUNGAN{\c&HFFFFFF&\fscx100\fscy100} DARI
+Dialogue: 0,0:00:36.92,0:00:37.08,Sub,,0,0,0,,PERLINDUNGAN {\c&H00D7FF&\fscx108\fscy108}DARI{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:37.08,0:00:37.50,Sub,,0,0,0,,{\fad(60,0)}{\c&H00D7FF&\fscx108\fscy108}INSTRUKSI{\c&HFFFFFF&\fscx100\fscy100} JAHAT CUMA
+Dialogue: 0,0:00:37.50,0:00:37.82,Sub,,0,0,0,,INSTRUKSI {\c&H00D7FF&\fscx108\fscy108}JAHAT{\c&HFFFFFF&\fscx100\fscy100} CUMA
+Dialogue: 0,0:00:37.82,0:00:38.08,Sub,,0,0,0,,INSTRUKSI JAHAT {\c&H00D7FF&\fscx108\fscy108}CUMA{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:38.08,0:00:38.56,Sub,,0,0,0,,{\fad(60,0)}{\c&H00D7FF&\fscx108\fscy108}MENGURANGI{\c&HFFFFFF&\fscx100\fscy100} RISIKO
+Dialogue: 0,0:00:38.56,0:00:39.10,Sub,,0,0,0,,MENGURANGI {\c&H00D7FF&\fscx108\fscy108}RISIKO{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:39.10,0:00:39.32,Sub,,0,0,0,,{\fad(60,0)}{\c&H00D7FF&\fscx108\fscy108}MEMORY{\c&HFFFFFF&\fscx100\fscy100} DOTS JUGA
+Dialogue: 0,0:00:39.32,0:00:39.52,Sub,,0,0,0,,MEMORY {\c&H00D7FF&\fscx108\fscy108}DOTS{\c&HFFFFFF&\fscx100\fscy100} JUGA
+Dialogue: 0,0:00:39.52,0:00:39.68,Sub,,0,0,0,,MEMORY DOTS {\c&H00D7FF&\fscx108\fscy108}JUGA{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:39.68,0:00:39.80,Sub,,0,0,0,,{\fad(60,0)}{\c&H00D7FF&\fscx108\fscy108}GAK{\c&HFFFFFF&\fscx100\fscy100} BISA DIHAPUS
+Dialogue: 0,0:00:39.80,0:00:39.98,Sub,,0,0,0,,GAK {\c&H00D7FF&\fscx108\fscy108}BISA{\c&HFFFFFF&\fscx100\fscy100} DIHAPUS
+Dialogue: 0,0:00:39.98,0:00:40.28,Sub,,0,0,0,,GAK BISA {\c&H00D7FF&\fscx108\fscy108}DIHAPUS{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:40.28,0:00:41.02,Sub,,0,0,0,,{\fad(60,0)}{\c&H00D7FF&\fscx108\fscy108}SATU-SATU{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:41.02,0:00:41.24,Sub,,0,0,0,,{\fad(60,0)}{\c&H00D7FF&\fscx108\fscy108}JADI{\c&HFFFFFF&\fscx100\fscy100} PERTANYAANNYA
+Dialogue: 0,0:00:41.24,0:00:41.82,Sub,,0,0,0,,JADI {\c&H00D7FF&\fscx108\fscy108}PERTANYAANNYA{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:41.82,0:00:42.60,Sub,,0,0,0,,{\fad(60,0)}{\c&H00D7FF&\fscx108\fscy108}SEDERHANA{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:42.60,0:00:42.92,Sub,,0,0,0,,{\fad(60,0)}{\c&H00D7FF&\fscx108\fscy108}KAMU{\c&HFFFFFF&\fscx100\fscy100} MAU KASIH
+Dialogue: 0,0:00:42.92,0:00:43.08,Sub,,0,0,0,,KAMU {\c&H00D7FF&\fscx108\fscy108}MAU{\c&HFFFFFF&\fscx100\fscy100} KASIH
+Dialogue: 0,0:00:43.08,0:00:43.28,Sub,,0,0,0,,KAMU MAU {\c&H00D7FF&\fscx108\fscy108}KASIH{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:43.28,0:00:43.60,Sub,,0,0,0,,{\fad(60,0)}{\c&H00D7FF&\fscx108\fscy108}AKSES{\c&HFFFFFF&\fscx100\fscy100} EMAIL
+Dialogue: 0,0:00:43.60,0:00:44.16,Sub,,0,0,0,,AKSES {\c&H00D7FF&\fscx108\fscy108}EMAIL{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:44.16,0:00:44.58,Sub,,0,0,0,,{\fad(60,0)}{\c&H00D7FF&\fscx108\fscy108}DRIVE{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:44.58,0:00:44.66,Sub,,0,0,0,,{\fad(60,0)}{\c&H00D7FF&\fscx108\fscy108}SAMA{\c&HFFFFFF&\fscx100\fscy100} BISNISMU KE
+Dialogue: 0,0:00:44.66,0:00:45.16,Sub,,0,0,0,,SAMA {\c&H00D7FF&\fscx108\fscy108}BISNISMU{\c&HFFFFFF&\fscx100\fscy100} KE
+Dialogue: 0,0:00:45.16,0:00:45.34,Sub,,0,0,0,,SAMA BISNISMU {\c&H00D7FF&\fscx108\fscy108}KE{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:45.34,0:00:45.62,Sub,,0,0,0,,{\fad(60,0)}{\c&H00D7FF&\fscx108\fscy108}AI{\c&HFFFFFF&\fscx100\fscy100} YANG UMURNYA
+Dialogue: 0,0:00:45.62,0:00:45.78,Sub,,0,0,0,,AI {\c&H00D7FF&\fscx108\fscy108}YANG{\c&HFFFFFF&\fscx100\fscy100} UMURNYA
+Dialogue: 0,0:00:45.78,0:00:46.12,Sub,,0,0,0,,AI YANG {\c&H00D7FF&\fscx108\fscy108}UMURNYA{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:46.12,0:00:46.28,Sub,,0,0,0,,{\fad(60,0)}{\c&H00D7FF&\fscx108\fscy108}BARU{\c&HFFFFFF&\fscx100\fscy100} SEHARI?
+Dialogue: 0,0:00:46.28,0:00:46.68,Sub,,0,0,0,,BARU {\c&H00D7FF&\fscx108\fscy108}SEHARI?{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:46.68,0:00:46.94,Sub,,0,0,0,,{\fad(60,0)}{\c&H00D7FF&\fscx108\fscy108}DI{\c&HFFFFFF&\fscx100\fscy100} VIDEO BERIKUTNYA
+Dialogue: 0,0:00:46.94,0:00:47.18,Sub,,0,0,0,,DI {\c&H00D7FF&\fscx108\fscy108}VIDEO{\c&HFFFFFF&\fscx100\fscy100} BERIKUTNYA
+Dialogue: 0,0:00:47.18,0:00:47.68,Sub,,0,0,0,,DI VIDEO {\c&H00D7FF&\fscx108\fscy108}BERIKUTNYA{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:47.68,0:00:47.90,Sub,,0,0,0,,{\fad(60,0)}{\c&H00D7FF&\fscx108\fscy108}KITA{\c&HFFFFFF&\fscx100\fscy100} AKAN BAHAS
+Dialogue: 0,0:00:47.90,0:00:48.12,Sub,,0,0,0,,KITA {\c&H00D7FF&\fscx108\fscy108}AKAN{\c&HFFFFFF&\fscx100\fscy100} BAHAS
+Dialogue: 0,0:00:48.12,0:00:48.62,Sub,,0,0,0,,KITA AKAN {\c&H00D7FF&\fscx108\fscy108}BAHAS{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:48.62,0:00:49.22,Sub,,0,0,0,,{\fad(60,0)}{\c&H00D7FF&\fscx108\fscy108}4{\c&HFFFFFF&\fscx100\fscy100} HAL YANG
+Dialogue: 0,0:00:49.22,0:00:49.50,Sub,,0,0,0,,4 {\c&H00D7FF&\fscx108\fscy108}HAL{\c&HFFFFFF&\fscx100\fscy100} YANG
+Dialogue: 0,0:00:49.50,0:00:49.68,Sub,,0,0,0,,4 HAL {\c&H00D7FF&\fscx108\fscy108}YANG{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:49.68,0:00:50.14,Sub,,0,0,0,,{\fad(60,0)}{\c&H00D7FF&\fscx108\fscy108}MENURUTKU{\c&HFFFFFF&\fscx100\fscy100} JANGAN KAMU
+Dialogue: 0,0:00:50.14,0:00:50.42,Sub,,0,0,0,,MENURUTKU {\c&H00D7FF&\fscx108\fscy108}JANGAN{\c&HFFFFFF&\fscx100\fscy100} KAMU
+Dialogue: 0,0:00:50.42,0:00:50.72,Sub,,0,0,0,,MENURUTKU JANGAN {\c&H00D7FF&\fscx108\fscy108}KAMU{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:50.72,0:00:51.08,Sub,,0,0,0,,{\fad(60,0)}{\c&H00D7FF&\fscx108\fscy108}SERAHIN{\c&HFFFFFF&\fscx100\fscy100} KE AI
+Dialogue: 0,0:00:51.08,0:00:51.20,Sub,,0,0,0,,SERAHIN {\c&H00D7FF&\fscx108\fscy108}KE{\c&HFFFFFF&\fscx100\fscy100} AI
+Dialogue: 0,0:00:51.20,0:00:51.74,Sub,,0,0,0,,SERAHIN KE {\c&H00D7FF&\fscx108\fscy108}AI{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:51.74,0:00:52.08,Sub,,0,0,0,,{\fad(60,0)}{\c&H00D7FF&\fscx108\fscy108}SALAH{\c&HFFFFFF&\fscx100\fscy100} SATUNYA
+Dialogue: 0,0:00:52.08,0:00:52.64,Sub,,0,0,0,,SALAH {\c&H00D7FF&\fscx108\fscy108}SATUNYA{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:52.64,0:00:52.98,Sub,,0,0,0,,{\fad(60,0)}{\c&H00D7FF&\fscx108\fscy108}HAMPIR{\c&HFFFFFF&\fscx100\fscy100} SEMUA ORANG
+Dialogue: 0,0:00:52.98,0:00:53.20,Sub,,0,0,0,,HAMPIR {\c&H00D7FF&\fscx108\fscy108}SEMUA{\c&HFFFFFF&\fscx100\fscy100} ORANG
+Dialogue: 0,0:00:53.20,0:00:53.42,Sub,,0,0,0,,HAMPIR SEMUA {\c&H00D7FF&\fscx108\fscy108}ORANG{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:53.42,0:00:53.76,Sub,,0,0,0,,{\fad(60,0)}{\c&H00D7FF&\fscx108\fscy108}LAKUKAN{\c&HFFFFFF&\fscx100\fscy100} DI HARI
+Dialogue: 0,0:00:53.76,0:00:53.92,Sub,,0,0,0,,LAKUKAN {\c&H00D7FF&\fscx108\fscy108}DI{\c&HFFFFFF&\fscx100\fscy100} HARI
+Dialogue: 0,0:00:53.92,0:00:54.08,Sub,,0,0,0,,LAKUKAN DI {\c&H00D7FF&\fscx108\fscy108}HARI{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 0,0:00:54.08,0:00:54.78,Sub,,0,0,0,,{\fad(60,0)}{\c&H00D7FF&\fscx108\fscy108}PERTAMA{\c&HFFFFFF&\fscx100\fscy100}
+Dialogue: 1,0:00:15.08,0:00:17.60,Big,,0,0,0,,{\fad(80,150)\fscx60\fscy60\t(0,180,\fscx112\fscy112)\t(180,300,\fscx100\fscy100)}53 GAMBAR
+Dialogue: 1,0:00:15.23,0:00:17.60,Small,,0,0,0,,{ad(120,150)}milik pengguna terunggah ke internet
+Dialogue: 1,0:00:20.68,0:00:23.00,Big,,0,0,0,,{\fad(80,150)\fscx60\fscy60\t(0,180,\fscx112\fscy112)\t(180,300,\fscx100\fscy100)}84 HARI
+Dialogue: 1,0:00:20.83,0:00:23.00,Small,,0,0,0,,{ad(120,150)}baru pemerintah dikasih tahu
+Dialogue: 1,0:00:45.34,0:00:47.40,Big,,0,0,0,,{\fad(80,150)\fscx60\fscy60\t(0,180,\fscx112\fscy112)\t(180,300,\fscx100\fscy100)}AI UMUR 1 HARI?
+Dialogue: 1,0:00:45.49,0:00:47.40,Small,,0,0,0,,{ad(120,150)}kamu kasih akses email, drive & bisnis?

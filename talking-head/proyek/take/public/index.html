@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8" />
+<style>
+@font-face { font-family: "SegoeBlack"; src: url("fonts/seguibl.ttf") format("truetype"); font-display: block; }
+@font-face { font-family: "SegoeBold"; src: url("fonts/segoeuib.ttf") format("truetype"); font-display: block; }
+@font-face { font-family: "GeorgiaIt"; src: url("fonts/georgiai.ttf") format("truetype"); font-display: block; }
+:root { --y:#FFD60A; --r:#FF3B4E; --g:#3BE07F; --ink:#0B0D10; --w:#F6F5F1; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 100%; height: 100%; overflow: hidden; background: #000; font-family: "SegoeBold", sans-serif; color: var(--w); }
+#root { position: relative; width: 100%; height: 100%; overflow: hidden; background: #000; }
+.abs { position: absolute; }
+#video-wrap { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; overflow: hidden; }
+#video-wrap video { width: 100%; height: 100%; object-fit: cover; object-position: 50% 40%; }
+
+/* behind-head giant words (the subject matte is composited over them after render) */
+.behind { position: absolute; left: 0; width: 1080px; text-align: center; font-family: "SegoeBlack"; line-height: 1; opacity: 0; }
+#b-dots { top: 238px; font-size: 330px; letter-spacing: -10px; color: var(--y); text-shadow: 0 0 60px rgba(255,214,10,.55), 0 10px 40px rgba(0,0,0,.35); }
+#b-ai { top: 200px; font-size: 400px; letter-spacing: -6px; color: var(--w); text-shadow: 0 0 70px rgba(255,255,255,.45), 0 10px 40px rgba(0,0,0,.35); }
+
+/* caption lockups at chest height */
+.lock { position: absolute; left: 0; top: 1040px; width: 1080px; height: 400px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+.line { display: flex; justify-content: center; white-space: nowrap; line-height: 1.02; }
+.wd { display: inline-block; margin: 0 .13em; opacity: 0; }
+.sm { font-family: "SegoeBold"; color: var(--w); text-shadow: 0 3px 14px rgba(0,0,0,.75); }
+.big { font-family: "SegoeBlack"; color: var(--y); letter-spacing: -.02em; text-shadow: 0 0 34px rgba(255,214,10,.45), 0 5px 20px rgba(0,0,0,.55); }
+.bigw { font-family: "SegoeBlack"; color: var(--w); letter-spacing: -.02em; text-shadow: 0 0 30px rgba(255,255,255,.28), 0 5px 20px rgba(0,0,0,.6); }
+.red { font-family: "SegoeBlack"; color: var(--r); letter-spacing: -.02em; text-shadow: 0 0 36px rgba(255,59,78,.5), 0 5px 20px rgba(0,0,0,.6); }
+.ser { font-family: "GeorgiaIt"; color: var(--w); text-shadow: 0 4px 18px rgba(0,0,0,.7); }
+.sery { font-family: "GeorgiaIt"; color: var(--y); text-shadow: 0 0 26px rgba(255,214,10,.4), 0 4px 18px rgba(0,0,0,.7); }
+
+/* split-screen panel */
+#panel { position: absolute; left: 0; top: 0; width: 1080px; height: 860px; overflow: hidden; clip-path: inset(0 0 100% 0);
+  background: radial-gradient(ellipse at 50% 30%, #1a1d24 0%, #0b0d10 70%); }
+#panel .grid { position: absolute; inset: 0; opacity: .5;
+  background-image: linear-gradient(rgba(255,255,255,.07) 2px, rgba(255,255,255,0) 2px), linear-gradient(90deg, rgba(255,255,255,.07) 2px, rgba(255,255,255,0) 2px);
+  background-size: 60px 60px; }
+#panel .edge { position: absolute; left: 0; bottom: 0; width: 1080px; height: 4px; background: var(--y); box-shadow: 0 0 24px rgba(255,214,10,.8); }
+.scene { position: absolute; inset: 0; opacity: 0; }
+.chips { position: absolute; left: 60px; top: 64px; display: flex; gap: 16px; }
+.chip { font-family: "SegoeBlack"; font-size: 30px; letter-spacing: 3px; padding: 10px 22px; border-radius: 999px; border: 3px solid var(--y); color: var(--y); opacity: 0; }
+.chip.redf { background: var(--r); border-color: var(--r); color: #fff; }
+.chip.out { border-color: rgba(255,255,255,.5); color: var(--w); }
+.ico { width: 100%; height: 100%; }
+.tile { width: 112px; height: 112px; border-radius: 28px; padding: 22px; color: var(--y); background: rgba(255,255,255,.07); border: 2px solid rgba(255,255,255,.16); flex: none; }
+.row { position: absolute; left: 60px; width: 960px; height: 112px; display: flex; align-items: center; gap: 30px; opacity: 0; }
+.rtext { font-size: 48px; flex: 1; }
+.rcheck { width: 64px; height: 64px; color: var(--g); opacity: 0; }
+.ttl { position: absolute; left: 60px; top: 136px; display: flex; align-items: baseline; gap: 22px; opacity: 0; }
+.ttl .a { font-family: "SegoeBlack"; font-size: 150px; letter-spacing: -4px; line-height: 1; }
+.ttl .b { font-family: "GeorgiaIt"; font-size: 90px; color: var(--y); }
+.lead { position: absolute; left: 60px; top: 150px; font-family: "GeorgiaIt"; font-size: 66px; color: var(--w); opacity: 0; }
+.node { position: absolute; width: 210px; text-align: center; opacity: 0; }
+.node .tile { width: 210px; height: 210px; border-radius: 44px; padding: 44px; }
+.node .lbl { font-size: 36px; margin-top: 14px; color: rgba(246,245,241,.8); }
+.path { position: absolute; left: 300px; width: 480px; height: 0; border-top: 6px dashed rgba(255,214,10,.85); clip-path: inset(0 100% 0 0); }
+.pic { position: absolute; width: 58px; height: 58px; padding: 9px; border-radius: 14px; background: var(--w); color: var(--ink); opacity: 0; }
+#p2-num { position: absolute; left: 70px; top: 548px; font-family: "SegoeBlack"; font-size: 230px; line-height: 1; letter-spacing: -6px; color: var(--r); text-shadow: 0 0 40px rgba(255,59,78,.5); opacity: 0; }
+.stack { position: absolute; left: 410px; display: flex; flex-direction: column; gap: 6px; }
+.stack div { opacity: 0; }
+.badge { position: absolute; width: 84px; height: 84px; border-radius: 50%; background: var(--r); color: #fff; font-family: "SegoeBlack"; font-size: 60px; line-height: 84px; text-align: center; box-shadow: 0 0 30px rgba(255,59,78,.7); opacity: 0; }
+.quote { position: absolute; left: 60px; top: 170px; width: 960px; padding: 50px 54px 44px; border-radius: 30px; background: #F3F1EA; color: #16181c; opacity: 0; box-shadow: 0 30px 80px rgba(0,0,0,.5); }
+.quote .q { font-family: "GeorgiaIt"; font-size: 64px; line-height: 1.25; }
+.quote .q > span { opacity: 0; }
+.hlwrap { position: relative; display: inline-block; }
+.hlbar { position: absolute; left: -6px; right: -6px; top: 18%; bottom: 6%; background: #FFE14D; z-index: 0; transform-origin: left center; }
+.hlwrap .hltxt { position: relative; z-index: 1; }
+.quote .src { margin-top: 26px; font-family: "SegoeBold"; font-size: 28px; letter-spacing: 2px; color: #6b6b6b; opacity: 0; }
+.mem { position: absolute; left: 60px; width: 960px; height: 104px; display: flex; align-items: center; gap: 26px; padding: 0 30px; border-radius: 24px; background: rgba(255,255,255,.07); border: 2px solid rgba(255,255,255,.14); opacity: 0; }
+.mem .dot { width: 22px; height: 22px; border-radius: 50%; background: var(--y); flex: none; }
+.mem .bar { height: 22px; border-radius: 11px; background: rgba(255,255,255,.28); }
+.mtrash { position: relative; margin-left: auto; width: 60px; height: 60px; color: rgba(255,255,255,.6); }
+.mx { position: absolute; left: -8px; top: -14px; font-size: 74px; color: var(--r); font-family: "SegoeBlack"; opacity: 0; }
+#p5-no { position: absolute; left: 60px; top: 712px; font-family: "SegoeBlack"; font-size: 64px; color: var(--r); opacity: 0; }
+
+/* seam caption (split-screen) */
+.seam { position: absolute; left: 0; top: 866px; width: 1080px; text-align: center; font-family: "SegoeBlack"; font-size: 76px; line-height: 1; color: var(--w); text-shadow: 0 0 26px rgba(255,255,255,.35), 0 4px 16px rgba(0,0,0,.8); opacity: 0; }
+.seam.hl { color: var(--y); text-shadow: 0 0 30px rgba(255,214,10,.6), 0 4px 16px rgba(0,0,0,.8); }
+
+/* full-bleed cards */
+.card { position: absolute; inset: 0; opacity: 0; }
+#card-red { background: #E5243B; }
+#card-blk { background: #070708; }
+.ctr { position: absolute; left: 0; width: 1080px; text-align: center; opacity: 0; }
+
+/* top-of-frame accents on full-face beats */
+.top { position: absolute; left: 0; width: 1080px; display: flex; justify-content: center; opacity: 0; }
+#stamp { top: 150px; }
+#stamp .s { font-family: "SegoeBlack"; font-size: 128px; letter-spacing: 6px; color: var(--r); border: 12px solid var(--r); border-radius: 22px; padding: 6px 34px 14px; transform: rotate(-7deg); background: rgba(255,59,78,.08); text-shadow: 0 0 30px rgba(255,59,78,.4); }
+#mchip { top: 196px; }
+#zero { top: 84px; flex-direction: column; align-items: center; }
+#zero .n { font-family: "SegoeBlack"; font-size: 270px; line-height: .95; color: var(--g); text-shadow: 0 0 50px rgba(59,224,127,.5); }
+#zero .l { font-size: 42px; opacity: 0; text-shadow: 0 3px 12px rgba(0,0,0,.7); }
+#locks { top: 150px; gap: 36px; flex-wrap: wrap; }
+.lp { display: flex; align-items: center; gap: 18px; padding: 18px 34px 18px 22px; border-radius: 999px; background: rgba(11,13,16,.72); border: 4px solid rgba(255,255,255,.35); font-family: "SegoeBlack"; font-size: 58px; opacity: 0; }
+.lp .li { width: 76px; height: 76px; color: var(--y); }
+#lk-lbl { position: absolute; top: 72px; left: 0; width: 1080px; text-align: center; font-family: "SegoeBlack"; font-size: 46px; letter-spacing: 8px; color: var(--y); opacity: 0; }
+#warn { top: 150px; }
+#warn .wi { width: 250px; height: 250px; color: var(--r); filter: drop-shadow(0 0 30px rgba(255,59,78,.6)); }
+#qmark { top: 40px; font-family: "GeorgiaIt"; font-size: 380px; line-height: 1; color: var(--y); text-shadow: 0 0 60px rgba(255,214,10,.5); }
+#acc { top: 160px; gap: 70px; }
+.at { width: 190px; text-align: center; opacity: 0; }
+.at .tile { width: 190px; height: 190px; border-radius: 44px; padding: 40px; background: rgba(11,13,16,.72); border: 3px solid rgba(255,214,10,.6); }
+.at .lbl { margin-top: 14px; font-size: 42px; text-shadow: 0 3px 12px rgba(0,0,0,.8); }
+#cont { top: 190px; }
+#cont .c { font-family: "SegoeBlack"; font-size: 46px; letter-spacing: 6px; padding: 18px 40px; border-radius: 999px; background: var(--y); color: var(--ink); box-shadow: 0 0 40px rgba(255,214,10,.5); }
+
+#brand { position: absolute; left: 0; top: 1640px; width: 1080px; text-align: center; font-family: "SegoeBlack"; font-size: 40px; letter-spacing: 2px; color: var(--w); text-shadow: 0 3px 14px rgba(0,0,0,.7); opacity: .92; }
+#brand b { color: var(--y); font-weight: normal; }
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="take" data-start="0" data-duration="54.78" data-fps="30" data-width="1080" data-height="1920">
+
+  <div id="video-wrap">
+    <video id="plate" src="plate.mp4" playsinline data-has-audio="true" data-start="0" data-duration="54.78" data-track-index="0"></video>
+  </div>
+
+  <div id="b-dots" class="behind">DOTS</div>
+  <div id="b-ai" class="behind">AI</div>
+
+  <!-- split-screen panel -->
+  <div id="panel"><div class="grid"></div>
+    <div class="scene" id="p1">
+      <div class="chips"><div class="chip" id="p1-c">AGENT CHATGPT</div></div>
+      <div class="ttl" id="p1-t"><span class="a">Dots</span><span class="b">bisa&#8230;</span></div>
+      <div style="position:absolute;left:0;top:356px"><div class="row" id="p1-r1"><div class="tile"><svg class="ico" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"><path d="M28 74h46a17 17 0 0 0 0-34 24 24 0 0 0-46-5A20 20 0 0 0 28 74z"/><path d="M42 58h18"/></svg></div><div class="rtext">Komputer sendiri di cloud</div><div class="rcheck"><svg class="ico" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"><circle cx="50" cy="50" r="38"/><path d="M33 51l12 12 22-25"/></svg></div></div></div>
+      <div style="position:absolute;left:0;top:500px"><div class="row" id="p1-r2"><div class="tile"><svg class="ico" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"><rect x="16" y="16" width="20" height="20" rx="5"/><rect x="16" y="40" width="20" height="20" rx="5"/><rect x="16" y="64" width="20" height="20" rx="5"/><rect x="40" y="16" width="20" height="20" rx="5"/><rect x="40" y="40" width="20" height="20" rx="5"/><rect x="40" y="64" width="20" height="20" rx="5"/><rect x="64" y="16" width="20" height="20" rx="5"/><rect x="64" y="40" width="20" height="20" rx="5"/><rect x="64" y="64" width="20" height="20" rx="5"/></svg></div><div class="rtext">Pakai ribuan aplikasi</div><div class="rcheck"><svg class="ico" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"><circle cx="50" cy="50" r="38"/><path d="M33 51l12 12 22-25"/></svg></div></div></div>
+      <div style="position:absolute;left:0;top:644px"><div class="row" id="p1-r3"><div class="tile"><svg class="ico" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"><path d="M64 16a34 34 0 1 0 22 56A30 30 0 0 1 64 16z"/><path d="M78 24v10M73 29h10"/></svg></div><div class="rtext">Tetap jalan saat kamu tidur</div><div class="rcheck"><svg class="ico" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"><circle cx="50" cy="50" r="38"/><path d="M33 51l12 12 22-25"/></svg></div></div></div>
+    </div>
+    <div class="scene" id="p2">
+      <div class="chips"><div class="chip redf" id="p2-c1">INSIDEN #1</div><div class="chip out" id="p2-c2">4 HARI SEBELUM RILIS</div></div>
+      <div class="lead" id="p2-l">OpenAI mengaku&#8230;</div>
+      <div class="node" id="p2-n1" style="left:84px;top:262px"><div class="tile"><svg class="ico" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"><rect x="20" y="34" width="60" height="46" rx="12"/><path d="M50 34V20"/><circle cx="50" cy="16" r="4"/><circle cx="38" cy="56" r="5"/><circle cx="62" cy="56" r="5"/><path d="M40 70h20"/></svg></div><div class="lbl">Agent</div></div>
+      <div class="node" id="p2-n2" style="left:786px;top:262px"><div class="tile"><svg class="ico" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"><circle cx="50" cy="50" r="34"/><path d="M16 50h68M50 16c-12 12-12 56 0 68M50 16c12 12 12 56 0 68"/></svg></div><div class="lbl">Internet</div></div>
+      <div class="path" id="p2-path" style="top:364px"></div>
+      <div class="pic" id="p2-pic0" style="left:300px;top:338px"><svg class="ico" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"><rect x="14" y="20" width="72" height="60" rx="9"/><circle cx="36" cy="40" r="7"/><path d="M14 72l24-20 16 14 12-10 20 16"/></svg></div><div class="pic" id="p2-pic1" style="left:300px;top:338px"><svg class="ico" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"><rect x="14" y="20" width="72" height="60" rx="9"/><circle cx="36" cy="40" r="7"/><path d="M14 72l24-20 16 14 12-10 20 16"/></svg></div><div class="pic" id="p2-pic2" style="left:300px;top:338px"><svg class="ico" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"><rect x="14" y="20" width="72" height="60" rx="9"/><circle cx="36" cy="40" r="7"/><path d="M14 72l24-20 16 14 12-10 20 16"/></svg></div><div class="pic" id="p2-pic3" style="left:300px;top:338px"><svg class="ico" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"><rect x="14" y="20" width="72" height="60" rx="9"/><circle cx="36" cy="40" r="7"/><path d="M14 72l24-20 16 14 12-10 20 16"/></svg></div><div class="pic" id="p2-pic4" style="left:300px;top:338px"><svg class="ico" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"><rect x="14" y="20" width="72" height="60" rx="9"/><circle cx="36" cy="40" r="7"/><path d="M14 72l24-20 16 14 12-10 20 16"/></svg></div><div class="pic" id="p2-pic5" style="left:300px;top:338px"><svg class="ico" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"><rect x="14" y="20" width="72" height="60" rx="9"/><circle cx="36" cy="40" r="7"/><path d="M14 72l24-20 16 14 12-10 20 16"/></svg></div>
+      <div id="p2-num">0</div>
+      <div class="stack" style="top:578px">
+        <div id="p2-s1" style="font-family:'SegoeBlack';font-size:72px;line-height:1">gambar</div>
+        <div id="p2-s2" style="font-size:46px;color:rgba(246,245,241,.85)">milik pengguna</div>
+        <div id="p2-s3" style="font-size:46px;color:var(--y)">terunggah ke internet</div>
+      </div>
+    </div>
+    <div class="scene" id="p3">
+      <div class="chips"><div class="chip redf" id="p3-c1">INSIDEN #2</div></div>
+      <div class="lead" id="p3-l">Agent dilaporkan masuk ke&#8230;</div>
+      <div class="node" id="p3-n1" style="left:84px;top:262px"><div class="tile"><svg class="ico" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"><rect x="20" y="34" width="60" height="46" rx="12"/><path d="M50 34V20"/><circle cx="50" cy="16" r="4"/><circle cx="38" cy="56" r="5"/><circle cx="62" cy="56" r="5"/><path d="M40 70h20"/></svg></div><div class="lbl">Agent</div></div>
+      <div class="node" id="p3-n2" style="left:786px;top:262px"><div class="tile"><svg class="ico" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 36L50 16l36 20z"/><path d="M22 42v32M38 42v32M62 42v32M78 42v32"/><path d="M12 84h76"/></svg></div><div class="lbl">Pemerintah</div></div>
+      <div class="path" id="p3-path" style="top:364px"></div>
+      <div class="badge" id="p3-badge" style="left:950px;top:240px">!</div>
+      <div class="ctr" id="p3-t1" style="top:600px;font-family:'SegoeBlack';font-size:84px;line-height:1">SISTEM PEMERINTAH</div>
+      <div class="ctr" id="p3-t2" style="top:690px;font-family:'SegoeBlack';font-size:120px;line-height:1;color:var(--y);text-shadow:0 0 40px rgba(255,214,10,.5)">AUSTRALIA</div>
+    </div>
+    <div class="scene" id="p4">
+      <div class="chips"><div class="chip" id="p4-c">KATA OPENAI SENDIRI</div></div>
+      <div class="quote" id="p4-q">
+        <div class="q"><span id="p4-w1">Perlindungan dari </span><span id="p4-w2">instruksi jahat </span><span id="p4-w3">cuma </span><span id="p4-w4" class="hlwrap"><span class="hlbar" id="p4-hl"></span><span class="hltxt">mengurangi risiko.</span></span></div>
+        <div class="src" id="p4-src">&#8212; PARAFRASE</div>
+      </div>
+    </div>
+    <div class="scene" id="p5">
+      <div class="chips"><div class="chip" id="p5-c">MEMORY</div></div>
+      <div class="ttl" id="p5-t" style="top:150px"><span class="a" style="font-size:120px">Memory</span><span class="b">Dots</span></div>
+      <div style="position:absolute;left:0;top:340px"><div class="mem" id="p5-m0"><span class="dot"></span><span class="bar" style="width:430px"></span><span class="mtrash"><svg class="ico" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"><path d="M18 28h64M40 28v-8h20v8M26 28l4 56h40l4-56"/></svg><span class="mx">&#x2715;</span></span></div></div>
+      <div style="position:absolute;left:0;top:464px"><div class="mem" id="p5-m1"><span class="dot"></span><span class="bar" style="width:340px"></span><span class="mtrash"><svg class="ico" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"><path d="M18 28h64M40 28v-8h20v8M26 28l4 56h40l4-56"/></svg><span class="mx">&#x2715;</span></span></div></div>
+      <div style="position:absolute;left:0;top:588px"><div class="mem" id="p5-m2"><span class="dot"></span><span class="bar" style="width:390px"></span><span class="mtrash"><svg class="ico" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"><path d="M18 28h64M40 28v-8h20v8M26 28l4 56h40l4-56"/></svg><span class="mx">&#x2715;</span></span></div></div>
+      <div id="p5-no">gak bisa dihapus satu-satu</div>
+    </div>
+    <div class="edge"></div>
+  </div>
+
+  <!-- full-face accents -->
+  <div id="mchip" class="top"><div class="chip out" style="opacity:1;font-size:36px">MODEL PENERUS &#8599; LEBIH CANGGIH</div></div>
+  <div id="stamp" class="top"><div class="s">DITUNDA</div></div>
+  <div id="zero" class="top"><div class="n">0</div><div class="l" id="zero-l">insiden langsung di Dots</div></div>
+  <div id="lk-lbl">DIKUNCI</div>
+  <div id="locks" class="top"><div class="lp" id="lk1"><span class="li"><svg class="ico" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"><rect x="22" y="44" width="56" height="42" rx="9"/><path class="shackle" d="M34 44V32a16 16 0 0 1 32 0v12"/><circle cx="50" cy="64" r="5"/></svg></span>Akun</div><div class="lp" id="lk2"><span class="li"><svg class="ico" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"><rect x="22" y="44" width="56" height="42" rx="9"/><path class="shackle" d="M34 44V32a16 16 0 0 1 32 0v12"/><circle cx="50" cy="64" r="5"/></svg></span>Uang</div></div>
+  <div id="warn" class="top"><div class="wi"><svg class="ico" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"><path d="M50 12L90 84H10z"/><path d="M50 40v20"/><circle cx="50" cy="71" r="2" fill="currentColor"/></svg></div></div>
+  <div id="qmark" class="top">?</div>
+  <div id="acc" class="top">
+    <div class="at" id="ac1"><div class="tile" style="color:var(--y)"><svg class="ico" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"><rect x="12" y="24" width="76" height="54" rx="9"/><path d="M14 28l36 28 36-28"/></svg></div><div class="lbl">Email</div></div>
+    <div class="at" id="ac2"><div class="tile" style="color:var(--y)"><svg class="ico" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 30a7 7 0 0 1 7-7h20l8 9h34a7 7 0 0 1 7 7v38a7 7 0 0 1-7 7H19a7 7 0 0 1-7-7z"/><path d="M38 64h24"/></svg></div><div class="lbl">Drive</div></div>
+    <div class="at" id="ac3"><div class="tile" style="color:var(--y)"><svg class="ico" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"><rect x="12" y="32" width="76" height="50" rx="9"/><path d="M36 32v-8a6 6 0 0 1 6-6h16a6 6 0 0 1 6 6v8M12 54h76"/></svg></div><div class="lbl">Bisnis</div></div>
+  </div>
+  <div id="cont" class="top"><div class="c">BERSAMBUNG &#8594;</div></div>
+
+  <div id="captions"></div>
+
+  <!-- red card: 84 hari -->
+  <div class="card" id="card-red">
+    <div class="ctr" id="r1" style="top:470px;font-size:66px">baru</div>
+    <div class="ctr" id="r2" style="top:540px;font-family:'SegoeBlack';font-size:500px;line-height:1;letter-spacing:-14px">84</div>
+    <div class="ctr" id="r3" style="top:1010px;font-family:'SegoeBlack';font-size:190px;line-height:1;color:var(--ink);letter-spacing:4px">HARI</div>
+    <div class="ctr" id="r4" style="top:1230px;font-family:'GeorgiaIt';font-size:100px">kemudian</div>
+    <div class="ctr" id="r5" style="top:1370px;font-size:56px;opacity:1">
+      <span class="wd" id="r5a">pemerintahnya</span><span class="wd" id="r5b">dikasih</span><span class="wd" id="r5c">tahu.</span>
+    </div>
+  </div>
+
+  <!-- black card: 4 hal -->
+  <div class="card" id="card-blk">
+    <div class="ctr" style="top:470px;font-size:58px;opacity:1"><span class="wd" id="k1">di</span><span class="wd" id="k2">video</span><span class="wd" id="k3">berikutnya</span></div>
+    <div class="ctr" style="top:560px;font-family:'GeorgiaIt';font-size:76px;color:#bdbdbd;opacity:1"><span class="wd" id="k4">kita</span><span class="wd" id="k5">akan</span><span class="wd" id="k6">bahas</span></div>
+    <div class="ctr" style="top:660px;opacity:1;display:flex;justify-content:center;align-items:baseline;gap:30px">
+      <span class="wd" id="k7" style="font-family:'SegoeBlack';font-size:560px;line-height:.9;color:var(--y);text-shadow:0 0 70px rgba(255,214,10,.45)">4</span>
+      <span class="wd" id="k8" style="font-family:'SegoeBlack';font-size:210px;line-height:1">HAL</span>
+    </div>
+    <div class="ctr" style="top:1220px;font-size:58px;opacity:1"><span class="wd" id="k9">yang</span><span class="wd" id="k10">menurutku</span></div>
+    <div class="ctr" style="top:1300px;opacity:1"><span class="wd" id="k11" style="font-family:'SegoeBlack';font-size:170px;line-height:1;color:var(--r);text-shadow:0 0 50px rgba(255,59,78,.5)">jangan</span></div>
+    <div class="ctr" style="top:1500px;font-family:'GeorgiaIt';font-size:88px;opacity:1"><span class="wd" id="k12">kamu</span><span class="wd" id="k13">serahin</span><span class="wd" id="k14">ke</span><span class="wd" id="k15">AI.</span></div>
+  </div>
+
+  <div id="brand">Endrich<b>Tech</b></div>
+
+  <script src="vendor/gsap.min.js"></script>
+  <script>
+  (function () {
+    var D = {"lockups": [{"start": 0.0, "end": 1.22, "lines": [{"cls": "sm", "px": 52, "words": [{"t": 0.0, "x": "kamu"}, {"t": 0.34, "x": "udah"}]}, {"cls": "big", "px": 124, "words": [{"t": 0.46, "x": "denger"}, {"t": 0.7, "x": "belum?"}]}]}, {"start": 1.26, "end": 3.52, "lines": [{"cls": "sm", "px": 52, "words": [{"t": 1.26, "x": "ChatGPT"}, {"t": 1.88, "x": "sekarang"}, {"t": 2.16, "x": "bisa"}]}, {"cls": "bigw", "px": 124, "words": [{"t": 2.44, "x": "kerja"}, {"t": 2.74, "x": "sendiri"}]}, {"cls": "sery", "px": 104, "words": [{"t": 3.12, "x": "loh."}]}]}, {"start": 3.58, "end": 4.46, "lines": [{"cls": "ser", "px": 100, "words": [{"t": 3.58, "x": "namanya"}]}]}, {"start": 4.5, "end": 5.95, "lines": [{"cls": "sm", "px": 52, "words": [{"t": 4.5, "x": "dia"}, {"t": 4.7, "x": "punya"}, {"t": 4.9, "x": "komputer"}]}, {"cls": "ser", "px": 100, "words": [{"t": 5.28, "x": "sendiri"}, {"t": 5.62, "x": "di"}, {"t": 5.74, "x": "cloud"}]}]}, {"start": 9.66, "end": 10.95, "lines": [{"cls": "sm", "px": 52, "words": [{"t": 9.66, "x": "tapi"}]}, {"cls": "ser", "px": 100, "words": [{"t": 9.88, "x": "coba"}, {"t": 10.16, "x": "dengerin"}, {"t": 10.54, "x": "ini."}]}]}, {"start": 22.88, "end": 25.36, "lines": [{"cls": "sm", "px": 52, "words": [{"t": 22.88, "x": "model"}, {"t": 23.2, "x": "penerusnya"}]}, {"cls": "bigw", "px": 102, "words": [{"t": 23.8, "x": "yang"}, {"t": 23.96, "x": "lebih"}, {"t": 24.18, "x": "canggih"}]}, {"cls": "sm", "px": 52, "words": [{"t": 24.56, "x": "aja"}, {"t": 24.88, "x": "katanya"}]}]}, {"start": 25.38, "end": 27.04, "lines": [{"cls": "red", "px": 136, "words": [{"t": 25.38, "x": "ditunda"}]}, {"cls": "ser", "px": 84, "words": [{"t": 25.84, "x": "gara-gara"}, {"t": 26.28, "x": "uji"}, {"t": 26.54, "x": "keamanan."}]}]}, {"start": 27.06, "end": 28.64, "lines": [{"cls": "sm", "px": 52, "words": [{"t": 27.06, "x": "tapi"}, {"t": 27.22, "x": "jujur"}, {"t": 27.56, "x": "ya"}]}, {"cls": "bigw", "px": 118, "words": [{"t": 27.92, "x": "gak"}, {"t": 28.04, "x": "ada"}, {"t": 28.26, "x": "satupun"}]}]}, {"start": 28.66, "end": 31.0, "lines": [{"cls": "sm", "px": 52, "words": [{"t": 28.66, "x": "dari"}, {"t": 28.9, "x": "itu"}, {"t": 29.12, "x": "yang"}, {"t": 29.26, "x": "terjadi"}, {"t": 29.66, "x": "di"}]}, {"cls": "big", "px": 124, "words": [{"t": 29.82, "x": "Dots"}, {"t": 30.06, "x": "langsung"}]}]}, {"start": 31.1, "end": 33.04, "lines": [{"cls": "sm", "px": 52, "words": [{"t": 31.1, "x": "akses"}]}, {"cls": "bigw", "px": 124, "words": [{"t": 31.46, "x": "akun"}, {"t": 31.78, "x": "dan"}, {"t": 31.94, "x": "uang"}]}, {"cls": "ser", "px": 100, "words": [{"t": 32.22, "x": "juga"}, {"t": 32.42, "x": "dikunci."}]}]}, {"start": 33.08, "end": 34.93, "lines": [{"cls": "sm", "px": 52, "words": [{"t": 33.08, "x": "cuma"}, {"t": 33.3, "x": "ya"}]}, {"cls": "red", "px": 136, "words": [{"t": 33.82, "x": "risikonya"}]}, {"cls": "ser", "px": 100, "words": [{"t": 34.22, "x": "tetap"}, {"t": 34.5, "x": "ada."}]}]}, {"start": 41.02, "end": 42.55, "lines": [{"cls": "sm", "px": 52, "words": [{"t": 41.02, "x": "jadi"}, {"t": 41.24, "x": "pertanyaannya"}]}, {"cls": "sery", "px": 104, "words": [{"t": 41.82, "x": "sederhana."}]}]}, {"start": 42.6, "end": 45.15, "lines": [{"cls": "sm", "px": 52, "words": [{"t": 42.6, "x": "kamu"}, {"t": 42.92, "x": "mau"}, {"t": 43.08, "x": "kasih"}, {"t": 43.28, "x": "akses"}]}, {"cls": "bigw", "px": 124, "words": [{"t": 43.6, "x": "email"}, {"t": 44.16, "x": "drive"}]}, {"cls": "big", "px": 124, "words": [{"t": 44.58, "x": "sama"}, {"t": 44.66, "x": "bisnismu"}]}]}, {"start": 45.16, "end": 46.66, "lines": [{"cls": "sm", "px": 52, "words": [{"t": 45.16, "x": "ke"}, {"t": 45.34, "x": "AI"}, {"t": 45.62, "x": "yang"}, {"t": 45.78, "x": "umurnya"}]}, {"cls": "big", "px": 124, "words": [{"t": 46.12, "x": "baru"}, {"t": 46.28, "x": "sehari?"}]}]}, {"start": 51.74, "end": 52.62, "lines": [{"cls": "ser", "px": 100, "words": [{"t": 51.74, "x": "salah"}, {"t": 52.08, "x": "satunya"}]}]}, {"start": 52.64, "end": 54.78, "lines": [{"cls": "sm", "px": 52, "words": [{"t": 52.64, "x": "hampir"}, {"t": 52.98, "x": "semua"}, {"t": 53.2, "x": "orang"}, {"t": 53.42, "x": "lakukan"}]}, {"cls": "big", "px": 124, "words": [{"t": 53.76, "x": "di"}, {"t": 53.92, "x": "hari"}, {"t": 54.08, "x": "pertama"}]}]}], "seam": [{"t": 6.18, "e": 6.36, "x": "bisa", "hl": false}, {"t": 6.36, "e": 6.6, "x": "pakai", "hl": false}, {"t": 6.6, "e": 7.02, "x": "ribuan", "hl": true}, {"t": 7.02, "e": 7.7, "x": "aplikasi", "hl": true}, {"t": 7.7, "e": 7.82, "x": "dan", "hl": false}, {"t": 7.82, "e": 8.1, "x": "tetap", "hl": false}, {"t": 8.1, "e": 8.38, "x": "jalan", "hl": true}, {"t": 8.38, "e": 8.64, "x": "walau", "hl": false}, {"t": 8.64, "e": 8.82, "x": "kamu", "hl": false}, {"t": 8.82, "e": 8.98, "x": "lagi", "hl": false}, {"t": 8.98, "e": 9.3, "x": "tidur", "hl": true}, {"t": 11.04, "e": 11.34, "x": "empat", "hl": false}, {"t": 11.34, "e": 11.54, "x": "hari", "hl": false}, {"t": 11.54, "e": 11.88, "x": "sebelum", "hl": false}, {"t": 11.88, "e": 12.5, "x": "dirilis", "hl": true}, {"t": 12.5, "e": 13.0, "x": "OpenAI", "hl": false}, {"t": 13.0, "e": 13.46, "x": "ngaku", "hl": false}, {"t": 13.46, "e": 14.02, "x": "agent", "hl": false}, {"t": 14.02, "e": 14.3, "x": "mereka", "hl": false}, {"t": 14.3, "e": 14.68, "x": "sempat", "hl": false}, {"t": 14.68, "e": 15.08, "x": "mengunggah", "hl": true}, {"t": 15.08, "e": 15.5, "x": "53", "hl": true}, {"t": 15.5, "e": 16.1, "x": "gambar", "hl": true}, {"t": 16.1, "e": 16.36, "x": "milik", "hl": false}, {"t": 16.36, "e": 16.74, "x": "pengguna", "hl": false}, {"t": 16.74, "e": 16.88, "x": "ke", "hl": false}, {"t": 16.88, "e": 17.55, "x": "internet", "hl": true}, {"t": 17.56, "e": 17.82, "x": "agent", "hl": false}, {"t": 17.82, "e": 18.1, "x": "mereka", "hl": false}, {"t": 18.1, "e": 18.3, "x": "juga", "hl": false}, {"t": 18.3, "e": 18.8, "x": "dilaporkan", "hl": false}, {"t": 18.8, "e": 19.06, "x": "masuk", "hl": true}, {"t": 19.06, "e": 19.18, "x": "ke", "hl": false}, {"t": 19.18, "e": 19.44, "x": "sistem", "hl": false}, {"t": 19.44, "e": 19.84, "x": "pemerintah", "hl": true}, {"t": 19.84, "e": 20.3, "x": "Australia", "hl": true}, {"t": 34.98, "e": 35.4, "x": "OpenAI", "hl": false}, {"t": 35.4, "e": 35.68, "x": "sendiri", "hl": false}, {"t": 35.68, "e": 36.34, "x": "bilang", "hl": false}, {"t": 36.34, "e": 36.92, "x": "perlindungan", "hl": true}, {"t": 36.92, "e": 37.08, "x": "dari", "hl": false}, {"t": 37.08, "e": 37.5, "x": "instruksi", "hl": false}, {"t": 37.5, "e": 37.82, "x": "jahat", "hl": true}, {"t": 37.82, "e": 38.08, "x": "cuma", "hl": false}, {"t": 38.08, "e": 38.56, "x": "mengurangi", "hl": true}, {"t": 38.56, "e": 39.1, "x": "risiko", "hl": true}, {"t": 39.1, "e": 39.32, "x": "memory", "hl": true}, {"t": 39.32, "e": 39.52, "x": "Dots", "hl": true}, {"t": 39.52, "e": 39.68, "x": "juga", "hl": false}, {"t": 39.68, "e": 39.8, "x": "gak", "hl": false}, {"t": 39.8, "e": 39.98, "x": "bisa", "hl": false}, {"t": 39.98, "e": 40.28, "x": "dihapus", "hl": true}, {"t": 40.28, "e": 40.74, "x": "satu-satu", "hl": true}]};
+    var FPS = 30;
+    function q(t) { return Math.round(t * FPS) / FPS; }
+    var tl = gsap.timeline({ paused: true });
+    function $(s) { return document.querySelector(s); }
+    function show(sel, t, d, from) {
+      tl.fromTo(sel, Object.assign({ opacity: 0 }, from || { y: 30 }), { opacity: 1, y: 0, x: 0, scale: 1, filter: "blur(0px)", duration: d || 0.3, ease: "power3.out" }, q(t));
+    }
+    function pop(sel, t, d) { tl.fromTo(sel, { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: d || 0.32, ease: "back.out(2)" }, q(t)); }
+    function hide(sel, t, d) { tl.to(sel, { opacity: 0, duration: d || 0.15, ease: "power2.in" }, q(t)); }
+    function cut(sel, t, v) { tl.set(sel, { opacity: v }, q(t)); }
+
+    // ---------- caption lockups ----------
+    var host = $("#captions");
+    D.lockups.forEach(function (L, li) {
+      var box = document.createElement("div");
+      box.className = "lock"; box.id = "cap" + li;
+      L.lines.forEach(function (ln) {
+        var row = document.createElement("div");
+        row.className = "line " + ln.cls; row.style.fontSize = ln.px + "px";
+        ln.words.forEach(function (w) {
+          var s = document.createElement("span"); s.className = "wd"; s.textContent = w.x; row.appendChild(s);
+          tl.fromTo(s, { opacity: 0, y: 26, scale: 0.92, filter: "blur(10px)" }, { opacity: 1, y: 0, scale: 1, filter: "blur(0px)", duration: 0.22, ease: "power3.out" }, q(Math.max(w.t, L.start)));
+        });
+        box.appendChild(row);
+      });
+      host.appendChild(box);
+      tl.to(box, { opacity: 0, duration: 0.12, ease: "power2.in" }, q(L.end - 0.12));
+    });
+    // ---------- seam captions ----------
+    D.seam.forEach(function (s, i) {
+      var e = document.createElement("div"); e.className = "seam" + (s.hl ? " hl" : ""); e.textContent = s.x; host.appendChild(e);
+      var a = q(s.t), b = q(s.e), d = Math.min(0.14, b - a - 1 / FPS);
+      if (d > 0.03) tl.fromTo(e, { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: d, ease: "back.out(2.5)" }, a);
+      else tl.set(e, { opacity: 1 }, a);
+      tl.set(e, { opacity: 0 }, b);
+    });
+
+    // ---------- behind-head giants ----------
+    tl.fromTo("#b-dots", { opacity: 0, scale: 1.25, filter: "blur(24px)" }, { opacity: 1, scale: 1, filter: "blur(0px)", duration: 0.35, ease: "power3.out" }, q(3.90));
+    tl.to("#b-dots", { scale: 1.05, duration: 1.7, ease: "none" }, q(4.25));
+    hide("#b-dots", 5.80, 0.15);
+    tl.fromTo("#b-ai", { opacity: 0, scale: 1.3, filter: "blur(24px)" }, { opacity: 1, scale: 1, filter: "blur(0px)", duration: 0.3, ease: "power3.out" }, q(45.34));
+    tl.to("#b-ai", { scale: 1.05, duration: 1.0, ease: "none" }, q(45.64));
+    cut("#b-ai", 46.68, 0);
+
+    // ---------- split-screen choreography ----------
+    function splitIn(t) {
+      tl.to("#video-wrap", { y: 516, duration: 0.45, ease: "power3.inOut" }, q(t));
+      tl.fromTo("#panel", { clipPath: "inset(0 0 100% 0)" }, { clipPath: "inset(0 0 0% 0)", duration: 0.45, ease: "power3.inOut" }, q(t));
+    }
+    function splitOut(t, d) {
+      tl.to("#video-wrap", { y: 0, duration: d, ease: "power3.inOut" }, q(t));
+      tl.to("#panel", { clipPath: "inset(0 0 100% 0)", duration: d, ease: "power3.inOut" }, q(t));
+    }
+    // A: Dots features
+    splitIn(5.95); cut("#p1", 5.95, 1);
+    show("#p1-c", 6.05); show("#p1-t", 6.10, 0.35, { x: -40 });
+    [[1, 6.18], [2, 6.36], [3, 7.82]].forEach(function (r) {
+      show("#p1-r" + r[0], r[1], 0.35, { x: -60 });
+      pop("#p1-r" + r[0] + " .rcheck", r[1] + 0.35);
+    });
+    splitOut(9.30, 0.30); cut("#p1", 9.60, 0);
+
+    // B: incident 1 -> incident 2
+    splitIn(10.95); cut("#p2", 10.95, 1);
+    show("#p2-c1", 11.04); show("#p2-c2", 11.34, 0.3, { x: -30 });
+    show("#p2-l", 12.50, 0.4, { x: -40 });
+    pop("#p2-n1", 13.46); pop("#p2-n2", 14.02);
+    tl.to("#p2-path", { clipPath: "inset(0 0% 0 0)", duration: 0.5, ease: "power2.inOut" }, q(14.68));
+    for (var k = 0; k < 6; k++) {
+      var t0 = 14.75 + k * 0.26;
+      tl.fromTo("#p2-pic" + k, { opacity: 0, x: 0, y: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.12 }, q(t0));
+      tl.to("#p2-pic" + k, { x: 420, y: (k % 2 ? -18 : 18), duration: 0.7, ease: "power1.inOut" }, q(t0));
+      tl.to("#p2-pic" + k, { opacity: 0, scale: 0.4, duration: 0.15 }, q(t0 + 0.6));
+    }
+    show("#p2-num", 15.08, 0.2, { scale: 0.7 });
+    (function () { var o = { v: 0 }; tl.to(o, { v: 53, duration: 0.45, ease: "power2.out", onUpdate: function () { $("#p2-num").textContent = Math.round(o.v); } }, q(15.08)); })();
+    show("#p2-s1", 15.50); show("#p2-s2", 16.10); show("#p2-s3", 16.88);
+    tl.to("#p2", { opacity: 0, x: -80, duration: 0.25, ease: "power2.in" }, q(17.30));
+    tl.fromTo("#p3", { opacity: 0, x: 80 }, { opacity: 1, x: 0, duration: 0.3, ease: "power3.out" }, q(17.45));
+    show("#p3-c1", 17.50); show("#p3-l", 17.56, 0.4, { x: -40 });
+    pop("#p3-n1", 17.70); pop("#p3-n2", 18.30);
+    tl.to("#p3-path", { clipPath: "inset(0 0% 0 0)", duration: 0.45, ease: "power2.inOut" }, q(18.80));
+    pop("#p3-badge", 19.06, 0.4);
+    tl.to("#p3-badge", { scale: 1.15, duration: 0.25, yoyo: true, repeat: 3, ease: "sine.inOut" }, q(19.46));
+    show("#p3-t1", 19.18); show("#p3-t2", 19.84, 0.3, { scale: 1.3 });
+
+    // red card 84 hari (hard cut in and out)
+    cut("#card-red", 20.30, 1);
+    tl.set("#video-wrap", { y: 0 }, q(20.32)); tl.set("#panel", { clipPath: "inset(0 0 100% 0)" }, q(20.32));
+    cut("#p3", 20.32, 0);
+    show("#r1", 20.44, 0.25);
+    tl.fromTo("#r2", { opacity: 0, scale: 1.4 }, { opacity: 1, scale: 1, duration: 0.3, ease: "power3.out" }, q(20.68));
+    (function () { var o = { v: 0 }; tl.to(o, { v: 84, duration: 0.5, ease: "power2.out", onUpdate: function () { $("#r2").textContent = Math.round(o.v); } }, q(20.68)); })();
+    tl.fromTo("#r3", { opacity: 0, y: 60 }, { opacity: 1, y: 0, duration: 0.25, ease: "back.out(2)" }, q(21.14));
+    show("#r4", 21.46, 0.3, { y: 20, filter: "blur(10px)" });
+    show("#r5a", 21.82, 0.2); show("#r5b", 22.36, 0.2); show("#r5c", 22.66, 0.15);
+    cut("#card-red", 22.88, 0);
+
+    // C: quote -> memory
+    splitIn(34.95); cut("#p4", 34.95, 1);
+    show("#p4-c", 34.98);
+    show("#p4-q", 35.40, 0.4, { y: 40 });
+    show("#p4-w1", 36.34, 0.25, { y: 10 }); show("#p4-w2", 37.08, 0.25, { y: 10 }); show("#p4-w3", 37.82, 0.2, { y: 10 }); show("#p4-w4", 38.08, 0.2, { y: 10 });
+    tl.fromTo("#p4-hl", { scaleX: 0 }, { scaleX: 1, duration: 0.45, ease: "power2.inOut" }, q(38.20));
+    show("#p4-src", 38.60, 0.3, { y: 0 });
+    tl.to("#p4", { opacity: 0, x: -80, duration: 0.22, ease: "power2.in" }, q(38.90));
+    tl.fromTo("#p5", { opacity: 0, x: 80 }, { opacity: 1, x: 0, duration: 0.25, ease: "power3.out" }, q(39.05));
+    show("#p5-c", 39.10); show("#p5-t", 39.10, 0.3, { x: -40 });
+    show("#p5-m0", 39.40, 0.25, { x: -50 }); show("#p5-m1", 39.52, 0.25, { x: -50 }); show("#p5-m2", 39.64, 0.25, { x: -50 });
+    ["#p5-m0", "#p5-m1", "#p5-m2"].forEach(function (m, i) { pop(m + " .mx", 39.98 + i * 0.08, 0.25); });
+    show("#p5-no", 40.28, 0.2, { y: 16 });
+    splitOut(40.74, 0.26); cut("#p5", 41.00, 0);
+
+    // ---------- full-face accents ----------
+    show("#mchip", 23.20, 0.35, { y: -20 });
+    tl.to("#mchip", { opacity: 0, duration: 0.08 }, q(25.30));
+    tl.fromTo("#stamp", { opacity: 0, scale: 2.2 }, { opacity: 1, scale: 1, duration: 0.18, ease: "power4.in" }, q(25.30));
+    tl.fromTo("#stamp", { x: -10 }, { x: 0, duration: 0.25, ease: "elastic.out(1, 0.3)" }, q(25.48));
+    hide("#stamp", 26.92, 0.14);
+
+    tl.fromTo("#zero", { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(2.2)" }, q(28.26));
+    show("#zero-l", 29.82, 0.25, { y: 14 });
+    hide("#zero", 30.85, 0.15);
+
+    pop("#lk1", 31.46); pop("#lk2", 31.94);
+    tl.set("#locks", { opacity: 1 }, q(31.46));
+    tl.fromTo("#locks .shackle", { y: -12 }, { y: 0, duration: 0.18, ease: "power4.in" }, q(32.42));
+    tl.to("#locks .lp", { borderColor: "#FFD60A", duration: 0.15 }, q(32.52));
+    show("#lk-lbl", 32.42, 0.2, { y: 14 });
+    hide("#locks", 32.92, 0.12); hide("#lk-lbl", 32.92, 0.12);
+
+    tl.fromTo("#warn", { opacity: 0, scale: 0.4 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(2.4)" }, q(33.82));
+    tl.to("#warn", { scale: 1.08, duration: 0.22, yoyo: true, repeat: 3, ease: "sine.inOut" }, q(34.12));
+    hide("#warn", 34.80, 0.12);
+
+    tl.fromTo("#qmark", { opacity: 0, rotation: -20, scale: 0.5 }, { opacity: 1, rotation: 0, scale: 1, duration: 0.4, ease: "back.out(2)" }, q(41.24));
+    hide("#qmark", 42.42, 0.12);
+
+    tl.set("#acc", { opacity: 1 }, q(43.60));
+    pop("#ac1", 43.60); pop("#ac2", 44.16); pop("#ac3", 44.66);
+    tl.to("#acc .at", { opacity: 0, y: -60, duration: 0.25, stagger: 0.04, ease: "power2.in" }, q(44.98));
+
+    // black card 4 hal
+    cut("#card-blk", 46.68, 1);
+    var K = [[1, 46.68], [2, 46.94], [3, 47.18], [4, 47.68], [5, 47.90], [6, 48.12], [9, 49.50], [10, 49.68], [12, 50.42], [13, 50.72], [14, 51.08], [15, 51.20]];
+    K.forEach(function (k) { show("#k" + k[0], k[1], 0.22, { y: 20, filter: "blur(8px)" }); });
+    tl.fromTo("#k7", { opacity: 0, scale: 1.6 }, { opacity: 1, scale: 1, duration: 0.3, ease: "power4.out" }, q(48.62));
+    tl.fromTo("#k8", { opacity: 0, x: 60 }, { opacity: 1, x: 0, duration: 0.25, ease: "power3.out" }, q(49.22));
+    tl.fromTo("#k11", { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1, duration: 0.25, ease: "back.out(2.5)" }, q(50.14));
+    cut("#card-blk", 51.65, 0);
+
+    tl.fromTo("#cont", { opacity: 0, y: -30 }, { opacity: 1, y: 0, duration: 0.35, ease: "back.out(2)" }, q(53.92));
+
+    window.__timelines["take"] = tl;
+  })();
+  </script>
+</div>
+</body>
+</html>

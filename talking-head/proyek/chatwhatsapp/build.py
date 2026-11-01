@@ -1,0 +1,396 @@
+# Generates public/index.html for "Chat WhatsApp" — EndrichTech house style (style-tokens.md):
+# Inter Display, kinetic lockups (no subtitles), SPLIT panels with a soft shade (no seam line),
+# one dramatic device = BEHIND ("SISTEM" 2x), one black CARD, safe zone x 60–940.
+import json
+from PIL import ImageFont
+
+DUR = 57.36
+W, H = 1080, 1920
+FONT = {"black": "public/fonts/InterDisplay-Black.ttf", "semi": "public/fonts/InterDisplay-SemiBold.ttf",
+        "semit": "public/fonts/InterDisplay-SemiBoldItalic.ttf", "med": "public/fonts/InterDisplay-Medium.ttf"}
+
+raw = json.load(open("chatwhatsapp.words.json", encoding="utf-8"))["words"]
+words = [{"text": w["word"], "start": w["start"], "end": w["end"]} for w in raw]
+assert words[15]["text"] == "WhatsApp" and words[142]["text"] == "sistemnya.", [w["text"] for w in words[10:20]]
+
+KEEP_CASE = {"WhatsApp", "AI", "AI.", "HP"}
+def disp(i, style):
+    t = words[i]["text"]
+    if t.rstrip(".,?") not in KEEP_CASE:
+        t = t.lower()
+    t = t.replace(",", "")
+    if style not in ("tone", "toney"):
+        t = t.rstrip(".")
+    return t
+
+# style -> (font key, base px, css class); fitted to MAXW with real metrics
+STY = {"sm": ("semi", 54, "sm"), "big": ("black", 128, "big"), "bigw": ("black", 128, "bigw"),
+       "red": ("black", 132, "red"), "tone": ("semit", 100, "tone"), "toney": ("semit", 104, "toney")}
+MAXW = 860   # lockups centred at x=500 inside the 60–940 safe zone
+
+def fit(text, key, px, maxw=MAXW, track=0.0):
+    while px > 30:
+        f = ImageFont.truetype(FONT[key], px)
+        if f.getlength(text) + track * px * len(text) <= maxw:
+            return px
+        px -= 2
+    return px
+
+def lockup(start, end, spec):
+    lines = []
+    for part in spec.split("|"):
+        rng, style = part.strip().split(":")
+        a, b = (rng.split("-") + [rng])[:2]
+        idx = range(int(a), int(b) + 1)
+        text = " ".join(disp(i, style) for i in idx)
+        key, px, cls = STY[style]
+        tr = -0.03 if key == "black" else 0.0
+        lines.append({"cls": cls, "px": fit(text, key, px, track=tr),
+                      "words": [{"t": words[i]["start"], "x": disp(i, style)} for i in idx]})
+    return {"start": start, "end": end, "lines": lines}
+
+LOCKUPS = [
+    lockup(0.00, 2.66, "0-1:sm|3-5:big"),
+    lockup(4.22, 5.92, "9-11:tone"),
+    lockup(15.50, 17.95, "36-38:sm|39-41:tone"),
+    lockup(18.04, 18.90, "42:tone"),
+    lockup(18.94, 20.46, "43-45:sm|46-47:red"),
+    lockup(26.20, 28.98, "64-65:sm|66-68:bigw"),
+    lockup(29.10, 30.80, "71-73:tone"),
+    lockup(30.84, 33.36, "74-77:sm|78-79:big"),
+    lockup(33.40, 35.66, "80-83:sm|84-86:big"),
+    lockup(49.26, 51.70, "122-124:sm|125-126:big"),
+    lockup(53.94, 56.28, "134-137:sm|139-140:bigw"),
+    lockup(56.30, DUR, "141-142:big"),
+]
+
+SEAM_HL = {15, 18, 19, 21, 22, 26, 27, 32, 50, 51, 55, 56, 57, 59, 61, 88, 90, 92, 93, 96, 99, 100, 111, 112, 113, 117, 119}
+SEAM = []
+for a, b, start, stop in [(13, 32, 5.95, 13.90), (48, 61, 20.50, 25.30), (87, 100, 35.70, 41.30), (109, 121, 44.00, 49.20)]:
+    for i in range(a, b + 1):
+        nxt = words[i + 1]["start"] if i < b else stop
+        t = max(words[i]["start"], start)
+        end = min(nxt, words[i]["end"] + 0.35, stop)
+        if end - t > 0.05:
+            SEAM.append({"t": t, "e": round(end, 3), "x": disp(i, "sm"), "hl": i in SEAM_HL})
+
+BEHIND_PX = fit("SISTEM", "black", 330, 860, track=-0.03)
+
+def svg(body, cls="ico", sw=6):
+    return f'<svg class="{cls}" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="{sw}" stroke-linecap="round" stroke-linejoin="round">{body}</svg>'
+dot = lambda x, y, r=4.5: f'<circle cx="{x}" cy="{y}" r="{r}" fill="currentColor" stroke="none"/>'
+ICON = {
+    "moon": svg('<path d="M64 16a34 34 0 1 0 22 56A30 30 0 0 1 64 16z"/>'),
+    "phone": svg('<rect x="30" y="10" width="40" height="80" rx="9"/><path d="M44 78h12"/>'),
+    "person": svg('<circle cx="50" cy="34" r="15"/><path d="M20 86c0-17 13-29 30-29s30 12 30 29"/>'),
+    "store": svg('<path d="M14 40l7-22h58l7 22z"/><path d="M20 40v42h60V40"/><path d="M42 82V60h16v22"/>'),
+    "clock": svg('<circle cx="50" cy="50" r="34"/><path d="M50 30v21l14 9"/>'),
+    "chat": svg('<path d="M16 22h68v46H44L26 82V68H16z"/>'),
+    "tag": svg('<path d="M14 50V16h34l38 38-34 34z"/>' + dot(32, 32, 5)),
+    "pin": svg('<path d="M50 90S22 60 22 38a28 28 0 0 1 56 0c0 22-28 52-28 52z"/><circle cx="50" cy="38" r="10"/>'),
+    "cal": svg('<rect x="14" y="22" width="72" height="64" rx="10"/><path d="M14 42h72M32 12v18M68 12v18"/>' + dot(36, 58) + dot(52, 58) + dot(68, 58) + dot(36, 72)),
+    "warn": svg('<path d="M50 12L90 84H10z"/><path d="M50 40v20"/>' + dot(50, 71, 3)),
+    "swap": svg('<path d="M16 36h62l-14-14M84 64H22l14 14"/>'),
+    "refund": svg('<path d="M30 30H66a20 20 0 0 1 0 40H24"/><path d="M38 18L24 30l14 12"/>'),
+    "q": svg('<circle cx="50" cy="50" r="36"/><path d="M38 38a12 12 0 1 1 18 10c-4 3-6 5-6 10"/>' + dot(50, 72, 3.5)),
+    "check": svg('<circle cx="50" cy="50" r="38"/><path d="M33 51l12 12 22-25"/>'),
+    "x": svg('<path d="M24 24l52 52M76 24L24 76"/>', sw=12),
+}
+
+INBOX = [("A", "Kak, masih buka?", "3"), ("R", "Harga paket berapa?", "2"), ("D", "Halo kak…", "5"), ("S", "Bisa kirim hari ini?", "1")]
+def inrow(k, ini, msg, n):
+    return f'''<div class="ir" id="p1-r{k}"><span class="av">{ini}</span><span class="im"><b>Pelanggan {k + 1}</b><i>{msg}</i></span><span class="it">21.0{k}</span><span class="ub">{n}</span></div>'''
+
+def chip(id_, icon, label, cls=""):
+    return f'<div class="fc {cls}" id="{id_}"><span class="fi">{ICON[icon]}</span><span class="ft">{label}</span><span class="fk">{ICON["check"]}</span></div>'
+
+DATA = {"lockups": LOCKUPS, "seam": SEAM}
+
+HTML = f'''<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8" />
+<style>
+@font-face {{ font-family: "IDBlack"; src: url("fonts/InterDisplay-Black.ttf") format("truetype"); font-display: block; }}
+@font-face {{ font-family: "IDBold"; src: url("fonts/InterDisplay-Bold.ttf") format("truetype"); font-display: block; }}
+@font-face {{ font-family: "IDSemi"; src: url("fonts/InterDisplay-SemiBold.ttf") format("truetype"); font-display: block; }}
+@font-face {{ font-family: "IDSemiIt"; src: url("fonts/InterDisplay-SemiBoldItalic.ttf") format("truetype"); font-display: block; }}
+@font-face {{ font-family: "IDMed"; src: url("fonts/InterDisplay-Medium.ttf") format("truetype"); font-display: block; }}
+:root {{ --y:#FFD60A; --r:#FF3B4E; --g:#3BE07F; --ink:#0B0D10; --w:#F6F5F1; }}
+* {{ box-sizing: border-box; margin: 0; padding: 0; }}
+html, body {{ width: 100%; height: 100%; overflow: hidden; background: #000; font-family: "IDSemi", sans-serif; color: var(--w); }}
+#root {{ position: relative; width: 100%; height: 100%; overflow: hidden; background: #000; }}
+#video-wrap {{ position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; overflow: hidden; }}
+#video-wrap video {{ width: 100%; height: 100%; object-fit: cover; }}
+.ico {{ width: 100%; height: 100%; }}
+
+.behind {{ position: absolute; left: 60px; width: 880px; text-align: center; font-family: "IDBlack"; line-height: 1; letter-spacing: -0.03em; opacity: 0; }}
+#b1, #b2 {{ top: 200px; font-size: {BEHIND_PX}px; color: var(--y); text-shadow: 0 0 60px rgba(255,214,10,.5), 0 10px 40px rgba(0,0,0,.35); }}
+
+/* kinetic lockups — centred at x=500 (safe zone 60–940) */
+.lock {{ position: absolute; left: 60px; top: 1060px; width: 880px; height: 400px; display: flex; flex-direction: column; align-items: center; justify-content: center; }}
+.line {{ display: flex; justify-content: center; white-space: nowrap; line-height: 1.04; }}
+.wd {{ display: inline-block; margin: 0 .12em; opacity: 0; }}
+.sm {{ font-family: "IDSemi"; color: var(--w); text-shadow: 0 4px 18px rgba(0,0,0,.75); }}
+.big {{ font-family: "IDBlack"; color: var(--y); letter-spacing: -.03em; text-shadow: 0 0 34px rgba(255,214,10,.45), 0 4px 18px rgba(0,0,0,.6); }}
+.bigw {{ font-family: "IDBlack"; color: var(--w); letter-spacing: -.03em; text-shadow: 0 0 34px rgba(255,255,255,.3), 0 4px 18px rgba(0,0,0,.6); }}
+.red {{ font-family: "IDBlack"; color: var(--r); letter-spacing: -.03em; text-shadow: 0 0 34px rgba(255,59,78,.45), 0 4px 18px rgba(0,0,0,.6); }}
+.tone {{ font-family: "IDSemiIt"; color: var(--w); text-shadow: 0 4px 18px rgba(0,0,0,.75); }}
+.toney {{ font-family: "IDSemiIt"; color: var(--y); text-shadow: 0 0 26px rgba(255,214,10,.4), 0 4px 18px rgba(0,0,0,.75); }}
+
+/* SPLIT panel: solid to 780px, soft shade into the footage, no seam line */
+#panel {{ position: absolute; left: 0; top: 0; width: 1080px; height: 1010px; overflow: hidden; clip-path: inset(0 0 100% 0);
+  background: linear-gradient(to bottom, #0b0d10 0px, #0b0d10 780px, rgba(11,13,16,.82) 860px, rgba(11,13,16,.4) 940px, rgba(11,13,16,0) 1010px); }}
+#panel .glow {{ position: absolute; left: 0; top: 0; width: 1080px; height: 820px; background: radial-gradient(ellipse at 46% 30%, rgba(255,255,255,.07) 0%, rgba(255,255,255,0) 65%); }}
+#panel .grid {{ position: absolute; inset: 0; opacity: .5;
+  background-image: linear-gradient(rgba(255,255,255,.07) 2px, rgba(255,255,255,0) 2px), linear-gradient(90deg, rgba(255,255,255,.07) 2px, rgba(255,255,255,0) 2px);
+  background-size: 60px 60px; -webkit-mask-image: linear-gradient(to bottom, #000 0px, #000 680px, rgba(0,0,0,0) 900px); mask-image: linear-gradient(to bottom, #000 0px, #000 680px, rgba(0,0,0,0) 900px); }}
+.scene {{ position: absolute; left: 0; top: 0; width: 1080px; height: 820px; opacity: 0; }}
+.chip {{ position: absolute; left: 60px; top: 232px; font-family: "IDBlack"; font-size: 30px; letter-spacing: .12em; padding: 10px 22px; border-radius: 999px; border: 3px solid var(--y); color: var(--y); opacity: 0; }}
+.meta {{ position: absolute; font-family: "IDMed"; font-size: 26px; letter-spacing: .12em; color: rgba(246,245,241,.55); }}
+
+/* P1 inbox (generic, unbranded) */
+.inbox {{ position: absolute; left: 60px; top: 300px; width: 880px; height: 470px; border-radius: 30px; background: #14171c; border: 2px solid rgba(255,255,255,.12); overflow: hidden; opacity: 0; }}
+.inbox .hd {{ height: 70px; display: flex; align-items: center; justify-content: space-between; padding: 0 28px; border-bottom: 2px solid rgba(255,255,255,.08); font-family: "IDBold"; font-size: 32px; }}
+.inbox .hd span {{ display: flex; align-items: center; gap: 10px; color: var(--y); }}
+.inbox .hd span i {{ width: 30px; height: 30px; display: inline-block; }}
+.ir {{ height: 92px; display: flex; align-items: center; gap: 20px; padding: 0 26px; border-bottom: 1px solid rgba(255,255,255,.06); opacity: 0; }}
+.av {{ width: 58px; height: 58px; border-radius: 50%; background: rgba(255,255,255,.14); font-family: "IDBold"; font-size: 28px; line-height: 58px; text-align: center; flex: none; }}
+.im {{ flex: 1; display: flex; flex-direction: column; }}
+.im b {{ font-family: "IDBold"; font-weight: normal; font-size: 28px; }}
+.im i {{ font-style: normal; font-size: 26px; color: rgba(246,245,241,.6); }}
+.it {{ font-size: 22px; color: var(--y); }}
+.ub {{ min-width: 44px; height: 44px; border-radius: 22px; background: var(--y); color: var(--ink); font-family: "IDBlack"; font-size: 26px; line-height: 44px; text-align: center; padding: 0 10px; }}
+#p1-bad {{ position: absolute; left: 60px; top: 232px; display: flex; align-items: center; gap: 14px; padding: 12px 26px; border-radius: 999px; background: var(--r); font-family: "IDBlack"; font-size: 34px; letter-spacing: .04em; box-shadow: 0 0 30px rgba(255,59,78,.5); opacity: 0; }}
+.bub {{ position: absolute; left: 60px; max-width: 760px; padding: 24px 34px; border-radius: 34px 34px 34px 10px; background: #F3F1EA; color: var(--ink); font-family: "IDSemi"; font-size: 48px; opacity: 0; box-shadow: 0 16px 40px rgba(0,0,0,.4); }}
+.bub small {{ display: block; font-family: "IDMed"; font-size: 24px; color: #6b6d72; margin-bottom: 6px; }}
+
+/* P2 stores */
+.node {{ position: absolute; text-align: center; opacity: 0; }}
+.node .tile {{ width: 150px; height: 150px; margin: 0 auto; border-radius: 38px; padding: 30px; color: var(--y); background: rgba(255,255,255,.07); border: 2px solid rgba(255,255,255,.16); }}
+.node .lbl {{ margin-top: 10px; font-family: "IDBold"; font-size: 32px; }}
+#p2-need {{ position: absolute; left: 610px; top: 268px; padding: 10px 22px; border-radius: 999px; background: var(--y); color: var(--ink); font-family: "IDBlack"; font-size: 30px; letter-spacing: .06em; opacity: 0; }}
+.store {{ position: absolute; top: 520px; width: 400px; height: 250px; border-radius: 30px; background: rgba(255,255,255,.07); border: 2px solid rgba(255,255,255,.16); padding: 26px 30px; opacity: 0; }}
+.store .sn {{ display: flex; align-items: center; gap: 16px; font-family: "IDBlack"; font-size: 40px; letter-spacing: .02em; }}
+.store .sn i {{ width: 58px; height: 58px; display: inline-block; color: var(--y); }}
+.store .st {{ margin-top: 30px; display: flex; align-items: center; gap: 14px; font-family: "IDSemi"; font-size: 36px; opacity: 0; }}
+.store .st i {{ width: 48px; height: 48px; display: inline-block; }}
+#p2-path {{ position: absolute; left: 540px; top: 440px; width: 0; height: 0; }}
+#p2-line {{ position: absolute; left: 560px; top: 400px; width: 220px; height: 130px; clip-path: inset(0 100% 0 0); color: var(--g); }}
+
+/* P3 / P4 chips */
+.fc {{ position: absolute; width: 425px; height: 100px; display: flex; align-items: center; gap: 18px; padding: 0 24px; border-radius: 24px; background: rgba(255,255,255,.07); border: 2px solid rgba(255,255,255,.16); opacity: 0; }}
+.fc .fi {{ width: 56px; height: 56px; color: var(--y); flex: none; }}
+.fc .ft {{ font-family: "IDBold"; font-size: 40px; flex: 1; }}
+.fc .fk {{ width: 50px; height: 50px; color: var(--g); opacity: 0; }}
+.fc.redc {{ border-color: rgba(255,59,78,.7); }}
+.fc.redc .fi {{ color: var(--r); }}
+.bar {{ position: absolute; left: 60px; width: 880px; height: 128px; border-radius: 30px; display: flex; align-items: center; justify-content: center; gap: 20px; font-family: "IDBlack"; font-size: 58px; letter-spacing: -.01em; opacity: 0; }}
+.bar i {{ width: 70px; height: 70px; display: inline-block; }}
+#p3-bar {{ top: 600px; border: 5px solid var(--g); background: rgba(59,224,127,.10); color: var(--g); text-shadow: 0 0 26px rgba(59,224,127,.4); }}
+#p4-bar {{ top: 600px; border: 5px solid var(--y); background: rgba(255,214,10,.10); color: var(--y); text-shadow: 0 0 26px rgba(255,214,10,.4); }}
+
+.seam {{ position: absolute; left: 60px; top: 846px; width: 880px; text-align: center; font-family: "IDBlack"; font-size: 76px; line-height: 1; letter-spacing: -.02em; color: var(--w); text-shadow: 0 0 26px rgba(255,255,255,.3), 0 4px 18px rgba(0,0,0,.85); opacity: 0; }}
+.seam.hl {{ color: var(--y); text-shadow: 0 0 30px rgba(255,214,10,.6), 0 4px 18px rgba(0,0,0,.85); }}
+
+/* black card */
+#card {{ position: absolute; inset: 0; background: #070708; opacity: 0; }}
+.cl {{ position: absolute; left: 60px; width: 880px; text-align: center; opacity: 0; }}
+#c-x {{ position: absolute; left: 836px; top: 726px; width: 96px; height: 96px; border-radius: 50%; background: var(--r); color: #fff; padding: 26px; box-shadow: 0 0 34px rgba(255,59,78,.6); opacity: 0; }}
+
+/* above-head accents */
+.top {{ position: absolute; left: 60px; width: 880px; display: flex; justify-content: center; opacity: 0; }}
+#clock {{ top: 232px; }}
+#clock .p {{ display: flex; align-items: center; gap: 18px; padding: 12px 34px 14px 24px; border-radius: 999px; background: rgba(11,13,16,.78); border: 3px solid rgba(255,214,10,.7); font-family: "IDBlack"; font-size: 72px; letter-spacing: -.01em; }}
+#clock .p i {{ width: 62px; height: 62px; display: inline-block; color: var(--y); }}
+#nophone {{ top: 226px; }}
+#nophone .t {{ position: relative; width: 130px; height: 130px; border-radius: 34px; padding: 24px; background: rgba(11,13,16,.78); border: 3px solid rgba(255,255,255,.4); color: var(--w); }}
+#nophone .s {{ position: absolute; left: -12px; top: -12px; width: 154px; height: 154px; color: var(--r); opacity: 0; }}
+
+#brand {{ position: absolute; left: 0; top: 1640px; width: 1080px; text-align: center; font-family: "IDBlack"; font-size: 40px; letter-spacing: .01em; color: var(--w); text-shadow: 0 3px 14px rgba(0,0,0,.75); opacity: .92; }}
+#brand b {{ color: var(--y); font-weight: normal; }}
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="chatwa" data-start="0" data-duration="{DUR}" data-fps="30" data-width="{W}" data-height="{H}">
+
+  <div id="video-wrap">
+    <video id="plate" src="plate.mp4" playsinline data-has-audio="true" data-start="0" data-duration="{DUR}" data-track-index="0"></video>
+  </div>
+
+  <div id="b1" class="behind">SISTEM</div>
+  <div id="b2" class="behind">SISTEM</div>
+
+  <div id="panel"><div class="glow"></div><div class="grid"></div>
+    <div class="scene" id="p1a">
+      <div id="p1-bad">BELASAN CHAT BELUM DIBALAS</div>
+      <div class="inbox" id="p1-box">
+        <div class="hd">Chat <span><i>{ICON["moon"]}</i>21.00</span></div>
+        {"".join(inrow(k, *r) for k, r in enumerate(INBOX))}
+      </div>
+      <div class="meta" style="left:60px;top:790px">CONTOH ILUSTRASI</div>
+    </div>
+    <div class="scene" id="p1b">
+      <div class="chip" id="p1b-c">YANG DITANYA PELANGGAN</div>
+      <div class="bub" id="q1" style="top:320px"><small>Pelanggan · 21.02</small>Kak, harganya berapa?</div>
+      <div class="bub" id="q2" style="top:470px"><small>Pelanggan · 21.05</small>Stoknya masih ada?</div>
+      <div class="bub" id="q3" style="top:620px"><small>Pelanggan · 21.09</small>Besok buka jam berapa?</div>
+    </div>
+    <div class="scene" id="p2">
+      <div class="node" id="p2-cust" style="left:385px;top:228px;width:230px"><div class="tile">{ICON["person"]}</div><div class="lbl">pelanggan</div></div>
+      <div id="p2-need">BUTUH SEKARANG</div>
+      <div class="store" id="p2-s1" style="left:60px"><div class="sn"><i>{ICON["store"]}</i>TOKO KAMU</div><div class="st" id="p2-s1t" style="color:rgba(246,245,241,.7)"><i>{ICON["clock"]}</i>belum dibalas</div></div>
+      <div class="store" id="p2-s2" style="left:540px"><div class="sn"><i>{ICON["store"]}</i>TOKO LAIN</div><div class="st" id="p2-s2t" style="color:var(--g)"><i>{ICON["check"]}</i>dibalas cepat</div></div>
+      <div id="p2-line"><svg viewBox="0 0 220 130" width="220" height="130" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-dasharray="14 14"><path d="M8 8 L196 112"/><path d="M168 112 L200 114 L192 84" stroke-dasharray="none"/></svg></div>
+    </div>
+    <div class="scene" id="p3">
+      <div class="chip" id="p3-c">PERTANYAAN RUTIN</div>
+      <div style="position:absolute;left:60px;top:310px">{chip("p3-f1", "tag", "Harga")}</div>
+      <div style="position:absolute;left:515px;top:310px">{chip("p3-f2", "clock", "Jam buka")}</div>
+      <div style="position:absolute;left:60px;top:440px">{chip("p3-f3", "pin", "Lokasi")}</div>
+      <div style="position:absolute;left:515px;top:440px">{chip("p3-f4", "cal", "Booking")}</div>
+      <div class="bar" id="p3-bar"><i>{ICON["check"]}</i>BISA DIJAWAB OTOMATIS</div>
+    </div>
+    <div class="scene" id="p4">
+      <div class="chip" id="p4-c" style="border-color:var(--r);color:var(--r)">JANGAN SERAHKAN KE AI</div>
+      <div style="position:absolute;left:60px;top:310px">{chip("p4-f1", "warn", "Komplain", "redc")}</div>
+      <div style="position:absolute;left:515px;top:310px">{chip("p4-f2", "swap", "Negosiasi", "redc")}</div>
+      <div style="position:absolute;left:60px;top:440px">{chip("p4-f3", "refund", "Refund", "redc")}</div>
+      <div style="position:absolute;left:515px;top:440px">{chip("p4-f4", "q", "Kasus aneh", "redc")}</div>
+      <div class="bar" id="p4-bar"><i>{ICON["person"]}</i>TETAP MANUSIA</div>
+    </div>
+  </div>
+
+  <div id="clock" class="top"><div class="p"><i>{ICON["moon"]}</i>21.00</div></div>
+  <div id="nophone" class="top"><div class="t">{ICON["phone"]}<span class="s" id="np-s">{ICON["x"]}</span></div></div>
+
+  <div id="captions"></div>
+
+  <div id="card">
+    <div class="cl" id="c1" style="top:640px;font-family:'IDSemi';font-size:60px">tapi bukan berarti</div>
+    <div class="cl" id="c2" style="top:730px;font-family:'IDBlack';font-size:{fit("SEMUA CHAT", "black", 170, 620, -0.03)}px;line-height:1;letter-spacing:-.03em">SEMUA CHAT</div>
+    <div class="cl" id="c3" style="top:930px;font-family:'IDSemiIt';font-size:96px;color:var(--y)">dikasih ke AI.</div>
+    <div id="c-x">{ICON["x"]}</div>
+  </div>
+
+  <div id="brand">Endrich<b>Tech</b></div>
+
+  <script src="vendor/gsap.min.js"></script>
+  <script>
+  (function () {{
+    var D = {json.dumps(DATA, ensure_ascii=False)};
+    var FPS = 30;
+    function q(t) {{ return Math.round(t * FPS) / FPS; }}
+    var tl = gsap.timeline({{ paused: true }});
+    function $(s) {{ return document.querySelector(s); }}
+    function show(sel, t, d, from) {{
+      tl.fromTo(sel, Object.assign({{ opacity: 0 }}, from || {{ y: 26 }}), {{ opacity: 1, y: 0, x: 0, scale: 1, filter: "blur(0px)", duration: d || 0.3, ease: "power3.out" }}, q(t));
+    }}
+    function pop(sel, t, d) {{ tl.fromTo(sel, {{ opacity: 0, scale: 0.6 }}, {{ opacity: 1, scale: 1, duration: d || 0.3, ease: "back.out(2)" }}, q(t)); }}
+    function hide(sel, t, d) {{ tl.to(sel, {{ opacity: 0, duration: d || 0.14, ease: "power2.in" }}, q(t)); }}
+    function cut(sel, t, v) {{ tl.set(sel, {{ opacity: v }}, q(t)); }}
+
+    var host = $("#captions");
+    D.lockups.forEach(function (L, li) {{
+      var box = document.createElement("div"); box.className = "lock"; box.id = "cap" + li;
+      L.lines.forEach(function (ln) {{
+        var row = document.createElement("div"); row.className = "line " + ln.cls; row.style.fontSize = ln.px + "px";
+        ln.words.forEach(function (w) {{
+          var s = document.createElement("span"); s.className = "wd"; s.textContent = w.x; row.appendChild(s);
+          tl.fromTo(s, {{ opacity: 0, y: 26, scale: 0.92, filter: "blur(10px)" }}, {{ opacity: 1, y: 0, scale: 1, filter: "blur(0px)", duration: 0.24, ease: "power3.out" }}, q(Math.max(w.t, L.start)));
+        }});
+        box.appendChild(row);
+      }});
+      host.appendChild(box);
+      tl.to(box, {{ opacity: 0, duration: 0.12, ease: "power2.in" }}, q(L.end - 0.12));
+    }});
+    D.seam.forEach(function (s, i) {{
+      var e = document.createElement("div"); e.className = "seam" + (s.hl ? " hl" : ""); e.id = "seam" + i; e.textContent = s.x; host.appendChild(e);
+      var a = q(s.t), b = q(s.e), d = Math.min(0.14, b - a - 1 / FPS);
+      if (d > 0.03) tl.fromTo(e, {{ opacity: 0, scale: 0.85 }}, {{ opacity: 1, scale: 1, duration: d, ease: "power3.out" }}, a);
+      else tl.set(e, {{ opacity: 1 }}, a);
+      tl.set(e, {{ opacity: 0 }}, b);
+    }});
+
+    // BEHIND: "SISTEM" (subject matte composited over it after render) — no wrapper moves in these windows
+    tl.fromTo("#b1", {{ opacity: 0, scale: 1.25, filter: "blur(22px)" }}, {{ opacity: 1, scale: 1, filter: "blur(0px)", duration: 0.32, ease: "power3.out" }}, q(33.90));
+    tl.to("#b1", {{ scale: 1.04, duration: 1.2, ease: "none" }}, q(34.22));
+    hide("#b1", 35.42, 0.14);
+    tl.fromTo("#b2", {{ opacity: 0, scale: 1.25, filter: "blur(22px)" }}, {{ opacity: 1, scale: 1, filter: "blur(0px)", duration: 0.32, ease: "power3.out" }}, q(56.30));
+    tl.to("#b2", {{ scale: 1.03, duration: 0.7, ease: "none" }}, q(56.62));
+
+    var SHIFT = 520;
+    function splitIn(t) {{
+      tl.to("#video-wrap", {{ y: SHIFT, duration: 0.42, ease: "power3.inOut" }}, q(t));
+      tl.fromTo("#panel", {{ clipPath: "inset(0 0 100% 0)" }}, {{ clipPath: "inset(0 0 0% 0)", duration: 0.42, ease: "power3.inOut" }}, q(t));
+    }}
+    function splitOut(t, d) {{
+      tl.to("#video-wrap", {{ y: 0, duration: d, ease: "power3.inOut" }}, q(t));
+      tl.to("#panel", {{ clipPath: "inset(0 0 100% 0)", duration: d, ease: "power3.inOut" }}, q(t));
+    }}
+    function splitCut(t) {{ tl.set("#video-wrap", {{ y: 0 }}, q(t)); tl.set("#panel", {{ clipPath: "inset(0 0 100% 0)" }}, q(t)); }}
+
+    // hook accent: 21.00
+    show("#clock", 2.72, 0.3, {{ y: -20, scale: 0.9 }});
+    hide("#clock", 5.80, 0.12);
+
+    // SPLIT A: inbox → customer questions (5.95–13.95)
+    splitIn(5.95); cut("#p1a", 5.95, 1);
+    show("#p1-box", 6.10, 0.35, {{ y: 40 }});
+    [0, 1, 2, 3].forEach(function (k) {{ show("#p1-r" + k, 6.34 + k * 0.12, 0.25, {{ x: -40 }}); }});
+    pop("#p1-bad", 7.74, 0.32);
+    tl.to("#p1a", {{ opacity: 0, x: -80, duration: 0.2, ease: "power2.in" }}, q(9.46));
+    tl.fromTo("#p1b", {{ opacity: 0, x: 80 }}, {{ opacity: 1, x: 0, duration: 0.26, ease: "power3.out" }}, q(9.66));
+    show("#p1b-c", 9.70, 0.25, {{ y: 14 }});
+    show("#q1", 10.40, 0.3, {{ x: -50 }}); show("#q2", 11.50, 0.3, {{ x: -50 }}); show("#q3", 13.00, 0.3, {{ x: -50 }});
+    splitOut(13.62, 0.30); cut("#p1b", 13.95, 0);
+
+    // SPLIT B: customer leaves for the faster store (20.5–25.35)
+    splitIn(20.50); cut("#p2", 20.50, 1);
+    pop("#p2-cust", 20.74, 0.32); show("#p2-need", 21.24, 0.25, {{ y: 12 }});
+    show("#p2-s1", 21.92, 0.3, {{ y: 30 }}); show("#p2-s1t", 22.10, 0.25, {{ y: 10 }});
+    show("#p2-s2", 22.62, 0.3, {{ y: 30 }});
+    tl.to("#p2-line", {{ clipPath: "inset(0 0% 0 0)", duration: 0.4, ease: "power2.inOut" }}, q(22.40));
+    show("#p2-s2t", 23.42, 0.25, {{ y: 10 }});
+    tl.to("#p2-s1", {{ opacity: 0.35, duration: 0.3 }}, q(24.48));
+    tl.to("#p2-cust", {{ x: 250, y: 120, scale: 0.8, duration: 0.45, ease: "power3.inOut" }}, q(24.88));
+    hide("#p2-need", 24.80, 0.12); hide("#p2-line", 24.80, 0.12);
+    splitOut(25.06, 0.30); cut("#p2", 25.36, 0);
+
+    // 24 jam: no phone
+    show("#nophone", 31.86, 0.28, {{ y: -16, scale: 0.9 }});
+    pop("#np-s", 32.12, 0.28);
+    hide("#nophone", 33.24, 0.12);
+
+    // SPLIT C: routine questions → automatic (35.7–41.34)
+    splitIn(35.70); cut("#p3", 35.70, 1);
+    show("#p3-c", 36.34, 0.25, {{ y: 14 }});
+    [[1, 37.08], [2, 37.80], [3, 38.28], [4, 39.24]].forEach(function (c) {{ pop("#p3-f" + c[0], c[1], 0.3); }});
+    show("#p3-bar", 40.20, 0.3, {{ y: 24 }});
+    [1, 2, 3, 4].forEach(function (k) {{ pop("#p3-f" + k + " .fk", 40.52 + (k - 1) * 0.06, 0.25); }});
+    // black card hard-cuts in over the split
+    cut("#card", 41.34, 1); splitCut(41.36); cut("#p3", 41.36, 0); cut("#brand", 41.34, 0);
+    show("#c1", 41.36, 0.25, {{ y: 16 }});
+    tl.fromTo("#c2", {{ opacity: 0, scale: 1.25 }}, {{ opacity: 1, scale: 1, duration: 0.3, ease: "power3.out" }}, q(42.28));
+    show("#c3", 42.88, 0.3, {{ y: 16, filter: "blur(8px)" }});
+    pop("#c-x", 43.40, 0.3);
+    cut("#card", 43.98, 0); cut("#brand", 43.98, 0.92);
+
+    // SPLIT D: human cases (44.0–49.22)
+    splitIn(44.00); cut("#p4", 44.00, 1);
+    show("#p4-c", 44.10, 0.25, {{ y: 14 }});
+    [[1, 44.44], [2, 45.12], [3, 45.98], [4, 47.12]].forEach(function (c) {{ pop("#p4-f" + c[0], c[1], 0.3); }});
+    show("#p4-bar", 47.90, 0.32, {{ y: 24, scale: 0.96 }});
+    splitOut(48.92, 0.30); cut("#p4", 49.22, 0);
+
+    window.__timelines["chatwa"] = tl;
+  }})();
+  </script>
+</div>
+</body>
+</html>
+'''
+open("public/index.html", "w", encoding="utf-8").write(HTML)
+print("lockups:", len(LOCKUPS), "seam:", len(SEAM), "behind px:", BEHIND_PX)
+for L in LOCKUPS:
+    print(f'{L["start"]:5.2f}', " / ".join(f'{" ".join(w["x"] for w in ln["words"])} [{ln["cls"]} {ln["px"]}]' for ln in L["lines"]))

@@ -1,0 +1,97 @@
+{
+  "text": "Tutup, telepon balik ke nomor lamanya. Bikin kata rahasia keluarga. Dan jangan pernah kasih o-te-pe.",
+  "spoken": "Tutup, telepon balik ke nomor lamanya. Bikin kata rahasia keluarga. Dan jangan pernah kasih o-te-pe.",
+  "duration": 6.64,
+  "words": [
+    {
+      "word": "Tutup,",
+      "spoken": "Tutup,",
+      "start": 0.0,
+      "end": 0.64
+    },
+    {
+      "word": "telepon",
+      "spoken": "telepon",
+      "start": 0.76,
+      "end": 0.96
+    },
+    {
+      "word": "balik",
+      "spoken": "balik",
+      "start": 1.04,
+      "end": 1.28
+    },
+    {
+      "word": "ke",
+      "spoken": "ke",
+      "start": 1.36,
+      "end": 1.4
+    },
+    {
+      "word": "nomor",
+      "spoken": "nomor",
+      "start": 1.44,
+      "end": 1.68
+    },
+    {
+      "word": "lamanya.",
+      "spoken": "lamanya.",
+      "start": 1.76,
+      "end": 2.32
+    },
+    {
+      "word": "Bikin",
+      "spoken": "Bikin",
+      "start": 2.48,
+      "end": 2.8
+    },
+    {
+      "word": "kata",
+      "spoken": "kata",
+      "start": 2.84,
+      "end": 3.04
+    },
+    {
+      "word": "rahasia",
+      "spoken": "rahasia",
+      "start": 3.08,
+      "end": 3.44
+    },
+    {
+      "word": "keluarga.",
+      "spoken": "keluarga.",
+      "start": 3.52,
+      "end": 4.32
+    },
+    {
+      "word": "Dan",
+      "spoken": "Dan",
+      "start": 4.4,
+      "end": 4.48
+    },
+    {
+      "word": "jangan",
+      "spoken": "jangan",
+      "start": 4.64,
+      "end": 4.96
+    },
+    {
+      "word": "pernah",
+      "spoken": "pernah",
+      "start": 5.04,
+      "end": 5.28
+    },
+    {
+      "word": "kasih",
+      "spoken": "kasih",
+      "start": 5.36,
+      "end": 5.68
+    },
+    {
+      "word": "o-te-pe.",
+      "spoken": "o-te-pe.",
+      "start": 5.76,
+      "end": 6.64
+    }
+  ]
+}

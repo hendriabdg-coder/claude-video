@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8" />
+<style>
+@font-face { font-family: "IDBlack"; src: url("fonts/InterDisplay-Black.ttf") format("truetype"); font-display: block; }
+@font-face { font-family: "IDBold"; src: url("fonts/InterDisplay-Bold.ttf") format("truetype"); font-display: block; }
+@font-face { font-family: "IDSemi"; src: url("fonts/InterDisplay-SemiBold.ttf") format("truetype"); font-display: block; }
+@font-face { font-family: "IDItal"; src: url("fonts/InterDisplay-SemiBoldItalic.ttf") format("truetype"); font-display: block; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 100%; height: 100%; overflow: hidden; }
+#root { position: relative; width: 1080px; height: 1920px; overflow: hidden; }
+.ico { width: 100%; height: 100%; display: block; }
+
+:root { --bg:#F1ECE2; --ink:#1E1B18; --org:#D9622B; --mute:rgba(30,27,24,.5); --card:#FBF8F2; }
+html, body, #root { background: var(--bg); color: var(--ink); font-family: "IDSemi", sans-serif; }
+.blob { position: absolute; border-radius: 50%; background: rgba(30,27,24,.045); }
+.head { position: absolute; left: 0; width: 1080px; text-align: center; font-family: "IDBlack"; text-transform: uppercase; line-height: 1.02; opacity: 0; }
+.head em { font-style: normal; color: var(--org); }
+.sub { position: absolute; left: 0; width: 1080px; text-align: center; font-family: "IDBlack"; font-size: 40px; letter-spacing: .02em; color: var(--mute); opacity: 0; }
+.app { position: absolute; top: 760px; width: 260px; height: 300px; border-radius: 34px; background: var(--card); box-shadow: 0 18px 40px rgba(30,27,24,.12); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 18px; opacity: 0; }
+.app .ai { width: 110px; height: 110px; color: var(--ink); }
+.app b { font-family: "IDBold"; font-weight: normal; font-size: 30px; color: var(--mute); }
+.tag { position: absolute; top: 1080px; width: 260px; text-align: center; opacity: 0; }
+.tag span { display: inline-block; font-family: "IDBlack"; font-size: 40px; color: #fff; background: var(--org); padding: 8px 22px; border-radius: 999px; }
+#small { position: absolute; left: 0; width: 1080px; top: 1220px; text-align: center; font-family: "IDItal"; font-size: 64px; color: var(--org); opacity: 0; }
+#cal { position: absolute; left: 190px; top: 640px; width: 700px; padding: 36px; border-radius: 30px; background: var(--card); box-shadow: 0 18px 40px rgba(30,27,24,.12); opacity: 0; }
+#cal .ch { font-family: "IDBlack"; font-size: 28px; letter-spacing: .14em; color: var(--mute); }
+#cal .g { display: grid; grid-template-columns: repeat(6, 1fr); gap: 18px; margin-top: 26px; }
+#cal .m { height: 84px; border-radius: 16px; background: rgba(30,27,24,.06); display: flex; align-items: center; justify-content: center; font-family: "IDBold"; font-size: 24px; color: var(--mute); position: relative; }
+#cal .m i { position: absolute; right: 10px; top: 10px; width: 18px; height: 18px; border-radius: 50%; background: var(--org); transform: scale(0); }
+#usd { position: absolute; left: 0; width: 1080px; top: 1120px; text-align: center; font-family: "IDBlack"; font-size: 150px; color: var(--ink); opacity: 0; }
+#idr { position: absolute; left: 0; width: 1080px; top: 1300px; text-align: center; opacity: 0; }
+#idr span { display: inline-block; font-family: "IDBlack"; font-size: 96px; color: var(--org); }
+#kurs { position: absolute; left: 0; width: 1080px; top: 1430px; text-align: center; opacity: 0; }
+#kurs span { display: inline-block; font-family: "IDBlack"; font-size: 24px; letter-spacing: .1em; color: #fff; background: var(--ink); padding: 8px 18px; border-radius: 999px; }
+#end { position: absolute; inset: 0; background: var(--bg); opacity: 0; }
+#end .n { position: absolute; left: 0; width: 1080px; top: 760px; text-align: center; font-family: "IDBlack"; font-size: 46px; letter-spacing: .3em; color: var(--mute); }
+#end .t { position: absolute; left: 0; width: 1080px; top: 830px; text-align: center; font-family: "IDBlack"; font-size: 200px; color: var(--ink); }
+#end .t em { font-style: normal; color: var(--org); }
+#end .d { position: absolute; left: 0; width: 1080px; top: 1080px; text-align: center; font-family: "IDBold"; font-size: 40px; color: var(--mute); }
+#brand { position: absolute; left: 0; top: 1640px; width: 1080px; text-align: center; font-family: "IDBlack"; font-size: 36px; color: var(--ink); }
+#brand b { color: var(--org); font-weight: normal; }
+
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="gaya-paper" data-start="0" data-duration="15.0" data-fps="30" data-width="1080" data-height="1920">
+  <audio id="vo" src="vo.mp3" data-start="0" data-duration="15.0" data-track-index="0"></audio>
+
+  <div class="blob" style="left:-220px;top:1380px;width:620px;height:620px"></div>
+  <div class="blob" style="left:760px;top:-120px;width:480px;height:480px"></div>
+  <div class="head" id="h1" style="top:430px;font-size:96px">LANGGANAN<br><em>TOOLS AI</em></div>
+  <div class="app" id="ap0" style="left:90px"><span class="ai"><svg class="ico" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"><rect x="14" y="20" width="72" height="60" rx="12"/><path d="M30 42h40M30 56h24"/><circle cx="72" cy="58" r="6"/></svg></span><b>Tools AI #1</b></div><div class="tag" id="tg0" style="left:90px"><span>$20/bln</span></div><div class="app" id="ap1" style="left:400px"><span class="ai"><svg class="ico" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"><rect x="14" y="20" width="72" height="60" rx="12"/><path d="M30 42h40M30 56h24"/><circle cx="72" cy="58" r="6"/></svg></span><b>Tools AI #2</b></div><div class="tag" id="tg1" style="left:400px"><span>$20/bln</span></div><div class="app" id="ap2" style="left:710px"><span class="ai"><svg class="ico" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"><rect x="14" y="20" width="72" height="60" rx="12"/><path d="M30 42h40M30 56h24"/><circle cx="72" cy="58" r="6"/></svg></span><b>Tools AI #3</b></div><div class="tag" id="tg2" style="left:710px"><span>$20/bln</span></div>
+  <div id="small">kecil, kan?</div>
+  <div class="head" id="h2" style="top:400px;font-size:110px">TAPI <em>SETAHUN</em></div>
+  <div id="cal"><div class="ch">12 BULAN &middot; 3 TOOLS</div><div class="g"><div class="m">JAN<i id="mo0"></i></div><div class="m">FEB<i id="mo1"></i></div><div class="m">MAR<i id="mo2"></i></div><div class="m">APR<i id="mo3"></i></div><div class="m">MEI<i id="mo4"></i></div><div class="m">JUN<i id="mo5"></i></div><div class="m">JUL<i id="mo6"></i></div><div class="m">AGU<i id="mo7"></i></div><div class="m">SEP<i id="mo8"></i></div><div class="m">OKT<i id="mo9"></i></div><div class="m">NOV<i id="mo10"></i></div><div class="m">DES<i id="mo11"></i></div></div></div>
+  <div id="usd">$0</div>
+  <div id="idr"><span>&asymp; Rp11,7 JUTA</span></div>
+  <div id="kurs"><span>ASUMSI KURS Rp16.300 / USD</span></div>
+  <div id="end"><div class="n">GAYA 02</div><div class="t">PA<em>PER</em></div><div class="d">flat infografis &middot; data, uang, simulasi</div></div>
+  <div id="brand">Endrich<b>Tech</b></div>
+
+  <script src="vendor/gsap.min.js"></script>
+  <script>
+  (function () {
+
+    var FPS = 30;
+    function q(t) { return Math.round(t * FPS) / FPS; }
+    var tl = gsap.timeline({ paused: true });
+    var NI = { immediateRender: false };
+    function cut(sel, t, v) { tl.set(sel, { opacity: v }, q(t)); }
+    function rise(sel, t, d, from) { tl.fromTo(sel, Object.assign({ opacity: 0, y: 40 }, from || {}), { opacity: 1, y: 0, x: 0, scale: 1, rotation: 0, duration: d || 0.4, ease: "power3.out" }, q(t)); }
+    function pop(sel, t, d) { tl.fromTo(sel, { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1, duration: d || 0.32, ease: "back.out(2.2)" }, q(t)); }
+    function hide(sel, t, d) { tl.to(sel, { opacity: 0, duration: d || 0.15, ease: "power2.in" }, q(t)); }
+    function count(sel, t, d, a, b, fmt) { var o = { v: a }, el = document.querySelector(sel); tl.to(o, { v: b, duration: d, ease: "power2.out", onUpdate: function () { el.textContent = fmt(o.v); } }, q(t)); }
+    function type(sel, t, d, msg) { var o = { n: 0 }, el = document.querySelector(sel); tl.to(o, { n: msg.length, duration: d, ease: "none", onUpdate: function () { el.textContent = msg.slice(0, Math.round(o.n)); } }, q(t)); }
+
+
+    var T = {0: 1.067, 1: 1.32, 2: 1.72, 3: 1.96, 4: 2.28, 5: 3.0, 6: 3.56, 7: 3.72, 8: 3.88, 9: 4.2, 10: 5.0, 11: 5.6, 12: 6.44, 13: 6.8, 14: 7.72, 15: 8.12, 16: 8.28, 17: 8.6, 18: 8.76, 19: 9.08, 20: 10.0, 21: 10.44, 22: 10.6, 23: 10.84, 24: 11.16};
+    tl.fromTo(".blob", { scale: 0.9 }, { scale: 1.08, duration: 15, ease: "none" }, 0);
+    rise("#h1", 0.25, 0.5, { y: 30 });
+    [0, 1, 2].forEach(function (k) { rise("#ap" + k, T[2] + 0.18 * k, 0.45, { y: 120, rotation: -6 }); });
+    [0, 1, 2].forEach(function (k) { pop("#tg" + k, T[6] + 0.12 * k, 0.32); });
+    tl.to("#ap0, #ap1, #ap2, #tg0, #tg1, #tg2", { scale: 0.78, y: -40, duration: 0.5, ease: "power2.inOut" }, q(T[10]));
+    rise("#small", T[11], 0.35, { y: 20 });
+    hide("#h1, #ap0, #ap1, #ap2, #tg0, #tg1, #tg2, #small", T[12] - 0.15, 0.2);
+    rise("#h2", T[12], 0.4, { y: 30 });
+    rise("#cal", T[13] - 0.05, 0.45, { y: 80 });
+    for (var k = 0; k < 12; k++) tl.to("#mo" + k, { scale: 1, duration: 0.18, ease: "back.out(3)" }, q(T[13] + 0.08 * k));
+    rise("#usd", T[14], 0.3, { y: 20 });
+    count("#usd", T[15], T[19] - T[15] + 0.3, 0, 720, function (v) { return "$" + Math.round(v); });
+    tl.to("#usd", { scale: 1.08, duration: 0.15, yoyo: true, repeat: 1 }, q(T[19] + 0.35));
+    rise("#idr", T[20], 0.4, { y: 30 });
+    tl.to("#idr span", { scale: 1.1, duration: 0.18, yoyo: true, repeat: 1 }, q(T[23]));
+    rise("#kurs", T[24], 0.3, { y: 10 });
+    tl.fromTo("#end", { opacity: 0 }, { opacity: 1, duration: 0.4 }, q(12.4));
+    tl.fromTo("#end .t", { y: 60, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "back.out(1.6)" }, q(12.6));
+
+    window.__timelines = window.__timelines || {};
+    window.__timelines["gaya-paper"] = tl;
+  })();
+  </script>
+</div>
+</body>
+</html>

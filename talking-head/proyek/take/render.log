@@ -1,0 +1,16 @@
+[INFO] [Compiler] Embedded local font file: fonts/seguibl.ttf (311 KB → data URI)
+[INFO] [Compiler] Embedded local font file: fonts/segoeuib.ttf (925 KB → data URI)
+[INFO] [Compiler] Embedded local font file: fonts/georgiai.ttf (204 KB → data URI)
+[hyperframes] browserGpuMode probe → hardware (WebGL renderer vendor="Google Inc. (Intel)" renderer="ANGLE (Intel, Intel(R) UHD Graphics (0x00009A78) Direct3D11 vs_5_0 ps_5_0, D3D11)")
+[BrowserManager] Browser launched (HeadlessChrome/152.0.7977.30, screenshot, gl=--use-gl=angle --use-angle=d3d11, headlessShell=true, platform=win32)
+[initSession:screenshot] page.goto start (1ms)
+[HyperFrames] render runtime fps {"canonicalFps":30,"source":"render-options","rawFpsSource":"render-options","rawFps":30}
+[initSession:screenshot] page.goto complete (1373ms)
+[initSession:screenshot] GSAP proxy flush complete (1449ms)
+[initSession:screenshot] pollHfReady complete (1476ms)
+[initSession:screenshot] pollSubCompositionTimelines complete (ready) (1524ms)
+[initSession:screenshot] applyVideoMetadataHints complete (1549ms)
+[initSession:screenshot] media + fonts + tailwind ready (1573ms)
+[initSession:screenshot] captureBeyondViewport downgraded: page content fits the capture viewport (1636ms)
+[engine] fast capture: falling back to screenshot — render-mode compatibility hint forced screenshot capture (e.g. raw requestAnimationFrame composition).
+[initSession:screenshot] static-frame dedup: disabled (before-capture hook / video injection active) (1637ms)

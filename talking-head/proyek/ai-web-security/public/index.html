@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8" />
+<!-- EndrichTech — Keamanan website buatan AI. Motion overlay di atas plate.mp4 (video mentah, audio asli).
+     Timing = word timestamps dari words.json (faster-whisper). Event map: ../event-map.md -->
+<style>
+@font-face { font-family: "GeorgiaHL"; src: url("fonts/georgiab.ttf") format("truetype"); font-display: block; }
+@font-face { font-family: "Inter"; src: url("fonts/InterDisplay-Medium.ttf") format("truetype"); font-weight: 500; font-display: block; }
+@font-face { font-family: "Inter"; src: url("fonts/InterDisplay-SemiBold.ttf") format("truetype"); font-weight: 600; font-display: block; }
+@font-face { font-family: "Inter"; src: url("fonts/InterDisplay-Bold.ttf") format("truetype"); font-weight: 700; font-display: block; }
+@font-face { font-family: "Inter"; src: url("fonts/InterDisplay-ExtraBold.ttf") format("truetype"); font-weight: 800; font-display: block; }
+:root { --w:#F5F7FA; --blue:#3B82F6; --cy:#67E8F9; --navy:rgba(17,24,39,.78); --amb:#FBBF24; --mut:#C7D0DC; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 100%; height: 100%; overflow: hidden; background: #000; font-family: "Inter", sans-serif; color: var(--w); }
+#root { position: relative; width: 1080px; height: 1920px; overflow: hidden; background: #000; }
+#video-wrap { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; }
+#video-wrap video { width: 100%; height: 100%; object-fit: cover; }
+.abs { position: absolute; opacity: 0; }
+svg { display: block; }
+
+/* local shade behind chest headlines (no big black panel) */
+.shade { position: absolute; left: 0; width: 1080px; height: 520px; opacity: 0;
+  background: radial-gradient(ellipse 62% 50% at 50% 50%, rgba(17,24,39,.55) 0%, rgba(17,24,39,.28) 55%, rgba(17,24,39,0) 100%); }
+/* bottom shade for cards / checklist */
+#shadeB { position: absolute; left: 0; top: 1020px; width: 1080px; height: 900px; opacity: 0;
+  background: linear-gradient(to bottom, rgba(17,24,39,0) 0%, rgba(17,24,39,.42) 38%, rgba(17,24,39,.55) 100%); }
+
+.hl { position: absolute; left: 0; width: 1080px; text-align: center; font-family: "GeorgiaHL"; font-size: 100px; line-height: 1.05;
+  letter-spacing: -.01em; color: var(--w); text-shadow: 0 4px 22px rgba(0,0,0,.55); white-space: nowrap; }
+.hl .w { display: inline-block; opacity: 0; }
+.cy { color: var(--cy); }
+.am { color: var(--amb); }
+.lab { position: absolute; left: 0; width: 1080px; text-align: center; font-weight: 700; font-size: 46px; letter-spacing: .14em;
+  text-shadow: 0 2px 12px rgba(0,0,0,.6); white-space: nowrap; }
+.sweep { position: absolute; height: 6px; border-radius: 3px; background: var(--cy); transform-origin: 0 50%; transform: scaleX(0);
+  box-shadow: 0 0 14px rgba(103,232,249,.6); }
+
+/* ---- mini website window (beat 2) ---- */
+#win { left: 600px; top: 1330px; width: 310px; height: 200px; border-radius: 18px; border: 3px solid rgba(245,247,250,.85);
+  background: var(--navy); overflow: visible; }
+#win .bar { height: 34px; border-bottom: 2px solid rgba(245,247,250,.3); display: flex; gap: 9px; align-items: center; padding-left: 14px; }
+#win .bar i { width: 11px; height: 11px; border-radius: 50%; background: rgba(245,247,250,.6); display: block; }
+#win .ln { position: absolute; left: 22px; height: 14px; border-radius: 7px; background: rgba(245,247,250,.55); }
+#win .btn { position: absolute; left: 22px; top: 140px; width: 110px; height: 34px; border-radius: 10px; background: var(--blue); }
+#winMark { position: absolute; right: -22px; top: -22px; width: 54px; height: 54px; border-radius: 50%; background: var(--amb); color: #111827;
+  font-weight: 800; font-size: 38px; line-height: 54px; text-align: center; opacity: 0; box-shadow: 0 4px 16px rgba(0,0,0,.4); }
+.ilu { position: absolute; font-weight: 600; font-size: 24px; letter-spacing: .14em; color: rgba(245,247,250,.72); text-shadow: 0 1px 8px rgba(0,0,0,.6); }
+
+/* ---- risk cards (beats 3-5) ---- */
+#chips { left: 380px; top: 1120px; display: flex; gap: 14px; }
+.chip { width: 74px; height: 50px; border-radius: 25px; border: 3px solid rgba(245,247,250,.55); background: rgba(17,24,39,.6);
+  font-weight: 700; font-size: 26px; line-height: 44px; text-align: center; color: rgba(245,247,250,.75); position: relative; }
+.chip .fill { position: absolute; inset: -3px; border-radius: 25px; background: var(--cy); opacity: 0; }
+.chip span { position: relative; }
+.card { left: 380px; top: 1188px; width: 550px; border-radius: 26px; background: var(--navy); border: 2px solid rgba(103,232,249,.35);
+  padding: 22px 24px 22px 24px; box-shadow: 0 10px 30px rgba(0,0,0,.35); }
+.card .top { display: flex; align-items: center; gap: 20px; }
+.ic { width: 88px; height: 88px; flex: 0 0 88px; border-radius: 22px; border: 3px solid var(--cy); color: var(--cy); padding: 14px; }
+.ttl { font-weight: 800; font-size: 46px; letter-spacing: .01em; line-height: 1; white-space: nowrap; }
+.sub { font-weight: 500; font-size: 34px; color: var(--mut); margin-top: 10px; line-height: 1.1; opacity: 0; }
+.code { margin-top: 18px; border-radius: 12px; background: rgba(0,0,0,.35); padding: 12px 16px; font-weight: 600; font-size: 29px; position: relative; opacity: 0; white-space: nowrap; }
+.code .hb { position: absolute; left: 0; top: 0; bottom: 0; width: 100%; border-radius: 12px; background: rgba(251,191,36,.22);
+  border-left: 6px solid var(--amb); transform-origin: 0 50%; transform: scaleX(0); }
+.code span { position: relative; }
+.k { color: var(--cy); } .s { color: var(--amb); }
+.field { margin-top: 18px; height: 62px; border-radius: 12px; border: 3px solid rgba(245,247,250,.6); position: relative; opacity: 0;
+  font-weight: 500; font-size: 28px; color: rgba(245,247,250,.7); line-height: 56px; padding-left: 18px; }
+.field .warn { position: absolute; right: 12px; top: 8px; width: 42px; height: 40px; opacity: 0; }
+
+/* ---- summary stack (beat 6) ---- */
+#sum { left: 410px; top: 1150px; width: 520px; }
+#sum .r { display: flex; align-items: center; gap: 16px; height: 66px; opacity: 0; }
+#sum .n { width: 52px; height: 44px; border-radius: 22px; background: rgba(17,24,39,.75); border: 2px solid var(--amb); color: var(--amb);
+  font-weight: 700; font-size: 24px; text-align: center; line-height: 40px; }
+#sum .t { font-weight: 800; font-size: 44px; text-shadow: 0 2px 12px rgba(0,0,0,.7); }
+#sumPill { margin-top: 14px; display: inline-block; padding: 10px 22px; border-radius: 14px; background: var(--amb); color: #111827;
+  font-weight: 800; font-size: 38px; letter-spacing: .06em; opacity: 0; }
+
+/* ---- CTA (beat 7) ---- */
+.cta { left: 0; width: 1080px; top: 1236px; display: flex; justify-content: center; }
+.cta .p { display: flex; align-items: center; gap: 18px; padding: 16px 30px 16px 22px; border-radius: 22px; background: var(--navy);
+  border: 2px solid rgba(103,232,249,.45); }
+.cta .bm { width: 58px; height: 58px; color: var(--cy); }
+.cta .a { font-weight: 800; font-size: 46px; letter-spacing: .06em; }
+.cta .b { font-weight: 600; font-size: 34px; color: var(--mut); margin-left: 4px; }
+
+/* ---- checklist (beat 8) ---- */
+#chk { left: 240px; top: 1330px; width: 660px; padding: 18px 26px 16px; border-radius: 24px; background: rgba(17,24,39,.66); }
+#chk .h { font-weight: 700; font-size: 30px; letter-spacing: .16em; color: var(--cy); margin-bottom: 6px; }
+#chk .r { position: relative; display: flex; align-items: center; gap: 20px; height: 58px; opacity: 0; }
+#chk .r .bg { position: absolute; left: -12px; right: -12px; top: 4px; bottom: 4px; border-radius: 12px; background: rgba(103,232,249,.2);
+  transform-origin: 0 50%; transform: scaleX(0); }
+#chk .bx { position: relative; width: 38px; height: 38px; border-radius: 9px; border: 3px solid rgba(245,247,250,.7); }
+#chk .bx .dot { position: absolute; inset: 7px; border-radius: 4px; background: var(--cy); opacity: 0; }
+#chk .t { position: relative; font-weight: 700; font-size: 40px; color: rgba(245,247,250,.8); }
+
+/* ---- AI bubble (beat 9) ---- */
+#bub { left: 690px; top: 430px; width: 240px; }
+#bub .l { font-weight: 600; font-size: 26px; letter-spacing: .1em; color: var(--cy); text-shadow: 0 2px 10px rgba(0,0,0,.6); margin-bottom: 8px; }
+#bub .b { position: relative; display: inline-block; padding: 14px 26px; border-radius: 26px 26px 26px 6px; background: var(--w); color: #111827;
+  font-family: "GeorgiaHL"; font-size: 54px; line-height: 1; }
+#bub .ilu { left: 0; top: 150px; }
+
+#brand { left: 0; width: 1080px; top: 1505px; text-align: center; font-weight: 700; font-size: 34px; letter-spacing: .04em; text-shadow: 0 2px 10px rgba(0,0,0,.6); }
+#brand b { color: var(--cy); font-weight: 700; }
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="aiwebsec" data-start="0" data-duration="29.733" data-fps="30" data-width="1080" data-height="1920">
+  <div id="video-wrap">
+    <video id="plate" src="plate.mp4" playsinline data-has-audio="true" data-start="0" data-duration="29.733" data-track-index="0"></video>
+  </div>
+
+  <div class="shade" id="shadeA" style="top:760px"></div>
+  <div id="shadeB"></div>
+
+  <!-- beat 1 -->
+  <div class="hl" id="h1" style="top:900px"><span class="w" id="h1a">BIKIN</span> <span class="w" id="h1b">WEBSITE</span></div>
+  <div class="lab abs cy" id="h1lab" style="top:1022px">PAKAI AI</div>
+  <div class="sweep" id="h1sw" style="left:430px; top:1088px; width:220px"></div>
+
+  <!-- beat 2 -->
+  <div class="hl" id="h2" style="top:900px"><span class="w" id="h2a">RAPI</span> <span class="w am" id="h2b">&ne;</span> <span class="w" id="h2c">AMAN</span></div>
+  <div class="abs" id="win">
+    <div class="bar"><i></i><i></i><i></i></div>
+    <div class="ln" style="top:58px; width:210px"></div>
+    <div class="ln" style="top:86px; width:250px; opacity:.6"></div>
+    <div class="ln" style="top:112px; width:170px; opacity:.6"></div>
+    <div class="btn"></div>
+    <div id="winMark">!</div>
+    <div class="ilu" style="left:0; top:212px">ILUSTRASI</div>
+  </div>
+
+  <!-- beats 3-5 -->
+  <div class="abs" id="chips">
+    <div class="chip" id="cp1"><div class="fill"></div><span>01</span></div>
+    <div class="chip" id="cp2"><div class="fill"></div><span>02</span></div>
+    <div class="chip" id="cp3"><div class="fill"></div><span>03</span></div>
+  </div>
+  <div class="card abs" id="card1">
+    <div class="top">
+      <div class="ic"><svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"><circle cx="32" cy="50" r="18"/><path d="M50 50h40M76 50v16M88 50v12"/></svg></div>
+      <div><div class="ttl">KUNCI API</div><div class="sub" id="sub1">Bocor di kode publik</div></div>
+    </div>
+    <div class="code" id="code1"><div class="hb" id="hb1"></div><span><span class="k">API_KEY</span> = <span class="s">"DEMO_ONLY"</span></span></div>
+    <div class="ilu" style="right:24px; bottom:-34px">ILUSTRASI</div>
+  </div>
+  <div class="card abs" id="card2">
+    <div class="top">
+      <div class="ic"><svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"><circle cx="36" cy="32" r="14"/><path d="M10 84c0-16 11-27 26-27 6 0 11 2 15 5"/><path d="M72 50l18 7v12c0 11-8 18-18 22-10-4-18-11-18-22V57z"/></svg></div>
+      <div><div class="ttl">HAK AKSES</div><div class="sub" id="sub2">Admin tidak dibatasi</div></div>
+    </div>
+  </div>
+  <div class="card abs" id="card3">
+    <div class="top">
+      <div class="ic"><svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="30" width="84" height="40" rx="9"/><path d="M26 42v16"/></svg></div>
+      <div><div class="ttl">VALIDASI INPUT</div><div class="sub" id="sub3">Input tidak diperiksa</div></div>
+    </div>
+    <div class="field" id="field3">ketik nama kamu...
+      <svg class="warn" id="warn3" viewBox="0 0 100 92"><path d="M50 6 96 86H4z" fill="#FBBF24"/><path d="M50 34v24" stroke="#111827" stroke-width="10" stroke-linecap="round"/><circle cx="50" cy="72" r="6" fill="#111827"/></svg>
+    </div>
+    <div class="ilu" style="right:24px; bottom:-34px">ILUSTRASI</div>
+  </div>
+
+  <!-- beat 6 -->
+  <div class="abs" id="sum">
+    <div class="r" id="sr1"><div class="n">01</div><div class="t">KUNCI API</div></div>
+    <div class="r" id="sr2"><div class="n">02</div><div class="t">HAK AKSES</div></div>
+    <div class="r" id="sr3"><div class="n">03</div><div class="t">VALIDASI INPUT</div></div>
+    <div id="sumPill">= CELAH KEAMANAN</div>
+  </div>
+
+  <!-- beat 7 -->
+  <div class="abs cta" id="save"><div class="p">
+    <svg class="bm" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="8" stroke-linejoin="round"><path d="M26 10h48v80L50 72 26 90z"/></svg>
+    <span class="a">SIMPAN DULU</span></div></div>
+  <div class="abs cta" id="follow"><div class="p" style="padding-left:30px">
+    <span class="a cy">FOLLOW</span><span class="b">untuk tips keamanan AI</span></div></div>
+
+  <!-- beat 8 -->
+  <div class="abs" id="chk">
+    <div class="h">CEK SEBELUM RILIS</div>
+    <div class="r" id="cr1"><div class="bg" id="cb1"></div><div class="bx"><div class="dot" id="cd1"></div></div><div class="t" id="ct1">KUNCI API</div></div>
+    <div class="r" id="cr2"><div class="bg" id="cb2"></div><div class="bx"><div class="dot" id="cd2"></div></div><div class="t" id="ct2">HAK AKSES</div></div>
+    <div class="r" id="cr3"><div class="bg" id="cb3"></div><div class="bx"><div class="dot" id="cd3"></div></div><div class="t" id="ct3">VALIDASI INPUT</div></div>
+  </div>
+
+  <!-- beat 9 -->
+  <div class="lab abs" id="h9lab" style="top:905px">JANGAN CUMA</div>
+  <div class="hl" id="h9" style="top:965px"><span class="w" id="h9a">PERCAYA</span></div>
+  <div class="sweep" id="h9sw" style="left:338px; top:1082px; width:404px; background:var(--amb); box-shadow:none"></div>
+  <div class="abs" id="bub"><div class="l">JAWABAN AI</div><div class="b">Beres!</div><div class="ilu">ILUSTRASI</div></div>
+
+  <!-- beat 10 -->
+  <div class="hl" id="h10" style="top:880px"><span class="w" id="h10a">TETAP</span> <span class="w cy" id="h10b">DIUJI</span></div>
+  <div class="hl" id="h10l2" style="top:988px"><span class="w" id="h10c">SENDIRI</span></div>
+  <div class="abs" id="brand">Endrich<b>Tech</b></div>
+
+  <script src="vendor/gsap.min.js"></script>
+  <script>
+  (function () {
+    var FPS = 30, END = 29.733;
+    function q(t) { return Math.round(t * FPS) / FPS; }
+    var tl = gsap.timeline({ paused: true });
+    // enter 0.25 s / exit 0.18 s, translate ~30 px, ease-out (design system)
+    function inn(sel, t, from, d) {
+      tl.fromTo(sel, Object.assign({ opacity: 0, y: 30 }, from || {}), { opacity: 1, y: 0, x: 0, scale: 1, duration: d || 0.25, ease: "power3.out" }, q(t));
+    }
+    function out(sel, t, d) { tl.to(sel, { opacity: 0, duration: d || 0.18, ease: "power2.in" }, q(t)); }
+    function word(sel, t) { tl.fromTo(sel, { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.24, ease: "power3.out" }, q(t)); }
+    function sweep(sel, t, d) { tl.fromTo(sel, { scaleX: 0, opacity: 1 }, { scaleX: 1, duration: d || 0.3, ease: "power3.out" }, q(t)); }
+    function shade(sel, a, b) { tl.fromTo(sel, { opacity: 0 }, { opacity: 1, duration: 0.25 }, q(a)); tl.to(sel, { opacity: 0, duration: 0.2 }, q(b)); }
+
+    // 1 — hook (frame 0 moves)
+    shade("#shadeA", 0.0, 2.62);
+    word("#h1a", 0.0); word("#h1b", 0.36);
+    inn("#h1lab", 0.70, { y: 20 });
+    sweep("#h1sw", 1.60, 0.28);
+    out("#h1", 2.62); out("#h1lab", 2.62); out("#h1sw", 2.62);
+
+    // 2 — RAPI ≠ AMAN
+    shade("#shadeA", 2.80, 6.20);
+    word("#h2a", 2.80); tl.fromTo("#h2b", { opacity: 0, scale: 0.4 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(2)" }, q(3.44)); word("#h2c", 3.76);
+    inn("#win", 4.94, { y: 36 });
+    tl.fromTo("#winMark", { opacity: 0, scale: 0.4 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(2.2)" }, q(5.70));
+    out("#h2", 6.20); out("#win", 6.20);
+
+    // 3-5 — three risks, one focus at a time
+    shade("#shadeB", 7.20, 14.04);
+    inn("#chips", 7.30, { y: 20 });
+    tl.to("#cp1 .fill", { opacity: 1, duration: 0.2 }, q(7.30)); tl.to("#cp1 span", { color: "#111827", duration: 0.2 }, q(7.30));
+    inn("#card1", 7.30);
+    inn("#sub1", 8.46, { y: 14 });
+    inn("#code1", 9.02, { y: 14 });
+    sweep("#hb1", 9.22, 0.35);
+    // risk 2 at "akses"
+    tl.to("#card1", { opacity: 0, x: -40, duration: 0.18, ease: "power2.in" }, q(10.42));
+    tl.to("#cp1 .fill", { opacity: 0.35, duration: 0.2 }, q(10.60)); tl.to("#cp1 span", { color: "#F5F7FA", duration: 0.2 }, q(10.60));
+    tl.to("#cp2 .fill", { opacity: 1, duration: 0.2 }, q(10.60)); tl.to("#cp2 span", { color: "#111827", duration: 0.2 }, q(10.60));
+    inn("#card2", 10.60, { x: 50, y: 0 });
+    inn("#sub2", 11.36, { y: 14 });
+    // risk 3 at "input"
+    tl.to("#card2", { opacity: 0, x: -40, duration: 0.18, ease: "power2.in" }, q(12.38));
+    tl.to("#cp2 .fill", { opacity: 0.35, duration: 0.2 }, q(12.56)); tl.to("#cp2 span", { color: "#F5F7FA", duration: 0.2 }, q(12.56));
+    tl.to("#cp3 .fill", { opacity: 1, duration: 0.2 }, q(12.56)); tl.to("#cp3 span", { color: "#111827", duration: 0.2 }, q(12.56));
+    inn("#card3", 12.56, { x: 50, y: 0 });
+    inn("#field3", 12.86, { y: 14 });
+    inn("#sub3", 13.24, { y: 14 });
+    tl.fromTo("#warn3", { opacity: 0, scale: 0.4 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(2.2)" }, q(13.50));
+    out("#card3", 14.04); out("#chips", 14.04);
+
+    // 6 — summary stack: "itu celah keamanan"
+    shade("#shadeB", 14.10, 15.36);
+    inn("#sr1", 14.10, { x: -30, y: 0 }); inn("#sr2", 14.18, { x: -30, y: 0 }); inn("#sr3", 14.26, { x: -30, y: 0 });
+    tl.fromTo("#sumPill", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.28, ease: "back.out(2)" }, q(14.50));
+    tl.set("#sum", { opacity: 1 }, q(14.10));
+    out("#sum", 15.36);
+
+    // 7 — save / follow
+    inn("#save", 15.80, { y: 24 });
+    tl.fromTo("#save .bm", { scale: 0.7 }, { scale: 1, duration: 0.35, ease: "back.out(2.5)" }, q(15.80));
+    out("#save", 17.22);
+    inn("#follow", 17.40, { y: 24 });
+    out("#follow", 19.62);
+
+    // 8 — checklist before release
+    shade("#shadeB", 20.66, 25.40);
+    inn("#chk", 20.66, { y: 30 });
+    [1, 2, 3].forEach(function (k, i) { inn("#cr" + k, 21.84 + i * 0.08, { x: -24, y: 0 }); });
+    [[1, 22.98], [2, 23.80], [3, 24.58]].forEach(function (p, i, arr) {
+      var k = p[0], t = p[1];
+      sweep("#cb" + k, t, 0.28);
+      tl.to("#cd" + k, { opacity: 1, duration: 0.15 }, q(t));
+      tl.to("#ct" + k, { color: "#F5F7FA", duration: 0.15 }, q(t));
+      if (i < arr.length - 1) tl.to("#cb" + k, { opacity: 0.35, duration: 0.2 }, q(arr[i + 1][1]));
+    });
+    out("#chk", 25.40);
+
+    // 9 — don't just trust "beres"
+    shade("#shadeA", 25.50, 27.80);
+    inn("#h9lab", 25.50, { y: 20 });
+    word("#h9a", 26.06);
+    sweep("#h9sw", 26.30, 0.3);
+    inn("#bub", 26.48, { y: 20, scale: 0.9 });
+    tl.fromTo("#bub .b", { scale: 0.85 }, { scale: 1, duration: 0.3, ease: "back.out(2.4)" }, q(27.06));
+    out("#h9lab", 27.80); out("#h9", 27.80); out("#h9sw", 27.80); out("#bub", 27.80);
+
+    // 10 — close
+    tl.fromTo("#shadeA", { opacity: 0 }, { opacity: 1, duration: 0.25 }, q(28.0));
+    word("#h10a", 28.30); word("#h10b", 28.66); word("#h10c", 29.06);
+    inn("#brand", 28.30, { y: 12 });
+    tl.set({}, {}, END);
+
+    window.__timelines = window.__timelines || {};
+    window.__timelines["aiwebsec"] = tl;
+  })();
+  </script>
+</div>
+</body>
+</html>

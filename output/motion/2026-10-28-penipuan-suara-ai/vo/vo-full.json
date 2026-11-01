@@ -1,0 +1,593 @@
+{
+ "duration": 36.496,
+ "words": [
+  {
+   "word": "Delapan",
+   "spoken": "Delapan",
+   "start": 0.06,
+   "end": 0.38,
+   "scene": 1
+  },
+  {
+   "word": "puluh",
+   "spoken": "puluh",
+   "start": 0.46,
+   "end": 0.62,
+   "scene": 1
+  },
+  {
+   "word": "juta",
+   "spoken": "juta",
+   "start": 0.7,
+   "end": 0.94,
+   "scene": 1
+  },
+  {
+   "word": "hilang...",
+   "spoken": "hilang...",
+   "start": 1.02,
+   "end": 1.82,
+   "scene": 1
+  },
+  {
+   "word": "cuma",
+   "spoken": "cuma",
+   "start": 2.06,
+   "end": 2.22,
+   "scene": 1
+  },
+  {
+   "word": "karena",
+   "spoken": "karena",
+   "start": 2.3,
+   "end": 2.46,
+   "scene": 1
+  },
+  {
+   "word": "satu",
+   "spoken": "satu",
+   "start": 2.54,
+   "end": 2.7,
+   "scene": 1
+  },
+  {
+   "word": "telepon",
+   "spoken": "telepon",
+   "start": 2.78,
+   "end": 3.1,
+   "scene": 1
+  },
+  {
+   "word": "dari",
+   "spoken": "dari",
+   "start": 3.18,
+   "end": 3.34,
+   "scene": 1
+  },
+  {
+   "word": "'teman'.",
+   "spoken": "'teman'.",
+   "start": 3.5,
+   "end": 4.06,
+   "scene": 1
+  },
+  {
+   "word": "Kejadiannya",
+   "spoken": "Kejadiannya",
+   "start": 4.54,
+   "end": 5.1,
+   "scene": 1
+  },
+  {
+   "word": "dilaporkan",
+   "spoken": "dilaporkan",
+   "start": 5.153,
+   "end": 5.58,
+   "scene": 1
+  },
+  {
+   "word": "di",
+   "spoken": "di",
+   "start": 5.62,
+   "end": 5.66,
+   "scene": 1
+  },
+  {
+   "word": "Malang.",
+   "spoken": "Malang.",
+   "start": 5.74,
+   "end": 6.3,
+   "scene": 1
+  },
+  {
+   "word": "Suara",
+   "spoken": "Suara",
+   "start": 6.55,
+   "end": 6.79,
+   "scene": 2
+  },
+  {
+   "word": "temannya",
+   "spoken": "temannya",
+   "start": 6.87,
+   "end": 7.35,
+   "scene": 2
+  },
+  {
+   "word": "ternyata",
+   "spoken": "ternyata",
+   "start": 7.47,
+   "end": 7.91,
+   "scene": 2
+  },
+  {
+   "word": "ditiru",
+   "spoken": "ditiru",
+   "start": 8.03,
+   "end": 8.39,
+   "scene": 2
+  },
+  {
+   "word": "AI.",
+   "spoken": "Ei-ai.",
+   "start": 8.47,
+   "end": 9.11,
+   "scene": 2
+  },
+  {
+   "word": "OJK",
+   "spoken": "OJK",
+   "start": 9.15,
+   "end": 9.59,
+   "scene": 2
+  },
+  {
+   "word": "nyatat",
+   "spoken": "nyatat",
+   "start": 9.63,
+   "end": 9.99,
+   "scene": 2
+  },
+  {
+   "word": "seribu",
+   "spoken": "seribu",
+   "start": 10.11,
+   "end": 10.39,
+   "scene": 2
+  },
+  {
+   "word": "tiga",
+   "spoken": "tiga",
+   "start": 10.47,
+   "end": 10.63,
+   "scene": 2
+  },
+  {
+   "word": "ratusan",
+   "spoken": "ratusan",
+   "start": 10.67,
+   "end": 11.03,
+   "scene": 2
+  },
+  {
+   "word": "laporan",
+   "spoken": "laporan",
+   "start": 11.11,
+   "end": 11.43,
+   "scene": 2
+  },
+  {
+   "word": "penipuan",
+   "spoken": "penipuan",
+   "start": 11.51,
+   "end": 11.99,
+   "scene": 2
+  },
+  {
+   "word": "terindikasi",
+   "spoken": "terindikasi",
+   "start": 12.07,
+   "end": 12.79,
+   "scene": 2
+  },
+  {
+   "word": "AI.",
+   "spoken": "Ei-ai.",
+   "start": 12.87,
+   "end": 13.51,
+   "scene": 2
+  },
+  {
+   "word": "Riset",
+   "spoken": "Riset",
+   "start": 13.55,
+   "end": 13.83,
+   "scene": 2
+  },
+  {
+   "word": "McAfee",
+   "spoken": "McAfee",
+   "start": 13.91,
+   "end": 14.23,
+   "scene": 2
+  },
+  {
+   "word": "bilang,",
+   "spoken": "bilang,",
+   "start": 14.35,
+   "end": 14.79,
+   "scene": 2
+  },
+  {
+   "word": "beberapa",
+   "spoken": "beberapa",
+   "start": 14.83,
+   "end": 15.19,
+   "scene": 2
+  },
+  {
+   "word": "detik",
+   "spoken": "detik",
+   "start": 15.27,
+   "end": 15.43,
+   "scene": 2
+  },
+  {
+   "word": "rekaman",
+   "spoken": "rekaman",
+   "start": 15.51,
+   "end": 15.91,
+   "scene": 2
+  },
+  {
+   "word": "bisa",
+   "spoken": "bisa",
+   "start": 15.95,
+   "end": 16.15,
+   "scene": 2
+  },
+  {
+   "word": "cukup",
+   "spoken": "cukup",
+   "start": 16.23,
+   "end": 16.55,
+   "scene": 2
+  },
+  {
+   "word": "buat",
+   "spoken": "buat",
+   "start": 16.63,
+   "end": 16.71,
+   "scene": 2
+  },
+  {
+   "word": "ditiru.",
+   "spoken": "ditiru.",
+   "start": 16.83,
+   "end": 17.43,
+   "scene": 2
+  },
+  {
+   "word": "Tutup,",
+   "spoken": "Tutup,",
+   "start": 17.68,
+   "end": 18.32,
+   "scene": 3
+  },
+  {
+   "word": "telepon",
+   "spoken": "telepon",
+   "start": 18.44,
+   "end": 18.64,
+   "scene": 3
+  },
+  {
+   "word": "balik",
+   "spoken": "balik",
+   "start": 18.72,
+   "end": 18.96,
+   "scene": 3
+  },
+  {
+   "word": "ke",
+   "spoken": "ke",
+   "start": 19.04,
+   "end": 19.08,
+   "scene": 3
+  },
+  {
+   "word": "nomor",
+   "spoken": "nomor",
+   "start": 19.12,
+   "end": 19.36,
+   "scene": 3
+  },
+  {
+   "word": "lamanya.",
+   "spoken": "lamanya.",
+   "start": 19.44,
+   "end": 20.0,
+   "scene": 3
+  },
+  {
+   "word": "Bikin",
+   "spoken": "Bikin",
+   "start": 20.16,
+   "end": 20.48,
+   "scene": 3
+  },
+  {
+   "word": "kata",
+   "spoken": "kata",
+   "start": 20.52,
+   "end": 20.72,
+   "scene": 3
+  },
+  {
+   "word": "rahasia",
+   "spoken": "rahasia",
+   "start": 20.76,
+   "end": 21.12,
+   "scene": 3
+  },
+  {
+   "word": "keluarga.",
+   "spoken": "keluarga.",
+   "start": 21.2,
+   "end": 22.0,
+   "scene": 3
+  },
+  {
+   "word": "Dan",
+   "spoken": "Dan",
+   "start": 22.08,
+   "end": 22.16,
+   "scene": 3
+  },
+  {
+   "word": "jangan",
+   "spoken": "jangan",
+   "start": 22.32,
+   "end": 22.64,
+   "scene": 3
+  },
+  {
+   "word": "pernah",
+   "spoken": "pernah",
+   "start": 22.72,
+   "end": 22.96,
+   "scene": 3
+  },
+  {
+   "word": "kasih",
+   "spoken": "kasih",
+   "start": 23.04,
+   "end": 23.36,
+   "scene": 3
+  },
+  {
+   "word": "o-te-pe.",
+   "spoken": "o-te-pe.",
+   "start": 23.44,
+   "end": 24.32,
+   "scene": 3
+  },
+  {
+   "word": "Minggu",
+   "spoken": "Minggu",
+   "start": 24.63,
+   "end": 24.806,
+   "scene": 4
+  },
+  {
+   "word": "depan",
+   "spoken": "depan",
+   "start": 24.886,
+   "end": 25.126,
+   "scene": 4
+  },
+  {
+   "word": "kita",
+   "spoken": "kita",
+   "start": 25.206,
+   "end": 25.366,
+   "scene": 4
+  },
+  {
+   "word": "bakal",
+   "spoken": "bakal",
+   "start": 25.446,
+   "end": 25.686,
+   "scene": 4
+  },
+  {
+   "word": "bahas",
+   "spoken": "bahas",
+   "start": 25.766,
+   "end": 25.926,
+   "scene": 4
+  },
+  {
+   "word": "part",
+   "spoken": "part",
+   "start": 26.006,
+   "end": 26.246,
+   "scene": 4
+  },
+  {
+   "word": "tiga",
+   "spoken": "tiga",
+   "start": 26.286,
+   "end": 26.566,
+   "scene": 4
+  },
+  {
+   "word": "dari",
+   "spoken": "dari",
+   "start": 26.646,
+   "end": 26.806,
+   "scene": 4
+  },
+  {
+   "word": "Internet",
+   "spoken": "Internet",
+   "start": 27.006,
+   "end": 27.206,
+   "scene": 4
+  },
+  {
+   "word": "Jebol,",
+   "spoken": "Jebol,",
+   "start": 27.246,
+   "end": 27.846,
+   "scene": 4
+  },
+  {
+   "word": "dan",
+   "spoken": "dan",
+   "start": 27.926,
+   "end": 28.166,
+   "scene": 4
+  },
+  {
+   "word": "cara",
+   "spoken": "cara",
+   "start": 28.246,
+   "end": 28.486,
+   "scene": 4
+  },
+  {
+   "word": "cek",
+   "spoken": "cek",
+   "start": 28.646,
+   "end": 28.806,
+   "scene": 4
+  },
+  {
+   "word": "video",
+   "spoken": "video",
+   "start": 28.886,
+   "end": 29.126,
+   "scene": 4
+  },
+  {
+   "word": "call",
+   "spoken": "call",
+   "start": 29.206,
+   "end": 29.286,
+   "scene": 4
+  },
+  {
+   "word": "palsu.",
+   "spoken": "palsu.",
+   "start": 29.366,
+   "end": 29.926,
+   "scene": 4
+  },
+  {
+   "word": "Follow",
+   "spoken": "Follow",
+   "start": 30.086,
+   "end": 30.326,
+   "scene": 4
+  },
+  {
+   "word": "dulu,",
+   "spoken": "dulu,",
+   "start": 30.366,
+   "end": 30.806,
+   "scene": 4
+  },
+  {
+   "word": "biar",
+   "spoken": "biar",
+   "start": 30.846,
+   "end": 30.966,
+   "scene": 4
+  },
+  {
+   "word": "nggak",
+   "spoken": "nggak",
+   "start": 31.006,
+   "end": 31.099,
+   "scene": 4
+  },
+  {
+   "word": "ketinggalan.",
+   "spoken": "ketinggalan.",
+   "start": 31.126,
+   "end": 32.006,
+   "scene": 4
+  },
+  {
+   "word": "Dan...",
+   "spoken": "Dan...",
+   "start": 32.256,
+   "end": 33.056,
+   "scene": 5
+  },
+  {
+   "word": "kamu",
+   "spoken": "kamu",
+   "start": 33.096,
+   "end": 33.216,
+   "scene": 5
+  },
+  {
+   "word": "lebih",
+   "spoken": "lebih",
+   "start": 33.296,
+   "end": 33.536,
+   "scene": 5
+  },
+  {
+   "word": "takut",
+   "spoken": "takut",
+   "start": 33.589,
+   "end": 33.776,
+   "scene": 5
+  },
+  {
+   "word": "suara",
+   "spoken": "suara",
+   "start": 33.856,
+   "end": 34.096,
+   "scene": 5
+  },
+  {
+   "word": "palsu,",
+   "spoken": "palsu,",
+   "start": 34.176,
+   "end": 34.816,
+   "scene": 5
+  },
+  {
+   "word": "atau",
+   "spoken": "atau",
+   "start": 34.976,
+   "end": 35.296,
+   "scene": 5
+  },
+  {
+   "word": "video",
+   "spoken": "video",
+   "start": 35.376,
+   "end": 35.616,
+   "scene": 5
+  },
+  {
+   "word": "call",
+   "spoken": "call",
+   "start": 35.696,
+   "end": 35.776,
+   "scene": 5
+  },
+  {
+   "word": "palsu?",
+   "spoken": "palsu?",
+   "start": 35.856,
+   "end": 36.576,
+   "scene": 5
+  }
+ ]
+}

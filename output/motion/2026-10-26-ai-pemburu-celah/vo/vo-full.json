@@ -1,0 +1,586 @@
+{
+ "duration": 35.753,
+ "words": [
+  {
+   "word": "AI",
+   "spoken": "Ei-ai",
+   "start": 0.06,
+   "end": 0.393,
+   "scene": 1
+  },
+  {
+   "word": "ini",
+   "spoken": "ini",
+   "start": 0.513,
+   "end": 0.633,
+   "scene": 1
+  },
+  {
+   "word": "dibikin",
+   "spoken": "dibikin",
+   "start": 0.713,
+   "end": 1.113,
+   "scene": 1
+  },
+  {
+   "word": "buat",
+   "spoken": "buat",
+   "start": 1.193,
+   "end": 1.353,
+   "scene": 1
+  },
+  {
+   "word": "jaga",
+   "spoken": "jaga",
+   "start": 1.393,
+   "end": 1.593,
+   "scene": 1
+  },
+  {
+   "word": "internet.",
+   "spoken": "internet.",
+   "start": 1.873,
+   "end": 2.353,
+   "scene": 1
+  },
+  {
+   "word": "Masalahnya...",
+   "spoken": "Masalahnya...",
+   "start": 2.553,
+   "end": 3.753,
+   "scene": 1
+  },
+  {
+   "word": "dia",
+   "spoken": "dia",
+   "start": 3.833,
+   "end": 3.913,
+   "scene": 1
+  },
+  {
+   "word": "juga",
+   "spoken": "juga",
+   "start": 3.993,
+   "end": 4.153,
+   "scene": 1
+  },
+  {
+   "word": "jago",
+   "spoken": "jago",
+   "start": 4.233,
+   "end": 4.473,
+   "scene": 1
+  },
+  {
+   "word": "nyerang.",
+   "spoken": "nyerang.",
+   "start": 4.513,
+   "end": 5.193,
+   "scene": 1
+  },
+  {
+   "word": "Namanya",
+   "spoken": "Namanya",
+   "start": 5.443,
+   "end": 6.003,
+   "scene": 2
+  },
+  {
+   "word": "Gemini",
+   "spoken": "Gemini",
+   "start": 6.083,
+   "end": 6.403,
+   "scene": 2
+  },
+  {
+   "word": "empat",
+   "spoken": "empat",
+   "start": 6.483,
+   "end": 6.643,
+   "scene": 2
+  },
+  {
+   "word": "Argon.",
+   "spoken": "Argon.",
+   "start": 6.723,
+   "end": 7.363,
+   "scene": 2
+  },
+  {
+   "word": "Kata",
+   "spoken": "Kata",
+   "start": 7.523,
+   "end": 7.683,
+   "scene": 2
+  },
+  {
+   "word": "Google,",
+   "spoken": "Google,",
+   "start": 7.763,
+   "end": 8.403,
+   "scene": 2
+  },
+  {
+   "word": "dia",
+   "spoken": "dia",
+   "start": 8.483,
+   "end": 8.563,
+   "scene": 2
+  },
+  {
+   "word": "bisa",
+   "spoken": "bisa",
+   "start": 8.616,
+   "end": 8.723,
+   "scene": 2
+  },
+  {
+   "word": "nemuin",
+   "spoken": "nemuin",
+   "start": 8.763,
+   "end": 9.043,
+   "scene": 2
+  },
+  {
+   "word": "celah,",
+   "spoken": "celah,",
+   "start": 9.123,
+   "end": 9.683,
+   "scene": 2
+  },
+  {
+   "word": "ngecek,",
+   "spoken": "ngecek,",
+   "start": 9.803,
+   "end": 10.323,
+   "scene": 2
+  },
+  {
+   "word": "terus",
+   "spoken": "terus",
+   "start": 10.363,
+   "end": 10.483,
+   "scene": 2
+  },
+  {
+   "word": "nambal",
+   "spoken": "nambal",
+   "start": 10.563,
+   "end": 10.803,
+   "scene": 2
+  },
+  {
+   "word": "sendiri.",
+   "spoken": "sendiri.",
+   "start": 10.923,
+   "end": 11.603,
+   "scene": 2
+  },
+  {
+   "word": "Sejak",
+   "spoken": "Sejak",
+   "start": 11.683,
+   "end": 11.843,
+   "scene": 2
+  },
+  {
+   "word": "Oktober,",
+   "spoken": "Oktober,",
+   "start": 11.923,
+   "end": 12.563,
+   "scene": 2
+  },
+  {
+   "word": "udah",
+   "spoken": "udah",
+   "start": 12.603,
+   "end": 12.723,
+   "scene": 2
+  },
+  {
+   "word": "dibuka",
+   "spoken": "dibuka",
+   "start": 12.763,
+   "end": 13.123,
+   "scene": 2
+  },
+  {
+   "word": "buat",
+   "spoken": "buat",
+   "start": 13.243,
+   "end": 13.363,
+   "scene": 2
+  },
+  {
+   "word": "pelanggan",
+   "spoken": "pelanggan",
+   "start": 13.403,
+   "end": 13.683,
+   "scene": 2
+  },
+  {
+   "word": "berbayar.",
+   "spoken": "berbayar.",
+   "start": 13.763,
+   "end": 14.483,
+   "scene": 2
+  },
+  {
+   "word": "Tapi...",
+   "spoken": "Tapi...",
+   "start": 14.793,
+   "end": 15.753,
+   "scene": 3
+  },
+  {
+   "word": "di",
+   "spoken": "di",
+   "start": 15.833,
+   "end": 15.913,
+   "scene": 3
+  },
+  {
+   "word": "tes",
+   "spoken": "tes",
+   "start": 15.993,
+   "end": 16.073,
+   "scene": 3
+  },
+  {
+   "word": "Google",
+   "spoken": "Google",
+   "start": 16.153,
+   "end": 16.393,
+   "scene": 3
+  },
+  {
+   "word": "sendiri,",
+   "spoken": "sendiri,",
+   "start": 16.513,
+   "end": 17.113,
+   "scene": 3
+  },
+  {
+   "word": "kemampuan",
+   "spoken": "kemampuan",
+   "start": 17.166,
+   "end": 17.513,
+   "scene": 3
+  },
+  {
+   "word": "nyerangnya",
+   "spoken": "nyerangnya",
+   "start": 17.553,
+   "end": 17.913,
+   "scene": 3
+  },
+  {
+   "word": "ikut",
+   "spoken": "ikut",
+   "start": 18.033,
+   "end": 18.153,
+   "scene": 3
+  },
+  {
+   "word": "naik.",
+   "spoken": "naik.",
+   "start": 18.233,
+   "end": 18.953,
+   "scene": 3
+  },
+  {
+   "word": "Dan",
+   "spoken": "Dan",
+   "start": 19.033,
+   "end": 19.113,
+   "scene": 3
+  },
+  {
+   "word": "di",
+   "spoken": "di",
+   "start": 19.153,
+   "end": 19.193,
+   "scene": 3
+  },
+  {
+   "word": "uji",
+   "spoken": "uji",
+   "start": 19.233,
+   "end": 19.433,
+   "scene": 3
+  },
+  {
+   "word": "Anthropic,",
+   "spoken": "Anthropic,",
+   "start": 19.513,
+   "end": 20.233,
+   "scene": 3
+  },
+  {
+   "word": "satu",
+   "spoken": "satu",
+   "start": 20.313,
+   "end": 20.473,
+   "scene": 3
+  },
+  {
+   "word": "model",
+   "spoken": "model",
+   "start": 20.553,
+   "end": 20.793,
+   "scene": 3
+  },
+  {
+   "word": "AI",
+   "spoken": "Ei-ai",
+   "start": 20.873,
+   "end": 21.193,
+   "scene": 3
+  },
+  {
+   "word": "terbuka",
+   "spoken": "terbuka",
+   "start": 21.273,
+   "end": 21.673,
+   "scene": 3
+  },
+  {
+   "word": "juga",
+   "spoken": "juga",
+   "start": 21.833,
+   "end": 21.993,
+   "scene": 3
+  },
+  {
+   "word": "berhasil",
+   "spoken": "berhasil",
+   "start": 22.113,
+   "end": 22.553,
+   "scene": 3
+  },
+  {
+   "word": "bikin",
+   "spoken": "bikin",
+   "start": 22.593,
+   "end": 22.793,
+   "scene": 3
+  },
+  {
+   "word": "alat",
+   "spoken": "alat",
+   "start": 22.833,
+   "end": 22.953,
+   "scene": 3
+  },
+  {
+   "word": "pembobol.",
+   "spoken": "pembobol.",
+   "start": 23.033,
+   "end": 23.833,
+   "scene": 3
+  },
+  {
+   "word": "Dan",
+   "spoken": "Dan",
+   "start": 24.143,
+   "end": 24.223,
+   "scene": 4
+  },
+  {
+   "word": "Rabu",
+   "spoken": "Rabu",
+   "start": 24.303,
+   "end": 24.503,
+   "scene": 4
+  },
+  {
+   "word": "nanti,",
+   "spoken": "nanti,",
+   "start": 24.543,
+   "end": 25.063,
+   "scene": 4
+  },
+  {
+   "word": "aku",
+   "spoken": "aku",
+   "start": 25.103,
+   "end": 25.263,
+   "scene": 4
+  },
+  {
+   "word": "juga",
+   "spoken": "juga",
+   "start": 25.343,
+   "end": 25.503,
+   "scene": 4
+  },
+  {
+   "word": "bakal",
+   "spoken": "bakal",
+   "start": 25.583,
+   "end": 25.743,
+   "scene": 4
+  },
+  {
+   "word": "bahas",
+   "spoken": "bahas",
+   "start": 25.823,
+   "end": 26.063,
+   "scene": 4
+  },
+  {
+   "word": "penipuan",
+   "spoken": "penipuan",
+   "start": 26.143,
+   "end": 26.543,
+   "scene": 4
+  },
+  {
+   "word": "pakai",
+   "spoken": "pakai",
+   "start": 26.623,
+   "end": 26.863,
+   "scene": 4
+  },
+  {
+   "word": "suara",
+   "spoken": "suara",
+   "start": 26.943,
+   "end": 27.183,
+   "scene": 4
+  },
+  {
+   "word": "AI.",
+   "spoken": "Ei-ai.",
+   "start": 27.263,
+   "end": 27.983,
+   "scene": 4
+  },
+  {
+   "word": "Follow,",
+   "spoken": "Follow,",
+   "start": 28.143,
+   "end": 28.543,
+   "scene": 4
+  },
+  {
+   "word": "biar",
+   "spoken": "biar",
+   "start": 28.583,
+   "end": 28.703,
+   "scene": 4
+  },
+  {
+   "word": "nggak",
+   "spoken": "nggak",
+   "start": 28.743,
+   "end": 28.863,
+   "scene": 4
+  },
+  {
+   "word": "ketinggalan",
+   "spoken": "ketinggalan",
+   "start": 28.943,
+   "end": 29.343,
+   "scene": 4
+  },
+  {
+   "word": "part",
+   "spoken": "part",
+   "start": 29.423,
+   "end": 29.503,
+   "scene": 4
+  },
+  {
+   "word": "tiganya.",
+   "spoken": "tiganya.",
+   "start": 29.583,
+   "end": 30.303,
+   "scene": 4
+  },
+  {
+   "word": "Dan",
+   "spoken": "Dan",
+   "start": 30.553,
+   "end": 30.713,
+   "scene": 5
+  },
+  {
+   "word": "menurut",
+   "spoken": "menurut",
+   "start": 30.793,
+   "end": 31.033,
+   "scene": 5
+  },
+  {
+   "word": "kamu",
+   "spoken": "kamu",
+   "start": 31.113,
+   "end": 31.273,
+   "scene": 5
+  },
+  {
+   "word": "sendiri...",
+   "spoken": "sendiri...",
+   "start": 31.393,
+   "end": 32.313,
+   "scene": 5
+  },
+  {
+   "word": "AI",
+   "spoken": "Ei-ai",
+   "start": 32.353,
+   "end": 32.633,
+   "scene": 5
+  },
+  {
+   "word": "ini",
+   "spoken": "ini",
+   "start": 32.753,
+   "end": 32.873,
+   "scene": 5
+  },
+  {
+   "word": "lebih",
+   "spoken": "lebih",
+   "start": 32.913,
+   "end": 33.113,
+   "scene": 5
+  },
+  {
+   "word": "condong",
+   "spoken": "condong",
+   "start": 33.233,
+   "end": 33.433,
+   "scene": 5
+  },
+  {
+   "word": "ke",
+   "spoken": "ke",
+   "start": 33.473,
+   "end": 33.513,
+   "scene": 5
+  },
+  {
+   "word": "penjagaan,",
+   "spoken": "penjagaan,",
+   "start": 33.593,
+   "end": 34.553,
+   "scene": 5
+  },
+  {
+   "word": "atau",
+   "spoken": "atau",
+   "start": 34.673,
+   "end": 34.833,
+   "scene": 5
+  },
+  {
+   "word": "pembobolan?",
+   "spoken": "pembobolan?",
+   "start": 34.873,
+   "end": 35.833,
+   "scene": 5
+  }
+ ]
+}

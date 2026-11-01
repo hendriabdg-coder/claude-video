@@ -1,0 +1,136 @@
+{
+ "file": "hybrid\\ref1.mp4",
+ "jenis": "hybrid",
+ "durasi": 63.67,
+ "langkah_sheet_dtk": 1.06,
+ "potongan": [
+  14.67,
+  14.88,
+  28.96,
+  37.0,
+  37.12,
+  49.67
+ ],
+ "jumlah_shot": 7,
+ "rata_panjang_shot_dtk": 9.1,
+ "transkrip": {
+  "bahasa": "id",
+  "segmen": [
+   {
+    "mulai": 0.0,
+    "selesai": 4.06,
+    "teks": "Ini satu kerjaan yang penting, tapi selalu ditunda-tunda sama desainer."
+   },
+   {
+    "mulai": 4.8,
+    "selesai": 5.68,
+    "teks": "Bikin portfolio."
+   },
+   {
+    "mulai": 6.1,
+    "selesai": 7.8,
+    "teks": "Tapi gue udah nemu nih solusinya."
+   },
+   {
+    "mulai": 8.28,
+    "selesai": 9.22,
+    "teks": "Pake emergent."
+   },
+   {
+    "mulai": 9.56,
+    "selesai": 11.76,
+    "teks": "Jadi gue bisa minta bikinin website portfolio,"
+   },
+   {
+    "mulai": 12.14,
+    "selesai": 14.48,
+    "teks": "gak perlu ribet nyari template atau loading sendiri."
+   },
+   {
+    "mulai": 14.74,
+    "selesai": 17.34,
+    "teks": "Simpel banget sih caranya, tinggal masukin aja promnya."
+   },
+   {
+    "mulai": 17.54,
+    "selesai": 19.66,
+    "teks": "Disini gue minta chat GPT ya buat bikinin."
+   },
+   {
+    "mulai": 20.12,
+    "selesai": 24.84,
+    "teks": "Yang gue suka, AI-nya emergent ini bakal nanyain beberapa details lagi tentang websitenya."
+   },
+   {
+    "mulai": 25.04,
+    "selesai": 28.6,
+    "teks": "Nah ini yang bikin beda dari AI builder lain yang udah pernah gue coba."
+   },
+   {
+    "mulai": 28.82,
+    "selesai": 29.74,
+    "teks": "Kayak gini hasilnya."
+   },
+   {
+    "mulai": 30.82,
+    "selesai": 32.22,
+    "teks": "Cakep banget sih menurut gue."
+   },
+   {
+    "mulai": 32.4,
+    "selesai": 33.68,
+    "teks": "Dan smooth nih animasinya."
+   },
+   {
+    "mulai": 34.08,
+    "selesai": 36.88,
+    "teks": "Kalo masih ada adjustment, kalian tinggal request aja nih."
+   },
+   {
+    "mulai": 37.0,
+    "selesai": 39.98,
+    "teks": "Keren ya, gak cuma bisa buat Celtic page kayak portfolio website."
+   },
+   {
+    "mulai": 40.3,
+    "selesai": 42.28,
+    "teks": "Emergent ini udah pake Fable 5."
+   },
+   {
+    "mulai": 42.48,
+    "selesai": 45.28,
+    "teks": "Jadi bisa bikin aplikasi bisnis dari simple prom."
+   },
+   {
+    "mulai": 45.74,
+    "selesai": 50.48,
+    "teks": "Kayak CRM WhatsApp, inventory management, booking appointment, customer management,"
+   },
+   {
+    "mulai": 50.74,
+    "selesai": 53.36,
+    "teks": "dan custom dashboard sesuai kebutuhan bisnisnya."
+   },
+   {
+    "mulai": 53.58,
+    "selesai": 57.1,
+    "teks": "Jadi bisa banget buat mempercepat workflow kerjaan freelance kalian."
+   },
+   {
+    "mulai": 57.1,
+    "selesai": 59.26,
+    "teks": "Buat yang tertarik nyobain emergent,"
+   },
+   {
+    "mulai": 59.4,
+    "selesai": 63.5,
+    "teks": "komen aja porto, nanti gue kirimin prom yang gue pake sama link emergentnya."
+   }
+  ],
+  "jumlah_kata": 168,
+  "kata_per_dtk_bicara": 3.08,
+  "kata_per_dtk_total": 2.64,
+  "kata_pertama_dtk": 0.0,
+  "ucapan_3dtk_awal": "Ini satu kerjaan yang penting, tapi selalu ditunda-tunda sama desainer."
+ }
+}

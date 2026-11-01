@@ -1,0 +1,103 @@
+{
+  "text": "[serious] AI kamu bisa dibajak tanpa kamu sadar. Bukan lewat hack, tapi cukup lewat satu dokumen biasa.",
+  "spoken": "[serious] Ei-ai kamu bisa dibajak tanpa kamu sadar. Bukan lewat hack, tapi cukup lewat satu dokumen biasa.",
+  "duration": 6.32,
+  "words": [
+    {
+      "word": "AI",
+      "spoken": "Ei-ai",
+      "start": 0.133,
+      "end": 0.4
+    },
+    {
+      "word": "kamu",
+      "spoken": "kamu",
+      "start": 0.48,
+      "end": 0.64
+    },
+    {
+      "word": "bisa",
+      "spoken": "bisa",
+      "start": 0.68,
+      "end": 0.88
+    },
+    {
+      "word": "dibajak",
+      "spoken": "dibajak",
+      "start": 0.96,
+      "end": 1.44
+    },
+    {
+      "word": "tanpa",
+      "spoken": "tanpa",
+      "start": 1.52,
+      "end": 1.68
+    },
+    {
+      "word": "kamu",
+      "spoken": "kamu",
+      "start": 1.733,
+      "end": 1.84
+    },
+    {
+      "word": "sadar.",
+      "spoken": "sadar.",
+      "start": 1.92,
+      "end": 2.72
+    },
+    {
+      "word": "Bukan",
+      "spoken": "Bukan",
+      "start": 2.8,
+      "end": 2.96
+    },
+    {
+      "word": "lewat",
+      "spoken": "lewat",
+      "start": 3.0,
+      "end": 3.28
+    },
+    {
+      "word": "hack,",
+      "spoken": "hack,",
+      "start": 3.4,
+      "end": 3.84
+    },
+    {
+      "word": "tapi",
+      "spoken": "tapi",
+      "start": 3.92,
+      "end": 4.08
+    },
+    {
+      "word": "cukup",
+      "spoken": "cukup",
+      "start": 4.16,
+      "end": 4.48
+    },
+    {
+      "word": "lewat",
+      "spoken": "lewat",
+      "start": 4.52,
+      "end": 4.72
+    },
+    {
+      "word": "satu",
+      "spoken": "satu",
+      "start": 4.8,
+      "end": 5.04
+    },
+    {
+      "word": "dokumen",
+      "spoken": "dokumen",
+      "start": 5.12,
+      "end": 5.44
+    },
+    {
+      "word": "biasa.",
+      "spoken": "biasa.",
+      "start": 5.6,
+      "end": 6.32
+    }
+  ]
+}

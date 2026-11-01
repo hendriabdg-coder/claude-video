@@ -1,0 +1,9 @@
+[serious] AI kamu bisa dibajak tanpa kamu sadar. Bukan lewat hack, tapi cukup lewat satu dokumen biasa.
+
+Bayangkan kamu minta AI ngeringkas sebuah file. Tapi di dalam file-nya ada kalimat selipan yang nyuruh AI ngelakuin hal lain. Kalau AI-nya nurut, kerjaanmu langsung berantakan.
+
+Namanya indirect prompt injection. Perintah jahatnya nyamar jadi isi bacaan, bisa di dokumen, email, atau web.
+
+Kalau AI-nya bisa kirim data atau ngubah file, dampaknya jauh lebih serius. Jadi cukup kasih akses seperlunya saja, dan untuk aksi penting, harus minta konfirmasi dulu.
+
+[warm] Ingat, boleh dibaca bukan berarti boleh dituruti. Pertanyaannya, kamu sekarang pakai AI buat ngobrol doang, atau udah buat kerja?

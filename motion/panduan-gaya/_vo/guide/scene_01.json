@@ -1,0 +1,151 @@
+{
+  "text": "[curious] Cara aku bikin reel pakai AI? Cuma tiga langkah. Satu, tulis ide satu kalimat. Dua, AI nyusun naskah dan suaranya. Tiga, cek, lalu posting.",
+  "spoken": "[curious] Cara aku bikin reel pakai Ei-ai? Cuma tiga langkah. Satu, tulis ide satu kalimat. Dua, Ei-ai nyusun naskah dan suaranya. Tiga, cek, lalu posting.",
+  "duration": 10.32,
+  "words": [
+    {
+      "word": "Cara",
+      "spoken": "Cara",
+      "start": 0.08,
+      "end": 0.24
+    },
+    {
+      "word": "aku",
+      "spoken": "aku",
+      "start": 0.32,
+      "end": 0.48
+    },
+    {
+      "word": "bikin",
+      "spoken": "bikin",
+      "start": 0.56,
+      "end": 0.8
+    },
+    {
+      "word": "reel",
+      "spoken": "reel",
+      "start": 0.88,
+      "end": 1.04
+    },
+    {
+      "word": "pakai",
+      "spoken": "pakai",
+      "start": 1.12,
+      "end": 1.28
+    },
+    {
+      "word": "AI?",
+      "spoken": "Ei-ai?",
+      "start": 1.36,
+      "end": 2.0
+    },
+    {
+      "word": "Cuma",
+      "spoken": "Cuma",
+      "start": 2.16,
+      "end": 2.32
+    },
+    {
+      "word": "tiga",
+      "spoken": "tiga",
+      "start": 2.36,
+      "end": 2.48
+    },
+    {
+      "word": "langkah.",
+      "spoken": "langkah.",
+      "start": 2.56,
+      "end": 3.16
+    },
+    {
+      "word": "Satu,",
+      "spoken": "Satu,",
+      "start": 3.36,
+      "end": 4.0
+    },
+    {
+      "word": "tulis",
+      "spoken": "tulis",
+      "start": 4.107,
+      "end": 4.32
+    },
+    {
+      "word": "ide",
+      "spoken": "ide",
+      "start": 4.44,
+      "end": 4.56
+    },
+    {
+      "word": "satu",
+      "spoken": "satu",
+      "start": 4.6,
+      "end": 4.72
+    },
+    {
+      "word": "kalimat.",
+      "spoken": "kalimat.",
+      "start": 4.8,
+      "end": 5.52
+    },
+    {
+      "word": "Dua,",
+      "spoken": "Dua,",
+      "start": 5.56,
+      "end": 6.16
+    },
+    {
+      "word": "AI",
+      "spoken": "Ei-ai",
+      "start": 6.2,
+      "end": 6.48
+    },
+    {
+      "word": "nyusun",
+      "spoken": "nyusun",
+      "start": 6.52,
+      "end": 6.8
+    },
+    {
+      "word": "naskah",
+      "spoken": "naskah",
+      "start": 6.84,
+      "end": 7.2
+    },
+    {
+      "word": "dan",
+      "spoken": "dan",
+      "start": 7.28,
+      "end": 7.36
+    },
+    {
+      "word": "suaranya.",
+      "spoken": "suaranya.",
+      "start": 7.44,
+      "end": 8.24
+    },
+    {
+      "word": "Tiga,",
+      "spoken": "Tiga,",
+      "start": 8.28,
+      "end": 8.88
+    },
+    {
+      "word": "cek,",
+      "spoken": "cek,",
+      "start": 9.0,
+      "end": 9.36
+    },
+    {
+      "word": "lalu",
+      "spoken": "lalu",
+      "start": 9.44,
+      "end": 9.6
+    },
+    {
+      "word": "posting.",
+      "spoken": "posting.",
+      "start": 9.84,
+      "end": 10.32
+    }
+  ]
+}

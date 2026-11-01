@@ -1,0 +1,61 @@
+{
+  "text": "Soalnya, di toko online kan, barangnya nggak bisa dipegang.",
+  "spoken": "Soalnya, di toko online kan, barangnya nggak bisa dipegang.",
+  "duration": 3.52,
+  "words": [
+    {
+      "word": "Soalnya,",
+      "spoken": "Soalnya,",
+      "start": 0.0,
+      "end": 0.8
+    },
+    {
+      "word": "di",
+      "spoken": "di",
+      "start": 0.84,
+      "end": 0.88
+    },
+    {
+      "word": "toko",
+      "spoken": "toko",
+      "start": 0.96,
+      "end": 1.12
+    },
+    {
+      "word": "online",
+      "spoken": "online",
+      "start": 1.2,
+      "end": 1.52
+    },
+    {
+      "word": "kan,",
+      "spoken": "kan,",
+      "start": 1.6,
+      "end": 2.0
+    },
+    {
+      "word": "barangnya",
+      "spoken": "barangnya",
+      "start": 2.16,
+      "end": 2.36
+    },
+    {
+      "word": "nggak",
+      "spoken": "nggak",
+      "start": 2.4,
+      "end": 2.52
+    },
+    {
+      "word": "bisa",
+      "spoken": "bisa",
+      "start": 2.56,
+      "end": 2.64
+    },
+    {
+      "word": "dipegang.",
+      "spoken": "dipegang.",
+      "start": 2.72,
+      "end": 3.52
+    }
+  ]
+}

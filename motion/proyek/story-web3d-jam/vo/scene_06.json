@@ -1,0 +1,79 @@
+{
+  "text": "[warm] Mau website kayak gini aku bikinin? Komen \"3D\" buat diskusi lebih lanjut.",
+  "spoken": "[warm] Mau website kayak gini aku bikinin? Komen \"tridi\" buat diskusi lebih lanjut.",
+  "duration": 4.48,
+  "words": [
+    {
+      "word": "Mau",
+      "spoken": "Mau",
+      "start": 0.08,
+      "end": 0.16
+    },
+    {
+      "word": "website",
+      "spoken": "website",
+      "start": 0.24,
+      "end": 0.56
+    },
+    {
+      "word": "kayak",
+      "spoken": "kayak",
+      "start": 0.6,
+      "end": 0.8
+    },
+    {
+      "word": "gini",
+      "spoken": "gini",
+      "start": 0.84,
+      "end": 1.04
+    },
+    {
+      "word": "aku",
+      "spoken": "aku",
+      "start": 1.12,
+      "end": 1.28
+    },
+    {
+      "word": "bikinin?",
+      "spoken": "bikinin?",
+      "start": 1.333,
+      "end": 2.04
+    },
+    {
+      "word": "Komen",
+      "spoken": "Komen",
+      "start": 2.08,
+      "end": 2.32
+    },
+    {
+      "word": "\"3D\"",
+      "spoken": "\"tridi\"",
+      "start": 2.4,
+      "end": 2.88
+    },
+    {
+      "word": "buat",
+      "spoken": "buat",
+      "start": 2.96,
+      "end": 3.12
+    },
+    {
+      "word": "diskusi",
+      "spoken": "diskusi",
+      "start": 3.2,
+      "end": 3.44
+    },
+    {
+      "word": "lebih",
+      "spoken": "lebih",
+      "start": 3.48,
+      "end": 3.6
+    },
+    {
+      "word": "lanjut.",
+      "spoken": "lanjut.",
+      "start": 3.68,
+      "end": 4.48
+    }
+  ]
+}

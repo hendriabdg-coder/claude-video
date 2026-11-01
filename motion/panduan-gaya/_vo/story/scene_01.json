@@ -1,0 +1,403 @@
+{
+  "text": "[soft] Ini Raka. Kopinya enak banget... tapi toko online-nya sepi. Orang mampir, terus pergi. [curious] Kenapa? Penelitian bilang, orang menilai tampilan website cuma dalam lima puluh milidetik. Belum baca, udah mutusin. [excited] Jadi Raka ubah caranya. Cangkirnya jadi 3D... bisa diputar, scroll-nya kayak nonton film. [warm] Kalau kamu mau website kayak gini, aku bisa bikinin. Follow, besok aku bongkar cara bikinnya. [curious] Menurut kamu, website toko lebih penting cepat, atau keren?",
+  "spoken": "[soft] Ini Raka. Kopinya enak banget... tapi toko online-nya sepi. Orang mampir, terus pergi. [curious] Kenapa? Penelitian bilang, orang menilai tampilan website cuma dalam lima puluh milidetik. Belum baca, udah mutusin. [excited] Jadi Raka ubah caranya. Cangkirnya jadi tridi... bisa diputar, scroll-nya kayak nonton film. [warm] Kalau kamu mau website kayak gini, aku bisa bikinin. Follow, besok aku bongkar cara bikinnya. [curious] Menurut kamu, website toko lebih penting cepat, atau keren?",
+  "duration": 27.76,
+  "words": [
+    {
+      "word": "Ini",
+      "spoken": "Ini",
+      "start": 0.08,
+      "end": 0.24
+    },
+    {
+      "word": "Raka.",
+      "spoken": "Raka.",
+      "start": 0.32,
+      "end": 0.88
+    },
+    {
+      "word": "Kopinya",
+      "spoken": "Kopinya",
+      "start": 1.28,
+      "end": 1.68
+    },
+    {
+      "word": "enak",
+      "spoken": "enak",
+      "start": 1.76,
+      "end": 2.0
+    },
+    {
+      "word": "banget...",
+      "spoken": "banget...",
+      "start": 2.08,
+      "end": 3.12
+    },
+    {
+      "word": "tapi",
+      "spoken": "tapi",
+      "start": 3.227,
+      "end": 3.44
+    },
+    {
+      "word": "toko",
+      "spoken": "toko",
+      "start": 3.6,
+      "end": 3.76
+    },
+    {
+      "word": "online-nya",
+      "spoken": "online-nya",
+      "start": 3.84,
+      "end": 4.24
+    },
+    {
+      "word": "sepi.",
+      "spoken": "sepi.",
+      "start": 4.36,
+      "end": 4.92
+    },
+    {
+      "word": "Orang",
+      "spoken": "Orang",
+      "start": 5.12,
+      "end": 5.28
+    },
+    {
+      "word": "mampir,",
+      "spoken": "mampir,",
+      "start": 5.36,
+      "end": 6.0
+    },
+    {
+      "word": "terus",
+      "spoken": "terus",
+      "start": 6.04,
+      "end": 6.16
+    },
+    {
+      "word": "pergi.",
+      "spoken": "pergi.",
+      "start": 6.24,
+      "end": 6.64
+    },
+    {
+      "word": "Kenapa?",
+      "spoken": "Kenapa?",
+      "start": 7.008,
+      "end": 7.52
+    },
+    {
+      "word": "Penelitian",
+      "spoken": "Penelitian",
+      "start": 7.68,
+      "end": 8.08
+    },
+    {
+      "word": "bilang,",
+      "spoken": "bilang,",
+      "start": 8.16,
+      "end": 8.64
+    },
+    {
+      "word": "orang",
+      "spoken": "orang",
+      "start": 8.72,
+      "end": 8.96
+    },
+    {
+      "word": "menilai",
+      "spoken": "menilai",
+      "start": 9.04,
+      "end": 9.28
+    },
+    {
+      "word": "tampilan",
+      "spoken": "tampilan",
+      "start": 9.32,
+      "end": 9.6
+    },
+    {
+      "word": "website",
+      "spoken": "website",
+      "start": 9.68,
+      "end": 10.08
+    },
+    {
+      "word": "cuma",
+      "spoken": "cuma",
+      "start": 10.12,
+      "end": 10.32
+    },
+    {
+      "word": "dalam",
+      "spoken": "dalam",
+      "start": 10.36,
+      "end": 10.56
+    },
+    {
+      "word": "lima",
+      "spoken": "lima",
+      "start": 10.64,
+      "end": 10.88
+    },
+    {
+      "word": "puluh",
+      "spoken": "puluh",
+      "start": 10.96,
+      "end": 11.16
+    },
+    {
+      "word": "milidetik.",
+      "spoken": "milidetik.",
+      "start": 11.2,
+      "end": 12.0
+    },
+    {
+      "word": "Belum",
+      "spoken": "Belum",
+      "start": 12.04,
+      "end": 12.16
+    },
+    {
+      "word": "baca,",
+      "spoken": "baca,",
+      "start": 12.24,
+      "end": 12.72
+    },
+    {
+      "word": "udah",
+      "spoken": "udah",
+      "start": 12.76,
+      "end": 12.88
+    },
+    {
+      "word": "mutusin.",
+      "spoken": "mutusin.",
+      "start": 13.0,
+      "end": 13.68
+    },
+    {
+      "word": "Jadi",
+      "spoken": "Jadi",
+      "start": 13.817,
+      "end": 14.0
+    },
+    {
+      "word": "Raka",
+      "spoken": "Raka",
+      "start": 14.04,
+      "end": 14.24
+    },
+    {
+      "word": "ubah",
+      "spoken": "ubah",
+      "start": 14.32,
+      "end": 14.56
+    },
+    {
+      "word": "caranya.",
+      "spoken": "caranya.",
+      "start": 14.64,
+      "end": 15.12
+    },
+    {
+      "word": "Cangkirnya",
+      "spoken": "Cangkirnya",
+      "start": 15.36,
+      "end": 15.84
+    },
+    {
+      "word": "jadi",
+      "spoken": "jadi",
+      "start": 15.92,
+      "end": 16.0
+    },
+    {
+      "word": "3D...",
+      "spoken": "tridi...",
+      "start": 16.08,
+      "end": 16.72
+    },
+    {
+      "word": "bisa",
+      "spoken": "bisa",
+      "start": 16.773,
+      "end": 16.88
+    },
+    {
+      "word": "diputar,",
+      "spoken": "diputar,",
+      "start": 16.92,
+      "end": 17.68
+    },
+    {
+      "word": "scroll-nya",
+      "spoken": "scroll-nya",
+      "start": 17.84,
+      "end": 18.16
+    },
+    {
+      "word": "kayak",
+      "spoken": "kayak",
+      "start": 18.2,
+      "end": 18.36
+    },
+    {
+      "word": "nonton",
+      "spoken": "nonton",
+      "start": 18.4,
+      "end": 18.64
+    },
+    {
+      "word": "film.",
+      "spoken": "film.",
+      "start": 18.72,
+      "end": 19.28
+    },
+    {
+      "word": "Kalau",
+      "spoken": "Kalau",
+      "start": 19.413,
+      "end": 19.48
+    },
+    {
+      "word": "kamu",
+      "spoken": "kamu",
+      "start": 19.52,
+      "end": 19.68
+    },
+    {
+      "word": "mau",
+      "spoken": "mau",
+      "start": 19.76,
+      "end": 19.973
+    },
+    {
+      "word": "website",
+      "spoken": "website",
+      "start": 20.107,
+      "end": 20.24
+    },
+    {
+      "word": "kayak",
+      "spoken": "kayak",
+      "start": 20.267,
+      "end": 20.4
+    },
+    {
+      "word": "gini,",
+      "spoken": "gini,",
+      "start": 20.48,
+      "end": 20.96
+    },
+    {
+      "word": "aku",
+      "spoken": "aku",
+      "start": 21.04,
+      "end": 21.12
+    },
+    {
+      "word": "bisa",
+      "spoken": "bisa",
+      "start": 21.2,
+      "end": 21.28
+    },
+    {
+      "word": "bikinin.",
+      "spoken": "bikinin.",
+      "start": 21.36,
+      "end": 22.16
+    },
+    {
+      "word": "Follow,",
+      "spoken": "Follow,",
+      "start": 22.32,
+      "end": 22.64
+    },
+    {
+      "word": "besok",
+      "spoken": "besok",
+      "start": 22.76,
+      "end": 22.96
+    },
+    {
+      "word": "aku",
+      "spoken": "aku",
+      "start": 23.04,
+      "end": 23.2
+    },
+    {
+      "word": "bongkar",
+      "spoken": "bongkar",
+      "start": 23.28,
+      "end": 23.52
+    },
+    {
+      "word": "cara",
+      "spoken": "cara",
+      "start": 23.6,
+      "end": 23.76
+    },
+    {
+      "word": "bikinnya.",
+      "spoken": "bikinnya.",
+      "start": 23.8,
+      "end": 24.4
+    },
+    {
+      "word": "Menurut",
+      "spoken": "Menurut",
+      "start": 24.467,
+      "end": 24.72
+    },
+    {
+      "word": "kamu,",
+      "spoken": "kamu,",
+      "start": 24.76,
+      "end": 25.28
+    },
+    {
+      "word": "website",
+      "spoken": "website",
+      "start": 25.44,
+      "end": 25.6
+    },
+    {
+      "word": "toko",
+      "spoken": "toko",
+      "start": 25.68,
+      "end": 25.84
+    },
+    {
+      "word": "lebih",
+      "spoken": "lebih",
+      "start": 25.92,
+      "end": 26.08
+    },
+    {
+      "word": "penting",
+      "spoken": "penting",
+      "start": 26.16,
+      "end": 26.32
+    },
+    {
+      "word": "cepat,",
+      "spoken": "cepat,",
+      "start": 26.4,
+      "end": 26.96
+    },
+    {
+      "word": "atau",
+      "spoken": "atau",
+      "start": 27.04,
+      "end": 27.16
+    },
+    {
+      "word": "keren?",
+      "spoken": "keren?",
+      "start": 27.2,
+      "end": 27.76
+    }
+  ]
+}

@@ -1,0 +1,157 @@
+{
+  "text": "[warm] Tiap minggu aku rangkum update AI yang beneran kepake. Follow dulu, karena Selasa depannya kita bahas edisi kedua. Baidewai, kamu udah dapet fitur ini belum?",
+  "spoken": "[warm] Tiap minggu aku rangkum update Ei-ai yang beneran kepake. Follow dulu, karena Selasa depannya kita bahas edisi kedua. Baidewai, kamu udah dapet fitur ini belum?",
+  "duration": 9.52,
+  "words": [
+    {
+      "word": "Tiap",
+      "spoken": "Tiap",
+      "start": 0.064,
+      "end": 0.16
+    },
+    {
+      "word": "minggu",
+      "spoken": "minggu",
+      "start": 0.24,
+      "end": 0.64
+    },
+    {
+      "word": "aku",
+      "spoken": "aku",
+      "start": 0.72,
+      "end": 0.88
+    },
+    {
+      "word": "rangkum",
+      "spoken": "rangkum",
+      "start": 1.0,
+      "end": 1.28
+    },
+    {
+      "word": "update",
+      "spoken": "update",
+      "start": 1.36,
+      "end": 1.6
+    },
+    {
+      "word": "AI",
+      "spoken": "Ei-ai",
+      "start": 1.68,
+      "end": 1.92
+    },
+    {
+      "word": "yang",
+      "spoken": "yang",
+      "start": 2.0,
+      "end": 2.16
+    },
+    {
+      "word": "beneran",
+      "spoken": "beneran",
+      "start": 2.267,
+      "end": 2.64
+    },
+    {
+      "word": "kepake.",
+      "spoken": "kepake.",
+      "start": 2.72,
+      "end": 3.6
+    },
+    {
+      "word": "Follow",
+      "spoken": "Follow",
+      "start": 3.68,
+      "end": 3.76
+    },
+    {
+      "word": "dulu,",
+      "spoken": "dulu,",
+      "start": 3.8,
+      "end": 4.28
+    },
+    {
+      "word": "karena",
+      "spoken": "karena",
+      "start": 4.32,
+      "end": 4.56
+    },
+    {
+      "word": "Selasa",
+      "spoken": "Selasa",
+      "start": 4.6,
+      "end": 4.8
+    },
+    {
+      "word": "depannya",
+      "spoken": "depannya",
+      "start": 4.88,
+      "end": 5.36
+    },
+    {
+      "word": "kita",
+      "spoken": "kita",
+      "start": 5.44,
+      "end": 5.68
+    },
+    {
+      "word": "bahas",
+      "spoken": "bahas",
+      "start": 5.76,
+      "end": 6.0
+    },
+    {
+      "word": "edisi",
+      "spoken": "edisi",
+      "start": 6.04,
+      "end": 6.24
+    },
+    {
+      "word": "kedua.",
+      "spoken": "kedua.",
+      "start": 6.36,
+      "end": 7.08
+    },
+    {
+      "word": "Baidewai,",
+      "spoken": "Baidewai,",
+      "start": 7.12,
+      "end": 7.88
+    },
+    {
+      "word": "kamu",
+      "spoken": "kamu",
+      "start": 7.92,
+      "end": 8.0
+    },
+    {
+      "word": "udah",
+      "spoken": "udah",
+      "start": 8.08,
+      "end": 8.2
+    },
+    {
+      "word": "dapet",
+      "spoken": "dapet",
+      "start": 8.24,
+      "end": 8.4
+    },
+    {
+      "word": "fitur",
+      "spoken": "fitur",
+      "start": 8.48,
+      "end": 8.64
+    },
+    {
+      "word": "ini",
+      "spoken": "ini",
+      "start": 8.72,
+      "end": 8.88
+    },
+    {
+      "word": "belum?",
+      "spoken": "belum?",
+      "start": 9.0,
+      "end": 9.52
+    }
+  ]
+}
