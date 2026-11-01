@@ -48,8 +48,8 @@ Ini **pola**, bukan aturan mutlak. Kalau bertabrakan dengan CLAUDE.md, CLAUDE.md
 - Explainer pendek yang viral: 29-74 dtk (median ~57). Video >2 menit hanya untuk tutorial/part lanjutan atau kreator yang sudah punya audiens.
 - Acuan akun kita (rata-rata nonton 18 dtk) tetap: target 25-35 dtk, maks 45.
 
-## 7. Belum diputuskan (bertabrakan dengan aturan sekarang — tanya Endrich)
-1. **"Komen KATA, nanti aku kirim X"** (EDIT/FIND/IKUT/PORTO) dipakai 5 dari 18 video dan efektif menaikkan komentar, tapi CLAUDE.md melarang pola "komen MAU" karena berisiko dianggap engagement bait oleh Meta. Bisa dipakai hanya kalau benar-benar ada yang dikirim (prompt/file/checklist).
+## 7. Bertabrakan dengan aturan akun (sudah diputuskan Endrich)
+1. **"Komen KATA, nanti aku kirim X"** (EDIT/FIND/IKUT/PORTO) dipakai 5 dari 18 video. **DIPUTUSKAN Endrich 2026-11-01: TETAP DILARANG**, walaupun ada yang dikirim. Pemicu komentar akun ini = pertanyaan sungguhan (personal / pilihan A/B). Reviewer menandai pola ini sebagai PERBAIKI kalau muncul.
 2. **"Lo/gue"** dipakai mayoritas referensi Indonesia; akun ini tetap "aku/kamu" (keputusan Endrich).
 3. **Tempo** referensi lebih cepat; akun ini tetap intonasi lama.
 
