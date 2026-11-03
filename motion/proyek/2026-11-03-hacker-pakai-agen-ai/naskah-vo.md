@@ -82,3 +82,45 @@ Detail lengkap + URL di riset.md (tabel klaim).
 - Part 4 ("AI ngelawan balik") butuh riset sendiri sebelum dijanjikan; kalau mau topik lain, ganti CTA seri.
 - Durasi ±35-38 dtk (setara hari 2), sedikit di atas target 35, di bawah batas 45. Kalau mau lebih pendek, buang "Dan itu baru kasus pertama" (−5 kata).
 - Fakta "ketahuan karena panel kendalinya kebuka di internet" dipindah ke caption supaya VO ringkas.
+
+---
+
+# v2 (2026-11-03): versi Endrich
+
+## Versi Endrich + 2 koreksi fakta (±160 kata, estimasi ±68-72 dtk; batas CLAUDE.md 45 dtk)
+Koreksi: (1) "berhasil nyerang seribu dua ratus" → "nyerang lebih dari seribu dua ratus" (1.200+ itu sasaran; yang dilaporkan tembus 100+, sukses ~10%). (2) "Di kasus lain" → "Dari situ": 100+ perusahaan dan US$5.000 itu kasus yang SAMA (Cairn), jadi kalimat "itu baru kasus pertama" dipindah sesudahnya.
+
+```
+Ada satu orang yang pakai agen AI, buat nyerang lebih dari seribu dua ratus situs belanja online.
+
+Padahal, perintah yang dia kasih ke AI itu... nggak sampai seratus karakter.
+
+Dari situ, lebih dari seratus perusahaan dilaporkan berhasil ditembus. Biaya AI yang dipakai cuma sekitar lima ribu dolar. Dan ternyata, itu baru kasus pertama.
+
+Dan, ini yang lebih gila, menurut CrowdStrike, ada satu kelompok yang menyerang dua ratus organisasi, cuma dalam sebelas hari. Kecepatan serangannya juga melonjak. Dari empat puluh perintah per jam, jadi seribu lima ratus.
+
+Tapi ada satu hal yang perlu kamu tahu. AI-nya memang membantu mempercepat serangan, tapi manusia tetap yang menentukan targetnya. Makanya, keamanan dasar itu masih penting banget. Rutin update sistem, batasi akses, dan jangan lupa backup data.
+
+Besok, aku mau bahas AI yang justru dipakai buat melawan serangan seperti ini. Follow dulu, biar nggak ketinggalan.
+
+Kalau kamu punya bisnis, kamu lebih khawatir data pelanggan dicuri... atau bisnis kamu tiba-tiba nggak bisa beroperasi?
+```
+
+## Versi ringkas gaya Endrich (±107 kata, estimasi ±45 dtk)
+
+```
+Satu orang pakai agen AI buat nyerang seribu dua ratus lebih situs belanja online.
+
+Padahal perintahnya ke AI... nggak sampai seratus karakter.
+
+Lebih dari seratus perusahaan dilaporkan berhasil ditembus. Biaya AI-nya cuma sekitar lima ribu dolar. Dan itu baru kasus pertama.
+
+Yang lebih gila, menurut CrowdStrike, satu kelompok nyerang dua ratus organisasi cuma dalam sebelas hari. Dari empat puluh perintah per jam, jadi seribu lima ratus.
+
+Tapi manusia tetap yang nentuin target. Makanya keamanan dasar masih penting: update sistem, batasi akses, backup data.
+
+Besok aku bahas AI yang justru dipakai buat ngelawan serangan ini. Follow biar nggak ketinggalan.
+
+Kamu lebih khawatir data pelanggan dicuri... atau bisnis tiba-tiba lumpuh?
+```
+Estimasi pakai tempo VO lama yang terukur: 2,37 kata/dtk (VO 2026-10-28-penipuan-suara-ai).
