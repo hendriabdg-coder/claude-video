@@ -1,0 +1,23 @@
+Ada satu orang yang pakai agen AI, buat nyerang lebih dari seribu dua ratus situs belanja online.
+
+Padahal, perintah yang dia kasih ke AI itu... nggak sampai seratus karakter.
+
+Dari situ, lebih dari seratus perusahaan dilaporkan berhasil ditembus. Biaya AI yang dipakai cuma sekitar lima ribu dolar.
+
+Dan ternyata, itu baru kasus pertama.
+
+Dan, ini yang lebih gila, menurut CrowdStrike, ada satu kelompok yang menyerang dua ratus organisasi, cuma dalam sebelas hari.
+
+Kecepatan serangannya juga melonjak. Dari empat puluh perintah per jam, jadi seribu lima ratus.
+
+Tapi ada satu hal yang perlu kamu tahu.
+
+AI-nya memang membantu mempercepat serangan, tapi manusia tetap yang menentukan targetnya.
+
+Makanya, keamanan dasar itu masih penting banget. Rutin update sistem, batasi akses, dan jangan lupa backup data.
+
+Besok, aku mau bahas AI yang justru dipakai buat melawan serangan seperti ini.
+
+Follow dulu, biar nggak ketinggalan.
+
+Kalau kamu punya bisnis, kamu lebih khawatir data pelanggan dicuri... atau bisnis kamu tiba-tiba nggak bisa beroperasi?

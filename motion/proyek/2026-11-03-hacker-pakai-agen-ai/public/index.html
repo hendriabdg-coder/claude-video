@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="id">
+<head><meta charset="utf-8" />
+<style>
+@font-face { font-family: "IDMed"; src: url("fonts/InterDisplay-Medium.ttf"); font-display: block; }
+@font-face { font-family: "IDSemi"; src: url("fonts/InterDisplay-SemiBold.ttf"); font-display: block; }
+@font-face { font-family: "IDBold"; src: url("fonts/InterDisplay-Bold.ttf"); font-display: block; }
+@font-face { font-family: "IDBlack"; src: url("fonts/InterDisplay-Black.ttf"); font-display: block; }
+@font-face { font-family: "Serif"; src: url("fonts/SerifBI.ttf"); font-display: block; }
+@font-face { font-family: "Mono"; src: url("fonts/JetBrainsMono-Regular.ttf"); font-display: block; }
+@font-face { font-family: "MonoB"; src: url("fonts/JetBrainsMono-Bold.ttf"); font-display: block; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 100%; height: 100%; overflow: hidden; background: #EEECE6; }
+#root { position: relative; width: 1080px; height: 1920px; overflow: hidden; }
+
+:root { --paper:#EEECE6; --ink:#121212; --red:#E5401D; --dark:#161616; --mut:#8A877F; --card:#FBFAF7; }
+#root { font-family: "IDMed"; color: var(--ink); }
+.bg { position: absolute; inset: 0; opacity: 0; }
+#bgP { background: var(--paper); opacity: 1; }
+#bgD { background: var(--dark); }
+#bgR { background: var(--red); }
+.dots { position: absolute; inset: 0; pointer-events: none;
+  background-image: radial-gradient(circle, rgba(0,0,0,.16) 2.2px, transparent 2.6px); background-size: 14px 14px;
+  -webkit-mask-image: radial-gradient(ellipse 60% 45% at 85% 88%, #000 0%, transparent 70%); }
+#bgD .dots { background-image: radial-gradient(circle, rgba(255,255,255,.10) 2.2px, transparent 2.6px);
+  -webkit-mask-image: radial-gradient(ellipse 55% 40% at 80% 80%, #000 0%, transparent 70%); }
+#bgR .dots { background-image: radial-gradient(circle, rgba(0,0,0,.18) 2.2px, transparent 2.6px); }
+#grain { position: absolute; inset: 0; opacity: .07; pointer-events: none; z-index: 60;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>"); }
+/* header row */
+#hdr { position: absolute; left: 70px; top: 262px; width: 860px; height: 30px; font-family: "Mono"; font-size: 24px; color: var(--mut); z-index: 40; }
+#hdr .hl.r { left: auto; right: 0; letter-spacing: .06em; }
+#hdr .r b { color: var(--red); font-family: "MonoB"; font-weight: normal; }
+.hl { position: absolute; left: 0; top: 0; white-space: nowrap; opacity: 0; }
+/* headline */
+.head { position: absolute; left: 70px; top: 330px; width: 860px; font-family: "IDMed"; font-size: 74px; line-height: 1.08; letter-spacing: -.015em; color: var(--ink); opacity: 0; }
+.head span { display: inline-block; opacity: 0; margin-right: .22em; }
+.head i { font-family: "Serif"; font-style: normal; color: var(--red); letter-spacing: 0; }
+.dk .head, .dk.head { color: #F3F1EC; }
+.rd .head i { color: var(--ink); }
+.rd .head { color: #fff; }
+/* scenes */
+.sc { position: absolute; inset: 0; opacity: 0; }
+.card { position: absolute; background: var(--card); border: 4px solid var(--ink); border-radius: 22px; box-shadow: 12px 12px 0 var(--ink); }
+.dk .card { box-shadow: 12px 12px 0 #000; border-color: #000; }
+.tab { position: absolute; left: 26px; top: -46px; height: 46px; padding: 0 18px; border: 4px solid var(--ink); border-bottom: none; border-radius: 12px 12px 0 0; background: var(--red); color: #fff; font-family: "MonoB"; font-size: 22px; line-height: 42px; }
+.pill { position: absolute; height: 72px; padding: 0 26px; border: 4px solid var(--ink); border-radius: 40px; background: #fff; font-family: "IDBold"; font-size: 38px; line-height: 64px; box-shadow: 6px 6px 0 var(--ink); white-space: nowrap; }
+.pill b { color: var(--red); font-weight: normal; }
+.num { font-variant-numeric: tabular-nums; }
+.lbl { position: absolute; font-family: "MonoB"; font-size: 20px; letter-spacing: .14em; color: var(--mut); }
+/* b0: shop windows fan */
+.shop { width: 300px; height: 380px; }
+.shop .bar { height: 46px; border-bottom: 4px solid var(--ink); display: flex; align-items: center; gap: 9px; padding: 0 16px; }
+.shop .bar i { width: 13px; height: 13px; border-radius: 50%; border: 3px solid var(--ink); }
+.shop .ban { margin: 16px; height: 120px; border-radius: 12px; background: repeating-linear-gradient(45deg, #E9E5DC 0 10px, #DED9CE 10px 20px); border: 3px solid var(--ink); }
+.shop .row { margin: 0 16px 12px; height: 18px; border-radius: 9px; background: #D9D4C9; }
+.shop .row.s { width: 55%; }
+.shop .btn { margin: 14px 16px; width: 120px; height: 40px; border-radius: 20px; background: var(--red); border: 3px solid var(--ink); }
+.shop .tg { position: absolute; right: 14px; top: 9px; font-family: "MonoB"; font-size: 17px; color: var(--mut); }
+/* b1: prompt terminal */
+#term { left: 70px; top: 640px; width: 860px; height: 300px; background: #1B1B1B; border-color: var(--ink); color: #EDEBE5; }
+#term .tb { height: 56px; border-bottom: 3px solid #333; display: flex; align-items: center; gap: 10px; padding: 0 20px; font-family: "Mono"; font-size: 22px; color: #888; }
+#term .tb i { width: 14px; height: 14px; border-radius: 50%; background: var(--red); }
+#term .tb i + i { background: #555; } #term .tb i + i + i { background: #555; }
+#term .bd { padding: 30px 30px; font-family: "MonoB"; font-size: 40px; line-height: 1.5; }
+#term .bd .pr { color: var(--red); }
+#red { color: #CFCBC2; letter-spacing: .02em; }
+.cur { display: inline-block; width: 20px; height: 40px; background: #EDEBE5; vertical-align: -6px; margin-left: 4px; }
+#cnt1 { left: 70px; top: 1000px; }
+#sim { left: 760px; top: 960px; color: #999; }
+/* b2 cards */
+.kcard { width: 360px; height: 470px; display: flex; align-items: center; justify-content: center; flex-direction: column; }
+.kcard .big { font-family: "IDBlack"; font-size: 120px; line-height: 1; }
+.kcard .sm { font-family: "MonoB"; font-size: 26px; letter-spacing: .1em; margin-top: 18px; color: var(--mut); }
+#kc1 { left: 110px; top: 610px; } #kc2 { left: 540px; top: 640px; background: #2A2A2A; color: #fff; }
+#kc2 .big { font-family: "Serif"; color: var(--red); font-size: 220px; }
+/* b3 grid of mini shops */
+#mgrid { position: absolute; left: 90px; top: 600px; width: 840px; display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; }
+#mgrid .m { height: 120px; border: 3px solid #000; border-radius: 12px; background: #F4F2EC; position: relative; overflow: hidden; opacity: 0; }
+#mgrid .m:before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 24px; border-bottom: 3px solid #000; background: #E2DED4; }
+#mgrid .m b { position: absolute; inset: 0; background: var(--red); opacity: 0; font-family: "MonoB"; font-weight: normal; font-size: 18px; color: #fff; display: flex; align-items: center; justify-content: center; letter-spacing: .08em; }
+#price { left: 120px; top: 1010px; width: 600px; height: 250px; padding: 30px 36px; }
+#price .v { font-family: "IDBlack"; font-size: 110px; line-height: 1; }
+#price .v small { font-family: "Serif"; font-size: 70px; color: var(--red); margin-right: 6px; }
+#price .k { font-family: "MonoB"; font-size: 23px; letter-spacing: .08em; color: var(--mut); margin-top: 14px; }
+#price .hole { position: absolute; right: 30px; top: 30px; width: 34px; height: 34px; border-radius: 50%; border: 4px solid var(--ink); background: var(--dark); }
+/* b4 calendar */
+#cal { left: 70px; top: 650px; width: 860px; height: 420px; padding: 80px 30px 30px; }
+#cal .cg { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 14px; }
+#cal .d { height: 120px; border: 3px solid var(--ink); border-radius: 12px; font-family: "MonoB"; font-size: 26px; padding: 10px 12px; position: relative; overflow: hidden; background: #fff; }
+#cal .d s { position: absolute; inset: 0; background: var(--red); transform: scaleY(0); transform-origin: 50% 100%; }
+#cal .d em { position: relative; font-style: normal; z-index: 2; }
+#cal .cap { position: absolute; left: 30px; top: 22px; font-family: "MonoB"; font-size: 24px; letter-spacing: .1em; color: var(--mut); }
+#orgp { left: 70px; top: 1130px; }
+#src4 { left: 70px; top: 1230px; }
+/* b5 gauge */
+#gauge { left: 120px; top: 620px; width: 760px; height: 560px; }
+#gauge svg { position: absolute; left: 40px; top: 40px; width: 680px; height: 380px; overflow: visible; }
+#gauge .gv { position: absolute; left: 0; width: 760px; top: 330px; text-align: center; font-family: "IDBlack"; font-size: 110px; }
+#gauge .gk { position: absolute; left: 0; width: 760px; top: 455px; text-align: center; font-family: "MonoB"; font-size: 24px; letter-spacing: .1em; color: var(--mut); }
+#gauge .was { position: absolute; left: 40px; top: 508px; font-family: "MonoB"; font-size: 24px; color: var(--mut); }
+#src5 { left: 70px; top: 1330px; }
+/* b6 */
+#bub { position: absolute; left: 560px; top: 1030px; width: 190px; height: 110px; border: 4px solid #000; border-radius: 55px; background: #fff; box-shadow: 8px 8px 0 #000; display: flex; align-items: center; justify-content: center; gap: 14px; }
+#bub i { width: 18px; height: 18px; border-radius: 50%; background: #000; display: block; }
+/* b7 flow */
+.fc { left: 90px; width: 820px; height: 170px; padding: 0 34px; display: flex; align-items: center; gap: 28px; }
+.fc .ic { width: 96px; height: 96px; border-radius: 20px; border: 4px solid var(--ink); display: flex; align-items: center; justify-content: center; font-family: "IDBlack"; font-size: 44px; flex: none; }
+.fc .tx { font-family: "IDBold"; font-size: 46px; line-height: 1.1; }
+.fc .tx small { display: block; font-family: "Mono"; font-size: 24px; color: var(--mut); margin-top: 8px; }
+#fA { top: 620px; } #fA .ic { background: #E9E5DC; }
+#fM { top: 900px; } #fM .ic { background: var(--red); color: #fff; }
+#fM.on { background: #FFF1EC; }
+#fl { position: absolute; left: 180px; top: 802px; width: 6px; height: 96px; background: var(--ink); transform-origin: 50% 0; }
+#tgt { position: absolute; left: 720px; top: 1110px; }
+/* b8 checklist (reference "is building" card) */
+#chk { left: 70px; top: 610px; width: 860px; height: 640px; overflow: hidden; }
+#chk .ttl { height: 90px; border-bottom: 4px solid var(--ink); display: flex; align-items: center; padding: 0 30px; font-family: "IDBold"; font-size: 40px; }
+#chk .ttl b { color: var(--red); margin-right: 16px; font-weight: normal; }
+#chk .ttl .n { margin-left: auto; font-family: "MonoB"; font-size: 30px; color: var(--mut); }
+#chk .it { height: 182px; border-bottom: 3px solid #D8D4CA; display: flex; align-items: center; padding: 0 30px; gap: 28px; }
+#chk .it:last-child { border-bottom: none; }
+#chk .it.cur2 { background: #FBE3DA; }
+#chk .ck { width: 64px; height: 64px; border-radius: 50%; border: 4px dashed #B9B4A9; flex: none; display: flex; align-items: center; justify-content: center; font-family: "IDBlack"; font-size: 38px; color: #fff; }
+#chk .ck.ok { border: 4px solid var(--ink); background: var(--ink); }
+#chk .tx { font-family: "IDBold"; font-size: 46px; }
+#chk .tx small { display: block; font-family: "Mono"; font-size: 24px; color: var(--mut); margin-top: 6px; }
+/* b9 / b10 */
+#p4 { left: 110px; top: 660px; width: 560px; height: 440px; padding: 40px; }
+#p4 .k { font-family: "MonoB"; font-size: 26px; letter-spacing: .12em; color: var(--mut); }
+#p4 .v { font-family: "IDBlack"; font-size: 96px; line-height: 1; margin-top: 18px; }
+#p4 .v i { font-family: "Serif"; font-style: normal; color: var(--red); }
+#p4 svg { position: absolute; right: 36px; bottom: 34px; width: 130px; height: 150px; }
+#prof { left: 90px; top: 640px; width: 640px; height: 400px; padding: 36px; }
+#prof .av { width: 120px; height: 120px; border-radius: 50%; border: 4px solid var(--ink); background: var(--red); display: flex; align-items: center; justify-content: center; font-family: "IDBlack"; font-size: 54px; color: #fff; }
+#prof .nm { position: absolute; left: 186px; top: 50px; font-family: "IDBold"; font-size: 46px; }
+#prof .hd { position: absolute; left: 186px; top: 110px; font-family: "Mono"; font-size: 26px; color: var(--mut); }
+#prof .sr { margin-top: 30px; font-family: "Mono"; font-size: 25px; color: var(--mut); line-height: 1.5; }
+#fbtn { position: absolute; left: 36px; right: 36px; bottom: 34px; height: 84px; border-radius: 16px; background: var(--red); border: 4px solid var(--ink); color: #fff; font-family: "IDBold"; font-size: 40px; display: flex; align-items: center; justify-content: center; }
+#fbtn.done { background: #fff; color: var(--ink); }
+/* b11 comments */
+#cm { left: 70px; top: 600px; width: 860px; height: 560px; }
+#cm .ct { height: 80px; border-bottom: 3px solid #D8D4CA; text-align: center; font-family: "IDBold"; font-size: 34px; line-height: 76px; }
+.cmt { position: absolute; left: 30px; right: 30px; height: 150px; display: flex; gap: 22px; align-items: center; }
+.cmt .av { width: 76px; height: 76px; border-radius: 50%; border: 4px solid var(--ink); flex: none; display: flex; align-items: center; justify-content: center; font-family: "IDBlack"; font-size: 38px; }
+.cmt .tx { font-family: "IDBold"; font-size: 42px; line-height: 1.12; }
+.cmt .tx small { display: block; font-family: "Mono"; font-size: 22px; color: var(--mut); margin-bottom: 6px; }
+#cA { top: 110px; } #cA .av { background: var(--ink); color: #fff; }
+#cB { top: 290px; } #cB .av { background: var(--red); color: #fff; }
+#cin { position: absolute; left: 30px; right: 30px; bottom: 26px; height: 70px; border: 3px solid #D8D4CA; border-radius: 35px; font-family: "Mono"; font-size: 24px; color: var(--mut); line-height: 64px; padding-left: 28px; }
+/* persistent brand badge + chibi */
+#badge { position: absolute; left: 70px; top: 1440px; width: 330px; height: 118px; z-index: 45; }
+#badge .bx { position: absolute; left: 0; top: 0; width: 330px; height: 118px; border: 4px solid var(--ink); border-radius: 16px; background: #fff; box-shadow: 7px 7px 0 var(--ink); }
+#badge .nm { position: absolute; left: 22px; top: 70px; font-family: "IDBlack"; font-size: 36px; color: var(--ink); white-space: nowrap; }
+#badge .nm b { color: var(--red); font-weight: normal; }
+#badge .h { position: absolute; left: 22px; top: 22px; height: 34px; padding: 0 12px; border-radius: 8px; background: var(--red); color: #fff; font-family: "MonoB"; font-size: 20px; line-height: 34px; }
+#chibi { position: absolute; left: 430px; top: 1185px; width: 802px; height: 1428px; z-index: 50; transform-origin: 50% 40%; }
+#chibiS img { position: absolute; left: 0; top: 0; width: 802px; height: 1428px; opacity: 0; }
+#halo { position: absolute; left: 560px; top: 1240px; width: 560px; height: 720px; z-index: 49; opacity: .9;
+  background-image: radial-gradient(circle, rgba(0,0,0,.18) 2.4px, transparent 2.8px); background-size: 13px 13px;
+  -webkit-mask-image: radial-gradient(ellipse 50% 50% at 50% 50%, #000 0%, transparent 72%); }
+.dkC #halo { background-image: radial-gradient(circle, rgba(255,255,255,.14) 2.4px, transparent 2.8px); }
+
+</style></head>
+<body>
+<div id="root" data-composition-id="hari3" data-start="0" data-duration="62.36" data-fps="30" data-width="1080" data-height="1920">
+  <audio id="vo" src="vo.mp3" data-start="0" data-duration="62.36" data-track-index="0"></audio>
+
+  <div class="bg" id="bgP"><div class="dots"></div></div>
+  <div class="bg" id="bgD"><div class="dots"></div></div>
+  <div class="bg" id="bgR"><div class="dots"></div></div>
+  <div id="hdr"><div class="hl" id="hd0">// 01 &mdash; satu orang &middot; agen AI</div><div class="hl r" id="hr0">KASUS <b>1</b>/2</div><div class="hl" id="hd1">// 02 &mdash; perintahnya pendek</div><div class="hl r" id="hr1">KASUS <b>1</b>/2</div><div class="hl" id="hd2">// 03 &mdash; dilaporkan tembus</div><div class="hl r" id="hr2">KASUS <b>1</b>/2</div><div class="hl" id="hd3">// 04 &mdash; menurut crowdstrike</div><div class="hl r" id="hr3">KASUS <b>2</b>/2</div><div class="hl" id="hd4">// 05 &mdash; yang perlu kamu tahu</div><div class="hl r" id="hr4">INTI <b>!</b></div><div class="hl" id="hd5">// 06 &mdash; keamanan dasar</div><div class="hl r" id="hr5">CEK <b>3</b>/3</div><div class="hl" id="hd6">// 07 &mdash; seri ai pengawas #3</div><div class="hl r" id="hr6">PART <b>4</b> BESOK</div><div class="hl" id="hd7">// 08 &mdash; jawab di komentar</div><div class="hl r" id="hr7">A <b>/</b> B</div></div>
+  <div class="sc" id="s0"><div class="head" id="h0" style="top:330px;"><span>Satu</span><span>orang</span><span>+</span><span>agen</span><span>AI:</span></div><div class="head" id="h0b" style="top:420px;"><span><i>1.200+</i></span><span>situs</span><span>disasar</span></div>
+    <div class="card shop" id="sh0"><div class="bar"><i></i><i></i><i></i></div><span class="tg">toko-01</span><div class="ban"></div><div class="row"></div><div class="row s"></div><div class="btn"></div></div><div class="card shop" id="sh1"><div class="bar"><i></i><i></i><i></i></div><span class="tg">shop.id</span><div class="ban"></div><div class="row"></div><div class="row s"></div><div class="btn"></div></div><div class="card shop" id="sh2"><div class="bar"><i></i><i></i><i></i></div><span class="tg">store-77</span><div class="ban"></div><div class="row"></div><div class="row s"></div><div class="btn"></div></div><div class="card shop" id="sh3"><div class="bar"><i></i><i></i><i></i></div><span class="tg">mall-x</span><div class="ban"></div><div class="row"></div><div class="row s"></div><div class="btn"></div></div><div class="card shop" id="sh4"><div class="bar"><i></i><i></i><i></i></div><span class="tg">butik</span><div class="ban"></div><div class="row"></div><div class="row s"></div><div class="btn"></div></div>
+    <div class="pill" id="pill0" style="left:300px;top:1110px">&#9654; <span class="num" id="c0">0</span> <b>situs</b></div>
+  </div>
+  <div class="sc" id="s1"><div class="head" id="h1" style="top:330px;"><span>Perintahnya</span><span><i>nggak</span><span>sampai</i></span><span>100</span><span>karakter</span></div>
+    <div class="card" id="term"><div class="tb"><i></i><i></i><i></i>&nbsp; agen-ai &mdash; perintah</div>
+      <div class="bd"><span class="pr">&gt;</span> <span id="red"></span><span class="cur" id="cu"></span></div></div>
+    <div class="lbl" id="sim">SIMULASI</div>
+    <div class="pill" id="cnt1"><b>&lt; 100</b> karakter</div>
+  </div>
+  <div class="sc dk" id="s2"><div class="head" id="h2" style="top:330px;"><span>Itu</span><span>baru</span><span>kasus</span><span><i>pertama.</i></span></div>
+    <div class="card kcard" id="kc1"><div class="tab">KASUS</div><div class="big">#1</div><div class="sm">1.200+ SITUS</div></div>
+    <div class="card kcard" id="kc2"><div class="tab">KASUS</div><div class="big">?</div><div class="sm" style="color:#aaa">BERIKUTNYA</div></div>
+  </div>
+  <div class="sc dk" id="s3"><div class="head" id="h3" style="top:330px;"><span><i>100+</i></span><span>perusahaan</span><span>dilaporkan</span><span>tembus</span></div>
+    <div id="mgrid"><div class="m"><b>TEMBUS</b></div><div class="m"><b>TEMBUS</b></div><div class="m"><b>TEMBUS</b></div><div class="m"><b>TEMBUS</b></div><div class="m"><b>TEMBUS</b></div><div class="m"><b>TEMBUS</b></div><div class="m"><b>TEMBUS</b></div><div class="m"><b>TEMBUS</b></div><div class="m"><b>TEMBUS</b></div><div class="m"><b>TEMBUS</b></div><div class="m"><b>TEMBUS</b></div><div class="m"><b>TEMBUS</b></div><div class="m"><b>TEMBUS</b></div><div class="m"><b>TEMBUS</b></div><div class="m"><b>TEMBUS</b></div><div class="m"><b>TEMBUS</b></div><div class="m"><b>TEMBUS</b></div><div class="m"><b>TEMBUS</b></div><div class="m"><b>TEMBUS</b></div><div class="m"><b>TEMBUS</b></div></div>
+    <div class="card" id="price"><div class="hole"></div><div class="v num"><small>&plusmn;</small>US$<span id="c3">0</span></div><div class="k">BIAYA AI &middot; PERKIRAAN PENELITI</div></div>
+    <div class="lbl" style="left:70px;top:1330px;color:#777">sumber: NorForge via Reuters, Okt 2026</div>
+  </div>
+  <div class="sc" id="s4"><div class="head" id="h4" style="top:330px;"><span><i>200+</i></span><span>organisasi,</span><span><i>11</i></span><span>hari</span></div>
+    <div class="card" id="cal"><div class="tab">KALENDER</div><div class="cap">SATU KELOMPOK &middot; 17 OKT &rarr;</div><div class="cg"><div class="d"><s></s><em>1</em></div><div class="d"><s></s><em>2</em></div><div class="d"><s></s><em>3</em></div><div class="d"><s></s><em>4</em></div><div class="d"><s></s><em>5</em></div><div class="d"><s></s><em>6</em></div><div class="d"><s></s><em>7</em></div><div class="d"><s></s><em>8</em></div><div class="d"><s></s><em>9</em></div><div class="d"><s></s><em>10</em></div><div class="d"><s></s><em>11</em></div><div class="d" style="border-style:dashed;background:transparent"><em style="color:#B9B4A9">12</em></div></div></div>
+    <div class="pill" id="orgp">&#9654; <span class="num" id="c4">0</span>+ <b>organisasi</b></div>
+    <div class="lbl" id="src4" style="top:1330px">sumber: CrowdStrike, 29 Okt 2026</div>
+  </div>
+  <div class="sc" id="s5"><div class="head" id="h5" style="top:330px;"><span><i>40</i></span><span>&rarr;</span><span><i>1.500+</i></span><span>perintah/jam</span></div>
+    <div class="card" id="gauge"><div class="tab">KECEPATAN</div>
+      <svg viewBox="0 0 680 380"><path d="M40 340 A300 300 0 0 1 640 340" fill="none" stroke="#E2DED4" stroke-width="54"/>
+        <path id="garc" d="M40 340 A300 300 0 0 1 640 340" fill="none" stroke="#E5401D" stroke-width="54" stroke-dasharray="943" stroke-dashoffset="943"/>
+        <path d="M40 340 A300 300 0 0 1 640 340" fill="none" stroke="#121212" stroke-width="5"/>
+        <g id="needle" transform="rotate(-90 340 340)"><path d="M334 340 L340 70 L346 340 Z" fill="#121212"/><circle cx="340" cy="340" r="22" fill="#121212"/></g></svg>
+      <div class="gv num"><span id="c5">40</span></div><div class="gk">PERINTAH PER JAM</div><div class="was">dulu (manual): ~40</div></div>
+    <div class="lbl" id="src5" style="top:1330px">sumber: CrowdStrike (Adam Meyers), 29 Okt 2026</div>
+  </div>
+  <div class="sc dk" id="s6"><div class="head" id="h6" style="top:330px;font-size:96px"><span>Tapi</span><span>ada</span><span>satu</span><span>hal&hellip;</span></div><div id="bub"><i></i><i></i><i></i></div></div>
+  <div class="sc" id="s7"><div class="head" id="h7" style="top:330px;"><span>AI</span><span>mempercepat.</span><span>Target</span><span>dipilih</span><span><i>manusia.</i></span></div>
+    <div class="card fc" id="fA"><div class="ic">AI</div><div class="tx">Agen AI<small>ngerjain cepat, ribuan perintah</small></div></div>
+    <div id="fl"></div>
+    <div class="card fc" id="fM"><div class="ic">&#9673;</div><div class="tx">Manusia<small>milih target &amp; keputusan penting</small></div></div>
+    <div class="pill" id="tgt"><b>&#9673;</b> target</div>
+  </div>
+  <div class="sc" id="s8"><div class="head" id="h8" style="top:330px;"><span>Keamanan</span><span>dasar</span><span><i>masih</span><span>penting</i></span></div>
+    <div class="card" id="chk"><div class="ttl"><b>&#10033;</b> Cek keamanan <span class="n" id="cn">0/3</span></div>
+      <div class="it" id="i1"><div class="ck" id="k1"></div><div class="tx">Update sistem<small>rutin, terutama yang online</small></div></div>
+      <div class="it" id="i2"><div class="ck" id="k2"></div><div class="tx">Batasi akses<small>cabut akun yang udah nggak dipakai</small></div></div>
+      <div class="it" id="i3"><div class="ck" id="k3"></div><div class="tx">Backup data<small>otomatis, simpan terpisah</small></div></div></div>
+  </div>
+  <div class="sc dk" id="s9"><div class="head" id="h9" style="top:330px;"><span>Besok:</span><span>AI</span><span>yang</span><span><i>ngelawan</span><span>balik</i></span></div>
+    <div class="card" id="p4"><div class="tab">SERI AI PENGAWAS</div><div class="k">PART 4 &middot; BESOK</div><div class="v">AI lawan<br><i>balik</i></div><svg viewBox="0 0 130 150"><path d="M65 6 L120 26 L120 72 C120 108 96 132 65 144 C34 132 10 108 10 72 L10 26 Z" fill="#E5401D" stroke="#121212" stroke-width="7" stroke-linejoin="round"/><path d="M40 76 L58 94 L92 56" fill="none" stroke="#fff" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+  </div>
+  <div class="sc dk" id="s10"><div class="head" id="h10" style="top:330px;"><span><i>Follow</i></span><span>biar</span><span>nggak</span><span>ketinggalan</span></div>
+    <div class="card" id="prof"><div class="av">E</div><div class="nm">EndrichTech</div><div class="hd">@end.rich9</div>
+      <div class="sr" style="margin-top:110px">AI &amp; tech buat kerja + usaha.<br>Seri AI Pengawas tiap hari.</div><div id="fbtn">Follow</div></div>
+  </div>
+  <div class="sc rd" id="s11"><div class="head" id="h11" style="top:330px;"><span>Punya</span><span>bisnis?</span><span>Lebih</span><span>khawatir</span><span><i>mana?</i></span></div>
+    <div class="card" id="cm"><div class="ct">Komentar</div>
+      <div class="cmt" id="cA"><div class="av">A</div><div class="tx"><small>pilihan A</small>Data pelanggan dicuri</div></div>
+      <div class="cmt" id="cB"><div class="av">B</div><div class="tx"><small>pilihan B</small>Bisnis nggak bisa jalan</div></div>
+      <div id="cin">tulis A atau B&hellip;</div></div>
+  </div>
+  <div id="halo"></div>
+  <div id="badge"><div class="bx"></div><div class="h">@end.rich9</div><div class="nm">Endrich<b>Tech</b></div></div>
+  <div id="chibi"><div id="chibiS"><img id="p_netral" src="pose/pose_0_netral.png"><img id="p_lambai" src="pose/pose_1_lambai.png"><img id="p_tunjuk" src="pose/pose_2_tunjuk.png"><img id="p_mikir" src="pose/pose_3_mikir.png"><img id="p_kaget" src="pose/pose_4_kaget.png"><img id="p_keren" src="pose/pose_5_keren.png"><img id="p_bicara" src="pose/pose_6_bicara.png"><img id="p_kedip" src="pose/pose_7_kedip.png"></div></div>
+  <div id="grain"></div>
+
+  <script src="vendor/gsap.min.js"></script>
+  <script>
+  (function () {
+    var B = {"b0": 0.0, "b1": 5.868, "b2": 10.629, "b3": 13.257, "b4": 20.842, "b5": 28.173, "b6": 33.564, "b7": 35.74, "b8": 40.516, "b9": 47.736, "b10": 51.897999999999996, "b11": 54.422}; var K = {"agen": 1.776, "seribu": 3.907, "situs": 4.805, "perintah": 6.525, "nggak1": 8.812, "seratus1": 9.616, "pertama": 12.735, "seratus2": 15.24, "ditembus": 17.338, "biaya": 17.876, "lima": 19.759, "cs": 22.118, "dua2": 24.967, "sebelas": 27.289, "empat": 30.46, "jadi": 32.24, "tahu": 35.514, "mempercepat": 37.133, "manusia": 38.614, "target": 40.079, "penting": 42.847, "update": 44.353, "batasi": 45.254, "backup": 47.055, "melawan": 50.439, "ketinggalan": 53.52, "data": 56.861, "atau": 58.161, "khawatir": 56.394}; var DUR = 62.36; var TRACK = [[0.0, "netral"], [0.067, "tunjuk"], [1.667, "netral"], [1.733, "bicara"], [1.833, "netral"], [1.9, "bicara"], [2.1, "netral"], [2.367, "bicara"], [2.667, "netral"], [2.733, "bicara"], [2.8, "netral"], [2.9, "bicara"], [3.133, "netral"], [3.2, "bicara"], [3.3, "netral"], [3.4, "kedip"], [3.533, "bicara"], [3.667, "netral"], [3.767, "bicara"], [3.933, "kaget"], [4.933, "bicara"], [5.033, "netral"], [5.1, "bicara"], [5.333, "netral"], [5.4, "bicara"], [5.6, "netral"], [5.9, "mikir"], [7.3, "bicara"], [7.4, "netral"], [7.467, "bicara"], [7.533, "netral"], [7.6, "bicara"], [7.667, "netral"], [7.733, "bicara"], [7.8, "netral"], [7.867, "bicara"], [7.933, "netral"], [8.0, "bicara"], [8.1, "netral"], [8.167, "bicara"], [8.233, "netral"], [8.367, "bicara"], [8.8, "netral"], [8.833, "kaget"], [9.733, "bicara"], [9.833, "netral"], [9.9, "bicara"], [10.067, "netral"], [10.233, "bicara"], [10.4, "netral"], [10.733, "bicara"], [10.833, "tunjuk"], [11.833, "netral"], [11.933, "bicara"], [12.033, "netral"], [12.1, "bicara"], [12.233, "netral"], [12.3, "bicara"], [12.367, "netral"], [12.433, "bicara"], [12.5, "netral"], [12.567, "bicara"], [12.667, "netral"], [12.733, "bicara"], [12.833, "netral"], [12.9, "bicara"], [13.033, "netral"], [13.367, "bicara"], [13.433, "netral"], [13.5, "bicara"], [13.567, "netral"], [13.633, "bicara"], [13.7, "netral"], [13.767, "bicara"], [13.933, "netral"], [14.0, "bicara"], [14.2, "netral"], [14.3, "bicara"], [14.367, "netral"], [14.433, "bicara"], [14.567, "netral"], [14.733, "bicara"], [14.833, "netral"], [14.9, "bicara"], [15.033, "netral"], [15.133, "bicara"], [15.267, "kaget"], [16.267, "bicara"], [16.333, "netral"], [16.4, "kedip"], [16.533, "bicara"], [16.667, "netral"], [16.733, "bicara"], [16.8, "netral"], [16.867, "bicara"], [16.933, "netral"], [17.033, "bicara"], [17.233, "netral"], [17.3, "bicara"], [17.4, "netral"], [17.467, "bicara"], [17.533, "netral"], [17.9, "bicara"], [18.2, "netral"], [18.267, "bicara"], [18.367, "netral"], [18.4, "keren"], [19.3, "bicara"], [19.5, "netral"], [19.567, "bicara"], [19.633, "netral"], [19.7, "bicara"], [19.767, "netral"], [19.833, "bicara"], [20.1, "netral"], [20.167, "bicara"], [20.233, "netral"], [20.3, "bicara"], [20.367, "netral"], [20.433, "bicara"], [20.633, "netral"], [20.967, "bicara"], [21.133, "netral"], [21.2, "bicara"], [21.333, "netral"], [21.467, "bicara"], [21.767, "netral"], [21.833, "bicara"], [21.9, "netral"], [21.967, "bicara"], [22.033, "netral"], [22.1, "bicara"], [22.133, "tunjuk"], [23.133, "bicara"], [23.2, "netral"], [23.267, "bicara"], [23.333, "netral"], [23.4, "bicara"], [23.567, "netral"], [23.8, "bicara"], [23.9, "netral"], [23.967, "bicara"], [24.033, "netral"], [24.1, "bicara"], [24.233, "netral"], [24.3, "bicara"], [24.5, "netral"], [24.567, "bicara"], [24.633, "netral"], [24.733, "bicara"], [24.833, "netral"], [24.9, "bicara"], [25.0, "kedip"], [25.133, "bicara"], [25.267, "netral"], [25.367, "bicara"], [25.567, "netral"], [25.633, "bicara"], [25.7, "netral"], [25.767, "bicara"], [25.833, "netral"], [25.9, "bicara"], [26.0, "netral"], [26.067, "bicara"], [26.2, "netral"], [26.267, "bicara"], [26.367, "netral"], [26.467, "bicara"], [26.633, "netral"], [26.8, "bicara"], [26.933, "netral"], [27.0, "bicara"], [27.1, "netral"], [27.167, "bicara"], [27.3, "kaget"], [28.2, "netral"], [28.267, "bicara"], [28.333, "netral"], [28.4, "bicara"], [28.533, "netral"], [28.6, "bicara"], [28.7, "netral"], [28.767, "bicara"], [28.9, "netral"], [28.967, "bicara"], [29.133, "netral"], [29.2, "bicara"], [29.267, "netral"], [29.333, "bicara"], [29.4, "netral"], [29.5, "bicara"], [29.667, "netral"], [29.733, "bicara"], [29.833, "netral"], [30.167, "bicara"], [30.367, "netral"], [30.433, "bicara"], [30.5, "netral"], [30.567, "bicara"], [30.633, "netral"], [30.733, "bicara"], [30.9, "netral"], [30.967, "bicara"], [31.133, "netral"], [31.2, "bicara"], [31.267, "netral"], [31.333, "bicara"], [31.4, "kedip"], [31.533, "bicara"], [31.8, "netral"], [31.967, "bicara"], [32.133, "netral"], [32.2, "bicara"], [32.267, "kaget"], [33.367, "netral"], [33.567, "mikir"], [35.567, "netral"], [35.833, "bicara"], [35.967, "netral"], [36.033, "bicara"], [36.1, "netral"], [36.167, "bicara"], [36.3, "netral"], [36.4, "bicara"], [36.6, "netral"], [36.667, "bicara"], [36.767, "netral"], [36.833, "bicara"], [36.967, "netral"], [37.033, "bicara"], [37.233, "netral"], [37.3, "bicara"], [37.433, "netral"], [37.5, "bicara"], [37.567, "netral"], [37.7, "bicara"], [37.8, "netral"], [37.867, "bicara"], [38.1, "netral"], [38.367, "bicara"], [38.467, "netral"], [38.567, "bicara"], [38.633, "tunjuk"], [39.733, "bicara"], [40.033, "netral"], [40.133, "bicara"], [40.267, "netral"], [40.333, "bicara"], [40.4, "netral"], [40.467, "bicara"], [40.533, "netral"], [40.633, "bicara"], [40.8, "netral"], [41.033, "bicara"], [41.133, "netral"], [41.2, "bicara"], [41.633, "netral"], [41.767, "bicara"], [41.933, "netral"], [42.0, "bicara"], [42.1, "netral"], [42.167, "bicara"], [42.3, "netral"], [42.367, "bicara"], [42.467, "netral"], [42.533, "bicara"], [42.6, "netral"], [42.667, "bicara"], [42.833, "netral"], [42.9, "bicara"], [43.0, "netral"], [43.1, "bicara"], [43.267, "netral"], [43.333, "bicara"], [43.567, "netral"], [43.633, "bicara"], [43.7, "netral"], [44.0, "bicara"], [44.1, "netral"], [44.2, "bicara"], [44.267, "netral"], [44.333, "bicara"], [44.4, "netral"], [44.467, "bicara"], [44.533, "netral"], [44.633, "bicara"], [44.767, "netral"], [44.867, "bicara"], [45.133, "netral"], [45.2, "kedip"], [45.333, "bicara"], [45.433, "netral"], [45.5, "bicara"], [45.567, "netral"], [45.633, "bicara"], [45.8, "netral"], [45.933, "bicara"], [46.067, "netral"], [46.133, "bicara"], [46.2, "netral"], [46.3, "bicara"], [46.5, "netral"], [46.6, "bicara"], [46.8, "netral"], [46.867, "bicara"], [46.933, "netral"], [47.033, "bicara"], [47.2, "netral"], [47.333, "bicara"], [47.367, "keren"], [47.767, "tunjuk"], [48.967, "bicara"], [49.1, "netral"], [49.167, "bicara"], [49.333, "netral"], [49.433, "bicara"], [49.567, "netral"], [49.633, "bicara"], [49.867, "netral"], [49.933, "bicara"], [50.0, "netral"], [50.067, "bicara"], [50.2, "netral"], [50.3, "bicara"], [50.4, "netral"], [50.467, "bicara"], [50.667, "netral"], [50.733, "bicara"], [50.867, "netral"], [50.933, "bicara"], [51.0, "kedip"], [51.133, "bicara"], [51.333, "netral"], [51.4, "bicara"], [51.5, "netral"], [51.567, "bicara"], [51.7, "netral"], [51.767, "bicara"], [51.867, "netral"], [51.9, "lambai"], [53.5, "bicara"], [53.7, "netral"], [53.8, "bicara"], [53.9, "netral"], [53.967, "bicara"], [54.267, "netral"], [54.533, "bicara"], [54.667, "netral"], [54.733, "bicara"], [54.867, "netral"], [54.967, "bicara"], [55.1, "netral"], [55.167, "bicara"], [55.267, "netral"], [55.367, "bicara"], [55.5, "netral"], [55.6, "bicara"], [55.733, "netral"], [55.9, "bicara"], [56.0, "netral"], [56.067, "bicara"], [56.167, "netral"], [56.233, "bicara"], [56.3, "netral"], [56.367, "bicara"], [56.4, "mikir"]]; var EMPH = [0.05, 3.907, 5.868, 8.812, 10.829, 15.24, 18.376, 22.118, 27.289, 32.24, 33.564, 38.614, 47.355, 47.736, 51.898, 56.394]; var BOBS = 89; var MODES = [[0.0, "P"], [10.629, "D"], [20.842, "P"], [33.564, "D"], [35.74, "P"], [47.736, "D"], [54.422, "R"]]; var SCN = [["#s0", 0.0], ["#s1", 5.868], ["#s2", 10.629], ["#s3", 13.257], ["#s4", 20.842], ["#s5", 28.173], ["#s6", 33.564], ["#s7", 35.74], ["#s8", 40.516], ["#s9", 47.736], ["#s10", 51.897999999999996], ["#s11", 54.422]]; var HDR = [0.0, 5.868, 13.257, 20.842, 33.564, 40.516, 47.736, 54.422]; var HEADS = [["h0", "Satu|orang|+|agen|AI:", 0.0, 2.076], ["h0b", "<i>1.200+</i>|situs|disasar", 3.907, 5.1049999999999995], ["h1", "Perintahnya|<i>nggak|sampai</i>|100|karakter", 5.968, 10.016], ["h2", "Itu|baru|kasus|<i>pertama.</i>", 10.729, 12.934999999999999], ["h3", "<i>100+</i>|perusahaan|dilaporkan|tembus", 15.14, 17.538], ["h4", "<i>200+</i>|organisasi,|<i>11</i>|hari", 24.967, 27.889000000000003], ["h5", "<i>40</i>|&rarr;|<i>1.500+</i>|perintah/jam", 30.46, 33.04], ["h6", "Tapi|ada|satu|hal&hellip;", 33.614, 35.514], ["h7", "AI|mempercepat.|Target|dipilih|<i>manusia.</i>", 36.533, 40.379], ["h8", "Keamanan|dasar|<i>masih|penting</i>", 40.616, 43.147], ["h9", "Besok:|AI|yang|<i>ngelawan|balik</i>", 47.836, 50.839], ["h10", "<i>Follow</i>|biar|nggak|ketinggalan", 51.94799999999999, 53.720000000000006], ["h11", "Punya|bisnis?|Lebih|khawatir|<i>mana?</i>", 54.522, 56.894]]; var HITS = [2, 7, 11, 13, 18]; var RED = "\u2588\u2588\u2588\u2588\u2588 \u2588\u2588\u2588 \u2588\u2588\u2588\u2588\u2588\u2588 \u2588\u2588\u2588\u2588 \u2588\u2588\u2588\u2588\u2588\u2588\u2588 \u2588\u2588\u2588";
+
+    var FPS = 30;
+    function q(t) { return Math.round(t * FPS) / FPS; }
+    var tl = gsap.timeline({ paused: true });
+    var NI = { immediateRender: false };
+    function cut(sel, t, v) { tl.set(sel, { opacity: v }, q(t)); }
+    function spring(sel, t, from, d) { tl.fromTo(sel, Object.assign({ opacity: 0, y: 90, rotation: 0, scale: 1 }, from || {}), { opacity: 1, y: 0, x: 0, rotation: 0, scale: 1, duration: d || 0.45, ease: "back.out(1.5)" }, q(t)); }
+    function count(sel, t, d, a, b, fmt) { var o = { v: a }, el = document.querySelector(sel); tl.fromTo(o, { v: a }, { v: b, duration: d, ease: "power2.out", onUpdate: function () { el.textContent = fmt(o.v); } }, q(t)); }
+    function type(sel, t, d, msg) { var o = { n: 0 }, el = document.querySelector(sel); tl.fromTo(o, { n: 0 }, { n: msg.length, duration: d, ease: "none", onUpdate: function () { el.textContent = msg.slice(0, Math.round(o.n)); } }, q(t)); }
+    function idn(n) { return Math.round(n).toLocaleString("id-ID"); }
+    // background mode per beat (P=paper, D=dark, R=red); hard cuts like the reference
+    MODES.forEach(function (m) {
+      ["#bgP", "#bgD", "#bgR"].forEach(function (b) { tl.set(b, { opacity: b === "#bg" + m[1] ? 1 : 0 }, q(m[0])); });
+      tl.set("#hdr", { color: m[1] === "P" ? "#8A877F" : (m[1] === "R" ? "#FFD9CF" : "#77746D") }, q(m[0]));
+      tl.set("#root", { className: m[1] === "P" ? "" : "dkC" }, q(m[0]));
+    });
+    // scenes: visible from start to next start; each enters with a small push
+    SCN.forEach(function (s, i) {
+      cut(s[0], s[1], 1);
+      tl.fromTo(s[0], { x: 70 }, Object.assign({ x: 0, duration: 0.3, ease: "power3.out" }, NI), q(s[1]));
+      if (i + 1 < SCN.length) cut(s[0], SCN[i + 1][1], 0);
+    });
+    // header labels
+    HDR.forEach(function (h, k) {
+      tl.set("#hd" + k + ", #hr" + k, { opacity: 1 }, q(h));
+      if (k + 1 < HDR.length) tl.set("#hd" + k + ", #hr" + k, { opacity: 0 }, q(HDR[k + 1]));
+    });
+    // headlines word by word
+    HEADS.forEach(function (h) {
+      var sp = document.querySelectorAll("#" + h[0] + " span"), n = sp.length, d = Math.max(0.2, h[3] - h[2]);
+      tl.set("#" + h[0], { opacity: 1 }, q(h[2]));
+      sp.forEach(function (s, k) { tl.fromTo(s, { opacity: 0, y: 22 }, { opacity: 1, y: 0, duration: 0.18, ease: "power2.out" }, q(h[2] + d * k / n)); });
+    });
+    // h0 -> h0b: line 2 sits under line 1
+    // ---- S0 shops fan in + counter
+    var fan = [[-26, -40, 640], [-12, 120, 610], [0, 300, 600], [12, 480, 610], [26, 640, 640]];
+    fan.forEach(function (f, k) {
+      tl.set("#sh" + k, { left: f[1] + 30, top: f[2] }, 0);
+      tl.fromTo("#sh" + k, { opacity: 0, y: 600, rotation: 0 }, { opacity: 1, y: 0, rotation: f[0], duration: 0.5, ease: "back.out(1.4)" }, q(Math.max(0.0, K.agen - 0.6) + k * 0.12));
+    });
+    tl.set("#sh2", { opacity: 1, y: 0, rotation: 0 }, 0);
+    spring("#pill0", K.seribu, { y: 40, scale: 0.7 }, 0.35);
+    count("#c0", K.seribu, K.situs - K.seribu + 0.3, 0, 1200, function (v) { return idn(v) + (v > 1199 ? "+" : ""); });
+    tl.fromTo(".shop", { y: 0 }, Object.assign({ y: -14, duration: 0.12, yoyo: true, repeat: 1, stagger: 0.04 }, NI), q(K.situs));
+    // ---- S1 prompt
+    spring("#term", B.b1 + 0.05, { y: 80, rotation: -2 });
+    type("#red", K.perintah, K.nggak1 - K.perintah - 0.2, RED);
+    tl.fromTo("#cu", { opacity: 1 }, { opacity: 0, duration: 0.35, yoyo: true, repeat: 9, ease: "steps(1)" }, q(B.b1));
+    spring("#cnt1", K.seratus1 - 0.15, { scale: 0.5, y: 0 }, 0.35);
+    cut("#sim", B.b1 + 0.3, 1);
+    // ---- S2 cards
+    spring("#kc1", B.b2 + 0.05, { y: 300, rotation: -14 });
+    spring("#kc2", K.pertama - 0.2, { y: 300, rotation: 16 });
+    tl.to("#kc1", { rotation: -5, duration: 0.3 }, q(K.pertama));
+    tl.to("#kc2", { rotation: 6, duration: 0.3 }, q(K.pertama + 0.1));
+    // ---- S3 grid + TEMBUS + price tag
+    document.querySelectorAll("#mgrid .m").forEach(function (m, k) { tl.fromTo(m, { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.25, ease: "back.out(2)" }, q(B.b3 + 0.05 + k * 0.03)); });
+    HITS.forEach(function (k, n) {
+      var el = document.querySelectorAll("#mgrid .m b")[k];
+      tl.fromTo(el, { opacity: 0, scale: 1.6 }, { opacity: 1, scale: 1, duration: 0.18, ease: "power4.in" }, q(K.seratus2 + 0.2 + n * 0.14));
+    });
+    spring("#price", K.biaya, { y: 260, rotation: 10 }, 0.5);
+    tl.to("#price", { rotation: -4, duration: 0.4, ease: "sine.inOut" }, q(K.biaya + 0.5));
+    count("#c3", K.biaya + 0.2, K.lima - K.biaya + 0.5, 0, 5000, function (v) { return idn(Math.round(v / 50) * 50); });
+    // ---- S4 calendar 11 days + counter
+    spring("#cal", B.b4 + 0.05, { y: 120 });
+    spring("#orgp", K.dua2 - 0.1, { scale: 0.6, y: 0 }, 0.35);
+    count("#c4", K.dua2 - 0.1, 1.0, 0, 200, function (v) { return Math.round(v); });
+    document.querySelectorAll("#cal .d s").forEach(function (s, k) { tl.to(s, { scaleY: 1, duration: 0.12, ease: "power2.out" }, q(K.dua2 + 0.6 + k * ((K.sebelas + 0.6 - K.dua2 - 0.6) / 11))); });
+    tl.set("#cal .d em", { color: "#fff" }, q(K.sebelas + 0.7));
+    // ---- S5 gauge
+    spring("#gauge", B.b5 + 0.05, { y: 120 });
+    tl.fromTo("#garc", { attr: { "stroke-dashoffset": 943 } }, { attr: { "stroke-dashoffset": 920 }, duration: 0.4 }, q(K.empat));
+    tl.fromTo("#needle", { attr: { transform: "rotate(-90 340 340)" } }, { attr: { transform: "rotate(-84 340 340)" }, duration: 0.4 }, q(K.empat));
+    tl.to("#garc", { attr: { "stroke-dashoffset": 30 }, duration: 1.0, ease: "power3.out" }, q(K.jadi));
+    tl.to("#needle", { attr: { transform: "rotate(84 340 340)" }, duration: 1.0, ease: "back.out(1.2)" }, q(K.jadi));
+    count("#c5", K.jadi, 1.0, 40, 1500, function (v) { return idn(v) + (v > 1499 ? "+" : ""); });
+    // ---- S6 thought bubble
+    tl.fromTo("#bub", { opacity: 0, scale: 0.3 }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(2)" }, q(B.b6 + 0.3));
+    tl.fromTo("#bub i", { y: 0 }, { y: -10, duration: 0.25, yoyo: true, repeat: 5, stagger: 0.1, ease: "sine.inOut" }, q(B.b6 + 0.6));
+    // ---- S7 flow
+    spring("#fA", B.b7 + 0.05, { x: -120, y: 0, rotation: -3 });
+    tl.fromTo("#fl", { scaleY: 0 }, { scaleY: 1, duration: 0.25 }, q(K.manusia - 0.4));
+    spring("#fM", K.manusia - 0.2, { x: 120, y: 0, rotation: 3 });
+    tl.set("#fM", { className: "card fc on" }, q(K.target));
+    spring("#tgt", K.target - 0.1, { scale: 0.5, y: 0 }, 0.35);
+    // ---- S8 checklist
+    spring("#chk", B.b8 + 0.05, { y: 140 });
+    [["#i1", "#k1", K.update, "1/3"], ["#i2", "#k2", K.batasi, "2/3"], ["#i3", "#k3", K.backup, "3/3"]].forEach(function (r) {
+      tl.set(r[0], { className: "it cur2" }, q(r[2] - 0.2));
+      tl.set(r[1], { className: "ck ok", textContent: "✓" }, q(r[2] + 0.35));
+      tl.fromTo(r[1], { scale: 1.4 }, Object.assign({ scale: 1, duration: 0.25, ease: "back.out(3)" }, NI), q(r[2] + 0.35));
+      tl.set(r[0], { className: "it" }, q(r[2] + 0.5));
+      tl.set("#cn", { textContent: r[3] }, q(r[2] + 0.35));
+    });
+    // ---- S9 part 4, S10 follow
+    spring("#p4", B.b9 + 0.05, { y: 260, rotation: -10 });
+    tl.fromTo("#p4 svg", { scale: 0, rotation: -30 }, { scale: 1, rotation: 0, duration: 0.4, ease: "back.out(2.5)" }, q(K.melawan));
+    spring("#prof", B.b10 + 0.05, { y: 200, rotation: 6 });
+    tl.fromTo("#fbtn", { scale: 1 }, { scale: 0.9, duration: 0.1, yoyo: true, repeat: 1 }, q(B.b10 + 0.7));
+    tl.set("#fbtn", { className: "done", textContent: "Following ✓" }, q(B.b10 + 0.9));
+    // ---- S11 comments A/B
+    spring("#cm", B.b11 + 0.05, { y: 220 });
+    spring("#cA", K.data - 0.2, { x: -60, y: 0 }, 0.35);
+    spring("#cB", K.atau + 0.2, { x: -60, y: 0 }, 0.35);
+    // ---- chibi: always on screen, pose track + squash on emphasis + idle bob
+    TRACK.forEach(function (e) { tl.set("#chibiS img:not(#p_" + e[1] + ")", { opacity: 0 }, q(e[0])); tl.set("#p_" + e[1], { opacity: 1 }, q(e[0])); });
+    tl.fromTo("#chibi", { y: 500 }, { y: 0, duration: 0.5, ease: "back.out(1.3)" }, 0);
+    tl.fromTo("#chibiS", { y: 0 }, { y: -8, duration: 0.7, yoyo: true, repeat: BOBS, ease: "sine.inOut" }, 0.6);
+    EMPH.forEach(function (t) { tl.fromTo("#chibi", { scaleY: 0.96, scaleX: 1.03 }, Object.assign({ scaleY: 1, scaleX: 1, duration: 0.35, ease: "back.out(3)" }, NI), q(t)); });
+    tl.set({}, {}, DUR);
+
+    window.__timelines = window.__timelines || {};
+    window.__timelines["hari3"] = tl;
+  })();
+  </script>
+</div>
+</body>
+</html>

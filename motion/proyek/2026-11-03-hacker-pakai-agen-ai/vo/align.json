@@ -1,0 +1,944 @@
+{
+"words": [
+{
+"word": "Ada",
+"start": 0.05,
+"end": 0.249
+},
+{
+"word": "satu",
+"start": 0.316,
+"end": 0.581
+},
+{
+"word": "orang",
+"start": 0.648,
+"end": 0.98
+},
+{
+"word": "yang",
+"start": 1.046,
+"end": 1.311
+},
+{
+"word": "pakai",
+"start": 1.378,
+"end": 1.71
+},
+{
+"word": "agen",
+"start": 1.776,
+"end": 2.042
+},
+{
+"word": "AI,",
+"start": 2.108,
+"end": 2.307
+},
+{
+"word": "dan",
+"start": 2.374,
+"end": 2.532
+},
+{
+"word": "berhasil",
+"start": 2.585,
+"end": 3.008
+},
+{
+"word": "nyerang",
+"start": 3.061,
+"end": 3.431
+},
+{
+"word": "sekitar",
+"start": 3.484,
+"end": 3.854
+},
+{
+"word": "seribu",
+"start": 3.907,
+"end": 4.224
+},
+{
+"word": "dua",
+"start": 4.277,
+"end": 4.435
+},
+{
+"word": "ratus",
+"start": 4.488,
+"end": 4.752
+},
+{
+"word": "situs",
+"start": 4.805,
+"end": 5.07
+},
+{
+"word": "belanja",
+"start": 5.122,
+"end": 5.492
+},
+{
+"word": "online.",
+"start": 5.545,
+"end": 5.915
+},
+{
+"word": "Padahal,",
+"start": 5.968,
+"end": 6.463
+},
+{
+"word": "perintah",
+"start": 6.525,
+"end": 7.019
+},
+{
+"word": "yang",
+"start": 7.081,
+"end": 7.328
+},
+{
+"word": "dia",
+"start": 7.39,
+"end": 7.576
+},
+{
+"word": "kasih",
+"start": 7.637,
+"end": 7.947
+},
+{
+"word": "ke",
+"start": 8.008,
+"end": 8.132
+},
+{
+"word": "AI",
+"start": 8.194,
+"end": 8.317
+},
+{
+"word": "itu...",
+"start": 8.379,
+"end": 8.75
+},
+{
+"word": "nggak",
+"start": 8.812,
+"end": 9.121
+},
+{
+"word": "sampai",
+"start": 9.183,
+"end": 9.554
+},
+{
+"word": "seratus",
+"start": 9.616,
+"end": 10.048
+},
+{
+"word": "karakter.",
+"start": 10.11,
+"end": 10.667
+},
+{
+"word": "Dan",
+"start": 10.729,
+"end": 10.936
+},
+{
+"word": "ternyata,",
+"start": 11.005,
+"end": 11.628
+},
+{
+"word": "itu",
+"start": 11.697,
+"end": 11.905
+},
+{
+"word": "baru",
+"start": 11.974,
+"end": 12.25
+},
+{
+"word": "kasus",
+"start": 12.32,
+"end": 12.666
+},
+{
+"word": "pertama.",
+"start": 12.735,
+"end": 13.288
+},
+{
+"word": "Di",
+"start": 13.357,
+"end": 13.465
+},
+{
+"word": "kasus",
+"start": 13.519,
+"end": 13.788
+},
+{
+"word": "lain",
+"start": 13.842,
+"end": 14.057
+},
+{
+"word": "malah",
+"start": 14.11,
+"end": 14.379
+},
+{
+"word": "ada",
+"start": 14.433,
+"end": 14.595
+},
+{
+"word": "lebih",
+"start": 14.648,
+"end": 14.917
+},
+{
+"word": "dari",
+"start": 14.971,
+"end": 15.186
+},
+{
+"word": "seratus",
+"start": 15.24,
+"end": 15.617
+},
+{
+"word": "perusahaan",
+"start": 15.67,
+"end": 16.208
+},
+{
+"word": "dilaporkan",
+"start": 16.262,
+"end": 16.8
+},
+{
+"word": "berhasil",
+"start": 16.854,
+"end": 17.284
+},
+{
+"word": "ditembus.",
+"start": 17.338,
+"end": 17.822
+},
+{
+"word": "Biaya",
+"start": 17.876,
+"end": 18.145
+},
+{
+"word": "AI",
+"start": 18.199,
+"end": 18.306
+},
+{
+"word": "yang",
+"start": 18.36,
+"end": 18.575
+},
+{
+"word": "dipakai",
+"start": 18.629,
+"end": 19.006
+},
+{
+"word": "Cuma",
+"start": 19.059,
+"end": 19.274
+},
+{
+"word": "sekitar",
+"start": 19.328,
+"end": 19.705
+},
+{
+"word": "lima",
+"start": 19.759,
+"end": 19.974
+},
+{
+"word": "ribu",
+"start": 20.028,
+"end": 20.243
+},
+{
+"word": "dolar.",
+"start": 20.297,
+"end": 20.619
+},
+{
+"word": "Dan,",
+"start": 20.673,
+"end": 20.888
+},
+{
+"word": "ini",
+"start": 20.942,
+"end": 21.064
+},
+{
+"word": "yang",
+"start": 21.104,
+"end": 21.267
+},
+{
+"word": "lebih",
+"start": 21.307,
+"end": 21.51
+},
+{
+"word": "gila,",
+"start": 21.55,
+"end": 21.753
+},
+{
+"word": "menurut",
+"start": 21.794,
+"end": 22.078
+},
+{
+"word": "CrowdStrike,",
+"start": 22.118,
+"end": 22.605
+},
+{
+"word": "ada",
+"start": 22.646,
+"end": 22.857
+},
+{
+"word": "satu",
+"start": 22.927,
+"end": 23.208
+},
+{
+"word": "kelompok",
+"start": 23.279,
+"end": 23.842
+},
+{
+"word": "yang",
+"start": 23.912,
+"end": 24.193
+},
+{
+"word": "menyerang",
+"start": 24.264,
+"end": 24.897
+},
+{
+"word": "dua",
+"start": 24.967,
+"end": 25.178
+},
+{
+"word": "ratus",
+"start": 25.249,
+"end": 25.6
+},
+{
+"word": "organisasi,",
+"start": 25.671,
+"end": 26.444
+},
+{
+"word": "cuma",
+"start": 26.515,
+"end": 26.796
+},
+{
+"word": "dalam",
+"start": 26.867,
+"end": 27.218
+},
+{
+"word": "sebelas",
+"start": 27.289,
+"end": 27.781
+},
+{
+"word": "hari.",
+"start": 27.851,
+"end": 28.203
+},
+{
+"word": "Kecepatan",
+"start": 28.273,
+"end": 28.733
+},
+{
+"word": "serangannya",
+"start": 28.784,
+"end": 29.346
+},
+{
+"word": "juga",
+"start": 29.397,
+"end": 29.602
+},
+{
+"word": "melonjak.",
+"start": 29.653,
+"end": 30.113
+},
+{
+"word": "Dari",
+"start": 30.164,
+"end": 30.401
+},
+{
+"word": "empat",
+"start": 30.46,
+"end": 30.757
+},
+{
+"word": "puluh",
+"start": 30.816,
+"end": 31.113
+},
+{
+"word": "perintah",
+"start": 31.172,
+"end": 31.647
+},
+{
+"word": "per",
+"start": 31.706,
+"end": 31.884
+},
+{
+"word": "jam,",
+"start": 31.943,
+"end": 32.181
+},
+{
+"word": "jadi",
+"start": 32.24,
+"end": 32.477
+},
+{
+"word": "seribu",
+"start": 32.537,
+"end": 32.893
+},
+{
+"word": "lima",
+"start": 32.952,
+"end": 33.189
+},
+{
+"word": "ratus.",
+"start": 33.249,
+"end": 33.604
+},
+{
+"word": "Tapi",
+"start": 33.664,
+"end": 33.881
+},
+{
+"word": "ada",
+"start": 33.936,
+"end": 34.099
+},
+{
+"word": "satu",
+"start": 34.153,
+"end": 34.371
+},
+{
+"word": "hal",
+"start": 34.426,
+"end": 34.589
+},
+{
+"word": "yang",
+"start": 34.643,
+"end": 34.861
+},
+{
+"word": "perlu",
+"start": 34.915,
+"end": 35.187
+},
+{
+"word": "kamu",
+"start": 35.242,
+"end": 35.459
+},
+{
+"word": "tahu.",
+"start": 35.514,
+"end": 35.786
+},
+{
+"word": "AI-nya",
+"start": 35.84,
+"end": 36.177
+},
+{
+"word": "memang",
+"start": 36.234,
+"end": 36.571
+},
+{
+"word": "membantu",
+"start": 36.627,
+"end": 37.077
+},
+{
+"word": "mempercepat",
+"start": 37.133,
+"end": 37.751
+},
+{
+"word": "serangan,",
+"start": 37.808,
+"end": 38.314
+},
+{
+"word": "tapi",
+"start": 38.37,
+"end": 38.565
+},
+{
+"word": "manusia",
+"start": 38.614,
+"end": 38.956
+},
+{
+"word": "tetap",
+"start": 39.005,
+"end": 39.249
+},
+{
+"word": "yang",
+"start": 39.298,
+"end": 39.493
+},
+{
+"word": "menentukan",
+"start": 39.542,
+"end": 40.03
+},
+{
+"word": "targetnya.",
+"start": 40.079,
+"end": 40.568
+},
+{
+"word": "Makanya,",
+"start": 40.616,
+"end": 41.007
+},
+{
+"word": "keamanan",
+"start": 41.056,
+"end": 41.629
+},
+{
+"word": "dasar",
+"start": 41.701,
+"end": 42.059
+},
+{
+"word": "itu",
+"start": 42.13,
+"end": 42.345
+},
+{
+"word": "masih",
+"start": 42.417,
+"end": 42.775
+},
+{
+"word": "penting",
+"start": 42.847,
+"end": 43.348
+},
+{
+"word": "banget.",
+"start": 43.42,
+"end": 43.921
+},
+{
+"word": "Rutin",
+"start": 43.993,
+"end": 44.293
+},
+{
+"word": "update",
+"start": 44.353,
+"end": 44.713
+},
+{
+"word": "sistem,",
+"start": 44.773,
+"end": 45.194
+},
+{
+"word": "batasi",
+"start": 45.254,
+"end": 45.614
+},
+{
+"word": "akses,",
+"start": 45.674,
+"end": 46.034
+},
+{
+"word": "dan",
+"start": 46.094,
+"end": 46.275
+},
+{
+"word": "jangan",
+"start": 46.335,
+"end": 46.695
+},
+{
+"word": "lupa",
+"start": 46.755,
+"end": 46.995
+},
+{
+"word": "backup",
+"start": 47.055,
+"end": 47.415
+},
+{
+"word": "data.",
+"start": 47.475,
+"end": 47.776
+},
+{
+"word": "Besok,",
+"start": 47.836,
+"end": 48.196
+},
+{
+"word": "aku",
+"start": 48.256,
+"end": 48.412
+},
+{
+"word": "mau",
+"start": 48.464,
+"end": 48.62
+},
+{
+"word": "bahas",
+"start": 48.672,
+"end": 48.931
+},
+{
+"word": "AI",
+"start": 48.983,
+"end": 49.087
+},
+{
+"word": "yang",
+"start": 49.139,
+"end": 49.347
+},
+{
+"word": "justru",
+"start": 49.399,
+"end": 49.711
+},
+{
+"word": "dipakai",
+"start": 49.763,
+"end": 50.127
+},
+{
+"word": "buat",
+"start": 50.179,
+"end": 50.387
+},
+{
+"word": "melawan",
+"start": 50.439,
+"end": 50.802
+},
+{
+"word": "serangan",
+"start": 50.854,
+"end": 51.27
+},
+{
+"word": "seperti",
+"start": 51.322,
+"end": 51.686
+},
+{
+"word": "ini.",
+"start": 51.738,
+"end": 51.946
+},
+{
+"word": "Follow",
+"start": 51.998,
+"end": 52.309
+},
+{
+"word": "dulu,",
+"start": 52.361,
+"end": 52.621
+},
+{
+"word": "biar",
+"start": 52.673,
+"end": 52.981
+},
+{
+"word": "nggak",
+"start": 53.058,
+"end": 53.443
+},
+{
+"word": "ketinggalan.",
+"start": 53.52,
+"end": 54.445
+},
+{
+"word": "Kalau",
+"start": 54.522,
+"end": 54.782
+},
+{
+"word": "kamu",
+"start": 54.834,
+"end": 55.042
+},
+{
+"word": "punya",
+"start": 55.094,
+"end": 55.354
+},
+{
+"word": "bisnis,",
+"start": 55.406,
+"end": 55.77
+},
+{
+"word": "kamu",
+"start": 55.822,
+"end": 56.03
+},
+{
+"word": "lebih",
+"start": 56.082,
+"end": 56.342
+},
+{
+"word": "khawatir",
+"start": 56.394,
+"end": 56.809
+},
+{
+"word": "data",
+"start": 56.861,
+"end": 57.069
+},
+{
+"word": "pelanggan",
+"start": 57.121,
+"end": 57.589
+},
+{
+"word": "dicuri...",
+"start": 57.641,
+"end": 58.109
+},
+{
+"word": "atau",
+"start": 58.161,
+"end": 58.369
+},
+{
+"word": "bisnis",
+"start": 58.421,
+"end": 58.733
+},
+{
+"word": "kamu",
+"start": 58.785,
+"end": 58.993
+},
+{
+"word": "tiba-tiba",
+"start": 59.045,
+"end": 59.513
+},
+{
+"word": "nggak",
+"start": 59.565,
+"end": 59.825
+},
+{
+"word": "bisa",
+"start": 59.877,
+"end": 60.085
+},
+{
+"word": "beroperasi?",
+"start": 60.137,
+"end": 60.709
+}
+],
+"pauses": [
+[
+2.16492,
+2.37381
+],
+[
+5.64374,
+5.96819
+],
+[
+10.4578,
+10.7285
+],
+[
+13.1002,
+13.3574
+],
+[
+20.6918,
+20.942
+],
+[
+22.39,
+22.6457
+],
+[
+28.0457,
+28.2735
+],
+[
+29.9622,
+30.1637
+],
+[
+33.4557,
+33.6638
+],
+[
+35.6271,
+35.8402
+],
+[
+38.1373,
+38.3698
+],
+[
+40.8405,
+41.0559
+],
+[
+43.7357,
+43.9929
+],
+[
+48.0036,
+48.2559
+],
+[
+52.4042,
+52.6732
+],
+[
+54.3111,
+54.5218
+]
+],
+"anchors": [
+[
+0,
+0.05
+],
+[
+35,
+2.37381
+],
+[
+103,
+5.96819
+],
+[
+180,
+10.7285
+],
+[
+218,
+13.3574
+],
+[
+359,
+20.942
+],
+[
+401,
+22.6457
+],
+[
+481,
+28.2735
+],
+[
+518,
+30.1637
+],
+[
+577,
+33.6638
+],
+[
+617,
+35.8402
+],
+[
+662,
+38.3698
+],
+[
+717,
+41.0559
+],
+[
+758,
+43.9929
+],
+[
+829,
+48.2559
+],
+[
+914,
+52.6732
+],
+[
+938,
+54.5218
+],
+[
+1058,
+60.760813
+]
+]
+}
