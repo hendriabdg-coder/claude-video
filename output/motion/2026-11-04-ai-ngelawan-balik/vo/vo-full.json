@@ -142,68 +142,73 @@
    "end": 10.297
   },
   {
-   "word": "Tahun",
+   "word": "dan",
    "start": 10.532,
-   "end": 10.88
+   "end": 10.699
+  },
+  {
+   "word": "tahun",
+   "start": 10.699,
+   "end": 11.035
   },
   {
    "word": "lalu,",
-   "start": 10.88,
-   "end": 11.228
+   "start": 11.035,
+   "end": 11.37
   },
   {
    "word": "Google",
-   "start": 11.228,
-   "end": 11.577
+   "start": 11.37,
+   "end": 11.706
   },
   {
    "word": "bilang",
-   "start": 11.577,
-   "end": 11.925
+   "start": 11.706,
+   "end": 12.041
   },
   {
    "word": "AI",
-   "start": 11.925,
-   "end": 12.099
+   "start": 12.041,
+   "end": 12.209
   },
   {
    "word": "mereka",
-   "start": 12.099,
-   "end": 12.622
+   "start": 12.209,
+   "end": 12.712
   },
   {
    "word": "sempat",
-   "start": 12.622,
-   "end": 12.97
+   "start": 12.712,
+   "end": 13.047
   },
   {
    "word": "nemuin",
-   "start": 12.97,
-   "end": 13.318
+   "start": 13.047,
+   "end": 13.383
   },
   {
    "word": "celah",
-   "start": 13.318,
-   "end": 13.666
+   "start": 13.383,
+   "end": 13.718
   },
   {
    "word": "yang",
-   "start": 13.666,
-   "end": 13.841
+   "start": 13.718,
+   "end": 13.886
   },
   {
    "word": "lagi",
-   "start": 13.841,
-   "end": 14.189
+   "start": 13.886,
+   "end": 14.221
   },
   {
    "word": "disiapin",
-   "start": 14.189,
-   "end": 14.711
+   "start": 14.221,
+   "end": 14.724
   },
   {
    "word": "hacker.",
-   "start": 14.711,
+   "start": 14.724,
    "end": 15.06
   },
   {
@@ -234,86 +239,96 @@
   {
    "word": "Tapi",
    "start": 17.58,
-   "end": 17.891
+   "end": 17.835
   },
   {
    "word": "coba",
-   "start": 17.891,
-   "end": 18.203
+   "start": 17.835,
+   "end": 18.089
   },
   {
    "word": "lihat",
-   "start": 18.203,
-   "end": 18.514
+   "start": 18.089,
+   "end": 18.344
   },
   {
    "word": "yang",
-   "start": 18.514,
-   "end": 18.67
+   "start": 18.344,
+   "end": 18.471
+  },
+  {
+   "word": "satu",
+   "start": 18.471,
+   "end": 18.726
   },
   {
    "word": "ini.",
-   "start": 18.67,
+   "start": 18.726,
    "end": 18.981
   },
   {
    "word": "Per",
    "start": 19.226,
-   "end": 19.406
+   "end": 19.391
+  },
+  {
+   "word": "bulan",
+   "start": 19.391,
+   "end": 19.721
   },
   {
    "word": "Mei,",
-   "start": 19.406,
-   "end": 19.586
+   "start": 19.721,
+   "end": 19.886
   },
   {
    "word": "dari",
-   "start": 19.586,
-   "end": 19.946
+   "start": 19.886,
+   "end": 20.216
   },
   {
    "word": "lima",
-   "start": 19.946,
-   "end": 20.307
+   "start": 20.216,
+   "end": 20.547
   },
   {
    "word": "ratus",
-   "start": 20.307,
-   "end": 20.667
+   "start": 20.547,
+   "end": 20.877
   },
   {
    "word": "tiga",
-   "start": 20.667,
-   "end": 21.027
+   "start": 20.877,
+   "end": 21.207
   },
   {
    "word": "puluh",
-   "start": 21.027,
-   "end": 21.387
+   "start": 21.207,
+   "end": 21.537
   },
   {
    "word": "celah",
-   "start": 21.387,
-   "end": 21.747
+   "start": 21.537,
+   "end": 21.867
   },
   {
    "word": "serius",
-   "start": 21.747,
-   "end": 22.107
+   "start": 21.867,
+   "end": 22.197
   },
   {
    "word": "temuan",
-   "start": 22.107,
-   "end": 22.467
+   "start": 22.197,
+   "end": 22.527
   },
   {
    "word": "AI",
-   "start": 22.467,
-   "end": 22.647
+   "start": 22.527,
+   "end": 22.692
   },
   {
    "word": "Anthropic,",
-   "start": 22.647,
+   "start": 22.692,
    "end": 23.187
   },
   {
@@ -399,61 +414,66 @@
   {
    "word": "Besok",
    "start": 29.456,
-   "end": 29.798
+   "end": 29.775
   },
   {
-   "word": "aku",
-   "start": 29.798,
-   "end": 30.14
+   "word": "kita",
+   "start": 29.775,
+   "end": 30.093
+  },
+  {
+   "word": "akan",
+   "start": 30.093,
+   "end": 30.411
   },
   {
    "word": "bahas",
-   "start": 30.14,
-   "end": 30.481
+   "start": 30.411,
+   "end": 30.729
   },
   {
    "word": "alat",
-   "start": 30.481,
-   "end": 30.823
+   "start": 30.729,
+   "end": 31.047
   },
   {
    "word": "AI",
-   "start": 30.823,
-   "end": 30.994
+   "start": 31.047,
+   "end": 31.206
   },
   {
    "word": "populer",
-   "start": 30.994,
-   "end": 31.506
+   "start": 31.206,
+   "end": 31.683
   },
   {
    "word": "yang",
-   "start": 31.506,
-   "end": 31.677
+   "start": 31.683,
+   "end": 31.842
   },
   {
    "word": "ternyata",
-   "start": 31.677,
-   "end": 32.189
+   "start": 31.842,
+   "end": 32.319
   },
   {
    "word": "disusupi",
-   "start": 32.189,
-   "end": 32.872
+   "start": 32.319,
+   "end": 32.955
   },
   {
    "word": "pencuri",
-   "start": 32.872,
-   "end": 33.384
+   "start": 32.955,
+   "end": 33.432
   },
   {
    "word": "kunci",
-   "start": 33.384,
-   "end": 33.726
+   "start": 33.432,
+   "end": 33.75
   },
   {
    "word": "akses.",
-   "start": 33.726,
+   "start": 33.75,
    "end": 34.068
   },
   {

@@ -29,3 +29,6 @@ Kalau ada notifikasi update, kamu langsung pasang... atau nunggu sampai HP-nya m
 1. Dipadatkan dari ±150 kata ke ±110 kata (55,9 dtk → ±41 dtk). Kalimat "Banyak banget, kan?", "Artinya, nemuin celah dengan cepat...", dan "Makanya, jangan suka nunda update keamanan" dilebur ke kalimat tambalan.
 2. CTA seri: "tiga pengaturan HP" → topik hari 5 Notion (library AI disusupi pencuri API key). "Library" dan "API key" diganti "alat AI" dan "kunci akses" biar paham buat penonton awam.
 3. Fakta tetap: 129 ribu (Anthropic, 6 Okt 2026), Google Big Sleep (Jul 2025), 530 → 75 (Anthropic, 22 Mei 2026).
+
+## Teks final yang dibacakan (VO Endrich, 2026-11-04, 41,3 dtk)
+Lihat `vo/naskah-dibaca.txt`. Beda dari v2: "dan tahun lalu", "yang satu ini", "Per bulan Mei", "Besok kita akan bahas".
