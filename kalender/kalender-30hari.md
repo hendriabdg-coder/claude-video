@@ -25,7 +25,7 @@ Folder: `talking-head/mentah/<slug>/` → `talking-head/proyek/<slug>/` → `tal
 | 1 | 2026-11-01 | 2026-11-01-ai-mengawasi-ai-lain | TH | HYBRID 50/50 | (usul: Seri AI Pengawas #1) | final ✋ | v2 + SFX + musik oleh Claude (_final.mp4); tinggal posting |
 | 2 | 2026-11-02 | 2026-11-02-ai-melemahkan-pengawas | MOTION | EMBER | Seri AI Pengawas #2 | naskah ✋ | riset disetujui; naskah lolos review (2 putaran) menunggu Endrich; gaya dasar EMBER + TERMINAL/PAPER/AVATAR; Notion ENTE-2 |
 | 3 | 2026-11-03 | 2026-11-03-hacker-pakai-agen-ai | MOTION | TERMINAL | Seri AI Pengawas #3 | final | selesai menurut Endrich 2026-11-04; file kerja di folder bersama hari-03/ |
-| 4 | 2026-11-04 | 2026-11-04-ai-ngelawan-balik | MOTION | TERMINAL (usul) | Seri AI Pengawas #4 | riset ✋ | riset + outline menunggu Endrich; topik dari CTA hari 3 |
+| 4 | 2026-11-04 | 2026-11-04-ai-ngelawan-balik | MOTION | TERMINAL (usul) | Seri AI Pengawas #4 | riset | naskah v1 dikirim 2026-11-04, Endrich revisi sendiri; topik dari CTA hari 3 |
 | 5 | | | | | | ide | |
 | 6 | | | | | | ide | |
 | 7 | | | | | | ide | |
