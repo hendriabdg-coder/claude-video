@@ -1,6 +1,7 @@
 # Cover/thumbnail per reel (CLAUDE.md §6): 1080x1920, series label + hook title inside the 3:4 centre crop the IG grid
 # shows (y 240-1680), chibi Endrich at the bottom, watermark. Writes output/motion/<slug>/cover.png.
-#   python tools/make_covers.py
+#   python tools/make_covers.py [slug ...]
+import sys
 from pathlib import Path
 
 from PIL import Image, ImageDraw, ImageFilter, ImageFont
@@ -15,6 +16,8 @@ COVERS = {
                                               title=["JAWABAN CHATGPT", "BISA DIKLIK"], tc=[(242, 238, 227), (198, 244, 50)], pose="pose_2_tunjuk"),
     "2026-10-28-penipuan-suara-ai": dict(bg=(5, 8, 7), glow=(255, 176, 0), label="INTERNET JEBOL", lc=(57, 255, 136),
                                          title=["Rp80 JUTA HILANG", "SUARA 'TEMAN' PALSU"], tc=[(255, 176, 0), (216, 255, 232)], pose="pose_4_kaget"),
+    "2026-11-04-ai-ngelawan-balik": dict(bg=(5, 8, 7), glow=(57, 255, 136), label="AI PENGAWAS #4", lc=(57, 255, 136),
+                                         title=["AI NEMU 129.000 CELAH", "SIAPA YANG NAMBAL?"], tc=[(57, 255, 136), (255, 176, 0)], pose="pose_2_tunjuk"),
 }
 
 
@@ -29,6 +32,8 @@ def fit(text, px, maxw):
 
 
 for slug, c in COVERS.items():
+    if len(sys.argv) > 1 and slug not in sys.argv[1:]:
+        continue
     im = Image.new("RGB", (1080, 1920), c["bg"])
     glow = Image.new("RGB", (1080, 1920), c["bg"])
     ImageDraw.Draw(glow).ellipse((140, 700, 940, 1500), fill=tuple(int(v * 0.35) for v in c["glow"]))

@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8" />
+<style>
+@font-face { font-family: "IDBlack"; src: url("fonts/InterDisplay-Black.ttf") format("truetype"); font-display: block; }
+@font-face { font-family: "IDBold"; src: url("fonts/InterDisplay-Bold.ttf") format("truetype"); font-display: block; }
+@font-face { font-family: "IDSemi"; src: url("fonts/InterDisplay-SemiBold.ttf") format("truetype"); font-display: block; }
+@font-face { font-family: "IDItal"; src: url("fonts/InterDisplay-SemiBoldItalic.ttf") format("truetype"); font-display: block; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 100%; height: 100%; overflow: hidden; }
+#root { position: relative; width: 1080px; height: 1920px; overflow: hidden; }
+.ico { width: 100%; height: 100%; display: block; }
+
+#chibi { position: absolute; width: 520px; height: 925px; opacity: 0; transform-origin: 50% 100%; }
+#chibiS { position: absolute; inset: 0; }
+#chibiS img { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; }
+#chibiSh { position: absolute; width: 360px; height: 46px; border-radius: 50%; background: rgba(0,0,0,.45); filter: blur(14px); opacity: 0; }
+
+
+:root { --bg:#050807; --g:#39FF88; --gd:rgba(57,255,136,.45); --amb:#FFB000; --red:#FF4A4A; --w:#D8FFE8; }
+html, body, #root { background: var(--bg); color: var(--g); font-family: Consolas, "Courier New", monospace; }
+#crt { position: absolute; inset: 0; background: radial-gradient(ellipse 80% 60% at 50% 45%, rgba(57,255,136,.08) 0%, rgba(0,0,0,0) 70%); }
+#scan { position: absolute; inset: 0; background: repeating-linear-gradient(0deg, rgba(0,0,0,.28) 0px, rgba(0,0,0,.28) 2px, rgba(0,0,0,0) 2px, rgba(0,0,0,0) 5px); pointer-events: none; }
+#vig { position: absolute; inset: 0; background: radial-gradient(ellipse 85% 75% at 50% 50%, rgba(0,0,0,0) 60%, rgba(0,0,0,.85) 100%); pointer-events: none; }
+#cam { position: absolute; inset: 0; }
+#hud { position: absolute; left: 60px; top: 262px; display: flex; align-items: center; gap: 14px; font-size: 24px; letter-spacing: .2em; color: var(--gd); opacity: 0; }
+#hud i { width: 14px; height: 14px; border-radius: 50%; background: var(--g); box-shadow: 0 0 10px var(--g); display: inline-block; }
+#step { position: absolute; right: 150px; top: 258px; display: flex; gap: 8px; opacity: 0; }
+#step b { width: 34px; height: 8px; border-radius: 4px; background: rgba(57,255,136,.2); display: block; }
+.t { position: absolute; left: 0; width: 1080px; text-align: center; white-space: nowrap; opacity: 0; }
+.t .ch { opacity: 0; }
+.bigt { font-family: "IDBlack"; color: var(--g); text-shadow: 0 0 18px rgba(57,255,136,.7); }
+.ambt { font-family: "IDBlack"; color: var(--amb); text-shadow: 0 0 18px rgba(255,176,0,.6); }
+.redt { font-family: "IDBlack"; color: var(--red); text-shadow: 0 0 18px rgba(255,74,74,.6); }
+.wt { font-family: "IDBlack"; color: var(--w); }
+.lbl { position: absolute; left: 0; width: 1080px; text-align: center; font-size: 26px; letter-spacing: .2em; color: var(--gd); opacity: 0; }
+.sim { position: absolute; font-size: 22px; letter-spacing: .2em; color: var(--gd); padding: 6px 12px; border: 2px solid rgba(57,255,136,.3); border-radius: 8px; opacity: 0; }
+/* hook */
+#prompt { position: absolute; left: 70px; top: 340px; font-size: 40px; color: var(--w); white-space: pre; opacity: 0; }
+#cnt { position: absolute; left: 0; width: 1080px; top: 520px; text-align: center; font-family: "IDBlack"; font-size: 210px; color: var(--g);
+       text-shadow: 0 0 30px rgba(57,255,136,.7); font-variant-numeric: tabular-nums; opacity: 0; }
+#grid { position: absolute; left: 110px; top: 870px; width: 860px; height: 470px; display: grid; grid-template-columns: repeat(20, 1fr); gap: 10px; opacity: 0; }
+#grid i { aspect-ratio: 1; border-radius: 4px; border: 2px solid rgba(57,255,136,.25); display: block; }
+#grid i.h { background: var(--red); border-color: var(--red); box-shadow: 0 0 8px rgba(255,74,74,.6); opacity: 0; }
+/* half way */
+.stp { position: absolute; left: 110px; width: 860px; height: 150px; border: 3px solid var(--gd); border-radius: 22px; display: flex; align-items: center; gap: 30px; padding: 0 40px; opacity: 0; }
+.stp .ic { width: 84px; height: 84px; flex: none; }
+.stp .tx { font-family: "IDBlack"; font-size: 60px; color: var(--w); }
+.stp .st { margin-left: auto; font-size: 30px; letter-spacing: .15em; }
+#s1 { top: 640px; } #s1 .ic, #s1 .st { color: var(--g); }
+#s2 { top: 840px; border-color: rgba(255,176,0,.7); } #s2 .ic, #s2 .st { color: var(--amb); }
+#halfbar { position: absolute; left: 110px; top: 1060px; width: 860px; font-size: 40px; white-space: pre; color: var(--g); opacity: 0; }
+/* google flow */
+.nd { position: absolute; left: 190px; width: 700px; height: 150px; border: 3px solid var(--gd); border-radius: 22px; background: rgba(5,16,10,.9);
+      display: flex; align-items: center; gap: 28px; padding: 0 36px; font-family: "IDBlack"; font-size: 46px; white-space: nowrap; color: var(--w); opacity: 0; }
+.nd .ic { width: 76px; height: 76px; flex: none; }
+#n1 { top: 560px; border-color: rgba(255,74,74,.7); } #n1 .ic { color: var(--red); }
+#n2 { top: 820px; } #n2 .ic { color: var(--g); }
+#n3 { top: 1080px; border-color: var(--g); box-shadow: 0 0 30px rgba(57,255,136,.3); } #n3 .ic { color: var(--g); }
+.ln { position: absolute; left: 537px; width: 6px; height: 110px; background: var(--g); transform-origin: 50% 0; transform: scaleY(0); }
+#l1 { top: 710px; } #l2 { top: 970px; }
+#race { position: absolute; left: 190px; top: 1260px; width: 700px; font-size: 30px; letter-spacing: .12em; color: var(--gd); opacity: 0; }
+/* bars */
+.bar { position: absolute; left: 110px; width: 860px; opacity: 0; }
+.bar .bl { display: flex; justify-content: space-between; font-family: "IDBold"; font-size: 40px; color: var(--w); margin-bottom: 14px; }
+.bar .bl b { font-family: "IDBlack"; font-weight: normal; font-variant-numeric: tabular-nums; }
+.bar .tr { height: 90px; border-radius: 16px; background: rgba(57,255,136,.08); border: 2px solid rgba(57,255,136,.25); overflow: hidden; }
+.bar .fl { height: 100%; transform-origin: 0 50%; transform: scaleX(0); }
+#b1 { top: 640px; } #b1 .fl { width: 100%; background: var(--red); box-shadow: 0 0 24px rgba(255,74,74,.6); } #b1 .bl b { color: var(--red); }
+#b2 { top: 900px; } #b2 .fl { width: 14.15%; background: var(--g); box-shadow: 0 0 24px rgba(57,255,136,.6); } #b2 .bl b { color: var(--g); }
+#gap { position: absolute; left: 0; width: 1080px; top: 1160px; text-align: center; font-family: "IDBlack"; font-size: 64px; color: var(--amb);
+       text-shadow: 0 0 18px rgba(255,176,0,.6); opacity: 0; }
+/* update notification (EMBER beat) */
+#notif { position: absolute; left: 150px; top: 600px; width: 780px; border-radius: 34px; border: 2px solid var(--gd); background: rgba(8,20,13,.95);
+         padding: 36px 40px; opacity: 0; }
+#notif .nh { display: flex; align-items: center; gap: 22px; }
+#notif .ni { width: 78px; height: 78px; border-radius: 20px; background: rgba(57,255,136,.12); color: var(--g); padding: 14px; flex: none; }
+#notif .nt { font-family: "IDBlack"; font-size: 44px; color: var(--w); }
+#notif .ns { font-family: "IDSemi"; font-size: 30px; color: rgba(216,255,232,.7); margin-top: 6px; }
+#notif .bts { display: flex; gap: 24px; margin-top: 34px; }
+#notif .bt { flex: 1; height: 100px; border-radius: 50px; display: flex; align-items: center; justify-content: center; font-family: "IDBlack"; font-size: 40px; position: relative; }
+#bLater { border: 3px solid rgba(216,255,232,.4); color: rgba(216,255,232,.8); }
+#bNow { background: var(--g); color: #04120a; }
+#crack { position: absolute; inset: -6px; opacity: 0; color: var(--red); }
+#tap { position: absolute; left: 700px; top: 860px; width: 70px; height: 70px; color: var(--w); opacity: 0; }
+#ok { position: absolute; left: 150px; top: 1010px; width: 780px; font-size: 40px; color: var(--g); white-space: pre; opacity: 0; }
+#ember { position: absolute; inset: 0; background: radial-gradient(ellipse 70% 40% at 50% 70%, rgba(255,120,0,.22), rgba(0,0,0,0) 70%); opacity: 0; }
+/* CTA */
+#follow { position: absolute; left: 340px; top: 590px; width: 400px; height: 96px; border-radius: 48px; background: var(--g); color: #04120a; font-family: "IDBlack";
+          font-size: 46px; display: flex; align-items: center; justify-content: center; opacity: 0; box-shadow: 0 0 40px rgba(57,255,136,.5); }
+#tapc { position: absolute; left: 660px; top: 630px; width: 70px; height: 70px; color: var(--w); opacity: 0; }
+.opt { position: absolute; top: 470px; width: 400px; height: 130px; border-radius: 20px; display: flex; align-items: center; gap: 14px; padding: 0 22px;
+       font-family: "IDBlack"; font-size: 34px; line-height: 1.1; opacity: 0; }
+.opt .oi { width: 56px; height: 56px; flex: none; }
+#oA { left: 110px; border: 4px solid var(--g); color: var(--g); background: rgba(57,255,136,.08); }
+#oB { left: 570px; border: 4px solid var(--amb); color: var(--amb); background: rgba(255,176,0,.08); }
+#brand { position: absolute; left: 0; top: 1525px; width: 1080px; text-align: center; font-family: "IDBlack"; font-size: 36px; color: var(--w); }
+#brand b { color: var(--g); font-weight: normal; }
+#flash { position: absolute; inset: 0; background: var(--amb); opacity: 0; pointer-events: none; mix-blend-mode: screen; }
+#glitch { position: absolute; inset: 0; background: repeating-linear-gradient(0deg, rgba(255,74,74,.25) 0 6px, rgba(0,0,0,0) 6px 22px); opacity: 0; pointer-events: none; }
+
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="ai-ngelawan-balik" data-start="0" data-duration="42.43" data-fps="30" data-width="1080" data-height="1920">
+  <audio id="vo" src="vo.mp3" data-start="0" data-duration="42.43" data-track-index="0"></audio>
+
+  <div id="crt"></div>
+  <div id="cam">
+    <div id="hud"><i></i>AI PENGAWAS #4 &middot; MODE BERTAHAN</div>
+    <div id="step"><b></b><b></b><b></b><b></b><b></b><b></b></div>
+    <!-- HOOK: 129.000 -->
+    <div id="prompt">&gt; <span id="pt"></span></div>
+    <div id="cnt">0</div>
+    <div class="t wt" id="h1a" style="top:760px;font-size:46px"><span class="ch" style="display:inline-block">C</span><span class="ch" style="display:inline-block">E</span><span class="ch" style="display:inline-block">L</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">H</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">K</span><span class="ch" style="display:inline-block">E</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">M</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">N</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">N</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">D</span><span class="ch" style="display:inline-block">I</span><span class="ch" style="display:inline-block">T</span><span class="ch" style="display:inline-block">E</span><span class="ch" style="display:inline-block">M</span><span class="ch" style="display:inline-block">U</span><span class="ch" style="display:inline-block">K</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">N</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">I</span></div>
+    <div class="lbl" id="h1b" style="top:836px">APR&ndash;JUL 2026 &middot; MITRA ANTHROPIC</div>
+    <div id="grid"><i class=""></i><i class=""></i><i class=""></i><i class="h"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class="h"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class="h"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class="h"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class="h"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class="h"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class="h"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class="h"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class="h"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class="h"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class="h"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class="h"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class="h"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class="h"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class="h"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class="h"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class="h"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class="h"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class="h"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class="h"></i></div>
+    <!-- baru setengah jalan -->
+    <div class="t bigt" id="h2a" style="top:400px;font-size:64px"><span class="ch" style="display:inline-block">B</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">R</span><span class="ch" style="display:inline-block">U</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">S</span><span class="ch" style="display:inline-block">E</span><span class="ch" style="display:inline-block">T</span><span class="ch" style="display:inline-block">E</span><span class="ch" style="display:inline-block">N</span><span class="ch" style="display:inline-block">G</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">H</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">J</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">L</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">N</span></div>
+    <div class="stp" id="s1"><span class="ic"><svg class="ico" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"><circle cx="42" cy="42" r="26"/><path d="M62 62l24 24"/></svg></span><span class="tx">TEMUKAN</span><span class="st">[OK]</span></div>
+    <div class="stp" id="s2"><span class="ic"><svg class="ico" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"><rect x="14" y="34" width="72" height="32" rx="16" transform="rotate(-35 50 50)"/><path d="M44 44v0M56 56v0M44 56v0M56 44v0"/></svg></span><span class="tx">TAMBAL</span><span class="st" id="s2s">MENUNGGU MANUSIA</span></div>
+    <div id="halfbar"></div>
+    <!-- google big sleep -->
+    <div class="t bigt" id="h3a" style="top:400px;font-size:60px"><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">I</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">G</span><span class="ch" style="display:inline-block">O</span><span class="ch" style="display:inline-block">O</span><span class="ch" style="display:inline-block">G</span><span class="ch" style="display:inline-block">L</span><span class="ch" style="display:inline-block">E</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">N</span><span class="ch" style="display:inline-block">E</span><span class="ch" style="display:inline-block">M</span><span class="ch" style="display:inline-block">U</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">D</span><span class="ch" style="display:inline-block">U</span><span class="ch" style="display:inline-block">L</span><span class="ch" style="display:inline-block">U</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">N</span></div>
+    <div class="nd" id="n1"><span class="ic"><svg class="ico" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"><path d="M50 12c-20 0-34 13-34 32 0 11 5 19 12 24v14h44V68c7-5 12-13 12-24 0-19-14-32-34-32z"/><circle cx="37" cy="46" r="7"/><circle cx="63" cy="46" r="7"/><path d="M42 82v-8M58 82v-8"/></svg></span><span>HACKER SIAP NYERANG</span></div>
+    <div class="ln" id="l1"></div>
+    <div class="nd" id="n2"><span class="ic"><svg class="ico" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"><circle cx="42" cy="42" r="26"/><path d="M62 62l24 24"/></svg></span><span>AI NEMU CELAHNYA</span></div>
+    <div class="ln" id="l2"></div>
+    <div class="nd" id="n3"><span class="ic"><svg class="ico" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"><path d="M24 52l17 17 35-38"/></svg></span><span>DITAMBAL DULUAN</span></div>
+    <div class="lbl" id="h3b" style="top:480px">GOOGLE &middot; BIG SLEEP &middot; JUL 2025</div>
+    <!-- loop -->
+    <div class="t redt" id="h4a" style="top:820px;font-size:96px"><span class="ch" style="display:inline-block">T</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">P</span><span class="ch" style="display:inline-block">I</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">L</span><span class="ch" style="display:inline-block">I</span><span class="ch" style="display:inline-block">H</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">T</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">I</span><span class="ch" style="display:inline-block">N</span><span class="ch" style="display:inline-block">I</span><span class="ch" style="display:inline-block">.</span><span class="ch" style="display:inline-block">.</span><span class="ch" style="display:inline-block">.</span></div>
+    <!-- 530 vs 75 -->
+    <div class="t wt" id="h5a" style="top:400px;font-size:60px"><span class="ch" style="display:inline-block">C</span><span class="ch" style="display:inline-block">E</span><span class="ch" style="display:inline-block">L</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">H</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">S</span><span class="ch" style="display:inline-block">E</span><span class="ch" style="display:inline-block">R</span><span class="ch" style="display:inline-block">I</span><span class="ch" style="display:inline-block">U</span><span class="ch" style="display:inline-block">S</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">T</span><span class="ch" style="display:inline-block">E</span><span class="ch" style="display:inline-block">M</span><span class="ch" style="display:inline-block">U</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">N</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">I</span></div>
+    <div class="lbl" id="h5b" style="top:480px">PER MEI 2026 &middot; ANTHROPIC</div>
+    <div class="bar" id="b1"><div class="bl"><span>DILAPORKAN</span><b id="v1">0</b></div><div class="tr"><div class="fl"></div></div></div>
+    <div class="bar" id="b2"><div class="bl"><span>SUDAH DITAMBAL</span><b id="v2">0</b></div><div class="tr"><div class="fl"></div></div></div>
+    <div id="gap">BARU 75 DARI 530</div>
+    <!-- payoff: update -->
+    <div id="ember"></div>
+    <div class="t ambt" id="h6a" style="top:400px;font-size:72px"><span class="ch" style="display:inline-block">T</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">M</span><span class="ch" style="display:inline-block">B</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">L</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">N</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">=</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">U</span><span class="ch" style="display:inline-block">P</span><span class="ch" style="display:inline-block">D</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">T</span><span class="ch" style="display:inline-block">E</span></div>
+    <div id="notif"><div class="nh"><span class="ni"><svg class="ico" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"><path d="M50 16v46M32 46l18 18 18-18"/><path d="M20 70v14h60V70"/></svg></span><div><div class="nt">Pembaruan keamanan</div><div class="ns">Tersedia untuk HP kamu</div></div></div>
+      <div class="bts"><div class="bt" id="bLater">NANTI AJA<span id="crack"><svg viewBox="0 0 330 112" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" style="width:100%;height:100%"><path d="M150 0l-14 30 22 14-28 26 18 16-10 26"/><path d="M136 30l-40 8M158 44l46-10M130 70l-36 18M148 86l40 12"/></svg></span></div><div class="bt" id="bNow">PASANG</div></div></div>
+    <div id="tap"><svg class="ico" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><path d="M24 14l52 30-22 6 14 26-10 5-14-26-16 16z"/></svg></div>
+    <div id="ok"></div>
+    <div class="sim" id="sim1" style="left:150px;top:1000px">SIMULASI</div>
+    <!-- CTA seri -->
+    <div class="lbl" id="h7a" style="top:300px">BESOK &middot; AI PENGAWAS #5</div>
+    <div class="t bigt" id="h7b" style="top:350px;font-size:80px"><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">L</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">T</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">I</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">P</span><span class="ch" style="display:inline-block">O</span><span class="ch" style="display:inline-block">P</span><span class="ch" style="display:inline-block">U</span><span class="ch" style="display:inline-block">L</span><span class="ch" style="display:inline-block">E</span><span class="ch" style="display:inline-block">R</span></div>
+    <div class="t ambt" id="h7c" style="top:450px;font-size:48px"><span class="ch" style="display:inline-block">D</span><span class="ch" style="display:inline-block">I</span><span class="ch" style="display:inline-block">S</span><span class="ch" style="display:inline-block">U</span><span class="ch" style="display:inline-block">S</span><span class="ch" style="display:inline-block">U</span><span class="ch" style="display:inline-block">P</span><span class="ch" style="display:inline-block">I</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">P</span><span class="ch" style="display:inline-block">E</span><span class="ch" style="display:inline-block">N</span><span class="ch" style="display:inline-block">C</span><span class="ch" style="display:inline-block">U</span><span class="ch" style="display:inline-block">R</span><span class="ch" style="display:inline-block">I</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">K</span><span class="ch" style="display:inline-block">U</span><span class="ch" style="display:inline-block">N</span><span class="ch" style="display:inline-block">C</span><span class="ch" style="display:inline-block">I</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">K</span><span class="ch" style="display:inline-block">S</span><span class="ch" style="display:inline-block">E</span><span class="ch" style="display:inline-block">S</span></div>
+    <div id="follow">+ FOLLOW</div><div id="tapc"><svg class="ico" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><path d="M24 14l52 30-22 6 14 26-10 5-14-26-16 16z"/></svg></div>
+    <!-- CTA komentar -->
+    <div class="t wt" id="h8a" style="top:330px;font-size:78px"><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">D</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">N</span><span class="ch" style="display:inline-block">O</span><span class="ch" style="display:inline-block">T</span><span class="ch" style="display:inline-block">I</span><span class="ch" style="display:inline-block">F</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">U</span><span class="ch" style="display:inline-block">P</span><span class="ch" style="display:inline-block">D</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">T</span><span class="ch" style="display:inline-block">E</span><span class="ch" style="display:inline-block">?</span></div>
+    <div class="opt" id="oA"><span class="oi"><svg class="ico" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"><path d="M24 52l17 17 35-38"/></svg></span>A: LANGSUNG<br>PASANG</div>
+    <div class="opt" id="oB"><span class="oi"><svg class="ico" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"><path d="M50 12l40 72H10z"/><path d="M50 40v20M50 70v2"/></svg></span>B: NUNGGU<br>DIPAKSA</div>
+    <div class="lbl" id="h8b" style="top:625px">JAWAB DI KOMENTAR</div>
+    <div id="chibiSh" style="left:411px;top:1321px;width:266px"></div><div id="chibi" style="left:350px;top:760px;width:380px;height:676px"><div id="chibiS"><img id="cp_netral" src="pose/pose_0_netral.png"><img id="cp_lambai" src="pose/pose_1_lambai.png"><img id="cp_tunjuk" src="pose/pose_2_tunjuk.png"><img id="cp_mikir" src="pose/pose_3_mikir.png"><img id="cp_kaget" src="pose/pose_4_kaget.png"><img id="cp_keren" src="pose/pose_5_keren.png"><img id="cp_bicara" src="pose/pose_6_bicara.png"><img id="cp_kedip" src="pose/pose_7_kedip.png"></div></div>
+  </div>
+  <div id="scan"></div><div id="vig"></div><div id="flash"></div><div id="glitch"></div>
+  <div id="brand">Endrich<b>Tech</b></div>
+
+  <script src="vendor/gsap.min.js"></script>
+  <script>
+  (function () {
+
+    var FPS = 30;
+    function q(t) { return Math.round(t * FPS) / FPS; }
+    var tl = gsap.timeline({ paused: true });
+    var NI = { immediateRender: false };
+    function cut(sel, t, v) { tl.set(sel, { opacity: v }, q(t)); }
+    function hide(sel, t, d) { tl.to(sel, { opacity: 0, duration: d || 0.15, ease: "power2.in" }, q(t)); }
+    function fade(sel, t, d, from) { tl.fromTo(sel, Object.assign({ opacity: 0, y: 30 }, from || {}), { opacity: 1, y: 0, x: 0, scale: 1, rotation: 0, duration: d || 0.35, ease: "power3.out" }, q(t)); }
+    function pop(sel, t, d) { tl.fromTo(sel, { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1, duration: d || 0.32, ease: "back.out(2.2)" }, q(t)); }
+    function sweep(sel, t, d) {
+      var chars = document.querySelectorAll(sel + " .ch");
+      tl.set(sel, { opacity: 1 }, q(t));
+      tl.fromTo(chars, { opacity: 0, x: -14 }, { opacity: 1, x: 0, duration: 0.24, ease: "power3.out", stagger: Math.min(0.035, (d || 0.45) / chars.length) }, q(t));
+    }
+    function count(sel, t, d, a, b, fmt) { var o = { v: a }, el = document.querySelector(sel); tl.to(o, { v: b, duration: d, ease: "power2.out", onUpdate: function () { el.textContent = fmt(o.v); } }, q(t)); }
+    function type(sel, t, d, msg) { var o = { n: 0 }, el = document.querySelector(sel); tl.to(o, { n: msg.length, duration: d, ease: "none", onUpdate: function () { el.textContent = msg.slice(0, Math.round(o.n)); } }, q(t)); }
+    function flash(t, sel, a) { tl.fromTo(sel || "#flash", { opacity: a || 0.3 }, Object.assign({ opacity: 0, duration: 0.25, ease: "power2.out" }, NI), q(t)); }
+    function kick(t, x) { tl.fromTo("#cam", { x: x || -10 }, Object.assign({ x: 0, duration: 0.3, ease: "elastic.out(1, .3)" }, NI), q(t)); }
+    function idn(v) { return Math.round(v).toString().replace(/\B(?=(\d{3})+(?!\d))/g, "."); }
+
+
+    var A = {"hook": 0.0, "dalam": 1.315, "ai1": 2.809, "celah1": 5.105, "masalah": 6.153, "setengah": 8.205, "tetap": 9.275, "nambal": 10.226, "tahun": 10.732, "google": 11.428, "hacker": 14.911, "untung": 15.482, "ditambal1": 16.693, "tapi": 17.78, "mei": 19.606, "lima": 20.146, "serius": 21.947, "anthropic": 22.847, "baru75": 23.594, "tujuh": 23.881, "ditambal2": 24.884, "dan": 25.513, "kalau1": 27.92, "pasang1": 29.14, "besok": 29.656, "alat": 30.681, "pencuri": 33.072, "follow": 34.469, "kalau2": 36.294, "langsung": 39.473, "nunggu": 40.347, "maksa": 41.075}, DUR = 42.43;
+    tl.to("#crt", { opacity: 0.6, duration: 0.07, yoyo: true, repeat: 301, ease: "steps(1)" }, 0.3);
+    fade("#hud", 0.05, 0.3, { x: -30, y: 0 }); fade("#step", 0.05, 0.3, { x: 30, y: 0 });
+    tl.to("#hud i", { opacity: 0.2, duration: 0.5, yoyo: true, repeat: 41, ease: "steps(1)" }, 0.4);
+    var STEPS = [0, A.masalah, A.tahun, A.mei, A.dan, A.besok];
+    STEPS.forEach(function (t, k) { tl.to("#step b:nth-child(" + (k + 1) + ")", { backgroundColor: "#39FF88", duration: 0.15 }, q(t + 0.05)); });
+
+    // HOOK: prompt typed from frame 0, counter to 129.000, grid with red holes
+    cut("#prompt", 0, 1); type("#pt", 0, 0.7, "scan --celah --4bulan");
+    tl.fromTo("#cnt", { opacity: 0, scale: 1.25 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(1.4)" }, 0.1);
+    count("#cnt", A.dalam, A.celah1 - A.dalam + 0.3, 0, 129000, function (v) { return idn(v) + (v > 128999 ? "+" : ""); });
+    flash(A.celah1 + 0.35, "#flash", 0.22); kick(A.celah1 + 0.35, 12);
+    sweep("#h1a", A.ai1, 0.4); fade("#h1b", A.celah1 + 0.2, 0.3, { y: 10 });
+    tl.fromTo("#grid", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.35, ease: "power3.out" }, q(A.dalam));
+    tl.fromTo("#grid i.h", { opacity: 0, scale: 0 }, { opacity: 1, scale: 1, duration: 0.18, ease: "back.out(2)", stagger: (A.celah1 - A.dalam) / 22 }, q(A.dalam + 0.2));
+    hide("#prompt, #cnt, #h1a, #h1b, #grid", A.masalah - 0.12, 0.12);
+
+    // HALF WAY: find OK, patch waits for humans
+    sweep("#h2a", A.masalah, 0.4);
+    tl.fromTo("#s1", { opacity: 0, x: -80 }, { opacity: 1, x: 0, duration: 0.3, ease: "back.out(1.4)" }, q(A.masalah + 0.4));
+    tl.fromTo("#s2", { opacity: 0, x: 80 }, { opacity: 1, x: 0, duration: 0.3, ease: "back.out(1.4)" }, q(A.tetap));
+    tl.to("#s2s", { opacity: 0.25, duration: 0.25, yoyo: true, repeat: 5, ease: "steps(1)" }, q(A.tetap + 0.3));
+    cut("#halfbar", A.setengah, 1);
+    var hb = { n: 0 }, hel = document.querySelector("#halfbar");
+    tl.to(hb, { n: 10, duration: 0.6, ease: "power2.out", onUpdate: function () { var k = Math.round(hb.n);
+      hel.textContent = "[" + "#".repeat(k) + "-".repeat(20 - k) + "] " + (k * 5) + "%"; } }, q(A.setengah));
+    hide("#h2a, #s1, #s2, #halfbar", A.tahun - 0.12, 0.12);
+
+    // GOOGLE BIG SLEEP flow
+    sweep("#h3a", A.tahun, 0.4); fade("#h3b", A.google, 0.3, { y: 10 });
+    tl.fromTo("#n1", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.3, ease: "back.out(1.4)" }, q(A.hacker - 0.5));
+    tl.to("#n1", { x: 8, duration: 0.06, yoyo: true, repeat: 5, ease: "none" }, q(A.hacker - 0.1));
+    tl.to("#l1", { scaleY: 1, duration: 0.3, ease: "power2.out" }, q(A.untung - 0.4));
+    tl.fromTo("#n2", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.3, ease: "back.out(1.4)" }, q(A.untung - 0.15));
+    tl.to("#l2", { scaleY: 1, duration: 0.3, ease: "power2.out" }, q(A.ditambal1 - 0.3));
+    tl.fromTo("#n3", { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(1.6)" }, q(A.ditambal1));
+    tl.to("#n1", { opacity: 0.35, duration: 0.2 }, q(A.ditambal1 + 0.2));
+    hide("#h3a, #h3b, #n1, #n2, #n3, #l1, #l2", A.tapi - 0.12, 0.12);
+
+    // LOOP: glitch
+    tl.fromTo("#glitch", { opacity: 0.9 }, Object.assign({ opacity: 0, duration: 0.3, ease: "steps(3)" }, NI), q(A.tapi));
+    kick(A.tapi, 14); sweep("#h4a", A.tapi + 0.05, 0.35);
+    tl.to("#h4a", { x: -10, duration: 0.05, yoyo: true, repeat: 3 }, q(A.tapi + 0.6));
+    hide("#h4a", A.mei - 0.12, 0.12);
+
+    // 530 vs 75
+    sweep("#h5a", A.mei, 0.4); fade("#h5b", A.mei + 0.3, 0.3, { y: 10 });
+    fade("#b1", A.lima - 0.1, 0.3, { y: 20 });
+    tl.to("#b1 .fl", { scaleX: 1, duration: 1.0, ease: "power2.out" }, q(A.lima));
+    count("#v1", A.lima, 1.0, 0, 530, function (v) { return Math.round(v); });
+    fade("#b2", A.baru75 - 0.1, 0.3, { y: 20 });
+    tl.to("#b2 .fl", { scaleX: 1, duration: 0.7, ease: "power2.out" }, q(A.tujuh));
+    count("#v2", A.tujuh, 0.7, 0, 75, function (v) { return Math.round(v); });
+    pop("#gap", A.ditambal2, 0.35); kick(A.ditambal2 + 0.1, 10);
+    hide("#h5a, #h5b, #b1, #b2, #gap", A.dan - 0.12, 0.12);
+
+    // PAYOFF: the patch only protects you once installed
+    sweep("#h6a", A.dan, 0.4);
+    tl.fromTo("#notif", { opacity: 0, y: -120 }, { opacity: 1, y: 0, duration: 0.4, ease: "back.out(1.4)" }, q(A.dan + 0.3)); cut("#sim1", A.dan + 0.3, 1);
+    tl.set("#sim1", { top: 1180 }, 0);
+    tl.fromTo("#crack", { opacity: 0, scale: 1.3 }, { opacity: 1, scale: 1, duration: 0.15, ease: "power4.in" }, q(A.kalau1));
+    tl.to("#bLater", { opacity: 0.35, duration: 0.2 }, q(A.kalau1 + 0.25));
+    tl.fromTo("#ember", { opacity: 0 }, { opacity: 1, duration: 0.4 }, q(A.kalau1));
+    tl.fromTo("#tap", { opacity: 0, x: 60, y: 60 }, { opacity: 1, x: 0, y: 0, duration: 0.3, ease: "power2.out" }, q(A.pasang1 - 0.75));
+    tl.to("#bNow", { scale: 0.92, duration: 0.08, yoyo: true, repeat: 1 }, q(A.pasang1 - 0.4));
+    tl.to("#bNow", { boxShadow: "0 0 50px rgba(57,255,136,.9)", duration: 0.2 }, q(A.pasang1 - 0.3));
+    cut("#ok", A.pasang1 - 0.3, 1); type("#ok", A.pasang1 - 0.3, 0.45, "> celah ditutup ........ [OK]");
+    flash(A.pasang1 - 0.3, "#flash", 0.18);
+    hide("#h6a, #notif, #tap, #ok, #sim1, #ember", A.besok - 0.12, 0.12);
+
+    // CTA SERI
+    fade("#h7a", A.besok, 0.3, { y: 10 }); sweep("#h7b", A.besok + 0.3, 0.4); sweep("#h7c", A.pencuri - 0.1, 0.45);
+    tl.set("#h7c", { top: 450 }, 0);
+    pop("#follow", A.follow - 0.05, 0.35);
+    tl.fromTo("#tapc", { opacity: 0, x: 60, y: 60 }, { opacity: 1, x: 0, y: 0, duration: 0.3, ease: "power2.out" }, q(A.follow + 0.2));
+    tl.to("#follow", { scale: 0.92, duration: 0.08, yoyo: true, repeat: 1 }, q(A.follow + 0.5));
+    tl.to("#follow", { backgroundColor: "#D8FFE8", duration: 0.1 }, q(A.follow + 0.58));
+    hide("#h7a, #h7b, #h7c, #follow, #tapc", A.kalau2 - 0.12, 0.12);
+
+    // CTA KOMENTAR
+    sweep("#h8a", A.kalau2, 0.4);
+    tl.fromTo("#oA", { opacity: 0, x: -60 }, { opacity: 1, x: 0, duration: 0.3, ease: "back.out(2)" }, q(A.langsung - 0.05));
+    tl.fromTo("#oB", { opacity: 0, x: 60 }, { opacity: 1, x: 0, duration: 0.3, ease: "back.out(2)" }, q(A.nunggu - 0.05));
+    fade("#h8b", A.maksa, 0.3, { y: 10 });
+
+    var CTRACK = [[29.4, "netral"], [29.667, "bicara"], [29.767, "tunjuk"], [31.3, "netral"], [31.367, "bicara"], [31.433, "netral"], [31.533, "bicara"], [31.733, "netral"], [31.8, "bicara"], [32.0, "netral"], [32.067, "bicara"], [32.133, "netral"], [32.2, "bicara"], [32.4, "netral"], [32.467, "bicara"], [32.567, "netral"], [32.633, "bicara"], [32.7, "kedip"], [32.833, "bicara"], [32.933, "netral"], [33.0, "bicara"], [33.067, "netral"], [33.133, "bicara"], [33.233, "netral"], [33.333, "bicara"], [33.5, "netral"], [33.567, "bicara"], [33.667, "netral"], [33.733, "bicara"], [33.833, "netral"], [33.933, "bicara"], [34.067, "netral"], [34.5, "lambai"], [35.5, "bicara"], [35.8, "netral"], [35.867, "bicara"], [35.933, "netral"], [36.0, "bicara"], [36.067, "netral"], [36.3, "mikir"], [39.8, "netral"], [39.867, "bicara"], [40.1, "netral"], [40.167, "bicara"], [40.233, "netral"], [40.3, "bicara"], [40.4, "netral"], [40.467, "bicara"], [40.533, "netral"], [40.6, "bicara"], [40.667, "netral"], [40.733, "bicara"], [40.833, "netral"], [40.9, "bicara"], [41.0, "netral"], [41.1, "bicara"], [41.3, "netral"], [41.5, "kedip"]], CEMPH = [29.756, 34.469, 36.294, 41.475];
+    CTRACK.forEach(function (e) { tl.set("#chibiS img:not(#cp_" + e[1] + ")", { opacity: 0 }, q(e[0])); tl.set("#cp_" + e[1], { opacity: 1 }, q(e[0])); });
+    tl.fromTo("#chibi", { y: 700, opacity: 1 }, { y: 0, opacity: 1, duration: 0.5, ease: "back.out(1.4)" }, q(29.406));
+    tl.fromTo("#chibiSh", { opacity: 0 }, { opacity: 1, duration: 0.4 }, q(29.406 + 0.2));
+    tl.fromTo("#chibiS", { y: 0 }, { y: -10, duration: 0.6, yoyo: true, repeat: 21, ease: "sine.inOut" }, q(29.406 + 0.5));
+    CEMPH.forEach(function (t) { tl.fromTo("#chibi", { scaleY: 0.94, scaleX: 1.04 }, Object.assign({ scaleY: 1, scaleX: 1, duration: 0.35, ease: "back.out(3)" }, NI), q(t)); });
+
+    window.__timelines = window.__timelines || {};
+    window.__timelines["ai-ngelawan-balik"] = tl;
+  })();
+  </script>
+</div>
+</body>
+</html>
