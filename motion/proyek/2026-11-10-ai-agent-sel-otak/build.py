@@ -50,7 +50,7 @@ html, body, #root { background: var(--k); color: var(--cr); font-family: "IDBlac
 #term .ln { font-family: Consolas, "Courier New", monospace; font-size: 36px; line-height: 1.6; padding: 0 32px; white-space: pre; color: var(--cr); }
 #term .ln b { color: var(--b); font-weight: normal; } #term .ln u { color: var(--c); text-decoration: none; }
 #term .bd { padding-top: 22px; }
-.barw { position: absolute; left: 120px; width: 840px; opacity: 0; }
+.barw { position: absolute; left: 150px; width: 760px; opacity: 0; }
 .barw .bl0 { font-size: 46px; margin-bottom: 12px; display: flex; justify-content: space-between; }
 .barw .bl0 span { font-family: "IDBold"; font-size: 26px; letter-spacing: .12em; color: var(--g); align-self: flex-end; }
 .barw .tr { height: 64px; border-radius: 14px; background: rgba(244,241,234,.1); overflow: hidden; }
@@ -76,7 +76,7 @@ html, body, #root { background: var(--k); color: var(--cr); font-family: "IDBlac
 '''
 
 
-def TX(tid, text, top, px, cls="cr", maxw=900):
+def TX(tid, text, top, px, cls="cr", maxw=760):
     return f'<div class="t {cls}" id="{tid}" style="top:{top}px;font-size:{fitpx(text, px, maxw)}px">{chars(text)}</div>'
 
 
@@ -100,7 +100,7 @@ track, emph_t = chibi_track(HERE, t_cta, DUR, [(T[148] - 0.1, "tunjuk"), (T[152]
                                                (T[159] + 0.2, "netral"), (T[162], "mikir"), (T[164] + 0.1, "netral"),
                                                (T[178] + 0.2, "mikir")], blinks=(T[150] + 0.3, T[168]))
 
-TERM = [("$ ", "run atlas --agents 1946"), ("agent_0412 › ", "gen <b>Tsc1</b> › laporan ✓"),
+TERM = [("$ ", "run atlas --agents ~2000"), ("agent_0412 › ", "gen <b>Tsc1</b> › laporan ✓"),
         ("agent_0413 › ", "gen <b>Tsc2</b> › laporan ✓"), ("atlas › ", "<u>efek beda</u> di otak kecil")]
 term_html = "".join(f'<div class="ln" id="tl{k}" style="opacity:0">{a}{b}</div>' for k, (a, b) in enumerate(TERM))
 
@@ -112,7 +112,7 @@ body = f'''
     <div id="hud"><i></i>SERI AI AGENT &middot; #2</div>
     <!-- A hook: 3D brain + 1.946 agents -->
     <div id="n1">0</div>
-    {SUB("a1", "AGENT AI", 560)}
+    {SUB("a1", "HAMPIR 2.000 AGENT AI", 560)}
     {TX("a2", "DATA SEL OTAK TIKUS", 1230, 84, "cr sh")}
     <div id="n2">00:00</div>
     {SUB("a3", "MENIT", 1290, "var(--b)")}
@@ -139,13 +139,14 @@ body = f'''
     <!-- F peta -->
     {TX("g1", "SEMUA DIGABUNG", 330, 96, "cr sh")}
     {TX("g2", "JADI SATU PETA", 1300, 96, "bl sh")}
-    {TX("g3", "POLA TERSEMBUNYI", 1300, 90, "cr sh")}
+    {TX("g3", "CARI POLA BARU", 1300, 90, "cr sh")}
     <!-- G terminal + bars -->
     {TX("h1", "TEMUAN MENARIK", 300, 96)}
     <div id="term"><div class="bar"><i></i><i></i><i></i>&nbsp;ATLAS AGENT &middot; LOG</div><div class="bd">{term_html}</div></div>
     <div class="barw" id="bw1" style="top:1010px"><div class="bl0">Tsc1<span>PERUBAHAN GEN SARAF</span></div><div class="tr"><div class="fl" id="fl1" style="width:10%;background:#F4F1EA"></div></div></div>
     <div class="barw" id="bw2" style="top:1190px"><div class="bl0">Tsc2</div><div class="tr"><div class="fl" id="fl2" style="width:88%;background:#FF4F3A"></div></div></div>
     <div class="chip" id="simG" style="left:60px;top:1450px;color:#8A8F9C">SIMULASI</div>
+    <div class="chip" id="simF" style="left:60px;top:1450px;color:#8A8F9C">SIMULASI</div>
     {TX("h2", "EFEKNYA BEDA BANGET", 300, 90)}
     {TX("h3", "DI OTAK KECIL", 1300, 110, "co")}
     <!-- H dua gen -->
@@ -161,7 +162,7 @@ body = f'''
     <!-- J PAPER: preprint -->
     {TX("k1", "MASIH TEMUAN AWAL", 320, 92, "kk")}
     <div id="doc"><div class="dh"><b>PREPRINT</b>bioRxiv &middot; OKT 2026</div>
-      <div class="dt">Atlas laporan agent, otak tikus</div>
+      <div class="dt">Ringkasan: atlas laporan agent</div>
       <div class="row" id="r1"><div class="mk x">&#10005;</div>Belum diuji di lab</div>
       <div class="row" id="r2"><div class="mk x">&#10005;</div>Belum review independen</div>
       <div class="row" id="r3"><div class="mk ex">!</div>Sebagian peneliti dari OpenAI</div>
@@ -215,9 +216,9 @@ js = f'''
     tl.set("#brand b", {{ color: "#F4F1EA" }}, q(W.I[0])); tl.set("#brand b", {{ color: "#3A5BFF" }}, q(W.J[0]));
     tl.set("#brand b", {{ color: "#F4F1EA" }}, q(W.K[0])); tl.set("#brand b", {{ color: "#3A5BFF" }}, q(W.L[0]));
 
-    // A HOOK: counter lands on 1.946 as the swarm arrives, then the 32-minute clock
+    // A HOOK: counter lands on ±2.000 (VO "hampir 2000") as the swarm arrives, then the 32-minute clock
     tl.fromTo("#n1", {{ opacity: 0, scale: 1.4 }}, {{ opacity: 1, scale: 1, duration: 0.25, ease: "back.out(1.6)" }}, 0);
-    count("#n1", 0.05, T[6] - 0.1, 0, 1946, function (v) {{ return idn(v); }});
+    count("#n1", 0.05, T[6] - 0.1, 0, 2000, function (v) {{ return "±" + idn(v); }});
     rise("#a1", T[3], 0.3);
     sweep("#a2", T[7] - 0.05, 0.5);
     tl.fromTo("#srcA", {{ opacity: 0, x: -30 }}, {{ opacity: 1, x: 0, duration: 0.3 }}, q(T[5]));
@@ -251,7 +252,7 @@ js = f'''
     off("#e1, #f1, #f2, #f3, #ar1, #ar2", W.E[1]);
 
     // F 3D report cards fly into one map; a hidden pattern lights up
-    sweep("#g1", W.F[0] + 0.05, 0.45);
+    sweep("#g1", W.F[0] + 0.05, 0.45); cut("#simF", W.F[0] + 0.3, 1); off("#simF", W.F[1]);
     rise("#g2", T[60] - 0.05); off("#g2", T[62] - 0.05); sweep("#g3", T[63] - 0.05, 0.45);
     off("#g1, #g3", W.F[1]);
 

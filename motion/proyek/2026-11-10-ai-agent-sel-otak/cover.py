@@ -1,4 +1,4 @@
-# cover.png: frame 3D otak + 1.946 agent dari render (detik 3.6) digelapkan, label seri, judul 2 baris, chibi tunjuk.
+# cover.png: frame 3D otak + agent dari render (detik 1.9, sebelum teks layar muncul) digelapkan, label seri, judul 2 baris, chibi tunjuk.
 # Judul di dalam crop grid IG 3:4 (y 240-1680).  python cover.py
 import subprocess
 from pathlib import Path
@@ -9,10 +9,10 @@ HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[2]
 FONTS = ROOT / "motion" / "gaya" / "gaya-terminal" / "public" / "fonts"
 frame = HERE / "renders" / "_cover_bg.png"
-subprocess.run(["ffmpeg", "-v", "error", "-y", "-ss", "3.6", "-i", str(HERE / "renders" / "visual.mp4"), "-frames:v", "1", str(frame)], check=True)
+subprocess.run(["ffmpeg", "-v", "error", "-y", "-ss", "1.9", "-i", str(HERE / "renders" / "visual.mp4"), "-frames:v", "1", str(frame)], check=True)
 bg = Image.open(frame).convert("RGB")
 # hide the in-video counter: crop the swarm region and scale it up as the backdrop
-bg = bg.crop((0, 560, 1080, 1480)).resize((1250, 1065), Image.LANCZOS)
+bg = bg.crop((0, 600, 1080, 1440)).resize((1250, 972), Image.LANCZOS)
 im = Image.new("RGB", (1080, 1920), (14, 14, 14))
 im.paste(ImageEnhance.Brightness(bg).enhance(0.55), (-85, 640))
 

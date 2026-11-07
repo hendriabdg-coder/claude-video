@@ -113,3 +113,11 @@ Draf: "Ribuan AI Agent membantu analisis jutaan sel otak hanya dalam 32 menit."
 - PR Newswire/Morningstar, 21 Okt 2026 (belum dibuka)
 - GPT-Rosalind: https://openai.com/index/introducing-gpt-rosalind/ ; Axios 16 Apr 2026
 - Pembanding: Resultsense 20 Mei 2026; GEN; arXiv Kosmos
+
+## Tambahan 2026-11-07 (QC final, via web search; halaman tidak dibuka langsung)
+| Klaim | Status | Sumber |
+|---|---|---|
+| OpenAI menyebut "thousands of AI agents powered by GPT-Rosalind" menganalisis data dari "millions of mouse brain cells" dalam 32 menit; metodenya disebut "distributed biological reasoning" | FAKTA (ringkasan hasil pencarian atas halaman resmi) | OpenAI, "Scaling AI research for complex biological data", https://openai.com/index/scaling-ai-research-for-complex-biological-data/ , 21 Okt 2026 |
+| Preprint "Distributed AI agents enable comprehensive discovery of biological insights at scale" diunggah ke bioRxiv 16 Okt 2026, belum peer review | FAKTA | ringkasan pencarian (OpenAI + media) |
+| Angka 1.946 agent hanya ada di satu blog; media lain menulis "nearly 2,000" | Tetap satu sumber, jadi **di layar dipakai "±2.000"** | unite.ai; cryptobriefing.com; aiweekly.co |
+| TSC1 (hamartin) dan TSC2 (tuberin) membentuk satu kompleks protein (kompleks TSC) yang mengatur pertumbuhan sel lewat mTORC1. Ini mendukung VO "keduanya punya hubungan yang cukup erat" | FAKTA (pengetahuan biologi mapan) | NCBI Gene TSC2 (ID 7249), https://www.ncbi.nlm.nih.gov/gene/7249 ; NCBI Gene TSC1 (ID 7248), https://www.ncbi.nlm.nih.gov/gene/7248 |

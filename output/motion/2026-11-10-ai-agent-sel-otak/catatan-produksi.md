@@ -15,8 +15,8 @@
 ## Asumsi / hal yang perlu dicek Endrich
 1. **Durasi 72,4 dtk.** Ini lewat batas CLAUDE.md (target 25-35 dtk, maksimal 45), karena VO final dari Endrich menambah beberapa kalimat. Acuan akun: rata-rata nonton 18 dtk. Kalau mau dipendekkan, kandidat potongan: "Cepat banget kan?", "Jadi gini.", "Padahal keduanya...", "Tapi ada satu hal penting...", "Jadi, bukan berarti hasilnya salah...". Potongan ini bisa menghemat ±12 dtk, dan Claude bisa render ulang.
 2. **Timing kata adalah estimasi.** VO di-generate manual, jadi tidak ada timestamp ElevenLabs. Timing berasal dari Whisper-small per jeda dan dibagi per suku kata (`motion/proyek/<slug>/align.py`). Teks layar sinkron per frasa; cek sekilas apakah ada yang muncul terlalu cepat atau lambat.
-3. **Angka belum dicek ke halaman asli** (1.946 agent, jutaan/7,7 juta sel, 32 menit). Sesi ini tidak bisa membuka openai.com dan bioRxiv; lihat riset.md.
-4. **Klaim baru di VO** "keduanya punya hubungan yang cukup erat" (Tsc1/Tsc2) belum punya sumber di riset.md. Ini fakta biologi umum (keduanya membentuk satu kompleks protein TSC), tapi tetap tambahkan sumbernya.
+3. **Angka:** "thousands of agents", "millions of mouse brain cells", dan "32 minutes" terkonfirmasi lewat ringkasan pencarian atas halaman resmi OpenAI (21 Okt 2026). Angka 1.946 cuma ada di satu blog, jadi di layar diganti "±2.000". Halaman aslinya tetap belum dibuka langsung; tolong cek sekilas.
+4. **Klaim baru di VO** "keduanya punya hubungan yang cukup erat" (Tsc1/Tsc2) sekarang bersumber NCBI Gene (TSC1 dan TSC2 membentuk satu kompleks protein); sudah ditambahkan ke riset.md.
 5. **Musik + SFX belum ada.** Library Epidemic dan Eleven Music tidak terjangkau dari sesi cloud ini. `final.mp4` berisi VO saja (loudnorm -14 LUFS). Tambahkan di CapCut dengan cue di bawah, atau jalankan mixer `motion/gaya/reel_sfx.py` di PC (perlu fungsi `cues_` untuk slug ini).
 6. **Teks layar.** Nama "OpenAI" muncul sebagai teks biasa (bukan logo) di kartu preprint.
 7. Saran profil: pin seri AI Agent #1-#3 setelah Hari 11 tayang (tayangan dari Profil cuma 0,4%).
@@ -52,7 +52,12 @@ Musik: electronic energik ±120 BPM (PULSE), gelap tapi penasaran. Mulai dengan 
 
 ## Review
 - Naskah: reviewer-konten 1 putaran (0 BLOKIR, 5 PERBAIKI diterapkan).
-- QC final: lihat bagian di bawah (diisi setelah reviewer).
+- QC final reviewer-konten (1 putaran):
+  - BLOKIR "Tsc hubungan erat tanpa sumber" dan "angka belum dicek" ditutup: sumber NCBI dan OpenAI masuk riset.md, counter layar jadi ±2.000.
+  - PERBAIKI diterapkan: "POLA TERSEMBUNYI" diganti "CARI POLA BARU"; judul kartu preprint diganti "Ringkasan: atlas laporan agent".
+  - SARAN diterapkan: label SIMULASI di peta laporan, lebar teks diperkecil supaya margin kanan aman.
+  - Masih terbuka (keputusan Endrich): durasi 72 dtk; musik/SFX belum ada.
+  - Loudness -14,5 LUFS, TP -1,3 dBFS.
 
 ## Evaluasi setup
 - Jumlah temuan reviewer naskah: 5 PERBAIKI + 4 SARAN; berapa yang valid menurut Endrich: (isi).
