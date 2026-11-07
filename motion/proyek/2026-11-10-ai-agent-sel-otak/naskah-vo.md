@@ -62,3 +62,14 @@ Kamu langsung percaya hasil riset AI kayak gini, atau nunggu dites di lab dulu? 
 - Angka 1.946 dan 32 menit cuma bersumber dari ringkasan pencarian. Endrich, tolong cek sebentar di halaman asli OpenAI atau bioRxiv sebelum render.
 - Kolesterol (Dctn1) dikeluarkan dari VO demi durasi; bisa masuk caption kalau mau.
 - Review naskah (reviewer-konten, 1 putaran): 0 BLOKIR, 5 PERBAIKI diterapkan (durasi/jumlah kata, "mirip" dihapus, lead disambung ke hook, CTA komentar diperjelas, CTA seri dibuat umum), saran "atlas → peta", "±2.000" di layar, dan pola "patahkan mitos" di lead diterapkan.
+
+## VO final yang dipakai (versi Endrich, generate manual, 2026-11-07)
+Endrich menambah beberapa kalimat saat generate. Transkrip (Whisper + dicek), durasi 71,3 dtk:
+
+> Ada hampir 2000 agent AI berhasil menganalisis data sel otak tikus, cuma dalam waktu 32 menit. Cepat banget kan? Tapi jangan salah paham dulu, ini bukan berarti AI udah berhasil nemuin obat baru. Jadi gini. Masing-masing agent AI dikasih tugas buat meneliti satu gen. Mereka membaca data, mencari informasi dari jurnal ilmiah, lalu menyusun laporan. Nah, semua laporan itu kemudian digabung, buat melihat pola yang sebelumnya mungkin sulit ditemukan manusia. Dan ternyata ada temuan yang cukup menarik. Dua gen namanya Tsc1 dan Tsc2 menunjukkan efek yang berbeda banget di bagian otak kecil. Padahal keduanya punya hubungan yang cukup erat. Tapi ada satu hal penting yang perlu kamu tahu. Hasil ini masih berupa temuan awal. Belum dibuktikan lewat eksperimen laboratorium dan belum melewati peninjauan ilmiah independen. Apalagi, sebagian penelitinya juga berasal dari OpenAI sendiri. Jadi, bukan berarti hasilnya salah. Tapi tetap perlu diuji dulu. Dan besok, kita akan bahas bahaya tersembunyi di balik alat yang digunakan agent AI. Follow dulu biar nggak ketinggalan. Kalau menurut kamu, hasil penelitian AI seperti ini langsung bisa dipercaya, atau harus dibuktikan di laboratorium dulu?
+
+Kalimat tambahan vs naskah gate 2 dan status faktanya:
+- "Cepat banget kan?", "Jadi gini.", "Tapi ada satu hal penting yang perlu kamu tahu.", "Jadi, bukan berarti hasilnya salah. Tapi tetap perlu diuji dulu." Ini kalimat penghubung/opini, bukan klaim fakta.
+- "buat melihat pola yang sebelumnya mungkin sulit ditemukan manusia" sudah memakai "mungkin", jadi ini opini/analisis.
+- "Padahal keduanya punya hubungan yang cukup erat." Ini pengetahuan biologi umum (protein TSC1 dan TSC2 bekerja bersama sebagai satu kompleks), tapi **belum ada sumbernya di riset.md**. Sumbernya perlu ditambahkan (mis. NCBI Gene TSC1/TSC2) sebelum tayang. Sesi ini tidak bisa membuka situs tersebut.
+- "belum melewati peninjauan ilmiah independen" sesuai status preprint (riset.md).

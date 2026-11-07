@@ -1,0 +1,901 @@
+{
+ "duration": 71.314,
+ "source": "manual ElevenLabs VO by Endrich; timings estimated",
+ "words": [
+  {
+   "word": "Ada",
+   "start": 0.0,
+   "end": 0.311
+  },
+  {
+   "word": "hampir",
+   "start": 0.311,
+   "end": 0.622
+  },
+  {
+   "word": "2000",
+   "start": 0.622,
+   "end": 1.244
+  },
+  {
+   "word": "agent",
+   "start": 1.244,
+   "end": 1.555
+  },
+  {
+   "word": "AI",
+   "start": 1.555,
+   "end": 1.866
+  },
+  {
+   "word": "berhasil",
+   "start": 1.866,
+   "end": 2.332
+  },
+  {
+   "word": "menganalisis",
+   "start": 2.332,
+   "end": 3.109
+  },
+  {
+   "word": "data",
+   "start": 3.109,
+   "end": 3.42
+  },
+  {
+   "word": "sel",
+   "start": 3.42,
+   "end": 3.576
+  },
+  {
+   "word": "otak",
+   "start": 3.576,
+   "end": 3.887
+  },
+  {
+   "word": "tikus,",
+   "start": 3.887,
+   "end": 4.291
+  },
+  {
+   "word": "cuma",
+   "start": 4.291,
+   "end": 4.602
+  },
+  {
+   "word": "dalam",
+   "start": 4.602,
+   "end": 4.913
+  },
+  {
+   "word": "waktu",
+   "start": 4.913,
+   "end": 5.224
+  },
+  {
+   "word": "32",
+   "start": 5.224,
+   "end": 5.846
+  },
+  {
+   "word": "menit.",
+   "start": 5.846,
+   "end": 6.25
+  },
+  {
+   "word": "Cepat",
+   "start": 6.6,
+   "end": 6.861
+  },
+  {
+   "word": "banget",
+   "start": 6.861,
+   "end": 7.121
+  },
+  {
+   "word": "kan?",
+   "start": 7.121,
+   "end": 7.33
+  },
+  {
+   "word": "Tapi",
+   "start": 7.64,
+   "end": 7.941
+  },
+  {
+   "word": "jangan",
+   "start": 7.941,
+   "end": 8.241
+  },
+  {
+   "word": "salah",
+   "start": 8.241,
+   "end": 8.542
+  },
+  {
+   "word": "paham",
+   "start": 8.542,
+   "end": 8.843
+  },
+  {
+   "word": "dulu,",
+   "start": 8.843,
+   "end": 9.233
+  },
+  {
+   "word": "ini",
+   "start": 9.233,
+   "end": 9.534
+  },
+  {
+   "word": "bukan",
+   "start": 9.534,
+   "end": 9.835
+  },
+  {
+   "word": "berarti",
+   "start": 9.835,
+   "end": 10.286
+  },
+  {
+   "word": "AI",
+   "start": 10.286,
+   "end": 10.586
+  },
+  {
+   "word": "udah",
+   "start": 10.586,
+   "end": 10.887
+  },
+  {
+   "word": "berhasil",
+   "start": 10.887,
+   "end": 11.338
+  },
+  {
+   "word": "nemuin",
+   "start": 11.338,
+   "end": 11.639
+  },
+  {
+   "word": "obat",
+   "start": 11.639,
+   "end": 11.939
+  },
+  {
+   "word": "baru.",
+   "start": 11.939,
+   "end": 12.33
+  },
+  {
+   "word": "Jadi",
+   "start": 12.63,
+   "end": 12.843
+  },
+  {
+   "word": "gini.",
+   "start": 12.843,
+   "end": 13.12
+  },
+  {
+   "word": "Masing-masing",
+   "start": 13.47,
+   "end": 14.104
+  },
+  {
+   "word": "agent",
+   "start": 14.104,
+   "end": 14.42
+  },
+  {
+   "word": "AI",
+   "start": 14.42,
+   "end": 14.737
+  },
+  {
+   "word": "dikasih",
+   "start": 14.737,
+   "end": 15.212
+  },
+  {
+   "word": "tugas",
+   "start": 15.212,
+   "end": 15.529
+  },
+  {
+   "word": "buat",
+   "start": 15.529,
+   "end": 15.688
+  },
+  {
+   "word": "meneliti",
+   "start": 15.688,
+   "end": 16.321
+  },
+  {
+   "word": "satu",
+   "start": 16.321,
+   "end": 16.638
+  },
+  {
+   "word": "gen.",
+   "start": 16.638,
+   "end": 16.891
+  },
+  {
+   "word": "Mereka",
+   "start": 16.891,
+   "end": 17.367
+  },
+  {
+   "word": "membaca",
+   "start": 17.367,
+   "end": 17.842
+  },
+  {
+   "word": "data,",
+   "start": 17.842,
+   "end": 18.254
+  },
+  {
+   "word": "mencari",
+   "start": 18.254,
+   "end": 18.729
+  },
+  {
+   "word": "informasi",
+   "start": 18.729,
+   "end": 19.362
+  },
+  {
+   "word": "dari",
+   "start": 19.362,
+   "end": 19.679
+  },
+  {
+   "word": "jurnal",
+   "start": 19.679,
+   "end": 19.996
+  },
+  {
+   "word": "ilmiah,",
+   "start": 19.996,
+   "end": 20.408
+  },
+  {
+   "word": "lalu",
+   "start": 20.408,
+   "end": 20.725
+  },
+  {
+   "word": "menyusun",
+   "start": 20.725,
+   "end": 21.2
+  },
+  {
+   "word": "laporan.",
+   "start": 21.2,
+   "end": 21.77
+  },
+  {
+   "word": "Nah,",
+   "start": 22.06,
+   "end": 22.305
+  },
+  {
+   "word": "semua",
+   "start": 22.305,
+   "end": 22.611
+  },
+  {
+   "word": "laporan",
+   "start": 22.611,
+   "end": 23.071
+  },
+  {
+   "word": "itu",
+   "start": 23.071,
+   "end": 23.377
+  },
+  {
+   "word": "kemudian",
+   "start": 23.377,
+   "end": 23.837
+  },
+  {
+   "word": "digabung,",
+   "start": 23.837,
+   "end": 24.388
+  },
+  {
+   "word": "buat",
+   "start": 24.388,
+   "end": 24.541
+  },
+  {
+   "word": "melihat",
+   "start": 24.541,
+   "end": 25.001
+  },
+  {
+   "word": "pola",
+   "start": 25.001,
+   "end": 25.307
+  },
+  {
+   "word": "yang",
+   "start": 25.307,
+   "end": 25.46
+  },
+  {
+   "word": "sebelumnya",
+   "start": 25.46,
+   "end": 26.073
+  },
+  {
+   "word": "mungkin",
+   "start": 26.073,
+   "end": 26.38
+  },
+  {
+   "word": "sulit",
+   "start": 26.38,
+   "end": 26.686
+  },
+  {
+   "word": "ditemukan",
+   "start": 26.686,
+   "end": 27.299
+  },
+  {
+   "word": "manusia.",
+   "start": 27.299,
+   "end": 27.85
+  },
+  {
+   "word": "Dan",
+   "start": 28.14,
+   "end": 28.327
+  },
+  {
+   "word": "ternyata",
+   "start": 28.327,
+   "end": 28.889
+  },
+  {
+   "word": "ada",
+   "start": 28.889,
+   "end": 29.264
+  },
+  {
+   "word": "temuan",
+   "start": 29.264,
+   "end": 29.639
+  },
+  {
+   "word": "yang",
+   "start": 29.639,
+   "end": 29.826
+  },
+  {
+   "word": "cukup",
+   "start": 29.826,
+   "end": 30.201
+  },
+  {
+   "word": "menarik.",
+   "start": 30.201,
+   "end": 30.875
+  },
+  {
+   "word": "Dua",
+   "start": 30.875,
+   "end": 31.063
+  },
+  {
+   "word": "gen",
+   "start": 31.063,
+   "end": 31.25
+  },
+  {
+   "word": "namanya",
+   "start": 31.25,
+   "end": 31.812
+  },
+  {
+   "word": "Tsc1",
+   "start": 31.812,
+   "end": 32.561
+  },
+  {
+   "word": "dan",
+   "start": 32.561,
+   "end": 32.749
+  },
+  {
+   "word": "Tsc2",
+   "start": 32.749,
+   "end": 33.498
+  },
+  {
+   "word": "menunjukkan",
+   "start": 33.498,
+   "end": 34.247
+  },
+  {
+   "word": "efek",
+   "start": 34.247,
+   "end": 34.622
+  },
+  {
+   "word": "yang",
+   "start": 34.622,
+   "end": 34.809
+  },
+  {
+   "word": "berbeda",
+   "start": 34.809,
+   "end": 35.371
+  },
+  {
+   "word": "banget",
+   "start": 35.371,
+   "end": 35.746
+  },
+  {
+   "word": "di",
+   "start": 35.746,
+   "end": 35.934
+  },
+  {
+   "word": "bagian",
+   "start": 35.934,
+   "end": 36.308
+  },
+  {
+   "word": "otak",
+   "start": 36.308,
+   "end": 36.683
+  },
+  {
+   "word": "kecil.",
+   "start": 36.683,
+   "end": 37.17
+  },
+  {
+   "word": "Padahal",
+   "start": 37.46,
+   "end": 37.894
+  },
+  {
+   "word": "keduanya",
+   "start": 37.894,
+   "end": 38.327
+  },
+  {
+   "word": "punya",
+   "start": 38.327,
+   "end": 38.617
+  },
+  {
+   "word": "hubungan",
+   "start": 38.617,
+   "end": 39.05
+  },
+  {
+   "word": "yang",
+   "start": 39.05,
+   "end": 39.195
+  },
+  {
+   "word": "cukup",
+   "start": 39.195,
+   "end": 39.484
+  },
+  {
+   "word": "erat.",
+   "start": 39.484,
+   "end": 39.86
+  },
+  {
+   "word": "Tapi",
+   "start": 40.2,
+   "end": 40.467
+  },
+  {
+   "word": "ada",
+   "start": 40.467,
+   "end": 40.735
+  },
+  {
+   "word": "satu",
+   "start": 40.735,
+   "end": 41.002
+  },
+  {
+   "word": "hal",
+   "start": 41.002,
+   "end": 41.136
+  },
+  {
+   "word": "penting",
+   "start": 41.136,
+   "end": 41.404
+  },
+  {
+   "word": "yang",
+   "start": 41.404,
+   "end": 41.537
+  },
+  {
+   "word": "perlu",
+   "start": 41.537,
+   "end": 41.805
+  },
+  {
+   "word": "kamu",
+   "start": 41.805,
+   "end": 42.072
+  },
+  {
+   "word": "tahu.",
+   "start": 42.072,
+   "end": 42.42
+  },
+  {
+   "word": "Hasil",
+   "start": 42.72,
+   "end": 43.029
+  },
+  {
+   "word": "ini",
+   "start": 43.029,
+   "end": 43.339
+  },
+  {
+   "word": "masih",
+   "start": 43.339,
+   "end": 43.648
+  },
+  {
+   "word": "berupa",
+   "start": 43.648,
+   "end": 44.112
+  },
+  {
+   "word": "temuan",
+   "start": 44.112,
+   "end": 44.421
+  },
+  {
+   "word": "awal.",
+   "start": 44.421,
+   "end": 44.823
+  },
+  {
+   "word": "Belum",
+   "start": 44.823,
+   "end": 45.132
+  },
+  {
+   "word": "dibuktikan",
+   "start": 45.132,
+   "end": 45.751
+  },
+  {
+   "word": "lewat",
+   "start": 45.751,
+   "end": 46.06
+  },
+  {
+   "word": "eksperimen",
+   "start": 46.06,
+   "end": 46.679
+  },
+  {
+   "word": "laboratorium",
+   "start": 46.679,
+   "end": 47.452
+  },
+  {
+   "word": "dan",
+   "start": 47.452,
+   "end": 47.606
+  },
+  {
+   "word": "belum",
+   "start": 47.606,
+   "end": 47.916
+  },
+  {
+   "word": "melewati",
+   "start": 47.916,
+   "end": 48.534
+  },
+  {
+   "word": "peninjauan",
+   "start": 48.534,
+   "end": 48.998
+  },
+  {
+   "word": "ilmiah",
+   "start": 48.998,
+   "end": 49.307
+  },
+  {
+   "word": "independen.",
+   "start": 49.307,
+   "end": 50.019
+  },
+  {
+   "word": "Apalagi,",
+   "start": 50.019,
+   "end": 50.73
+  },
+  {
+   "word": "sebagian",
+   "start": 50.73,
+   "end": 51.194
+  },
+  {
+   "word": "penelitinya",
+   "start": 51.194,
+   "end": 51.967
+  },
+  {
+   "word": "juga",
+   "start": 51.967,
+   "end": 52.276
+  },
+  {
+   "word": "berasal",
+   "start": 52.276,
+   "end": 52.74
+  },
+  {
+   "word": "dari",
+   "start": 52.74,
+   "end": 53.049
+  },
+  {
+   "word": "OpenAI",
+   "start": 53.049,
+   "end": 53.513
+  },
+  {
+   "word": "sendiri.",
+   "start": 53.513,
+   "end": 54.07
+  },
+  {
+   "word": "Jadi,",
+   "start": 54.07,
+   "end": 54.472
+  },
+  {
+   "word": "bukan",
+   "start": 54.472,
+   "end": 54.781
+  },
+  {
+   "word": "berarti",
+   "start": 54.781,
+   "end": 55.245
+  },
+  {
+   "word": "hasilnya",
+   "start": 55.245,
+   "end": 55.709
+  },
+  {
+   "word": "salah.",
+   "start": 55.709,
+   "end": 56.111
+  },
+  {
+   "word": "Tapi",
+   "start": 56.111,
+   "end": 56.42
+  },
+  {
+   "word": "tetap",
+   "start": 56.42,
+   "end": 56.729
+  },
+  {
+   "word": "perlu",
+   "start": 56.729,
+   "end": 57.039
+  },
+  {
+   "word": "diuji",
+   "start": 57.039,
+   "end": 57.348
+  },
+  {
+   "word": "dulu.",
+   "start": 57.348,
+   "end": 57.75
+  },
+  {
+   "word": "Dan",
+   "start": 58.04,
+   "end": 58.184
+  },
+  {
+   "word": "besok,",
+   "start": 58.184,
+   "end": 58.557
+  },
+  {
+   "word": "kita",
+   "start": 58.557,
+   "end": 58.844
+  },
+  {
+   "word": "akan",
+   "start": 58.844,
+   "end": 59.131
+  },
+  {
+   "word": "bahas",
+   "start": 59.131,
+   "end": 59.418
+  },
+  {
+   "word": "bahaya",
+   "start": 59.418,
+   "end": 59.849
+  },
+  {
+   "word": "tersembunyi",
+   "start": 59.849,
+   "end": 60.424
+  },
+  {
+   "word": "di",
+   "start": 60.424,
+   "end": 60.567
+  },
+  {
+   "word": "balik",
+   "start": 60.567,
+   "end": 60.854
+  },
+  {
+   "word": "alat",
+   "start": 60.854,
+   "end": 61.142
+  },
+  {
+   "word": "yang",
+   "start": 61.142,
+   "end": 61.285
+  },
+  {
+   "word": "digunakan",
+   "start": 61.285,
+   "end": 61.859
+  },
+  {
+   "word": "agent",
+   "start": 61.859,
+   "end": 62.147
+  },
+  {
+   "word": "AI.",
+   "start": 62.147,
+   "end": 62.52
+  },
+  {
+   "word": "Follow",
+   "start": 62.84,
+   "end": 63.149
+  },
+  {
+   "word": "dulu",
+   "start": 63.149,
+   "end": 63.459
+  },
+  {
+   "word": "biar",
+   "start": 63.459,
+   "end": 63.614
+  },
+  {
+   "word": "nggak",
+   "start": 63.614,
+   "end": 63.768
+  },
+  {
+   "word": "ketinggalan.",
+   "start": 63.768,
+   "end": 64.48
+  },
+  {
+   "word": "Kalau",
+   "start": 64.76,
+   "end": 65.041
+  },
+  {
+   "word": "menurut",
+   "start": 65.041,
+   "end": 65.463
+  },
+  {
+   "word": "kamu,",
+   "start": 65.463,
+   "end": 65.829
+  },
+  {
+   "word": "hasil",
+   "start": 65.829,
+   "end": 66.11
+  },
+  {
+   "word": "penelitian",
+   "start": 66.11,
+   "end": 66.672
+  },
+  {
+   "word": "AI",
+   "start": 66.672,
+   "end": 66.954
+  },
+  {
+   "word": "seperti",
+   "start": 66.954,
+   "end": 67.375
+  },
+  {
+   "word": "ini",
+   "start": 67.375,
+   "end": 67.657
+  },
+  {
+   "word": "langsung",
+   "start": 67.657,
+   "end": 67.938
+  },
+  {
+   "word": "bisa",
+   "start": 67.938,
+   "end": 68.219
+  },
+  {
+   "word": "dipercaya,",
+   "start": 68.219,
+   "end": 68.866
+  },
+  {
+   "word": "atau",
+   "start": 68.866,
+   "end": 69.147
+  },
+  {
+   "word": "harus",
+   "start": 69.147,
+   "end": 69.428
+  },
+  {
+   "word": "dibuktikan",
+   "start": 69.428,
+   "end": 69.991
+  },
+  {
+   "word": "di",
+   "start": 69.991,
+   "end": 70.131
+  },
+  {
+   "word": "laboratorium",
+   "start": 70.131,
+   "end": 70.834
+  },
+  {
+   "word": "dulu?",
+   "start": 70.834,
+   "end": 71.2
+  }
+ ]
+}

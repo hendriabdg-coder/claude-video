@@ -31,7 +31,7 @@ Folder: `talking-head/mentah/<slug>/` → `talking-head/proyek/<slug>/` → `tal
 | 7 | | | | | | ide | |
 | 8 | | | | | | ide | |
 | 9 | | | | | | ide | |
-| 10 | 2026-11-10 | 2026-11-10-ai-agent-sel-otak | MOTION | PULSE | Seri AI Agent #2 | naskah ✋ | riset disetujui; naskah lolos review (1 putaran), VO 1 paragraf di-generate manual oleh Endrich; gaya per beat PULSE/SIGNAL/TERMINAL/PAPER/AVATAR; angka perlu cek halaman asli (fetch gagal); Notion ENTE-10 |
+| 10 | 2026-11-10 | 2026-11-10-ai-agent-sel-otak | MOTION | PULSE + SIGNAL/TERMINAL/PAPER/AVATAR + 3D | Seri AI Agent #2 | visual (render) | VO manual Endrich (71 dtk, lewat batas 45); motion + 7 animasi 3D Three.js; musik/SFX belum (tidak ada library di sesi cloud), cue di catatan-produksi; Notion ENTE-10 |
 | 11 | | | | | | ide | |
 | 12 | | | | | | ide | |
 | 13 | | | | | | ide | |
