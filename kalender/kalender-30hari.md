@@ -26,7 +26,7 @@ Folder: `talking-head/mentah/<slug>/` → `talking-head/proyek/<slug>/` → `tal
 | 2 | 2026-11-02 | 2026-11-02-ai-melemahkan-pengawas | MOTION | EMBER | Seri AI Pengawas #2 | naskah ✋ | riset disetujui; naskah lolos review (2 putaran) menunggu Endrich; gaya dasar EMBER + TERMINAL/PAPER/AVATAR; Notion ENTE-2 |
 | 3 | | | | | | ide | |
 | 4 | | | | | | ide | |
-| 5 | | | | | | ide | |
+| 5 | 2026-11-05 | 2026-11-05-alat-ai-disusupi | MOTION | editorial hari 3/4 | (usul: Seri AI Pengawas #5) | riset ✋ | kasus LiteLLM 1.107.0 (21 Okt 2026); riset + outline di folder bersama hari-05/; Notion ENTE-5 |
 | 6 | | | | | | ide | |
 | 7 | | | | | | ide | |
 | 8 | | | | | | ide | |
