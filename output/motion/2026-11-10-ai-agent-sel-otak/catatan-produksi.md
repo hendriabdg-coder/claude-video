@@ -17,7 +17,7 @@
 2. **Timing kata adalah estimasi.** VO di-generate manual, jadi tidak ada timestamp ElevenLabs. Timing berasal dari Whisper-small per jeda dan dibagi per suku kata (`motion/proyek/<slug>/align.py`). Teks layar sinkron per frasa; cek sekilas apakah ada yang muncul terlalu cepat atau lambat.
 3. **Angka:** "thousands of agents", "millions of mouse brain cells", dan "32 minutes" terkonfirmasi lewat ringkasan pencarian atas halaman resmi OpenAI (21 Okt 2026). Angka 1.946 cuma ada di satu blog, jadi di layar diganti "±2.000". Halaman aslinya tetap belum dibuka langsung; tolong cek sekilas.
 4. **Klaim baru di VO** "keduanya punya hubungan yang cukup erat" (Tsc1/Tsc2) sekarang bersumber NCBI Gene (TSC1 dan TSC2 membentuk satu kompleks protein); sudah ditambahkan ke riset.md.
-5. **Musik + SFX belum ada.** Library Epidemic dan Eleven Music tidak terjangkau dari sesi cloud ini. `final.mp4` berisi VO saja (loudnorm -14 LUFS). Tambahkan di CapCut dengan cue di bawah, atau jalankan mixer `motion/gaya/reel_sfx.py` di PC (perlu fungsi `cues_` untuk slug ini).
+5. **Musik + SFX sudah dicampur (2026-11-07)** memakai ElevenLabs (Eleven Music + Sound Effects), karena library Epidemic tidak ada di sesi cloud. Lewat `mix.py`: 42 cue, musik -13,4 dB (diukur supaya ±13,5 dB di bawah VO setelah ducking), hentakan di 0 dtk, hasil -14,6 LUFS dan TP -1,3 dBFS. Biaya ElevenLabs ±1.120 kredit (musik 900, SFX 13 × 17). Tabel cue di bawah tetap berlaku sebagai acuan kalau mau diganti dengan SFX Epidemic di CapCut.
 6. **Teks layar.** Nama "OpenAI" muncul sebagai teks biasa (bukan logo) di kartu preprint.
 7. Saran profil: pin seri AI Agent #1-#3 setelah Hari 11 tayang (tayangan dari Profil cuma 0,4%).
 
@@ -56,7 +56,7 @@ Musik: electronic energik ±120 BPM (PULSE), gelap tapi penasaran. Mulai dengan 
   - BLOKIR "Tsc hubungan erat tanpa sumber" dan "angka belum dicek" ditutup: sumber NCBI dan OpenAI masuk riset.md, counter layar jadi ±2.000.
   - PERBAIKI diterapkan: "POLA TERSEMBUNYI" diganti "CARI POLA BARU"; judul kartu preprint diganti "Ringkasan: atlas laporan agent".
   - SARAN diterapkan: label SIMULASI di peta laporan, lebar teks diperkecil supaya margin kanan aman.
-  - Masih terbuka (keputusan Endrich): durasi 72 dtk; musik/SFX belum ada.
+  - Masih terbuka (keputusan Endrich): durasi 72 dtk.
   - Loudness -14,5 LUFS, TP -1,3 dBFS.
 
 ## Evaluasi setup

@@ -31,7 +31,7 @@ Folder: `talking-head/mentah/<slug>/` → `talking-head/proyek/<slug>/` → `tal
 | 7 | | | | | | ide | |
 | 8 | | | | | | ide | |
 | 9 | | | | | | ide | |
-| 10 | 2026-11-10 | 2026-11-10-ai-agent-sel-otak | MOTION | PULSE + SIGNAL/TERMINAL/PAPER/AVATAR + 3D | Seri AI Agent #2 | final ✋ | final.mp4 72 dtk (VO manual Endrich, lewat batas 45); 7 animasi 3D Three.js; QC lolos; musik/SFX belum (tambah di CapCut, cue di catatan-produksi); Notion ENTE-10 |
+| 10 | 2026-11-10 | 2026-11-10-ai-agent-sel-otak | MOTION | PULSE + SIGNAL/TERMINAL/PAPER/AVATAR + 3D | Seri AI Agent #2 | final ✋ | final.mp4 72 dtk (VO manual Endrich, lewat batas 45); 7 animasi 3D Three.js; QC lolos; musik + SFX ElevenLabs sudah dicampur (-14,6 LUFS); Notion ENTE-10 |
 | 11 | | | | | | ide | |
 | 12 | | | | | | ide | |
 | 13 | | | | | | ide | |
