@@ -32,7 +32,7 @@ Folder: `talking-head/mentah/<slug>/` → `talking-head/proyek/<slug>/` → `tal
 | 8 | | | | | | ide | |
 | 9 | | | | | | ide | |
 | 10 | 2026-11-10 | 2026-11-10-ai-agent-sel-otak | MOTION | PULSE + SIGNAL/TERMINAL/PAPER/AVATAR + 3D | Seri AI Agent #2 | final ✋ | final.mp4 72 dtk (VO manual Endrich, lewat batas 45); 7 animasi 3D Three.js; QC lolos; musik + SFX ElevenLabs sudah dicampur (-14,6 LUFS); Notion ENTE-10 |
-| 11 | | | | | | ide | |
+| 11 | 2026-11-11 (konfirmasi) | 2026-11-11-kebocoran-api-key | MOTION | PULSE + SIGNAL/TERMINAL/PAPER/AVATAR + 3D (tempo cepat) | usul Seri Keamanan AI | final ✋ | VO manual Endrich (gate 1-2 dilewati, fakta dicek setelahnya); 69,7 dtk; musik + SFX ElevenLabs; topik Notion Hari 11 (MCP) belum dikerjakan |
 | 12 | | | | | | ide | |
 | 13 | | | | | | ide | |
 | 14 | | | | | | ide | |

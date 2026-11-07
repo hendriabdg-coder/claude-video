@@ -29,7 +29,7 @@ def fit(text, px, maxw):
 
 d = ImageDraw.Draw(im)
 d.text((540, 262), "EndrichTech", font=font(36), fill=(244, 241, 234), anchor="mt")
-lab = "KEAMANAN AI"
+lab = "SERI KEAMANAN AI #1"
 lf = font(36, "InterDisplay-Bold.ttf")
 lw = d.textlength(lab, font=lf)
 d.rounded_rectangle((540 - lw / 2 - 24, 340, 540 + lw / 2 + 24, 400), radius=12, fill=(255, 79, 58))

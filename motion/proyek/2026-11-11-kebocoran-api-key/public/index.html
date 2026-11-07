@@ -86,6 +86,7 @@ html, body, #root { background: var(--k); color: var(--cr); font-family: "IDBlac
     <!-- A hook: 3D key -->
     <div class="t cr sh" id="a1" style="top:340px;font-size:72px"><span class="ch" style="display:inline-block">W</span><span class="ch" style="display:inline-block">E</span><span class="ch" style="display:inline-block">B</span><span class="ch" style="display:inline-block">S</span><span class="ch" style="display:inline-block">I</span><span class="ch" style="display:inline-block">T</span><span class="ch" style="display:inline-block">E</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">/</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">P</span><span class="ch" style="display:inline-block">L</span><span class="ch" style="display:inline-block">I</span><span class="ch" style="display:inline-block">K</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">S</span><span class="ch" style="display:inline-block">I</span></div>
     <div class="t bl sh" id="a2" style="top:1250px;font-size:150px"><span class="ch" style="display:inline-block">+</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">I</span><span class="ch" style="display:inline-block">?</span></div>
+    <div class="sub" id="a3" style="top:1420px;color:var(--c)">API KEY-MU AMAN?</div>
     <!-- B hati-hati -->
     <div class="rep" id="rB1" style="top:380px"> AWAS AWAS AWAS AWAS AWAS AWAS</div><div class="rep" id="rB2" style="top:1150px"> AWAS AWAS AWAS AWAS AWAS AWAS</div>
     <div class="t cr" id="b1" style="top:820px;font-size:160px"><span class="ch" style="display:inline-block">H</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">T</span><span class="ch" style="display:inline-block">I</span><span class="ch" style="display:inline-block">-</span><span class="ch" style="display:inline-block">H</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">T</span><span class="ch" style="display:inline-block">I</span><span class="ch" style="display:inline-block">!</span></div>
@@ -150,7 +151,7 @@ html, body, #root { background: var(--k); color: var(--cr); font-family: "IDBlac
     <div class="t co sh" id="m2" style="top:450px;font-size:120px"><span class="ch" style="display:inline-block">C</span><span class="ch" style="display:inline-block">E</span><span class="ch" style="display:inline-block">K</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">L</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">G</span><span class="ch" style="display:inline-block">I</span><span class="ch" style="display:inline-block">.</span></div>
     <div class="t cr sh" id="m3" style="top:330px;font-size:58px"><span class="ch" style="display:inline-block">K</span><span class="ch" style="display:inline-block">E</span><span class="ch" style="display:inline-block">Y</span><span class="ch" style="display:inline-block">-</span><span class="ch" style="display:inline-block">M</span><span class="ch" style="display:inline-block">U</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">I</span><span class="ch" style="display:inline-block">K</span><span class="ch" style="display:inline-block">U</span><span class="ch" style="display:inline-block">T</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">T</span><span class="ch" style="display:inline-block">E</span><span class="ch" style="display:inline-block">R</span><span class="ch" style="display:inline-block">K</span><span class="ch" style="display:inline-block">I</span><span class="ch" style="display:inline-block">R</span><span class="ch" style="display:inline-block">I</span><span class="ch" style="display:inline-block">M</span><span class="ch" style="display:inline-block">?</span></div>
     <div id="follow">+ FOLLOW</div><div id="tapc"><svg class="ico" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><path d="M24 14l52 30-22 6 14 26-10 5-14-26-16 16z"/></svg></div>
-    <div class="sub" id="m4" style="top:360px;color:var(--cr)">SERI KEAMANAN AI &middot; TIPS TIAP MINGGU</div>
+    <div class="sub" id="m4" style="top:360px;color:var(--cr)">SERI KEAMANAN AI</div>
     <div class="opt" id="oA"><div class="ol">A</div>UDAH<br>AKU CEK</div>
     <div class="opt" id="oB"><div class="ol">B</div>BELUM<br>PERNAH</div>
     <div class="sub" id="m5" style="top:610px;color:var(--cr)">JAWAB A ATAU B DI KOMENTAR</div>
@@ -204,8 +205,8 @@ html, body, #root { background: var(--k); color: var(--cr); font-family: "IDBlac
     tl.fromTo("#hud", { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.2, ease: "power3.out" }, 0.05);
 
     // A HOOK
-    zip("#a1", 0.05); slam("#a2", T[7] - 0.05, 1.6); kick(T[7] + 0.1, 12);
-    off("#a1, #a2", W.A[1]);
+    zip("#a1", 0.05); rise("#a3", 0.5, 0.2); slam("#a2", T[7] - 0.05, 1.6); kick(T[7] + 0.1, 12);
+    off("#a1, #a2, #a3", W.A[1]);
     // B
     repIn("#rB1", "#rB2", W.B[0], W.B[1]); slam("#b1", W.B[0], 1.7); kick(W.B[0], -16); off("#b1", W.B[1]);
     // C 3 kesalahan, key bocor
@@ -248,7 +249,7 @@ html, body, #root { background: var(--k); color: var(--cr); font-family: "IDBlac
     off("#h0, #n28, #h1b, #h1, #h2, #h3", W.H[1]);
     // I dampak (krem)
     zip("#i0", W.I[0] + 0.05);
-    slide("#im1", T[122] - 0.1, -200); slide("#im2", T[124] - 0.05, 200);
+    slide("#im1", T[119] - 0.1, -200); slide("#im2", T[124] - 0.05, 200);
     tl.set("#bal", { opacity: 1 }, q(T[124] + 0.1));
     tl.fromTo("#balf", { scaleX: 1 }, { scaleX: 0.04, duration: 1.1, ease: "power2.in" }, q(T[124] + 0.15));
     slide("#im3", T[128] - 0.05, -200); kick(T[129], 10);

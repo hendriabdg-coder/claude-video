@@ -117,6 +117,7 @@ body = f'''
     <!-- A hook: 3D key -->
     {TX("a1", "WEBSITE / APLIKASI", 340, 92)}
     {TX("a2", "+ AI?", 1250, 150, "bl sh")}
+    {SUB("a3", "API KEY-MU AMAN?", 1420, "var(--c)")}
     <!-- B hati-hati -->
     {REP("rB1", "AWAS", 380)}{REP("rB2", "AWAS", 1150)}
     {TX("b1", "HATI-HATI!", 820, 200, "cr", 900)}
@@ -181,7 +182,7 @@ body = f'''
     {TX("m2", "CEK LAGI.", 450, 120, "co sh")}
     {TX("m3", "KEY-MU IKUT TERKIRIM?", 330, 80)}
     <div id="follow">+ FOLLOW</div><div id="tapc">{ICON["cursor"]}</div>
-    {SUB("m4", "SERI KEAMANAN AI &middot; TIPS TIAP MINGGU", 360)}
+    {SUB("m4", "SERI KEAMANAN AI", 360)}
     <div class="opt" id="oA"><div class="ol">A</div>UDAH<br>AKU CEK</div>
     <div class="opt" id="oB"><div class="ol">B</div>BELUM<br>PERNAH</div>
     {SUB("m5", "JAWAB A ATAU B DI KOMENTAR", 610)}
@@ -224,8 +225,8 @@ js = f'''
     tl.fromTo("#hud", {{ opacity: 0, x: -30 }}, {{ opacity: 1, x: 0, duration: 0.2, ease: "power3.out" }}, 0.05);
 
     // A HOOK
-    zip("#a1", 0.05); slam("#a2", T[7] - 0.05, 1.6); kick(T[7] + 0.1, 12);
-    off("#a1, #a2", W.A[1]);
+    zip("#a1", 0.05); rise("#a3", 0.5, 0.2); slam("#a2", T[7] - 0.05, 1.6); kick(T[7] + 0.1, 12);
+    off("#a1, #a2, #a3", W.A[1]);
     // B
     repIn("#rB1", "#rB2", W.B[0], W.B[1]); slam("#b1", W.B[0], 1.7); kick(W.B[0], -16); off("#b1", W.B[1]);
     // C 3 kesalahan, key bocor
@@ -268,7 +269,7 @@ js = f'''
     off("#h0, #n28, #h1b, #h1, #h2, #h3", W.H[1]);
     // I dampak (krem)
     zip("#i0", W.I[0] + 0.05);
-    slide("#im1", T[122] - 0.1, -200); slide("#im2", T[124] - 0.05, 200);
+    slide("#im1", T[119] - 0.1, -200); slide("#im2", T[124] - 0.05, 200);
     tl.set("#bal", {{ opacity: 1 }}, q(T[124] + 0.1));
     tl.fromTo("#balf", {{ scaleX: 1 }}, {{ scaleX: 0.04, duration: 1.1, ease: "power2.in" }}, q(T[124] + 0.15));
     slide("#im3", T[128] - 0.05, -200); kick(T[129], 10);
