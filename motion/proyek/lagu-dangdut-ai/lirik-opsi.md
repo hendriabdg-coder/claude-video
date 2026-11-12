@@ -121,3 +121,13 @@ CTA layar: "Kamu pernah curhat ke AI? A: pernah 😅 · B: cuma buat kerja"
 1. **(Rekomendasi) Endrich nyanyi sendiri.** Claude membuat lagu + vokal panduan (penyanyi AI) dan versi instrumental. Endrich merekam nyanyian di HP sambil mendengar panduan pakai earphone. Claude menyinkronkan, merapikan (EQ, kompresi, reverb, koreksi timing), lalu mixing.
 2. **Vokal AI → Voice Changer ke clone Endrich.** Sudah dicoba di lagu sebelumnya; hasil nyanyian kurang natural menurut Endrich.
 3. **Campuran.** Semua bagian bicara (intro, dialog) pakai clone Endrich (TTS, hasilnya bagus), sedangkan bagian nyanyi pakai cara 1.
+
+---
+
+## Status 2026-11-12 (sore): OPSI 1 dipilih, 60 dtk
+- Flow ElevenLabs "Lagu · Bukan Anak IT (dangdut)". Lagu Eleven Music 49 dtk dibuat 2 take; dipilih take B (urutan lirik lengkap). Vokal panduan dipisah dengan Voice Isolator; instrumental dari pengurangan (`instrumental.py`).
+- Suara: dialog Endrich = clone "Endrich - VO" (eleven_v4); suara AI = "Velora" (perempuan Indonesia, library ElevenLabs).
+- `rakit.py`: intro 0-14,5 dtk (percakapan + ketikan/notif chat) → lagu mulai 14,46 dtk, tepat di ujung "tiga!". Break "Kuliah di mana, Mas? / Kampus kolom chat, Mbak." diganti TTS; ekor lagu dipotong di 45 dtk; total 60,06 dtk.
+- File: `audio/preview.mp3` (vokal panduan AI), `audio/karaoke.mp3` (musik + semua dialog, tanpa nyanyian: untuk rekaman Endrich), `audio/panduan_vokal.mp3` (vokal panduan saja, sejajar timeline).
+- Biaya: lagu 2 × 735, isolasi 817, TTS 8 baris ±270, total ±2.560 kredit.
+- Menunggu: cara nyanyi suara Endrich (rekam sendiri vs voice changer) sebelum visual.
