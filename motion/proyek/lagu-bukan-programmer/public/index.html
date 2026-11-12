@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8" />
+<style>
+@font-face { font-family: "IDBlack"; src: url("fonts/InterDisplay-Black.ttf") format("truetype"); font-display: block; }
+@font-face { font-family: "IDBold"; src: url("fonts/InterDisplay-Bold.ttf") format("truetype"); font-display: block; }
+@font-face { font-family: "IDSemi"; src: url("fonts/InterDisplay-SemiBold.ttf") format("truetype"); font-display: block; }
+@font-face { font-family: "IDItal"; src: url("fonts/InterDisplay-SemiBoldItalic.ttf") format("truetype"); font-display: block; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 100%; height: 100%; overflow: hidden; }
+#root { position: relative; width: 1080px; height: 1920px; overflow: hidden; }
+.ico { width: 100%; height: 100%; display: block; }
+
+#chibi { position: absolute; width: 520px; height: 925px; opacity: 0; transform-origin: 50% 100%; }
+#chibiS { position: absolute; inset: 0; }
+#chibiS img { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; }
+#chibiSh { position: absolute; width: 360px; height: 46px; border-radius: 50%; background: rgba(0,0,0,.45); filter: blur(14px); opacity: 0; }
+
+
+:root { --k:#0B0B0C; --o:#F2994A; --cr:#EDE6DA; --g:#6B6F78; --gr:#7BD88F; --r:#FF5A4E; }
+html, body, #root { background: var(--k); color: var(--cr); font-family: "IDBlack"; }
+#bg { position: absolute; inset: 0; background: var(--k); }
+#three { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; display: block; }
+#grain { position: absolute; inset: 0; opacity: .06; pointer-events: none;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/></filter><rect width='160' height='160' filter='url(%23n)'/></svg>"); }
+#cam { position: absolute; inset: 0; }
+.mono { font-family: "DejaVu Sans Mono", Consolas, "Courier New", monospace; }
+#hdr { position: absolute; left: 60px; top: 262px; font-size: 24px; letter-spacing: .14em; color: var(--o); z-index: 5; }
+#vlab { position: absolute; left: 60px; top: 1462px; font-size: 20px; letter-spacing: .12em; color: var(--g); border: 2px solid #33363d; border-radius: 8px; padding: 5px 12px; z-index: 5; }
+#brand { position: absolute; left: 0; top: 1525px; width: 1080px; text-align: center; font-size: 36px; color: var(--cr); z-index: 6; }
+#brand b { color: var(--o); font-weight: normal; }
+#flash { position: absolute; inset: 0; background: #fff; opacity: 0; pointer-events: none; }
+.t { position: absolute; left: 0; width: 1080px; text-align: center; white-space: nowrap; opacity: 0; line-height: 1; letter-spacing: -.02em;
+  text-shadow: 0 4px 28px rgba(0,0,0,.95); }
+.t .ch { opacity: 0; }
+.o { color: var(--o); } .c { color: var(--cr); } .gr { color: var(--gr); } .r { color: var(--r); }
+/* terminal */
+#term { position: absolute; left: 60px; top: 340px; width: 900px; height: 800px; opacity: 0; font-size: 46px; line-height: 1.75; }
+#term .wel { display: inline-block; border: 2px solid var(--o); border-radius: 10px; padding: 10px 22px; font-size: 26px; line-height: 1.4; color: var(--cr); margin-bottom: 40px; }
+#term .wel i { color: var(--o); font-style: normal; } #term .wel s { display: block; text-decoration: none; color: var(--g); font-size: 20px; }
+#term .ln { white-space: pre; opacity: 0; }
+#term .u .p { color: var(--g); } #term .u .x { color: var(--cr); }
+#term .a .p, #term .a .x { color: var(--o); }
+.cur { display: inline-block; width: 22px; height: 44px; background: var(--cr); vertical-align: -8px; margin-left: 4px; }
+/* verse */
+#ls { position: absolute; left: 60px; top: 330px; width: 560px; opacity: 0; font-size: 36px; line-height: 1.6; color: var(--g); }
+#ls .it { opacity: 0; color: var(--cr); } #ls .it b { color: var(--gr); font-weight: normal; }
+#cnt { position: absolute; left: 560px; top: 300px; width: 400px; text-align: right; font-size: 250px; line-height: 1; color: var(--o); opacity: 0; font-variant-numeric: tabular-nums; }
+#cntl { position: absolute; left: 560px; top: 560px; width: 400px; text-align: right; font-size: 30px; letter-spacing: .1em; color: var(--o); opacity: 0; }
+.card { position: absolute; left: 140px; top: 760px; width: 800px; height: 560px; opacity: 0; }
+#cWeb .bar { height: 50px; border-radius: 16px 16px 0 0; background: #1d1f24; border: 2px solid #33363d; border-bottom: 0; display: flex; align-items: center; gap: 10px; padding: 0 18px; font-size: 22px; color: var(--g); }
+#cWeb .bar i { width: 13px; height: 13px; border-radius: 50%; background: #3b3e46; display: inline-block; }
+#cWeb .bd { height: 510px; border: 2px solid #33363d; border-radius: 0 0 16px 16px; }
+#cWeb .lbl { position: absolute; right: 24px; bottom: 20px; font-size: 26px; color: var(--o); }
+#cWa { background: #121417; border: 2px solid #33363d; border-radius: 24px; padding: 34px; }
+.bub { max-width: 560px; padding: 18px 26px; border-radius: 22px; font-family: "IDBold"; font-size: 34px; margin: 18px 0; opacity: 0; }
+.bub.in { background: #24272e; color: var(--cr); border-bottom-left-radius: 6px; }
+.bub.out { background: #1f6f4a; color: #EFFFF4; margin-left: auto; border-bottom-right-radius: 6px; }
+#cVid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+#cVid div { border-radius: 16px; background-size: cover; background-position: center; position: relative; border: 2px solid #33363d; }
+#cVid div:after { content: "▶"; position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); font-size: 54px; color: rgba(255,255,255,.9); text-shadow: 0 2px 12px #000; }
+#cSua { display: flex; align-items: center; gap: 8px; padding: 0 20px; }
+#cSua i { flex: 1; height: 100%; background: var(--o); border-radius: 6px; transform-origin: 50% 50%; display: block; }
+#lap { position: absolute; left: 190px; top: 780px; width: 700px; height: 520px; opacity: 0; }
+#lap .scr { position: absolute; left: 40px; top: 0; width: 620px; height: 400px; border: 6px solid #3b3e46; border-radius: 18px; background: #121417; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; padding: 14px; }
+#lap .scr div { border-radius: 8px; font-family: "IDBold"; font-size: 26px; display: flex; align-items: center; justify-content: center; color: var(--k); opacity: 0; }
+#lap .base { position: absolute; left: 0; top: 404px; width: 700px; height: 30px; border-radius: 0 0 26px 26px; background: #3b3e46; }
+/* permission + errors */
+#perm { position: absolute; left: 90px; top: 520px; width: 900px; border: 3px solid var(--o); border-radius: 16px; padding: 30px 36px; opacity: 0; font-size: 36px; line-height: 1.7; background: rgba(11,11,12,.9); }
+#perm .q { color: var(--cr); margin-bottom: 10px; }
+#perm .op { color: var(--g); padding-left: 14px; border-radius: 8px; }
+#perm .op.sel { color: var(--k); background: var(--o); }
+#errs { position: absolute; left: 60px; top: 520px; width: 960px; font-size: 32px; line-height: 1.8; }
+#errs div { opacity: 0; white-space: pre; }
+#key { position: absolute; left: 340px; top: 1000px; width: 400px; height: 190px; border-radius: 26px; background: #EDE6DA; color: #0B0B0C; box-shadow: 0 16px 0 #8f887d; font-size: 70px; display: flex; align-items: center; justify-content: center; opacity: 0; }
+/* mosaic / prompt */
+#pbox { position: absolute; left: 90px; top: 1180px; width: 900px; border: 2px solid var(--o); border-radius: 16px; padding: 24px 28px; font-size: 32px; color: var(--cr); background: rgba(11,11,12,.92); opacity: 0; white-space: pre; }
+#pbox .p { color: var(--o); }
+/* tv */
+#room { position: absolute; inset: 0; background: radial-gradient(ellipse 60% 40% at 50% 45%, #2a2b25 0%, #0B0B0C 70%); opacity: 0; }
+#tv { position: absolute; left: 180px; top: 520px; width: 720px; height: 560px; border-radius: 30px; background: #1a1a18; border: 14px solid #2b2a27; box-shadow: 0 40px 80px rgba(0,0,0,.7); opacity: 0; overflow: hidden; }
+#tv .scr { position: absolute; inset: 26px; border-radius: 40px / 30px; background: radial-gradient(ellipse at center, #2c3a2c 0%, #121812 80%); padding: 70px 50px; font-size: 52px; color: var(--o); }
+#tv .scr:after { content: ""; position: absolute; inset: 0; border-radius: inherit; background: repeating-linear-gradient(0deg, rgba(0,0,0,.25) 0 2px, rgba(0,0,0,0) 2px 5px); }
+#tvst { position: absolute; left: 420px; top: 1080px; width: 240px; height: 40px; background: #2b2a27; border-radius: 0 0 12px 12px; opacity: 0; }
+/* cta */
+.opt { position: absolute; top: 470px; width: 430px; height: 150px; border-radius: 22px; display: flex; align-items: center; gap: 18px; padding: 0 26px; font-size: 36px; line-height: 1.1; opacity: 0; }
+.opt .ol { width: 70px; height: 70px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 40px; flex: none; }
+#oA { left: 80px; background: #1d1f24; border: 3px solid var(--cr); color: var(--cr); } #oA .ol { background: var(--cr); color: var(--k); }
+#oB { left: 570px; background: var(--o); color: var(--k); } #oB .ol { background: var(--k); color: var(--o); }
+#follow { position: absolute; left: 330px; top: 700px; width: 420px; height: 100px; border-radius: 50px; background: var(--cr); color: var(--k); font-size: 46px; display: flex; align-items: center; justify-content: center; opacity: 0; }
+
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="lagu-bukan-programmer" data-start="0" data-duration="43.5" data-fps="30" data-width="1080" data-height="1920">
+  <audio id="vo" src="vo.mp3" data-start="0" data-duration="43.5" data-track-index="0"></audio>
+
+  <div id="bg"></div>
+  <div id="room"></div>
+  <canvas id="three" width="1080" height="1920"></canvas>
+  <div id="grain"></div>
+  <div id="cam">
+    <div id="hdr" class="mono">♪ AKU BUKAN PROGRAMMER</div>
+    <!-- terminal -->
+    <div id="term" class="mono"><div class="wel"><i>✻</i> Selamat datang di studio<s>~/endrichtech · laptop yang sama</s></div><div class="ln u" id="tl0"><span class="p">> </span><span class="x" id="tx0"></span></div><div class="ln a" id="tl1"><span class="p">• </span><span class="x" id="tx1"></span></div><div class="ln u" id="tl2"><span class="p">> </span><span class="x" id="tx2"></span></div><div class="ln a" id="tl3"><span class="p">• </span><span class="x" id="tx3"></span></div><div class="ln u" id="tl4"><span class="p">> </span><span class="x" id="tx4"></span><span class=cur id=cur></span></div></div>
+    <!-- verse -->
+    <div id="ls" class="mono"><div>$ ls ~/karya</div><div class="it" id="ls0">web-3d/ <b>✓</b></div><div class="it" id="ls1">chatbot-wa/ <b>✓</b></div><div class="it" id="ls2">video/ <b>✓</b></div><div class="it" id="ls3">suara/ <b>✓</b></div></div>
+    <div id="cnt" class="mono">0</div><div id="cntl" class="mono">KARYA</div>
+    <div class="card" id="cWeb"><div class="bar"><i></i><i></i><i></i>&nbsp; web-3d.html</div><div class="bd"></div><div class="lbl mono">website 3D</div></div>
+    <div class="card" id="cWa"><div class="bub in" id="b1">Halo! Mau pesan apa? 🤖</div><div class="bub out" id="b2">Kopi susu 2</div><div class="bub in" id="b3">Siap, Rp36.000 ✓</div></div>
+    <div class="card" id="cVid"><div style="background-image:url(thumbs/t01.jpg)"></div><div style="background-image:url(thumbs/t15.jpg)"></div><div style="background-image:url(thumbs/t06.jpg)"></div><div style="background-image:url(thumbs/t20.jpg)"></div></div>
+    <div class="card" id="cSua"><i class="sb"></i><i class="sb"></i><i class="sb"></i><i class="sb"></i><i class="sb"></i><i class="sb"></i><i class="sb"></i><i class="sb"></i><i class="sb"></i><i class="sb"></i><i class="sb"></i><i class="sb"></i><i class="sb"></i><i class="sb"></i><i class="sb"></i><i class="sb"></i><i class="sb"></i><i class="sb"></i><i class="sb"></i><i class="sb"></i><i class="sb"></i><i class="sb"></i><i class="sb"></i><i class="sb"></i><i class="sb"></i><i class="sb"></i><i class="sb"></i><i class="sb"></i><i class="sb"></i><i class="sb"></i><i class="sb"></i><i class="sb"></i></div>
+    <div id="lap"><div class="scr"><div style="background:#F2994A">WEB 3D</div><div style="background:#7BD88F">CHATBOT</div><div style="background:#EDE6DA">VIDEO</div><div style="background:#8FA2FF">SUARA</div></div><div class="base"></div></div>
+    <div class="t c" id="v1" style="top:1370px;font-size:48px"><span class="ch" style="display:inline-block">S</span><span class="ch" style="display:inline-block">E</span><span class="ch" style="display:inline-block">M</span><span class="ch" style="display:inline-block">U</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">D</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">R</span><span class="ch" style="display:inline-block">I</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">M</span><span class="ch" style="display:inline-block">E</span><span class="ch" style="display:inline-block">J</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">Y</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">N</span><span class="ch" style="display:inline-block">G</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">S</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">M</span><span class="ch" style="display:inline-block">A</span></div>
+    <!-- permission / errors / enter -->
+    <div id="perm" class="mono"><div class="q">Lanjut tanpa ijazah IT?</div>
+      <div class="op" id="op1">1. Ya</div><div class="op" id="op2">2. Ya, jangan tanya lagi</div><div class="op" id="op3">3. Nggak dulu</div></div>
+    <div id="errs" class="mono"><div class="r" id="er0">✗ Error: build gagal</div><div class="r" id="er1">✗ TypeError: undefined</div><div class="r" id="er2">✗ 404: file tidak ada</div><div class="c" id="er3">↻ coba lagi…</div><div class="c" id="er4">↻ coba lagi…</div></div>
+    <div id="key" class="mono">ENTER ⏎</div>
+    <div class="t gr" id="ok" style="top:1300px;font-size:150px"><span class="ch" style="display:inline-block">✓</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">J</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">L</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">N</span><span class="ch" style="display:inline-block">!</span></div>
+    <!-- chorus -->
+    <div class="t o" id="m1" style="top:330px;font-size:66px"><span class="ch" style="display:inline-block">L</span><span class="ch" style="display:inline-block">I</span><span class="ch" style="display:inline-block">H</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">T</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">Y</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">N</span><span class="ch" style="display:inline-block">G</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">K</span><span class="ch" style="display:inline-block">U</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">B</span><span class="ch" style="display:inline-block">I</span><span class="ch" style="display:inline-block">K</span><span class="ch" style="display:inline-block">I</span><span class="ch" style="display:inline-block">N</span></div>
+    <div class="t c" id="m2" style="top:520px;font-size:150px"><span class="ch" style="display:inline-block">S</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">T</span><span class="ch" style="display:inline-block">U</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">I</span><span class="ch" style="display:inline-block">D</span><span class="ch" style="display:inline-block">E</span></div>
+    <div class="t o" id="m3" style="top:700px;font-size:104px"><span class="ch" style="display:inline-block">S</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">T</span><span class="ch" style="display:inline-block">U</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">P</span><span class="ch" style="display:inline-block">R</span><span class="ch" style="display:inline-block">O</span><span class="ch" style="display:inline-block">M</span><span class="ch" style="display:inline-block">P</span><span class="ch" style="display:inline-block">T</span></div>
+    <div id="pbox" class="mono"><span class="p">&gt; </span><span id="ptx"></span></div>
+    <div class="t c" id="n1" style="top:400px;font-size:128px"><span class="ch" style="display:inline-block">J</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">D</span><span class="ch" style="display:inline-block">I</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">N</span><span class="ch" style="display:inline-block">Y</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">T</span><span class="ch" style="display:inline-block">A</span></div>
+    <div class="t o" id="n2" style="top:590px;font-size:138px"><span class="ch" style="display:inline-block">M</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">L</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">M</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">I</span><span class="ch" style="display:inline-block">N</span><span class="ch" style="display:inline-block">I</span></div>
+    <div class="t c" id="n3" style="top:1250px;font-size:68px"><span class="ch" style="display:inline-block">4</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">K</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">R</span><span class="ch" style="display:inline-block">Y</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">·</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">0</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">I</span><span class="ch" style="display:inline-block">J</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">Z</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">H</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">I</span><span class="ch" style="display:inline-block">T</span></div>
+    <!-- tv -->
+    <div id="tv"><div class="scr mono"><span id="tvt"></span></div></div><div id="tvst"></div>
+    <div class="t c" id="rj" style="top:1180px;font-size:148px"><span class="ch" style="display:inline-block">R</span><span class="ch" style="display:inline-block">a</span><span class="ch" style="display:inline-block">j</span><span class="ch" style="display:inline-block">i</span><span class="ch" style="display:inline-block">n</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">n</span><span class="ch" style="display:inline-block">a</span><span class="ch" style="display:inline-block">n</span><span class="ch" style="display:inline-block">y</span><span class="ch" style="display:inline-block">a</span><span class="ch" style="display:inline-block">.</span></div>
+    <!-- cta -->
+    <div class="t c" id="q0" style="top:330px;font-size:82px"><span class="ch" style="display:inline-block">K</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">M</span><span class="ch" style="display:inline-block">U</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">T</span><span class="ch" style="display:inline-block">I</span><span class="ch" style="display:inline-block">M</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">M</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">N</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">?</span></div>
+    <div class="opt" id="oA"><div class="ol">A</div>BELAJAR<br>NGODING DULU</div>
+    <div class="opt" id="oB"><div class="ol">B</div>LANGSUNG<br>BIKIN PAKAI AI</div>
+    <div id="follow">+ FOLLOW</div>
+    <div class="t c" id="q1" style="top:850px;font-size:30px;font-family:IDBold;letter-spacing:.14em">JAWAB A / B DI KOMENTAR</div>
+    <div id="vlab" class="mono">VOKAL: AI (ELEVEN MUSIC) · BUKAN SUARA ASLI</div>
+  </div>
+  <div id="flash"></div>
+  <div id="brand">Endrich<b>Tech</b></div>
+
+  <script src="vendor/gsap.min.js"></script>
+  <script>
+  (function () {
+
+    var FPS = 30;
+    function q(t) { return Math.round(t * FPS) / FPS; }
+    var tl = gsap.timeline({ paused: true });
+    var NI = { immediateRender: false };
+    function cut(sel, t, v) { tl.set(sel, { opacity: v }, q(t)); }
+    function hide(sel, t, d) { tl.to(sel, { opacity: 0, duration: d || 0.15, ease: "power2.in" }, q(t)); }
+    function fade(sel, t, d, from) { tl.fromTo(sel, Object.assign({ opacity: 0, y: 30 }, from || {}), { opacity: 1, y: 0, x: 0, scale: 1, rotation: 0, duration: d || 0.35, ease: "power3.out" }, q(t)); }
+    function pop(sel, t, d) { tl.fromTo(sel, { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1, duration: d || 0.32, ease: "back.out(2.2)" }, q(t)); }
+    function sweep(sel, t, d) {
+      var chars = document.querySelectorAll(sel + " .ch");
+      tl.set(sel, { opacity: 1 }, q(t));
+      tl.fromTo(chars, { opacity: 0, x: -14 }, { opacity: 1, x: 0, duration: 0.24, ease: "power3.out", stagger: Math.min(0.035, (d || 0.45) / chars.length) }, q(t));
+    }
+    function count(sel, t, d, a, b, fmt) { var o = { v: a }, el = document.querySelector(sel); tl.to(o, { v: b, duration: d, ease: "power2.out", onUpdate: function () { el.textContent = fmt(o.v); } }, q(t)); }
+    function type(sel, t, d, msg) { var o = { n: 0 }, el = document.querySelector(sel); tl.to(o, { n: msg.length, duration: d, ease: "none", onUpdate: function () { el.textContent = msg.slice(0, Math.round(o.n)); } }, q(t)); }
+    function flash(t, sel, a) { tl.fromTo(sel || "#flash", { opacity: a || 0.3 }, Object.assign({ opacity: 0, duration: 0.25, ease: "power2.out" }, NI), q(t)); }
+    function kick(t, x) { tl.fromTo("#cam", { x: x || -10 }, Object.assign({ x: 0, duration: 0.3, ease: "elastic.out(1, .3)" }, NI), q(t)); }
+    function idn(v) { return Math.round(v).toString().replace(/\B(?=(\d{3})+(?!\d))/g, "."); }
+
+
+    var L = {"l1": 0.74, "ai1": 3.24, "l3": 4.75, "ai2": 6.48, "web": 8.25, "wa": 9.92, "vid": 11.9, "sua": 12.76, "meja": 13.47, "kul": 15.23, "sal": 17.59, "ulang": 18.7, "enter": 19.9, "ch1": 20.68, "lihat": 22.45, "ide": 24.7, "prompt": 26.3, "nyata": 27.2, "malam": 28.0, "hold": 29.5, "ija": 32.88, "rajin": 34.95, "kamu": 36.71, "mulai": 38.73, "cta": 40.6}, W = {"term": [0, 8.2], "verse": [8.2, 15.18], "perm": [15.18, 20.63], "p0": [20.63, 22.4], "mosaic": [22.4, 27.15], "city": [27.15, 32.78], "tv": [32.78, 36.660000000000004], "p1": [36.660000000000004, 40.550000000000004], "cta": [40.550000000000004, 44.5]}, ENV = [0.827, 0.432, 0.307, 0.251, 0.505, 0.67, 0.631, 0.46, 0.723, 0.638, 0.53, 0.346, 0.066, 0.001, 0.045, 0.765, 0.396, 0.282, 0.222, 0.508, 0.667, 0.599, 0.689, 0.389, 0.046, 0.161, 0.533, 0.464, 0.404, 0.452, 0.957, 0.504, 0.346, 0.431, 0.424, 0.275, 0.185, 0.581, 0.703, 0.68, 0.62, 0.713, 0.856, 0.687, 0.456, 0.873, 0.471, 0.314, 0.235, 0.167, 0.099, 0.042, 0.018, 0.012, 0.005, 0.002, 0.001, 0.0, 0.0, 0.027, 0.761, 0.39, 0.297, 0.254, 0.467, 0.607, 0.557, 0.433, 0.747, 0.666, 0.518, 0.353, 0.068, 0.001, 0.056, 0.893, 0.447, 0.29, 0.225, 0.51, 0.703, 0.62, 0.544, 0.163, 0.001, 0.0, 0.0, 0.0, 0.0, 0.027, 0.797, 0.413, 0.319, 0.3, 0.268, 0.086, 0.026, 0.177, 0.482, 0.263, 0.305, 0.339, 0.398, 0.298, 0.17, 0.619, 0.293, 0.192, 0.155, 0.12, 0.072, 0.02, 0.333, 0.763, 0.819, 0.624, 0.42, 0.1, 0.001, 0.038, 0.913, 0.449, 0.32, 0.262, 0.522, 0.634, 0.615, 0.417, 0.795, 0.785, 0.654, 0.436, 0.117, 0.001, 0.049, 0.882, 0.427, 0.289, 0.241, 0.478, 0.649, 0.601, 0.427, 0.553, 0.34, 0.033, 0.404, 0.617, 0.365, 0.056, 0.835, 0.507, 0.301, 0.282, 0.542, 0.423, 0.317, 0.57, 0.751, 0.588, 0.406, 0.658, 0.756, 0.635, 0.371, 0.97, 0.641, 0.414, 0.268, 0.177, 0.098, 0.045, 0.006, 0.002, 0.0, 0.0, 0.0, 0.0, 0.0, 0.062, 0.79, 0.434, 0.313, 0.27, 0.472, 0.544, 0.437, 0.328, 0.804, 0.706, 0.659, 0.419, 0.095, 0.008, 0.125, 0.546, 0.483, 0.389, 0.402, 0.478, 0.372, 0.276, 0.388, 0.206, 0.162, 0.129, 0.065, 0.03, 0.003, 0.26, 0.562, 0.291, 0.213, 0.182, 0.337, 0.086, 0.022, 0.234, 0.435, 0.448, 0.388, 0.418, 0.411, 0.296, 0.192, 0.609, 0.348, 0.255, 0.202, 0.223, 0.15, 0.079, 0.026, 0.007, 0.003, 0.002, 0.001, 0.001, 0.0, 0.072, 1.0, 0.932, 0.974, 0.975, 1.0, 1.0, 1.0, 0.945, 1.0, 1.0, 1.0, 1.0, 0.702, 0.338, 0.324, 0.957, 0.849, 0.888, 0.87, 1.0, 1.0, 1.0, 0.987, 0.758, 0.182, 0.139, 0.518, 0.37, 0.083, 0.094, 1.0, 0.979, 1.0, 0.959, 1.0, 0.91, 0.44, 0.54, 1.0, 1.0, 0.967, 0.93, 0.904, 0.869, 0.911, 0.981, 0.771, 0.822, 0.842, 0.908, 0.755, 0.339, 0.066, 0.081, 0.159, 0.18, 0.103, 0.034, 0.004, 0.045, 0.917, 0.91, 0.931, 0.917, 1.0, 1.0, 0.936, 0.853, 0.888, 1.0, 0.991, 0.906, 0.553, 0.063, 0.148, 0.958, 0.868, 0.912, 0.875, 1.0, 1.0, 0.958, 0.877, 0.741, 0.496, 0.469, 0.35, 0.031, 0.057, 0.275, 1.0, 0.93, 0.945, 0.913, 0.939, 0.876, 0.356, 0.519, 0.947, 0.977, 0.91, 0.765, 0.902, 0.913, 0.822, 0.989, 0.795, 0.818, 0.86, 0.876, 0.678, 0.273, 0.3, 0.899, 0.982, 0.911, 0.858, 0.413, 0.043, 0.117, 0.994, 0.832, 0.867, 0.913, 1.0, 0.98, 0.879, 0.743, 0.834, 0.906, 0.861, 0.865, 0.609, 0.351, 0.416, 0.888, 0.842, 0.88, 0.873, 0.99, 1.0, 0.837, 0.782, 0.636, 0.168, 0.159, 0.32, 0.171, 0.207, 0.185, 0.968, 0.918, 0.906, 0.945, 0.973, 0.799, 0.399, 0.334, 0.801, 0.78, 0.744, 0.608, 0.727, 0.775, 0.64, 1.0, 0.886, 0.983, 0.967, 1.0, 0.779, 0.34, 0.151, 0.266, 0.274, 0.298, 0.327, 0.336, 0.35, 0.406, 1.0, 0.946, 0.961, 0.899, 0.92, 0.758, 0.625, 0.569, 0.708, 0.8, 0.853, 0.801, 0.556, 0.369, 0.305, 0.909, 0.777, 0.808, 0.81, 0.963, 0.899, 0.861, 0.799, 0.689, 0.348, 0.361, 0.342, 0.299, 0.095, 0.174, 0.564, 0.597, 0.616, 0.687, 0.56, 0.424, 0.082, 0.319, 0.872, 0.862, 0.903, 0.803, 0.769, 0.812, 0.82, 0.709, 0.534, 0.497, 0.46, 0.481, 0.444, 0.474, 0.729, 0.882, 0.876, 0.741, 0.788, 0.614, 0.22, 0.457, 0.896, 0.886, 0.804, 0.821, 0.896, 0.858, 0.683, 0.68, 0.829, 0.855, 0.8, 0.811, 0.571, 0.4, 0.45, 0.882, 0.889, 0.831, 0.778, 0.973, 0.888, 0.695, 0.693, 0.699, 0.263, 0.217, 0.377, 0.524, 0.494, 0.496, 0.916, 0.903, 0.81, 0.881, 0.875, 0.827, 0.641, 0.597, 0.853, 0.828, 0.789, 0.775, 0.753, 0.729, 0.738, 0.858, 0.76, 0.738, 0.721, 0.763, 0.622, 0.309, 0.286, 0.628, 0.556, 0.48, 0.507, 0.44, 0.471, 0.513, 0.929, 0.837, 0.774, 0.744, 0.751, 0.77, 0.744, 0.631, 0.795, 0.785, 0.776, 0.769, 0.541, 0.429, 0.436, 0.863, 0.784, 0.759, 0.746, 0.863, 0.786, 0.673, 0.758, 0.646, 0.427, 0.421, 0.457, 0.486, 0.464, 0.474, 0.897, 0.831, 0.779, 0.752, 0.788, 0.826, 0.561, 0.602, 0.803, 0.764, 0.748, 0.692, 0.776, 0.661, 0.673, 0.884, 0.757, 0.712, 0.714, 0.75, 0.58, 0.366, 0.552, 0.775, 0.792, 0.702, 0.715, 0.502, 0.177, 0.226, 0.895, 0.826, 0.794, 0.847, 0.864, 0.797, 0.725, 0.618, 0.684, 0.72, 0.662, 0.709, 0.424, 0.104, 0.367, 0.874, 0.763, 0.735, 0.706, 0.82, 0.756, 0.717, 0.662, 0.729, 0.42, 0.388, 0.435, 0.436, 0.248, 0.204, 0.878, 0.851, 0.761, 0.749, 0.775, 0.623, 0.389, 0.414, 0.805, 0.677, 0.628, 0.65, 0.753, 0.664, 0.627, 0.892, 0.803, 0.745, 0.769, 0.785, 0.529, 0.27, 0.298, 0.545, 0.484, 0.43, 0.246, 0.285, 0.374, 0.431, 0.898, 0.812, 0.73, 0.795, 0.861, 0.81, 0.683, 0.678, 0.671, 0.727, 0.678, 0.659, 0.413, 0.078, 0.132, 0.787, 0.798, 0.76, 0.705, 0.78, 0.739, 0.667, 0.651, 0.593, 0.399, 0.373, 0.41, 0.357, 0.319, 0.358, 0.819, 0.82, 0.775, 0.739, 0.824, 0.65, 0.376, 0.412, 0.725, 0.692, 0.671, 0.63, 0.65, 0.618, 0.604, 0.83, 0.722, 0.718, 0.704, 0.698, 0.575, 0.243, 0.502, 0.759, 0.765, 0.719, 0.642, 0.387, 0.083, 0.144, 0.794, 0.82, 0.77, 0.775, 0.762, 0.794, 0.767, 0.658, 0.652, 0.728, 0.675, 0.683, 0.524, 0.3, 0.171, 0.76, 0.754, 0.7, 0.712, 0.737, 0.748, 0.679, 0.659, 0.565, 0.402, 0.365, 0.335, 0.285, 0.259, 0.173, 0.809, 0.745, 0.727, 0.732, 0.776, 0.637, 0.358, 0.333, 0.736, 0.683, 0.677, 0.575, 0.631, 0.633, 0.622, 0.798, 0.743, 0.675, 0.705, 0.733, 0.55, 0.247, 0.303, 0.456, 0.391, 0.381, 0.403, 0.448, 0.447, 0.24, 0.85, 0.795, 0.747, 0.726, 0.799, 0.745, 0.68, 0.501, 0.618, 0.709, 0.7, 0.664, 0.381, 0.263, 0.246, 0.823, 0.733, 0.701, 0.661, 0.729, 0.716, 0.691, 0.663, 0.574, 0.391, 0.406, 0.405, 0.207, 0.074, 0.111, 0.863, 0.812, 0.748, 0.69, 0.725, 0.538, 0.247, 0.365, 0.691, 0.652, 0.644, 0.628, 0.646, 0.695, 0.601, 0.797, 0.707, 0.642, 0.702, 0.718, 0.59, 0.404, 0.524, 0.696, 0.709, 0.71, 0.591, 0.344, 0.078, 0.102, 0.836, 0.783, 0.689, 0.706, 0.763, 0.707, 0.651, 0.687, 0.606, 0.687, 0.668, 0.654, 0.489, 0.308, 0.329, 0.786, 0.71, 0.67, 0.706, 0.777, 0.716, 0.675, 0.633, 0.543, 0.322, 0.355, 0.305, 0.355, 0.382, 0.381, 0.845, 0.776, 0.728, 0.794, 0.725, 0.693, 0.421, 0.294, 0.504, 0.458, 0.439, 0.378, 0.708, 0.699, 0.679, 0.873, 0.737, 0.738, 0.786, 0.755, 0.614, 0.398, 0.274, 0.31, 0.284, 0.241, 0.276, 0.264, 0.302, 0.311, 0.899, 0.828, 0.795, 0.749, 0.802, 0.741, 0.707, 0.608, 0.694, 0.716, 0.725, 0.665, 0.5, 0.309, 0.36, 0.774, 0.737, 0.709, 0.744, 0.813, 0.717, 0.677, 0.683, 0.568, 0.347, 0.339, 0.316, 0.347, 0.335, 0.337, 0.794, 0.685, 0.702, 0.756, 0.79, 0.648, 0.422, 0.415, 0.723, 0.738, 0.696, 0.737, 0.66, 0.666, 0.68, 0.831, 0.655, 0.613, 0.698, 0.699, 0.568, 0.346, 0.403, 0.712, 0.669, 0.649, 0.652, 0.419, 0.141, 0.092, 0.657, 0.34, 0.222, 0.18, 0.299, 0.4, 0.37, 0.286, 0.478, 0.447, 0.436, 0.334, 0.057, 0.0, 0.026, 0.642, 0.325, 0.226, 0.157, 0.295, 0.415, 0.384, 0.382, 0.151, 0.001, 0.002, 0.086, 0.112, 0.055, 0.097, 0.321, 0.263, 0.173, 0.111, 0.289, 0.317, 0.141, 0.124, 0.179, 0.169, 0.183, 0.202, 0.282, 0.269, 0.189, 0.388, 0.196, 0.133, 0.247, 0.382, 0.285, 0.138, 0.113, 0.076, 0.026, 0.003, 0.0, 0.0, 0.0, 0.011, 0.677, 0.329, 0.219, 0.174, 0.308, 0.426, 0.41, 0.281, 0.509, 0.462, 0.449, 0.293, 0.042, 0.0, 0.033, 0.667, 0.315, 0.219, 0.161, 0.326, 0.394, 0.436, 0.346, 0.108, 0.001, 0.0, 0.0, 0.0, 0.025, 0.332, 0.728, 0.477, 0.343, 0.192, 0.297, 0.343, 0.263, 0.346, 0.52, 0.51, 0.423, 0.344, 0.482, 0.44, 0.406, 0.693, 0.417, 0.304, 0.199, 0.143, 0.08, 0.025, 0.176, 0.441, 0.386, 0.295, 0.199, 0.045, 0.0, 0.022, 0.7, 0.34, 0.232, 0.168, 0.287, 0.358, 0.325, 0.256, 0.463, 0.373, 0.345, 0.271, 0.028, 0.0, 0.026, 0.696, 0.352, 0.241, 0.157, 0.292, 0.34, 0.326, 0.364, 0.434, 0.232, 0.236, 0.301, 0.366, 0.22, 0.197, 0.731, 0.464, 0.298, 0.293, 0.46, 0.339, 0.139, 0.239, 0.557, 0.481, 0.342, 0.371, 0.479, 0.411, 0.298, 0.744, 0.415, 0.267, 0.217, 0.161, 0.083, 0.033, 0.007, 0.001, 0.0, 0.0, 0.0, 0.0, 0.0, 0.037, 0.699, 0.343, 0.246, 0.183, 0.314, 0.436, 0.387, 0.281, 0.494, 0.447, 0.359, 0.212, 0.023, 0.0, 0.013, 0.666, 0.344, 0.237, 0.167, 0.295, 0.341, 0.324, 0.308, 0.344, 0.356, 0.352, 0.428, 0.394, 0.385, 0.13, 0.742, 0.495, 0.374, 0.297, 0.363, 0.244, 0.207, 0.269, 0.531, 0.382, 0.306, 0.435, 0.476, 0.392, 0.316, 0.762, 0.457, 0.273, 0.236, 0.399, 0.289, 0.148, 0.103, 0.062, 0.037, 0.021, 0.01, 0.006, 0.008, 0.007, 0.006, 0.005, 0.005, 0.005, 0.005, 0.004, 0.004, 0.004, 0.004, 0.003, 0.003, 0.003, 0.002, 0.002, 0.002, 0.001, 0.002, 0.002, 0.002, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.0, 0.0, 0.001, 0.001, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], DUR = 43.5, TERM = ["Aku nggak bisa ngoding.", "Terus?", "Tapi aku punya ide.", "Ya udah, ketik aja.", "bikin semuanya"];
+    function slam(sel, t, s) { tl.set(sel + " .ch", { opacity: 1 }, q(t)); tl.fromTo(sel, { opacity: 0, scale: s || 1.4 }, { opacity: 1, scale: 1, duration: 0.2, ease: "back.out(1.8)" }, q(t)); }
+    function zip(sel, t) { var ch = document.querySelectorAll(sel + " .ch"); tl.set(sel, { opacity: 1 }, q(t));
+      tl.fromTo(ch, { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.16, ease: "back.out(2)", stagger: Math.min(0.03, 0.4 / ch.length) }, q(t)); }
+    function rise(sel, t, d) { tl.fromTo(sel, { opacity: 0, y: 60 }, { opacity: 1, y: 0, duration: d || 0.24, ease: "back.out(1.6)" }, q(t)); }
+    function off(sel, t) { tl.set(sel, { opacity: 0 }, q(t)); }
+    tl.set("#bg", { backgroundColor: "#0B0B0C" }, 0);
+    tl.set("#bg", { backgroundColor: "#0a0f1f" }, q(W.city[0])); tl.set("#bg", { backgroundColor: "#0B0B0C" }, q(W.city[1]));
+
+    // 1 TERMINAL CHAT
+    rise("#term", 0.0, 0.3);
+    [[0, L.l1, 0.75], [1, L.ai1, 0.3], [2, L.l3, 0.8], [3, L.ai2, 0.9], [4, L.ai2 + 1.4, 0.35]].forEach(function (e) {
+      tl.set("#tl" + e[0], { opacity: 1 }, q(e[1] - 0.02)); type("#tx" + e[0], e[1], e[2], TERM[e[0]]); });
+    tl.to("#cur", { opacity: 0, duration: 0.25, yoyo: true, repeat: 3, ease: "steps(1)" }, q(L.ai2 + 0.2));
+    off("#term", W.term[1]);
+
+    // 2 VERSE: ls + counter + cards
+    tl.set("#ls, #cnt, #cntl", { opacity: 1 }, q(W.verse[0]));
+    var CARDS = ["#cWeb", "#cWa", "#cVid", "#cSua"], TT = [L.web, L.wa, L.vid, L.sua];
+    TT.forEach(function (t, i) {
+      tl.fromTo("#ls" + i, { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.15 }, q(t - 0.05));
+      tl.set("#cnt", { textContent: String(i + 1) }, q(t - 0.05));
+      tl.fromTo("#cnt", { scale: 1.25 }, Object.assign({ scale: 1, duration: 0.25, ease: "back.out(2)" }, NI), q(t - 0.05));
+      tl.fromTo(CARDS[i], { opacity: 0, y: 80, rotation: i % 2 ? 2 : -2 }, { opacity: 1, y: 0, rotation: 0, duration: 0.22, ease: "back.out(1.5)" }, q(t - 0.05));
+      if (i > 0) off(CARDS[i - 1], t - 0.05);
+      flash(t - 0.05, "#flash", 0.08);
+    });
+    ["#b1", "#b2", "#b3"].forEach(function (b, k) { tl.fromTo(b, { opacity: 0, y: 30, scale: 0.9 }, { opacity: 1, y: 0, scale: 1, duration: 0.18, ease: "back.out(2)" }, q(L.wa + 0.1 + k * 0.5)); });
+    // waveform card follows the song loudness
+    document.querySelectorAll("#cSua .sb").forEach(function (b, k) {
+      for (var f = Math.round(L.sua * 30); f < Math.round(L.meja * 30); f += 2) {
+        var v = ENV[Math.min(f + k % 6, ENV.length - 1)] * (0.55 + 0.45 * Math.abs(Math.sin(k * 1.7 + f * 0.21)));
+        tl.set(b, { scaleY: Math.max(0.06, v) }, f / 30); } });
+    off("#cSua", L.meja - 0.05);
+    tl.fromTo("#lap", { opacity: 0, scale: 1.3 }, { opacity: 1, scale: 1, duration: 0.25, ease: "back.out(1.4)" }, q(L.meja - 0.05));
+    tl.fromTo("#lap .scr div", { opacity: 0, scale: 0.4 }, { opacity: 1, scale: 1, duration: 0.2, ease: "back.out(2)", stagger: 0.08 }, q(L.meja + 0.05));
+    zip("#v1", L.meja + 0.4);
+    off("#ls, #cnt, #cntl, #lap, #v1", W.verse[1]);
+
+    // 3 PERMISSION -> ERRORS -> ENTER
+    tl.fromTo("#perm", { opacity: 0, scale: 0.92 }, { opacity: 1, scale: 1, duration: 0.2, ease: "back.out(1.6)" }, q(W.perm[0]));
+    var SEL = { backgroundColor: "#F2994A", color: "#0B0B0C" }, UNS = { backgroundColor: "rgba(0,0,0,0)", color: "#6B6F78" };
+    tl.set("#op1", SEL, q(L.kul + 0.5)); tl.set("#op1", UNS, q(L.kul + 1.1)); tl.set("#op2", SEL, q(L.kul + 1.1));
+    tl.to("#op2", { opacity: 0.4, duration: 0.08, yoyo: true, repeat: 3 }, q(L.kul + 1.6));
+    off("#perm", L.sal - 0.05);
+    [0, 1, 2].forEach(function (k) { tl.fromTo("#er" + k, { opacity: 0, x: -40 }, { opacity: 1, x: 0, duration: 0.1 }, q(L.sal + k * 0.28)); kick(L.sal + k * 0.28, 8); });
+    [3, 4].forEach(function (k, j) { tl.fromTo("#er" + k, { opacity: 0 }, { opacity: 1, duration: 0.1 }, q(L.ulang + j * 0.45)); });
+    tl.to("#errs div", { opacity: 0.25, duration: 0.15 }, q(L.enter - 0.3));
+    tl.fromTo("#key", { opacity: 0, y: 80 }, { opacity: 1, y: 0, duration: 0.2, ease: "back.out(1.6)" }, q(L.enter - 0.4));
+    tl.to("#key", { y: 14, boxShadow: "0 2px 0 #8f887d", duration: 0.06 }, q(L.enter + 0.15));
+    tl.to("#key", { y: 0, boxShadow: "0 16px 0 #8f887d", duration: 0.1 }, q(L.enter + 0.25));
+    slam("#ok", L.enter + 0.3, 1.6); flash(L.enter + 0.3, "#flash", 0.2);
+    off("#errs div, #key, #ok", W.perm[1]);
+
+    // 4 CHORUS: particles (3D) -> mosaic + prompt -> city
+    zip("#m1", L.lihat + 0.05);
+    slam("#m2", L.ide - 0.05); slam("#m3", L.prompt - 0.05);
+    tl.set("#pbox", { opacity: 1 }, q(L.ide + 0.2)); type("#ptx", L.ide + 0.25, 1.9, "bikin lagu: aku bukan programmer");
+    off("#m1, #m2, #m3, #pbox", W.mosaic[1]);
+    slam("#n1", L.nyata - 0.05, 1.5); slam("#n2", L.malam - 0.05, 1.5); kick(L.malam, 12);
+    zip("#n3", L.hold + 0.3);
+    off("#n1, #n2, #n3", W.city[1]);
+
+    // 5 TV CRT
+    tl.set("#room", { opacity: 1 }, q(W.tv[0])); tl.set("#room", { opacity: 0 }, q(W.tv[1]));
+    tl.fromTo("#tv, #tvst", { opacity: 0 }, { opacity: 1, duration: 0.08 }, q(W.tv[0]));
+    tl.fromTo("#tv .scr", { scaleY: 0.02 }, Object.assign({ scaleY: 1, duration: 0.18, ease: "power3.out" }, NI), q(W.tv[0]));
+    type("#tvt", L.ija, 0.75, "Ijazahmu apa?");
+    tl.set("#rj .ch", { opacity: 1 }, q(L.rajin - 0.05));
+    tl.fromTo("#rj", { opacity: 0, scale: 1.6, rotation: -6 }, { opacity: 1, scale: 1, rotation: -4, duration: 0.2, ease: "back.out(1.6)" }, q(L.rajin - 0.05));
+    kick(L.rajin + 0.1, 10);
+    off("#tv, #tvst, #rj", W.tv[1]);
+
+    // 6 CTA (particles handle "kamu juga bisa / mulai dari satu ide")
+    zip("#q0", L.cta);
+    tl.fromTo("#oA", { opacity: 0, x: -80 }, { opacity: 1, x: 0, duration: 0.22, ease: "back.out(1.6)" }, q(L.cta + 0.3));
+    tl.fromTo("#oB", { opacity: 0, x: 80 }, { opacity: 1, x: 0, duration: 0.22, ease: "back.out(1.6)" }, q(L.cta + 0.45));
+    tl.fromTo("#follow", { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1, duration: 0.24, ease: "back.out(2.2)" }, q(L.cta + 0.8));
+    tl.to("#follow", { scale: 0.92, duration: 0.07, yoyo: true, repeat: 1 }, q(L.cta + 1.5));
+    tl.to("#follow", { backgroundColor: "#F2994A", duration: 0.08 }, q(L.cta + 1.57));
+    tl.set("#follow", { innerHTML: "&#10003; FOLLOWING" }, q(L.cta + 1.57));
+    zip("#q1", L.cta + 1.0);
+
+    window.__timelines = window.__timelines || {};
+    window.__timelines["lagu-bukan-programmer"] = tl;
+  })();
+  </script>
+</div>
+
+<script type="importmap">{"imports": {"three": "./vendor/three.module.min.js"}}</script>
+<script type="module">
+  import * as THREE from "three";
+  var L = {"l1": 0.74, "ai1": 3.24, "l3": 4.75, "ai2": 6.48, "web": 8.25, "wa": 9.92, "vid": 11.9, "sua": 12.76, "meja": 13.47, "kul": 15.23, "sal": 17.59, "ulang": 18.7, "enter": 19.9, "ch1": 20.68, "lihat": 22.45, "ide": 24.7, "prompt": 26.3, "nyata": 27.2, "malam": 28.0, "hold": 29.5, "ija": 32.88, "rajin": 34.95, "kamu": 36.71, "mulai": 38.73, "cta": 40.6}, W = {"term": [0, 8.2], "verse": [8.2, 15.18], "perm": [15.18, 20.63], "p0": [20.63, 22.4], "mosaic": [22.4, 27.15], "city": [27.15, 32.78], "tv": [32.78, 36.660000000000004], "p1": [36.660000000000004, 40.550000000000004], "cta": [40.550000000000004, 44.5]}, THUMBS = ["t00.jpg", "t01.jpg", "t02.jpg", "t03.jpg", "t04.jpg", "t05.jpg", "t06.jpg", "t07.jpg", "t08.jpg", "t09.jpg", "t10.jpg", "t11.jpg", "t12.jpg", "t13.jpg", "t14.jpg", "t15.jpg", "t16.jpg", "t17.jpg", "t18.jpg", "t19.jpg", "t20.jpg", "t21.jpg", "t22.jpg", "t23.jpg", "t24.jpg", "t25.jpg", "t26.jpg", "t27.jpg", "t28.jpg", "t29.jpg", "t30.jpg", "t31.jpg", "t32.jpg", "t33.jpg", "t34.jpg"];
+  window.__hf = window.__hf || {}; window.__hf.buildReady = window.__hf.buildReady || {};
+  var R = new THREE.WebGLRenderer({ canvas: document.getElementById("three"), alpha: true, antialias: true, preserveDrawingBuffer: true });
+  R.setPixelRatio(1); R.setSize(1080, 1920, false); R.setClearColor(0x000000, 0);
+  var scene = new THREE.Scene(), cam = new THREE.PerspectiveCamera(32, 1080 / 1920, 0.05, 200);
+  scene.add(new THREE.HemisphereLight(0xffeedd, 0x10131c, 1.2));
+  var key = new THREE.DirectionalLight(0xffffff, 2.0); key.position.set(-3, 5, 6); scene.add(key);
+  var ORANGE = 0xF2994A, CREAM = 0xEDE6DA;
+  function h(i) { var x = Math.sin(i * 12.9898 + 78.233) * 43758.5453; return x - Math.floor(x); }
+  function ss(a, b, t) { var x = Math.min(1, Math.max(0, (t - a) / (b - a))); return x * x * (3 - 2 * x); }
+  function inW(k, t) { return t >= W[k][0] && t < W[k][1]; }
+
+  // --- particle text
+  var NP = 9000, pgeo = new THREE.BufferGeometry(), ppos = new Float32Array(NP * 3); pgeo.setAttribute("position", new THREE.BufferAttribute(ppos, 3));
+  var dot = document.createElement("canvas"); dot.width = dot.height = 32; var dg = dot.getContext("2d"), gr = dg.createRadialGradient(16, 16, 0, 16, 16, 16);
+  gr.addColorStop(0, "rgba(255,255,255,1)"); gr.addColorStop(0.6, "rgba(255,255,255,.85)"); gr.addColorStop(1, "rgba(255,255,255,0)"); dg.fillStyle = gr; dg.fillRect(0, 0, 32, 32);
+  var pmat = new THREE.PointsMaterial({ color: CREAM, size: 0.05, map: new THREE.CanvasTexture(dot), transparent: true, depthWrite: false });
+  var pts = new THREE.Points(pgeo, pmat); scene.add(pts);
+  var SC = new Float32Array(NP * 3);
+  for (var i = 0; i < NP; i++) { var u = h(i) * 2 - 1, th = h(i + 7e3) * 6.283, r = 3 + 4 * h(i + 9e3), s = Math.sqrt(1 - u * u);
+    SC[i * 3] = r * s * Math.cos(th); SC[i * 3 + 1] = r * u * 1.6; SC[i * 3 + 2] = r * s * Math.sin(th) - 2; }
+  function textTargets(lines, px) {
+    var c = document.createElement("canvas"); c.width = 1000; c.height = 700; var g = c.getContext("2d");
+    g.fillStyle = "#fff"; g.textAlign = "center"; g.textBaseline = "middle"; g.font = px + "px IDBlack";
+    lines.forEach(function (l, k) { g.fillText(l, 500, 350 + (k - (lines.length - 1) / 2) * px * 1.05); });
+    var d = g.getImageData(0, 0, 1000, 700).data, cand = [];
+    for (var y = 0; y < 700; y += 3) for (var x = 0; x < 1000; x += 3) if (d[(y * 1000 + x) * 4 + 3] > 128) cand.push(x, y);
+    var out = new Float32Array(NP * 3), nc = cand.length / 2;
+    for (var i = 0; i < NP; i++) { var j = Math.floor(h(i + 31) * nc) * 2; out[i * 3] = (cand[j] - 500) / 330 + (h(i + 5) - 0.5) * 0.01;
+      out[i * 3 + 1] = -(cand[j + 1] - 350) / 330; out[i * 3 + 2] = (h(i + 3) - 0.5) * 0.08; }
+    return out;
+  }
+  var T0, T1, T2, ready = document.fonts.load("150px IDBlack").then(function () {
+    T0 = textTargets(["AKU BUKAN", "PROGRAMMER"], 140); T1 = textTargets(["KAMU JUGA", "BISA"], 160); T2 = textTargets(["MULAI DARI", "SATU IDE."], 140); });
+  // keyframes: [time, target(null = scatter)]
+  function particleState(t) {
+    var K = [[W.p0[0] - 0.4, null], [L.ch1 + 0.55, "T0"], [L.lihat - 0.25, "T0"], [L.lihat + 0.3, null],
+             [W.p1[0] - 0.4, null], [L.kamu + 0.55, "T1"], [L.mulai - 0.1, "T1"], [L.mulai + 0.45, "T2"], [L.cta - 0.5, "T2"], [L.cta + 0.2, null]];
+    for (var k = 0; k < K.length - 1; k++) if (t >= K[k][0] && t < K[k + 1][0]) return [K[k][1], K[k + 1][1], ss(K[k][0], K[k + 1][0], t)];
+    return [null, null, 0];
+  }
+
+  // --- 3D cube inside the browser card
+  var cube = new THREE.Group(); scene.add(cube);
+  cube.add(new THREE.Mesh(new THREE.BoxGeometry(1.15, 1.15, 1.15), new THREE.MeshStandardMaterial({ color: ORANGE, roughness: 0.35, metalness: 0.2 })));
+  cube.add(new THREE.LineSegments(new THREE.EdgesGeometry(new THREE.BoxGeometry(1.6, 1.6, 1.6)), new THREE.LineBasicMaterial({ color: CREAM })));
+
+  // --- mosaic wall of Endrich's own reel frames
+  var wall = new THREE.Group(); scene.add(wall); var tiles = [], loader = new THREE.TextureLoader();
+  var texReady = Promise.all(THUMBS.map(function (n, i) { return new Promise(function (res) {
+    loader.load("thumbs/" + n, function (tx) { tx.colorSpace = THREE.SRGBColorSpace;
+      var m = new THREE.Mesh(new THREE.PlaneGeometry(0.4, 0.71), new THREE.MeshBasicMaterial({ map: tx, transparent: true })); m.userData.i = i; wall.add(m); tiles.push(m); res(); }, undefined, res); }); }));
+
+  // --- night city (instanced towers with lit windows)
+  var wc = document.createElement("canvas"); wc.width = 64; wc.height = 128; var wg = wc.getContext("2d"); wg.fillStyle = "#000"; wg.fillRect(0, 0, 64, 128);
+  for (var y = 4; y < 128; y += 10) for (var x = 4; x < 64; x += 10) if (h(x * 31 + y) > 0.55) { wg.fillStyle = h(x + y * 7) > 0.8 ? "#F2994A" : "#ffe7b0"; wg.fillRect(x, y, 5, 6); }
+  var wtex = new THREE.CanvasTexture(wc); wtex.wrapS = wtex.wrapT = THREE.RepeatWrapping;
+  var NB = 260, city = new THREE.InstancedMesh(new THREE.BoxGeometry(1, 1, 1), new THREE.MeshStandardMaterial({ color: 0x14161c, roughness: 0.8, emissive: 0xffffff, emissiveMap: wtex, emissiveIntensity: 0.9 }), NB);
+  scene.add(city); var M4 = new THREE.Matrix4(), Q = new THREE.Quaternion(), V = new THREE.Vector3(), S = new THREE.Vector3();
+  for (var b = 0; b < NB; b++) { var side = b % 2 ? 1 : -1, row = Math.floor(b / 2), hh = 2 + 9 * h(b + 3);
+    V.set(side * (2.2 + 4 * h(b + 1)), hh / 2 - 1.5, 6 - row * 1.6 - h(b + 2)); S.set(1 + h(b + 4), hh, 1 + h(b + 5)); M4.compose(V, Q, S); city.setMatrixAt(b, M4); }
+  scene.fog = new THREE.Fog(0x0a0f1f, 12, 60);
+
+  function renderAt(t) {
+    // particles
+    var st = particleState(t), A = st[0] ? (st[0] == "T0" ? T0 : st[0] == "T1" ? T1 : T2) : SC, B = st[1] ? (st[1] == "T0" ? T0 : st[1] == "T1" ? T1 : T2) : SC;
+    pts.visible = !!(A && B) && (inW("p0", t) || inW("p1", t) || (t > W.p0[0] - 0.4 && t < L.lihat + 0.3) || (t > W.p1[0] - 0.4 && t < L.cta + 0.2));
+    if (pts.visible && A && B) { var k = st[2];
+      for (var i = 0; i < NP * 3; i++) ppos[i] = A[i] + (B[i] - A[i]) * Math.min(1, Math.max(0, k * 1.15 - (i % 997) / 997 * 0.15));
+      pgeo.attributes.position.needsUpdate = true; pmat.color.set(t > L.mulai + 0.2 ? ORANGE : CREAM);
+      pts.rotation.y = 0.12 * Math.sin(t * 0.8); pts.position.set(0, 0.35, 0); }
+    // cube
+    cube.visible = t >= L.web - 0.05 && t < L.wa - 0.05;
+    cube.position.set(0, -0.33, 0); cube.rotation.set(0.5 + t * 0.9, t * 1.7, 0); cube.scale.setScalar(0.66 + 0.05 * Math.sin(t * 8));
+    // mosaic
+    wall.visible = inW("mosaic", t);
+    tiles.forEach(function (m) { var i = m.userData.i, c = i % 7, r = Math.floor(i / 7), d = h(i + 11) * 0.7, k = ss(L.lihat + d * 0.6, L.lihat + 0.6 + d * 0.6, t);
+      var gx = (c - 3) * 0.44, gy = (2 - r) * 0.77 + 0.15, sx = (h(i + 1) - 0.5) * 8, sy = (h(i + 2) - 0.5) * 12, sz = -6 - 8 * h(i + 3);
+      m.position.set(sx + (gx - sx) * k, sy + (gy - sy) * k, sz * (1 - k)); m.rotation.set((1 - k) * h(i + 4) * 4, (1 - k) * h(i + 5) * 4, 0);
+      m.material.opacity = 1 - 0.75 * ss(L.ide - 0.2, L.ide + 0.3, t); });
+    wall.position.z = -1.5 * ss(L.ide - 0.2, L.nyata, t); wall.scale.setScalar(0.9);
+    // city
+    city.visible = inW("city", t);
+    var cz = 9 - 3.2 * (t - W.city[0]);
+    // camera
+    if (city.visible) { cam.position.set(0, 1.2 + 0.25 * (t - W.city[0]), cz); cam.lookAt(0, 3.0, cz - 10); }
+    else { cam.position.set(0, 0, 10); cam.lookAt(0, 0, 0); }
+    R.render(scene, cam);
+  }
+  var allReady = Promise.all([ready, texReady]); window.__hf.buildReady["lagu"] = allReady;
+  window.addEventListener("hf-seek", function (e) { var t = e.detail.time;
+    if (!T0 || tiles.length < THUMBS.length) e.detail.waitUntil(allReady.then(function () { renderAt(t); })); else renderAt(t); });
+  allReady.then(function () { renderAt(window.__hfThreeTime || 0); });
+</script>
+</body>
+</html>
