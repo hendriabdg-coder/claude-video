@@ -1,0 +1,20 @@
+{
+  "name": "endrichtech-remotion-169",
+  "private": true,
+  "description": "Template edit 16:9 EndrichTech: 50% hybrid (talking head + motion), 50% full Remotion",
+  "scripts": {
+    "studio": "remotion studio src/index.ts --port 3000",
+    "render": "remotion render src/index.ts SplitEdit out/final.mp4",
+    "still": "remotion still src/index.ts SplitEdit out/still.png"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.543",
+    "react": "19.2.0",
+    "react-dom": "19.2.0",
+    "remotion": "4.0.543"
+  },
+  "devDependencies": {
+    "@types/react": "19.2.2",
+    "typescript": "5.9.3"
+  }
+}
