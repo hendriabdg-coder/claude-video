@@ -89,3 +89,35 @@ CTA layar: "Kamu pernah curhat ke AI? A: pernah 😅 · B: cuma buat kerja"
 - Kedua opsi tidak memakai lirik/judul lagu dangdut yang sudah ada; pantun dan frasa ditulis baru.
 - Opsi 2 bercanda soal AI "setia". Itu jelas lelucon (AI tidak punya perasaan); punchline-nya justru menegaskan hal itu.
 - Visual (setelah lirik dipilih): gaya sama dengan "Aku Bukan Programmer" (terminal, partikel, mosaik, 3D), tapi palet lebih "panggung dangdut": lampu warna, kerlip, kendang 3D, teks lirik ber-goyang.
+
+---
+
+## Revisi 2026-11-12: intro percakapan dengan AI (permintaan Endrich)
+- Lagu dibuka dengan percakapan: Endrich menyuruh AI ("Claude") membuatkan lagu. **Suara AI = perempuan** (voice ElevenLabs dari library, bukan clone siapa pun); **suara Endrich = clone Endrich** (bicara) dan **penyanyi = Endrich**.
+- Catatan kejujuran: suara AI hanya ilustrasi (Claude tidak punya suara resmi seperti ini). Di layar ditulis "AI", UI generik tanpa logo, dan di caption ada keterangan "percakapan & suara AI = ilustrasi".
+- Durasi: intro ±10-12 dtk + lagu ±48 dtk = ±60 dtk. Bait lagu dipadatkan.
+
+### Intro untuk OPSI 1 "Bukan Anak IT"
+> **Endrich:** "Claude, bikinin aku lagu dong."
+> **AI:** "Boleh. Mau genre apa?"
+> **Endrich:** "Dangdut. Yang bikin orang goyang."
+> **AI:** "Siap. Tapi yang nyanyi kamu, ya."
+> **Endrich:** "…Hah? Aku?"
+> **AI:** "Satu… dua… tiga!" → kendang masuk, langsung pantun.
+
+### Intro untuk OPSI 2 "Curhat Sama AI"
+> **Endrich:** "Claude, temenin aku bikin lagu, ya."
+> **AI:** "Lagu tentang apa?"
+> **Endrich:** "Tentang… kamu."
+> **AI:** "…Oke. Aku siapkan nadanya."
+> → suling galau masuk, bait 1.
+(Punchline di akhir tetap: "Kamu sayang aku?" / AI: "Mohon perjelas pertanyaannya.")
+
+### Versi padat lagu (±48 dtk) setelah intro
+- OPSI 1: pantun → bait (4 baris) → pre ("Aduh, aduh…") → reff → dialog "Kuliah di mana, Mas? / Kampus kolom chat, Mbak." (Mbak = suara AI) → reff akhir.
+- OPSI 2: bait 1 → bait 2 → pre ("Tapi sayang…") → reff → dialog punchline → outro.
+
+### Suara nyanyian Endrich: pilihan cara
+1. **(Rekomendasi) Endrich nyanyi sendiri.** Claude membuat lagu + vokal panduan (penyanyi AI) dan versi instrumental. Endrich merekam nyanyian di HP sambil mendengar panduan pakai earphone. Claude menyinkronkan, merapikan (EQ, kompresi, reverb, koreksi timing), lalu mixing.
+2. **Vokal AI → Voice Changer ke clone Endrich.** Sudah dicoba di lagu sebelumnya; hasil nyanyian kurang natural menurut Endrich.
+3. **Campuran.** Semua bagian bicara (intro, dialog) pakai clone Endrich (TTS, hasilnya bagus), sedangkan bagian nyanyi pakai cara 1.
