@@ -131,3 +131,4 @@ CTA layar: "Kamu pernah curhat ke AI? A: pernah 😅 · B: cuma buat kerja"
 - File: `audio/preview.mp3` (vokal panduan AI), `audio/karaoke.mp3` (musik + semua dialog, tanpa nyanyian: untuk rekaman Endrich), `audio/panduan_vokal.mp3` (vokal panduan saja, sejajar timeline).
 - Biaya: lagu 2 × 735, isolasi 817, TTS 8 baris ±270, total ±2.560 kredit.
 - Menunggu: cara nyanyi suara Endrich (rekam sendiri vs voice changer) sebelum visual.
+- Opsi 2 dijalankan (pilihan Endrich): Voice Changer `eleven_multilingual_sts_v2` dengan clone "Endrich - VO" pada vokal panduan (816 kredit). Hasil: `audio/lagu_endrich.mp3` (60 dtk, -13,4 LUFS). Vokal diproses (HPF, kompresi, reverb pendek) lalu ditaruh di atas instrumental; break tetap TTS. Menunggu Endrich mendengar.

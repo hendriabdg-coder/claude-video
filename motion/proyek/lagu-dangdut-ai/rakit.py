@@ -67,6 +67,11 @@ def save(x, name, norm=True):
 
 
 save(build(True), "preview.wav"); save(build(False), "karaoke.wav")
+ven = A / "vocal_endrich.mp3"
+if ven.exists():   # opsi 2: nyanyian panduan diubah ke clone Endrich (Voice Changer), diproses lalu ditaruh di atas instrumental
+    ve = load(ven, af="highpass=f=90,acompressor=threshold=0.12:ratio=3:attack=8:release=120:makeup=1.5,aecho=0.8:0.5:60:0.10")[:n_song]
+    ve = np.pad(ve, ((0, max(0, n_song - len(ve))), (0, 0)))[:n_song] * fade[:, None]
+    out = build(False); place(out, ve * (1 - w[:, None]) * 1.05, SONG0); save(out, "lagu_endrich.wav")
 g = np.zeros((total, 2), np.float32); place(g, voc * (1 - w[:, None]), SONG0); save(g, "panduan_vokal.wav", norm=False)
 json.dump({"song0": SONG0, "end": round(SONG0 + END_SONG + 0.6, 2), "intro": marks, "break": [SONG0 + 30.1, SONG0 + 31.75]},
           open(A / "timeline.json", "w"), indent=1)
