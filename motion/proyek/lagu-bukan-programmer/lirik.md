@@ -71,3 +71,17 @@ Coret yang tidak benar atau belum jadi.
 - Suara AI di bagian dialog: pakai suara lain (bukan clone Endrich) atau suara Endrich yang diberi efek "robot/phone" dari ElevenLabs Audio Effects, supaya jelas siapa yang bicara.
 - CTA follow dan pertanyaan komentar tidak dinyanyikan, cukup di layar dan caption (contoh A/B: "Kamu tim A: belajar ngoding dulu, atau B: langsung bikin pakai AI?").
 - Tes 20 dtk: Eleven Music (lirik custom, vokal) → Voice Isolator → Voice Changer ke clone Endrich → campur dengan versi instrumental. Perkiraan ±300 kredit.
+
+---
+
+## Status 2026-11-12
+- Lirik versi penuh **disetujui Endrich**.
+- Audio v1 (42 dtk) sudah dibuat di flow ElevenLabs "Lagu · Aku Bukan Programmer":
+  1. Eleven Music v2.5: lirik custom, penyanyi pria. Dibuat 2 take; dipilih take B (urutan lirik lengkap; take A mengacak urutan dan melewatkan "Ijazahmu apa?").
+  2. Voice Isolator: vokal saja.
+  3. Voice Changer `eleven_multilingual_sts_v2` dengan voice clone "Endrich - VO" (voice_id lama, tidak membuat clone baru). Nada tetap (median f0 258 Hz sama), timing sama (lag 0 ms).
+  4. Instrumental: lagu dikurangi vokal (`instrumental.py`, over-subtraction 2,5; ASR tidak lagi menangkap lirik).
+  5. Mix: `mix_lagu.py`. Baris AI diberi filter telepon; hasil -13,3 LUFS.
+- Biaya ElevenLabs ±2.660 kredit (musik 2 × 630, isolasi 700, voice changer 700).
+- File (tidak masuk git): `audio/lagu_endrich.mp3` (hasil), `audio/pembanding_vokal_AI.mp3` (asli).
+- Menunggu Endrich mendengar (gate VO) sebelum lanjut ke visual.
