@@ -87,3 +87,12 @@ CTA layar: "Kamu tim mana? A: belajar ngoding dulu · B: langsung bikin pakai AI
 - Durasi 60 dtk = pengecualian dari batas 45 dtk (permintaan Endrich).
 - Lirik baru; tidak meminjam lirik lagu jazz yang ada.
 - Suara AI perempuan = ilustrasi; di layar ditulis "AI", di caption diberi keterangan.
+
+---
+
+## Status 2026-11-12: OPSI A dipilih
+- Flow ElevenLabs "Lagu · Kopi, Laptop, dan Kamu (pop jazz)". Lagu 48 dtk, 2 take; dipilih take A (take B melewatkan bait 1 dan reff pertama).
+- Vokal panduan → Voice Isolator → Voice Changer clone "Endrich - VO". Instrumental dari pengurangan (`instrumental.py`).
+- `rakit.py`: intro percakapan 0-13,6 dtk (TTS dipercepat 1,06x, jeda 0,14 dtk), lagu mulai 13,6 dtk; break "Kamu belajar di mana? / Di kolom chat… tiap malam." = TTS. Total 61,9 dtk.
+- File: `audio/lagu_endrich.mp3` (suara Endrich), `audio/preview.mp3` (penyanyi AI), `audio/karaoke.mp3`, `audio/panduan_vokal.mp3`.
+- Biaya: lagu 2 × 720, isolasi 800, voice changer 800, TTS ±290, total ±3.330 kredit.
