@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8" />
+<style>
+@font-face { font-family: "IDBlack"; src: url("fonts/InterDisplay-Black.ttf") format("truetype"); font-display: block; }
+@font-face { font-family: "IDBold"; src: url("fonts/InterDisplay-Bold.ttf") format("truetype"); font-display: block; }
+@font-face { font-family: "IDSemi"; src: url("fonts/InterDisplay-SemiBold.ttf") format("truetype"); font-display: block; }
+@font-face { font-family: "IDItal"; src: url("fonts/InterDisplay-SemiBoldItalic.ttf") format("truetype"); font-display: block; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 100%; height: 100%; overflow: hidden; }
+#root { position: relative; width: 1080px; height: 1920px; overflow: hidden; }
+.ico { width: 100%; height: 100%; display: block; }
+
+#chibi { position: absolute; width: 520px; height: 925px; opacity: 0; transform-origin: 50% 100%; }
+#chibiS { position: absolute; inset: 0; }
+#chibiS img { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; }
+#chibiSh { position: absolute; width: 360px; height: 46px; border-radius: 50%; background: rgba(0,0,0,.45); filter: blur(14px); opacity: 0; }
+
+
+:root { --bg:#F5F5F7; --ink:#1D1D1F; --sub:#6E6E73; --acc:#0071E3; --brand:#B8611D;
+  --gb:#4285F4; --gr:#EA4335; --gy:#FBBC04; --gg:#34A853; }
+html, body, #root { background: var(--bg); color: var(--ink); font-family: "IDBlack"; }
+#bg { position: absolute; inset: 0; background: var(--bg); }
+#night { position: absolute; inset: 0; background: #050506; }
+#cam { position: absolute; inset: 0; }
+.t { position: absolute; left: 0; width: 1080px; text-align: center; white-space: nowrap; opacity: 0; line-height: 1.02; letter-spacing: -.03em; }
+.t .ch { opacity: 0; }
+.s { font-family: "IDSemi"; letter-spacing: -.01em; color: var(--sub); }
+.lab { position: absolute; font-family: "IDBold"; font-size: 22px; letter-spacing: .14em; color: var(--sub); opacity: 0; }
+.card { position: absolute; background: #fff; border-radius: 22px; overflow: hidden; opacity: 0;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.18); }
+.card img { display: block; width: 100%; }
+.demo { position: absolute; left: 60px; top: 1462px; font-family: "IDBold"; font-size: 20px; letter-spacing: .14em; color: var(--sub);
+  border: 2px solid rgba(110,110,115,.35); border-radius: 8px; padding: 5px 12px; z-index: 6; }
+#brand { position: absolute; left: 0; top: 1525px; width: 1080px; text-align: center; font-size: 34px; color: var(--ink); z-index: 6; }
+#brand b { color: var(--brand); font-weight: normal; }
+#flash { position: absolute; inset: 0; background: #fff; opacity: 0; pointer-events: none; }
+/* S1 malam */
+#clock { position: absolute; left: 0; width: 1080px; top: 420px; text-align: center; font-family: "IDSemi"; font-size: 250px; letter-spacing: -.04em;
+  color: #F5F5F7; opacity: 0; font-variant-numeric: tabular-nums; }
+.rc { position: absolute; width: 230px; height: 300px; background: #FBFAF6; border-radius: 6px; padding: 22px 20px; opacity: 0;
+  box-shadow: 0 10px 30px rgba(0,0,0,.35); }
+.rc i { display: block; height: 10px; border-radius: 5px; background: #cfcac0; margin: 14px 0; }
+.rc b { display: block; height: 14px; width: 60%; border-radius: 5px; background: #8b8478; }
+.kw { position: absolute; top: 760px; font-family: "IDBold"; font-size: 40px; padding: 12px 26px; border-radius: 40px; opacity: 0;
+  color: #F5F5F7; border: 2px solid rgba(245,245,247,.5); }
+/* MacBook (keynote) */
+#mac { position: absolute; left: 70px; top: 700px; width: 940px; opacity: 0; transform-origin: 50% 100%; }
+#mac .lid { background: #1d1d1f; border-radius: 30px 30px 0 0; padding: 22px 22px 26px; }
+#mac .scr { position: relative; height: 560px; border-radius: 8px; overflow: hidden; background: #fff; }
+#mac .scr img { position: absolute; left: 0; top: 0; width: 100%; }
+#mac .base { height: 28px; margin: 0 -40px; background: linear-gradient(#d8d8dc, #a1a1a6); border-radius: 0 0 26px 26px; }
+.hl { position: absolute; border: 4px solid var(--acc); border-radius: 10px; background: rgba(0,113,227,.08); opacity: 0; }
+/* input row (material) */
+#row { position: absolute; left: 70px; top: 560px; width: 940px; padding: 26px 30px; display: grid; grid-template-columns: 1.1fr 1.7fr .6fr .8fr; gap: 14px; opacity: 0; }
+#row .f { border-radius: 14px; background: #F1F3F4; padding: 14px 16px; }
+#row .f s { display: block; text-decoration: none; font-family: "IDBold"; font-size: 18px; letter-spacing: .08em; color: var(--sub); }
+#row .f u { display: block; text-decoration: none; font-family: "IDBold"; font-size: 30px; color: var(--ink); min-height: 36px; white-space: nowrap; overflow: hidden; }
+#cur { position: absolute; width: 56px; height: 56px; color: var(--ink); opacity: 0; z-index: 7; }
+.rip { position: absolute; width: 120px; height: 120px; margin: -60px 0 0 -60px; border-radius: 50%; background: rgba(26,115,232,.25); opacity: 0; z-index: 6; }
+.chip { position: absolute; border-radius: 40px; font-family: "IDBold"; color: #fff; padding: 16px 30px; font-size: 40px; opacity: 0; white-space: nowrap; }
+.vchip { position: absolute; width: 300px; height: 210px; border-radius: 26px; padding: 26px; color: #fff; opacity: 0; }
+.vchip s { display: block; text-decoration: none; font-family: "IDBold"; font-size: 26px; opacity: .9; }
+.vchip u { display: block; text-decoration: none; font-family: "IDBlack"; font-size: 46px; margin-top: 26px; font-variant-numeric: tabular-nums; }
+/* KPI */
+.kpi { position: absolute; left: 90px; width: 900px; opacity: 0; }
+.kpi s { display: block; text-decoration: none; font-family: "IDBold"; font-size: 34px; color: var(--sub); }
+.kpi u { display: block; text-decoration: none; font-family: "IDBlack"; font-size: 112px; letter-spacing: -.035em; font-variant-numeric: tabular-nums; color: var(--ink); }
+.kpi.m { padding: 26px 34px; border-radius: 26px; background: #fff; box-shadow: 0 6px 20px rgba(60,64,67,.15); border-top: 10px solid var(--gb); }
+.kpi.m u { font-size: 92px; }
+/* compare bars */
+.cmp { position: absolute; left: 90px; width: 900px; opacity: 0; }
+.cmp s { display: flex; justify-content: space-between; text-decoration: none; font-family: "IDBold"; font-size: 34px; color: var(--sub); margin-bottom: 12px; }
+.cmp s b { font-weight: normal; color: var(--ink); font-family: "IDBlack"; font-variant-numeric: tabular-nums; }
+.cmp i { display: block; height: 56px; border-radius: 28px; transform-origin: 0 50%; }
+/* dropdown */
+#dd { position: absolute; left: 240px; top: 560px; width: 600px; padding: 14px; opacity: 0; }
+#dd .it { font-family: "IDBold"; font-size: 40px; padding: 20px 26px; border-radius: 14px; color: var(--ink); display: flex; justify-content: space-between; }
+#dd .it.on { background: var(--acc); color: #fff; }
+.mbar { position: absolute; bottom: 0; width: 140px; border-radius: 18px 18px 6px 6px; transform-origin: 50% 100%; }
+#mchart { position: absolute; left: 140px; top: 960px; width: 800px; height: 380px; opacity: 0; }
+#mchart .ml { position: absolute; bottom: -54px; width: 140px; text-align: center; font-family: "IDBold"; font-size: 30px; color: var(--sub); }
+#mval { position: absolute; left: 0; width: 1080px; top: 860px; text-align: center; font-family: "IDBlack"; font-size: 64px; opacity: 0; font-variant-numeric: tabular-nums; }
+/* belanja list */
+#buy { position: absolute; left: 90px; top: 1010px; width: 900px; padding: 30px 36px; opacity: 0; }
+#buy h4 { font-family: "IDBlack"; font-size: 44px; margin-bottom: 10px; }
+#buy .bi { display: flex; align-items: center; gap: 22px; font-family: "IDBold"; font-size: 38px; padding: 14px 0; opacity: 0; }
+#buy .bi i { width: 22px; height: 22px; border-radius: 50%; background: var(--gr); flex: none; }
+#buy .bi b { margin-left: auto; font-weight: normal; color: var(--gr); font-variant-numeric: tabular-nums; }
+/* CTA */
+#sheet { position: absolute; left: 0; width: 1080px; top: 610px; text-align: center; opacity: 0; }
+#sheet span { display: inline-block; font-family: "IDBlack"; font-size: 190px; letter-spacing: -.03em; color: #fff; background: var(--brand); padding: 6px 54px 20px; border-radius: 40px; }
+#strip { position: absolute; top: 1080px; left: 0; height: 330px; display: flex; gap: 26px; opacity: 0; }
+#strip div { width: 420px; height: 330px; border-radius: 22px; background-size: cover; background-position: top left; box-shadow: 0 16px 40px rgba(0,0,0,.18); flex: none; }
+#cbox { position: absolute; left: 90px; top: 1080px; width: 900px; padding: 26px 30px; display: flex; align-items: center; gap: 22px; opacity: 0; }
+#cbox .av { width: 72px; height: 72px; border-radius: 50%; background: linear-gradient(135deg, var(--gb), var(--gg)); flex: none; }
+#cbox .in { flex: 1; font-family: "IDBlack"; font-size: 54px; color: var(--ink); }
+#cbox .snd { width: 72px; height: 72px; border-radius: 50%; background: var(--acc); color: #fff; font-size: 38px; display: flex; align-items: center; justify-content: center; }
+#reply { position: absolute; right: 90px; top: 1260px; max-width: 760px; padding: 24px 32px; border-radius: 30px 30px 8px 30px; background: var(--gg); color: #fff;
+  font-family: "IDBold"; font-size: 40px; opacity: 0; }
+/* meta: kipas tab + tombol link */
+.fan { position: absolute; left: 290px; top: 760px; width: 500px; height: 380px; border-radius: 20px; background: #fff center top / cover no-repeat;
+  box-shadow: 0 24px 60px rgba(0,0,0,.22); opacity: 0; transform-origin: 50% 120%; }
+#hero { position: absolute; left: 90px; top: 520px; width: 900px; height: 520px; }
+#lbtn { position: absolute; left: 0; width: 1080px; top: 1120px; text-align: center; opacity: 0; }
+#lbtn span { display: inline-flex; align-items: center; gap: 22px; font-family: "IDBlack"; font-size: 64px; color: #fff; background: var(--brand);
+  padding: 22px 56px 26px; border-radius: 60px; box-shadow: 0 18px 40px rgba(184,97,29,.35); }
+#lbtn i { font-style: normal; display: inline-block; }
+
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="iklan-dashboard-meta" data-start="0" data-duration="25.78" data-fps="30" data-width="1080" data-height="1920">
+  <audio id="vo" src="vo.mp3" data-start="0" data-duration="25.78" data-track-index="0"></audio>
+
+  <div id="bg"></div>
+  <div id="night"></div>
+  <div id="cam">
+    <div id="clock">23:00</div>
+    <div class="rc" id="rc0" style="left:110px;top:980px"><b></b><i></i><i></i><i style="width:70%"></i><i></i><i style="width:50%"></i></div><div class="rc" id="rc1" style="left:330px;top:920px"><b></b><i></i><i></i><i style="width:70%"></i><i></i><i style="width:50%"></i></div><div class="rc" id="rc2" style="left:560px;top:1000px"><b></b><i></i><i></i><i style="width:70%"></i><i></i><i style="width:50%"></i></div><div class="rc" id="rc3" style="left:760px;top:940px"><b></b><i></i><i></i><i style="width:70%"></i><i></i><i style="width:50%"></i></div><div class="rc" id="rc4" style="left:190px;top:1150px"><b></b><i></i><i></i><i style="width:70%"></i><i></i><i style="width:50%"></i></div><div class="rc" id="rc5" style="left:430px;top:1130px"><b></b><i></i><i></i><i style="width:70%"></i><i></i><i style="width:50%"></i></div><div class="rc" id="rc6" style="left:680px;top:1160px"><b></b><i></i><i></i><i style="width:70%"></i><i></i><i style="width:50%"></i></div><div class="rc" id="rc7" style="left:520px;top:900px"><b></b><i></i><i></i><i style="width:70%"></i><i></i><i style="width:50%"></i></div><div class="kw" id="kw0" style="left:150px;">NOTA</div><div class="kw" id="kw1" style="left:380px;">BUKU KAS</div><div class="kw" id="kw2" style="left:680px;">KALKULATOR</div>
+    <div class="t " id="t1" style="top:330px;font-size:86px;color:#F5F5F7"><span class="ch" style="display:inline-block">M</span><span class="ch" style="display:inline-block">a</span><span class="ch" style="display:inline-block">s</span><span class="ch" style="display:inline-block">i</span><span class="ch" style="display:inline-block">h</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">n</span><span class="ch" style="display:inline-block">g</span><span class="ch" style="display:inline-block">i</span><span class="ch" style="display:inline-block">t</span><span class="ch" style="display:inline-block">u</span><span class="ch" style="display:inline-block">n</span><span class="ch" style="display:inline-block">g</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">n</span><span class="ch" style="display:inline-block">o</span><span class="ch" style="display:inline-block">t</span><span class="ch" style="display:inline-block">a</span><span class="ch" style="display:inline-block">?</span></div>
+    <!-- S2 / S3 -->
+    <div class="t " id="t2a" style="top:330px;font-size:76px"><span class="ch" style="display:inline-block">C</span><span class="ch" style="display:inline-block">u</span><span class="ch" style="display:inline-block">k</span><span class="ch" style="display:inline-block">u</span><span class="ch" style="display:inline-block">p</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">c</span><span class="ch" style="display:inline-block">a</span><span class="ch" style="display:inline-block">t</span><span class="ch" style="display:inline-block">a</span><span class="ch" style="display:inline-block">t</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">p</span><span class="ch" style="display:inline-block">e</span><span class="ch" style="display:inline-block">n</span><span class="ch" style="display:inline-block">j</span><span class="ch" style="display:inline-block">u</span><span class="ch" style="display:inline-block">a</span><span class="ch" style="display:inline-block">l</span><span class="ch" style="display:inline-block">a</span><span class="ch" style="display:inline-block">n</span><span class="ch" style="display:inline-block">.</span></div>
+    <div class="t s" id="t2b" style="top:440px;font-size:64px;font-family:"IDSemi""><span class="ch" style="display:inline-block">p</span><span class="ch" style="display:inline-block">e</span><span class="ch" style="display:inline-block">r</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">h</span><span class="ch" style="display:inline-block">a</span><span class="ch" style="display:inline-block">r</span><span class="ch" style="display:inline-block">i</span><span class="ch" style="display:inline-block">.</span></div>
+    <div class="t " id="t2c" style="top:440px;font-size:72px;color:#0071E3"><span class="ch" style="display:inline-block">5</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">m</span><span class="ch" style="display:inline-block">e</span><span class="ch" style="display:inline-block">n</span><span class="ch" style="display:inline-block">i</span><span class="ch" style="display:inline-block">t</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">b</span><span class="ch" style="display:inline-block">e</span><span class="ch" style="display:inline-block">r</span><span class="ch" style="display:inline-block">e</span><span class="ch" style="display:inline-block">s</span><span class="ch" style="display:inline-block">.</span></div>
+    <div id="mac"><div class="lid"><div class="scr"><img id="macimg" src="shots/jual.png"><div class="hl" id="hl1" style="left:330px;top:40px;width:96px;height:520px"></div><div class="hl" id="hl2" style="left:700px;top:40px;width:98px;height:520px"></div><div class="hl" id="hl3" style="left:792px;top:40px;width:102px;height:520px"></div></div></div><div class="base"></div></div>
+    <div class="t " id="t3a" style="top:330px;font-size:92px"><span class="ch" style="display:inline-block">H</span><span class="ch" style="display:inline-block">a</span><span class="ch" style="display:inline-block">r</span><span class="ch" style="display:inline-block">g</span><span class="ch" style="display:inline-block">a</span><span class="ch" style="display:inline-block">.</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">M</span><span class="ch" style="display:inline-block">o</span><span class="ch" style="display:inline-block">d</span><span class="ch" style="display:inline-block">a</span><span class="ch" style="display:inline-block">l</span><span class="ch" style="display:inline-block">.</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">L</span><span class="ch" style="display:inline-block">a</span><span class="ch" style="display:inline-block">b</span><span class="ch" style="display:inline-block">a</span><span class="ch" style="display:inline-block">.</span></div>
+    <div class="t s" id="t3b" style="top:450px;font-size:64px;font-family:"IDSemi""><span class="ch" style="display:inline-block">t</span><span class="ch" style="display:inline-block">e</span><span class="ch" style="display:inline-block">r</span><span class="ch" style="display:inline-block">i</span><span class="ch" style="display:inline-block">s</span><span class="ch" style="display:inline-block">i</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">s</span><span class="ch" style="display:inline-block">e</span><span class="ch" style="display:inline-block">n</span><span class="ch" style="display:inline-block">d</span><span class="ch" style="display:inline-block">i</span><span class="ch" style="display:inline-block">r</span><span class="ch" style="display:inline-block">i</span><span class="ch" style="display:inline-block">.</span></div>
+    
+    <!-- S4 KPI -->
+    <div class="kpi" id="kp0" style="top:330px;"><s>Omzet bulan ini</s><u id="kv0">Rp0</u></div><div class="kpi" id="kp1" style="top:560px;"><s>Laba kotor</s><u id="kv1">Rp0</u></div><div class="kpi" id="kp2" style="top:790px;"><s>Laba bersih</s><u id="kv2">Rp0</u></div>
+    <div class="card" id="dcard" style="left:90px;top:1040px;width:900px;height:380px"><img src="shots/dash.png"></div>
+    <!-- S5 banding -->
+    <div class="t " id="t5a" style="top:330px;font-size:78px"><span class="ch" style="display:inline-block">D</span><span class="ch" style="display:inline-block">i</span><span class="ch" style="display:inline-block">b</span><span class="ch" style="display:inline-block">a</span><span class="ch" style="display:inline-block">n</span><span class="ch" style="display:inline-block">d</span><span class="ch" style="display:inline-block">i</span><span class="ch" style="display:inline-block">n</span><span class="ch" style="display:inline-block">g</span><span class="ch" style="display:inline-block">i</span><span class="ch" style="display:inline-block">n</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">b</span><span class="ch" style="display:inline-block">u</span><span class="ch" style="display:inline-block">l</span><span class="ch" style="display:inline-block">a</span><span class="ch" style="display:inline-block">n</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">l</span><span class="ch" style="display:inline-block">a</span><span class="ch" style="display:inline-block">l</span><span class="ch" style="display:inline-block">u</span><span class="ch" style="display:inline-block">.</span></div>
+    <div class="cmp" id="cm0" style="top:520px"><s>September <b>Rp62.250.000</b></s><i id="cb0" style="width:97.2%;background:#D2D2D7"></i></div>
+    <div class="cmp" id="cm1" style="top:690px"><s>Oktober <b>Rp64.011.000</b></s><i id="cb1" style="width:100%;background:#0071E3"></i></div>
+    <div class="chip" id="up" style="left:760px;top:840px;background:#34A853;font-size:36px">+2,8%</div>
+    <div class="card" id="lrcard" style="left:90px;top:960px;width:900px;height:480px"><img src="shots/labarugi2.png">
+      <div class="hl" id="lh1" style="left:428px;top:66px;width:316px;height:40px"></div>
+      <div class="hl" id="lh2" style="left:428px;top:132px;width:316px;height:40px"></div></div>
+    <!-- S6 pilih bulan -->
+    <div class="t " id="t6a" style="top:330px;font-size:86px"><span class="ch" style="display:inline-block">M</span><span class="ch" style="display:inline-block">a</span><span class="ch" style="display:inline-block">u</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">l</span><span class="ch" style="display:inline-block">i</span><span class="ch" style="display:inline-block">h</span><span class="ch" style="display:inline-block">a</span><span class="ch" style="display:inline-block">t</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">b</span><span class="ch" style="display:inline-block">u</span><span class="ch" style="display:inline-block">l</span><span class="ch" style="display:inline-block">a</span><span class="ch" style="display:inline-block">n</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">l</span><span class="ch" style="display:inline-block">a</span><span class="ch" style="display:inline-block">i</span><span class="ch" style="display:inline-block">n</span><span class="ch" style="display:inline-block">?</span></div>
+    <div class="card" id="dd"><div class="it" id="dd0">September<span id="ddk0"></span></div><div class="it" id="dd1">Oktober<span id="ddk1"></span></div><div class="it" id="dd2">November<span id="ddk2"></span></div></div>
+    <div id="mval">Rp62.250.000</div>
+    <div id="mchart"><div class="mbar" id="mb0" style="left:40px;height:350px;background:#D2D2D7"></div><div class="ml" style="left:40px">Sep</div><div class="mbar" id="mb1" style="left:300px;height:360px;background:#D2D2D7"></div><div class="ml" style="left:300px">Okt</div><div class="mbar" id="mb2" style="left:560px;height:170px;background:#D2D2D7"></div><div class="ml" style="left:560px">Nov*</div></div>
+    <div class="fan" id="fan0" style="background-image:url(shots/kas.png)"></div><div class="fan" id="fan1" style="background-image:url(shots/jual.png)"></div><div class="fan" id="fan2" style="background-image:url(shots/dash.png)"></div><div class="fan" id="fan3" style="background-image:url(shots/labarugi.png)"></div><div class="fan" id="fan4" style="background-image:url(shots/stok.png)"></div><div class="t " id="t7m" style="top:330px;font-size:68px"><span class="ch" style="display:inline-block">P</span><span class="ch" style="display:inline-block">e</span><span class="ch" style="display:inline-block">m</span><span class="ch" style="display:inline-block">b</span><span class="ch" style="display:inline-block">u</span><span class="ch" style="display:inline-block">k</span><span class="ch" style="display:inline-block">u</span><span class="ch" style="display:inline-block">a</span><span class="ch" style="display:inline-block">n</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">k</span><span class="ch" style="display:inline-block">u</span><span class="ch" style="display:inline-block">l</span><span class="ch" style="display:inline-block">i</span><span class="ch" style="display:inline-block">n</span><span class="ch" style="display:inline-block">e</span><span class="ch" style="display:inline-block">r</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">b</span><span class="ch" style="display:inline-block">e</span><span class="ch" style="display:inline-block">r</span><span class="ch" style="display:inline-block">e</span><span class="ch" style="display:inline-block">s</span><span class="ch" style="display:inline-block">,</span></div><div class="t " id="t7n" style="top:440px;font-size:86px;color:#0071E3"><span class="ch" style="display:inline-block">t</span><span class="ch" style="display:inline-block">a</span><span class="ch" style="display:inline-block">n</span><span class="ch" style="display:inline-block">p</span><span class="ch" style="display:inline-block">a</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">b</span><span class="ch" style="display:inline-block">e</span><span class="ch" style="display:inline-block">g</span><span class="ch" style="display:inline-block">a</span><span class="ch" style="display:inline-block">d</span><span class="ch" style="display:inline-block">a</span><span class="ch" style="display:inline-block">n</span><span class="ch" style="display:inline-block">g</span><span class="ch" style="display:inline-block">.</span></div><div class="t " id="t8m" style="top:330px;font-size:96px"><span class="ch" style="display:inline-block">C</span><span class="ch" style="display:inline-block">e</span><span class="ch" style="display:inline-block">k</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">t</span><span class="ch" style="display:inline-block">e</span><span class="ch" style="display:inline-block">m</span><span class="ch" style="display:inline-block">p</span><span class="ch" style="display:inline-block">l</span><span class="ch" style="display:inline-block">a</span><span class="ch" style="display:inline-block">t</span><span class="ch" style="display:inline-block">e</span><span class="ch" style="display:inline-block">n</span><span class="ch" style="display:inline-block">y</span><span class="ch" style="display:inline-block">a</span></div><div class="card" id="hero"><img src="shots/dash.png"></div><div id="lbtn"><span>Link di bawah <i id="arr">↓</i></span></div><div class="t s" id="t8n" style="top:1300px;font-size:34px;font-family:"IDSemi""><span class="ch" style="display:inline-block">D</span><span class="ch" style="display:inline-block">a</span><span class="ch" style="display:inline-block">s</span><span class="ch" style="display:inline-block">h</span><span class="ch" style="display:inline-block">b</span><span class="ch" style="display:inline-block">o</span><span class="ch" style="display:inline-block">a</span><span class="ch" style="display:inline-block">r</span><span class="ch" style="display:inline-block">d</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">K</span><span class="ch" style="display:inline-block">u</span><span class="ch" style="display:inline-block">l</span><span class="ch" style="display:inline-block">i</span><span class="ch" style="display:inline-block">n</span><span class="ch" style="display:inline-block">e</span><span class="ch" style="display:inline-block">r</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">U</span><span class="ch" style="display:inline-block">M</span><span class="ch" style="display:inline-block">K</span><span class="ch" style="display:inline-block">M</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">·</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">G</span><span class="ch" style="display:inline-block">o</span><span class="ch" style="display:inline-block">o</span><span class="ch" style="display:inline-block">g</span><span class="ch" style="display:inline-block">l</span><span class="ch" style="display:inline-block">e</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">S</span><span class="ch" style="display:inline-block">h</span><span class="ch" style="display:inline-block">e</span><span class="ch" style="display:inline-block">e</span><span class="ch" style="display:inline-block">t</span><span class="ch" style="display:inline-block">s</span></div>
+    <!-- S7 bahan -->
+    <div class="t " id="t7a" style="top:330px;font-size:84px"><span class="ch" style="display:inline-block">B</span><span class="ch" style="display:inline-block">a</span><span class="ch" style="display:inline-block">h</span><span class="ch" style="display:inline-block">a</span><span class="ch" style="display:inline-block">n</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">h</span><span class="ch" style="display:inline-block">a</span><span class="ch" style="display:inline-block">m</span><span class="ch" style="display:inline-block">p</span><span class="ch" style="display:inline-block">i</span><span class="ch" style="display:inline-block">r</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">h</span><span class="ch" style="display:inline-block">a</span><span class="ch" style="display:inline-block">b</span><span class="ch" style="display:inline-block">i</span><span class="ch" style="display:inline-block">s</span><span class="ch" style="display:inline-block">?</span></div>
+    <div class="t s" id="t7b" style="top:440px;font-size:54px;font-family:"IDSemi""><span class="ch" style="display:inline-block">l</span><span class="ch" style="display:inline-block">a</span><span class="ch" style="display:inline-block">n</span><span class="ch" style="display:inline-block">g</span><span class="ch" style="display:inline-block">s</span><span class="ch" style="display:inline-block">u</span><span class="ch" style="display:inline-block">n</span><span class="ch" style="display:inline-block">g</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">m</span><span class="ch" style="display:inline-block">a</span><span class="ch" style="display:inline-block">s</span><span class="ch" style="display:inline-block">u</span><span class="ch" style="display:inline-block">k</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">d</span><span class="ch" style="display:inline-block">a</span><span class="ch" style="display:inline-block">f</span><span class="ch" style="display:inline-block">t</span><span class="ch" style="display:inline-block">a</span><span class="ch" style="display:inline-block">r</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">b</span><span class="ch" style="display:inline-block">e</span><span class="ch" style="display:inline-block">l</span><span class="ch" style="display:inline-block">a</span><span class="ch" style="display:inline-block">n</span><span class="ch" style="display:inline-block">j</span><span class="ch" style="display:inline-block">a</span><span class="ch" style="display:inline-block">.</span></div>
+    <div class="card" id="skcard" style="left:140px;top:540px;width:800px;height:470px"><img src="shots/stok2.png" style="margin-top:-40px">
+      <div class="hl" id="sh0" style="left:0;top:96px;width:800px;height:40px;border-color:#EA4335;background:rgba(234,67,53,.08)"></div>
+      <div class="hl" id="sh1" style="left:0;top:252px;width:800px;height:40px;border-color:#EA4335;background:rgba(234,67,53,.08)"></div>
+      <div class="hl" id="sh2" style="left:0;top:408px;width:800px;height:40px;border-color:#EA4335;background:rgba(234,67,53,.08)"></div></div>
+    <div class="card" id="buy" style="top:1040px"><h4>Perlu dibeli (3 bahan)</h4>
+      <div class="bi" id="bi0"><i></i>Susu UHT<b>sisa 3.534 ml</b></div>
+      <div class="bi" id="bi1"><i></i>Cup Plastik + Tutup<b>sisa 92</b></div>
+      <div class="bi" id="bi2"><i></i>Telur Ayam<b>sisa 10</b></div></div>
+    <!-- S8 CTA -->
+    <div class="t " id="t8a" style="top:330px;font-size:92px"><span class="ch" style="display:inline-block">M</span><span class="ch" style="display:inline-block">a</span><span class="ch" style="display:inline-block">u</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">t</span><span class="ch" style="display:inline-block">e</span><span class="ch" style="display:inline-block">m</span><span class="ch" style="display:inline-block">p</span><span class="ch" style="display:inline-block">l</span><span class="ch" style="display:inline-block">a</span><span class="ch" style="display:inline-block">t</span><span class="ch" style="display:inline-block">e</span><span class="ch" style="display:inline-block">n</span><span class="ch" style="display:inline-block">y</span><span class="ch" style="display:inline-block">a</span><span class="ch" style="display:inline-block">?</span></div>
+    <div class="t " id="t8b" style="top:470px;font-size:130px"><span class="ch" style="display:inline-block">C</span><span class="ch" style="display:inline-block">o</span><span class="ch" style="display:inline-block">m</span><span class="ch" style="display:inline-block">m</span><span class="ch" style="display:inline-block">e</span><span class="ch" style="display:inline-block">n</span><span class="ch" style="display:inline-block">t</span></div>
+    <div id="sheet"><span>SHEET</span></div>
+    <div class="t s" id="t8c" style="top:900px;font-size:58px;font-family:"IDSemi""><span class="ch" style="display:inline-block">n</span><span class="ch" style="display:inline-block">a</span><span class="ch" style="display:inline-block">n</span><span class="ch" style="display:inline-block">t</span><span class="ch" style="display:inline-block">i</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">a</span><span class="ch" style="display:inline-block">k</span><span class="ch" style="display:inline-block">u</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">k</span><span class="ch" style="display:inline-block">i</span><span class="ch" style="display:inline-block">r</span><span class="ch" style="display:inline-block">i</span><span class="ch" style="display:inline-block">m</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">l</span><span class="ch" style="display:inline-block">i</span><span class="ch" style="display:inline-block">n</span><span class="ch" style="display:inline-block">k</span><span class="ch" style="display:inline-block">n</span><span class="ch" style="display:inline-block">y</span><span class="ch" style="display:inline-block">a</span><span class="ch" style="display:inline-block">.</span></div>
+    <div id="strip"><div style="background-image:url(shots/dash.png)"></div><div style="background-image:url(shots/jual.png)"></div><div style="background-image:url(shots/stok.png)"></div><div style="background-image:url(shots/labarugi.png)"></div><div style="background-image:url(shots/menu.png)"></div><div style="background-image:url(shots/resep.png)"></div><div style="background-image:url(shots/kas.png)"></div><div style="background-image:url(shots/belanja.png)"></div><div style="background-image:url(shots/rincian.png)"></div><div style="background-image:url(shots/atur.png)"></div><div style="background-image:url(shots/dash.png)"></div><div style="background-image:url(shots/jual.png)"></div><div style="background-image:url(shots/stok.png)"></div><div style="background-image:url(shots/labarugi.png)"></div><div style="background-image:url(shots/menu.png)"></div><div style="background-image:url(shots/resep.png)"></div><div style="background-image:url(shots/kas.png)"></div><div style="background-image:url(shots/belanja.png)"></div><div style="background-image:url(shots/rincian.png)"></div><div style="background-image:url(shots/atur.png)"></div></div>
+    <div class="card" id="cbox"><div class="av"></div><div class="in" id="cin"></div><div class="snd">➤</div></div>
+    <div id="reply">Link templat terkirim ✓ cek DM</div>
+    <div class="t s" id="t8d" style="top:1395px;font-size:34px;font-family:"IDSemi""><span class="ch" style="display:inline-block">D</span><span class="ch" style="display:inline-block">a</span><span class="ch" style="display:inline-block">s</span><span class="ch" style="display:inline-block">h</span><span class="ch" style="display:inline-block">b</span><span class="ch" style="display:inline-block">o</span><span class="ch" style="display:inline-block">a</span><span class="ch" style="display:inline-block">r</span><span class="ch" style="display:inline-block">d</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">K</span><span class="ch" style="display:inline-block">u</span><span class="ch" style="display:inline-block">l</span><span class="ch" style="display:inline-block">i</span><span class="ch" style="display:inline-block">n</span><span class="ch" style="display:inline-block">e</span><span class="ch" style="display:inline-block">r</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">U</span><span class="ch" style="display:inline-block">M</span><span class="ch" style="display:inline-block">K</span><span class="ch" style="display:inline-block">M</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">·</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">G</span><span class="ch" style="display:inline-block">o</span><span class="ch" style="display:inline-block">o</span><span class="ch" style="display:inline-block">g</span><span class="ch" style="display:inline-block">l</span><span class="ch" style="display:inline-block">e</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">S</span><span class="ch" style="display:inline-block">h</span><span class="ch" style="display:inline-block">e</span><span class="ch" style="display:inline-block">e</span><span class="ch" style="display:inline-block">t</span><span class="ch" style="display:inline-block">s</span></div>
+    <div class="rip" id="rip"></div>
+    <div id="cur"><svg class="ico" viewBox="0 0 100 100"><path d="M24 12l52 32-22 6 14 28-11 5-14-28-17 15z" fill="#202124" stroke="#fff" stroke-width="5" stroke-linejoin="round"/></svg></div>
+  </div>
+  <div class="demo" id="demo">DATA DEMO · KOPI SENJA</div>
+  <div id="flash"></div>
+  <div id="brand">Endrich<b>Tech</b></div>
+
+  <script src="vendor/gsap.min.js"></script>
+  <script>
+  (function () {
+
+    var FPS = 30;
+    function q(t) { return Math.round(t * FPS) / FPS; }
+    var tl = gsap.timeline({ paused: true });
+    var NI = { immediateRender: false };
+    function cut(sel, t, v) { tl.set(sel, { opacity: v }, q(t)); }
+    function hide(sel, t, d) { tl.to(sel, { opacity: 0, duration: d || 0.15, ease: "power2.in" }, q(t)); }
+    function fade(sel, t, d, from) { tl.fromTo(sel, Object.assign({ opacity: 0, y: 30 }, from || {}), { opacity: 1, y: 0, x: 0, scale: 1, rotation: 0, duration: d || 0.35, ease: "power3.out" }, q(t)); }
+    function pop(sel, t, d) { tl.fromTo(sel, { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1, duration: d || 0.32, ease: "back.out(2.2)" }, q(t)); }
+    function sweep(sel, t, d) {
+      var chars = document.querySelectorAll(sel + " .ch");
+      tl.set(sel, { opacity: 1 }, q(t));
+      tl.fromTo(chars, { opacity: 0, x: -14 }, { opacity: 1, x: 0, duration: 0.24, ease: "power3.out", stagger: Math.min(0.035, (d || 0.45) / chars.length) }, q(t));
+    }
+    function count(sel, t, d, a, b, fmt) { var o = { v: a }, el = document.querySelector(sel); tl.to(o, { v: b, duration: d, ease: "power2.out", onUpdate: function () { el.textContent = fmt(o.v); } }, q(t)); }
+    function type(sel, t, d, msg) { var o = { n: 0 }, el = document.querySelector(sel); tl.to(o, { n: msg.length, duration: d, ease: "none", onUpdate: function () { el.textContent = msg.slice(0, Math.round(o.n)); } }, q(t)); }
+    function flash(t, sel, a) { tl.fromTo(sel || "#flash", { opacity: a || 0.3 }, Object.assign({ opacity: 0, duration: 0.25, ease: "power2.out" }, NI), q(t)); }
+    function kick(t, x) { tl.fromTo("#cam", { x: x || -10 }, Object.assign({ x: 0, duration: 0.3, ease: "elastic.out(1, .3)" }, NI), q(t)); }
+    function idn(v) { return Math.round(v).toString().replace(/\B(?=(\d{3})+(?!\d))/g, "."); }
+
+
+    var K = {"jam": 0.15, "nota": 1.74, "catat": 3.77, "menit": 6.05, "harga": 7.29, "dash": 10.12, "kotor": 11.74, "bersih": 12.22, "banding": 13.35, "bulan": 15.85, "pilih": 17.05, "grafik": 18.35, "beres": 20.1, "begadang": 21.63, "link": 22.74, "bawah": 23.6, "end": 25.78}, KEY = true, META = true, RC = [[110, 980, -14], [330, 920, 8], [560, 1000, -6], [760, 940, 12], [190, 1150, 5], [430, 1130, -10], [680, 1160, 7], [520, 900, -3]];
+    var EZ = KEY ? "power3.out" : "back.out(1.7)";            // Apple: halus · Google: memantul
+    function rise(sel, t, d, y) { tl.fromTo(sel, { opacity: 0, y: y || 50 }, { opacity: 1, y: 0, duration: d || (KEY ? 0.6 : 0.4), ease: EZ }, q(t)); }
+    function words(sel, t) { var ch = document.querySelectorAll(sel + " .ch"); tl.set(sel, { opacity: 1 }, q(t));
+      tl.fromTo(ch, { opacity: 0, y: KEY ? 30 : 46 }, { opacity: 1, y: 0, duration: KEY ? 0.5 : 0.32, ease: EZ, stagger: Math.min(0.025, 0.45 / ch.length) }, q(t)); }
+    function out(sel, t) { tl.to(sel, { opacity: 0, y: -30, duration: 0.25, ease: "power2.in" }, q(t - 0.25)); }
+    function money(sel, t, d, a, b) { count(sel, t, d, a, b, function (v) { return "Rp" + idn(v); }); }
+    function click(x, y, t, hold) {
+      tl.to("#cur", { opacity: 1, x: x, y: y, duration: 0.45, ease: "power3.inOut" }, q(t - 0.5));
+      tl.to("#cur", { scale: 0.85, duration: 0.07, yoyo: true, repeat: 1 }, q(t));
+      tl.set(".rip", { x: x + 10, y: y + 8 }, q(t));
+      tl.fromTo(".rip", { opacity: 0.9, scale: 0.2 }, { opacity: 0, scale: 1.6, duration: 0.5, ease: "power2.out" }, q(t));
+      tl.to("#cur", { opacity: 0, duration: 0.2 }, q(t + (hold || 0.6)));
+    }
+    tl.set("#cur", { x: 900, y: 1500 }, 0); tl.set("#demo", { opacity: 0 }, 0);
+
+    // S1 · jam 23:00, nota berserakan
+    tl.fromTo("#clock", { opacity: 0, scale: 1.15 }, { opacity: 1, scale: 1, duration: 0.8, ease: "power3.out" }, 0.0);
+    RC.forEach(function (r, i) { tl.fromTo("#rc" + i, { opacity: 0, y: -900, rotation: r[2] * 3 }, { opacity: 1, y: 0, rotation: r[2], duration: 0.7, ease: "power3.out" }, q(0.2 + i * 0.12)); });
+    out("#clock", K.nota);
+    words("#t1", K.nota);
+    [0, 1, 2].forEach(function (i) { tl.fromTo("#kw" + i, { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(2)" }, q(K.nota + 0.35 + i * 0.3)); });
+
+    // S2 · terang, catat penjualan
+    tl.to("#night", { opacity: 0, duration: KEY ? 0.6 : 0.35, ease: "power2.inOut" }, q(K.catat - 0.15));
+    tl.to(".rc", { opacity: 0, y: 400, duration: 0.4, ease: "power2.in", stagger: 0.03 }, q(K.catat - 0.2));
+    out("#t1, .kw", K.catat);
+    words("#t2a", K.catat); words("#t2b", K.catat + 0.6);
+    tl.set("#demo", { opacity: 1 }, q(K.catat));
+    if (KEY) {
+      tl.fromTo("#mac", { opacity: 0, y: 260, rotationX: 38, scale: 0.86 }, { opacity: 1, y: 0, rotationX: 0, scale: 1, duration: 1.1, ease: "power3.out" }, q(K.catat + 0.1));
+      tl.to("#macimg", { y: -150, duration: 2.2, ease: "power1.inOut" }, q(K.catat + 1.2));
+    } else {
+      rise("#row", K.catat + 0.1); rise("#jcard", K.catat + 0.5, 0.45, 120);
+      click(330, 640, K.catat + 0.6, 2.0);
+      type("#r1", K.catat + 0.7, 0.5, "01/09/2026"); type("#r2", K.catat + 1.25, 0.7, "Es Kopi Susu Aren");
+      type("#r3", K.catat + 2.0, 0.2, "23"); type("#r4", K.catat + 2.25, 0.3, "Tunai");
+    }
+    out("#t2b", K.menit); words("#t2c", K.menit);
+    tl.fromTo("#t2c", { scale: 1.3 }, Object.assign({ scale: 1, duration: 0.4, ease: "back.out(2)" }, NI), q(K.menit));
+
+    // S3 · harga/modal/laba otomatis
+    out("#t2a, #t2c", K.harga);
+    words("#t3a", K.harga); words("#t3b", K.harga + 0.8);
+    if (KEY) {
+      tl.to("#macimg", { y: 0, duration: 0.5, ease: "power2.out" }, q(K.harga - 0.3));
+      ["#hl1", "#hl2", "#hl3"].forEach(function (h, i) { tl.fromTo(h, { opacity: 0, scaleY: 0.2 }, { opacity: 1, scaleY: 1, duration: 0.35, ease: "power3.out" }, q(K.harga + i * 0.45)); });
+      out("#mac", K.dash); out("#hl1, #hl2, #hl3", K.dash);
+    } else {
+      out("#jcard", K.harga);
+      [[0, 22000], [1, 196995], [2, 309005]].forEach(function (v, i) {
+        tl.fromTo("#vc" + i, { opacity: 0, y: 80, scale: 0.8 }, { opacity: 1, y: 0, scale: 1, duration: 0.4, ease: "back.out(2)" }, q(K.harga + i * 0.45));
+        money("#vu" + i, K.harga + 0.15 + i * 0.45, 0.6, 0, v[1]); });
+      out("#row, .vchip", K.dash);
+    }
+    out("#t3a, #t3b", K.dash);
+
+    // S4 · KPI
+    [[0, K.dash], [1, K.kotor], [2, K.bersih]].forEach(function (e) {
+      rise("#kp" + e[0], e[1] - 0.1, KEY ? 0.6 : 0.4, 60); money("#kv" + e[0], e[1] - 0.05, 0.9, 0, [62250000, 40283050, 21817050][e[0]]); });
+    rise("#dcard", K.dash + 0.3, 0.6, 140);
+    tl.to("#dcard img", { y: -70, duration: 2.5, ease: "power1.inOut" }, q(K.dash + 0.9));
+    out(".kpi, #dcard", K.banding);
+
+    // S5 · banding bulan lalu (Laba Rugi Sep vs Okt)
+    words("#t5a", K.banding);
+    rise("#cm0", K.banding + 0.2); rise("#cm1", K.banding + 0.45);
+    tl.fromTo("#cb0", { scaleX: 0 }, { scaleX: 1, duration: 0.7, ease: "power3.out" }, q(K.banding + 0.3));
+    tl.fromTo("#cb1", { scaleX: 0 }, { scaleX: 1, duration: 0.7, ease: "power3.out" }, q(K.banding + 0.55));
+    tl.fromTo("#up", { opacity: 0, scale: 0.4 }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(2.4)" }, q(K.banding + 1.1));
+    rise("#lrcard", K.banding + 0.5, 0.6, 120);
+    tl.fromTo("#lh1, #lh2", { opacity: 0 }, { opacity: 1, duration: 0.2, stagger: 0.25 }, q(K.banding + 1.2));
+    out("#t5a, .cmp, #up, #lrcard", K.bulan);
+
+    // S6 · pilih bulan
+    words("#t6a", K.bulan);
+    tl.fromTo("#dd", { opacity: 0, scale: 0.9, y: -20 }, { opacity: 1, scale: 1, y: 0, duration: 0.35, ease: EZ }, q(K.bulan + 0.3));
+    var ON = { backgroundColor: "#0071E3", color: "#fff" }, OFF = { backgroundColor: "rgba(0,0,0,0)", color: "#1D1D1F" };
+    tl.set("#dd0", ON, q(K.bulan + 0.3)); tl.set("#ddk0", { textContent: "✓" }, q(K.bulan + 0.3));
+    tl.fromTo("#mchart", { opacity: 0 }, { opacity: 1, duration: 0.3 }, q(K.bulan + 0.4));
+    tl.fromTo(".mbar", { scaleY: 0 }, { scaleY: 1, duration: 0.6, ease: "power3.out", stagger: 0.08 }, q(K.bulan + 0.4));
+    tl.set("#mb0", { backgroundColor: "#0071E3" }, q(K.bulan + 0.4));
+    tl.fromTo("#mval", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.3 }, q(K.bulan + 0.5));
+    click(540, 700, K.pilih);
+    tl.set("#dd0", OFF, q(K.pilih)); tl.set("#ddk0", { textContent: "" }, q(K.pilih));
+    tl.set("#dd1", ON, q(K.pilih)); tl.set("#ddk1", { textContent: "✓" }, q(K.pilih));
+    tl.set("#mb0", { backgroundColor: "#D2D2D7" }, q(K.grafik)); tl.set("#mb1", { backgroundColor: "#0071E3" }, q(K.grafik));
+    tl.fromTo("#mb1", { scaleY: 0.85 }, Object.assign({ scaleY: 1, duration: 0.4, ease: "back.out(2)" }, NI), q(K.grafik));
+    money("#mval", K.grafik, 0.7, 62250000, 64011000);
+    tl.to("#cur", { opacity: 0, duration: 0.2 }, q(K.grafik + 0.6));
+    out("#t6a, #dd, #mval, #mchart", META ? K.beres : K.bahan);
+
+    if (META) {
+    // S7m · pembukuan beres tanpa begadang
+    words("#t7m", K.beres); words("#t7n", K.begadang);
+    [-2, -1, 0, 1, 2].forEach(function (d, i) {
+      tl.fromTo("#fan" + i, { opacity: 0, y: 500, rotation: 0, x: 0 }, { opacity: 1, y: Math.abs(d) * 40, x: d * 150, rotation: d * 9, duration: 0.8, ease: "power3.out" }, q(K.beres + 0.2 + i * 0.12)); });
+    tl.to(".fan", { y: "-=30", duration: 1.6, ease: "power1.inOut" }, q(K.beres + 1.2));
+    tl.fromTo("#t7n", { scale: 1.15 }, Object.assign({ scale: 1, duration: 0.5, ease: "back.out(2)" }, NI), q(K.begadang));
+    out("#t7m, #t7n, .fan", K.link);
+    // S8m · CTA link di bawah
+    words("#t8m", K.link);
+    rise("#hero", K.link + 0.15, 0.7, 160);
+    tl.to("#hero img", { y: -60, duration: 2.4, ease: "power1.inOut" }, q(K.link + 0.8));
+    tl.fromTo("#lbtn", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.45, ease: "back.out(2)" }, q(K.bawah - 0.1));
+    tl.to("#arr", { y: 16, duration: 0.3, ease: "power1.inOut", yoyo: true, repeat: 7 }, q(K.bawah + 0.3));
+    words("#t8n", K.bawah + 0.5);
+    } else {
+    // S7 · bahan habis -> daftar belanja
+    words("#t7a", K.bahan); words("#t7b", K.bahan + 0.7);
+    rise("#skcard", K.bahan + 0.2, 0.5, 100);
+    [0, 1, 2].forEach(function (i) {
+      tl.fromTo("#sh" + i, { opacity: 0 }, { opacity: 1, duration: 0.15 }, q(K.bahan + 0.8 + i * 0.25));
+      tl.to("#sh" + i, { opacity: 0.35, duration: 0.18, yoyo: true, repeat: 3 }, q(K.bahan + 1.0 + i * 0.25)); });
+    rise("#buy", K.daftar - 0.1, 0.45, 80);
+    [0, 1, 2].forEach(function (i) { tl.fromTo("#bi" + i, { opacity: 0, x: 60 }, { opacity: 1, x: 0, duration: 0.3, ease: EZ }, q(K.daftar + 0.1 + i * 0.2)); });
+    out("#t7a, #t7b, #skcard, #buy", K.mau);
+
+    // S8 · CTA
+    words("#t8a", K.mau);
+    words("#t8b", K.comment - 0.05);
+    tl.fromTo("#sheet", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.45, ease: "back.out(2)" }, q(K.comment + 0.2));
+    if (KEY) {
+      words("#t8c", K.link);
+      tl.fromTo("#strip", { opacity: 0, x: 200 }, { opacity: 1, x: -1600, duration: K.end - K.mau, ease: "none" }, q(K.mau));
+    } else {
+      rise("#cbox", K.comment - 0.1, 0.4, 60);
+      type("#cin", K.comment + 0.1, 0.4, "SHEET");
+      click(950, 1100, K.comment + 0.7);
+      tl.fromTo("#reply", { opacity: 0, y: 40, scale: 0.8 }, { opacity: 1, y: 0, scale: 1, duration: 0.4, ease: "back.out(2)" }, q(K.link));
+      tl.to("#cur", { opacity: 0, duration: 0.2 }, q(K.link + 0.3));
+    }
+    words("#t8d", K.link + 0.4);
+    }
+
+    window.__timelines = window.__timelines || {};
+    window.__timelines["iklan-dashboard-meta"] = tl;
+  })();
+  </script>
+</div>
+</body>
+</html>

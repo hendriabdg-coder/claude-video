@@ -1,5 +1,5 @@
 # Mix iklan dashboard: VO (sudah di visual.mp4) + musik Eleven Music (±13,5 dB di bawah VO setelah ducking) + SFX ElevenLabs.
-#   python mix.py keynote|material  ->  renders/final_<v>.mp4
+#   python mix.py keynote|material|meta  ->  renders/final_<v>.mp4
 import json, re, subprocess, sys
 from pathlib import Path
 import numpy as np
@@ -26,9 +26,13 @@ C = [(0.0, "papers", -10, 1.5), (K["nota"] + 0.35, "pop", -14, 0.35), (K["nota"]
      (K["catat"] - 0.2, "wake", -9, 1.2), (K["menit"], "chime", -11, 0.7), (K["harga"], "pop", -13, 0.35), (K["harga"] + 0.45, "pop", -13, 0.35),
      (K["harga"] + 0.9, "pop", -13, 0.35), (K["dash"] - 0.1, "whoosh", -15, 0.8), (K["dash"], "tick", -18, 0.9), (K["kotor"], "tick", -19, 0.9),
      (K["bersih"], "tick", -19, 0.9), (K["bersih"] + 0.9, "chime", -12, 0.7), (K["banding"], "whoosh", -16, 0.8), (K["banding"] + 1.1, "confirm", -12, 0.8),
-     (K["bulan"], "whoosh", -16, 0.8), (K["pilih"], "pop", -11, 0.35), (K["grafik"], "shimmer", -15, 1.0), (K["bahan"], "whoosh", -16, 0.8),
-     (K["bahan"] + 0.8, "buzz", -16, 0.6), (K["daftar"], "chime", -12, 0.7), (K["mau"], "whoosh", -15, 0.8), (K["comment"] + 0.2, "hit_hook", -9, 1.0),
-     (K["link"], "confirm", -11, 0.9)]
+     (K["bulan"], "whoosh", -16, 0.8), (K["pilih"], "pop", -11, 0.35), (K["grafik"], "shimmer", -15, 1.0)]
+if V == "meta":
+    C += [(K["beres"], "whoosh", -16, 0.8), (K["beres"] + 0.3, "papers", -16, 1.0), (K["begadang"], "chime", -12, 0.7),
+          (K["link"], "whoosh", -15, 0.8), (K["bawah"] - 0.1, "hit_hook", -10, 1.0), (K["bawah"] + 0.5, "confirm", -13, 0.9)]
+else:
+    C += [(K["bahan"], "whoosh", -16, 0.8), (K["bahan"] + 0.8, "buzz", -16, 0.6), (K["daftar"], "chime", -12, 0.7), (K["mau"], "whoosh", -15, 0.8),
+          (K["comment"] + 0.2, "hit_hook", -9, 1.0), (K["link"], "confirm", -11, 0.9)]
 if V == "material":
     C += [(K["catat"] + 0.7, "typing", -17, 1.0), (K["catat"] + 1.3, "typing", -18, 1.0), (K["comment"] + 0.1, "typing", -16, 0.5), (K["comment"] + 0.7, "pop", -11, 0.35)]
 

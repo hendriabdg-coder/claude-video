@@ -5,7 +5,8 @@ HERE = Path(__file__).parent
 FD = HERE / "build_keynote" / "public" / "fonts"
 F = lambda n, s: ImageFont.truetype(str(FD / f"InterDisplay-{n}.ttf"), s)
 V = {"keynote": dict(bg="#F5F5F7", ink="#1D1D1F", sub="#6E6E73", acc="#0071E3"),
-     "material": dict(bg="#FFFFFF", ink="#202124", sub="#5F6368", acc="#1A73E8")}
+     "material": dict(bg="#FFFFFF", ink="#202124", sub="#5F6368", acc="#1A73E8"),
+     "meta": dict(bg="#F5F5F7", ink="#1D1D1F", sub="#6E6E73", acc="#0071E3", sub2="Pembukuan beres, tanpa begadang.")}
 BRAND = "#B8611D"
 
 def ctext(d, y, t, f, fill):
@@ -19,7 +20,7 @@ for v, P in V.items():
     ctext(d, 311, t, f, "#FFFFFF")
     ctext(d, 410, "Masih ngitung nota", F("Black", 92), P["ink"])
     ctext(d, 520, "jam 11 malam?", F("Black", 92), P["acc"])
-    ctext(d, 650, "Catat 5 menit, laba keisi sendiri.", F("SemiBold", 46), P["sub"])
+    ctext(d, 650, P.get("sub2", "Catat 5 menit, laba keisi sendiri."), F("SemiBold", 46), P["sub"])
     # dashboard card with shadow
     sh = Image.open(HERE / "shots" / "dash.png").convert("RGB")
     W = 940; sh = sh.resize((W, int(sh.height * W / sh.width)), Image.LANCZOS)

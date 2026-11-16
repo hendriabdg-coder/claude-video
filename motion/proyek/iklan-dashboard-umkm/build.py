@@ -1,6 +1,7 @@
 # Iklan "Dashboard Kuliner UMKM" (templat Google Sheets Endrich) · 9:16 · 2 varian dari satu struktur adegan:
 #   python build.py keynote   -> gaya Apple (VO take 1): malam gelap -> terang, MacBook mockup, angka raksasa, tipografi lega
 #   python build.py material  -> gaya Google (VO take 2): kartu Material, chip warna, kursor + ripple, kolom komentar
+#   python build.py meta      -> gaya Apple (VO "Iklan Meta", vo3): adegan akhir "beres tanpa begadang" + CTA link di bawah
 # Angka = DATA DEMO "Kopi Senja" dari screenshot Endrich (dicek silang di analisis.md). Okt dari tab Laba Rugi.
 import json
 import shutil
@@ -14,7 +15,7 @@ sys.path.insert(0, str(HERE.parents[1] / "gaya"))
 from reel_common import chars, fitpx, page  # noqa: E402
 
 V = sys.argv[1] if len(sys.argv) > 1 else "keynote"
-assert V in ("keynote", "material")
+assert V in ("keynote", "material", "meta")
 OUT = HERE / f"build_{V}"
 pub = OUT / "public"
 pub.mkdir(parents=True, exist_ok=True)
@@ -27,7 +28,7 @@ if (pub / "shots").exists():
 shutil.copytree(HERE / "shots", pub / "shots")
 
 LEAD, TAIL = 0.15, 1.1
-VO = HERE / "vo" / ("vo1.mp3" if V == "keynote" else "vo2.mp3")
+VO = HERE / "vo" / {"keynote": "vo1.mp3", "material": "vo2.mp3", "meta": "vo3.mp3"}[V]
 vod = float(subprocess.check_output(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", str(VO)]))
 DUR = round(vod + LEAD + TAIL, 2)
 subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(VO), "-af", f"adelay={int(LEAD * 1000)}:all=1,apad,atrim=0:{DUR}",
@@ -39,11 +40,14 @@ CUE = {
                     bulan=15.87, pilih=17.0, grafik=17.85, bahan=19.92, daftar=21.4, mau=22.9, comment=23.88, link=24.81),
     "material": dict(jam=0.0, nota=1.58, catat=3.56, menit=6.31, harga=7.58, dash=10.39, kotor=11.7, bersih=12.55, banding=13.74,
                      bulan=16.27, pilih=17.41, grafik=18.24, bahan=20.51, daftar=22.0, mau=23.49, comment=24.52, link=25.48),
+    "meta": dict(jam=0.0, nota=1.59, catat=3.62, menit=5.90, harga=7.14, dash=9.97, kotor=11.59, bersih=12.07, banding=13.20,
+                 bulan=15.70, pilih=16.90, grafik=18.2, beres=19.95, begadang=21.48, link=22.59, bawah=23.45),
 }[V]
 K = {k: round(v + LEAD, 3) for k, v in CUE.items()}
 K["end"] = DUR
 
-KEY = V == "keynote"
+KEY = V in ("keynote", "meta")
+META = V == "meta"
 P = dict(  # palet
     bg="#F5F5F7" if KEY else "#FFFFFF", ink="#1D1D1F" if KEY else "#202124", sub="#6E6E73" if KEY else "#5F6368",
     acc="#0071E3" if KEY else "#1A73E8", brand="#B8611D", night="#050506" if KEY else "#E8EAED",
@@ -131,6 +135,14 @@ html, body, #root {{ background: var(--bg); color: var(--ink); font-family: "IDB
 #cbox .snd {{ width: 72px; height: 72px; border-radius: 50%; background: var(--acc); color: #fff; font-size: 38px; display: flex; align-items: center; justify-content: center; }}
 #reply {{ position: absolute; right: 90px; top: 1260px; max-width: 760px; padding: 24px 32px; border-radius: 30px 30px 8px 30px; background: var(--gg); color: #fff;
   font-family: "IDBold"; font-size: 40px; opacity: 0; }}
+/* meta: kipas tab + tombol link */
+.fan {{ position: absolute; left: 290px; top: 760px; width: 500px; height: 380px; border-radius: 20px; background: #fff center top / cover no-repeat;
+  box-shadow: 0 24px 60px rgba(0,0,0,.22); opacity: 0; transform-origin: 50% 120%; }}
+#hero {{ position: absolute; left: 90px; top: 520px; width: 900px; height: 520px; }}
+#lbtn {{ position: absolute; left: 0; width: 1080px; top: 1120px; text-align: center; opacity: 0; }}
+#lbtn span {{ display: inline-flex; align-items: center; gap: 22px; font-family: "IDBlack"; font-size: 64px; color: #fff; background: var(--brand);
+  padding: 22px 56px 26px; border-radius: 60px; box-shadow: 0 18px 40px rgba(184,97,29,.35); }}
+#lbtn i {{ font-style: normal; display: inline-block; }}
 '''
 
 CUR = ('<svg class="ico" viewBox="0 0 100 100"><path d="M24 12l52 32-22 6 14 28-11 5-14-28-17 15z" fill="#202124" stroke="#fff" stroke-width="5" '
@@ -172,6 +184,15 @@ MB = [("Sep", 62.25), ("Okt", 64.011), ("Nov*", 30.194)]
 mb_html = "".join(f'<div class="mbar" id="mb{i}" style="left:{40 + i * 260}px;height:{v / 64.011 * 360:.0f}px;background:#D2D2D7"></div>'
                   f'<div class="ml" style="left:{40 + i * 260}px">{l}</div>' for i, (l, v) in enumerate(MB))
 
+FAN = ["kas", "jual", "dash", "labarugi", "stok"]
+META_HTML = ("" if not META else
+  "".join(f'<div class="fan" id="fan{i}" style="background-image:url(shots/{n}.png)"></div>' for i, n in enumerate(FAN))
+  + TX("t7m", "Pembukuan kuliner beres,", 330, 86) + TX("t7n", "tanpa begadang.", 440, 86, color=P["acc"])
+  + TX("t8m", "Cek templatenya", 330, 96)
+  + '<div class="card" id="hero"><img src="shots/dash.png"></div>'
+  + '<div id="lbtn"><span>Link di bawah <i id="arr">↓</i></span></div>'
+  + TX("t8n", "Dashboard Kuliner UMKM · Google Sheets", 1300, 34, "s", font="InterDisplay-SemiBold.ttf"))
+
 body = f'''
   <div id="bg"></div>
   <div id="night"></div>
@@ -181,7 +202,7 @@ body = f'''
     {TX("t1", "Masih ngitung nota?", 330, 96, color="#F5F5F7" if KEY else None)}
     <!-- S2 / S3 -->
     {TX("t2a", "Cukup catat penjualan.", 330, 92)}
-    {TX("t2b", "per hari, per menu.", 440, 64, "s", font="InterDisplay-SemiBold.ttf")}
+    {TX("t2b", "per hari." if META else "per hari, per menu.", 440, 64, "s", font="InterDisplay-SemiBold.ttf")}
     {TX("t2c", "5 menit beres.", 440, 72, color=P["acc"])}
     {s2}
     {TX("t3a", "Harga. Modal. Laba.", 330, 100)}
@@ -203,6 +224,7 @@ body = f'''
     <div class="card" id="dd">{dd_html}</div>
     <div id="mval">Rp62.250.000</div>
     <div id="mchart">{mb_html}</div>
+    {META_HTML}
     <!-- S7 bahan -->
     {TX("t7a", "Bahan hampir habis?", 330, 90)}
     {TX("t7b", "langsung masuk daftar belanja.", 440, 54, "s", font="InterDisplay-SemiBold.ttf")}
@@ -232,7 +254,7 @@ body = f'''
 '''
 
 js = f'''
-    var K = {json.dumps(K)}, KEY = {str(KEY).lower()}, RC = {json.dumps(RCPOS)};
+    var K = {json.dumps(K)}, KEY = {str(KEY).lower()}, META = {str(META).lower()}, RC = {json.dumps(RCPOS)};
     var EZ = KEY ? "power3.out" : "back.out(1.7)";            // Apple: halus · Google: memantul
     function rise(sel, t, d, y) {{ tl.fromTo(sel, {{ opacity: 0, y: y || 50 }}, {{ opacity: 1, y: 0, duration: d || (KEY ? 0.6 : 0.4), ease: EZ }}, q(t)); }}
     function words(sel, t) {{ var ch = document.querySelectorAll(sel + " .ch"); tl.set(sel, {{ opacity: 1 }}, q(t));
@@ -322,8 +344,24 @@ js = f'''
     tl.fromTo("#mb1", {{ scaleY: 0.85 }}, Object.assign({{ scaleY: 1, duration: 0.4, ease: "back.out(2)" }}, NI), q(K.grafik));
     money("#mval", K.grafik, 0.7, 62250000, 64011000);
     tl.to("#cur", {{ opacity: 0, duration: 0.2 }}, q(K.grafik + 0.6));
-    out("#t6a, #dd, #mval, #mchart", K.bahan);
+    out("#t6a, #dd, #mval, #mchart", META ? K.beres : K.bahan);
 
+    if (META) {{
+    // S7m · pembukuan beres tanpa begadang
+    words("#t7m", K.beres); words("#t7n", K.begadang);
+    [-2, -1, 0, 1, 2].forEach(function (d, i) {{
+      tl.fromTo("#fan" + i, {{ opacity: 0, y: 500, rotation: 0, x: 0 }}, {{ opacity: 1, y: Math.abs(d) * 40, x: d * 150, rotation: d * 9, duration: 0.8, ease: "power3.out" }}, q(K.beres + 0.2 + i * 0.12)); }});
+    tl.to(".fan", {{ y: "-=30", duration: 1.6, ease: "power1.inOut" }}, q(K.beres + 1.2));
+    tl.fromTo("#t7n", {{ scale: 1.15 }}, Object.assign({{ scale: 1, duration: 0.5, ease: "back.out(2)" }}, NI), q(K.begadang));
+    out("#t7m, #t7n, .fan", K.link);
+    // S8m · CTA link di bawah
+    words("#t8m", K.link);
+    rise("#hero", K.link + 0.15, 0.7, 160);
+    tl.to("#hero img", {{ y: -60, duration: 2.4, ease: "power1.inOut" }}, q(K.link + 0.8));
+    tl.fromTo("#lbtn", {{ opacity: 0, scale: 0.6 }}, {{ opacity: 1, scale: 1, duration: 0.45, ease: "back.out(2)" }}, q(K.bawah - 0.1));
+    tl.to("#arr", {{ y: 16, duration: 0.3, ease: "power1.inOut", yoyo: true, repeat: 7 }}, q(K.bawah + 0.3));
+    words("#t8n", K.bawah + 0.5);
+    }} else {{
     // S7 · bahan habis -> daftar belanja
     words("#t7a", K.bahan); words("#t7b", K.bahan + 0.7);
     rise("#skcard", K.bahan + 0.2, 0.5, 100);
@@ -349,6 +387,7 @@ js = f'''
       tl.to("#cur", {{ opacity: 0, duration: 0.2 }}, q(K.link + 0.3));
     }}
     words("#t8d", K.link + 0.4);
+    }}
 '''
 
 html = page(f"iklan-dashboard-{V}", DUR, css, body, js)

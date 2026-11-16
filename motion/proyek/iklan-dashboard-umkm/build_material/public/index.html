@@ -99,6 +99,14 @@ html, body, #root { background: var(--bg); color: var(--ink); font-family: "IDBl
 #cbox .snd { width: 72px; height: 72px; border-radius: 50%; background: var(--acc); color: #fff; font-size: 38px; display: flex; align-items: center; justify-content: center; }
 #reply { position: absolute; right: 90px; top: 1260px; max-width: 760px; padding: 24px 32px; border-radius: 30px 30px 8px 30px; background: var(--gg); color: #fff;
   font-family: "IDBold"; font-size: 40px; opacity: 0; }
+/* meta: kipas tab + tombol link */
+.fan { position: absolute; left: 290px; top: 760px; width: 500px; height: 380px; border-radius: 20px; background: #fff center top / cover no-repeat;
+  box-shadow: 0 24px 60px rgba(0,0,0,.22); opacity: 0; transform-origin: 50% 120%; }
+#hero { position: absolute; left: 90px; top: 520px; width: 900px; height: 520px; }
+#lbtn { position: absolute; left: 0; width: 1080px; top: 1120px; text-align: center; opacity: 0; }
+#lbtn span { display: inline-flex; align-items: center; gap: 22px; font-family: "IDBlack"; font-size: 64px; color: #fff; background: var(--brand);
+  padding: 22px 56px 26px; border-radius: 60px; box-shadow: 0 18px 40px rgba(184,97,29,.35); }
+#lbtn i { font-style: normal; display: inline-block; }
 
 </style>
 </head>
@@ -136,6 +144,7 @@ html, body, #root { background: var(--bg); color: var(--ink); font-family: "IDBl
     <div class="card" id="dd"><div class="it" id="dd0">September<span id="ddk0"></span></div><div class="it" id="dd1">Oktober<span id="ddk1"></span></div><div class="it" id="dd2">November<span id="ddk2"></span></div></div>
     <div id="mval">Rp62.250.000</div>
     <div id="mchart"><div class="mbar" id="mb0" style="left:40px;height:350px;background:#D2D2D7"></div><div class="ml" style="left:40px">Sep</div><div class="mbar" id="mb1" style="left:300px;height:360px;background:#D2D2D7"></div><div class="ml" style="left:300px">Okt</div><div class="mbar" id="mb2" style="left:560px;height:170px;background:#D2D2D7"></div><div class="ml" style="left:560px">Nov*</div></div>
+    
     <!-- S7 bahan -->
     <div class="t " id="t7a" style="top:330px;font-size:84px"><span class="ch" style="display:inline-block">B</span><span class="ch" style="display:inline-block">a</span><span class="ch" style="display:inline-block">h</span><span class="ch" style="display:inline-block">a</span><span class="ch" style="display:inline-block">n</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">h</span><span class="ch" style="display:inline-block">a</span><span class="ch" style="display:inline-block">m</span><span class="ch" style="display:inline-block">p</span><span class="ch" style="display:inline-block">i</span><span class="ch" style="display:inline-block">r</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">h</span><span class="ch" style="display:inline-block">a</span><span class="ch" style="display:inline-block">b</span><span class="ch" style="display:inline-block">i</span><span class="ch" style="display:inline-block">s</span><span class="ch" style="display:inline-block">?</span></div>
     <div class="t s" id="t7b" style="top:440px;font-size:54px;font-family:"IDSemi""><span class="ch" style="display:inline-block">l</span><span class="ch" style="display:inline-block">a</span><span class="ch" style="display:inline-block">n</span><span class="ch" style="display:inline-block">g</span><span class="ch" style="display:inline-block">s</span><span class="ch" style="display:inline-block">u</span><span class="ch" style="display:inline-block">n</span><span class="ch" style="display:inline-block">g</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">m</span><span class="ch" style="display:inline-block">a</span><span class="ch" style="display:inline-block">s</span><span class="ch" style="display:inline-block">u</span><span class="ch" style="display:inline-block">k</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">d</span><span class="ch" style="display:inline-block">a</span><span class="ch" style="display:inline-block">f</span><span class="ch" style="display:inline-block">t</span><span class="ch" style="display:inline-block">a</span><span class="ch" style="display:inline-block">r</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">b</span><span class="ch" style="display:inline-block">e</span><span class="ch" style="display:inline-block">l</span><span class="ch" style="display:inline-block">a</span><span class="ch" style="display:inline-block">n</span><span class="ch" style="display:inline-block">j</span><span class="ch" style="display:inline-block">a</span><span class="ch" style="display:inline-block">.</span></div>
@@ -187,7 +196,7 @@ html, body, #root { background: var(--bg); color: var(--ink); font-family: "IDBl
     function idn(v) { return Math.round(v).toString().replace(/\B(?=(\d{3})+(?!\d))/g, "."); }
 
 
-    var K = {"jam": 0.15, "nota": 1.73, "catat": 3.71, "menit": 6.46, "harga": 7.73, "dash": 10.54, "kotor": 11.85, "bersih": 12.7, "banding": 13.89, "bulan": 16.42, "pilih": 17.56, "grafik": 18.39, "bahan": 20.66, "daftar": 22.15, "mau": 23.64, "comment": 24.67, "link": 25.63, "end": 28.08}, KEY = false, RC = [[110, 980, -14], [330, 920, 8], [560, 1000, -6], [760, 940, 12], [190, 1150, 5], [430, 1130, -10], [680, 1160, 7], [520, 900, -3]];
+    var K = {"jam": 0.15, "nota": 1.73, "catat": 3.71, "menit": 6.46, "harga": 7.73, "dash": 10.54, "kotor": 11.85, "bersih": 12.7, "banding": 13.89, "bulan": 16.42, "pilih": 17.56, "grafik": 18.39, "bahan": 20.66, "daftar": 22.15, "mau": 23.64, "comment": 24.67, "link": 25.63, "end": 28.08}, KEY = false, META = false, RC = [[110, 980, -14], [330, 920, 8], [560, 1000, -6], [760, 940, 12], [190, 1150, 5], [430, 1130, -10], [680, 1160, 7], [520, 900, -3]];
     var EZ = KEY ? "power3.out" : "back.out(1.7)";            // Apple: halus · Google: memantul
     function rise(sel, t, d, y) { tl.fromTo(sel, { opacity: 0, y: y || 50 }, { opacity: 1, y: 0, duration: d || (KEY ? 0.6 : 0.4), ease: EZ }, q(t)); }
     function words(sel, t) { var ch = document.querySelectorAll(sel + " .ch"); tl.set(sel, { opacity: 1 }, q(t));
@@ -277,8 +286,24 @@ html, body, #root { background: var(--bg); color: var(--ink); font-family: "IDBl
     tl.fromTo("#mb1", { scaleY: 0.85 }, Object.assign({ scaleY: 1, duration: 0.4, ease: "back.out(2)" }, NI), q(K.grafik));
     money("#mval", K.grafik, 0.7, 62250000, 64011000);
     tl.to("#cur", { opacity: 0, duration: 0.2 }, q(K.grafik + 0.6));
-    out("#t6a, #dd, #mval, #mchart", K.bahan);
+    out("#t6a, #dd, #mval, #mchart", META ? K.beres : K.bahan);
 
+    if (META) {
+    // S7m · pembukuan beres tanpa begadang
+    words("#t7m", K.beres); words("#t7n", K.begadang);
+    [-2, -1, 0, 1, 2].forEach(function (d, i) {
+      tl.fromTo("#fan" + i, { opacity: 0, y: 500, rotation: 0, x: 0 }, { opacity: 1, y: Math.abs(d) * 40, x: d * 150, rotation: d * 9, duration: 0.8, ease: "power3.out" }, q(K.beres + 0.2 + i * 0.12)); });
+    tl.to(".fan", { y: "-=30", duration: 1.6, ease: "power1.inOut" }, q(K.beres + 1.2));
+    tl.fromTo("#t7n", { scale: 1.15 }, Object.assign({ scale: 1, duration: 0.5, ease: "back.out(2)" }, NI), q(K.begadang));
+    out("#t7m, #t7n, .fan", K.link);
+    // S8m · CTA link di bawah
+    words("#t8m", K.link);
+    rise("#hero", K.link + 0.15, 0.7, 160);
+    tl.to("#hero img", { y: -60, duration: 2.4, ease: "power1.inOut" }, q(K.link + 0.8));
+    tl.fromTo("#lbtn", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.45, ease: "back.out(2)" }, q(K.bawah - 0.1));
+    tl.to("#arr", { y: 16, duration: 0.3, ease: "power1.inOut", yoyo: true, repeat: 7 }, q(K.bawah + 0.3));
+    words("#t8n", K.bawah + 0.5);
+    } else {
     // S7 · bahan habis -> daftar belanja
     words("#t7a", K.bahan); words("#t7b", K.bahan + 0.7);
     rise("#skcard", K.bahan + 0.2, 0.5, 100);
@@ -304,6 +329,7 @@ html, body, #root { background: var(--bg); color: var(--ink); font-family: "IDBl
       tl.to("#cur", { opacity: 0, duration: 0.2 }, q(K.link + 0.3));
     }
     words("#t8d", K.link + 0.4);
+    }
 
     window.__timelines = window.__timelines || {};
     window.__timelines["iklan-dashboard-material"] = tl;
