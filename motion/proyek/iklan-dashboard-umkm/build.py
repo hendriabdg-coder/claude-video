@@ -207,9 +207,9 @@ body = f'''
     {TX("t7a", "Bahan hampir habis?", 330, 90)}
     {TX("t7b", "langsung masuk daftar belanja.", 440, 54, "s", font="InterDisplay-SemiBold.ttf")}
     <div class="card" id="skcard" style="left:140px;top:540px;width:800px;height:470px"><img src="shots/stok2.png" style="margin-top:-40px">
-      <div class="hl" id="sh0" style="left:0;top:132px;width:800px;height:40px;border-color:{P["g_red"]};background:rgba(234,67,53,.08)"></div>
-      <div class="hl" id="sh1" style="left:0;top:288px;width:800px;height:40px;border-color:{P["g_red"]};background:rgba(234,67,53,.08)"></div>
-      <div class="hl" id="sh2" style="left:0;top:444px;width:800px;height:40px;border-color:{P["g_red"]};background:rgba(234,67,53,.08)"></div></div>
+      <div class="hl" id="sh0" style="left:0;top:96px;width:800px;height:40px;border-color:{P["g_red"]};background:rgba(234,67,53,.08)"></div>
+      <div class="hl" id="sh1" style="left:0;top:252px;width:800px;height:40px;border-color:{P["g_red"]};background:rgba(234,67,53,.08)"></div>
+      <div class="hl" id="sh2" style="left:0;top:408px;width:800px;height:40px;border-color:{P["g_red"]};background:rgba(234,67,53,.08)"></div></div>
     <div class="card" id="buy" style="top:1040px"><h4>Perlu dibeli (3 bahan)</h4>
       <div class="bi" id="bi0"><i></i>Susu UHT<b>sisa 3.534 ml</b></div>
       <div class="bi" id="bi1"><i></i>Cup Plastik + Tutup<b>sisa 92</b></div>
@@ -279,7 +279,7 @@ js = f'''
     if (KEY) {{
       tl.to("#macimg", {{ y: 0, duration: 0.5, ease: "power2.out" }}, q(K.harga - 0.3));
       ["#hl1", "#hl2", "#hl3"].forEach(function (h, i) {{ tl.fromTo(h, {{ opacity: 0, scaleY: 0.2 }}, {{ opacity: 1, scaleY: 1, duration: 0.35, ease: "power3.out" }}, q(K.harga + i * 0.45)); }});
-      out("#mac", K.dash); out(".hl", K.dash);
+      out("#mac", K.dash); out("#hl1, #hl2, #hl3", K.dash);
     }} else {{
       out("#jcard", K.harga);
       [[0, 22000], [1, 196995], [2, 309005]].forEach(function (v, i) {{
