@@ -10,3 +10,9 @@
 - Kredit ElevenLabs terpakai (perkiraan): musik 2 × ±900, SFX 3 × ±17, total ±1.850 kredit.
 - CTA "Comment SHEET": untuk iklan berbayar / comment-to-DM. Untuk reel organik, aturan repo melarang pola "komen KATA" (risiko engagement bait).
 - Rekomendasi aset tambahan (opsional, untuk versi berikutnya): screenshot Dashboard periode Oktober (agar pembanding tampil di KPI), kotak pemilih Periode, dan tab Dashboard HP (mockup iPhone).
+
+## V3 Meta (2026-11-16)
+- VO baru `vo3.mp3` (24,5 dtk). Isinya: tanpa "per menu" dan tanpa bagian stok; ada kalimat baru "pembukuan kuliner yang beres tanpa begadang"; CTA "Cek templatenya lewat link di bawah".
+- Gaya Apple (sama dengan V1). Adegan baru: kipas 5 tab templat + "tanpa begadang", serta CTA tombol "Link di bawah ↓" (diarahkan ke tombol CTA iklan Meta).
+- Musik memakai ulang `music_keynote.mp3`, jadi tidak ada kredit ElevenLabs tambahan.
+- Bug yang ikut terperbaiki: `META` belum dideklarasikan di JS (frame hitam saat snapshot pertama).
