@@ -10,9 +10,9 @@ ROOT = HERE.parents[2]
 FONTS = ROOT / "motion" / "gaya" / "gaya-terminal" / "public" / "fonts"
 frame = HERE / "renders" / "_cover_bg.png"
 subprocess.run(["ffmpeg", "-v", "error", "-y", "-ss", "43", "-i", str(HERE / "renders" / "visual.mp4"), "-frames:v", "1", str(frame)], check=True)
-bg = Image.open(frame).convert("RGB").crop((60, 560, 1060, 1300)).resize((1180, 873), Image.LANCZOS)
+bg = Image.open(frame).convert("RGB").crop((60, 560, 1060, 1250)).resize((1180, 814), Image.LANCZOS)
 im = Image.new("RGB", (1080, 1920), (11, 11, 13))
-im.paste(ImageEnhance.Brightness(bg).enhance(0.45), (-60, 800))
+im.paste(ImageEnhance.Brightness(bg).enhance(0.35), (-60, 830))
 
 
 def font(px, name="InterDisplay-Black.ttf"):
