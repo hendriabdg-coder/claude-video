@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8" />
+<style>
+@font-face { font-family: "IDBlack"; src: url("fonts/InterDisplay-Black.ttf") format("truetype"); font-display: block; }
+@font-face { font-family: "IDBold"; src: url("fonts/InterDisplay-Bold.ttf") format("truetype"); font-display: block; }
+@font-face { font-family: "IDSemi"; src: url("fonts/InterDisplay-SemiBold.ttf") format("truetype"); font-display: block; }
+@font-face { font-family: "IDItal"; src: url("fonts/InterDisplay-SemiBoldItalic.ttf") format("truetype"); font-display: block; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 100%; height: 100%; overflow: hidden; }
+#root { position: relative; width: 1080px; height: 1920px; overflow: hidden; }
+.ico { width: 100%; height: 100%; display: block; }
+
+#chibi { position: absolute; width: 520px; height: 925px; opacity: 0; transform-origin: 50% 100%; }
+#chibiS { position: absolute; inset: 0; }
+#chibiS img { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; }
+#chibiSh { position: absolute; width: 360px; height: 46px; border-radius: 50%; background: rgba(0,0,0,.45); filter: blur(14px); opacity: 0; }
+
+
+:root { --k:#0B0B0D; --cr:#F4F1EA; --o:#FF6A3D; --g:#22C55E; --r:#FF4F3A; --b:#3A5BFF; --gy:#8A8F9C; }
+html, body, #root { background: var(--k); color: var(--cr); font-family: "IDBlack"; }
+#bg { position: absolute; inset: 0; background: radial-gradient(120% 70% at 50% 40%, #17171B 0%, var(--k) 70%); }
+#glow { position: absolute; inset: 0; background: radial-gradient(70% 45% at 50% 55%, rgba(255,79,58,.3), rgba(255,79,58,0) 70%); opacity: 0; }
+#grid { position: absolute; inset: 0; opacity: .07; background-image: linear-gradient(var(--cr) 1px, transparent 1px), linear-gradient(90deg, var(--cr) 1px, transparent 1px); background-size: 90px 90px; }
+#cam { position: absolute; inset: 0; }
+#hud { position: absolute; left: 60px; top: 262px; display: flex; align-items: center; gap: 12px; font-family: "IDBold"; font-size: 24px; letter-spacing: .18em; opacity: 0; z-index: 5; }
+#hud i { width: 12px; height: 12px; border-radius: 50%; background: var(--r); display: inline-block; }
+.t { position: absolute; left: 0; width: 1080px; text-align: center; white-space: nowrap; opacity: 0; line-height: 1; letter-spacing: -.02em; }
+.t .ch { opacity: 0; }
+.sub { position: absolute; left: 0; width: 1080px; text-align: center; font-family: "IDBold"; font-size: 32px; letter-spacing: .16em; opacity: 0; color: var(--gy); }
+.o { color: var(--o); } .g { color: var(--g); } .r { color: var(--r); } .gy { color: var(--gy); }
+.chip { position: absolute; font-family: "IDBold"; font-size: 30px; letter-spacing: .1em; padding: 10px 22px; border-radius: 40px; opacity: 0; white-space: nowrap; }
+.sim { position: absolute; font-family: "IDBold"; font-size: 20px; letter-spacing: .16em; color: var(--gy); border: 2px solid rgba(138,143,156,.5); border-radius: 8px; padding: 4px 12px; opacity: 0; }
+/* A chat */
+#chat { position: absolute; left: 110px; top: 820px; width: 860px; height: 420px; border-radius: 30px; background: #16161A; border: 2px solid rgba(244,241,234,.12); opacity: 0; padding: 30px; }
+#chat .cb { font-family: "IDBold"; font-size: 24px; letter-spacing: .14em; color: var(--gy); }
+.bub { position: absolute; max-width: 640px; padding: 24px 30px; font-family: "IDSemi"; font-size: 38px; line-height: 1.25; border-radius: 28px; opacity: 0; }
+#bu { right: 30px; top: 90px; background: var(--b); color: var(--cr); border-bottom-right-radius: 8px; }
+#ba { left: 30px; top: 230px; background: var(--cr); color: #141414; border-bottom-left-radius: 8px; }
+#ba b { display: block; font-family: "IDBold"; font-size: 22px; letter-spacing: .14em; color: #c4471d; margin-bottom: 6px; }
+/* B ticker */
+#tape { position: absolute; left: 0; top: 1060px; width: 1080px; height: 120px; background: #0F1411; border-top: 3px solid var(--g); border-bottom: 3px solid var(--g); overflow: hidden; opacity: 0; }
+#tapeI { position: absolute; left: 0; top: 26px; white-space: nowrap; font-family: Consolas, "Courier New", monospace; font-size: 56px; color: var(--g); }
+#bldg { position: absolute; left: 340px; top: 560px; width: 400px; height: 400px; color: var(--cr); opacity: 0; }
+/* C profile card */
+#card { position: absolute; left: 90px; top: 520px; width: 900px; height: 640px; background: #F2EDE2; color: #141414; border-radius: 18px; opacity: 0; padding: 46px 50px;
+  box-shadow: 0 40px 90px rgba(0,0,0,.55); }
+#card .k1 { font-family: "IDBold"; font-size: 26px; letter-spacing: .16em; color: #8a2b16; }
+#card .nm { font-size: 118px; letter-spacing: -.03em; margin-top: 14px; }
+#card .ds { font-family: "IDSemi"; font-size: 44px; color: #444; margin-top: 4px; }
+#card .rw { display: flex; gap: 18px; margin-top: 50px; }
+#card .rw div { flex: 1; border: 3px solid #141414; border-radius: 16px; padding: 18px 20px; opacity: 0; }
+#card .rw s { display: block; text-decoration: none; font-family: "IDBold"; font-size: 22px; letter-spacing: .14em; color: #777; }
+#card .rw u { display: block; text-decoration: none; font-size: 54px; margin-top: 8px; }
+/* D numbers */
+#lab { position: absolute; left: 0; width: 1080px; top: 560px; text-align: center; font-family: "IDBold"; font-size: 38px; letter-spacing: .16em; color: var(--gy); opacity: 0; }
+#big { position: absolute; left: 0; width: 1080px; top: 630px; text-align: center; font-size: 170px; line-height: 1; letter-spacing: -.04em; font-variant-numeric: tabular-nums; opacity: 0; }
+#trophy { position: absolute; left: 340px; top: 700px; width: 400px; height: 400px; color: var(--o); opacity: 0; }
+.stat { position: absolute; left: 90px; width: 900px; height: 150px; border-radius: 24px; background: #16161A; border: 2px solid rgba(244,241,234,.12); display: flex; align-items: center; justify-content: space-between; padding: 0 36px; opacity: 0; }
+.stat s { text-decoration: none; font-family: "IDBold"; font-size: 34px; color: var(--gy); }
+.stat u { text-decoration: none; font-size: 72px; font-variant-numeric: tabular-nums; }
+#arr { position: absolute; left: 690px; top: 1200px; width: 170px; height: 170px; color: var(--g); opacity: 0; }
+/* E three */
+.n3 { position: absolute; top: 780px; width: 260px; height: 320px; border-radius: 30px; background: #16161A; border: 3px solid rgba(244,241,234,.18); display: flex; align-items: center; justify-content: center; font-size: 200px; opacity: 0; }
+/* F */
+.num { position: absolute; left: 90px; top: 330px; font-size: 130px; line-height: 1; color: transparent; -webkit-text-stroke: 4px var(--o); opacity: 0; }
+#globe { position: absolute; left: 290px; top: 640px; width: 500px; height: 500px; color: var(--o); opacity: 0; }
+#tren { position: absolute; left: 0; width: 1080px; top: 1220px; text-align: center; opacity: 0; }
+#tren span { display: inline-block; font-size: 64px; padding: 8px 26px; border-radius: 16px; }
+#tren .a { color: var(--gy); position: relative; } #tren .a i { position: absolute; left: -6%; top: 48%; width: 112%; height: 10px; background: var(--r); border-radius: 5px; transform-origin: 0 50%; }
+#tren .b { color: var(--k); background: var(--o); margin-left: 22px; opacity: 0; }
+.lane { position: absolute; left: 90px; width: 900px; height: 130px; opacity: 0; }
+.lane .tr { position: absolute; left: 0; top: 80px; width: 900px; height: 14px; border-radius: 7px; background: rgba(244,241,234,.12); }
+.lane .cr { position: absolute; left: 0; top: 10px; width: 150px; height: 64px; border-radius: 18px; display: flex; align-items: center; justify-content: center; font-family: "IDBold"; font-size: 28px; color: var(--k); }
+#flag { position: absolute; left: 960px; top: 620px; width: 12px; height: 480px; background: repeating-linear-gradient(var(--cr) 0 24px, var(--k) 24px 48px); opacity: 0; }
+#doc { position: absolute; left: 110px; top: 540px; width: 860px; height: 620px; background: #F2EDE2; color: #141414; border-radius: 10px; opacity: 0; padding: 40px 46px; box-shadow: 0 40px 90px rgba(0,0,0,.55); }
+#doc .dt { font-family: "IDBold"; font-size: 24px; letter-spacing: .16em; color: #777; border-bottom: 3px solid #141414; padding-bottom: 14px; }
+#doc .ln { height: 16px; background: #d6cfbf; border-radius: 8px; margin: 20px 0; }
+#doc .q { position: relative; font-family: "IDSemi"; font-size: 40px; line-height: 1.3; margin: 26px 0; padding: 6px 10px; }
+#doc .q i { position: absolute; inset: 0; background: rgba(255,106,61,.35); border-radius: 8px; transform-origin: 0 50%; transform: scaleX(0); }
+#doc .q span { position: relative; }
+#meter { position: absolute; left: 140px; top: 1230px; width: 800px; height: 60px; border-radius: 30px; background: rgba(244,241,234,.12); overflow: hidden; opacity: 0; }
+#mf { width: 100%; height: 100%; background: linear-gradient(90deg, var(--g), var(--o), var(--r)); transform-origin: 0 50%; }
+#mlab { position: absolute; left: 140px; top: 1310px; width: 800px; display: flex; justify-content: space-between; font-family: "IDBold"; font-size: 26px; letter-spacing: .12em; color: var(--gy); opacity: 0; }
+/* G */
+#eggs { position: absolute; left: 0; width: 1080px; top: 560px; height: 420px; opacity: 0; }
+.tool { position: absolute; top: 120px; width: 220px; height: 150px; border-radius: 26px; display: flex; align-items: center; justify-content: center; font-family: "IDBold"; font-size: 34px; color: var(--k); }
+#btn { position: absolute; left: 140px; top: 1050px; width: 340px; height: 130px; border-radius: 65px; background: var(--cr); color: var(--k); display: flex; align-items: center; justify-content: center; font-size: 46px; opacity: 0; }
+#gear { position: absolute; left: 620px; top: 990px; width: 260px; height: 260px; color: var(--o); opacity: 0; }
+#vs { position: absolute; left: 500px; top: 1085px; font-size: 50px; color: var(--gy); opacity: 0; }
+/* H/I */
+#follow { position: absolute; left: 300px; top: 470px; width: 480px; height: 110px; border-radius: 55px; background: var(--cr); color: var(--k); font-size: 46px; display: flex; align-items: center; justify-content: center; opacity: 0; }
+#tapc { position: absolute; left: 690px; top: 520px; width: 70px; height: 70px; color: var(--k); opacity: 0; }
+#brand { position: absolute; left: 0; top: 1525px; width: 1080px; text-align: center; font-size: 36px; color: var(--cr); z-index: 6; }
+#brand b { color: var(--o); font-weight: normal; }
+#flash { position: absolute; inset: 0; background: #fff; opacity: 0; pointer-events: none; }
+
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="anthropic-ipo-2" data-start="0" data-duration="59.03" data-fps="30" data-width="1080" data-height="1920">
+  <audio id="vo" src="vo.mp3" data-start="0" data-duration="59.03" data-track-index="0"></audio>
+
+  <div id="bg"></div><div id="glow"></div><div id="grid"></div>
+  <div id="cam">
+    <div id="hud"><i></i>BERITA AI &middot; IPO #2</div>
+    <!-- A hook -->
+    <div class="t " id="a1" style="top:480px;font-size:78px"><span class="ch" style="display:inline-block">K</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">M</span><span class="ch" style="display:inline-block">U</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">P</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">K</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">I</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">C</span><span class="ch" style="display:inline-block">L</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">U</span><span class="ch" style="display:inline-block">D</span><span class="ch" style="display:inline-block">E</span></div>
+    <div class="t o" id="a2" style="top:620px;font-size:120px"><span class="ch" style="display:inline-block">B</span><span class="ch" style="display:inline-block">U</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">T</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">K</span><span class="ch" style="display:inline-block">E</span><span class="ch" style="display:inline-block">R</span><span class="ch" style="display:inline-block">J</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">?</span></div>
+    <div id="chat"><div class="cb">CHAT AI</div>
+      <div class="bub" id="bu">Bikinin draf laporan mingguan</div>
+      <div class="bub" id="ba"><b>CLAUDE</b>Siap, ini drafnya…</div></div>
+    <div class="sim" id="simA" style="left:110px;top:1255px">SIMULASI</div>
+    <!-- B bursa -->
+    <div class="t " id="b1" style="top:340px;font-size:86px"><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">I</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">N</span><span class="ch" style="display:inline-block">D</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">L</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">N</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">K</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">M</span><span class="ch" style="display:inline-block">U</span></div>
+    <div id="bldg"><svg class="ico" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 34L50 12l40 22z"/><path d="M14 38h72M20 44v34M35 44v34M50 44v34M65 44v34M80 44v34M12 84h76M8 90h84"/></svg></div>
+    <div class="t " id="b2" style="top:1240px;font-size:76px"><span class="ch" style="display:inline-block">R</span><span class="ch" style="display:inline-block">E</span><span class="ch" style="display:inline-block">S</span><span class="ch" style="display:inline-block">M</span><span class="ch" style="display:inline-block">I</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">M</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">S</span><span class="ch" style="display:inline-block">U</span><span class="ch" style="display:inline-block">K</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">B</span><span class="ch" style="display:inline-block">U</span><span class="ch" style="display:inline-block">R</span><span class="ch" style="display:inline-block">S</span><span class="ch" style="display:inline-block">A</span></div>
+    <div class="t g" id="b3" style="top:1345px;font-size:86px"><span class="ch" style="display:inline-block">S</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">H</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">M</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">M</span><span class="ch" style="display:inline-block">E</span><span class="ch" style="display:inline-block">R</span><span class="ch" style="display:inline-block">I</span><span class="ch" style="display:inline-block">K</span><span class="ch" style="display:inline-block">A</span></div>
+    <div id="tape"><div id="tapeI">ANT ▲ NASDAQ   IPO 19·11·2026   ANT ▲ +34% HARI-1   $81 M · REKOR   ANT ▲ NASDAQ   IPO 19·11·2026   ANT ▲ +34% HARI-1   $81 M · REKOR   ANT ▲ NASDAQ   IPO 19·11·2026   ANT ▲ +34% HARI-1   $81 M · REKOR</div></div>
+    <!-- C profil -->
+    <div id="card"><div class="k1">PROFIL PERUSAHAAN</div><div class="nm">Anthropic</div><div class="ds">pembuat Claude</div>
+      <div class="rw"><div id="cr1"><s>BURSA</s><u>Nasdaq</u></div><div id="cr2"><s>TANGGAL</s><u>19 Nov</u></div><div id="cr3"><s>KODE</s><u style="color:#c4471d">ANT</u></div></div></div>
+    <!-- D rekor -->
+    <div class="t " id="d1" style="top:340px;font-size:94px"><span class="ch" style="display:inline-block">B</span><span class="ch" style="display:inline-block">U</span><span class="ch" style="display:inline-block">K</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">N</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">I</span><span class="ch" style="display:inline-block">P</span><span class="ch" style="display:inline-block">O</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">B</span><span class="ch" style="display:inline-block">I</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">S</span><span class="ch" style="display:inline-block">A</span></div>
+    <div class="t o" id="d2" style="top:340px;font-size:114px"><span class="ch" style="display:inline-block">I</span><span class="ch" style="display:inline-block">P</span><span class="ch" style="display:inline-block">O</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">T</span><span class="ch" style="display:inline-block">E</span><span class="ch" style="display:inline-block">R</span><span class="ch" style="display:inline-block">B</span><span class="ch" style="display:inline-block">E</span><span class="ch" style="display:inline-block">S</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">R</span></div>
+    <div class="t " id="d3" style="top:480px;font-size:72px"><span class="ch" style="display:inline-block">S</span><span class="ch" style="display:inline-block">E</span><span class="ch" style="display:inline-block">P</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">N</span><span class="ch" style="display:inline-block">J</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">N</span><span class="ch" style="display:inline-block">G</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">S</span><span class="ch" style="display:inline-block">E</span><span class="ch" style="display:inline-block">J</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">R</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">H</span></div>
+    <div id="trophy"><svg class="ico" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"><path d="M30 14h40v20a20 20 0 0 1-40 0z"/><path d="M30 20H16a12 12 0 0 0 14 16M70 20h14a12 12 0 0 1-14 16M50 54v16M34 86h32M40 70h20v16H40z"/></svg></div>
+    <div class="stat" id="s1" style="top:640px"><s>Dana masuk</s><u id="v1">$0 M</u></div>
+    <div class="stat" id="s2" style="top:820px"><s>Valuasi ±</s><u id="v2" class="o">$0 T</u></div>
+    <div class="stat" id="s3" style="top:1000px"><s>Hari pertama</s><u id="v3" class="g">+0%</u></div>
+    <div class="sub" id="dil" style="top:1180px;font-size:22px">VALUASI FULLY DILUTED · HARGA IPO $83</div>
+    <!-- E 3 hal -->
+    <div class="t " id="e1" style="top:340px;font-size:64px"><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">P</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">R</span><span class="ch" style="display:inline-block">T</span><span class="ch" style="display:inline-block">I</span><span class="ch" style="display:inline-block">N</span><span class="ch" style="display:inline-block">Y</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">B</span><span class="ch" style="display:inline-block">U</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">T</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">K</span><span class="ch" style="display:inline-block">I</span><span class="ch" style="display:inline-block">T</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">?</span></div>
+    <div class="t gy" id="e2" style="top:450px;font-size:60px"><span class="ch" style="display:inline-block">Y</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">N</span><span class="ch" style="display:inline-block">G</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">B</span><span class="ch" style="display:inline-block">U</span><span class="ch" style="display:inline-block">K</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">N</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">I</span><span class="ch" style="display:inline-block">N</span><span class="ch" style="display:inline-block">V</span><span class="ch" style="display:inline-block">E</span><span class="ch" style="display:inline-block">S</span><span class="ch" style="display:inline-block">T</span><span class="ch" style="display:inline-block">O</span><span class="ch" style="display:inline-block">R</span></div>
+    <div class="n3" id="n0" style="left:90px;">1</div><div class="n3" id="n1" style="left:410px;color:var(--o)">2</div><div class="n3" id="n2" style="left:730px;">3</div>
+    <div class="t o" id="e3" style="top:1200px;font-size:110px"><span class="ch" style="display:inline-block">3</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">H</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">L</span></div>
+    <!-- F1 -->
+    <div class="num" id="f1n">01</div>
+    <div class="t " id="f1" style="top:480px;font-size:84px"><span class="ch" style="display:inline-block">I</span><span class="ch" style="display:inline-block">N</span><span class="ch" style="display:inline-block">D</span><span class="ch" style="display:inline-block">U</span><span class="ch" style="display:inline-block">S</span><span class="ch" style="display:inline-block">T</span><span class="ch" style="display:inline-block">R</span><span class="ch" style="display:inline-block">I</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">R</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">K</span><span class="ch" style="display:inline-block">S</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">S</span><span class="ch" style="display:inline-block">A</span></div>
+    <div id="globe"><svg class="ico" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="50" cy="50" r="40"/><ellipse cx="50" cy="50" rx="18" ry="40"/><path d="M10 50h80M16 30h68M16 70h68"/><circle class="nd" cx="26" cy="34" r="3.5" fill="currentColor"/><circle class="nd" cx="70" cy="28" r="3.5" fill="currentColor"/><circle class="nd" cx="62" cy="62" r="3.5" fill="currentColor"/><circle class="nd" cx="34" cy="70" r="3.5" fill="currentColor"/><circle class="nd" cx="50" cy="46" r="3.5" fill="currentColor"/><circle class="nd" cx="82" cy="52" r="3.5" fill="currentColor"/><path class="lk" d="M26 34L50 46L70 28M50 46L62 62L82 52M50 46L34 70" stroke-width="2"/></svg></div>
+    <div id="tren"><span class="a">TREN<i id="trx"></i></span><span class="b" id="trb">INDUSTRI</span></div>
+    <div class="t gy" id="f1b" style="top:1350px;font-size:56px"><span class="ch" style="display:inline-block">D</span><span class="ch" style="display:inline-block">I</span><span class="ch" style="display:inline-block">P</span><span class="ch" style="display:inline-block">E</span><span class="ch" style="display:inline-block">R</span><span class="ch" style="display:inline-block">C</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">Y</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">P</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">S</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">R</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">G</span><span class="ch" style="display:inline-block">L</span><span class="ch" style="display:inline-block">O</span><span class="ch" style="display:inline-block">B</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">L</span></div>
+    <!-- F2 -->
+    <div class="num" id="f2n">02</div>
+    <div class="t " id="f2" style="top:480px;font-size:60px"><span class="ch" style="display:inline-block">P</span><span class="ch" style="display:inline-block">E</span><span class="ch" style="display:inline-block">R</span><span class="ch" style="display:inline-block">S</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">I</span><span class="ch" style="display:inline-block">N</span><span class="ch" style="display:inline-block">G</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">N</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">M</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">K</span><span class="ch" style="display:inline-block">I</span><span class="ch" style="display:inline-block">N</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">K</span><span class="ch" style="display:inline-block">E</span><span class="ch" style="display:inline-block">T</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">T</span></div>
+    <div class="lane" id="ln0" style="top:640px"><div class="tr"></div><div class="cr" id="lc0" style="background:var(--b)">AI A</div></div><div class="lane" id="ln1" style="top:800px"><div class="tr"></div><div class="cr" id="lc1" style="background:var(--g)">AI B</div></div><div class="lane" id="ln2" style="top:960px"><div class="tr"></div><div class="cr" id="lc2" style="background:var(--o)">AI C</div></div>
+    <div id="flag"></div>
+    <div class="t o" id="f2b" style="top:1200px;font-size:74px"><span class="ch" style="display:inline-block">F</span><span class="ch" style="display:inline-block">I</span><span class="ch" style="display:inline-block">T</span><span class="ch" style="display:inline-block">U</span><span class="ch" style="display:inline-block">R</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">I</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">M</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">K</span><span class="ch" style="display:inline-block">I</span><span class="ch" style="display:inline-block">N</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">C</span><span class="ch" style="display:inline-block">E</span><span class="ch" style="display:inline-block">P</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">T</span></div>
+    <div class="sub" id="f2c" style="top:1310px;font-size:22px">ILUSTRASI · BUKAN DATA</div>
+    <!-- F3 -->
+    <div class="num" id="f3n">03</div>
+    <div id="doc"><div class="dt">DOKUMEN IPO (S-1) · ANTHROPIC</div><div class="ln"></div><div class="ln" style="width:80%"></div>
+      <div class="q"><i id="qh"></i><span>“…batas pemakaian, rate limit, dan kemampuan model atau produk dapat berubah…”</span></div>
+      <div class="ln" style="width:90%"></div><div class="ln" style="width:60%"></div>
+      <div class="sub" style="position:static;opacity:1;text-align:left;font-size:18px;color:#777">PARAFRASE · SUMBER: S-1/A ANTHROPIC, SEC</div></div>
+    <div id="meter"><div id="mf"></div></div>
+    <div id="mlab"><span>LIMIT HARI INI</span><span>BISA BERUBAH</span></div>
+    <!-- G -->
+    <div class="t " id="g1" style="top:340px;font-size:72px"><span class="ch" style="display:inline-block">J</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">N</span><span class="ch" style="display:inline-block">G</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">N</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">B</span><span class="ch" style="display:inline-block">E</span><span class="ch" style="display:inline-block">R</span><span class="ch" style="display:inline-block">G</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">N</span><span class="ch" style="display:inline-block">T</span><span class="ch" style="display:inline-block">U</span><span class="ch" style="display:inline-block">N</span><span class="ch" style="display:inline-block">G</span></div>
+    <div class="t o" id="g2" style="top:460px;font-size:100px"><span class="ch" style="display:inline-block">K</span><span class="ch" style="display:inline-block">E</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">S</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">T</span><span class="ch" style="display:inline-block">U</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">T</span><span class="ch" style="display:inline-block">O</span><span class="ch" style="display:inline-block">O</span><span class="ch" style="display:inline-block">L</span></div>
+    <div id="eggs"><div class="tool" id="tl0" style="left:180px;background:#5B6CFF">Tool A</div><div class="tool" id="tl1" style="left:430px;background:#22C55E">Tool B</div><div class="tool" id="tl2" style="left:680px;background:#FF6A3D">Tool C</div></div>
+    <div class="t " id="g3" style="top:900px;font-size:60px"><span class="ch" style="display:inline-block">P</span><span class="ch" style="display:inline-block">E</span><span class="ch" style="display:inline-block">L</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">J</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">R</span><span class="ch" style="display:inline-block">I</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">C</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">R</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">K</span><span class="ch" style="display:inline-block">E</span><span class="ch" style="display:inline-block">R</span><span class="ch" style="display:inline-block">J</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">N</span><span class="ch" style="display:inline-block">Y</span><span class="ch" style="display:inline-block">A</span></div>
+    <div id="btn">Tombol</div><div id="vs">vs</div><div id="gear"><svg class="ico" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"><circle cx="50" cy="50" r="14"/><path d="M50 10v14M50 76v14M10 50h14M76 50h14M22 22l10 10M68 68l10 10M22 78l10-10M68 32l10-10"/><circle cx="50" cy="50" r="28"/></svg></div>
+    <!-- H/I -->
+    <div class="t " id="h1" style="top:330px;font-size:58px"><span class="ch" style="display:inline-block">Y</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">N</span><span class="ch" style="display:inline-block">G</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">P</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">H</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">M</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">I</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">S</span><span class="ch" style="display:inline-block">E</span><span class="ch" style="display:inline-block">K</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">R</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">N</span><span class="ch" style="display:inline-block">G</span></div>
+    <div class="t o" id="h2" style="top:430px;font-size:96px"><span class="ch" style="display:inline-block">P</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">L</span><span class="ch" style="display:inline-block">I</span><span class="ch" style="display:inline-block">N</span><span class="ch" style="display:inline-block">G</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">S</span><span class="ch" style="display:inline-block">I</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">P</span></div>
+    <div class="t o" id="i1" style="top:330px;font-size:60px"><span class="ch" style="display:inline-block">B</span><span class="ch" style="display:inline-block">I</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">R</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">N</span><span class="ch" style="display:inline-block">G</span><span class="ch" style="display:inline-block">G</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">K</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">K</span><span class="ch" style="display:inline-block">E</span><span class="ch" style="display:inline-block">T</span><span class="ch" style="display:inline-block">I</span><span class="ch" style="display:inline-block">N</span><span class="ch" style="display:inline-block">G</span><span class="ch" style="display:inline-block">G</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">L</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">N</span></div>
+    <div id="follow">+ Follow</div><div id="tapc"><svg class="ico" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><path d="M24 14l52 30-22 6 14 26-10 5-14-26-16 16z"/></svg></div>
+    <div id="chibiSh" style="left:380px;top:1334px;width:329px"></div><div id="chibi" style="left:305px;top:640px;width:470px;height:836px"><div id="chibiS"><img id="cp_netral" src="pose/pose_0_netral.png"><img id="cp_lambai" src="pose/pose_1_lambai.png"><img id="cp_tunjuk" src="pose/pose_2_tunjuk.png"><img id="cp_mikir" src="pose/pose_3_mikir.png"><img id="cp_kaget" src="pose/pose_4_kaget.png"><img id="cp_keren" src="pose/pose_5_keren.png"><img id="cp_bicara" src="pose/pose_6_bicara.png"><img id="cp_kedip" src="pose/pose_7_kedip.png"></div></div>
+  </div>
+  <div id="flash"></div>
+  <div id="brand">Endrich<b>Tech</b></div>
+
+  <script src="vendor/gsap.min.js"></script>
+  <script>
+  (function () {
+
+    var FPS = 30;
+    function q(t) { return Math.round(t * FPS) / FPS; }
+    var tl = gsap.timeline({ paused: true });
+    var NI = { immediateRender: false };
+    function cut(sel, t, v) { tl.set(sel, { opacity: v }, q(t)); }
+    function hide(sel, t, d) { tl.to(sel, { opacity: 0, duration: d || 0.15, ease: "power2.in" }, q(t)); }
+    function fade(sel, t, d, from) { tl.fromTo(sel, Object.assign({ opacity: 0, y: 30 }, from || {}), { opacity: 1, y: 0, x: 0, scale: 1, rotation: 0, duration: d || 0.35, ease: "power3.out" }, q(t)); }
+    function pop(sel, t, d) { tl.fromTo(sel, { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1, duration: d || 0.32, ease: "back.out(2.2)" }, q(t)); }
+    function sweep(sel, t, d) {
+      var chars = document.querySelectorAll(sel + " .ch");
+      tl.set(sel, { opacity: 1 }, q(t));
+      tl.fromTo(chars, { opacity: 0, x: -14 }, { opacity: 1, x: 0, duration: 0.24, ease: "power3.out", stagger: Math.min(0.035, (d || 0.45) / chars.length) }, q(t));
+    }
+    function count(sel, t, d, a, b, fmt) { var o = { v: a }, el = document.querySelector(sel); tl.to(o, { v: b, duration: d, ease: "power2.out", onUpdate: function () { el.textContent = fmt(o.v); } }, q(t)); }
+    function type(sel, t, d, msg) { var o = { n: 0 }, el = document.querySelector(sel); tl.to(o, { n: msg.length, duration: d, ease: "none", onUpdate: function () { el.textContent = msg.slice(0, Math.round(o.n)); } }, q(t)); }
+    function flash(t, sel, a) { tl.fromTo(sel || "#flash", { opacity: a || 0.3 }, Object.assign({ opacity: 0, duration: 0.25, ease: "power2.out" }, NI), q(t)); }
+    function kick(t, x) { tl.fromTo("#cam", { x: x || -10 }, Object.assign({ x: 0, duration: 0.3, ease: "elastic.out(1, .3)" }, NI), q(t)); }
+    function idn(v) { return Math.round(v).toString().replace(/\B(?=(\d{3})+(?!\d))/g, "."); }
+
+
+    var T = {}; T[0]=0.2; T[1]=0.527; T[2]=0.854; T[3]=1.181; T[4]=1.345; T[5]=2.12; T[6]=2.335; T[7]=2.874; T[8]=3.009; T[9]=3.278; T[10]=3.547; T[11]=3.951; T[12]=4.221; T[13]=4.59; T[14]=5.035; T[15]=5.331; T[16]=5.628; T[17]=5.925; T[18]=6.221; T[19]=6.518; T[20]=7.49; T[21]=8.149; T[22]=8.514; T[23]=9.23; T[24]=9.78; T[25]=9.964; T[26]=10.331; T[27]=10.698; T[28]=11.248; T[29]=11.799; T[30]=12.166; T[31]=12.533; T[32]=13.25; T[33]=13.401; T[34]=13.703; T[35]=14.005; T[36]=14.458; T[37]=15.1; T[38]=15.421; T[39]=15.901; T[40]=16.382; T[41]=16.863; T[42]=17.63; T[43]=18.017; T[44]=18.21; T[45]=18.597; T[46]=19.37; T[47]=19.757; T[48]=20.5; T[49]=21.143; T[50]=21.626; T[51]=22.43; T[52]=22.752; T[53]=23.42; T[54]=23.591; T[55]=23.933; T[56]=24.446; T[57]=24.959; T[58]=25.301; T[59]=25.643; T[60]=26.87; T[61]=27.215; T[62]=27.48; T[63]=27.877; T[64]=28.01; T[65]=28.275; T[66]=28.408; T[67]=28.673; T[68]=29.42; T[69]=29.641; T[70]=29.863; T[71]=30.31; T[72]=30.894; T[73]=31.219; T[74]=31.544; T[75]=31.868; T[76]=32.031; T[77]=32.453; T[78]=32.778; T[79]=33.265; T[80]=33.752; T[81]=33.914; T[82]=34.563; T[83]=34.888; T[84]=35.55; T[85]=35.951; T[86]=36.567; T[87]=36.875; T[88]=37.276; T[89]=37.584; T[90]=37.892; T[91]=38.201; T[92]=38.509; T[93]=38.971; T[94]=39.279; T[95]=39.97; T[96]=40.529; T[97]=40.685; T[98]=41.151; T[99]=41.617; T[100]=42.083; T[101]=42.549; T[102]=42.86; T[103]=43.171; T[104]=43.637; T[105]=43.792; T[106]=44.103; T[107]=44.414; T[108]=44.88; T[109]=45.95; T[110]=46.262; T[111]=46.574; T[112]=46.885; T[113]=47.353; T[114]=47.509; T[115]=47.821; T[116]=48.26; T[117]=48.841; T[118]=49.132; T[119]=49.655; T[120]=49.946; T[121]=50.237; T[122]=50.99; T[123]=51.145; T[124]=51.456; T[125]=51.767; T[126]=52.078; T[127]=52.544; T[128]=52.855; T[129]=53.166; T[130]=53.322; T[131]=53.632; T[132]=53.943; T[133]=54.254; T[134]=54.565; T[135]=54.876; T[136]=55.56; T[137]=55.867; T[138]=56.328; T[139]=56.482; T[140]=56.789; T[141]=56.943;
+    var W = {'B': 2.04, 'C': 7.41, 'D': 13.17, 'E': 26.79, 'F1': 30.23, 'F2': 35.47, 'F3': 39.89, 'G': 45.87, 'H': 50.91, 'I': 55.48};
+    function out(sel, t) { tl.to(sel, { opacity: 0, y: -40, duration: 0.2, ease: "power2.in" }, q(t - 0.2)); }
+    function money(sel, t, d, a, b, fmt) { count(sel, t, d, a, b, fmt); }
+    tl.set("#hud", { opacity: 1 }, 0);
+
+    // A · hook SIGNAL
+    tl.fromTo("#a1", { opacity: 1, scale: 1.4 }, { scale: 1, duration: 0.4, ease: "power4.out" }, 0); sweep("#a1", 0.0, 0.3);
+    sweep("#a2", T[3], 0.25); kick(T[3], -12);
+    fade("#chat", 0.2, 0.35, { y: 140 }); tl.set("#simA", { opacity: 1 }, 0.3);
+    pop("#bu", 0.45, 0.25); pop("#ba", T[3] + 0.1, 0.25);
+    out("#a1, #a2, #chat, #simA", W.B);
+
+    // B · TERMINAL bursa AS
+    sweep("#b1", W.B, 0.35);
+    tl.fromTo("#bldg", { opacity: 0, y: 80, scale: 0.8 }, { opacity: 1, y: 0, scale: 1, duration: 0.45, ease: "back.out(1.6)" }, q(T[13]));
+    tl.fromTo("#tape", { opacity: 0 }, { opacity: 1, duration: 0.2 }, q(T[15]));
+    tl.fromTo("#tapeI", { x: 0 }, { x: -1800, duration: W.C - T[15], ease: "none" }, q(T[15]));
+    sweep("#b2", T[15], 0.35); sweep("#b3", T[17], 0.3);
+    out("#b1, #bldg, #tape, #b2, #b3", W.C);
+
+    // C · PAPER profil + stempel
+    tl.fromTo("#card", { opacity: 0, y: 160, rotation: 3 }, { opacity: 1, y: 0, rotation: -1, duration: 0.45, ease: "power3.out" }, q(W.C));
+    [["#cr1", T[25]], ["#cr2", T[27]], ["#cr3", T[31] - 0.1]].forEach(function (e) {
+      tl.fromTo(e[0], { opacity: 0, scale: 1.6 }, { opacity: 1, scale: 1, duration: 0.2, ease: "power4.in" }, q(e[1])); });
+    kick(T[31], 10);
+    out("#card", W.D);
+
+    // D · PULSE angka rekor
+    sweep("#d1", W.D, 0.35);
+    out("#d1", T[37]);
+    sweep("#d2", T[37], 0.3); sweep("#d3", T[39], 0.35);
+    tl.fromTo("#trophy", { opacity: 0, scale: 0.4, rotation: -20 }, { opacity: 1, scale: 1, rotation: 0, duration: 0.4, ease: "back.out(2)" }, q(T[39]));
+    flash(T[39] + 0.1, "#flash", 0.25);
+    out("#trophy, #d3", T[42]);
+    fade("#s1", T[42], 0.3); money("#v1", T[45], 0.7, 0, 81, function (v) { return "$" + Math.round(v) + " M"; });
+    fade("#s2", T[48], 0.3); money("#v2", T[50], 0.7, 0, 1.5, function (v) { return "$" + v.toFixed(1).replace(".", ",") + " T"; });
+    tl.fromTo("#dil", { opacity: 0 }, { opacity: 1, duration: 0.3 }, q(T[51]));
+    fade("#s3", T[53], 0.3); money("#v3", T[58], 0.6, 0, 34, function (v) { return "+" + Math.round(v) + "%"; });
+    tl.fromTo("#arr", { opacity: 0, x: -60, y: 60 }, { opacity: 1, x: 0, y: 0, duration: 0.35, ease: "back.out(2)" }, q(T[58]));
+    kick(T[59], -12);
+    out("#d2, .stat, #dil, #arr", W.E);
+
+    // E · 3 hal
+    sweep("#e1", W.E, 0.35); sweep("#e2", T[65], 0.3);
+    [0, 1, 2].forEach(function (i) { tl.fromTo("#n" + i, { opacity: 0, y: 120, rotation: (i - 1) * 8 }, { opacity: 1, y: 0, rotation: (i - 1) * 4, duration: 0.35, ease: "back.out(1.8)" }, q(T[68] + i * 0.12)); });
+    sweep("#e3", T[69], 0.25); kick(T[69], 12);
+    out("#e1, #e2, .n3, #e3", W.F1);
+
+    // F1 · industri raksasa (SIGNAL jaringan)
+    tl.fromTo("#f1n", { opacity: 0, x: -60 }, { opacity: 1, x: 0, duration: 0.3 }, q(W.F1));
+    tl.fromTo("#globe", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.5, ease: "back.out(1.6)" }, q(W.F1 + 0.1));
+    tl.fromTo("#globe svg", { rotation: -10 }, { rotation: 10, duration: 4.5, ease: "none" }, q(W.F1));
+    tl.fromTo("#globe .lk", { strokeDasharray: 300, strokeDashoffset: 300 }, { strokeDashoffset: 0, duration: 1.5, ease: "power2.out" }, q(T[82]));
+    tl.fromTo("#globe .nd", { scale: 0, transformOrigin: "50% 50%" }, { scale: 1, duration: 0.25, stagger: 0.12, ease: "back.out(3)" }, q(T[81]));
+    tl.fromTo("#tren", { opacity: 0 }, { opacity: 1, duration: 0.2 }, q(T[75] - 0.1));
+    tl.fromTo("#trx", { scaleX: 0 }, { scaleX: 1, duration: 0.25, ease: "power3.out" }, q(T[76]));
+    pop("#trb", T[78], 0.3);
+    sweep("#f1", T[78], 0.3); sweep("#f1b", T[81], 0.35);
+    out("#f1n, #globe, #tren, #f1, #f1b", W.F2);
+
+    // F2 · balapan fitur (PULSE)
+    tl.fromTo("#f2n", { opacity: 0, x: -60 }, { opacity: 1, x: 0, duration: 0.3 }, q(W.F2));
+    sweep("#f2", T[85], 0.35);
+    tl.fromTo(".lane, #flag", { opacity: 0 }, { opacity: 1, duration: 0.25, stagger: 0.08 }, q(T[85]));
+    [[0, 560], [1, 610], [2, 590]].forEach(function (e) {
+      tl.fromTo("#lc" + e[0], { x: 0 }, { x: e[1] + 120, duration: 2.6 + e[0] * 0.2, ease: "power2.inOut" }, q(T[86])); });
+    sweep("#f2b", T[89], 0.35); tl.fromTo("#f2c", { opacity: 0 }, { opacity: 1, duration: 0.3 }, q(T[89]));
+    out("#f2n, #f2, .lane, #flag, #f2b, #f2c", W.F3);
+
+    // F3 · dokumen IPO + meter limit (PAPER/EMBER)
+    tl.fromTo("#f3n", { opacity: 0, x: -60 }, { opacity: 1, x: 0, duration: 0.3 }, q(W.F3));
+    tl.fromTo("#doc", { opacity: 0, y: 160, rotation: -3 }, { opacity: 1, y: 0, rotation: 1, duration: 0.45, ease: "power3.out" }, q(T[97]));
+    tl.to("#qh", { scaleX: 1, duration: 0.8, ease: "power2.inOut" }, q(T[102]));
+    tl.fromTo("#glow", { opacity: 0 }, { opacity: 0.8, duration: 0.5 }, q(T[106]));
+    fade("#meter", T[102], 0.3); tl.fromTo("#mlab", { opacity: 0 }, { opacity: 1, duration: 0.3 }, q(T[102]));
+    tl.fromTo("#mf", { scaleX: 1 }, { scaleX: 0.35, duration: 0.5, ease: "power2.inOut", yoyo: true, repeat: 3 }, q(T[107]));
+    out("#f3n, #doc, #meter, #mlab", W.G); tl.to("#glow", { opacity: 0, duration: 0.3 }, q(W.G));
+
+    // G · jangan bergantung ke satu tool (SIGNAL)
+    sweep("#g1", W.G, 0.35); sweep("#g2", T[113], 0.3);
+    tl.fromTo("#eggs", { opacity: 0 }, { opacity: 1, duration: 0.2 }, q(T[110]));
+    [0, 1, 2].forEach(function (i) { tl.fromTo("#tl" + i, { opacity: 0, y: 80 }, { opacity: 1, y: 0, duration: 0.3, ease: "back.out(2)" }, q(T[110] + i * 0.15)); });
+    tl.to("#tl0, #tl2", { opacity: 0.25, scale: 0.9, duration: 0.3 }, q(T[114]));
+    tl.to("#tl1", { scale: 1.15, duration: 0.3, ease: "back.out(2)" }, q(T[114]));
+    tl.to("#tl1", { rotation: 8, x: 20, duration: 0.08, yoyo: true, repeat: 5 }, q(T[115] + 0.1));
+    tl.to("#tl0, #tl2", { opacity: 1, scale: 1, duration: 0.3 }, q(T[116]));
+    tl.to("#tl1", { scale: 1, rotation: 0, x: 0, duration: 0.3 }, q(T[116]));
+    sweep("#g3", T[116], 0.35);
+    pop("#btn", T[119], 0.3); tl.fromTo("#vs", { opacity: 0 }, { opacity: 1, duration: 0.2 }, q(T[119] + 0.2));
+    pop("#gear", T[117], 0.3); tl.to("#gear svg", { rotation: 360, duration: 2.5, ease: "none" }, q(T[117]));
+    tl.to("#btn", { opacity: 0.3, scale: 0.9, duration: 0.3 }, q(T[121]));
+    out("#g1, #g2, #eggs, #g3, #btn, #vs, #gear", W.H);
+
+    // H/I · penutup + follow (chibi)
+    sweep("#h1", W.H, 0.35); sweep("#h2", T[128], 0.3);
+    out("#h1, #h2", W.I);
+    sweep("#i1", T[139], 0.35);
+    pop("#follow", W.I + 0.05, 0.3);
+    tl.fromTo("#tapc", { opacity: 0, x: 120, y: 120 }, { opacity: 1, x: 0, y: 0, duration: 0.35, ease: "power3.out" }, q(T[136] + 0.1));
+    tl.to("#follow", { backgroundColor: "#FF6A3D", color: "#0B0B0D", scale: 0.94, duration: 0.12 }, q(T[137]));
+    tl.to("#follow", { scale: 1, duration: 0.2, ease: "back.out(3)" }, q(T[137] + 0.12));
+    tl.set("#follow", { textContent: "Following ✓" }, q(T[137]));
+    tl.to("#tapc", { opacity: 0, duration: 0.2 }, q(T[138] + 0.4));
+
+    var CTRACK = [[50.867, "netral"], [51.0, "bicara"], [51.133, "netral"], [51.2, "bicara"], [51.267, "netral"], [51.333, "bicara"], [51.433, "netral"], [51.5, "bicara"], [51.6, "netral"], [51.667, "bicara"], [51.767, "netral"], [51.8, "kedip"], [51.9, "bicara"], [52.033, "netral"], [52.1, "bicara"], [52.2, "netral"], [52.267, "bicara"], [52.367, "netral"], [52.433, "bicara"], [52.5, "netral"], [52.567, "keren"], [53.633, "netral"], [53.7, "bicara"], [53.767, "netral"], [53.833, "bicara"], [53.967, "netral"], [54.067, "bicara"], [54.133, "netral"], [54.2, "bicara"], [54.3, "netral"], [54.4, "bicara"], [54.567, "kedip"], [54.7, "bicara"], [54.767, "netral"], [54.833, "bicara"], [54.9, "netral"], [54.967, "bicara"], [55.033, "netral"], [55.1, "bicara"], [55.233, "netral"], [55.467, "tunjuk"], [56.333, "lambai"], [56.967, "bicara"], [57.067, "netral"], [57.167, "bicara"], [57.633, "netral"]], CEMPH = [52.544, 55.46, 56.328];
+    CTRACK.forEach(function (e) { tl.set("#chibiS img:not(#cp_" + e[1] + ")", { opacity: 0 }, q(e[0])); tl.set("#cp_" + e[1], { opacity: 1 }, q(e[0])); });
+    tl.fromTo("#chibi", { y: 700, opacity: 1 }, { y: 0, opacity: 1, duration: 0.5, ease: "back.out(1.4)" }, q(50.89));
+    tl.fromTo("#chibiSh", { opacity: 0 }, { opacity: 1, duration: 0.4 }, q(50.89 + 0.2));
+    tl.fromTo("#chibiS", { y: 0 }, { y: -10, duration: 0.6, yoyo: true, repeat: 21, ease: "sine.inOut" }, q(50.89 + 0.5));
+    CEMPH.forEach(function (t) { tl.fromTo("#chibi", { scaleY: 0.94, scaleX: 1.04 }, Object.assign({ scaleY: 1, scaleX: 1, duration: 0.35, ease: "back.out(3)" }, NI), q(t)); });
+
+    window.__timelines = window.__timelines || {};
+    window.__timelines["anthropic-ipo-2"] = tl;
+  })();
+  </script>
+</div>
+</body>
+</html>

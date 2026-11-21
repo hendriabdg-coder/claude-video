@@ -1,0 +1,716 @@
+{
+ "duration": 57.626,
+ "source": "VO manual ElevenLabs dari Endrich; timing diperkirakan",
+ "words": [
+  {
+   "word": "Kamu",
+   "start": 0.0,
+   "end": 0.327
+  },
+  {
+   "word": "pakai",
+   "start": 0.327,
+   "end": 0.654
+  },
+  {
+   "word": "Claude",
+   "start": 0.654,
+   "end": 0.981
+  },
+  {
+   "word": "buat",
+   "start": 0.981,
+   "end": 1.145
+  },
+  {
+   "word": "kerja?",
+   "start": 1.145,
+   "end": 1.57
+  },
+  {
+   "word": "Nah,",
+   "start": 1.92,
+   "end": 2.135
+  },
+  {
+   "word": "perusahaan",
+   "start": 2.135,
+   "end": 2.674
+  },
+  {
+   "word": "di",
+   "start": 2.674,
+   "end": 2.809
+  },
+  {
+   "word": "balik",
+   "start": 2.809,
+   "end": 3.078
+  },
+  {
+   "word": "AI",
+   "start": 3.078,
+   "end": 3.347
+  },
+  {
+   "word": "andalan",
+   "start": 3.347,
+   "end": 3.751
+  },
+  {
+   "word": "kamu",
+   "start": 3.751,
+   "end": 4.021
+  },
+  {
+   "word": "itu",
+   "start": 4.021,
+   "end": 4.29
+  },
+  {
+   "word": "sekarang",
+   "start": 4.39,
+   "end": 4.835
+  },
+  {
+   "word": "udah",
+   "start": 4.835,
+   "end": 5.131
+  },
+  {
+   "word": "resmi",
+   "start": 5.131,
+   "end": 5.428
+  },
+  {
+   "word": "masuk",
+   "start": 5.428,
+   "end": 5.725
+  },
+  {
+   "word": "bursa",
+   "start": 5.725,
+   "end": 6.021
+  },
+  {
+   "word": "saham",
+   "start": 6.021,
+   "end": 6.318
+  },
+  {
+   "word": "Amerika.",
+   "start": 6.318,
+   "end": 7.0
+  },
+  {
+   "word": "Anthropic,",
+   "start": 7.29,
+   "end": 7.949
+  },
+  {
+   "word": "pembuat",
+   "start": 7.949,
+   "end": 8.314
+  },
+  {
+   "word": "Claude.",
+   "start": 8.314,
+   "end": 8.79
+  },
+  {
+   "word": "IPO",
+   "start": 9.03,
+   "end": 9.58
+  },
+  {
+   "word": "di",
+   "start": 9.58,
+   "end": 9.764
+  },
+  {
+   "word": "Nasdaq",
+   "start": 9.764,
+   "end": 10.131
+  },
+  {
+   "word": "tanggal",
+   "start": 10.131,
+   "end": 10.498
+  },
+  {
+   "word": "19",
+   "start": 10.498,
+   "end": 11.048
+  },
+  {
+   "word": "November",
+   "start": 11.048,
+   "end": 11.599
+  },
+  {
+   "word": "dengan",
+   "start": 11.599,
+   "end": 11.966
+  },
+  {
+   "word": "kode",
+   "start": 11.966,
+   "end": 12.333
+  },
+  {
+   "word": "ANT.",
+   "start": 12.333,
+   "end": 12.81
+  },
+  {
+   "word": "Dan",
+   "start": 13.05,
+   "end": 13.201
+  },
+  {
+   "word": "ini",
+   "start": 13.201,
+   "end": 13.503
+  },
+  {
+   "word": "bukan",
+   "start": 13.503,
+   "end": 13.805
+  },
+  {
+   "word": "IPO",
+   "start": 13.805,
+   "end": 14.258
+  },
+  {
+   "word": "biasa.",
+   "start": 14.258,
+   "end": 14.65
+  },
+  {
+   "word": "Ini",
+   "start": 14.9,
+   "end": 15.221
+  },
+  {
+   "word": "IPO",
+   "start": 15.221,
+   "end": 15.701
+  },
+  {
+   "word": "terbesar",
+   "start": 15.701,
+   "end": 16.182
+  },
+  {
+   "word": "sepanjang",
+   "start": 16.182,
+   "end": 16.663
+  },
+  {
+   "word": "sejarah.",
+   "start": 16.663,
+   "end": 17.24
+  },
+  {
+   "word": "Dana",
+   "start": 17.43,
+   "end": 17.817
+  },
+  {
+   "word": "yang",
+   "start": 17.817,
+   "end": 18.01
+  },
+  {
+   "word": "masuk",
+   "start": 18.01,
+   "end": 18.397
+  },
+  {
+   "word": "81",
+   "start": 18.397,
+   "end": 19.17
+  },
+  {
+   "word": "miliar",
+   "start": 19.17,
+   "end": 19.557
+  },
+  {
+   "word": "dolar.",
+   "start": 19.557,
+   "end": 20.06
+  },
+  {
+   "word": "Valuasinya",
+   "start": 20.3,
+   "end": 20.943
+  },
+  {
+   "word": "sekitar",
+   "start": 20.943,
+   "end": 21.426
+  },
+  {
+   "word": "1,5",
+   "start": 21.426,
+   "end": 22.23
+  },
+  {
+   "word": "triliun",
+   "start": 22.23,
+   "end": 22.552
+  },
+  {
+   "word": "dolar.",
+   "start": 22.552,
+   "end": 22.97
+  },
+  {
+   "word": "Di",
+   "start": 23.22,
+   "end": 23.391
+  },
+  {
+   "word": "hari",
+   "start": 23.391,
+   "end": 23.733
+  },
+  {
+   "word": "pertama",
+   "start": 23.733,
+   "end": 24.246
+  },
+  {
+   "word": "sahamnya",
+   "start": 24.246,
+   "end": 24.759
+  },
+  {
+   "word": "sempat",
+   "start": 24.759,
+   "end": 25.101
+  },
+  {
+   "word": "lompat",
+   "start": 25.101,
+   "end": 25.443
+  },
+  {
+   "word": "34%.",
+   "start": 25.443,
+   "end": 26.4
+  },
+  {
+   "word": "Terus,",
+   "start": 26.67,
+   "end": 27.015
+  },
+  {
+   "word": "apa",
+   "start": 27.015,
+   "end": 27.28
+  },
+  {
+   "word": "artinya",
+   "start": 27.28,
+   "end": 27.677
+  },
+  {
+   "word": "buat",
+   "start": 27.677,
+   "end": 27.81
+  },
+  {
+   "word": "kita",
+   "start": 27.81,
+   "end": 28.075
+  },
+  {
+   "word": "yang",
+   "start": 28.075,
+   "end": 28.208
+  },
+  {
+   "word": "bukan",
+   "start": 28.208,
+   "end": 28.473
+  },
+  {
+   "word": "investor?",
+   "start": 28.473,
+   "end": 28.95
+  },
+  {
+   "word": "Ada",
+   "start": 29.22,
+   "end": 29.441
+  },
+  {
+   "word": "3",
+   "start": 29.441,
+   "end": 29.663
+  },
+  {
+   "word": "hal.",
+   "start": 29.663,
+   "end": 29.84
+  },
+  {
+   "word": "Pertama,",
+   "start": 30.11,
+   "end": 30.694
+  },
+  {
+   "word": "AI",
+   "start": 30.694,
+   "end": 31.019
+  },
+  {
+   "word": "udah",
+   "start": 31.019,
+   "end": 31.344
+  },
+  {
+   "word": "bukan",
+   "start": 31.344,
+   "end": 31.668
+  },
+  {
+   "word": "tren",
+   "start": 31.668,
+   "end": 31.831
+  },
+  {
+   "word": "lagi,",
+   "start": 31.831,
+   "end": 32.253
+  },
+  {
+   "word": "tapi",
+   "start": 32.253,
+   "end": 32.578
+  },
+  {
+   "word": "industri",
+   "start": 32.578,
+   "end": 33.065
+  },
+  {
+   "word": "raksasa",
+   "start": 33.065,
+   "end": 33.552
+  },
+  {
+   "word": "yang",
+   "start": 33.552,
+   "end": 33.714
+  },
+  {
+   "word": "dipercaya",
+   "start": 33.714,
+   "end": 34.363
+  },
+  {
+   "word": "pasar",
+   "start": 34.363,
+   "end": 34.688
+  },
+  {
+   "word": "global.",
+   "start": 34.688,
+   "end": 35.11
+  },
+  {
+   "word": "Kedua,",
+   "start": 35.35,
+   "end": 35.751
+  },
+  {
+   "word": "persaingannya",
+   "start": 35.751,
+   "end": 36.367
+  },
+  {
+   "word": "makin",
+   "start": 36.367,
+   "end": 36.675
+  },
+  {
+   "word": "ketat,",
+   "start": 36.675,
+   "end": 37.076
+  },
+  {
+   "word": "jadi",
+   "start": 37.076,
+   "end": 37.384
+  },
+  {
+   "word": "fitur",
+   "start": 37.384,
+   "end": 37.692
+  },
+  {
+   "word": "AI",
+   "start": 37.692,
+   "end": 38.001
+  },
+  {
+   "word": "bakal",
+   "start": 38.001,
+   "end": 38.309
+  },
+  {
+   "word": "berkembang",
+   "start": 38.309,
+   "end": 38.771
+  },
+  {
+   "word": "makin",
+   "start": 38.771,
+   "end": 39.079
+  },
+  {
+   "word": "cepat.",
+   "start": 39.079,
+   "end": 39.48
+  },
+  {
+   "word": "Ketiga,",
+   "start": 39.77,
+   "end": 40.329
+  },
+  {
+   "word": "di",
+   "start": 40.329,
+   "end": 40.485
+  },
+  {
+   "word": "dokumen",
+   "start": 40.485,
+   "end": 40.951
+  },
+  {
+   "word": "IPO-nya",
+   "start": 40.951,
+   "end": 41.417
+  },
+  {
+   "word": "Anthropic",
+   "start": 41.417,
+   "end": 41.883
+  },
+  {
+   "word": "sendiri",
+   "start": 41.883,
+   "end": 42.349
+  },
+  {
+   "word": "bilang",
+   "start": 42.349,
+   "end": 42.66
+  },
+  {
+   "word": "batas",
+   "start": 42.66,
+   "end": 42.971
+  },
+  {
+   "word": "pemakaian",
+   "start": 42.971,
+   "end": 43.437
+  },
+  {
+   "word": "dan",
+   "start": 43.437,
+   "end": 43.592
+  },
+  {
+   "word": "fitur",
+   "start": 43.592,
+   "end": 43.903
+  },
+  {
+   "word": "bisa",
+   "start": 43.903,
+   "end": 44.214
+  },
+  {
+   "word": "berubah",
+   "start": 44.214,
+   "end": 44.68
+  },
+  {
+   "word": "sewaktu-waktu.",
+   "start": 44.68,
+   "end": 45.55
+  },
+  {
+   "word": "Jadi",
+   "start": 45.75,
+   "end": 46.062
+  },
+  {
+   "word": "jangan",
+   "start": 46.062,
+   "end": 46.374
+  },
+  {
+   "word": "cuma",
+   "start": 46.374,
+   "end": 46.685
+  },
+  {
+   "word": "bergantung",
+   "start": 46.685,
+   "end": 47.153
+  },
+  {
+   "word": "ke",
+   "start": 47.153,
+   "end": 47.309
+  },
+  {
+   "word": "satu",
+   "start": 47.309,
+   "end": 47.621
+  },
+  {
+   "word": "tools.",
+   "start": 47.621,
+   "end": 47.87
+  },
+  {
+   "word": "Pelajari",
+   "start": 48.06,
+   "end": 48.641
+  },
+  {
+   "word": "cara",
+   "start": 48.641,
+   "end": 48.932
+  },
+  {
+   "word": "kerjanya,",
+   "start": 48.932,
+   "end": 49.455
+  },
+  {
+   "word": "bukan",
+   "start": 49.455,
+   "end": 49.746
+  },
+  {
+   "word": "cuma",
+   "start": 49.746,
+   "end": 50.037
+  },
+  {
+   "word": "tombolnya.",
+   "start": 50.037,
+   "end": 50.56
+  },
+  {
+   "word": "Yang",
+   "start": 50.79,
+   "end": 50.945
+  },
+  {
+   "word": "paham",
+   "start": 50.945,
+   "end": 51.256
+  },
+  {
+   "word": "AI",
+   "start": 51.256,
+   "end": 51.567
+  },
+  {
+   "word": "dari",
+   "start": 51.567,
+   "end": 51.878
+  },
+  {
+   "word": "sekarang",
+   "start": 51.878,
+   "end": 52.344
+  },
+  {
+   "word": "bakal",
+   "start": 52.344,
+   "end": 52.655
+  },
+  {
+   "word": "paling",
+   "start": 52.655,
+   "end": 52.966
+  },
+  {
+   "word": "siap",
+   "start": 52.966,
+   "end": 53.122
+  },
+  {
+   "word": "waktu",
+   "start": 53.122,
+   "end": 53.432
+  },
+  {
+   "word": "semua",
+   "start": 53.432,
+   "end": 53.743
+  },
+  {
+   "word": "bisnis",
+   "start": 53.743,
+   "end": 54.054
+  },
+  {
+   "word": "mulai",
+   "start": 54.054,
+   "end": 54.365
+  },
+  {
+   "word": "pakai",
+   "start": 54.365,
+   "end": 54.676
+  },
+  {
+   "word": "AI.",
+   "start": 54.676,
+   "end": 55.08
+  },
+  {
+   "word": "Follow",
+   "start": 55.36,
+   "end": 55.667
+  },
+  {
+   "word": "EndrichTech",
+   "start": 55.667,
+   "end": 56.128
+  },
+  {
+   "word": "biar",
+   "start": 56.128,
+   "end": 56.282
+  },
+  {
+   "word": "kamu",
+   "start": 56.282,
+   "end": 56.589
+  },
+  {
+   "word": "nggak",
+   "start": 56.589,
+   "end": 56.743
+  },
+  {
+   "word": "ketinggalan.",
+   "start": 56.743,
+   "end": 57.45
+  }
+ ]
+}
