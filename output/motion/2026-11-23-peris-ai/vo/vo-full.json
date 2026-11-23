@@ -1,0 +1,671 @@
+{
+ "duration": 53.316,
+ "source": "VO manual ElevenLabs dari Endrich; timing diperkirakan",
+ "words": [
+  {
+   "word": "Kenapa",
+   "start": 0.0,
+   "end": 0.51
+  },
+  {
+   "word": "yang",
+   "start": 0.51,
+   "end": 0.68
+  },
+  {
+   "word": "juara",
+   "start": 0.68,
+   "end": 1.02
+  },
+  {
+   "word": "satu",
+   "start": 1.02,
+   "end": 1.359
+  },
+  {
+   "word": "kompetisi",
+   "start": 1.359,
+   "end": 2.039
+  },
+  {
+   "word": "AI",
+   "start": 2.039,
+   "end": 2.379
+  },
+  {
+   "word": "se-ASEAN",
+   "start": 2.379,
+   "end": 2.719
+  },
+  {
+   "word": "justru",
+   "start": 2.719,
+   "end": 3.059
+  },
+  {
+   "word": "startup",
+   "start": 3.059,
+   "end": 3.398
+  },
+  {
+   "word": "keamanan",
+   "start": 3.398,
+   "end": 3.908
+  },
+  {
+   "word": "siber?",
+   "start": 3.908,
+   "end": 4.35
+  },
+  {
+   "word": "Karena",
+   "start": 4.76,
+   "end": 5.227
+  },
+  {
+   "word": "ancaman",
+   "start": 5.227,
+   "end": 5.695
+  },
+  {
+   "word": "hacker",
+   "start": 5.695,
+   "end": 6.006
+  },
+  {
+   "word": "sekarang",
+   "start": 6.006,
+   "end": 6.473
+  },
+  {
+   "word": "makin",
+   "start": 6.473,
+   "end": 6.785
+  },
+  {
+   "word": "gila.",
+   "start": 6.785,
+   "end": 7.19
+  },
+  {
+   "word": "Minggu",
+   "start": 7.53,
+   "end": 7.984
+  },
+  {
+   "word": "ini,",
+   "start": 7.984,
+   "end": 8.575
+  },
+  {
+   "word": "Peris.ai",
+   "start": 8.575,
+   "end": 9.256
+  },
+  {
+   "word": "dari",
+   "start": 9.256,
+   "end": 9.71
+  },
+  {
+   "word": "Indonesia",
+   "start": 9.71,
+   "end": 10.619
+  },
+  {
+   "word": "menang",
+   "start": 10.619,
+   "end": 11.073
+  },
+  {
+   "word": "di",
+   "start": 11.073,
+   "end": 11.3
+  },
+  {
+   "word": "Korea-ASEAN",
+   "start": 11.36,
+   "end": 11.759
+  },
+  {
+   "word": "AI",
+   "start": 11.759,
+   "end": 12.024
+  },
+  {
+   "word": "Youth",
+   "start": 12.024,
+   "end": 12.157
+  },
+  {
+   "word": "Festa",
+   "start": 12.157,
+   "end": 12.423
+  },
+  {
+   "word": "2026,",
+   "start": 12.423,
+   "end": 13.3
+  },
+  {
+   "word": "ngalahin",
+   "start": 13.46,
+   "end": 13.946
+  },
+  {
+   "word": "23",
+   "start": 13.946,
+   "end": 14.594
+  },
+  {
+   "word": "startup",
+   "start": 14.594,
+   "end": 14.917
+  },
+  {
+   "word": "dari",
+   "start": 14.917,
+   "end": 15.241
+  },
+  {
+   "word": "12",
+   "start": 15.241,
+   "end": 15.727
+  },
+  {
+   "word": "negara.",
+   "start": 15.727,
+   "end": 16.31
+  },
+  {
+   "word": "Produk",
+   "start": 16.61,
+   "end": 16.908
+  },
+  {
+   "word": "mereka",
+   "start": 16.908,
+   "end": 17.356
+  },
+  {
+   "word": "pakai",
+   "start": 17.356,
+   "end": 17.654
+  },
+  {
+   "word": "agentic",
+   "start": 17.654,
+   "end": 18.102
+  },
+  {
+   "word": "AI,",
+   "start": 18.102,
+   "end": 18.49
+  },
+  {
+   "word": "yaitu",
+   "start": 18.69,
+   "end": 19.146
+  },
+  {
+   "word": "AI",
+   "start": 19.146,
+   "end": 19.601
+  },
+  {
+   "word": "yang",
+   "start": 19.601,
+   "end": 19.829
+  },
+  {
+   "word": "bisa",
+   "start": 19.829,
+   "end": 20.284
+  },
+  {
+   "word": "kerja",
+   "start": 20.284,
+   "end": 20.74
+  },
+  {
+   "word": "sendiri,",
+   "start": 20.74,
+   "end": 21.56
+  },
+  {
+   "word": "berjaga",
+   "start": 21.62,
+   "end": 21.988
+  },
+  {
+   "word": "24",
+   "start": 21.988,
+   "end": 22.478
+  },
+  {
+   "word": "jam",
+   "start": 22.478,
+   "end": 22.6
+  },
+  {
+   "word": "mendeteksi",
+   "start": 22.6,
+   "end": 23.09
+  },
+  {
+   "word": "serangan,",
+   "start": 23.09,
+   "end": 23.531
+  },
+  {
+   "word": "terus",
+   "start": 23.531,
+   "end": 23.776
+  },
+  {
+   "word": "langsung",
+   "start": 23.776,
+   "end": 24.021
+  },
+  {
+   "word": "bertindak",
+   "start": 24.021,
+   "end": 24.389
+  },
+  {
+   "word": "tanpa",
+   "start": 24.389,
+   "end": 24.634
+  },
+  {
+   "word": "nunggu",
+   "start": 24.634,
+   "end": 24.879
+  },
+  {
+   "word": "manusia.",
+   "start": 24.879,
+   "end": 25.32
+  },
+  {
+   "word": "Pelajarannya",
+   "start": 25.64,
+   "end": 26.201
+  },
+  {
+   "word": "buat",
+   "start": 26.201,
+   "end": 26.314
+  },
+  {
+   "word": "kita",
+   "start": 26.314,
+   "end": 26.538
+  },
+  {
+   "word": "gini.",
+   "start": 26.538,
+   "end": 26.83
+  },
+  {
+   "word": "Kalau",
+   "start": 27.16,
+   "end": 27.438
+  },
+  {
+   "word": "perusahaan",
+   "start": 27.438,
+   "end": 27.993
+  },
+  {
+   "word": "besar",
+   "start": 27.993,
+   "end": 28.271
+  },
+  {
+   "word": "aja",
+   "start": 28.271,
+   "end": 28.549
+  },
+  {
+   "word": "butuh",
+   "start": 28.549,
+   "end": 28.827
+  },
+  {
+   "word": "AI",
+   "start": 28.827,
+   "end": 29.104
+  },
+  {
+   "word": "buat",
+   "start": 29.104,
+   "end": 29.243
+  },
+  {
+   "word": "jaga",
+   "start": 29.243,
+   "end": 29.521
+  },
+  {
+   "word": "datanya,",
+   "start": 29.521,
+   "end": 30.021
+  },
+  {
+   "word": "gimana",
+   "start": 30.021,
+   "end": 30.438
+  },
+  {
+   "word": "dengan",
+   "start": 30.438,
+   "end": 30.716
+  },
+  {
+   "word": "bisnis",
+   "start": 30.716,
+   "end": 30.993
+  },
+  {
+   "word": "kecil",
+   "start": 30.993,
+   "end": 31.271
+  },
+  {
+   "word": "yang",
+   "start": 31.271,
+   "end": 31.41
+  },
+  {
+   "word": "sama",
+   "start": 31.41,
+   "end": 31.688
+  },
+  {
+   "word": "sekali",
+   "start": 31.688,
+   "end": 32.104
+  },
+  {
+   "word": "nggak",
+   "start": 32.104,
+   "end": 32.243
+  },
+  {
+   "word": "punya",
+   "start": 32.243,
+   "end": 32.521
+  },
+  {
+   "word": "pengamanan?",
+   "start": 32.521,
+   "end": 33.16
+  },
+  {
+   "word": "Akun",
+   "start": 33.45,
+   "end": 33.758
+  },
+  {
+   "word": "WhatsApp",
+   "start": 33.758,
+   "end": 34.067
+  },
+  {
+   "word": "bisnis",
+   "start": 34.067,
+   "end": 34.375
+  },
+  {
+   "word": "dibajak,",
+   "start": 34.375,
+   "end": 34.93
+  },
+  {
+   "word": "data",
+   "start": 35.06,
+   "end": 35.376
+  },
+  {
+   "word": "pelanggan",
+   "start": 35.376,
+   "end": 35.849
+  },
+  {
+   "word": "bocor,",
+   "start": 35.849,
+   "end": 36.26
+  },
+  {
+   "word": "website",
+   "start": 36.4,
+   "end": 37.017
+  },
+  {
+   "word": "disusupi",
+   "start": 37.017,
+   "end": 37.839
+  },
+  {
+   "word": "judi",
+   "start": 37.839,
+   "end": 38.25
+  },
+  {
+   "word": "online,",
+   "start": 38.25,
+   "end": 38.99
+  },
+  {
+   "word": "semua",
+   "start": 39.1,
+   "end": 39.336
+  },
+  {
+   "word": "itu",
+   "start": 39.336,
+   "end": 39.571
+  },
+  {
+   "word": "nyata",
+   "start": 39.571,
+   "end": 39.807
+  },
+  {
+   "word": "dan",
+   "start": 39.807,
+   "end": 39.925
+  },
+  {
+   "word": "sering",
+   "start": 39.925,
+   "end": 40.161
+  },
+  {
+   "word": "banget",
+   "start": 40.161,
+   "end": 40.396
+  },
+  {
+   "word": "kejadian",
+   "start": 40.396,
+   "end": 40.75
+  },
+  {
+   "word": "ke",
+   "start": 40.75,
+   "end": 40.868
+  },
+  {
+   "word": "UMKM.",
+   "start": 40.868,
+   "end": 41.41
+  },
+  {
+   "word": "Mulai",
+   "start": 41.67,
+   "end": 41.912
+  },
+  {
+   "word": "dari",
+   "start": 41.912,
+   "end": 42.153
+  },
+  {
+   "word": "yang",
+   "start": 42.153,
+   "end": 42.274
+  },
+  {
+   "word": "paling",
+   "start": 42.274,
+   "end": 42.516
+  },
+  {
+   "word": "dasar.",
+   "start": 42.516,
+   "end": 42.83
+  },
+  {
+   "word": "Aktifkan",
+   "start": 43.07,
+   "end": 43.52
+  },
+  {
+   "word": "verifikasi",
+   "start": 43.52,
+   "end": 44.27
+  },
+  {
+   "word": "dua",
+   "start": 44.27,
+   "end": 44.42
+  },
+  {
+   "word": "langkah,",
+   "start": 44.42,
+   "end": 44.81
+  },
+  {
+   "word": "jangan",
+   "start": 45.0,
+   "end": 45.325
+  },
+  {
+   "word": "pakai",
+   "start": 45.325,
+   "end": 45.65
+  },
+  {
+   "word": "password",
+   "start": 45.65,
+   "end": 45.975
+  },
+  {
+   "word": "yang",
+   "start": 45.975,
+   "end": 46.138
+  },
+  {
+   "word": "sama,",
+   "start": 46.138,
+   "end": 46.56
+  },
+  {
+   "word": "dan",
+   "start": 46.63,
+   "end": 46.827
+  },
+  {
+   "word": "jangan",
+   "start": 46.827,
+   "end": 47.222
+  },
+  {
+   "word": "asal",
+   "start": 47.222,
+   "end": 47.617
+  },
+  {
+   "word": "klik",
+   "start": 47.617,
+   "end": 47.814
+  },
+  {
+   "word": "link.",
+   "start": 47.814,
+   "end": 48.13
+  },
+  {
+   "word": "Menurut",
+   "start": 48.43,
+   "end": 48.806
+  },
+  {
+   "word": "kamu,",
+   "start": 48.806,
+   "end": 49.132
+  },
+  {
+   "word": "bisnis",
+   "start": 49.132,
+   "end": 49.382
+  },
+  {
+   "word": "kamu",
+   "start": 49.382,
+   "end": 49.633
+  },
+  {
+   "word": "udah",
+   "start": 49.633,
+   "end": 49.884
+  },
+  {
+   "word": "aman",
+   "start": 49.884,
+   "end": 50.134
+  },
+  {
+   "word": "belum?",
+   "start": 50.134,
+   "end": 50.46
+  },
+  {
+   "word": "Dan",
+   "start": 50.72,
+   "end": 50.874
+  },
+  {
+   "word": "follow",
+   "start": 50.874,
+   "end": 51.183
+  },
+  {
+   "word": "buat",
+   "start": 51.183,
+   "end": 51.338
+  },
+  {
+   "word": "tips",
+   "start": 51.338,
+   "end": 51.492
+  },
+  {
+   "word": "keamanan",
+   "start": 51.492,
+   "end": 51.956
+  },
+  {
+   "word": "digital",
+   "start": 51.956,
+   "end": 52.419
+  },
+  {
+   "word": "berikutnya.",
+   "start": 52.419,
+   "end": 53.13
+  }
+ ]
+}
