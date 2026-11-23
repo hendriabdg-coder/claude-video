@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8" />
+<style>
+@font-face { font-family: "IDBlack"; src: url("fonts/InterDisplay-Black.ttf") format("truetype"); font-display: block; }
+@font-face { font-family: "IDBold"; src: url("fonts/InterDisplay-Bold.ttf") format("truetype"); font-display: block; }
+@font-face { font-family: "IDSemi"; src: url("fonts/InterDisplay-SemiBold.ttf") format("truetype"); font-display: block; }
+@font-face { font-family: "IDItal"; src: url("fonts/InterDisplay-SemiBoldItalic.ttf") format("truetype"); font-display: block; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 100%; height: 100%; overflow: hidden; }
+#root { position: relative; width: 1080px; height: 1920px; overflow: hidden; }
+.ico { width: 100%; height: 100%; display: block; }
+
+#chibi { position: absolute; width: 520px; height: 925px; opacity: 0; transform-origin: 50% 100%; }
+#chibiS { position: absolute; inset: 0; }
+#chibiS img { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; }
+#chibiSh { position: absolute; width: 360px; height: 46px; border-radius: 50%; background: rgba(0,0,0,.45); filter: blur(14px); opacity: 0; }
+
+
+:root { --k:#0C0C0E; --cr:#F4F1EA; --y:#F5B301; --r:#FF4F3A; --g:#22C55E; --c:#38BDF8; --gy:#8A8F9C; --id:#E5252A; }
+html, body, #root { background: var(--k); color: var(--cr); font-family: "IDBlack"; }
+#bg { position: absolute; inset: 0; background: radial-gradient(120% 70% at 50% 40%, #19181C 0%, var(--k) 70%); }
+#glow { position: absolute; inset: 0; background: radial-gradient(70% 45% at 50% 55%, rgba(255,79,58,.32), rgba(255,79,58,0) 70%); opacity: 0; }
+#grid { position: absolute; inset: 0; opacity: .06; background-image: linear-gradient(var(--cr) 1px, transparent 1px), linear-gradient(90deg, var(--cr) 1px, transparent 1px); background-size: 90px 90px; }
+#cam { position: absolute; inset: 0; }
+#hud { position: absolute; left: 60px; top: 262px; display: flex; align-items: center; gap: 12px; font-family: "IDBold"; font-size: 24px; letter-spacing: .18em; opacity: 0; z-index: 5; }
+#hud i { width: 12px; height: 12px; border-radius: 2px; background: var(--y); display: inline-block; }
+.t { position: absolute; left: 0; width: 1080px; text-align: center; white-space: nowrap; opacity: 0; line-height: 1; letter-spacing: -.02em; }
+.t .ch { opacity: 0; }
+.sub { position: absolute; left: 0; width: 1080px; text-align: center; font-family: "IDBold"; font-size: 28px; letter-spacing: .16em; opacity: 0; color: var(--gy); }
+.y { color: var(--y); } .r { color: var(--r); } .g { color: var(--g); } .gy { color: var(--gy); } .id { color: var(--id); }
+.chip { position: absolute; font-family: "IDBold"; font-size: 32px; letter-spacing: .06em; padding: 12px 26px; border-radius: 40px; opacity: 0; white-space: nowrap; }
+.ico2 { position: absolute; opacity: 0; }
+/* A */
+#ban { left: 340px; top: 700px; width: 400px; height: 400px; }
+#ban .chipi { position: absolute; inset: 70px; color: var(--cr); }
+#ban .no { position: absolute; inset: 0; color: var(--r); }
+/* B model cards */
+.mc { position: absolute; top: 640px; width: 430px; height: 520px; border-radius: 30px; background: #F2EDE2; color: #141414; padding: 36px; opacity: 0; box-shadow: 0 40px 80px rgba(0,0,0,.5); }
+.mc s { display: block; text-decoration: none; font-family: "IDBold"; font-size: 24px; letter-spacing: .16em; color: #8a5a00; }
+.mc h3 { font-size: 76px; white-space: nowrap; line-height: .95; margin-top: 20px; letter-spacing: -.03em; }
+.mc p { font-family: "IDSemi"; font-size: 30px; color: #555; margin-top: 22px; line-height: 1.25; }
+#mcF { left: 90px; } #mcM { left: 560px; }
+/* C timeline + direktif */
+#tline { position: absolute; left: 120px; top: 500px; width: 840px; height: 120px; opacity: 0; }
+#tline .ln { position: absolute; left: 0; top: 30px; width: 840px; height: 8px; border-radius: 4px; background: rgba(244,241,234,.18); }
+#tline .fl { position: absolute; left: 0; top: 30px; width: 840px; height: 8px; border-radius: 4px; background: var(--y); transform-origin: 0 50%; transform: scaleX(0); }
+.td { position: absolute; top: 14px; width: 40px; height: 40px; margin-left: -20px; border-radius: 50%; background: var(--k); border: 8px solid var(--y); opacity: 0; }
+.tt { position: absolute; top: 70px; width: 240px; margin-left: -120px; font-family: "IDBold"; font-size: 26px; line-height: 1.2; opacity: 0; }
+.tt b { display: block; font-family: "IDBlack"; font-size: 34px; font-weight: normal; color: var(--y); }
+#doc { position: absolute; left: 110px; top: 680px; width: 860px; height: 560px; background: #F2EDE2; color: #141414; border-radius: 10px; padding: 40px 46px; opacity: 0; box-shadow: 0 40px 90px rgba(0,0,0,.55); }
+#doc .dh { font-family: "IDBold"; font-size: 24px; letter-spacing: .16em; color: #666; border-bottom: 4px solid #141414; padding-bottom: 14px; }
+#doc h3 { font-size: 66px; margin-top: 22px; letter-spacing: -.02em; }
+#doc .ln2 { height: 16px; background: #d6cfbf; border-radius: 8px; margin: 18px 0; }
+#doc .rw { font-family: "IDSemi"; font-size: 32px; margin-top: 16px; display: flex; gap: 16px; align-items: center; opacity: 0; }
+#doc .rw i { font-style: normal; width: 46px; height: 46px; border-radius: 10px; background: var(--r); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 30px; }
+#stp { position: absolute; left: 560px; top: 1080px; opacity: 0; }
+#stp span { display: inline-block; font-size: 46px; color: var(--r); border: 7px solid var(--r); padding: 6px 22px; border-radius: 12px; transform: rotate(-10deg); background: rgba(242,237,226,.9); }
+/* D status + peta */
+#stat { position: absolute; left: 90px; top: 520px; width: 900px; height: 330px; border-radius: 22px; background: #101114; border: 2px solid rgba(244,241,234,.14); padding: 26px 32px; opacity: 0;
+  font-family: Consolas, "Courier New", monospace; font-size: 38px; }
+#stat .tb { font-family: "IDBold"; font-size: 22px; letter-spacing: .16em; color: var(--gy); margin-bottom: 18px; }
+#stat .sr { display: flex; justify-content: space-between; margin: 22px 0; white-space: nowrap; }
+#stat .sr b { font-weight: normal; }
+#map { position: absolute; left: 90px; top: 900px; width: 900px; height: 420px; opacity: 0; }
+.md { position: absolute; width: 14px; height: 14px; border-radius: 50%; background: var(--c); }
+/* E kode */
+#code { position: absolute; left: 90px; top: 520px; width: 900px; height: 640px; border-radius: 22px; background: #0F1114; border: 2px solid rgba(244,241,234,.14); padding: 28px 32px; opacity: 0;
+  font-family: Consolas, "Courier New", monospace; font-size: 32px; line-height: 1.6; color: #C9D1D9; white-space: pre; overflow: hidden; }
+#code .k { color: var(--c); } #code .s { color: #A5D6A7; }
+#bugl { position: absolute; left: 100px; top: 0; width: 880px; height: 56px; border-radius: 10px; background: rgba(255,79,58,.22); border: 4px solid var(--r); opacity: 0; }
+#lens { position: absolute; left: 160px; top: 640px; width: 200px; height: 200px; color: var(--y); opacity: 0; }
+/* F chip = AI */
+#eqA { left: 120px; top: 640px; width: 340px; height: 340px; color: var(--y); }
+#eqB { left: 620px; top: 640px; width: 340px; height: 340px; color: var(--c); }
+#eq { position: absolute; left: 0; width: 1080px; top: 740px; text-align: center; font-size: 140px; color: var(--cr); opacity: 0; }
+.eql { position: absolute; top: 1000px; width: 340px; text-align: center; font-family: "IDBold"; font-size: 34px; letter-spacing: .1em; opacity: 0; }
+/* G dicabut */
+#stp2 { position: absolute; left: 0; width: 1080px; top: 760px; text-align: center; opacity: 0; }
+#stp2 span { display: inline-block; font-size: 120px; color: var(--g); border: 10px solid var(--g); padding: 6px 40px 14px; border-radius: 20px; transform: rotate(-6deg); }
+#shd { left: 410px; top: 1000px; width: 260px; height: 260px; color: var(--g); }
+/* H */
+#idbar { position: absolute; left: 0; top: 1040px; width: 1080px; height: 180px; opacity: 0; }
+#idbar i { display: block; height: 90px; } #idbar i:first-child { background: var(--id); } #idbar i:last-child { background: #F4F1EA; }
+#cart { left: 420px; top: 700px; width: 240px; height: 240px; color: var(--cr); }
+#cartx { position: absolute; left: 400px; top: 810px; width: 280px; height: 14px; border-radius: 7px; background: var(--r); transform: rotate(-30deg) scaleX(0); opacity: 0; }
+/* I */
+.pp { position: absolute; top: 600px; width: 280px; height: 380px; border-radius: 30px; background: #16161A; border: 3px solid rgba(244,241,234,.16); text-align: center; padding-top: 40px; opacity: 0; }
+.pp .pi { width: 150px; height: 150px; margin: 0 auto; color: var(--y); }
+.pp h4 { font-size: 38px; margin-top: 30px; line-height: 1.05; }
+#melek { position: absolute; left: 0; width: 1080px; top: 1060px; text-align: center; opacity: 0; }
+#melek span { display: inline-block; font-size: 110px; color: var(--k); background: var(--y); padding: 6px 40px 14px; border-radius: 26px; }
+#trend { position: absolute; left: 0; width: 1080px; top: 640px; text-align: center; opacity: 0; }
+#trend span { position: relative; display: inline-block; font-size: 90px; color: var(--gy); }
+#trend i { position: absolute; left: -4%; top: 46%; width: 108%; height: 14px; border-radius: 7px; background: var(--r); transform-origin: 0 50%; transform: scaleX(0); }
+.spd { position: absolute; height: 6px; border-radius: 3px; background: linear-gradient(90deg, transparent, rgba(245,179,1,.8)); opacity: 0; }
+/* J */
+.opt { position: absolute; top: 470px; width: 420px; height: 130px; border-radius: 24px; display: flex; align-items: center; gap: 16px; padding: 0 24px; font-size: 36px; line-height: 1.05; opacity: 0; }
+.opt .ol { width: 64px; height: 64px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 38px; flex: none; }
+#oA { left: 100px; background: var(--g); color: var(--k); } #oA .ol { background: var(--k); color: var(--g); }
+#oB { left: 560px; background: var(--y); color: var(--k); } #oB .ol { background: var(--k); color: var(--y); }
+#brand { position: absolute; left: 0; top: 1525px; width: 1080px; text-align: center; font-size: 36px; color: var(--cr); z-index: 6; }
+#brand b { color: var(--y); font-weight: normal; }
+#flash { position: absolute; inset: 0; background: #fff; opacity: 0; pointer-events: none; }
+
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="ai-dilarang-negara" data-start="0" data-duration="60.11" data-fps="30" data-width="1080" data-height="1920">
+  <audio id="vo" src="vo.mp3" data-start="0" data-duration="60.11" data-track-index="0"></audio>
+
+  <div id="bg"></div><div id="glow"></div><div id="grid"></div>
+  <div id="cam">
+    <div id="hud"><i></i>KEBIJAKAN AI &middot; AS</div>
+    <!-- A hook -->
+    <div class="t " id="a1" style="top:360px;font-size:80px"><span class="ch" style="display:inline-block">N</span><span class="ch" style="display:inline-block">E</span><span class="ch" style="display:inline-block">G</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">R</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">M</span><span class="ch" style="display:inline-block">E</span><span class="ch" style="display:inline-block">L</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">R</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">N</span><span class="ch" style="display:inline-block">G</span></div>
+    <div class="t y" id="a2" style="top:490px;font-size:68px"><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">I</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">B</span><span class="ch" style="display:inline-block">U</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">T</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">N</span><span class="ch" style="display:inline-block">N</span><span class="ch" style="display:inline-block">Y</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">S</span><span class="ch" style="display:inline-block">E</span><span class="ch" style="display:inline-block">N</span><span class="ch" style="display:inline-block">D</span><span class="ch" style="display:inline-block">I</span><span class="ch" style="display:inline-block">R</span><span class="ch" style="display:inline-block">I</span><span class="ch" style="display:inline-block">?</span></div>
+    <div class="ico2" id="ban"><div class="chipi"><svg class="ico" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><rect x="22" y="22" width="56" height="56" rx="8"/><rect x="36" y="36" width="28" height="28" rx="4"/><path d="M34 10v12M50 10v12M66 10v12M34 78v12M50 78v12M66 78v12M10 34h12M10 50h12M10 66h12M78 34h12M78 50h12M78 66h12"/></svg></div><div class="no"><svg class="ico" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"><circle cx="50" cy="50" r="42"/><path d="M20 20l60 60"/></svg></div></div>
+    <!-- B dua model -->
+    <div class="t gy" id="b1" style="top:400px;font-size:70px"><span class="ch" style="display:inline-block">I</span><span class="ch" style="display:inline-block">N</span><span class="ch" style="display:inline-block">I</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">Y</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">N</span><span class="ch" style="display:inline-block">G</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">T</span><span class="ch" style="display:inline-block">E</span><span class="ch" style="display:inline-block">R</span><span class="ch" style="display:inline-block">J</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">D</span><span class="ch" style="display:inline-block">I</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">P</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">D</span><span class="ch" style="display:inline-block">A</span></div>
+    <div class="mc" id="mcF"><s>CLAUDE</s><h3>Fable 5</h3><p>model publik<br>paling canggih</p></div>
+    <div class="mc" id="mcM"><s>CLAUDE</s><h3>Mythos 5</h3><p>versi terbatas<br>untuk mitra</p></div>
+    <!-- C timeline + direktif -->
+    <div class="t y" id="c1" style="top:330px;font-size:120px"><span class="ch" style="display:inline-block">J</span><span class="ch" style="display:inline-block">U</span><span class="ch" style="display:inline-block">N</span><span class="ch" style="display:inline-block">I</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">2</span><span class="ch" style="display:inline-block">0</span><span class="ch" style="display:inline-block">2</span><span class="ch" style="display:inline-block">6</span></div>
+    <div id="tline"><div class="ln"></div><div class="fl" id="tfl"></div>
+      <div class="td" id="td0" style="left:232px"></div><div class="tt" id="tt0" style="left:122px;text-align:right"><b>9 JUN</b>Fable 5 rilis</div><div class="td" id="td1" style="left:319px"></div><div class="tt" id="tt1" style="left:429px;text-align:left"><b>12 JUN</b>kontrol ekspor</div><div class="td" id="td2" style="left:840px"></div><div class="tt" id="tt2" style="left:840px;text-align:center"><b>30 JUN</b>dicabut</div></div>
+    <div id="doc"><div class="dh">DEPARTEMEN PERDAGANGAN AS · DIREKTIF</div><h3>Kontrol Ekspor</h3><div class="ln2"></div><div class="ln2" style="width:70%"></div>
+      <div class="rw" id="rw1"><i>✕</i>Warga asing dilarang mengakses</div>
+      <div class="rw" id="rw2"><i>✕</i>Berlaku di dalam &amp; luar AS</div></div>
+    <div id="stp"><span>BERLAKU</span></div>
+    <!-- D offline -->
+    <div class="t r" id="d1" style="top:330px;font-size:130px"><span class="ch" style="display:inline-block">M</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">T</span><span class="ch" style="display:inline-block">I</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">T</span><span class="ch" style="display:inline-block">O</span><span class="ch" style="display:inline-block">T</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">L</span></div>
+    <div id="stat"><div class="tb">STATUS MODEL · ILUSTRASI</div>
+      <div class="sr">claude-fable-5 <b id="s1" class="g">● ONLINE</b></div>
+      <div class="sr">claude-mythos-5 <b id="s2" class="g">● ONLINE</b></div></div>
+    <div id="map"><div class="md" style="left:331px;top:77px"></div><div class="md" style="left:404px;top:333px"></div><div class="md" style="left:49px;top:37px"></div><div class="md" style="left:840px;top:274px"></div><div class="md" style="left:96px;top:187px"></div><div class="md" style="left:596px;top:29px"></div><div class="md" style="left:519px;top:109px"></div><div class="md" style="left:38px;top:44px"></div><div class="md" style="left:444px;top:214px"></div><div class="md" style="left:71px;top:123px"></div><div class="md" style="left:92px;top:282px"></div><div class="md" style="left:434px;top:30px"></div><div class="md" style="left:846px;top:289px"></div><div class="md" style="left:126px;top:114px"></div><div class="md" style="left:645px;top:321px"></div><div class="md" style="left:596px;top:31px"></div><div class="md" style="left:590px;top:299px"></div><div class="md" style="left:406px;top:25px"></div><div class="md" style="left:226px;top:23px"></div><div class="md" style="left:570px;top:68px"></div><div class="md" style="left:296px;top:214px"></div><div class="md" style="left:147px;top:276px"></div><div class="md" style="left:120px;top:292px"></div><div class="md" style="left:315px;top:286px"></div><div class="md" style="left:835px;top:349px"></div><div class="md" style="left:185px;top:52px"></div><div class="md" style="left:595px;top:292px"></div><div class="md" style="left:654px;top:96px"></div><div class="md" style="left:381px;top:49px"></div><div class="md" style="left:560px;top:364px"></div><div class="md" style="left:64px;top:288px"></div><div class="md" style="left:61px;top:316px"></div><div class="md" style="left:210px;top:254px"></div><div class="md" style="left:696px;top:272px"></div><div class="md" style="left:437px;top:397px"></div><div class="md" style="left:321px;top:238px"></div><div class="md" style="left:599px;top:232px"></div><div class="md" style="left:370px;top:153px"></div><div class="md" style="left:254px;top:92px"></div><div class="md" style="left:715px;top:399px"></div><div class="md" style="left:249px;top:41px"></div><div class="md" style="left:588px;top:153px"></div><div class="md" style="left:537px;top:253px"></div><div class="md" style="left:351px;top:373px"></div><div class="md" style="left:459px;top:147px"></div><div class="md" style="left:623px;top:37px"></div><div class="md" style="left:120px;top:262px"></div><div class="md" style="left:428px;top:84px"></div><div class="md" style="left:775px;top:175px"></div><div class="md" style="left:155px;top:250px"></div><div class="md" style="left:431px;top:20px"></div><div class="md" style="left:684px;top:39px"></div><div class="md" style="left:782px;top:285px"></div><div class="md" style="left:586px;top:160px"></div><div class="md" style="left:348px;top:355px"></div><div class="md" style="left:358px;top:304px"></div><div class="md" style="left:508px;top:296px"></div><div class="md" style="left:816px;top:233px"></div><div class="md" style="left:70px;top:47px"></div><div class="md" style="left:276px;top:242px"></div><div class="md" style="left:713px;top:340px"></div><div class="md" style="left:66px;top:31px"></div><div class="md" style="left:748px;top:359px"></div><div class="md" style="left:317px;top:331px"></div><div class="md" style="left:591px;top:348px"></div><div class="md" style="left:841px;top:228px"></div><div class="md" style="left:291px;top:366px"></div><div class="md" style="left:395px;top:342px"></div><div class="md" style="left:355px;top:11px"></div><div class="md" style="left:472px;top:181px"></div><div class="md" style="left:172px;top:312px"></div><div class="md" style="left:119px;top:252px"></div><div class="md" style="left:60px;top:111px"></div><div class="md" style="left:786px;top:147px"></div><div class="md" style="left:132px;top:378px"></div><div class="md" style="left:253px;top:203px"></div><div class="md" style="left:400px;top:254px"></div><div class="md" style="left:82px;top:85px"></div><div class="md" style="left:459px;top:205px"></div><div class="md" style="left:562px;top:142px"></div><div class="md" style="left:140px;top:220px"></div><div class="md" style="left:563px;top:142px"></div><div class="md" style="left:723px;top:212px"></div><div class="md" style="left:367px;top:349px"></div><div class="md" style="left:389px;top:118px"></div><div class="md" style="left:154px;top:42px"></div><div class="md" style="left:180px;top:77px"></div><div class="md" style="left:237px;top:337px"></div><div class="md" style="left:238px;top:6px"></div><div class="md" style="left:496px;top:301px"></div><div class="md" style="left:186px;top:134px"></div><div class="md" style="left:288px;top:2px"></div><div class="md" style="left:149px;top:214px"></div><div class="md" style="left:547px;top:189px"></div><div class="md" style="left:624px;top:289px"></div><div class="md" style="left:326px;top:64px"></div><div class="md" style="left:707px;top:263px"></div><div class="md" style="left:632px;top:335px"></div><div class="md" style="left:692px;top:378px"></div><div class="md" style="left:55px;top:233px"></div><div class="md" style="left:798px;top:348px"></div><div class="md" style="left:817px;top:286px"></div><div class="md" style="left:401px;top:203px"></div><div class="md" style="left:408px;top:201px"></div><div class="md" style="left:106px;top:246px"></div><div class="md" style="left:649px;top:205px"></div><div class="md" style="left:63px;top:97px"></div><div class="md" style="left:68px;top:106px"></div><div class="md" style="left:451px;top:83px"></div><div class="md" style="left:112px;top:174px"></div><div class="md" style="left:615px;top:26px"></div><div class="md" style="left:104px;top:0px"></div><div class="md" style="left:580px;top:77px"></div><div class="md" style="left:549px;top:51px"></div><div class="md" style="left:372px;top:314px"></div><div class="md" style="left:26px;top:36px"></div><div class="md" style="left:212px;top:314px"></div><div class="md" style="left:385px;top:76px"></div><div class="md" style="left:649px;top:129px"></div><div class="md" style="left:355px;top:308px"></div></div>
+    <div class="t " id="d2" style="top:1360px;font-size:58px"><span class="ch" style="display:inline-block">S</span><span class="ch" style="display:inline-block">E</span><span class="ch" style="display:inline-block">M</span><span class="ch" style="display:inline-block">U</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">P</span><span class="ch" style="display:inline-block">E</span><span class="ch" style="display:inline-block">N</span><span class="ch" style="display:inline-block">G</span><span class="ch" style="display:inline-block">G</span><span class="ch" style="display:inline-block">U</span><span class="ch" style="display:inline-block">N</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">D</span><span class="ch" style="display:inline-block">I</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">D</span><span class="ch" style="display:inline-block">U</span><span class="ch" style="display:inline-block">N</span><span class="ch" style="display:inline-block">I</span><span class="ch" style="display:inline-block">A</span></div>
+    <!-- E ketakutan -->
+    <div class="t y" id="e1" style="top:330px;font-size:96px"><span class="ch" style="display:inline-block">K</span><span class="ch" style="display:inline-block">E</span><span class="ch" style="display:inline-block">T</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">K</span><span class="ch" style="display:inline-block">U</span><span class="ch" style="display:inline-block">T</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">N</span><span class="ch" style="display:inline-block">N</span><span class="ch" style="display:inline-block">Y</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">:</span></div>
+    <div id="code"><span class="k">def</span> handle(req):
+    buf = alloc(<span class="s">256</span>)
+    copy(buf, req.body)   <span class="s"># ?</span>
+    <span class="k">if</span> auth(req.user):
+        <span class="k">return</span> render(buf)
+    log(req.headers)
+    <span class="k">return</span> deny()
+<div id="bugl" style="top:130px"></div></div>
+    <div class="ico2" id="lens"><svg class="ico" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"><circle cx="42" cy="42" r="26"/><path d="M62 62l24 24"/></svg></div>
+    <div class="t r" id="e2" style="top:1220px;font-size:68px"><span class="ch" style="display:inline-block">C</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">R</span><span class="ch" style="display:inline-block">I</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">C</span><span class="ch" style="display:inline-block">E</span><span class="ch" style="display:inline-block">L</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">H</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">K</span><span class="ch" style="display:inline-block">E</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">M</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">N</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">N</span></div>
+    <div class="t " id="e3" style="top:1320px;font-size:64px"><span class="ch" style="display:inline-block">P</span><span class="ch" style="display:inline-block">E</span><span class="ch" style="display:inline-block">R</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">N</span><span class="ch" style="display:inline-block">G</span><span class="ch" style="display:inline-block">K</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">T</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">L</span><span class="ch" style="display:inline-block">U</span><span class="ch" style="display:inline-block">N</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">K</span></div>
+    <!-- F AI = chip -->
+    <div class="t " id="f1" style="top:330px;font-size:120px"><span class="ch" style="display:inline-block">M</span><span class="ch" style="display:inline-block">O</span><span class="ch" style="display:inline-block">D</span><span class="ch" style="display:inline-block">E</span><span class="ch" style="display:inline-block">L</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">I</span></div>
+    <div class="t y" id="f2" style="top:460px;font-size:86px"><span class="ch" style="display:inline-block">S</span><span class="ch" style="display:inline-block">E</span><span class="ch" style="display:inline-block">S</span><span class="ch" style="display:inline-block">T</span><span class="ch" style="display:inline-block">R</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">T</span><span class="ch" style="display:inline-block">E</span><span class="ch" style="display:inline-block">G</span><span class="ch" style="display:inline-block">I</span><span class="ch" style="display:inline-block">S</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">C</span><span class="ch" style="display:inline-block">H</span><span class="ch" style="display:inline-block">I</span><span class="ch" style="display:inline-block">P</span></div>
+    <div class="ico2" id="eqA"><svg class="ico" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><rect x="22" y="22" width="56" height="56" rx="8"/><rect x="36" y="36" width="28" height="28" rx="4"/><path d="M34 10v12M50 10v12M66 10v12M34 78v12M50 78v12M66 78v12M10 34h12M10 50h12M10 66h12M78 34h12M78 50h12M78 66h12"/></svg></div><div id="eq">=</div><div class="ico2" id="eqB"><svg class="ico" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><path d="M40 16a12 12 0 0 0-12 12 12 12 0 0 0-8 20 12 12 0 0 0 6 20 12 12 0 0 0 14 14V16zM60 16a12 12 0 0 1 12 12 12 12 0 0 1 8 20 12 12 0 0 1-6 20 12 12 0 0 1-14 14V16z"/><path d="M40 40h-8M60 40h8M40 62h-8M60 62h8"/></svg></div>
+    <div class="eql" id="eql1" style="left:120px;color:var(--y)">CHIP</div><div class="eql" id="eql2" style="left:620px;color:var(--c)">MODEL AI</div>
+    <div class="t gy" id="f3" style="top:1150px;font-size:26px"><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">N</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">L</span><span class="ch" style="display:inline-block">I</span><span class="ch" style="display:inline-block">S</span><span class="ch" style="display:inline-block">I</span><span class="ch" style="display:inline-block">S</span></div>
+    <!-- G dicabut -->
+    <div class="t " id="g1" style="top:330px;font-size:120px"><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">K</span><span class="ch" style="display:inline-block">H</span><span class="ch" style="display:inline-block">I</span><span class="ch" style="display:inline-block">R</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">J</span><span class="ch" style="display:inline-block">U</span><span class="ch" style="display:inline-block">N</span><span class="ch" style="display:inline-block">I</span></div>
+    <div id="stp2"><span>DICABUT</span></div>
+    <div class="ico2" id="shd"><svg class="ico" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"><path d="M50 8l34 12v26c0 22-14 38-34 46C30 84 16 68 16 46V20z"/><path d="M36 50l10 10 20-22"/></svg></div>
+    <div class="t g" id="g2" style="top:1300px;font-size:60px"><span class="ch" style="display:inline-block">P</span><span class="ch" style="display:inline-block">E</span><span class="ch" style="display:inline-block">N</span><span class="ch" style="display:inline-block">G</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">M</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">N</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">N</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">D</span><span class="ch" style="display:inline-block">I</span><span class="ch" style="display:inline-block">P</span><span class="ch" style="display:inline-block">E</span><span class="ch" style="display:inline-block">R</span><span class="ch" style="display:inline-block">K</span><span class="ch" style="display:inline-block">E</span><span class="ch" style="display:inline-block">T</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">T</span></div>
+    <div class="chip" id="g3" style="left:330px;top:1400px;background:#26262C;color:var(--cr)">±3 MINGGU OFFLINE</div>
+    <!-- H -->
+    <div class="t " id="h1" style="top:330px;font-size:92px"><span class="ch" style="display:inline-block">T</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">P</span><span class="ch" style="display:inline-block">I</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">C</span><span class="ch" style="display:inline-block">O</span><span class="ch" style="display:inline-block">B</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">P</span><span class="ch" style="display:inline-block">I</span><span class="ch" style="display:inline-block">K</span><span class="ch" style="display:inline-block">I</span><span class="ch" style="display:inline-block">R</span><span class="ch" style="display:inline-block">…</span></div>
+    <div class="t y" id="h2" style="top:700px;font-size:56px"><span class="ch" style="display:inline-block">N</span><span class="ch" style="display:inline-block">E</span><span class="ch" style="display:inline-block">G</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">R</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">M</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">J</span><span class="ch" style="display:inline-block">U</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">S</span><span class="ch" style="display:inline-block">E</span><span class="ch" style="display:inline-block">S</span><span class="ch" style="display:inline-block">E</span><span class="ch" style="display:inline-block">R</span><span class="ch" style="display:inline-block">I</span><span class="ch" style="display:inline-block">U</span><span class="ch" style="display:inline-block">S</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">I</span><span class="ch" style="display:inline-block">T</span><span class="ch" style="display:inline-block">U</span></div>
+    <div class="t r" id="h3" style="top:880px;font-size:78px"><span class="ch" style="display:inline-block">K</span><span class="ch" style="display:inline-block">I</span><span class="ch" style="display:inline-block">T</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">M</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">S</span><span class="ch" style="display:inline-block">I</span><span class="ch" style="display:inline-block">H</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">S</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">N</span><span class="ch" style="display:inline-block">T</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">I</span><span class="ch" style="display:inline-block">?</span></div>
+    <div class="ico2" id="cart"><svg class="ico" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"><path d="M10 16h12l10 46h44l10-32H28"/><circle cx="38" cy="78" r="6"/><circle cx="70" cy="78" r="6"/></svg></div><div id="cartx"></div>
+    <div id="idbar"><i></i><i></i></div>
+    <div class="t " id="h4" style="top:1290px;font-size:64px"><span class="ch" style="display:inline-block">B</span><span class="ch" style="display:inline-block">U</span><span class="ch" style="display:inline-block">K</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">N</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">C</span><span class="ch" style="display:inline-block">U</span><span class="ch" style="display:inline-block">M</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">J</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">D</span><span class="ch" style="display:inline-block">I</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">P</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">S</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">R</span></div>
+    <!-- I -->
+    <div class="pp" id="pp0" style="left:70px"><div class="pi"><svg class="ico" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 40l42-18 42 18-42 18z"/><path d="M26 48v18c0 6 12 12 24 12s24-6 24-12V48M88 42v22"/></svg></div><h4>Pelajar</h4></div><div class="pp" id="pp1" style="left:405px"><div class="pi"><svg class="ico" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><rect x="12" y="30" width="76" height="52" rx="8"/><path d="M36 30v-8a6 6 0 0 1 6-6h16a6 6 0 0 1 6 6v8M12 52h76"/></svg></div><h4>Pekerja</h4></div><div class="pp" id="pp2" style="left:740px"><div class="pi"><svg class="ico" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 36l8-20h56l8 20"/><path d="M14 36c0 6 6 10 12 10s12-4 12-10c0 6 6 10 12 10s12-4 12-10c0 6 6 10 12 10s12-4 12-10"/><path d="M20 46v40h60V46M42 86V64h16v22"/></svg></div><h4>Pelaku<br>usaha</h4></div>
+    <div class="t " id="i1" style="top:360px;font-size:100px"><span class="ch" style="display:inline-block">S</span><span class="ch" style="display:inline-block">E</span><span class="ch" style="display:inline-block">M</span><span class="ch" style="display:inline-block">U</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">P</span><span class="ch" style="display:inline-block">E</span><span class="ch" style="display:inline-block">R</span><span class="ch" style="display:inline-block">L</span><span class="ch" style="display:inline-block">U</span></div>
+    <div id="melek"><span>MELEK AI</span></div>
+    <div id="trend"><span>IKUT-IKUTAN TREN<i id="trx"></i></span></div>
+    <div class="t y" id="i2" style="top:860px;font-size:64px"><span class="ch" style="display:inline-block">B</span><span class="ch" style="display:inline-block">I</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">R</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">N</span><span class="ch" style="display:inline-block">G</span><span class="ch" style="display:inline-block">G</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">K</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">T</span><span class="ch" style="display:inline-block">E</span><span class="ch" style="display:inline-block">R</span><span class="ch" style="display:inline-block">T</span><span class="ch" style="display:inline-block">I</span><span class="ch" style="display:inline-block">N</span><span class="ch" style="display:inline-block">G</span><span class="ch" style="display:inline-block">G</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">L</span></div>
+    <div class="spd" id="sp0" style="left:60px;top:1040px;width:300px"></div><div class="spd" id="sp1" style="left:197px;top:1090px;width:371px"></div><div class="spd" id="sp2" style="left:334px;top:1140px;width:442px"></div><div class="spd" id="sp3" style="left:471px;top:1190px;width:513px"></div><div class="spd" id="sp4" style="left:608px;top:1240px;width:324px"></div><div class="spd" id="sp5" style="left:145px;top:1290px;width:395px"></div><div class="spd" id="sp6" style="left:282px;top:1340px;width:466px"></div>
+    <!-- J CTA -->
+    <div class="t " id="j1" style="top:330px;font-size:82px"><span class="ch" style="display:inline-block">K</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">M</span><span class="ch" style="display:inline-block">U</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">Y</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">N</span><span class="ch" style="display:inline-block">G</span><span class="ch" style="display:inline-block">&nbsp;</span><span class="ch" style="display:inline-block">M</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">N</span><span class="ch" style="display:inline-block">A</span><span class="ch" style="display:inline-block">?</span></div>
+    <div class="opt" id="oA"><div class="ol">A</div>Sudah mulai belajar</div>
+    <div class="opt" id="oB"><div class="ol">B</div>Masih menunggu</div>
+    <div id="chibiSh" style="left:380px;top:1334px;width:329px"></div><div id="chibi" style="left:305px;top:640px;width:470px;height:836px"><div id="chibiS"><img id="cp_netral" src="pose/pose_0_netral.png"><img id="cp_lambai" src="pose/pose_1_lambai.png"><img id="cp_tunjuk" src="pose/pose_2_tunjuk.png"><img id="cp_mikir" src="pose/pose_3_mikir.png"><img id="cp_kaget" src="pose/pose_4_kaget.png"><img id="cp_keren" src="pose/pose_5_keren.png"><img id="cp_bicara" src="pose/pose_6_bicara.png"><img id="cp_kedip" src="pose/pose_7_kedip.png"></div></div>
+  </div>
+  <div id="flash"></div>
+  <div id="brand">Endrich<b>Tech</b></div>
+
+  <script src="vendor/gsap.min.js"></script>
+  <script>
+  (function () {
+
+    var FPS = 30;
+    function q(t) { return Math.round(t * FPS) / FPS; }
+    var tl = gsap.timeline({ paused: true });
+    var NI = { immediateRender: false };
+    function cut(sel, t, v) { tl.set(sel, { opacity: v }, q(t)); }
+    function hide(sel, t, d) { tl.to(sel, { opacity: 0, duration: d || 0.15, ease: "power2.in" }, q(t)); }
+    function fade(sel, t, d, from) { tl.fromTo(sel, Object.assign({ opacity: 0, y: 30 }, from || {}), { opacity: 1, y: 0, x: 0, scale: 1, rotation: 0, duration: d || 0.35, ease: "power3.out" }, q(t)); }
+    function pop(sel, t, d) { tl.fromTo(sel, { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1, duration: d || 0.32, ease: "back.out(2.2)" }, q(t)); }
+    function sweep(sel, t, d) {
+      var chars = document.querySelectorAll(sel + " .ch");
+      tl.set(sel, { opacity: 1 }, q(t));
+      tl.fromTo(chars, { opacity: 0, x: -14 }, { opacity: 1, x: 0, duration: 0.24, ease: "power3.out", stagger: Math.min(0.035, (d || 0.45) / chars.length) }, q(t));
+    }
+    function count(sel, t, d, a, b, fmt) { var o = { v: a }, el = document.querySelector(sel); tl.to(o, { v: b, duration: d, ease: "power2.out", onUpdate: function () { el.textContent = fmt(o.v); } }, q(t)); }
+    function type(sel, t, d, msg) { var o = { n: 0 }, el = document.querySelector(sel); tl.to(o, { n: msg.length, duration: d, ease: "none", onUpdate: function () { el.textContent = msg.slice(0, Math.round(o.n)); } }, q(t)); }
+    function flash(t, sel, a) { tl.fromTo(sel || "#flash", { opacity: a || 0.3 }, Object.assign({ opacity: 0, duration: 0.25, ease: "power2.out" }, NI), q(t)); }
+    function kick(t, x) { tl.fromTo("#cam", { x: x || -10 }, Object.assign({ x: 0, duration: 0.3, ease: "elastic.out(1, .3)" }, NI), q(t)); }
+    function idn(v) { return Math.round(v).toString().replace(/\B(?=(\d{3})+(?!\d))/g, "."); }
+
+
+    var T = {}; T[0]=0.2; T[1]=0.622; T[2]=0.903; T[3]=1.325; T[4]=1.606; T[5]=2.028; T[6]=2.309; T[7]=2.591; T[8]=3.294; T[9]=4.14; T[10]=4.461; T[11]=4.622; T[12]=5.104; T[13]=5.425; T[14]=5.747; T[15]=6.068; T[16]=6.39; T[17]=6.55; T[18]=6.872; T[19]=7.032; T[20]=7.92; T[21]=8.227; T[22]=9.48; T[23]=9.773; T[24]=10.212; T[25]=10.651; T[26]=10.944; T[27]=11.237; T[28]=11.618; T[29]=12.203; T[30]=12.789; T[31]=13.374; T[32]=14.107; T[33]=14.399; T[34]=15.03; T[35]=15.342; T[36]=15.655; T[37]=15.967; T[38]=16.279; T[39]=16.748; T[40]=17.58; T[41]=18.371; T[42]=18.542; T[43]=18.886; T[44]=19.23; T[45]=19.745; T[46]=19.917; T[47]=20.261; T[48]=20.605; T[49]=20.948; T[50]=21.292; T[51]=21.636; T[52]=22.151; T[53]=22.323; T[54]=23.04; T[55]=23.98; T[56]=24.408; T[57]=24.694; T[58]=24.979; T[59]=25.265; T[60]=25.693; T[61]=25.979; T[62]=26.407; T[63]=26.692; T[64]=27.121; T[65]=27.549; T[66]=28.15; T[67]=28.714; T[68]=29.34; T[69]=29.81; T[70]=30.123; T[71]=30.437; T[72]=30.75; T[73]=31.376; T[74]=31.689; T[75]=32.36; T[76]=32.616; T[77]=32.949; T[78]=33.333; T[79]=33.589; T[80]=34.31; T[81]=34.721; T[82]=35.132; T[83]=35.542; T[84]=36.09; T[85]=37.03; T[86]=37.303; T[87]=37.575; T[88]=38.24; T[89]=38.535; T[90]=38.977; T[91]=39.272; T[92]=39.567; T[93]=40.009; T[94]=40.304; T[95]=40.747; T[96]=41.36; T[97]=41.726; T[98]=41.969; T[99]=42.213; T[100]=42.86; T[101]=43.386; T[102]=43.649; T[103]=43.912; T[104]=44.175; T[105]=44.438; T[106]=45.05; T[107]=45.682; T[108]=46.313; T[109]=46.84; T[110]=47.471; T[111]=47.822; T[112]=48.173; T[113]=48.524; T[114]=49.2; T[115]=49.501; T[116]=49.802; T[117]=50.555; T[118]=50.796; T[119]=51.097; T[120]=51.549; T[121]=51.85; T[122]=52.151; T[123]=52.603; T[124]=52.754; T[125]=53.055; T[126]=53.507; T[127]=53.958; T[128]=54.63; T[129]=55.19; T[130]=55.84; T[131]=56.128; T[132]=56.415; T[133]=56.703; T[134]=57.42; T[135]=57.704; T[136]=57.988;
+    var W = {'B': 4.06, 'C': 7.84, 'D': 17.5, 'E': 22.96, 'F': 28.07, 'G': 32.28, 'H': 36.95, 'I': 44.97, 'J': 54.55};
+    function out(sel, t) { tl.to(sel, { opacity: 0, y: -40, duration: 0.2, ease: "power2.in" }, q(t - 0.2)); }
+    tl.set("#hud", { opacity: 1 }, 0);
+
+    // A · hook
+    tl.fromTo("#a1", { opacity: 1, scale: 1.4 }, { scale: 1, duration: 0.4, ease: "power4.out" }, 0); sweep("#a1", 0.0, 0.3);
+    sweep("#a2", T[5], 0.35);
+    tl.fromTo("#ban", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(2)" }, q(0.4));
+    tl.fromTo("#ban .no", { opacity: 0, scale: 1.6 }, { opacity: 1, scale: 1, duration: 0.2, ease: "power4.in" }, q(T[4]));
+    flash(T[4] + 0.15, "#flash", 0.25); kick(T[4] + 0.15, -14);
+    out("#a1, #a2, #ban", W.B);
+
+    // B · dua model (PAPER)
+    sweep("#b1", W.B, 0.35);
+    tl.fromTo("#mcF", { opacity: 0, y: 160, rotation: -6 }, { opacity: 1, y: 0, rotation: -3, duration: 0.4, ease: "back.out(1.6)" }, q(T[14] - 0.1));
+    tl.fromTo("#mcM", { opacity: 0, y: 160, rotation: 6 }, { opacity: 1, y: 0, rotation: 3, duration: 0.4, ease: "back.out(1.6)" }, q(T[18] - 0.1));
+    out("#b1, .mc", W.C);
+
+    // C · timeline + direktif
+    sweep("#c1", W.C, 0.3);
+    tl.fromTo("#tline", { opacity: 0 }, { opacity: 1, duration: 0.2 }, q(T[22]));
+    tl.to("#tfl", { scaleX: 0.380, duration: 1.4, ease: "power2.inOut" }, q(T[22]));
+    pop("#td0", T[25], 0.25); fade("#tt0", T[25], 0.25);
+    pop("#td1", T[28], 0.25); fade("#tt1", T[28], 0.25);
+    tl.fromTo("#doc", { opacity: 0, y: 160, rotation: 3 }, { opacity: 1, y: 0, rotation: -1, duration: 0.45, ease: "power3.out" }, q(T[28]));
+    tl.fromTo("#stp", { opacity: 0, scale: 2.2 }, { opacity: 1, scale: 1, duration: 0.22, ease: "power4.in" }, q(T[32]));
+    kick(T[32] + 0.2, 12);
+    fade("#rw1", T[34], 0.25); fade("#rw2", T[38], 0.25);
+    out("#c1, #tline, #doc, #stp", W.D);
+
+    // D · offline global (TERMINAL/EMBER)
+    tl.fromTo("#glow", { opacity: 0 }, { opacity: 1, duration: 0.5 }, q(T[47]));
+    fade("#stat", W.D, 0.3, { y: 60 });
+    tl.fromTo("#map", { opacity: 0 }, { opacity: 1, duration: 0.3 }, q(W.D + 0.3));
+    tl.set("#s1", { textContent: "● OFFLINE", color: "#FF4F3A" }, q(T[47])); tl.set("#s2", { textContent: "● OFFLINE", color: "#FF4F3A" }, q(T[47] + 0.25));
+    sweep("#d1", T[47], 0.3); kick(T[47], -14);
+    tl.to(".md", { backgroundColor: "#3A1A1A", scale: 0.6, duration: 0.15, stagger: { each: 0.012, from: "random" } }, q(T[49]));
+    sweep("#d2", T[50], 0.4);
+    out("#d1, #stat, #map, #d2", W.E); tl.to("#glow", { opacity: 0, duration: 0.3 }, q(W.E));
+
+    // E · ketakutan: celah keamanan
+    sweep("#e1", W.E, 0.3);
+    fade("#code", T[55], 0.35, { y: 60 });
+    tl.fromTo("#lens", { opacity: 0, x: 0, y: 0 }, { opacity: 1, duration: 0.2 }, q(T[60]));
+    tl.to("#lens", { x: 420, y: 40, duration: 1.0, ease: "power1.inOut" }, q(T[60]));
+    tl.fromTo("#bugl", { opacity: 0 }, { opacity: 1, duration: 0.1, repeat: 3, yoyo: true }, q(T[62]));
+    tl.set("#bugl", { opacity: 1 }, q(T[62] + 0.45));
+    sweep("#e2", T[62], 0.35); sweep("#e3", T[64], 0.3);
+    out("#e1, #code, #lens, #e2, #e3", W.F);
+
+    // F · AI = chip (SIGNAL)
+    sweep("#f1", W.F + 0.1, 0.3);
+    tl.fromTo("#eqA", { opacity: 0, x: -100 }, { opacity: 1, x: 0, duration: 0.35, ease: "back.out(1.6)" }, q(T[69]));
+    tl.fromTo("#eqB", { opacity: 0, x: 100 }, { opacity: 1, x: 0, duration: 0.35, ease: "back.out(1.6)" }, q(T[69] + 0.15));
+    fade("#eql1", T[69] + 0.2, 0.25); fade("#eql2", T[69] + 0.3, 0.25);
+    pop("#eq", T[71], 0.3); sweep("#f2", T[72], 0.35); kick(T[74], 12);
+    tl.fromTo("#f3", { opacity: 0 }, { opacity: 1, duration: 0.3 }, q(T[72]));
+    out("#f1, #f2, #eqA, #eqB, #eq, .eql, #f3", W.G);
+
+    // G · dicabut
+    sweep("#g1", W.G, 0.3);
+    tl.fromTo("#stp2", { opacity: 0, scale: 2.4 }, { opacity: 1, scale: 1, duration: 0.22, ease: "power4.in" }, q(T[79]));
+    flash(T[79] + 0.2, "#flash", 0.2); kick(T[79] + 0.2, -12);
+    pop("#shd", T[83], 0.35); sweep("#g2", T[83], 0.35);
+    pop("#g3", T[84] + 0.3, 0.3);
+    out("#g1, #stp2, #shd, #g2, #g3", W.H);
+
+    // H · ajakan
+    sweep("#h1", W.H, 0.35); out("#h1", T[88]);
+    sweep("#h2", T[88], 0.35); sweep("#h3", T[96], 0.3); kick(T[98], 12);
+    out("#h2, #h3", T[100]);
+    tl.fromTo("#cart", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(2)" }, q(T[100]));
+    tl.fromTo("#idbar", { opacity: 0, scaleX: 0 }, { opacity: 1, scaleX: 1, duration: 0.5, ease: "power3.out" }, q(T[100]));
+    tl.set("#cartx", { opacity: 1 }, q(T[103]));
+    tl.to("#cartx", { scaleX: 1, duration: 0.25, ease: "power3.out" }, q(T[103]));
+    sweep("#h4", T[103], 0.35);
+    out("#cart, #cartx, #idbar, #h4", W.I);
+
+    // I · melek AI
+    sweep("#i1", T[110], 0.3);
+    [[0, T[106]], [1, T[107]], [2, T[108]]].forEach(function (e) {
+      tl.fromTo("#pp" + e[0], { opacity: 0, y: 120 }, { opacity: 1, y: 0, duration: 0.3, ease: "back.out(1.8)" }, q(e[1])); });
+    tl.fromTo("#melek", { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(2.2)" }, q(T[112]));
+    flash(T[112] + 0.2, "#flash", 0.15);
+    out("#i1, .pp, #melek", T[114]);
+    fade("#trend", T[114], 0.25); tl.to("#trx", { scaleX: 1, duration: 0.3, ease: "power3.out" }, q(T[117]));
+    sweep("#i2", T[119], 0.35);
+    [0, 1, 2, 3, 4, 5, 6].forEach(function (i) { tl.fromTo("#sp" + i, { opacity: 0, x: 300 }, { opacity: 1, x: -300, duration: 0.5, ease: "none", repeat: 1 }, q(T[122] + i * 0.06)); });
+    out("#trend, #i2, .spd", W.J);
+
+    // J · CTA A/B (chibi)
+    sweep("#j1", W.J, 0.35);
+    pop("#oA", T[131], 0.3); pop("#oB", T[134], 0.3);
+
+    var CTRACK = [[54.5, "netral"], [54.633, "mikir"], [55.867, "tunjuk"], [56.933, "netral"], [57.0, "bicara"], [57.2, "netral"], [57.4, "bicara"], [57.433, "mikir"], [58.5, "kedip"], [59.0, "keren"]], CEMPH = [54.63, 55.84, 57.42, 58.488, 58.988];
+    CTRACK.forEach(function (e) { tl.set("#chibiS img:not(#cp_" + e[1] + ")", { opacity: 0 }, q(e[0])); tl.set("#cp_" + e[1], { opacity: 1 }, q(e[0])); });
+    tl.fromTo("#chibi", { y: 700, opacity: 1 }, { y: 0, opacity: 1, duration: 0.5, ease: "back.out(1.4)" }, q(54.53));
+    tl.fromTo("#chibiSh", { opacity: 0 }, { opacity: 1, duration: 0.4 }, q(54.53 + 0.2));
+    tl.fromTo("#chibiS", { y: 0 }, { y: -10, duration: 0.6, yoyo: true, repeat: 21, ease: "sine.inOut" }, q(54.53 + 0.5));
+    CEMPH.forEach(function (t) { tl.fromTo("#chibi", { scaleY: 0.94, scaleX: 1.04 }, Object.assign({ scaleY: 1, scaleX: 1, duration: 0.35, ease: "back.out(3)" }, NI), q(t)); });
+
+    window.__timelines = window.__timelines || {};
+    window.__timelines["ai-dilarang-negara"] = tl;
+  })();
+  </script>
+</div>
+</body>
+</html>
