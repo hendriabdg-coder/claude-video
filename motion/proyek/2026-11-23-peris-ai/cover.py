@@ -1,4 +1,4 @@
-# cover.png: latar gelap + grafik hari pertama (dari render, detik 43) digelapkan, label, judul 3 baris, chibi kaget.
+# cover.png: frame rekaman acara (detik 7,6, layar 1ST PLACE) digelapkan, label, judul 3 baris, chibi kaget.
 # Judul di dalam crop grid IG 3:4 (y 240-1680).  python cover.py
 import subprocess
 from pathlib import Path
@@ -9,10 +9,13 @@ HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[2]
 FONTS = ROOT / "motion" / "gaya" / "gaya-terminal" / "public" / "fonts"
 frame = HERE / "renders" / "_cover_bg.png"
-subprocess.run(["ffmpeg", "-v", "error", "-y", "-ss", "14.2", "-i", str(HERE / "renders" / "visual_v.mp4"), "-frames:v", "1", str(frame)], check=True)
-bg = Image.open(frame).convert("RGB").crop((60, 560, 1060, 1250)).resize((1180, 814), Image.LANCZOS)
+subprocess.run(["ffmpeg", "-v", "error", "-y", "-ss", "7.6", "-i", str(HERE / "aset" / "screen.mp4"), "-frames:v", "1", str(frame)], check=True)
+bg = Image.open(frame).convert("RGB")
+bg = bg.crop((0, 180, bg.width, bg.height)).resize((1080, round((bg.height - 180) * 1080 / bg.width)), Image.LANCZOS)
 im = Image.new("RGB", (1080, 1920), (7, 11, 20))
-im.paste(ImageEnhance.Brightness(bg).enhance(0.5), (160, 760))
+im.paste(ImageEnhance.Brightness(bg).enhance(0.55), (0, 760))
+fadeg = Image.new("L", (1, 300)); fadeg.putdata([int(255 * (1 - i / 299)) for i in range(300)])
+im.paste(Image.new("RGB", (1080, 300), (7, 11, 20)), (0, 760), fadeg.resize((1080, 300)))
 
 
 def font(px, name="InterDisplay-Black.ttf"):
