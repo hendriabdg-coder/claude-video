@@ -1,0 +1,636 @@
+{
+ "duration": 52.689,
+ "source": "VO manual ElevenLabs dari Endrich; timing diperkirakan",
+ "words": [
+  {
+   "word": "Satu",
+   "start": 0.0,
+   "end": 0.393
+  },
+  {
+   "word": "orang",
+   "start": 0.393,
+   "end": 0.786
+  },
+  {
+   "word": "pergi,",
+   "start": 0.786,
+   "end": 1.296
+  },
+  {
+   "word": "saham",
+   "start": 1.296,
+   "end": 1.689
+  },
+  {
+   "word": "anjlok.",
+   "start": 1.689,
+   "end": 2.2
+  },
+  {
+   "word": "Satu",
+   "start": 2.62,
+   "end": 2.956
+  },
+  {
+   "word": "orang",
+   "start": 2.956,
+   "end": 3.293
+  },
+  {
+   "word": "kembali,",
+   "start": 3.293,
+   "end": 3.898
+  },
+  {
+   "word": "saham",
+   "start": 3.898,
+   "end": 4.234
+  },
+  {
+   "word": "melonjak",
+   "start": 4.234,
+   "end": 4.738
+  },
+  {
+   "word": "30%.",
+   "start": 4.738,
+   "end": 5.68
+  },
+  {
+   "word": "Inilah",
+   "start": 5.97,
+   "end": 6.461
+  },
+  {
+   "word": "kekuatan",
+   "start": 6.461,
+   "end": 6.951
+  },
+  {
+   "word": "Jensen",
+   "start": 6.951,
+   "end": 7.278
+  },
+  {
+   "word": "Huang.",
+   "start": 7.278,
+   "end": 7.54
+  },
+  {
+   "word": "12",
+   "start": 8.01,
+   "end": 8.596
+  },
+  {
+   "word": "November,",
+   "start": 8.596,
+   "end": 9.123
+  },
+  {
+   "word": "CEO",
+   "start": 9.123,
+   "end": 9.562
+  },
+  {
+   "word": "Nvidia",
+   "start": 9.562,
+   "end": 9.855
+  },
+  {
+   "word": "itu",
+   "start": 9.855,
+   "end": 10.148
+  },
+  {
+   "word": "mundur",
+   "start": 10.148,
+   "end": 10.441
+  },
+  {
+   "word": "setelah",
+   "start": 10.441,
+   "end": 10.88
+  },
+  {
+   "word": "mengakui",
+   "start": 10.88,
+   "end": 11.32
+  },
+  {
+   "word": "perselingkuhan,",
+   "start": 11.32,
+   "end": 12.14
+  },
+  {
+   "word": "di",
+   "start": 12.37,
+   "end": 12.524
+  },
+  {
+   "word": "tengah",
+   "start": 12.524,
+   "end": 12.833
+  },
+  {
+   "word": "penyelidikan",
+   "start": 12.833,
+   "end": 13.606
+  },
+  {
+   "word": "soal",
+   "start": 13.606,
+   "end": 13.76
+  },
+  {
+   "word": "laporan",
+   "start": 13.76,
+   "end": 14.224
+  },
+  {
+   "word": "bahwa",
+   "start": 14.224,
+   "end": 14.533
+  },
+  {
+   "word": "dia",
+   "start": 14.533,
+   "end": 14.687
+  },
+  {
+   "word": "jadi",
+   "start": 14.687,
+   "end": 14.996
+  },
+  {
+   "word": "sasaran",
+   "start": 14.996,
+   "end": 15.459
+  },
+  {
+   "word": "intelijen.",
+   "start": 15.459,
+   "end": 16.17
+  },
+  {
+   "word": "Pasar",
+   "start": 16.44,
+   "end": 16.776
+  },
+  {
+   "word": "langsung",
+   "start": 16.776,
+   "end": 17.113
+  },
+  {
+   "word": "panik.",
+   "start": 17.113,
+   "end": 17.55
+  },
+  {
+   "word": "Nvidia",
+   "start": 17.89,
+   "end": 18.234
+  },
+  {
+   "word": "adalah",
+   "start": 18.234,
+   "end": 18.749
+  },
+  {
+   "word": "tulang",
+   "start": 18.749,
+   "end": 19.093
+  },
+  {
+   "word": "punggung",
+   "start": 19.093,
+   "end": 19.437
+  },
+  {
+   "word": "industri",
+   "start": 19.437,
+   "end": 19.952
+  },
+  {
+   "word": "AI",
+   "start": 19.952,
+   "end": 20.296
+  },
+  {
+   "word": "dunia,",
+   "start": 20.296,
+   "end": 20.743
+  },
+  {
+   "word": "dan",
+   "start": 20.743,
+   "end": 20.915
+  },
+  {
+   "word": "sosok",
+   "start": 20.915,
+   "end": 21.258
+  },
+  {
+   "word": "di",
+   "start": 21.258,
+   "end": 21.43
+  },
+  {
+   "word": "puncaknya",
+   "start": 21.43,
+   "end": 21.946
+  },
+  {
+   "word": "tiba-tiba",
+   "start": 21.946,
+   "end": 22.633
+  },
+  {
+   "word": "hilang.",
+   "start": 22.633,
+   "end": 23.08
+  },
+  {
+   "word": "Dewan",
+   "start": 23.38,
+   "end": 23.689
+  },
+  {
+   "word": "menunjuk",
+   "start": 23.689,
+   "end": 24.153
+  },
+  {
+   "word": "CFO",
+   "start": 24.153,
+   "end": 24.617
+  },
+  {
+   "word": "Colette",
+   "start": 24.617,
+   "end": 25.081
+  },
+  {
+   "word": "Kress",
+   "start": 25.081,
+   "end": 25.235
+  },
+  {
+   "word": "sebagai",
+   "start": 25.235,
+   "end": 25.699
+  },
+  {
+   "word": "CEO",
+   "start": 25.699,
+   "end": 26.163
+  },
+  {
+   "word": "sementara,",
+   "start": 26.163,
+   "end": 26.874
+  },
+  {
+   "word": "dan",
+   "start": 26.874,
+   "end": 27.028
+  },
+  {
+   "word": "menegaskan",
+   "start": 27.028,
+   "end": 27.647
+  },
+  {
+   "word": "tidak",
+   "start": 27.647,
+   "end": 27.956
+  },
+  {
+   "word": "akan",
+   "start": 27.956,
+   "end": 28.265
+  },
+  {
+   "word": "mengangkat",
+   "start": 28.265,
+   "end": 28.729
+  },
+  {
+   "word": "Jensen",
+   "start": 28.729,
+   "end": 29.038
+  },
+  {
+   "word": "lagi.",
+   "start": 29.038,
+   "end": 29.44
+  },
+  {
+   "word": "Tapi",
+   "start": 29.71,
+   "end": 29.996
+  },
+  {
+   "word": "11",
+   "start": 29.996,
+   "end": 30.569
+  },
+  {
+   "word": "hari",
+   "start": 30.569,
+   "end": 30.856
+  },
+  {
+   "word": "setelah",
+   "start": 30.856,
+   "end": 31.286
+  },
+  {
+   "word": "dia",
+   "start": 31.286,
+   "end": 31.429
+  },
+  {
+   "word": "mundur,",
+   "start": 31.429,
+   "end": 31.801
+  },
+  {
+   "word": "dewan",
+   "start": 31.801,
+   "end": 32.088
+  },
+  {
+   "word": "berbalik",
+   "start": 32.088,
+   "end": 32.518
+  },
+  {
+   "word": "arah.",
+   "start": 32.518,
+   "end": 32.89
+  },
+  {
+   "word": "Jensen",
+   "start": 33.17,
+   "end": 33.466
+  },
+  {
+   "word": "kembali.",
+   "start": 33.466,
+   "end": 34.0
+  },
+  {
+   "word": "Investor",
+   "start": 34.25,
+   "end": 34.751
+  },
+  {
+   "word": "lega,",
+   "start": 34.751,
+   "end": 35.185
+  },
+  {
+   "word": "saham",
+   "start": 35.185,
+   "end": 35.519
+  },
+  {
+   "word": "pulih",
+   "start": 35.519,
+   "end": 35.854
+  },
+  {
+   "word": "hampir",
+   "start": 35.854,
+   "end": 36.188
+  },
+  {
+   "word": "semua",
+   "start": 36.188,
+   "end": 36.522
+  },
+  {
+   "word": "kerugiannya.",
+   "start": 36.522,
+   "end": 37.29
+  },
+  {
+   "word": "Trump",
+   "start": 37.56,
+   "end": 37.68
+  },
+  {
+   "word": "juga",
+   "start": 37.68,
+   "end": 37.92
+  },
+  {
+   "word": "mengaku",
+   "start": 37.92,
+   "end": 38.279
+  },
+  {
+   "word": "ikut",
+   "start": 38.279,
+   "end": 38.519
+  },
+  {
+   "word": "berperan",
+   "start": 38.519,
+   "end": 38.879
+  },
+  {
+   "word": "dalam",
+   "start": 38.879,
+   "end": 39.119
+  },
+  {
+   "word": "keputusan",
+   "start": 39.119,
+   "end": 39.598
+  },
+  {
+   "word": "ini.",
+   "start": 39.598,
+   "end": 39.91
+  },
+  {
+   "word": "Pelajarannya",
+   "start": 40.28,
+   "end": 40.967
+  },
+  {
+   "word": "buat",
+   "start": 40.967,
+   "end": 41.104
+  },
+  {
+   "word": "kita",
+   "start": 41.104,
+   "end": 41.379
+  },
+  {
+   "word": "yang",
+   "start": 41.379,
+   "end": 41.516
+  },
+  {
+   "word": "menjalankan",
+   "start": 41.516,
+   "end": 42.065
+  },
+  {
+   "word": "bisnis:",
+   "start": 42.065,
+   "end": 42.34
+  },
+  {
+   "word": "kalau",
+   "start": 42.61,
+   "end": 42.902
+  },
+  {
+   "word": "perusahaan",
+   "start": 42.902,
+   "end": 43.487
+  },
+  {
+   "word": "terlalu",
+   "start": 43.487,
+   "end": 43.925
+  },
+  {
+   "word": "bergantung",
+   "start": 43.925,
+   "end": 44.363
+  },
+  {
+   "word": "pada",
+   "start": 44.363,
+   "end": 44.655
+  },
+  {
+   "word": "satu",
+   "start": 44.655,
+   "end": 44.947
+  },
+  {
+   "word": "orang,",
+   "start": 44.947,
+   "end": 45.327
+  },
+  {
+   "word": "itu",
+   "start": 45.327,
+   "end": 45.619
+  },
+  {
+   "word": "kekuatan",
+   "start": 45.619,
+   "end": 46.058
+  },
+  {
+   "word": "sekaligus",
+   "start": 46.058,
+   "end": 46.642
+  },
+  {
+   "word": "risiko",
+   "start": 46.642,
+   "end": 47.08
+  },
+  {
+   "word": "besar.",
+   "start": 47.08,
+   "end": 47.46
+  },
+  {
+   "word": "Apa",
+   "start": 47.73,
+   "end": 47.94
+  },
+  {
+   "word": "yang",
+   "start": 47.94,
+   "end": 48.044
+  },
+  {
+   "word": "terjadi",
+   "start": 48.044,
+   "end": 48.359
+  },
+  {
+   "word": "kalau",
+   "start": 48.359,
+   "end": 48.568
+  },
+  {
+   "word": "orang",
+   "start": 48.568,
+   "end": 48.778
+  },
+  {
+   "word": "itu",
+   "start": 48.778,
+   "end": 48.988
+  },
+  {
+   "word": "pergi?",
+   "start": 48.988,
+   "end": 49.26
+  },
+  {
+   "word": "Bisnis",
+   "start": 49.55,
+   "end": 49.815
+  },
+  {
+   "word": "kamu",
+   "start": 49.815,
+   "end": 50.079
+  },
+  {
+   "word": "sudah",
+   "start": 50.079,
+   "end": 50.344
+  },
+  {
+   "word": "siap",
+   "start": 50.344,
+   "end": 50.476
+  },
+  {
+   "word": "jalan",
+   "start": 50.476,
+   "end": 50.741
+  },
+  {
+   "word": "tanpa",
+   "start": 50.741,
+   "end": 51.006
+  },
+  {
+   "word": "kamu?",
+   "start": 51.006,
+   "end": 51.35
+  },
+  {
+   "word": "Jawab",
+   "start": 51.6,
+   "end": 51.845
+  },
+  {
+   "word": "di",
+   "start": 51.845,
+   "end": 51.968
+  },
+  {
+   "word": "komentar.",
+   "start": 51.968,
+   "end": 52.41
+  }
+ ]
+}
