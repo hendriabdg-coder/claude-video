@@ -328,7 +328,7 @@ const S8: React.FC = () => {
       <div style={{ opacity: 1 - p2 }}>
         <Words text="PESANNYA JELAS" at={T[107] - 0.05} size={96} top={330} color={K.y} />
         <div style={{ position: "absolute", left: 0, right: 0, top: 700, textAlign: "center" }}>
-          <span style={{ position: "relative", display: "inline-block", fontFamily: "IDBlack", fontSize: 96, color: K.gy, opacity: ease(t, T[110], T[110] + 0.3) }}>
+          <span style={{ position: "relative", display: "inline-block", fontFamily: "IDBlack", fontSize: 78, color: K.gy, opacity: ease(t, T[110], T[110] + 0.3) }}>
             ERA AI BEBAS ATURAN
             <i style={{ position: "absolute", left: "-3%", top: "46%", width: "106%", height: 16, borderRadius: 8, background: K.r, transform: `scaleX(${strike})`, transformOrigin: "0 50%" }} />
           </span>
