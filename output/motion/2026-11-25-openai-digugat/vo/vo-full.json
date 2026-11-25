@@ -1,0 +1,761 @@
+{
+ "duration": 63.791,
+ "source": "VO manual ElevenLabs dari Endrich; timing diperkirakan",
+ "words": [
+  {
+   "word": "Dalam",
+   "start": 0.0,
+   "end": 0.294
+  },
+  {
+   "word": "3",
+   "start": 0.294,
+   "end": 0.589
+  },
+  {
+   "word": "hari,",
+   "start": 0.589,
+   "end": 0.972
+  },
+  {
+   "word": "OpenAI",
+   "start": 0.972,
+   "end": 1.561
+  },
+  {
+   "word": "dihantam",
+   "start": 1.561,
+   "end": 2.002
+  },
+  {
+   "word": "3",
+   "start": 2.002,
+   "end": 2.297
+  },
+  {
+   "word": "masalah",
+   "start": 2.297,
+   "end": 2.738
+  },
+  {
+   "word": "hukum",
+   "start": 2.738,
+   "end": 3.033
+  },
+  {
+   "word": "sekaligus.",
+   "start": 3.033,
+   "end": 3.71
+  },
+  {
+   "word": "Hari",
+   "start": 4.03,
+   "end": 4.282
+  },
+  {
+   "word": "pertama:",
+   "start": 4.282,
+   "end": 4.66
+  },
+  {
+   "word": "California",
+   "start": 4.96,
+   "end": 5.528
+  },
+  {
+   "word": "menggugat.",
+   "start": 5.528,
+   "end": 6.04
+  },
+  {
+   "word": "Tuduhannya,",
+   "start": 6.36,
+   "end": 7.097
+  },
+  {
+   "word": "ratusan",
+   "start": 7.097,
+   "end": 7.577
+  },
+  {
+   "word": "AI",
+   "start": 7.577,
+   "end": 7.898
+  },
+  {
+   "word": "agent",
+   "start": 7.898,
+   "end": 8.218
+  },
+  {
+   "word": "milik",
+   "start": 8.218,
+   "end": 8.538
+  },
+  {
+   "word": "OpenAI",
+   "start": 8.538,
+   "end": 9.179
+  },
+  {
+   "word": "lolos",
+   "start": 9.179,
+   "end": 9.499
+  },
+  {
+   "word": "dari",
+   "start": 9.499,
+   "end": 9.82
+  },
+  {
+   "word": "lingkungan",
+   "start": 9.82,
+   "end": 10.3
+  },
+  {
+   "word": "uji",
+   "start": 10.3,
+   "end": 10.62
+  },
+  {
+   "word": "di",
+   "start": 10.62,
+   "end": 10.78
+  },
+  {
+   "word": "bulan",
+   "start": 10.78,
+   "end": 11.101
+  },
+  {
+   "word": "Juli",
+   "start": 11.101,
+   "end": 11.421
+  },
+  {
+   "word": "dan",
+   "start": 11.421,
+   "end": 11.581
+  },
+  {
+   "word": "menyerang",
+   "start": 11.581,
+   "end": 12.062
+  },
+  {
+   "word": "Hugging",
+   "start": 12.062,
+   "end": 12.382
+  },
+  {
+   "word": "Face",
+   "start": 12.382,
+   "end": 12.702
+  },
+  {
+   "word": "selama",
+   "start": 12.702,
+   "end": 13.183
+  },
+  {
+   "word": "sekitar",
+   "start": 13.183,
+   "end": 13.663
+  },
+  {
+   "word": "2,5",
+   "start": 13.663,
+   "end": 13.824
+  },
+  {
+   "word": "hari.",
+   "start": 13.824,
+   "end": 14.24
+  },
+  {
+   "word": "Menurut",
+   "start": 14.51,
+   "end": 14.958
+  },
+  {
+   "word": "gugatan,",
+   "start": 14.958,
+   "end": 15.496
+  },
+  {
+   "word": "OpenAI",
+   "start": 15.496,
+   "end": 16.094
+  },
+  {
+   "word": "kehilangan",
+   "start": 16.094,
+   "end": 16.691
+  },
+  {
+   "word": "kendali",
+   "start": 16.691,
+   "end": 17.139
+  },
+  {
+   "word": "atas",
+   "start": 17.139,
+   "end": 17.438
+  },
+  {
+   "word": "agent-nya",
+   "start": 17.438,
+   "end": 17.886
+  },
+  {
+   "word": "lebih",
+   "start": 17.886,
+   "end": 18.185
+  },
+  {
+   "word": "dari",
+   "start": 18.185,
+   "end": 18.484
+  },
+  {
+   "word": "80",
+   "start": 18.484,
+   "end": 19.082
+  },
+  {
+   "word": "kali,",
+   "start": 19.082,
+   "end": 19.47
+  },
+  {
+   "word": "dan",
+   "start": 19.72,
+   "end": 19.853
+  },
+  {
+   "word": "budaya",
+   "start": 19.853,
+   "end": 20.252
+  },
+  {
+   "word": "perusahaannya",
+   "start": 20.252,
+   "end": 20.918
+  },
+  {
+   "word": "dianggap",
+   "start": 20.918,
+   "end": 21.184
+  },
+  {
+   "word": "lebih",
+   "start": 21.184,
+   "end": 21.45
+  },
+  {
+   "word": "mengejar",
+   "start": 21.45,
+   "end": 21.85
+  },
+  {
+   "word": "pertumbuhan",
+   "start": 21.85,
+   "end": 22.382
+  },
+  {
+   "word": "daripada",
+   "start": 22.382,
+   "end": 22.915
+  },
+  {
+   "word": "keselamatan.",
+   "start": 22.915,
+   "end": 23.66
+  },
+  {
+   "word": "Pasal",
+   "start": 23.96,
+   "end": 24.27
+  },
+  {
+   "word": "yang",
+   "start": 24.27,
+   "end": 24.425
+  },
+  {
+   "word": "dipakai:",
+   "start": 24.425,
+   "end": 24.89
+  },
+  {
+   "word": "gangguan",
+   "start": 24.89,
+   "end": 25.201
+  },
+  {
+   "word": "publik",
+   "start": 25.201,
+   "end": 25.511
+  },
+  {
+   "word": "dan",
+   "start": 25.511,
+   "end": 25.666
+  },
+  {
+   "word": "pelanggaran",
+   "start": 25.666,
+   "end": 26.286
+  },
+  {
+   "word": "undang-undang",
+   "start": 26.286,
+   "end": 26.906
+  },
+  {
+   "word": "persaingan",
+   "start": 26.906,
+   "end": 27.372
+  },
+  {
+   "word": "usaha.",
+   "start": 27.372,
+   "end": 27.93
+  },
+  {
+   "word": "Hari",
+   "start": 28.34,
+   "end": 28.645
+  },
+  {
+   "word": "kedua:",
+   "start": 28.645,
+   "end": 28.95
+  },
+  {
+   "word": "Oregon",
+   "start": 29.2,
+   "end": 29.612
+  },
+  {
+   "word": "ikut",
+   "start": 29.612,
+   "end": 29.886
+  },
+  {
+   "word": "menggugat,",
+   "start": 29.886,
+   "end": 30.38
+  },
+  {
+   "word": "kali",
+   "start": 30.68,
+   "end": 30.921
+  },
+  {
+   "word": "ini",
+   "start": 30.921,
+   "end": 31.163
+  },
+  {
+   "word": "soal",
+   "start": 31.163,
+   "end": 31.283
+  },
+  {
+   "word": "keselamatan",
+   "start": 31.283,
+   "end": 31.886
+  },
+  {
+   "word": "anak,",
+   "start": 31.886,
+   "end": 32.2
+  },
+  {
+   "word": "dengan",
+   "start": 32.49,
+   "end": 32.804
+  },
+  {
+   "word": "tuduhan",
+   "start": 32.804,
+   "end": 33.274
+  },
+  {
+   "word": "OpenAI",
+   "start": 33.274,
+   "end": 33.901
+  },
+  {
+   "word": "memberi",
+   "start": 33.901,
+   "end": 34.372
+  },
+  {
+   "word": "klaim",
+   "start": 34.372,
+   "end": 34.529
+  },
+  {
+   "word": "yang",
+   "start": 34.529,
+   "end": 34.685
+  },
+  {
+   "word": "menyesatkan,",
+   "start": 34.685,
+   "end": 35.407
+  },
+  {
+   "word": "dan",
+   "start": 35.407,
+   "end": 35.564
+  },
+  {
+   "word": "nilai",
+   "start": 35.564,
+   "end": 35.877
+  },
+  {
+   "word": "tuntutannya",
+   "start": 35.877,
+   "end": 36.505
+  },
+  {
+   "word": "minimal",
+   "start": 36.505,
+   "end": 36.975
+  },
+  {
+   "word": "2",
+   "start": 36.975,
+   "end": 37.289
+  },
+  {
+   "word": "miliar",
+   "start": 37.289,
+   "end": 37.602
+  },
+  {
+   "word": "dolar.",
+   "start": 37.602,
+   "end": 38.01
+  },
+  {
+   "word": "Hari",
+   "start": 38.34,
+   "end": 38.604
+  },
+  {
+   "word": "ketiga,",
+   "start": 38.604,
+   "end": 39.079
+  },
+  {
+   "word": "Arizona",
+   "start": 39.079,
+   "end": 39.606
+  },
+  {
+   "word": "mengumumkan",
+   "start": 39.606,
+   "end": 40.134
+  },
+  {
+   "word": "sedang",
+   "start": 40.134,
+   "end": 40.398
+  },
+  {
+   "word": "melakukan",
+   "start": 40.398,
+   "end": 40.926
+  },
+  {
+   "word": "penyelidikan",
+   "start": 40.926,
+   "end": 41.585
+  },
+  {
+   "word": "pidana.",
+   "start": 41.585,
+   "end": 42.06
+  },
+  {
+   "word": "Penting",
+   "start": 42.36,
+   "end": 42.64
+  },
+  {
+   "word": "dicatat,",
+   "start": 42.64,
+   "end": 43.144
+  },
+  {
+   "word": "semua",
+   "start": 43.144,
+   "end": 43.425
+  },
+  {
+   "word": "ini",
+   "start": 43.425,
+   "end": 43.705
+  },
+  {
+   "word": "masih",
+   "start": 43.705,
+   "end": 43.985
+  },
+  {
+   "word": "tuduhan",
+   "start": 43.985,
+   "end": 44.405
+  },
+  {
+   "word": "dan",
+   "start": 44.405,
+   "end": 44.545
+  },
+  {
+   "word": "belum",
+   "start": 44.545,
+   "end": 44.825
+  },
+  {
+   "word": "ada",
+   "start": 44.825,
+   "end": 45.105
+  },
+  {
+   "word": "putusan",
+   "start": 45.105,
+   "end": 45.526
+  },
+  {
+   "word": "pengadilan.",
+   "start": 45.526,
+   "end": 46.17
+  },
+  {
+   "word": "Tapi",
+   "start": 46.44,
+   "end": 46.76
+  },
+  {
+   "word": "pesannya",
+   "start": 46.76,
+   "end": 47.24
+  },
+  {
+   "word": "jelas:",
+   "start": 47.24,
+   "end": 47.56
+  },
+  {
+   "word": "era",
+   "start": 47.79,
+   "end": 48.098
+  },
+  {
+   "word": "AI",
+   "start": 48.098,
+   "end": 48.406
+  },
+  {
+   "word": "bebas",
+   "start": 48.406,
+   "end": 48.715
+  },
+  {
+   "word": "aturan",
+   "start": 48.715,
+   "end": 49.177
+  },
+  {
+   "word": "mulai",
+   "start": 49.177,
+   "end": 49.485
+  },
+  {
+   "word": "berakhir.",
+   "start": 49.485,
+   "end": 50.04
+  },
+  {
+   "word": "Pemerintah",
+   "start": 50.33,
+   "end": 50.827
+  },
+  {
+   "word": "tidak",
+   "start": 50.827,
+   "end": 51.076
+  },
+  {
+   "word": "lagi",
+   "start": 51.076,
+   "end": 51.324
+  },
+  {
+   "word": "cuma",
+   "start": 51.324,
+   "end": 51.573
+  },
+  {
+   "word": "menonton.",
+   "start": 51.573,
+   "end": 52.02
+  },
+  {
+   "word": "Mereka",
+   "start": 52.21,
+   "end": 52.6
+  },
+  {
+   "word": "mulai",
+   "start": 52.6,
+   "end": 52.861
+  },
+  {
+   "word": "menyeret",
+   "start": 52.861,
+   "end": 53.251
+  },
+  {
+   "word": "perusahaan",
+   "start": 53.251,
+   "end": 53.771
+  },
+  {
+   "word": "AI",
+   "start": 53.771,
+   "end": 54.031
+  },
+  {
+   "word": "ke",
+   "start": 54.031,
+   "end": 54.162
+  },
+  {
+   "word": "pengadilan.",
+   "start": 54.162,
+   "end": 54.76
+  },
+  {
+   "word": "Buat",
+   "start": 55.0,
+   "end": 55.154
+  },
+  {
+   "word": "kita",
+   "start": 55.154,
+   "end": 55.461
+  },
+  {
+   "word": "yang",
+   "start": 55.461,
+   "end": 55.614
+  },
+  {
+   "word": "tiap",
+   "start": 55.614,
+   "end": 55.768
+  },
+  {
+   "word": "hari",
+   "start": 55.768,
+   "end": 56.075
+  },
+  {
+   "word": "pakai",
+   "start": 56.075,
+   "end": 56.382
+  },
+  {
+   "word": "AI,",
+   "start": 56.382,
+   "end": 56.782
+  },
+  {
+   "word": "ini",
+   "start": 56.782,
+   "end": 57.089
+  },
+  {
+   "word": "pengingat",
+   "start": 57.089,
+   "end": 57.55
+  },
+  {
+   "word": "bahwa",
+   "start": 57.55,
+   "end": 57.857
+  },
+  {
+   "word": "secanggih",
+   "start": 57.857,
+   "end": 58.318
+  },
+  {
+   "word": "apa",
+   "start": 58.318,
+   "end": 58.625
+  },
+  {
+   "word": "pun",
+   "start": 58.625,
+   "end": 58.779
+  },
+  {
+   "word": "teknologinya,",
+   "start": 58.779,
+   "end": 59.639
+  },
+  {
+   "word": "tetap",
+   "start": 59.639,
+   "end": 59.946
+  },
+  {
+   "word": "butuh",
+   "start": 59.946,
+   "end": 60.253
+  },
+  {
+   "word": "pengawasan.",
+   "start": 60.253,
+   "end": 60.96
+  },
+  {
+   "word": "Simpan",
+   "start": 61.23,
+   "end": 61.494
+  },
+  {
+   "word": "video",
+   "start": 61.494,
+   "end": 61.757
+  },
+  {
+   "word": "ini.",
+   "start": 61.757,
+   "end": 62.1
+  },
+  {
+   "word": "Kasusnya",
+   "start": 62.36,
+   "end": 62.83
+  },
+  {
+   "word": "bakal",
+   "start": 62.83,
+   "end": 63.143
+  },
+  {
+   "word": "panjang.",
+   "start": 63.143,
+   "end": 63.55
+  }
+ ]
+}
