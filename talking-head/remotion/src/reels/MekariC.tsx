@@ -291,8 +291,8 @@ const S6: React.FC = () => {
       <div style={{ opacity: ease(t, T[129] - 0.1, T[129] + 0.1) }}>
         <AbsoluteFill style={{ background: "rgba(10,8,18,.88)" }} />
         <Words text="KALAU MAU BERALIH" at={T[125]} size={84} top={330} color={K.g2} />
-        <Chip at={T[131]} left={160} top={600} bg={K.ok} size={52}>🔐 Keamanan</Chip>
-        <Chip at={T[133]} left={560} top={600} bg={K.ok} size={52}>💾 Backup</Chip>
+        <Chip at={T[131]} left={110} top={600} bg={K.ok} size={46}>🔐 Keamanan</Chip>
+        <Chip at={T[133]} left={620} top={600} bg={K.ok} size={46}>💾 Backup</Chip>
         <Chip at={T[134]} left={180} top={760} bg={K.cr} size={44}>🤝 atau partner yang ngerti</Chip>
       </div>
     </AbsoluteFill>
