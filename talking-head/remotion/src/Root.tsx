@@ -7,6 +7,8 @@ import { OpenaiDigugat } from "./reels/OpenaiDigugat";
 import OAI from "./reels/openai-digugat-data.json";
 import { Mekari } from "./reels/Mekari";
 import MEK from "./reels/mekari-data.json";
+import { MekariC } from "./reels/MekariC";
+import MEKC from "./reels/mekari-c-data.json";
 export const FPS = 30;
 export const Root = () => (
   <>
@@ -16,5 +18,6 @@ export const Root = () => (
     <Composition id="CeoNvidia" component={CeoNvidia} width={1080} height={1920} fps={FPS} durationInFrames={Math.round(CEO.dur * FPS)} />
     <Composition id="OpenaiDigugat" component={OpenaiDigugat} width={1080} height={1920} fps={FPS} durationInFrames={Math.round(OAI.dur * FPS)} />
     <Composition id="Mekari" component={Mekari} width={1080} height={1920} fps={FPS} durationInFrames={Math.round(MEK.dur * FPS)} />
+    <Composition id="MekariC" component={MekariC} width={1080} height={1920} fps={FPS} durationInFrames={Math.round(MEKC.dur * FPS)} />
   </>
 );
